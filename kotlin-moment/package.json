@@ -1,0 +1,23 @@
+{
+  "name": "@kotlinspain/kotlin-moment",
+  "version": "$kotlin_moment_version",
+  "description": "Kotlin wrapper for Moment.js library",
+  "keywords": [
+    "kotlin",
+    "js",
+    "moment"
+  ],
+  "files": [
+    "build/classes",
+    "package.json",
+    "README.md"
+  ],
+  "main": "build/classes/main/kotlin-moment.js",
+  "repository": "https://github.com/kotlinspain/kotlin-moment-wrapper",
+  "peerDependencies": {
+    "kotlin": "^$kotlin_version",
+    "moment": ">= 2.x.x <=2.24.x"
+  },
+  "author": "Samuel Garcia",
+  "license": "Apache-2-0"
+}
