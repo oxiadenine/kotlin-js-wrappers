@@ -1,0 +1,13 @@
+.typography-container > * {
+    margin-bottom: 12px;
+}
+
+#typography-basic {}
+
+#typography-title {}
+
+#typography-text {}
+
+#typography-interactive {}
+
+#typography-ellipsis {}

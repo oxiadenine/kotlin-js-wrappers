@@ -1,0 +1,24 @@
+.avatar-container > * {
+    margin-right: 8px;
+    margin-bottom: 12px;
+}
+
+#avatar-basic {}
+
+#avatar-basic.ant-avatar {
+    margin-top: 16px;
+    margin-right: 16px;
+}
+
+#avatar-dynamic {}
+
+#avatar-type {}
+
+#avatar-type .ant-avatar {
+    margin-top: 16px;
+    margin-right: 16px;
+}
+
+#avatar-badge {}
+
+#avatar-toggle-debug {}

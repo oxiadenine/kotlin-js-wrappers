@@ -1,0 +1,15 @@
+.checkbox-container > * {
+    margin-bottom: 12px;
+}
+
+#checkbox-basic {}
+
+#checkbox-controller {}
+
+#checkbox-check-all {}
+
+#checkbox-disabled {}
+
+#checkbox-group {}
+
+#checkbox-layout {}

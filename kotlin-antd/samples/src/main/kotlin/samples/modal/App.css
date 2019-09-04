@@ -1,0 +1,30 @@
+.modal-container > * {
+    margin-right: 8px;
+    margin-bottom: 12px;
+}
+
+#modal-basic {}
+
+#modal-basic .ant-modal p {
+    margin: 0;
+}
+
+#modal-footer {}
+
+#modal-confirm-promise {}
+
+#modal-locale {}
+
+#modal-position {}
+
+#modal-async {}
+
+#modal-confirm {}
+
+#modal-info {}
+
+#modal-manual {}
+
+#modal-button-props {}
+
+#modal-confirm-router {}

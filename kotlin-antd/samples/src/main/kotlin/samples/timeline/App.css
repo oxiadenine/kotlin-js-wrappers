@@ -1,0 +1,15 @@
+.timeline-container > * {
+    margin-bottom: 12px;
+}
+
+#timeline-basic {}
+
+#timeline-pending {}
+
+#timeline-custom {}
+
+#timeline-color {}
+
+#timeline-alternate {}
+
+#timeline-right {}

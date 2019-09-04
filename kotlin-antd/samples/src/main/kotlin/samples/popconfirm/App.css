@@ -1,0 +1,32 @@
+.popconfirm-container > * {
+    margin-bottom: 12px;
+}
+
+#popconfirm-basic {}
+
+#popconfirm-placement {}
+
+#popconfirm-placement .demo {
+    overflow: auto;
+}
+
+#popconfirm-placement .ant-popover-wrap > a {
+    margin-right: 8px;
+}
+
+#popconfirm-placement .ant-btn {
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+#popconfirm-placement .ant-btn  {
+    width: 70px;
+    ext-align: center;
+    padding: 0;
+}
+
+#popconfirm-icon {}
+
+#popconfirm-locale {}
+
+#popconfirm-dynamic-trigger {}

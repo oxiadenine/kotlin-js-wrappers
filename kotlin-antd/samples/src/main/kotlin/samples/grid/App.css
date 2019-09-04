@@ -1,0 +1,85 @@
+.grid-container > * {
+    margin-bottom: 12px;
+}
+
+.grid-container .gutter-box {
+    min-height: 30px;
+    padding: 5px 0;
+    background: #00a0e9;
+    color: #fff;
+    text-align: center;
+}
+
+.grid-container .ant-row > div, .ant-row-flex > div {
+    min-height: 30px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding: 5px 0;
+    color: #fff;
+    text-align: center;
+    border-radius: 0;
+}
+
+.grid-container .ant-row > div:not(.gutter-row), .ant-row-flex > div:not(.gutter-row) {
+    padding: 16px 0;
+    background: #00a0e9;
+}
+
+.grid-container .ant-row > div:not(.gutter-row):nth-child(2n+1), .ant-row-flex > div:not(.gutter-row):nth-child(2n+1) {
+    background: rgba(0, 160, 233, 0.7);
+}
+
+.grid-container .ant-col-12 {
+    display: block;
+    box-sizing: border-box;
+    width: 50%;
+}
+
+#grid-basic {}
+
+#grid-gutter {}
+
+#grid-gutter .gutter-example .ant-row > div {
+    background: transparent;
+    border: 0;
+}
+
+#grid-gutter .gutter-box {
+    background: #00A0E9;
+    padding: 5px 0;
+}
+
+#grid-offset {}
+
+#grid-sort {}
+
+#grid-flex {}
+
+#grid-flex-align {}
+
+#grid-flex-order {}
+
+#grid-responsive {}
+
+#grid-responsive-more {}
+
+#grid-playground {}
+
+#grid-playground [class^="ant-col-"] {
+    background: transparent;
+    border: 0;
+}
+
+#grid-playground [class^="ant-col-"] > div {
+    background: #00A0E9;
+    height: 120px;
+    line-height: 120px;
+    font-size: 13px;
+}
+
+#grid-playground pre {
+    background: #f9f9f9;
+    border-radius: 6px;
+    font-size: 13px;
+    padding: 8px 16px;
+}

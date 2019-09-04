@@ -1,0 +1,15 @@
+.rate-container > * {
+    margin-bottom: 12px;
+}
+
+#rate-basic {}
+
+#rate-text {}
+
+#rate-clear {}
+
+#rate-half {}
+
+#rate-disabled {}
+
+#rate-character {}

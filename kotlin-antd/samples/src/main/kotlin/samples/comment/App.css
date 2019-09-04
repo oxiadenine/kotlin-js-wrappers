@@ -1,0 +1,11 @@
+.comment-container > * {
+    margin-bottom: 12px;
+}
+
+#comment-basic {}
+
+#comment-list {}
+
+#comment-nested {}
+
+#comment-editor {}

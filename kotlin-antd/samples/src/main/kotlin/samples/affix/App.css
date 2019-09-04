@@ -1,0 +1,21 @@
+.affix-container > * {
+    margin-right: 8px;
+    margin-bottom: 12px;
+}
+
+#affix-basic {}
+
+#affix-on-change {}
+
+#affix-target {}
+
+#affix-target .scrollable-container {
+    height: 100px;
+    overflow-y: scroll;
+}
+
+#affix-target .background {
+    height: 300px;
+    padding-top: 60px;
+    background-image: url('https://zos.alipayobjects.com/rmsportal/RmjwQiJorKyobvI.jpg');
+}

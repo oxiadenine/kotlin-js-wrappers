@@ -1,0 +1,25 @@
+.locale-provider-container > * {
+    margin-right: 8px;
+    margin-bottom: 12px;
+}
+
+#locale-provider-basic {}
+
+#locale-provider-all {}
+
+#locale-provider-all .locale-components {
+    border-top: 1px solid #d9d9d9;
+    padding-top: 16px;
+}
+
+#locale-provider-all .example {
+    margin: 16px 0;
+}
+
+#locale-provider-all .example > * {
+    margin-right: 8px;
+}
+
+#locale-provider-all .change-locale {
+    margin-bottom: 16px;
+}

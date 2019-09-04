@@ -1,0 +1,15 @@
+.descriptions-container > * {
+    margin-bottom: 12px;
+}
+
+#descriptions-basic {}
+
+#descriptions-border {}
+
+#descriptions-size {}
+
+#descriptions-responsive {}
+
+#descriptions-vertical {}
+
+#descriptions-vertical-border {}

@@ -1,0 +1,26 @@
+.skeleton-container > * {
+    margin-right: 8px;
+    margin-bottom: 12px;
+}
+
+#skeleton-basic {}
+
+#skeleton-complex {}
+
+#skeleton-active {}
+
+#skeleton-children {}
+
+#skeleton-children article h4 {
+    margin-bottom: 16px;
+}
+
+#skeleton-children .article button {
+    margin-top: 16px;
+}
+
+#skeleton-list {}
+
+#skeleton-list .skeleton-demo {
+    border: 1px solid #f4f4f4;
+}

@@ -1,0 +1,31 @@
+.card-container > * {
+    margin-bottom: 12px;
+}
+
+#card-basic {}
+
+#card-basic p {
+    margin: 0;
+}
+
+#card-basic .ant-card {
+    margin-bottom: 30px;
+}
+
+#card-border-less {}
+
+#card-simple {}
+
+#card-flexible-content {}
+
+#card-in-column {}
+
+#card-loading {}
+
+#card-grid-card {}
+
+#card-inner {}
+
+#card-tabs {}
+
+#card-meta {}

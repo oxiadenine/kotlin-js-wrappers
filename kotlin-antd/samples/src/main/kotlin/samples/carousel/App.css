@@ -1,0 +1,23 @@
+.carousel-container > * {
+    margin-bottom: 12px;
+}
+
+.carousel-container .ant-carousel .slick-slide {
+    text-align: center;
+    height: 160px;
+    line-height: 160px;
+    background: #364d79;
+    overflow: hidden;
+}
+
+.carousel-container .ant-carousel .slick-slide h3 {
+    color: #fff;
+}
+
+#carousel-basic {}
+
+#carousel-autoplay {}
+
+#carousel-position {}
+
+#carousel-fade {}

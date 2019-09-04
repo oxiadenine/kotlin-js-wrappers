@@ -1,0 +1,17 @@
+.input-number-container > * {
+    margin-bottom: 12px;
+}
+
+#input-number-basic {}
+
+#input-number-disabled {}
+
+#input-number-formatter {}
+
+#input-number-size {}
+
+#input-number-size .ant-input-number {
+    margin-right: 10px;
+}
+
+#input-number-digit {}

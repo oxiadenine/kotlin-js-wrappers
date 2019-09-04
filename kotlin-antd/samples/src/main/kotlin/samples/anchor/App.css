@@ -1,0 +1,13 @@
+.anchor-container > * {
+    margin-bottom: 12px;
+}
+
+#anchor-basic {}
+
+#anchor-basic .code-box-demo .ant-affix {
+    z-index: 11;
+}
+
+#anchor-on-click {}
+
+#anchor-static {}

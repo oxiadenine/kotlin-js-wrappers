@@ -1,0 +1,79 @@
+package samples.select
+
+import antd.select.SelectValue
+import antd.select.option
+import antd.select.select
+import kotlinext.js.js
+import kotlinx.html.id
+import kotlinx.html.role
+import react.*
+import react.dom.*
+
+private fun handleChange(value: SelectValue, option: Any) {
+    console.log("selected $value")
+}
+
+fun RBuilder.optionLabelProp() {
+    div("select-container") {
+        attrs.id = "select-option-label-prop"
+        select {
+            attrs {
+                mode = "multiple"
+                style = js { width = "100%" }
+                placeholder = "select one country"
+                defaultValue = arrayOf("china")
+                onChange = ::handleChange
+                optionLabelProp = "label"
+
+            }
+            option {
+                attrs {
+                    value = "china"
+                    label = "China"
+                }
+                span {
+                    attrs.role = "img"
+                    attrs["aria-label"] = "China"
+                    +"\uD83C\uDDE8\uD83C\uDDF3{' '}"
+                }
+                +"China (中国)"
+            }
+            option {
+                attrs {
+                    value = "usa"
+                    label = "USA"
+                }
+                span {
+                    attrs.role = "img"
+                    attrs["aria-label"] = "USA"
+                    +"\uD83C\uDDFA\uD83C\uDDF8{' '}"
+                }
+                +"USA (美国)"
+            }
+            option {
+                attrs {
+                    value = "japan"
+                    label = "Japan"
+                }
+                span {
+                    attrs.role = "img"
+                    attrs["aria-label"] = "Japan"
+                    +"\uD83C\uDDEF\uD83C\uDDF5{' '}"
+                }
+                +"Japan (日本)"
+            }
+            option {
+                attrs {
+                    value = "korean"
+                    label = "Korean"
+                }
+                span {
+                    attrs.role = "img"
+                    attrs["aria-label"] = "Korean"
+                    +"\uD83C\uDDF0\uD83C\uDDF7{' '}"
+                }
+                +"Koean (韩国)"
+            }
+        }
+    }
+}

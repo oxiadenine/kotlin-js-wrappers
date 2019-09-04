@@ -1,0 +1,52 @@
+.upload-container > * {
+    margin-right: 8px;
+    margin-bottom: 12px;
+}
+
+#upload-basic {}
+
+#upload-default-file-list {}
+
+#upload-file-list {}
+
+#upload-directory {}
+
+#upload-picture-style {}
+
+#upload-picture-style .upload-list-inline .ant-upload-list-item {
+    float: left;
+    width: 200px;
+    margin-right: 8px;
+}
+
+#upload-picture-style .upload-list-inline .ant-upload-animate-enter {
+    animation-name: uploadAnimateInlineIn;
+}
+
+#upload-picture-style .upload-list-inline .ant-upload-animate-leave {
+    animation-name: uploadAnimateInlineOut;
+}
+
+#upload-avatar {}
+
+#upload-avatar .avatar-uploader > .ant-upload {
+    width: 128px;
+    height: 128px;
+}
+
+#upload-picture-card {}
+
+/* you can make up upload button and sample style by using stylesheets */
+#upload-picture-card .ant-upload-select-picture-card i {
+    font-size: 32px;
+    color: #999;
+}
+
+#upload-picture-card .ant-upload-select-picture-card .ant-upload-text {
+    margin-top: 8px;
+    color: #666;
+}
+
+#upload-drag {}
+
+#upload-preview-file {}

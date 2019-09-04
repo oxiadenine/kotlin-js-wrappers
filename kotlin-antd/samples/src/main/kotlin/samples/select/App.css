@@ -1,0 +1,40 @@
+.select-container > * {
+    margin-right: 8px;
+    margin-bottom: 12px;
+}
+
+#select-basic {}
+
+#select-multiple {}
+
+#select-option-label-prop {}
+
+#select-optgroup {}
+
+#select-automatic-tokenization {}
+
+#select-custom-dropdown-menu {}
+
+#select-search {}
+
+#select-size {}
+
+#select-size .ant-select {
+    margin: 0 8px 10px 0;
+}
+
+#select-size .ant-select {
+    margin: 0;
+}
+
+#select-tags {}
+
+#select-coordinate {}
+
+#select-label-in-value {}
+
+#select-select-users {}
+
+#select-hide-selected {}
+
+#select-suffix {}

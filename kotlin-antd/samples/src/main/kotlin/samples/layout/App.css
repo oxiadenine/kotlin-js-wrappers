@@ -1,0 +1,136 @@
+.layout-container > * {
+  margin-bottom: 48px;
+}
+
+#layout-basic {}
+
+#layout-basic .ant-layout {
+  text-align: center;
+}
+
+#layout-basic .ant-layout-header {
+  background: #7dbcea;
+  color: #fff;
+}
+
+#layout-basic .ant-layout-content {
+  background: rgba(16, 142, 233, 1);
+  color: #fff;
+  min-height: 120px;
+  line-height: 120px;
+}
+
+#layout-basic .ant-layout-footer {
+  background: #7dbcea;
+  color: #fff;
+}
+
+#layout-basic .ant-layout-sider {
+  background: #3ba0e9;
+  color: #fff;
+  line-height: 120px;
+}
+
+#layout-top {}
+
+#layout-top .logo {
+  width: 120px;
+  height: 31px;
+  background: rgba(255,255,255,.2);
+  margin: 16px 24px 16px 0;
+  float: left;
+}
+
+#layout-top-side-2 {}
+
+#layout-top-side-2 .logo {
+  width: 120px;
+  height: 31px;
+  background: rgba(255,255,255,.2);
+  margin: 16px 28px 16px 0;
+  float: left;
+}
+
+#layout-top-side {}
+
+#layout-top-side .logo {
+  width: 120px;
+  height: 31px;
+  background: rgba(255,255,255,.2);
+  margin: 16px 28px 16px 0;
+  float: left;
+}
+
+#layout-side {}
+
+#layout-side .logo {
+  height: 32px;
+  background: rgba(255,255,255,.2);
+  margin: 16px;
+}
+
+#layout-custom-trigger {}
+
+#layout-custom-trigger .trigger {
+  font-size: 18px;
+  line-height: 64px;
+  padding: 0 24px;
+  cursor: pointer;
+  transition: color .3s;
+}
+
+#layout-custom-trigger .trigger:hover {
+  color: #1890ff;
+}
+
+#layout-custom-trigger .logo {
+  height: 32px;
+  background: rgba(255,255,255,.2);
+  margin: 16px;
+}
+
+#layout-custom-trigger-debug {}
+
+#layout-custom-trigger-debug .trigger {
+  font-size: 18px;
+  line-height: 64px;
+  padding: 0 24px;
+  cursor: pointer;
+  transition: color .3s;
+}
+
+#layout-custom-trigger-debug .trigger:hover {
+  color: #1890ff;
+}
+
+#layout-custom-trigger-debug .logo {
+  height: 32px;
+  background: rgba(255,255,255,.2);
+  margin: 16px;
+}
+
+#layout-responsive {}
+
+#layout-responsive .logo {
+  height: 32px;
+  background: rgba(255,255,255,.2);
+  margin: 16px;
+}
+
+#layout-fixed {}
+
+#layout-fixed .logo {
+  width: 120px;
+  height: 31px;
+  background: rgba(255,255,255,.2);
+  margin: 16px 24px 16px 0;
+  float: left;
+}
+
+#layout-fixed-sider {}
+
+#layout-fixed-sider .logo {
+  height: 32px;
+  background: rgba(255,255,255,.2);
+  margin: 16px;
+}

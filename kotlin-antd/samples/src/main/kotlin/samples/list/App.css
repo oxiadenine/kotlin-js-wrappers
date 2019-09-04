@@ -1,0 +1,19 @@
+.list-container > * {
+  margin-bottom: 12px;
+}
+
+#list-simple {}
+
+#list-basic {}
+
+#list-load-more {}
+
+#list-load-more .demo-loadmore-list {
+  min-height: 350px;
+}
+
+#list-vertical {}
+
+#list-grid {}
+
+#list-responsive {}

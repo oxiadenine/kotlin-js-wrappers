@@ -1,0 +1,17 @@
+.switch-container > * {
+    margin-bottom: 12px;
+}
+
+#switch-basic {}
+
+#switch-basic .ant-switch {
+    margin-bottom: 8px;
+}
+
+#switch-text {}
+
+#switch-loading {}
+
+#switch-disabled {}
+
+#switch-size {}

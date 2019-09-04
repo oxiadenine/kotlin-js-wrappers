@@ -1,0 +1,11 @@
+.divider-container > * {
+    margin-bottom: 12px;
+}
+
+#divider-horizontal {}
+
+#divider-with-text {}
+
+#divider-vertical {}
+
+#divider-customize-style {}

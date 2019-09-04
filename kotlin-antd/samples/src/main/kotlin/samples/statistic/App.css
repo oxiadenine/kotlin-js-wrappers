@@ -1,0 +1,11 @@
+.statistic-container > * {
+    margin-bottom: 12px;
+}
+
+#statistic-basic {}
+
+#statistic-card {}
+
+#statistic-unit {}
+
+#statistic-countdown {}

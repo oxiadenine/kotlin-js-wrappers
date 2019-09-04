@@ -1,0 +1,11 @@
+.auto-complete-container > * {
+    margin-bottom: 12px;
+}
+
+#auto-complete-basic {}
+
+#auto-complete-custom {}
+
+#auto-complete-options {}
+
+#auto-complete-non-case-sensitive {}

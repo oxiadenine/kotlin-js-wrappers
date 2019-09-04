@@ -1,0 +1,11 @@
+.breadcrumb-container > * {
+    margin-bottom: 12px;
+}
+
+#breadcrumb-basic {}
+
+#breadcrumb-overlay {}
+
+#breadcrumb-separator {}
+
+#breadcrumb-with-icon {}

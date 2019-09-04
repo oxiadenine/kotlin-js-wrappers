@@ -1,0 +1,333 @@
+package samples.drawer
+
+import antd.MouseEvent
+import antd.MouseEventHandler
+import antd.avatar.avatar
+import antd.button.button
+import antd.divider.divider
+import antd.drawer.EventType
+import antd.drawer.drawer
+import antd.grid.RowState
+import antd.grid.col
+import antd.grid.row
+import antd.list.list
+import antd.list.listItem
+import antd.list.listItemMeta
+import kotlinext.js.js
+import kotlinx.html.id
+import kotlinx.html.js.onClickFunction
+import react.*
+import react.dom.a
+import react.dom.div
+import react.dom.jsStyle
+import react.dom.p
+
+private val pStyle = js {
+    fontSize = 16
+    color = "rgba(0,0,0,0.85)"
+    lineHeight = "24px"
+    display = "block"
+    marginBottom = 16
+}
+
+interface DescriptionItemProps : RProps {
+    var title: String
+    var content: Any
+}
+
+class DescriptionItem : RComponent<DescriptionItemProps, RowState>() {
+    override fun RBuilder.render() {
+        div {
+            attrs.jsStyle = js {
+                fontSize = 14
+                lineHeight = "22px"
+                marginBottom = 7
+                color = "rgba(0,0,0,0.65)"
+            }
+            p {
+                attrs.jsStyle = js {
+                    marginRight = 8
+                    display = "inline-block"
+                    color = "rgba(0,0,0,0.85)"
+                }
+                +props.title
+            }
+            childList.add(props.content)
+        }
+    }
+}
+
+fun RBuilder.descriptionItem(handler: RHandler<DescriptionItemProps>) = child(DescriptionItem::class, handler)
+
+interface UserProfileAppState : RState {
+    var visible: Boolean
+}
+
+class UserProfileApp : RComponent<RProps, UserProfileAppState>() {
+    private val showDrawer: MouseEventHandler<Any> = {
+        setState {
+            visible = true
+        }
+    }
+
+    private val handleClose: (e: EventType) -> Unit = {
+        setState {
+            visible = false
+        }
+    }
+
+    override fun UserProfileAppState.init() {
+        visible = false
+    }
+
+    override fun RBuilder.render() {
+        div {
+            button {
+                attrs.onClick = showDrawer
+            }
+            list {
+                attrs {
+                    dataSource = arrayOf(
+                            js {
+                                name = "Lily"
+                            },
+                            js {
+                                name = "Lily"
+                            }
+                    ).unsafeCast<Array<Any>>()
+                    bordered = true
+                    renderItem = { item, _ ->
+                        listItem {
+                            attrs {
+                                key = item.asDynamic().id.unsafeCast<String>()
+                                actions = arrayOf(buildElement {
+                                    a {
+                                        attrs.onClickFunction = { event ->
+                                            showDrawer(event.unsafeCast<MouseEvent<Any>>())
+                                        }
+                                        +"View Profile"
+                                    }
+                                }!!)
+                            }
+                            listItemMeta {
+                                attrs {
+                                    avatar = buildElement {
+                                        avatar {
+                                            attrs.src = "https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png"
+                                        }
+                                    }
+                                    title = buildElement {
+                                        a {
+                                            attrs.href = "https://ant.design/index-cn"
+                                            +item.asDynamic().name.unsafeCast<String>()
+                                        }
+                                    }
+                                    description = "Progresser AFX"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            drawer {
+                attrs {
+                    width = 640
+                    placement = "right"
+                    closable = false
+                    onClose = handleClose
+                    visible = state.visible
+                }
+                p {
+                    attrs.jsStyle = js {
+                        pStyle
+                        marginBottom = 24
+                    }
+                    +"User Profile"
+                }
+                p {
+                    attrs.jsStyle = pStyle
+                    +"Personal"
+                }
+                row {
+                    col {
+                        attrs.span = 12
+                        descriptionItem {
+                            attrs {
+                                title = "Full name"
+                                content = "Lily"
+                            }
+                        }
+                    }
+                    col {
+                        attrs.span = 12
+                        descriptionItem {
+                            attrs {
+                                title = "Account"
+                                content = "AntDesign@example.com"
+                            }
+                        }
+                    }
+                }
+                row {
+                    col {
+                        attrs.span = 12
+                        descriptionItem {
+                            attrs {
+                                title = "City"
+                                content = "HangZhou"
+                            }
+                        }
+                    }
+                    col {
+                        attrs.span = 12
+                        descriptionItem {
+                            attrs {
+                                title = "Country"
+                                content = "China\uD83C\uDDE8\uD83C\uDDF3"
+                            }
+                        }
+                    }
+                }
+                row {
+                    col {
+                        attrs.span = 12
+                        descriptionItem {
+                            attrs {
+                                title = "Birthday"
+                                content = "February 2,1900"
+                            }
+                        }
+                    }
+                    col {
+                        attrs.span = 12
+                        descriptionItem {
+                            attrs {
+                                title = "Website"
+                                content = "-"
+                            }
+                        }
+                    }
+                }
+                row {
+                    col {
+                        attrs.span = 24
+                        descriptionItem {
+                            attrs {
+                                title = "Message"
+                                content = "Make things as simple as possible but no simpler."
+                            }
+                        }
+                    }
+                }
+                divider {}
+                p {
+                    attrs.jsStyle = pStyle
+                    +"Company"
+                }
+                row {
+                    col {
+                        attrs.span = 12
+                        descriptionItem {
+                            attrs {
+                                title = "Position"
+                                content = "Programmer"
+                            }
+                        }
+                    }
+                    col {
+                        attrs.span = 12
+                        descriptionItem {
+                            attrs {
+                                title = "Responsibilities"
+                                content = "Coding"
+                            }
+                        }
+                    }
+                }
+                row {
+                    col {
+                        attrs.span = 12
+                        descriptionItem {
+                            attrs {
+                                title = "Department"
+                                content = "AFX"
+                            }
+                        }
+                    }
+                    col {
+                        attrs.span = 12
+                        descriptionItem {
+                            attrs {
+                                title = "Supervisor"
+                                content = buildElement {
+                                    a { +"Lin" }
+                                }!!
+                            }
+                        }
+                    }
+                }
+                row {
+                    col {
+                        attrs.span = 24
+                        descriptionItem {
+                            attrs {
+                                title = "Skills"
+                                content = "C / C + +, data structures, software engineering, operating systems, computer networks, databases, compiler theory, computer architecture, Microcomputer Principle and Interface Technology, Computer English, Java, ASP, etc."
+                            }
+                        }
+                    }
+                }
+                divider {}
+                p {
+                    attrs.jsStyle = pStyle
+                    +"Contacts"
+                }
+                row {
+                    col {
+                        attrs.span = 12
+                        descriptionItem {
+                            attrs {
+                                title = "Email"
+                                content = "AntDesign@example.com"
+                            }
+                        }
+                    }
+                    col {
+                        attrs.span = 12
+                        descriptionItem {
+                            attrs {
+                                title = "Phone Number"
+                                content = "+86 181 0000 0000"
+                            }
+                        }
+                    }
+                }
+                row {
+                    col {
+                        attrs.span = 24
+                        descriptionItem {
+                            attrs {
+                                title = "Github"
+                                content = buildElement {
+                                   a {
+                                       attrs.href = "http://github.com/ant-design/ant-design/"
+                                       +"github.com/ant-design/ant-design/"
+                                   }
+                                }!!
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+fun RBuilder.userProfileApp() = child(UserProfileApp::class) {}
+
+fun RBuilder.userProfile() {
+    div("drawer-container") {
+        attrs.id = "drawer-user-profile"
+        userProfileApp()
+    }
+}

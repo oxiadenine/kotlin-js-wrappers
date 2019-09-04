@@ -1,0 +1,25 @@
+.pagination-container > * {
+    margin-bottom: 12px;
+}
+
+#pagination-basic {}
+
+#pagination-more {}
+
+#pagination-changer {}
+
+#pagination-jump {}
+
+#pagination-mini {}
+
+#pagination-mini  .ant-pagination:not(:last-child) {
+    margin-bottom: 24px;
+}
+
+#pagination-simple {}
+
+#pagination-controlled {}
+
+#pagination-total {}
+
+#pagination-item-render {}

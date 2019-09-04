@@ -1,0 +1,25 @@
+.alert-container > * {
+    margin-bottom: 12px;
+}
+
+#alert-basic {}
+
+#alert-basic .ant-alert {
+    margin-bottom: 16px;
+}
+
+#alert-closable {}
+
+#alert-icon {}
+
+#alert-banner {}
+
+#alert-style {}
+
+#alert-description {}
+
+#alert-close-text {}
+
+#alert-smooth-closed {}
+
+#alert-custom-icon {}

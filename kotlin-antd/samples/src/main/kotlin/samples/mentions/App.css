@@ -1,0 +1,16 @@
+.mentions-container > * {
+    margin-right: 8px;
+    margin-bottom: 12px;
+}
+
+#mentions-basic {}
+
+#mentions-form {}
+
+#mentions-readonly {}
+
+#mentions-async {}
+
+#mentions-prefix {}
+
+#mentions-placement {}

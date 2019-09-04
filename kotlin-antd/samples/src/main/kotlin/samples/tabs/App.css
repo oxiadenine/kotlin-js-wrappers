@@ -1,0 +1,57 @@
+.tabs-container > * {
+    margin-bottom: 12px;
+}
+
+#tabs-basic {}
+
+#tabs-disable {}
+
+#tabs-icon {}
+
+#tabs-slide {}
+
+#tabs-extra {}
+
+#tabs-size {}
+
+#tabs-position {}
+
+#tabs-card {}
+
+#tabs-editable-card {}
+
+#tabs-card-top {}
+
+#tabs-card-top .card-container > .ant-tabs-card > .ant-tabs-content {
+    height: 120px;
+    margin-top: -16px;
+}
+
+#tabs-card-top .card-container > .ant-tabs-card > .ant-tabs-content > .ant-tabs-tabpane {
+    background: #fff;
+    padding: 16px;
+}
+
+#tabs-card-top .card-container > .ant-tabs-card > .ant-tabs-bar {
+    border-color: #fff;
+}
+
+#tabs-card-top .card-container > .ant-tabs-card > .ant-tabs-bar .ant-tabs-tab {
+    border-color: transparent;
+    background: transparent;
+}
+
+#tabs-card-top .card-container > .ant-tabs-card > .ant-tabs-bar .ant-tabs-tab-active {
+    border-color: #fff;
+    background: #fff;
+}
+
+#tabs-card-top .code-box-demo {
+    background: #F5F5F5;
+    overflow: hidden;
+    padding: 24px;
+}
+
+#tabs-custom-add-trigger {}
+
+#tabs-nest {}
