@@ -11,5 +11,5 @@ See the [Bintray page](https://bintray.com/kotlinspain/kotlin-js-wrappers/kotlin
 installation instructions.
 
 ### Getting Started
-You can view the [samples](https://github.com/kotlinspain/kotlin-moment-wrapper/tree/master/samples) to know 
+You can view the [samples](https://github.com/kotlinspain/kotlin-js-wrappers/tree/master/kotlin-moment/samples) to know 
 how to use this library.

@@ -11,5 +11,5 @@ See the [Bintray page](https://bintray.com/kotlinspain/kotlin-js-wrappers/kotlin
 installation instructions.
 
 ### Getting Started
-You can view the [samples](https://github.com/kotlinspain/kotlin-react-intl-wrapper/tree/master/samples) to know 
+You can view the [samples](https://github.com/kotlinspain/kotlin-js-wrappers/tree/master/kotlin-react-intl/samples) to know 
 how to use this library.
