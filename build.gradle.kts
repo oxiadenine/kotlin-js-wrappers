@@ -74,10 +74,8 @@ subprojects {
             pkg = PackageConfig().apply {
                 repo = "kotlin-js-wrappers"
                 name = project.name
-                desc = "Kotlin wrapper for Ant Design library"
                 userOrg = "kotlinspain"
-                vcsUrl = "https://github.com/kotlinspain/kotlin-antd-wrapper.git"
-                setLabels("kotlin", "js", "ant", "design")
+                vcsUrl = "https://github.com/kotlinspain/kotlin-js-wrappers.git"
                 setLicenses("Apache-2.0")
                 version = VersionConfig().apply {
                     name = versionName
