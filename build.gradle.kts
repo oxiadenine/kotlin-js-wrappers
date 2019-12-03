@@ -1,7 +1,7 @@
 import com.moowork.gradle.node.npm.NpmTask
 import org.jetbrains.kotlin.gradle.tasks.Kotlin2JsCompile
 
-group = "io.kotlinspain"
+group = "com.github.samgarasx"
 version = "0.1.0"
 
 plugins {
@@ -18,7 +18,7 @@ subprojects {
     repositories {
         jcenter()
         maven("https://dl.bintray.com/kotlin/kotlin-js-wrappers")
-        maven("https://dl.bintray.com/kotlinspain/kotlin-js-wrappers")
+        maven("https://dl.bintray.com/samgarasx/kotlin-js-wrappers")
     }
 
     extra.set("applyKotlinJS", {
@@ -74,8 +74,7 @@ subprojects {
             pkg = PackageConfig().apply {
                 repo = "kotlin-js-wrappers"
                 name = project.name
-                userOrg = "kotlinspain"
-                vcsUrl = "https://github.com/kotlinspain/kotlin-js-wrappers.git"
+                vcsUrl = "https://github.com/samgarasx/kotlin-js-wrappers.git"
                 setLicenses("Apache-2.0")
                 version = VersionConfig().apply {
                     name = versionName
@@ -89,7 +88,7 @@ subprojects {
             publications.register("Publication", MavenPublication::class) {
                 from(components["java"])
                 artifact(sourcesJar)
-                groupId = "io.kotlinspain"
+                groupId = "com.github.samgarasx"
                 artifactId = project.name
                 version = versionName
             }

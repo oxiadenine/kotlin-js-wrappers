@@ -1,5 +1,5 @@
 {
-  "name": "@kotlinspain/kotlin-react-intl",
+  "name": "kotlin-react-intl",
   "version": "$kotlin_react_intl_version",
   "description": "Kotlin wrapper for React Intl library",
   "keywords": [
@@ -16,7 +16,7 @@
     "README.md"
   ],
   "main": "build/classes/main/kotlin-react-intl.js",
-  "repository": "https://github.com/kotlinspain/kotlin-js-wrappers/tree/master/kotlin-react-intl",
+  "repository": "https://github.com/samgarasx/kotlin-js-wrappers/tree/master/kotlin-react-intl",
   "peerDependencies": {
     "@jetbrains/kotlin-react": "^$kotlin_react_version",
     "kotlin": "^$kotlin_version",

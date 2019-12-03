@@ -1,5 +1,5 @@
 {
-  "name": "@kotlinspain/kotlin-react-responsive",
+  "name": "kotlin-react-responsive",
   "version": "$kotlin_react_responsive_version",
   "description": "Kotlin wrapper for React Responsive library",
   "keywords": [
@@ -15,7 +15,7 @@
     "README.md"
   ],
   "main": "build/classes/main/kotlin-react-responsive.js",
-  "repository": "https://github.com/kotlinspain/kotlin-js-wrappers/tree/master/kotlin-react-responsive",
+  "repository": "https://github.com/samgarasx/kotlin-js-wrappers/tree/master/kotlin-react-responsive",
   "peerDependencies": {
     "@jetbrains/kotlin-react": "^$kotlin_react_version",
     "kotlin": "^$kotlin_version",

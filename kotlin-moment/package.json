@@ -1,5 +1,5 @@
 {
-  "name": "@kotlinspain/kotlin-moment",
+  "name": "kotlin-moment",
   "version": "$kotlin_moment_version",
   "description": "Kotlin wrapper for Moment.js library",
   "keywords": [
@@ -13,7 +13,7 @@
     "README.md"
   ],
   "main": "build/classes/main/kotlin-moment.js",
-  "repository": "https://github.com/kotlinspain/kotlin-js-wrappers/tree/master/kotlin-moment",
+  "repository": "https://github.com/samgarasx/kotlin-js-wrappers/tree/master/kotlin-moment",
   "peerDependencies": {
     "kotlin": "^$kotlin_version",
     "moment": ">= 2.x.x <=2.24.x"

@@ -1,5 +1,5 @@
 {
-  "name": "@kotlinspain/kotlin-antd",
+  "name": "kotlin-antd",
   "version": "$kotlin_antd_version",
   "description": "Kotlin wrapper for Ant Design framework",
   "keywords": [
@@ -14,7 +14,7 @@
     "README.md"
   ],
   "main": "build/classes/main/kotlin-antd.js",
-  "repository": "https://github.com/kotlinspain/kotlin-js-wrappers/tree/master/kotlin-antd",
+  "repository": "https://github.com/samgarasx/kotlin-js-wrappers/tree/master/kotlin-antd",
   "peerDependencies": {
     "@jetbrains/kotlin-react": "^$kotlin_react_version",
     "@jetbrains/kotlin-react-dom": "^$kotlin_react_dom_version",
