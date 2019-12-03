@@ -10,7 +10,7 @@ project.extra.set("kotlinReactVersion", "16.9.0-pre.83")
 project.extra.set("kotlinReactDomVersion", "16.9.0-pre.83")
 
 // Projects
-project.extra.set("kotlinAntdVersion", "3.20.3-pre.11")
-project.extra.set("kotlinMomentVersion", "2.24.0-pre.6")
-project.extra.set("kotlinReactIntlVersion", "3.1.11-pre.9")
-project.extra.set("kotlinReactResponsiveVersion", "7.0.0-pre.6")
+project.extra.set("kotlinAntdVersion", "3.20.3-pre.0")
+project.extra.set("kotlinMomentVersion", "2.24.0-pre.0")
+project.extra.set("kotlinReactIntlVersion", "3.1.11-pre.0")
+project.extra.set("kotlinReactResponsiveVersion", "7.0.0-pre.0")
