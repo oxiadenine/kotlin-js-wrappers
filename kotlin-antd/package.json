@@ -14,7 +14,7 @@
     "README.md"
   ],
   "main": "build/classes/main/kotlin-antd.js",
-  "repository": "https://github.com/kotlinspain/kotlin-antd-wrapper",
+  "repository": "https://github.com/kotlinspain/kotlin-js-wrappers/tree/master/kotlin-antd",
   "peerDependencies": {
     "@jetbrains/kotlin-react": "^$kotlin_react_version",
     "@jetbrains/kotlin-react-dom": "^$kotlin_react_dom_version",

@@ -16,7 +16,7 @@
     "README.md"
   ],
   "main": "build/classes/main/kotlin-react-intl.js",
-  "repository": "https://github.com/kotlinspain/kotlin-react-intl-wrapper",
+  "repository": "https://github.com/kotlinspain/kotlin-js-wrappers/tree/master/kotlin-react-intl",
   "peerDependencies": {
     "@jetbrains/kotlin-react": "^$kotlin_react_version",
     "kotlin": "^$kotlin_version",

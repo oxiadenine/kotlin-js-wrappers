@@ -13,7 +13,7 @@
     "README.md"
   ],
   "main": "build/classes/main/kotlin-moment.js",
-  "repository": "https://github.com/kotlinspain/kotlin-moment-wrapper",
+  "repository": "https://github.com/kotlinspain/kotlin-js-wrappers/tree/master/kotlin-moment",
   "peerDependencies": {
     "kotlin": "^$kotlin_version",
     "moment": ">= 2.x.x <=2.24.x"
