@@ -10,10 +10,12 @@ import antd.drawer.drawer
 import antd.grid.RowState
 import antd.grid.col
 import antd.grid.row
+import antd.list.ListComponent
 import antd.list.list
 import antd.list.listItem
 import antd.list.listItemMeta
 import kotlinext.js.js
+import kotlinext.js.jsObject
 import kotlinx.html.id
 import kotlinx.html.js.onClickFunction
 import react.*
@@ -21,6 +23,11 @@ import react.dom.a
 import react.dom.div
 import react.dom.jsStyle
 import react.dom.p
+
+private interface  UserProfileListDataItem {
+    var id: String
+    var name: String
+}
 
 private val pStyle = js {
     fontSize = 16
@@ -85,21 +92,21 @@ class UserProfileApp : RComponent<RProps, UserProfileAppState>() {
             button {
                 attrs.onClick = showDrawer
             }
-            list {
+            list<UserProfileListDataItem, ListComponent<UserProfileListDataItem>> {
                 attrs {
                     dataSource = arrayOf(
-                            js {
+                            jsObject {
                                 name = "Lily"
                             },
-                            js {
+                            jsObject {
                                 name = "Lily"
                             }
-                    ).unsafeCast<Array<Any>>()
+                    )
                     bordered = true
                     renderItem = { item, _ ->
                         listItem {
                             attrs {
-                                key = item.asDynamic().id.unsafeCast<String>()
+                                key = item.id
                                 actions = arrayOf(buildElement {
                                     a {
                                         attrs.onClickFunction = { event ->
@@ -119,7 +126,7 @@ class UserProfileApp : RComponent<RProps, UserProfileAppState>() {
                                     title = buildElement {
                                         a {
                                             attrs.href = "https://ant.design/index-cn"
-                                            +item.asDynamic().name.unsafeCast<String>()
+                                            +item.name
                                         }
                                     }
                                     description = "Progresser AFX"

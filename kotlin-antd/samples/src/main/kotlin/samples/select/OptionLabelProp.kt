@@ -1,6 +1,6 @@
 package samples.select
 
-import antd.select.SelectValue
+import antd.select.SelectComponent
 import antd.select.option
 import antd.select.select
 import kotlinext.js.js
@@ -9,14 +9,14 @@ import kotlinx.html.role
 import react.*
 import react.dom.*
 
-private fun handleChange(value: SelectValue, option: Any) {
+private fun handleChange(value: Array<String>, option: Any) {
     console.log("selected $value")
 }
 
 fun RBuilder.optionLabelProp() {
     div("select-container") {
         attrs.id = "select-option-label-prop"
-        select {
+        select<Array<String>, SelectComponent<Array<String>>> {
             attrs {
                 mode = "multiple"
                 style = js { width = "100%" }
@@ -34,7 +34,7 @@ fun RBuilder.optionLabelProp() {
                 span {
                     attrs.role = "img"
                     attrs["aria-label"] = "China"
-                    +"\uD83C\uDDE8\uD83C\uDDF3{' '}"
+                    +"\uD83C\uDDE8\uD83C\uDDF3 "
                 }
                 +"China (中国)"
             }
@@ -46,7 +46,7 @@ fun RBuilder.optionLabelProp() {
                 span {
                     attrs.role = "img"
                     attrs["aria-label"] = "USA"
-                    +"\uD83C\uDDFA\uD83C\uDDF8{' '}"
+                    +"\uD83C\uDDFA\uD83C\uDDF8 "
                 }
                 +"USA (美国)"
             }
@@ -58,7 +58,7 @@ fun RBuilder.optionLabelProp() {
                 span {
                     attrs.role = "img"
                     attrs["aria-label"] = "Japan"
-                    +"\uD83C\uDDEF\uD83C\uDDF5{' '}"
+                    +"\uD83C\uDDEF\uD83C\uDDF5 "
                 }
                 +"Japan (日本)"
             }
@@ -70,7 +70,7 @@ fun RBuilder.optionLabelProp() {
                 span {
                     attrs.role = "img"
                     attrs["aria-label"] = "Korean"
-                    +"\uD83C\uDDF0\uD83C\uDDF7{' '}"
+                    +"\uD83C\uDDF0\uD83C\uDDF7 "
                 }
                 +"Koean (韩国)"
             }

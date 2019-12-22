@@ -17,8 +17,10 @@ import antd.popconfirm.popconfirm
 import antd.radio.RadioChangeEvent
 import antd.radio.radioButton
 import antd.radio.radioGroup
+import antd.select.SelectComponent
 import antd.select.select
 import antd.table.ColumnProps
+import antd.table.TableComponent
 import antd.table.table
 import antd.timepicker.timePicker
 import antd.transfer.transfer
@@ -32,20 +34,20 @@ import react.*
 import react.dom.*
 
 private val tableColumns = arrayOf<ColumnProps<Any>>(
-    jsObject {
-        title = "Name"
-        dataIndex = "name"
-        filters = arrayOf(
-            jsObject {
-                text = "filter1"
-                value = "filter1"
-            }
-        )
-    },
-    jsObject {
-        title = "Age"
-        dataIndex = "age"
-    }
+        jsObject {
+            title = "Name"
+            dataIndex = "name"
+            filters = arrayOf(
+                    jsObject {
+                        text = "filter1"
+                        value = "filter1"
+                    }
+            )
+        },
+        jsObject {
+            title = "Age"
+            dataIndex = "age"
+        }
 )
 
 interface PageProps : RProps {
@@ -102,7 +104,7 @@ class Page : RComponent<PageProps, PageState>() {
             }
             div {
                 attrs.classes = setOf("example")
-                select {
+                select<String, SelectComponent<String>> {
                     attrs {
                         showSearch = true
                         style = js { width = 200 }
@@ -172,7 +174,7 @@ class Page : RComponent<PageProps, PageState>() {
                 }
                 div {
                     attrs.classes = setOf("example")
-                    table {
+                    table<Any, TableComponent<Any>> {
                         attrs {
                             dataSource = emptyArray()
                             columns = tableColumns

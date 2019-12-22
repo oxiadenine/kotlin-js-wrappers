@@ -1,31 +1,35 @@
 package samples.list
 
 import antd.card.card
+import antd.list.ListComponent
 import antd.list.list
 import antd.list.listItem
-import kotlinext.js.js
 import kotlinext.js.jsObject
 import kotlinx.html.id
 import react.RBuilder
 import react.dom.div
 
-private val data = arrayOf(
-        js {
+private interface ResponsiveListDataItem {
+    var title: String
+}
+
+private val data = arrayOf<ResponsiveListDataItem>(
+        jsObject {
             title = "Title 1"
         },
-        js {
+        jsObject {
             title = "Title 2"
         },
-        js {
+        jsObject {
             title = "Title 3"
         },
-        js {
+        jsObject {
             title = "Title 4"
         },
-        js {
+        jsObject {
             title = "Title 5"
         },
-        js {
+        jsObject {
             title = "Title 6"
         }
 )
@@ -33,7 +37,7 @@ private val data = arrayOf(
 fun RBuilder.responsive() {
     div("list-container") {
         attrs.id = "list-responsive"
-        list {
+        list<ResponsiveListDataItem, ListComponent<ResponsiveListDataItem>> {
             attrs {
                 grid = jsObject {
                     gutter = 16

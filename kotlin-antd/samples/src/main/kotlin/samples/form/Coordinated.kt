@@ -4,7 +4,7 @@ import antd.FormEventHandler
 import antd.button.button
 import antd.form.*
 import antd.input.input
-import antd.select.SelectValue
+import antd.select.SelectComponent
 import antd.select.option
 import antd.select.select
 import kotlinext.js.Object
@@ -26,7 +26,7 @@ class CoordinatedApp : RComponent<FormComponentProps<Any>, RState>() {
         }
     }
 
-    private val handleSelectChange = fun (value: SelectValue, _: Any) {
+    private val handleSelectChange = fun (value: String, _: Any) {
         console.log(value)
 
         props.form.setFieldsValue(js {
@@ -64,7 +64,7 @@ class CoordinatedApp : RComponent<FormComponentProps<Any>, RState>() {
                         message = "Please input your gender!"
                     })
                 })(buildElement {
-                    select {
+                    select<String, SelectComponent<String>> {
                         attrs {
                             placeholder = "Select a option and change input text above"
                             onChange = handleSelectChange

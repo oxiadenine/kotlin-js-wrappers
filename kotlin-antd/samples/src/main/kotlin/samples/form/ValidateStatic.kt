@@ -5,6 +5,7 @@ import antd.datepicker.datePicker
 import antd.form.*
 import antd.input.input
 import antd.inputnumber.inputNumber
+import antd.select.SelectComponent
 import antd.select.option
 import antd.select.select
 import antd.timepicker.timePicker
@@ -138,7 +139,7 @@ fun RBuilder.validateStatic() {
                     hasFeedback = true
                     validateStatus = "error"
                 }
-                select {
+                select<String, SelectComponent<String>> {
                     attrs.defaultValue = "1"
                     option {
                         attrs.value = "1"

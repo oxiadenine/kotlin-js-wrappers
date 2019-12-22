@@ -1,16 +1,19 @@
 package samples.table
 
-import antd.table.ColumnProps
-import antd.table.SelectionItem
-import antd.table.TableRowSelection
-import antd.table.table
-import kotlinext.js.js
+import antd.table.*
 import kotlinext.js.jsObject
 import kotlinx.html.id
 import react.*
 import react.dom.div
 
-private val tableColumns = arrayOf<ColumnProps<Any>>(
+private interface RowSelectionCustomTableDataItem {
+    var key: String
+    var name: String
+    var age: Number
+    var address: String
+}
+
+private val tableColumns = arrayOf<ColumnProps<RowSelectionCustomTableDataItem>>(
         jsObject {
             title = "Name"
             dataIndex = "name"
@@ -26,20 +29,20 @@ private val tableColumns = arrayOf<ColumnProps<Any>>(
 )
 
 private val data = (0..46).map { i ->
-    js {
+    jsObject<RowSelectionCustomTableDataItem> {
         key = "$i"
         name = "Edward King $i"
         age = 32
         address = "London, Park Lane no. $i"
     }
-}.toTypedArray().unsafeCast<Array<Any>>()
+}.toTypedArray()
 
 interface RowSelectionCustomAppState : RState {
     var selectedRowKeys: Array<String>
 }
 
 class RowSelectionCustomApp : RComponent<RProps, RowSelectionCustomAppState>() {
-    private val handleSelectChange = fun (rowKeys: Any?, _: Array<Any>) {
+    private val handleSelectChange = fun (rowKeys: Any?, _: Array<RowSelectionCustomTableDataItem>) {
         console.log("selectedRowKeys changed: ", rowKeys)
 
         setState {
@@ -52,7 +55,7 @@ class RowSelectionCustomApp : RComponent<RProps, RowSelectionCustomAppState>() {
     }
 
     override fun RBuilder.render() {
-        val tableRowSelection = jsObject<TableRowSelection<Any>> {
+        val tableRowSelection = jsObject<TableRowSelection<RowSelectionCustomTableDataItem>> {
             selectedRowKeys = state.selectedRowKeys
             onChange = handleSelectChange
             hideDefaultSelections = true
@@ -103,7 +106,7 @@ class RowSelectionCustomApp : RComponent<RProps, RowSelectionCustomAppState>() {
             ).unsafeCast<Array<Any>>()
         }
 
-        table {
+        table<RowSelectionCustomTableDataItem, TableComponent<RowSelectionCustomTableDataItem>> {
             attrs {
                 rowSelection = tableRowSelection
                 columns = tableColumns

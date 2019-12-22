@@ -5,11 +5,15 @@ import antd.configprovider.RenderEmptyHandler
 import antd.configprovider.configProvider
 import antd.divider.divider
 import antd.icon.icon
+import antd.list.ListComponent
 import antd.list.list
+import antd.select.SelectComponent
 import antd.select.select
 import antd.switch.switch
+import antd.table.TableComponent
 import antd.table.table
 import antd.transfer.transfer
+import antd.treeselect.TreeSelectComponent
 import antd.treeselect.treeSelect
 import kotlinext.js.js
 import kotlinext.js.jsObject
@@ -64,11 +68,11 @@ class ConfigProviderDemo : RComponent<RProps, ConfigProviderDemoState>() {
                 div {
                     attrs.classes = setOf("config-provider")
                     h3 { +"Select" }
-                    select {
+                    select<String, SelectComponent<String>> {
                         attrs.style = customStyle
                     }
                     h3 { +"TreeSelect" }
-                    treeSelect {
+                    treeSelect<String, TreeSelectComponent<String>> {
                         attrs {
                             style = customStyle
                             treeData = emptyArray()
@@ -85,7 +89,7 @@ class ConfigProviderDemo : RComponent<RProps, ConfigProviderDemoState>() {
                     h3 { +"Transfer" }
                     transfer {}
                     h3 { +"Table" }
-                    table {
+                    table<Any, TableComponent<Any>> {
                         attrs {
                             style = js { marginTop = 8 }
                             columns = arrayOf(
@@ -103,7 +107,7 @@ class ConfigProviderDemo : RComponent<RProps, ConfigProviderDemoState>() {
                         }
                     }
                     h3 { +"List" }
-                    list {}
+                    list<Any, ListComponent<Any>> {}
                 }
             }
         }

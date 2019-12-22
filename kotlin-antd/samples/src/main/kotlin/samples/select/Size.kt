@@ -3,6 +3,7 @@ package samples.select
 import antd.radio.RadioChangeEvent
 import antd.radio.radioButton
 import antd.radio.radioGroup
+import antd.select.SelectComponent
 import antd.select.SelectValue
 import antd.select.select
 import antd.select.option
@@ -61,7 +62,7 @@ class SelectSizesDemo : RComponent<RProps, SelectSizesDemoState>() {
             }
             br {}
             br {}
-            select {
+            select<String, SelectComponent<String>> {
                 attrs {
                     size = state.size
                     defaultValue = "1010"
@@ -71,7 +72,7 @@ class SelectSizesDemo : RComponent<RProps, SelectSizesDemoState>() {
                 childList.add(children)
             }
             br {}
-            select {
+            select<Array<String>, SelectComponent<Array<String>>> {
                 attrs {
                     mode = "multiple"
                     size = state.size
@@ -83,7 +84,7 @@ class SelectSizesDemo : RComponent<RProps, SelectSizesDemoState>() {
                 childList.add(children)
             }
             br {}
-            select {
+            select<Array<String>, SelectComponent<Array<String>>> {
                 attrs {
                     mode = "tags"
                     size = state.size

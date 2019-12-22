@@ -6,8 +6,8 @@ import antd.icon.icon
 import antd.menu.menu
 import antd.menu.menuItem
 import antd.table.ColumnProps
+import antd.table.TableComponent
 import antd.table.table
-import kotlinext.js.js
 import kotlinext.js.jsObject
 import kotlinx.html.classes
 import kotlinx.html.id
@@ -15,6 +15,23 @@ import react.*
 import react.dom.a
 import react.dom.div
 import react.dom.span
+
+private interface NestedTableNestedTableDataItem {
+    var key: String
+    var date: String
+    var name: String
+    var upgradeNum: String
+}
+
+private interface NestedTableTableDataItem {
+    var key: String
+    var name: String
+    var platform: String
+    var version: String
+    var upgradeNum: Number
+    var creator: String
+    var createdAt: String
+}
 
 private val menu = buildElement {
     menu {
@@ -25,7 +42,7 @@ private val menu = buildElement {
 
 class NestedTableApp : RComponent<RProps, RState>() {
     private val expandRowRender: (Any, Number, Number, Boolean) -> ReactElement = { _, _, _, _ ->
-        val tableColumns = arrayOf<ColumnProps<Any>>(
+        val tableColumns = arrayOf<ColumnProps<NestedTableNestedTableDataItem>>(
                 jsObject {
                     title = "Date"
                     dataIndex = "date"
@@ -88,16 +105,16 @@ class NestedTableApp : RComponent<RProps, RState>() {
         )
 
         val data = (0..3).map { i ->
-            js {
-                key = i
+            jsObject<NestedTableNestedTableDataItem> {
+                key = "$i"
                 date = "2014-12-24 23:12:00"
                 name = "This is production name"
                 upgradeNum = "Upgraded: 56"
             }
-        }.toTypedArray().unsafeCast<Array<Any>>()
+        }.toTypedArray()
 
         buildElement {
-            table {
+            table<NestedTableNestedTableDataItem, TableComponent<NestedTableNestedTableDataItem>> {
                 attrs {
                     columns = tableColumns
                     dataSource = data
@@ -108,7 +125,7 @@ class NestedTableApp : RComponent<RProps, RState>() {
     }
 
     override fun RBuilder.render() {
-        val tableColumns = arrayOf<ColumnProps<Any>>(
+        val tableColumns = arrayOf<ColumnProps<NestedTableTableDataItem>>(
                 jsObject {
                     title = "Name"
                     dataIndex = "name"
@@ -154,8 +171,8 @@ class NestedTableApp : RComponent<RProps, RState>() {
         )
 
         val data = (0..3).map { i ->
-            js {
-                key = i
+            jsObject<NestedTableTableDataItem> {
+                key = "$i"
                 name = "Screen"
                 platform = "iOS"
                 version = "10.3.4.5654"
@@ -163,9 +180,9 @@ class NestedTableApp : RComponent<RProps, RState>() {
                 creator = "Jack"
                 createdAt = "2014-12-24 23:12:00"
             }
-        }.toTypedArray().unsafeCast<Array<Any>>()
+        }.toTypedArray()
 
-        table {
+        table<NestedTableTableDataItem, TableComponent<NestedTableTableDataItem>> {
             attrs {
                 className = "components-table-demo-nested"
                 columns = tableColumns

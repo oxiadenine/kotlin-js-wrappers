@@ -10,7 +10,6 @@ import antd.radio.radioButton
 import antd.radio.radioGroup
 import antd.switch.switch
 import antd.table.*
-import kotlinext.js.js
 import kotlinext.js.jsObject
 import kotlinext.js.objectAssign
 import kotlinx.html.classes
@@ -21,7 +20,15 @@ import react.dom.div
 import react.dom.p
 import react.dom.span
 
-private val tableColumns = arrayOf<ColumnProps<Any>>(
+interface DynamicSettingsTableDataItem {
+    var key: String
+    var name: String
+    var age: Number
+    var address: String
+    var description: String
+}
+
+private val tableColumns = arrayOf<ColumnProps<DynamicSettingsTableDataItem>>(
         jsObject {
             title = "Name"
             dataIndex = "name"
@@ -56,7 +63,7 @@ private val tableColumns = arrayOf<ColumnProps<Any>>(
                    span {
                        a {
                            attrs.href = "javascript:;"
-                           +"Action 一 ${record.asDynamic().name}"
+                           +"Action 一 ${record.name}"
                        }
                        divider {
                            attrs.type = "vertical"
@@ -85,18 +92,18 @@ private val tableColumns = arrayOf<ColumnProps<Any>>(
 )
 
 private val data = (0..100).map { i ->
-    js {
-        key = i
+    jsObject<DynamicSettingsTableDataItem> {
+        key = "$i"
         name = "John Brown"
-        age = "${i}2"
+        age = "${i}2".toInt()
         address = "New York No. $i Lake Park"
         description = "My name is John Brown, I am ${i}2 years old, living in New York No. $i Lake Park."
     }
-}.toTypedArray().unsafeCast<Array<Any>>()
+}.toTypedArray()
 
-private val tableExpandedRowRender: (Any) -> ReactElement = { record ->
+private val tableExpandedRowRender: (DynamicSettingsTableDataItem) -> ReactElement = { record ->
     buildElement {
-        p { +record.asDynamic().description.unsafeCast<String>() }
+        p { +record.description }
     }!!
 }
 private val tableTitle: () -> String = { "Here is title" }
@@ -110,11 +117,11 @@ interface DynamicSettingsDemoState : RState {
     var loading: Boolean
     var pagination: Any?
     var size: TableSize
-    var expandedRowRender: ((Any) -> ReactElement)?
+    var expandedRowRender: ((DynamicSettingsTableDataItem) -> ReactElement)?
     var title: (() -> String)?
     var showHeader: Boolean
     var footer: (() -> String)?
-    var rowSelection: TableRowSelection<Any>?
+    var rowSelection: TableRowSelection<DynamicSettingsTableDataItem>?
     var scroll: TableScroll?
     var hasData: Boolean
 }
@@ -334,7 +341,7 @@ class DynamicSettingsDemo : RComponent<RProps, DynamicSettingsDemoState>() {
                     }
                 }
             }
-            table {
+            table<DynamicSettingsTableDataItem, TableComponent<DynamicSettingsTableDataItem>> {
                 objectAssign(attrs, state)
                 attrs {
                     columns = tableColumns

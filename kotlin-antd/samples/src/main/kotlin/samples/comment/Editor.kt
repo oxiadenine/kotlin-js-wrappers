@@ -8,6 +8,7 @@ import antd.comment.CommentProps
 import antd.comment.comment
 import antd.form.formItem
 import antd.input.textArea
+import antd.list.ListComponent
 import antd.list.list
 import kotlinext.js.jsObject
 import kotlinx.html.id
@@ -23,20 +24,18 @@ interface CommentListProps : RProps {
 
 class CommentList : RComponent<CommentListProps, RState>() {
     override fun RBuilder.render() {
-        list {
+        list<CommentProps, ListComponent<CommentProps>> {
             attrs {
-                dataSource = props.comments.unsafeCast<Array<Any>>()
+                dataSource = props.comments
                 header = "${props.comments.size} ${if (props.comments.size > 1) "replies" else "reply"}"
                 itemLayout = "horizontal"
                 renderItem = { item, _ ->
-                    val commentProps = item.unsafeCast<CommentProps>()
-
                     comment {
                         attrs {
-                            author = commentProps.author
-                            avatar = commentProps.avatar
-                            content = commentProps.content
-                            datetime = commentProps.datetime
+                            author = item.author
+                            avatar = item.avatar
+                            content = item.content
+                            datetime = item.datetime
                         }
                     }
                 }

@@ -1,7 +1,6 @@
 package samples.table
 
 import antd.table.*
-import kotlinext.js.js
 import kotlinext.js.jsObject
 import kotlinx.html.id
 import react.RBuilder
@@ -9,7 +8,14 @@ import react.buildElement
 import react.dom.a
 import react.dom.div
 
-private val tableColumns = arrayOf<ColumnProps<Any>>(
+private interface BorderedTableDataItem {
+    var key: String
+    var name: String
+    var money: String
+    var address: String
+}
+
+private val tableColumns = arrayOf<ColumnProps<BorderedTableDataItem>>(
         jsObject {
             title = "Name"
             dataIndex = "name"
@@ -33,31 +39,31 @@ private val tableColumns = arrayOf<ColumnProps<Any>>(
         }
 )
 
-private val data = arrayOf(
-        js {
+private val data = arrayOf<BorderedTableDataItem>(
+        jsObject {
             key = "1"
             name = "John Brown"
             money = "￥300,000.00"
             address = "New York No. 1 Lake Park"
         },
-        js {
+        jsObject {
             key = "2"
             name = "Jim Green"
             money = "￥1,256,000.00"
             address = "London No. 1 Lake Park"
         },
-        js {
+        jsObject {
             key = "3"
             name = "Joe Black"
             money = "￥120,000.00"
             address = "Sidney No. 1 Lake Park"
         }
-).unsafeCast<Array<Any>>()
+)
 
 fun RBuilder.bordered() {
     div("table-container") {
         attrs.id = "table-bordered"
-        table {
+        table<BorderedTableDataItem, TableComponent<BorderedTableDataItem>> {
             attrs {
                 columns = tableColumns
                 dataSource = data

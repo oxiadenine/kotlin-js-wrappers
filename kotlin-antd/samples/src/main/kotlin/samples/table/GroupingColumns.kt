@@ -1,13 +1,25 @@
 package samples.table
 
 import antd.table.*
-import kotlinext.js.js
 import kotlinext.js.jsObject
 import kotlinx.html.id
 import react.RBuilder
 import react.dom.div
 
-private val tableColumns = arrayOf<ColumnProps<Any>>(
+private interface GroupingColumnsTableDataItem {
+    var key: String
+    var name: String
+    var age: Number
+    var address: String
+    var street: String
+    var building: String
+    var number: Number
+    var companyAddress: String
+    var companyName: String
+    var gender: String
+}
+
+private val tableColumns = arrayOf<ColumnProps<GroupingColumnsTableDataItem>>(
         jsObject {
             title = "Name"
             dataIndex = "name"
@@ -25,7 +37,7 @@ private val tableColumns = arrayOf<ColumnProps<Any>>(
                     }
             )
             onFilter = { value, record ->
-                record.asDynamic().name.unsafeCast<String>().indexOf(value.unsafeCast<String>()) == 0
+                record.name.indexOf(value.unsafeCast<String>()) == 0
             }
         },
         jsObject {
@@ -36,8 +48,8 @@ private val tableColumns = arrayOf<ColumnProps<Any>>(
                         dataIndex = "age"
                         key = "age"
                         width = 200
-                        sorter = fun (a: Any, b: Any): Number {
-                            return a.asDynamic().age.unsafeCast<Number>().toInt() - b.asDynamic().age.unsafeCast<Number>().toInt()
+                        sorter = fun (a: GroupingColumnsTableDataItem, b: GroupingColumnsTableDataItem): Number {
+                            return a.age.toInt() - b.age.toInt()
                         }
                     },
                     jsObject {
@@ -92,7 +104,7 @@ private val tableColumns = arrayOf<ColumnProps<Any>>(
 )
 
 private val data = (0..100).map { i ->
-    js {
+    jsObject<GroupingColumnsTableDataItem> {
         key = "$i"
         name = "John Brown"
         age = i + 1
@@ -103,12 +115,12 @@ private val data = (0..100).map { i ->
         companyName = "SoftLake Co"
         gender = "M"
     }
-}.toTypedArray().unsafeCast<Array<Any>>()
+}.toTypedArray()
 
 fun RBuilder.groupingColumns() {
     div("table-container") {
         attrs.id = "table-groping-columns"
-        table {
+        table<GroupingColumnsTableDataItem, TableComponent<GroupingColumnsTableDataItem>> {
             attrs {
                 columns = tableColumns
                 dataSource = data

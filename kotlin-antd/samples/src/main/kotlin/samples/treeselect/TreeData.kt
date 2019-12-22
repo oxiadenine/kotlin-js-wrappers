@@ -33,11 +33,11 @@ private val data: Array<TreeNodeNormal> = arrayOf(
 )
 
 interface TreeDataDemoState : RState {
-    var value: Any?
+    var value: String?
 }
 
 class TreeDataDemo : RComponent<RProps, TreeDataDemoState>() {
-    private val handleChange = fun (newValue: Any, _: Any, _: Any) {
+    private val handleChange = fun (newValue: String, _: Any, _: Any) {
         console.log(newValue)
 
         setState {
@@ -50,7 +50,7 @@ class TreeDataDemo : RComponent<RProps, TreeDataDemoState>() {
     }
 
     override fun RBuilder.render() {
-        treeSelect {
+        treeSelect<String, TreeSelectComponent<String>> {
             attrs {
                 style = js { width = 300 }
                 value = state.value

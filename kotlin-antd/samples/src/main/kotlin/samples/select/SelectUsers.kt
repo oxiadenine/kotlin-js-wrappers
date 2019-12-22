@@ -1,6 +1,6 @@
 package samples.select
 
-import antd.select.SelectValue
+import antd.select.SelectComponent
 import antd.select.option
 import antd.select.select
 import antd.spin.spin
@@ -12,7 +12,7 @@ import kotlin.browser.window
 
 interface UserRemoteSelectState : RState {
     var data: Array<Any>
-    var value: SelectValue
+    var value: Array<Any>
     var fetching: Boolean
 }
 
@@ -39,7 +39,7 @@ class UserRemoteSelect : RComponent<RProps, UserRemoteSelectState>() {
                             js {
                                 name = "${user.asDynamic().name.first} ${user.asDynamic().name.last}"
                                 username = user.asDynamic().login.username.unsafeCast<String>()
-                            }
+                            }.unsafeCast<Any>()
                         }.toTypedArray()
 
                         setState {
@@ -50,7 +50,7 @@ class UserRemoteSelect : RComponent<RProps, UserRemoteSelectState>() {
                 }
     }
 
-    private val handleChange = fun (newValue: SelectValue, _: Any) {
+    private val handleChange = fun (newValue: Array<Any>, _: Any) {
         setState {
             value = newValue
             data = emptyArray()
@@ -60,12 +60,12 @@ class UserRemoteSelect : RComponent<RProps, UserRemoteSelectState>() {
 
     override fun UserRemoteSelectState.init() {
         data = emptyArray()
-        value = emptyArray<Any>()
+        value = emptyArray()
         fetching = false
     }
 
     override fun RBuilder.render() {
-        select {
+        select<Array<Any>, SelectComponent<Array<Any>>> {
             attrs {
                 mode = "multiple"
                 labelInValue = true

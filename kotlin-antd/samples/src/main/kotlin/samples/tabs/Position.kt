@@ -1,5 +1,6 @@
 package samples.tabs
 
+import antd.select.SelectComponent
 import antd.select.SelectValue
 import antd.select.option
 import antd.select.select
@@ -31,7 +32,7 @@ class PositionDemo : RComponent<RProps, PositionDemoState>() {
             div {
                 attrs.jsStyle = js { marginBottom = 16 }
                 +"Tab position："
-                select {
+                select<String, SelectComponent<String>> {
                     attrs {
                         value = state.tabPosition
                         onChange = changeTabPosition

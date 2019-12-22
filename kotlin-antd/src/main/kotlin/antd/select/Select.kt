@@ -11,9 +11,11 @@ import org.w3c.dom.HTMLInputElement
 import react.*
 
 @JsName("default")
-external object SelectComponent : Component<SelectProps<SelectValue>, RState> {
-    val Option: OptionComponent
-    val OptGroup: OptionGroupComponent
+external class SelectComponent<T : SelectValue> : Component<SelectProps<T>, RState> {
+    companion object {
+        val Option: OptionComponent
+        val OptGroup: OptionGroupComponent
+    }
 
     override fun render(): ReactElement?
 }

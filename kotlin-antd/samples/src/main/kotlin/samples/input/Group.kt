@@ -9,6 +9,7 @@ import antd.grid.col
 import antd.input.input
 import antd.input.inputGroup
 import antd.inputnumber.inputNumber
+import antd.select.SelectComponent
 import antd.select.SelectValue
 import antd.select.option
 import antd.select.select
@@ -108,7 +109,7 @@ class GroupCompactDemo : RComponent<RProps, GroupCompactDemoState>() {
             br {}
             inputGroup {
                 attrs.compact = true
-                select {
+                select<String, SelectComponent<String>> {
                     attrs.defaultValue = "Zhejiang"
                     option {
                         attrs.value = "Zhejiang"
@@ -129,7 +130,7 @@ class GroupCompactDemo : RComponent<RProps, GroupCompactDemoState>() {
             br {}
             inputGroup {
                 attrs.compact = true
-                select {
+                select<String, SelectComponent<String>> {
                     attrs.defaultValue = "Option1"
                     option {
                         attrs.value = "Option1"
@@ -163,7 +164,7 @@ class GroupCompactDemo : RComponent<RProps, GroupCompactDemoState>() {
             br {}
             inputGroup {
                 attrs.compact = true
-                select {
+                select<String, SelectComponent<String>> {
                     attrs.defaultValue = "Option1-1"
                     option {
                         attrs.value = "Option1-1"
@@ -174,7 +175,7 @@ class GroupCompactDemo : RComponent<RProps, GroupCompactDemoState>() {
                         +"Option1-2"
                     }
                 }
-                select {
+                select<String, SelectComponent<String>> {
                     attrs.defaultValue = "Option2-2"
                     option {
                         attrs.value = "Option2-1"
@@ -189,7 +190,7 @@ class GroupCompactDemo : RComponent<RProps, GroupCompactDemoState>() {
             br {}
             inputGroup {
                 attrs.compact = true
-                select {
+                select<String, SelectComponent<String>> {
                     attrs.defaultValue = "1"
                     option {
                         attrs.value = "1"
@@ -235,7 +236,7 @@ class GroupCompactDemo : RComponent<RProps, GroupCompactDemoState>() {
             br {}
             inputGroup {
                 attrs.compact = true
-                select {
+                select<String, SelectComponent<String>> {
                     attrs.defaultValue = "Sign Up"
                     option {
                         attrs.value = "Sign Up"
@@ -258,7 +259,7 @@ class GroupCompactDemo : RComponent<RProps, GroupCompactDemoState>() {
             br {}
             inputGroup {
                 attrs.compact = true
-                select {
+                select<String, SelectComponent<String>> {
                     attrs {
                         style = js { widht = "30%" }
                         defaultValue = "Home"

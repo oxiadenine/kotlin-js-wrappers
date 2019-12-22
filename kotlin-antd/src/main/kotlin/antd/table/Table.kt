@@ -15,9 +15,11 @@ import react.RState
 import react.ReactElement
 
 @JsName("default")
-external object TableComponent : Component<TableProps<Any>, TableState<Any>> {
-    val Column: ColumnComponent
-    val ColumnGroup: ColumnGroupComponent
+external class TableComponent<T> : Component<TableProps<T>, TableState<T>> {
+    companion object {
+        val Column: ColumnComponent<*>
+        val ColumnGroup: ColumnGroupComponent
+    }
 
     override fun render(): ReactElement?
 }

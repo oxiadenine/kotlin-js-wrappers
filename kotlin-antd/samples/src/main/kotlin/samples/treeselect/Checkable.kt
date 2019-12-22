@@ -45,11 +45,11 @@ private val data: Array<TreeNodeNormal> = arrayOf(
 )
 
 interface CheckableDemoState : RState {
-    var value: Any?
+    var value: Array<String>?
 }
 
 class CheckableDemo : RComponent<RProps, CheckableDemoState>() {
-    private val handleChange = fun (newValue: Any, _: Any, _: Any) {
+    private val handleChange = fun (newValue: Array<String>, _: Any, _: Any) {
         console.log(newValue)
 
         setState {
@@ -62,7 +62,7 @@ class CheckableDemo : RComponent<RProps, CheckableDemoState>() {
     }
 
     override fun RBuilder.render() {
-        treeSelect {
+        treeSelect<Array<String>, TreeSelectComponent<Array<String>>> {
             attrs {
                 treeData = data.unsafeCast<Array<TreeNode>>()
                 value = state.value

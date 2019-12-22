@@ -2,19 +2,29 @@ package samples.skeleton
 
 import antd.avatar.avatar
 import antd.icon.icon
+import antd.list.ListComponent
 import antd.list.list
 import antd.list.listItem
 import antd.list.listItemMeta
 import antd.skeleton.skeleton
 import antd.switch.switch
 import kotlinext.js.js
+import kotlinext.js.jsObject
 import kotlinx.html.id
 import org.w3c.dom.events.MouseEvent
 import react.*
 import react.dom.*
 
+private interface ListListDataItem {
+    var href: String
+    var title: String
+    var avatar: String
+    var description: String
+    var content: String
+}
+
 private val listData = (0..2).map { i ->
-    js {
+    jsObject<ListListDataItem> {
         href = "http://ant.design"
         title = "ant design part $i"
         avatar = "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
@@ -67,7 +77,7 @@ class ListApp : RComponent<RProps, ListAppState>() {
                     onChange = handleChange
                 }
             }
-            list {
+            list<ListListDataItem, ListComponent<ListListDataItem>> {
                 attrs {
                     itemLayout = "vertical"
                     size = "large"
@@ -75,7 +85,7 @@ class ListApp : RComponent<RProps, ListAppState>() {
                     renderItem = { item, _ ->
                         listItem {
                             attrs {
-                                key = item.asDynamic().title.unsafeCast<String>()
+                                key = item.title
                                 actions = if (!state.loading) {
                                     arrayOf(
                                             buildElement {
@@ -126,19 +136,19 @@ class ListApp : RComponent<RProps, ListAppState>() {
                                     attrs {
                                         avatar = buildElement {
                                             avatar {
-                                                attrs.src = item.asDynamic().avatar.unsafeCast<String>()
+                                                attrs.src = item.avatar
                                             }
                                         }
                                         title = buildElement {
                                             a {
-                                                attrs.href = item.asDynamic().href.unsafeCast<String>()
-                                                +item.asDynamic().title.unsafeCast<String>()
+                                                attrs.href = item.href
+                                                +item.title
                                             }
                                         }
-                                        description = item.asDynamic().description.unsafeCast<String>()
+                                        description = item.description
                                     }
                                 }
-                                +item.asDynamic().content.unsafeCast<String>()
+                                +item.content
                             }
                         }
                     }

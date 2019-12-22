@@ -1,15 +1,13 @@
 package samples.select
 
-import antd.select.SelectValue
-import antd.select.select
+import antd.select.*
 import antd.select.option
-import antd.select.SelectFilterOption
 import kotlinext.js.js
 import kotlinx.html.id
 import react.*
 import react.dom.*
 
-private fun handleChange(value: SelectValue, option: Any) {
+private fun handleChange(value: String, option: Any) {
     console.log("selected $value")
 }
 
@@ -17,7 +15,7 @@ private fun handleBlur() {
     console.log("blur")
 }
 
-private fun handleFocus(value: SelectValue) {
+private fun handleFocus(value: String) {
     console.log("focus")
 }
 
@@ -32,7 +30,7 @@ private val filter: SelectFilterOption = { inputValue, option ->
 fun RBuilder.search() {
     div("select-container") {
         attrs.id = "select-search"
-        select {
+        select<String, SelectComponent<String>> {
             attrs {
                 showSearch = true
                 style = js { width = 200 }

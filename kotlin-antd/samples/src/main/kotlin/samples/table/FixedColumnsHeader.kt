@@ -1,7 +1,6 @@
 package samples.table
 
 import antd.table.*
-import kotlinext.js.js
 import kotlinext.js.jsObject
 import kotlinx.html.id
 import react.RBuilder
@@ -9,7 +8,14 @@ import react.buildElement
 import react.dom.a
 import react.dom.div
 
-private val tableColumns = arrayOf<ColumnProps<Any>>(
+private interface FixedColumnsHeaderTableDataItem {
+    var key: String
+    var name: String
+    var age: Number
+    var address: String
+}
+
+private val tableColumns = arrayOf<ColumnProps<FixedColumnsHeaderTableDataItem>>(
         jsObject {
             title = "Full Name"
             width = 100
@@ -88,18 +94,18 @@ private val tableColumns = arrayOf<ColumnProps<Any>>(
 )
 
 private val data = (0..100).map { i ->
-    js {
-        key = i
+    jsObject<FixedColumnsHeaderTableDataItem> {
+        key = "$i"
         name = "Edward $i"
         age = 32
         address = "London Park no. $i"
     }
-}.toTypedArray().unsafeCast<Array<Any>>()
+}.toTypedArray()
 
 fun RBuilder.fixedColumnsHeader() {
     div("table-container") {
         attrs.id = "table-fixed-columns-header"
-        table {
+        table<FixedColumnsHeaderTableDataItem, TableComponent<FixedColumnsHeaderTableDataItem>> {
             attrs {
                 columns = tableColumns
                 dataSource = data

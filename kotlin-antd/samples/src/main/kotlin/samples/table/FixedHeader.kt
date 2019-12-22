@@ -2,14 +2,21 @@ package samples.table
 
 import antd.pagination.PaginationConfig
 import antd.table.ColumnProps
+import antd.table.TableComponent
 import antd.table.table
-import kotlinext.js.js
 import kotlinext.js.jsObject
 import kotlinx.html.id
 import react.RBuilder
 import react.dom.div
 
-private val tableColumns = arrayOf<ColumnProps<Any>>(
+private interface FixedHeaderTableDataItem {
+    var key: String
+    var name: String
+    var age: Number
+    var address: String
+}
+
+private val tableColumns = arrayOf<ColumnProps<FixedHeaderTableDataItem>>(
         jsObject {
             title = "Name"
             dataIndex = "name"
@@ -27,18 +34,18 @@ private val tableColumns = arrayOf<ColumnProps<Any>>(
 )
 
 private val data = (0..100).map { i ->
-    js {
-        key = i
+    jsObject<FixedHeaderTableDataItem> {
+        key = "$i"
         name = "Edward King $i"
         age = 32
         address = "London, Park Lane no. $i"
     }
-}.toTypedArray().unsafeCast<Array<Any>>()
+}.toTypedArray()
 
 fun RBuilder.fixedHeader() {
     div("table-container") {
         attrs.id = "table-fixed-header"
-        table {
+        table<FixedHeaderTableDataItem, TableComponent<FixedHeaderTableDataItem>> {
             attrs {
                 columns = tableColumns
                 dataSource = data

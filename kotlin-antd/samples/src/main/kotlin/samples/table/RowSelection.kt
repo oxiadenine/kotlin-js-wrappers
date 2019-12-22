@@ -1,6 +1,7 @@
 package samples.table
 
 import antd.table.ColumnProps
+import antd.table.TableComponent
 import antd.table.TableRowSelection
 import antd.table.table
 import kotlinext.js.Object
@@ -12,7 +13,14 @@ import react.buildElement
 import react.dom.a
 import react.dom.div
 
-private val tableColumns = arrayOf<ColumnProps<Any>>(
+private interface RowSelectionTableDataItem {
+    var key: String
+    var name: String
+    var age: Number
+    var address: String
+}
+
+private val tableColumns = arrayOf<ColumnProps<RowSelectionTableDataItem>>(
         jsObject {
             title = "Name"
             dataIndex = "name"
@@ -38,42 +46,42 @@ private val tableColumns = arrayOf<ColumnProps<Any>>(
         }
 )
 
-private val data = arrayOf(
-        js {
+private val data = arrayOf<RowSelectionTableDataItem>(
+        jsObject {
             key = "1"
             name = "John Brown"
             age = 32
             address = "New York No. 1 Lake Park"
         },
-        js {
+        jsObject {
             key = "2"
             name = "Jim Green"
             age = 42
             address = "London No. 1 Lake Park"
         },
-        js {
+        jsObject {
             key = "3"
             name = "Joe Black"
             age = 32
             address = "Sidney No. 1 Lake Park"
         },
-        js {
+        jsObject {
             key = "4"
             name = "Disabled User"
             age = 99
             address = "Sidney No. 1 Lake Park"
         }
-).unsafeCast<Array<Any>>()
+)
 
 // rowSelection object indicates the need for row selection
-private val tableRowSelection = jsObject<TableRowSelection<Any>> {
+private val tableRowSelection = jsObject<TableRowSelection<RowSelectionTableDataItem>> {
     onChange = { selectedRowKeys, selectedRows ->
         console.log("selectedRowKeys: $selectedRowKeys", "selectedRows: ", selectedRows)
     }
     getCheckboxProps = { record ->
         js {
-            disabled = record.asDynamic().name == "Disabled User" // Column configuration not to be checked
-            name = record.asDynamic().name
+            disabled = record.name == "Disabled User" // Column configuration not to be checked
+            name = record.name
         }.unsafeCast<Object>()
     }
 }
@@ -81,7 +89,7 @@ private val tableRowSelection = jsObject<TableRowSelection<Any>> {
 fun RBuilder.rowSelection() {
     div("table-container") {
         attrs.id = "table-row-selection"
-        table {
+        table<RowSelectionTableDataItem, TableComponent<RowSelectionTableDataItem>> {
             attrs {
                 rowSelection = tableRowSelection
                 columns = tableColumns

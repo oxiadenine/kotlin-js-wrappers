@@ -9,6 +9,7 @@ import antd.radio.radio
 import antd.radio.radioButton
 import antd.radio.radioGroup
 import antd.rate.rate
+import antd.select.SelectComponent
 import antd.select.option
 import antd.select.select
 import antd.slider.SliderMarks
@@ -84,7 +85,7 @@ class ValidateOtherDemo : RComponent<FormComponentProps<Any>, RState>() {
                         message = "Please select your country!"
                     })
                 })(buildElement {
-                    select {
+                    select<String, SelectComponent<String>> {
                         attrs.placeholder = "Please select a country"
                         option {
                             attrs.value = "china"
@@ -106,7 +107,7 @@ class ValidateOtherDemo : RComponent<FormComponentProps<Any>, RState>() {
                         type = "array"
                     })
                 })(buildElement {
-                    select {
+                    select<String, SelectComponent<String>> {
                         attrs {
                             mode = "multiple"
                             placeholder = "Please select favourite colors"

@@ -1,6 +1,6 @@
 package samples.select
 
-import antd.select.SelectValue
+import antd.select.SelectComponent
 import antd.select.option
 import antd.select.select
 import kotlinext.js.js
@@ -8,7 +8,7 @@ import kotlinx.html.id
 import react.*
 import react.dom.*
 
-private fun handleChange(value: SelectValue, option: Any?) {
+private fun handleChange(value: String, option: Any?) {
     console.log("selected $value")
 }
 
@@ -24,7 +24,7 @@ fun RBuilder.automaticTokenization() {
 
     div("select-container") {
         attrs.id = "select-automatic-tokenization"
-        select {
+        select<String, SelectComponent<String>> {
             attrs {
                 mode = "tags"
                 style = js { width = "100%" }

@@ -2,6 +2,7 @@ package samples.select
 
 import antd.divider.divider
 import antd.icon.icon
+import antd.select.SelectComponent
 import antd.select.option
 import antd.select.select
 import kotlinext.js.js
@@ -12,7 +13,7 @@ import react.dom.*
 fun RBuilder.customDropdownMenu() {
     div("select-container") {
         attrs.id = "select-custom-dropdown-menu"
-        select {
+        select<String, SelectComponent<String>> {
             attrs {
                 defaultValue = "lucy"
                 style = js { width = 120 }

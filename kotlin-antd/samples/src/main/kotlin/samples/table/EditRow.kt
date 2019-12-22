@@ -15,14 +15,21 @@ import kotlinx.html.js.onClickFunction
 import react.*
 import react.dom.*
 
+interface EditRowTableDataItem {
+    var key: String
+    var name: String
+    var age: Number
+    var address: String
+}
+
 private val tableData = (0..100).map { i ->
-    js {
+    jsObject<EditRowTableDataItem> {
         key = i.toString()
         name = "Edward $i"
         age = 32
         address = "London Park no. $i"
     }
-}.toTypedArray().unsafeCast<Array<Any>>()
+}.toTypedArray()
 
 private val editableContext = createContext<WrappedFormUtils<Any>>()
 
@@ -85,7 +92,7 @@ class EditRowEditableCell : RComponent<EditRowEditableCellProps, EditRowEditable
 interface EditRowEditableTableProps : FormComponentProps<Any>
 
 interface EditRowEditableTableState : RState {
-    var data: Array<Any>
+    var data: Array<EditRowTableDataItem>
     var editingKey: String
 }
 
@@ -109,7 +116,7 @@ class EditRowEditableTable : RComponent<EditRowEditableTableProps, EditRowEditab
                 width = "40%"
                 editable = true
             },
-            jsObject<ColumnProps<Any>> {
+            jsObject<ColumnProps<EditRowTableDataItem>> {
                 title = "operation"
                 dataIndex = "operation"
                 render = { _, record, _ ->
@@ -123,7 +130,7 @@ class EditRowEditableTable : RComponent<EditRowEditableTableProps, EditRowEditab
                                         attrs {
                                             href = "javascript:;"
                                             onClickFunction = {
-                                                save(form.unsafeCast<WrappedFormUtils<Any>>(), record.asDynamic().key.unsafeCast<String>())
+                                                save(form.unsafeCast<WrappedFormUtils<Any>>(), record.key)
                                             }
                                             jsStyle = js { marginRight = 8 }
                                         }
@@ -142,7 +149,7 @@ class EditRowEditableTable : RComponent<EditRowEditableTableProps, EditRowEditab
                             a {
                                 attrs["disabled"] = state.editingKey != ""
                                 attrs.onClickFunction = {
-                                    edit(record.asDynamic().key.unsafeCast<String>())
+                                    edit(record.key)
                                 }
                                 +"Edit"
                             }
@@ -222,7 +229,7 @@ class EditRowEditableTable : RComponent<EditRowEditableTableProps, EditRowEditab
 
         div {
             editableContext.Provider(props.form) {
-                table {
+                table<EditRowTableDataItem, TableComponent<EditRowTableDataItem>> {
                     attrs {
                         components = tableComponents
                         bordered = true

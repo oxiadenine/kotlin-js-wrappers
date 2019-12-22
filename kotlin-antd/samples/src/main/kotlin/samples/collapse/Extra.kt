@@ -3,6 +3,7 @@ package samples.collapse
 import antd.collapse.collapse
 import antd.collapse.collapsePanel
 import antd.icon.icon
+import antd.select.SelectComponent
 import antd.select.SelectValue
 import antd.select.option
 import antd.select.select
@@ -86,7 +87,7 @@ class ExtraDemo : RComponent<RProps, ExtraDemoState>() {
             }
             br {}
             +"Expand Icon Position: "
-            select {
+            select<String, SelectComponent<String>> {
                 attrs {
                     value = state.expandIconPosition
                     onChange = onPositionChange

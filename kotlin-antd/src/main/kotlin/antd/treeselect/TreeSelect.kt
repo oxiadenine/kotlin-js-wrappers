@@ -11,12 +11,14 @@ import react.RState
 import react.ReactElement
 
 @JsName("default")
-external object TreeSelectComponent : Component<TreeSelectProps<TreeNodeValue>, RState> {
-    val TreeNode: TreeNodeComponent
+external class TreeSelectComponent<T : TreeNodeValue> : Component<TreeSelectProps<T>, RState> {
+    companion object {
+        val TreeNode: TreeNodeComponent
 
-    val SHOW_ALL: String
-    val SHOW_PARENT: String
-    val SHOW_CHILD: String
+        val SHOW_ALL: String
+        val SHOW_PARENT: String
+        val SHOW_CHILD: String
+    }
 
     override fun render(): ReactElement?
 }

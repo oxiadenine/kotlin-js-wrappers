@@ -116,7 +116,7 @@ class AjaxApp : RComponent<RProps, AjaxAppState>() {
     }
 
     override fun RBuilder.render() {
-        table {
+        table<Any, TableComponent<Any>> {
             attrs {
                 columns = tableColumns
                 rowKey = fun (record: Any, _: Number): String {

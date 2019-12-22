@@ -8,8 +8,10 @@ import react.RState
 import react.ReactElement
 
 @JsName("default")
-external object ListComponent : Component<ListProps<Any>, ListState> {
-    val Item: ListItemComponent
+external class ListComponent<T> : Component<ListProps<T>, ListState> {
+    companion object {
+        val Item: ListItemComponent
+    }
 
     override fun render(): ReactElement?
 }

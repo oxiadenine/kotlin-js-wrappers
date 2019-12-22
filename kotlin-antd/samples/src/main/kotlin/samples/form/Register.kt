@@ -14,6 +14,7 @@ import antd.grid.row
 import antd.icon.icon
 import antd.input.input
 import antd.input.password
+import antd.select.SelectComponent
 import antd.select.SelectValue
 import antd.select.option
 import antd.select.select
@@ -147,9 +148,9 @@ class RegistrationForm : RComponent<FormComponentProps<Any>, RegistrationFormSta
         }
 
         val prefixSelector = props.form.getFieldDecorator("prefix", jsObject {
-                initialValue = "86"
+            initialValue = "86"
         })(buildElement {
-            select {
+            select<String, SelectComponent<String>> {
                 attrs.style = js { width = 70 }
                 option {
                     attrs.value = "86"

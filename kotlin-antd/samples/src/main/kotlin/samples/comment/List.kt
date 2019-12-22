@@ -2,6 +2,7 @@ package samples.comment
 
 import antd.comment.CommentProps
 import antd.comment.comment
+import antd.list.ListComponent
 import antd.list.list
 import antd.tooltip.tooltip
 import kotlinext.js.jsObject
@@ -68,23 +69,21 @@ private val data = arrayOf<CommentProps>(
 fun RBuilder.list() {
     div("comment-container") {
         attrs.id = "comment-list"
-        list {
+        list<CommentProps, ListComponent<CommentProps>> {
             attrs {
                 className = "comment-list"
                 header = "${data.size} replies"
                 itemLayout = "horizontal"
-                dataSource = data.unsafeCast<Array<Any>>()
+                dataSource = data
                 renderItem = { item, _ ->
-                    val commentProps = item.unsafeCast<CommentProps>()
-
                     li {
                         comment {
                             attrs {
-                                actions = commentProps.actions
-                                author = commentProps.author
-                                avatar = commentProps.avatar
-                                content = commentProps.content
-                                datetime = commentProps.datetime
+                                actions = item.actions
+                                author = item.author
+                                avatar = item.avatar
+                                content = item.content
+                                datetime = item.datetime
                             }
                         }
                     }

@@ -2,13 +2,19 @@ package samples.table
 
 import antd.pagination.PaginationConfig
 import antd.table.*
-import kotlinext.js.js
 import kotlinext.js.jsObject
 import kotlinx.html.id
 import react.RBuilder
 import react.dom.div
 
-private val tableColumns = arrayOf<ColumnProps<Any>>(
+private interface HeadTableDataItem {
+    var key: String
+    var name: String
+    var age: Number
+    var address: String
+}
+
+private val tableColumns = arrayOf<ColumnProps<HeadTableDataItem>>(
         jsObject {
             title = "Name"
             dataIndex = "name"
@@ -39,10 +45,10 @@ private val tableColumns = arrayOf<ColumnProps<Any>>(
             // specify the condition of filtering result
             // here is that finding the name started with `value`
             onFilter = { value, record ->
-                record.asDynamic().name.unsafeCast<String>().indexOf(value.unsafeCast<String>()) == 0
+                record.name.indexOf(value.unsafeCast<String>()) == 0
             }
-            sorter = fun (a: Any, b: Any): Number {
-               return  a.asDynamic().name.unsafeCast<String>().length - b.asDynamic().name.unsafeCast<String>().length
+            sorter = fun (a: HeadTableDataItem, b: HeadTableDataItem): Number {
+               return  a.name.length - b.name.length
             }
             sortDirections = arrayOf("descend")
 
@@ -51,8 +57,8 @@ private val tableColumns = arrayOf<ColumnProps<Any>>(
             title = "Age"
             dataIndex = "age"
             defaultSortOrder = "descend"
-            sorter = fun (a: Any, b: Any): Number {
-                return a.asDynamic().age.unsafeCast<Number>().toInt() - b.asDynamic().age.unsafeCast<Number>().toInt()
+            sorter = fun (a: HeadTableDataItem, b: HeadTableDataItem): Number {
+                return a.age.toInt() - b.age.toInt()
             }
         },
         jsObject {
@@ -70,50 +76,50 @@ private val tableColumns = arrayOf<ColumnProps<Any>>(
             )
             filterMultiple = false
             onFilter = { value, record ->
-                record.asDynamic().address.unsafeCast<String>().indexOf(value.unsafeCast<String>()) == 0
+                record.address.indexOf(value.unsafeCast<String>()) == 0
             }
-            sorter =  fun (a: Any, b: Any): Number {
-                return a.asDynamic().address.unsafeCast<String>().length - b.asDynamic().address.unsafeCast<String>().length
+            sorter =  fun (a: HeadTableDataItem, b: HeadTableDataItem): Number {
+                return a.address.length - b.address.length
             }
             sortDirections = arrayOf("descend", "ascend")
         }
 )
 
-private val data = arrayOf(
-        js {
+private val data = arrayOf<HeadTableDataItem>(
+        jsObject {
             key = "1"
             name = "John Brown"
             age = 32
             address = "New York No. 1 Lake Park"
         },
-        js {
+        jsObject {
             key = "2"
             name = "Jim Green"
             age = 42
             address = "London No. 1 Lake Park"
         },
-        js {
+        jsObject {
             key = "3"
             name = "Joe Black"
             age = 32
             address = "Sidney No. 1 Lake Park"
         },
-        js {
+        jsObject {
             key = "4"
             name = "Jim Red"
             age = 32
             address = "London No. 2 Lake Park"
         }
-).unsafeCast<Array<Any>>()
+)
 
-private fun onChange(pagination: PaginationConfig, filters: Any, sorter: SorterResult<Any>, extra: TableCurrentDataSource<Any>) {
+private fun onChange(pagination: PaginationConfig, filters: Any, sorter: SorterResult<HeadTableDataItem>, extra: TableCurrentDataSource<HeadTableDataItem>) {
     console.log("params", pagination, filters, sorter)
 }
 
 fun RBuilder.head() {
     div("table-container") {
         attrs.id = "table-head"
-        table {
+        table<HeadTableDataItem, TableComponent<HeadTableDataItem>> {
             attrs {
                 columns = tableColumns
                 dataSource = data

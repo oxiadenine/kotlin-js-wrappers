@@ -5,6 +5,7 @@ import antd.FormEventHandler
 import antd.button.button
 import antd.form.*
 import antd.input.input
+import antd.select.SelectComponent
 import antd.select.SelectValue
 import antd.select.option
 import antd.select.select
@@ -103,7 +104,7 @@ class PriceInput : RComponent<PriceInputProps, PriceInputState>() {
                     }
                 }
             }
-            select {
+            select<String, SelectComponent<String>> {
                 attrs {
                     value = state.currency
                     size = props.size

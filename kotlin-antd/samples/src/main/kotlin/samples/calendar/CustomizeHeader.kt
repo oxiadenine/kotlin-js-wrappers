@@ -6,6 +6,7 @@ import antd.grid.col
 import antd.grid.row
 import antd.radio.radioButton
 import antd.radio.radioGroup
+import antd.select.SelectComponent
 import antd.select.option
 import antd.select.select
 import kotlinext.js.js
@@ -103,30 +104,30 @@ fun RBuilder.customizeHeader() {
                                     }
                                 }
                                 col {
-                                    select {
+                                    select<Number, SelectComponent<Number>> {
                                         attrs {
                                             size = "small"
                                             dropdownMatchSelectWidth = false
                                             className = "my-year-select"
                                             onChange = { newYear, _ ->
-                                                val now = headerRender.value.clone().year(newYear.unsafeCast<Number>())
+                                                val now = headerRender.value.clone().year(newYear)
 
                                                 headerRender.onChange?.invoke(now)
                                             }
-                                            value = year.toString()
+                                            value = year
                                         }
                                         childList.add(options.toTypedArray())
                                     }
                                 }
                                 col {
-                                    select {
+                                    select<String, SelectComponent<String>> {
                                         attrs {
                                             size = "small"
                                             dropdownMatchSelectWidth = false
                                             value = month.toString()
                                             onChange = { selectedMonth, _ ->
                                                 val newValue = headerRender.value.clone()
-                                                newValue.month(selectedMonth.unsafeCast<String>().toInt(10))
+                                                newValue.month(selectedMonth.toInt(10))
 
                                                 headerRender.onChange?.invoke(newValue)
                                             }

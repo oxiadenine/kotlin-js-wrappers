@@ -3,6 +3,7 @@ package samples.list
 import antd.MouseEventHandler
 import antd.avatar.avatar
 import antd.button.button
+import antd.list.ListComponent
 import antd.list.list
 import antd.list.listItem
 import antd.list.listItemMeta
@@ -21,11 +22,16 @@ import kotlin.js.json
 private val count = 3
 private val fakeDataUrl = "https://randomuser.me/api/?results=${count}&inc=name,gender,email,nat&noinfo"
 
+interface LoadMoreListDataItem {
+    var loading: Boolean
+    var name: dynamic
+}
+
 interface LoadMoreListState : RState {
     var initLoading: Boolean
     var loading: Boolean
-    var data: Array<Any>
-    var list: Array<Any>
+    var data: Array<LoadMoreListDataItem>
+    var list: Array<LoadMoreListDataItem>
 }
 
 class LoadMoreList : RComponent<RProps, LoadMoreListState>() {
@@ -45,12 +51,12 @@ class LoadMoreList : RComponent<RProps, LoadMoreListState>() {
                 js {
                     loading = true
                     name = emptyArray<Any>()
-                }.unsafeCast<Any>()
+                }.unsafeCast<LoadMoreListDataItem>()
             })
         }
 
         getData { res ->
-            val newData = state.data.plus(res.asDynamic().results.unsafeCast<Array<Any>>())
+            val newData = state.data.plus(res.asDynamic().results.unsafeCast<Array<LoadMoreListDataItem>>())
 
             setState(jsObject<LoadMoreListState> {
                 data = newData
@@ -69,8 +75,8 @@ class LoadMoreList : RComponent<RProps, LoadMoreListState>() {
         getData { res ->
             setState {
                 initLoading = false
-                data = res.asDynamic().results.unsafeCast<Array<Any>>()
-                list = res.asDynamic().results.unsafeCast<Array<Any>>()
+                data = res.asDynamic().results.unsafeCast<Array<LoadMoreListDataItem>>()
+                list = res.asDynamic().results.unsafeCast<Array<LoadMoreListDataItem>>()
             }
         }
     }
@@ -100,7 +106,7 @@ class LoadMoreList : RComponent<RProps, LoadMoreListState>() {
             }
         } else null
 
-        list {
+        list<LoadMoreListDataItem, ListComponent<LoadMoreListDataItem>> {
             attrs {
                 className = "demo-loadmore-list"
                 loading = state.initLoading
@@ -117,7 +123,7 @@ class LoadMoreList : RComponent<RProps, LoadMoreListState>() {
                             attrs {
                                 avatar = true
                                 title = false
-                                loading = item.asDynamic().loading.unsafeCast<Boolean>()
+                                loading = item.loading
                                 active = true
                             }
                             listItemMeta {
@@ -130,7 +136,7 @@ class LoadMoreList : RComponent<RProps, LoadMoreListState>() {
                                     title = buildElement {
                                         a {
                                             attrs.href = "https://ant.design"
-                                            +"${item.asDynamic().name["last"] ?: ""}"
+                                            +"${item.name["last"] ?: ""}"
                                         }
                                     }
                                     description = "Ant Design, a design language for background applications, is refined by Ant UED Team"

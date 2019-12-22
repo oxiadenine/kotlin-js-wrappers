@@ -1,6 +1,6 @@
 package samples.select
 
-import antd.select.SelectValue
+import antd.select.SelectComponent
 import antd.select.option
 import antd.select.select
 import kotlinext.js.js
@@ -20,27 +20,27 @@ interface CoordinateAppState : RState {
 }
 
 class CoordinateApp : RComponent<RProps, CoordinateAppState>() {
-    private val handleProvinceChange = fun (value: SelectValue, _: Any) {
+    private val handleProvinceChange = fun (value: String, _: Any) {
         setState {
-            cities = cityData[value]!!
-            secondCity = cityData[value]!![0]
+            cities = cityData[value] ?: error("")
+            secondCity = (cityData[value] ?: error(""))[0]
         }
     }
 
-    private val handleSecondCityChange = fun (value: SelectValue, _: Any) {
+    private val handleSecondCityChange = fun (value: String, _: Any) {
         setState {
-            secondCity = value as String
+            secondCity = value
         }
     }
 
     override fun CoordinateAppState.init() {
-        cities = cityData[provinceData[0]]!!
-        secondCity = cityData[provinceData[0]]!![0]
+        cities = cityData[provinceData[0]] ?: error("")
+        secondCity = (cityData[provinceData[0]] ?: error(""))[0]
     }
 
     override fun RBuilder.render() {
         div {
-            select {
+            select<String, SelectComponent<String>> {
                 attrs {
                     defaultValue = provinceData[0]
                     style = js { width = 90 }
@@ -53,7 +53,7 @@ class CoordinateApp : RComponent<RProps, CoordinateAppState>() {
                     }
                 }
             }
-            select {
+            select<String, SelectComponent<String>> {
                 attrs {
                     style = js { width = 90 }
                     value = state.secondCity

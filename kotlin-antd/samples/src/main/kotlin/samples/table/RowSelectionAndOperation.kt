@@ -3,6 +3,7 @@ package samples.table
 import antd.MouseEventHandler
 import antd.button.button
 import antd.table.ColumnProps
+import antd.table.TableComponent
 import antd.table.TableRowSelection
 import antd.table.table
 import kotlinext.js.js
@@ -14,7 +15,14 @@ import react.dom.jsStyle
 import react.dom.span
 import kotlin.browser.window
 
-private val tableColumns = arrayOf<ColumnProps<Any>>(
+private interface RowSelectionAndOperationTableDataItem {
+    var key: String
+    var name: String
+    var age: Number
+    var address: String
+}
+
+private val tableColumns = arrayOf<ColumnProps<RowSelectionAndOperationTableDataItem>>(
         jsObject {
             title = "Name"
             dataIndex = "name"
@@ -30,13 +38,13 @@ private val tableColumns = arrayOf<ColumnProps<Any>>(
 )
 
 private val data = (0..46).map { i ->
-    js {
+    jsObject<RowSelectionAndOperationTableDataItem> {
         key = "$i"
         name = "Edward King $i"
         age = 32
         address = "London, Park Lane no. $i"
     }
-}.toTypedArray().unsafeCast<Array<Any>>()
+}.toTypedArray()
 
 interface RowSelectionAndOperationAppState : RState {
     var selectedRowKeys: Array<String>
@@ -57,7 +65,7 @@ class RowSelectionAndOperationApp : RComponent<RProps, RowSelectionAndOperationA
         }, 1000)
     }
 
-    private val handleSelectChange = fun (rowKeys: Any?, _: Array<Any>) {
+    private val handleSelectChange = fun (rowKeys: Any?, _: Array<RowSelectionAndOperationTableDataItem>) {
         console.log("selectedRowKeys changed: ", rowKeys)
 
         setState {
@@ -71,7 +79,7 @@ class RowSelectionAndOperationApp : RComponent<RProps, RowSelectionAndOperationA
     }
 
     override fun RBuilder.render() {
-        val tableRowSelection = jsObject<TableRowSelection<Any>> {
+        val tableRowSelection = jsObject<TableRowSelection<RowSelectionAndOperationTableDataItem>> {
             selectedRowKeys = state.selectedRowKeys
             onChange = handleSelectChange
         }
@@ -97,7 +105,7 @@ class RowSelectionAndOperationApp : RComponent<RProps, RowSelectionAndOperationA
                     } else +""
                 }
             }
-            table {
+            table<RowSelectionAndOperationTableDataItem, TableComponent<RowSelectionAndOperationTableDataItem>> {
                 attrs {
                     rowSelection = tableRowSelection
                     columns = tableColumns

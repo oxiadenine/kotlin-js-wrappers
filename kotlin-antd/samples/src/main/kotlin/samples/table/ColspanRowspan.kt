@@ -9,6 +9,15 @@ import react.buildElement
 import react.dom.a
 import react.dom.div
 
+private interface ColspanRowspanTableDataItem {
+    var key: String
+    var name: String
+    var age: Number
+    var tel: String
+    var phone: String
+    var address: String
+}
+
 // In the fifth row, other columns are merged into first column
 // by setting it's colSpan to be 0
 private val renderContent: (Any, Any, Number) -> Any = { value, _, index ->
@@ -24,7 +33,7 @@ private val renderContent: (Any, Any, Number) -> Any = { value, _, index ->
     obj.unsafeCast<Any>()
 }
 
-private val tableColumns = arrayOf<ColumnProps<Any>>(
+private val tableColumns = arrayOf<ColumnProps<ColspanRowspanTableDataItem>>(
         jsObject {
             title = "Name"
             dataIndex = "name"
@@ -97,8 +106,8 @@ private val tableColumns = arrayOf<ColumnProps<Any>>(
         }
 )
 
-private val data = arrayOf(
-        js {
+private val data = arrayOf<ColspanRowspanTableDataItem>(
+        jsObject {
             key = "1"
             name = "John Brown"
             age = 32
@@ -106,7 +115,7 @@ private val data = arrayOf(
             phone = "18889898989"
             address = "New York No. 1 Lake Park"
         },
-        js {
+        jsObject {
             key = "2"
             name = "Jim Green"
             tel = "0571-22098333"
@@ -114,7 +123,7 @@ private val data = arrayOf(
             age = 42
             address = "London No. 1 Lake Park"
         },
-        js {
+        jsObject {
             key = "3"
             name = "Joe Black"
             age = 32
@@ -122,7 +131,7 @@ private val data = arrayOf(
             phone = "18900010002"
             address = "Sidney No. 1 Lake Park"
         },
-        js {
+        jsObject {
             key = "4"
             name = "Jim Red"
             age = 18
@@ -130,7 +139,7 @@ private val data = arrayOf(
             phone = "18900010002"
             address = "London No. 2 Lake Park"
         },
-        js {
+        jsObject {
             key = "5"
             name = "Jake White"
             age = 18
@@ -138,12 +147,12 @@ private val data = arrayOf(
             phone = "18900010002"
             address = "Dublin No. 2 Lake Park"
         }
-).unsafeCast<Array<Any>>()
+)
 
 fun RBuilder.colspanRowspan() {
     div("table-container") {
         attrs.id = "table-colspan-rowspan"
-        table {
+        table<ColspanRowspanTableDataItem, TableComponent<ColspanRowspanTableDataItem>> {
             attrs {
                 columns = tableColumns
                 dataSource = data

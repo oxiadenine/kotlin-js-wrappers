@@ -1,6 +1,6 @@
 package samples.select
 
-import antd.select.SelectValue
+import antd.select.SelectComponent
 import antd.select.option
 import antd.select.select
 import kotlinext.js.js
@@ -15,9 +15,9 @@ interface SelectWithHiddenSelectedOptionsState : RState {
 }
 
 class SelectWithHiddenSelectedOptions : RComponent<RProps, SelectWithHiddenSelectedOptionsState>() {
-    private val handlehange: (SelectValue, Any) -> Unit = { items, _ ->
+    private val handlehange: (Array<String>, Any) -> Unit = { items, _ ->
         setState {
-            selectedItems = items.unsafeCast<Array<String>>()
+            selectedItems = items
         }
     }
 
@@ -28,7 +28,7 @@ class SelectWithHiddenSelectedOptions : RComponent<RProps, SelectWithHiddenSelec
     override fun RBuilder.render() {
         val filteredOptions = options.filter { o -> !state.selectedItems.contains(o) }
 
-        select {
+        select<Array<String>, SelectComponent<Array<String>>> {
             attrs {
                 mode = "multiple"
                 placeholder = "Inserted are removed"

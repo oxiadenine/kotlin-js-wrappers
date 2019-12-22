@@ -1,13 +1,20 @@
 package samples.table
 
 import antd.table.*
-import kotlinext.js.js
 import kotlinext.js.jsObject
 import kotlinx.html.id
 import react.RBuilder
 import react.dom.div
 
-private val tableColumns = arrayOf<ColumnProps<Any>>(
+private interface ExpandChildrenTableDataItem {
+    var key: String
+    var name: String
+    var age: Number
+    var address: String
+    var children: Array<ExpandChildrenTableDataItem>
+}
+
+private val tableColumns = arrayOf<ColumnProps<ExpandChildrenTableDataItem>>(
         jsObject {
             title = "Name"
             dataIndex = "name"
@@ -27,53 +34,53 @@ private val tableColumns = arrayOf<ColumnProps<Any>>(
         }
 )
 
-private val data = arrayOf(
-        js {
-            key = 1
+private val data = arrayOf<ExpandChildrenTableDataItem>(
+        jsObject {
+            key = "1"
             name = "John Brown sr."
             age = 60
             address = "New York No. 1 Lake Park"
             children = arrayOf(
-                    js {
-                        key = 11
+                    jsObject {
+                        key = "11"
                         name = "John Brown"
                         age = 42
                         address = "New York No. 2 Lake Park"
                     },
-                    js {
-                        key = 12
+                    jsObject {
+                        key = "12"
                         name = "John Brown jr."
                         age = 30
                         address = "New York No. 3 Lake Park"
                         children = arrayOf(
-                                js {
-                                    key = 121
+                                jsObject {
+                                    key = "121"
                                     name = "Jimmy Brown"
                                     age = 16
                                     address = "New York No. 3 Lake Park"
                                 }
                         )
                     },
-                    js {
-                        key = 13
+                    jsObject {
+                        key = "13"
                         name = "Jim Green sr."
                         age = 72
                         address = "London No. 1 Lake Park"
                         children = arrayOf(
-                                js {
-                                    key = 131
+                                jsObject {
+                                    key = "131"
                                     name = "Jim Green"
                                     age = 42
                                     address = "London No. 2 Lake Park"
                                     children = arrayOf(
-                                            js {
-                                                key = 1311
+                                            jsObject {
+                                                key = "1311"
                                                 name = "Jim Green jr."
                                                 age = 25
                                                 address = "London No. 3 Lake Park"
                                             },
-                                            js {
-                                                key = 1312
+                                            jsObject {
+                                                key = "1312"
                                                 name = "Jimmy Green sr."
                                                 age = 18
                                                 address = "London No. 4 Lake Park"
@@ -84,15 +91,15 @@ private val data = arrayOf(
                     }
             )
         },
-        js {
+        jsObject {
             key = "2"
             name = "John Black"
             age = 32
             address = "Sidney No. 1 Lake Park"
         }
-).unsafeCast<Array<Any>>()
+)
 
-private val tableRowSelection = jsObject<TableRowSelection<Any>> {
+private val tableRowSelection = jsObject<TableRowSelection<ExpandChildrenTableDataItem>> {
     onChange = { selectedRowKeys, selectedRows ->
         console.log("selectedRowKeys: $selectedRowKeys", "selectedRows: ", selectedRows)
     }
@@ -107,7 +114,7 @@ private val tableRowSelection = jsObject<TableRowSelection<Any>> {
 fun RBuilder.expandChildren() {
     div("table-container") {
         attrs.id = "table-expand-children"
-        table {
+        table<ExpandChildrenTableDataItem, TableComponent<ExpandChildrenTableDataItem>> {
             attrs {
                 columns = tableColumns
                 rowSelection = tableRowSelection

@@ -11,7 +11,15 @@ import react.dom.div
 import react.dom.jsStyle
 import react.dom.p
 
-private val tableColumns = arrayOf<ColumnProps<Any>>(
+private interface ExpandTableDataItem {
+    var key: String
+    var name: String
+    var age: Number
+    var address: String
+    var description: String
+}
+
+private val tableColumns = arrayOf<ColumnProps<ExpandTableDataItem>>(
         jsObject {
             title = "Name"
             dataIndex = "name"
@@ -42,40 +50,40 @@ private val tableColumns = arrayOf<ColumnProps<Any>>(
         }
 )
 
-private val data = arrayOf(
-        js {
+private val data = arrayOf<ExpandTableDataItem>(
+        jsObject {
             key = "1"
             name = "John Brown"
             age = 32
             address = "New York No. 1 Lake Park"
             description = "My name is John Brown, I am 32 years old, living in New York No. 1 Lake Park."
         },
-        js {
+        jsObject {
             key = "2"
             name = "Jim Green"
             age = 42
             address = "London No. 1 Lake Park"
             description = "My name is Jim Green, I am 42 years old, living in London No. 1 Lake Park."
         },
-        js {
+        jsObject {
             key = "3"
             name = "Joe Black"
             age = 32
             address = "Sidney No. 1 Lake Park"
             description = "My name is Joe Black, I am 32 years old, living in Sidney No. 1 Lake Park."
         }
-).unsafeCast<Array<Any>>()
+)
 
 fun RBuilder.expand() {
     div("table-container") {
         attrs.id = "table-expand"
-        table {
+        table<ExpandTableDataItem, TableComponent<ExpandTableDataItem>> {
             attrs {
                 columns = tableColumns
                 expandedRowRender = { record, _, _, _ ->
                     p {
                         attrs.jsStyle = js { margin = 0 }
-                        +record.asDynamic().description.unsafeCast<String>()
+                        +record.description
                     }
                 }
                 dataSource = data

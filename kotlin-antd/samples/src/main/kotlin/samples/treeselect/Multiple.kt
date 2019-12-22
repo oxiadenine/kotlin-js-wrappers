@@ -1,5 +1,6 @@
 package samples.treeselect
 
+import antd.treeselect.TreeSelectComponent
 import antd.treeselect.treeNode
 import antd.treeselect.treeSelect
 import kotlinext.js.js
@@ -8,11 +9,11 @@ import react.*
 import react.dom.*
 
 interface MultipleDemoState : RState {
-    var value: Any?
+    var value: String?
 }
 
 class MultipleDemo : RComponent<RProps, MultipleDemoState>() {
-    private val handleChange = fun (newValue: Any, _: Any, _: Any) {
+    private val handleChange = fun (newValue: String, _: Any, _: Any) {
         console.log(newValue)
 
         setState {
@@ -25,7 +26,7 @@ class MultipleDemo : RComponent<RProps, MultipleDemoState>() {
     }
 
     override fun RBuilder.render() {
-        treeSelect {
+        treeSelect<String, TreeSelectComponent<String>> {
             attrs {
                 showSearch = true
                 style = js { width = 300 }

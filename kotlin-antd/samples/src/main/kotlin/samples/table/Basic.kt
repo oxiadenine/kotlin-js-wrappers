@@ -2,9 +2,9 @@ package samples.table
 
 import antd.divider.divider
 import antd.table.ColumnProps
+import antd.table.TableComponent
 import antd.table.table
 import antd.tag.tag
-import kotlinext.js.js
 import kotlinext.js.jsObject
 import kotlinx.html.id
 import react.RBuilder
@@ -13,7 +13,15 @@ import react.dom.a
 import react.dom.div
 import react.dom.span
 
-private val tableColumns = arrayOf<ColumnProps<Any>>(
+private interface BasicTableDataItem {
+    var key: String
+    var name: String
+    var age: Number
+    var address: String
+    var tags: Array<String>
+}
+
+private val tableColumns = arrayOf<ColumnProps<BasicTableDataItem>>(
         jsObject {
             title = "Name"
             dataIndex = "name"
@@ -71,7 +79,7 @@ private val tableColumns = arrayOf<ColumnProps<Any>>(
                     span {
                         a {
                             attrs.href = "javascript:;"
-                            +"Invite ${record.asDynamic().name}"
+                            +"Invite ${record.name}"
                         }
                         divider {
                             attrs.type = "vertical"
@@ -86,34 +94,34 @@ private val tableColumns = arrayOf<ColumnProps<Any>>(
         }
 )
 
-private val data = arrayOf(
-        js {
+private val data = arrayOf<BasicTableDataItem>(
+        jsObject {
             key = "1"
             name = "John Brown"
             age = 32
             address = "New York No. 1 Lake Park"
             tags = arrayOf("nice", "developer")
         },
-        js {
+        jsObject {
             key = "2"
             name = "Jim Green"
             age = 42
             address = "London No. 1 Lake Park"
             tags = arrayOf("loser")
         },
-        js {
+        jsObject {
             key = "3"
             name = "Joe Black"
             age = 32
             address = "Sidney No. 1 Lake Park"
             tags = arrayOf("cool", "teacher")
         }
-).unsafeCast<Array<Any>>()
+)
 
 fun RBuilder.basic() {
     div("table-container") {
         attrs.id = "table-basic"
-        table {
+        table<BasicTableDataItem, TableComponent<BasicTableDataItem>> {
             attrs {
                 columns = tableColumns
                 dataSource = data

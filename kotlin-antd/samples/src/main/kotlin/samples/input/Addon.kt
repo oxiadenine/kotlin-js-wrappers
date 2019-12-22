@@ -2,6 +2,7 @@ package samples.input
 
 import antd.icon.icon
 import antd.input.input
+import antd.select.SelectComponent
 import antd.select.option
 import antd.select.select
 import kotlinext.js.js
@@ -10,7 +11,7 @@ import react.*
 import react.dom.*
 
 private val selectBefore = buildElement {
-    select {
+    select<String, SelectComponent<String>> {
         attrs {
             defaultValue = "Http://"
             style = js { width = 90 }
@@ -27,7 +28,7 @@ private val selectBefore = buildElement {
 }
 
 private val selectAfter = buildElement {
-    select {
+    select<String, SelectComponent<String>> {
         attrs {
             defaultValue = ".com"
             style = js { width = 80 }

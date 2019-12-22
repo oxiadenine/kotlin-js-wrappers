@@ -3,6 +3,7 @@ package samples.notification
 import antd.MouseEventHandler
 import antd.button.button
 import antd.notification.notification
+import antd.select.SelectComponent
 import antd.select.option
 import antd.select.select
 import kotlinext.js.js
@@ -24,7 +25,7 @@ fun RBuilder.placement() {
     div("notification-container") {
         attrs.id = "notification-placement"
         div {
-            select {
+            select<String, SelectComponent<String>> {
                 attrs {
                     defaultValue = "topRight"
                     style = js {
@@ -33,7 +34,7 @@ fun RBuilder.placement() {
                     }
                     onChange = { value, _ ->
                         notification.config(jsObject {
-                            placement = value as String
+                            placement = value
                         })
                     }
                 }

@@ -1,5 +1,6 @@
 package samples.tabs
 
+import antd.select.SelectComponent
 import antd.select.option
 import antd.select.select
 import antd.tabs.tabPane
@@ -30,12 +31,12 @@ class NestDemo : RComponent<RProps, NestDemoState>() {
 
     override fun RBuilder.render() {
         div {
-            select {
+            select<String, SelectComponent<String>> {
                 attrs {
                     style = js { width = 200 }
                     onChange = { value, _ ->
                         setState {
-                            parentPos = value.unsafeCast<String>()
+                            parentPos = value
                         }
                     }
                 }
@@ -49,12 +50,12 @@ class NestDemo : RComponent<RProps, NestDemoState>() {
                     }
                 }.toTypedArray()
             }
-            select {
+            select<String, SelectComponent<String>> {
                 attrs {
                     style = js { width = 200 }
                     onChange = { value, _ ->
                         setState {
-                            childPos = value.unsafeCast<String>()
+                            childPos = value
                         }
                     }
                 }
@@ -68,12 +69,12 @@ class NestDemo : RComponent<RProps, NestDemoState>() {
                     }
                 }.toTypedArray()
             }
-            select {
+            select<String, SelectComponent<String>> {
                 attrs {
                     style = js { width = 200 }
                     onChange = { value, _ ->
                         setState {
-                            parenType = value.unsafeCast<String>()
+                            parenType = value
                         }
                     }
                 }
@@ -86,12 +87,12 @@ class NestDemo : RComponent<RProps, NestDemoState>() {
                     +"Parent - card"
                 }
             }
-            select {
+            select<String, SelectComponent<String>> {
                 attrs {
                     style = js { width = 200 }
                     onChange = { value, _ ->
                         setState {
-                            childType = value.unsafeCast<String>()
+                            childType = value
                         }
                     }
                 }

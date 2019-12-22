@@ -1,6 +1,6 @@
 package samples.select
 
-import antd.select.SelectValue
+import antd.select.SelectComponent
 import antd.select.select
 import antd.select.option
 import kotlinext.js.js
@@ -17,14 +17,14 @@ private val children = (10..36).map { i ->
     }
 }.toTypedArray()
 
-private fun handleChange(value: SelectValue, option: Any) {
+private fun handleChange(value: Array<String>, option: Any) {
     console.log("selected $value")
 }
 
 fun RBuilder.tags() {
     div("select-container") {
         attrs.id = "select-tags"
-        select {
+        select<Array<String>, SelectComponent<Array<String>>> {
             attrs {
                 mode = "tags"
                 style = js { width = "100%" }

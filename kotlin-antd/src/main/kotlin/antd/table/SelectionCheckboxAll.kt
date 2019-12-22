@@ -5,7 +5,7 @@ import react.RProps
 import react.RState
 import react.ReactElement
 
-external object SelectionCheckboxAllComponent : Component<SelectionCheckboxAllProps<Any>, SelectionCheckboxAllState> {
+external class SelectionCheckboxAllComponent<T> : Component<SelectionCheckboxAllProps<T>, SelectionCheckboxAllState> {
     override fun render(): ReactElement?
 }
 

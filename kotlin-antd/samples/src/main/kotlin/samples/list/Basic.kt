@@ -1,27 +1,32 @@
 package samples.list
 
 import antd.avatar.avatar
+import antd.list.ListComponent
 import antd.list.list
 import antd.list.listItem
 import antd.list.listItemMeta
-import kotlinext.js.js
+import kotlinext.js.jsObject
 import kotlinx.html.id
 import react.RBuilder
 import react.buildElement
 import react.dom.a
 import react.dom.div
 
-private val data = arrayOf(
-        js {
+private interface BasicListDataItem {
+    var title: String
+}
+
+private val data = arrayOf<BasicListDataItem>(
+        jsObject {
             title = "Ant Design Title 1"
         },
-        js {
+        jsObject {
             title = "Ant Design Title 2"
         },
-        js {
+        jsObject {
             title = "Ant Design Title 3"
         },
-        js {
+        jsObject {
             title = "Ant Design Title 4"
         }
 )
@@ -29,7 +34,7 @@ private val data = arrayOf(
 fun RBuilder.basic() {
     div("list-container") {
         attrs.id = "list-basic"
-        list {
+        list<BasicListDataItem, ListComponent<BasicListDataItem>> {
             attrs {
                 itemLayout = "horizontal"
                 dataSource = data
@@ -45,7 +50,7 @@ fun RBuilder.basic() {
                                 title = buildElement {
                                     a {
                                         attrs.href = "https://ant.design"
-                                        +item.asDynamic().title.unsafeCast<String>()
+                                        +item.title
                                     }
                                 }
                                 description = "Ant Design, a design language for background applications, is refined by Ant UED Team"

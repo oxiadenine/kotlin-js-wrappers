@@ -1,7 +1,7 @@
 package samples.select
 
 import antd.icon.icon
-import antd.select.SelectValue
+import antd.select.SelectComponent
 import antd.select.option
 import antd.select.select
 import kotlinext.js.js
@@ -21,7 +21,7 @@ private val mehIcon = buildElement {
     }
 }
 
-private fun handleChange(value: SelectValue, option: Any) {
+private fun handleChange(value: String, option: Any) {
     console.log("selected $value")
 }
 
@@ -29,7 +29,7 @@ fun RBuilder.suffix() {
     div("select-container") {
         attrs.id = "select-suffix"
         div {
-            select {
+            select<String, SelectComponent<String>> {
                 attrs {
                     suffixIcon = smileIcon
                     defaultValue = "lucy"
@@ -56,7 +56,7 @@ fun RBuilder.suffix() {
                     +"Yiminghe"
                 }
             }
-            select {
+            select<String, SelectComponent<String>> {
                 attrs {
                     suffixIcon = mehIcon
                     defaultValue = "lucy"

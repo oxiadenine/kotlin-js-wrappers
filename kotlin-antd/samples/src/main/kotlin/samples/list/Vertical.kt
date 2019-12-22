@@ -2,6 +2,7 @@ package samples.list
 
 import antd.avatar.avatar
 import antd.icon.icon
+import antd.list.ListComponent
 import antd.list.list
 import antd.list.listItem
 import antd.list.listItemMeta
@@ -12,8 +13,16 @@ import kotlinx.html.id
 import react.*
 import react.dom.*
 
+private interface VerticalListDataItem {
+    var href: String
+    var title: String
+    var avatar: String
+    var description: String
+    var content: String
+}
+
 private val listData = (0..23).mapIndexed { i, _ ->
-    js {
+    jsObject<VerticalListDataItem> {
         href = "http://ant.design"
         title = "ant design part $i"
         avatar = "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
@@ -46,7 +55,7 @@ fun RBuilder.iconText(handler: RHandler<VerticalIconTextProps>) = child(Vertical
 fun RBuilder.vertical() {
     div("list-container") {
         attrs.id = "list-vertical"
-        list {
+        list<VerticalListDataItem, ListComponent<VerticalListDataItem>> {
             attrs {
                 itemLayout = "vertical"
                 size = "large"
@@ -67,7 +76,7 @@ fun RBuilder.vertical() {
                 renderItem = { item, _ ->
                     listItem {
                         attrs {
-                            key = item.asDynamic().title.unsafeCast<String>()
+                            key = item.title
                             actions = arrayOf(
                                     buildElement {
                                         iconText {
@@ -109,19 +118,19 @@ fun RBuilder.vertical() {
                             attrs {
                                 avatar = buildElement {
                                     avatar {
-                                        attrs.src = item.asDynamic().avatar.unsafeCast<String>()
+                                        attrs.src = item.avatar
                                     }
                                 }
                                 title = buildElement {
                                     a {
-                                        attrs.href = item.asDynamic().href.unsafeCast<String>()
-                                        +item.asDynamic().title.unsafeCast<String>()
+                                        attrs.href = item.href
+                                        +item.title
                                     }
                                 }
-                                description = item.asDynamic().description.unsafeCast<String>()
+                                description = item.description
                             }
                         }
-                        +item.asDynamic().content.unsafeCast<String>()
+                        +item.content
                     }
                 }
             }

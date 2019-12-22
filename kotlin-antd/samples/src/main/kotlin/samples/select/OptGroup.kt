@@ -1,22 +1,21 @@
 package samples.select
 
-import antd.select.SelectValue
+import antd.select.*
 import antd.select.optGroup
 import antd.select.option
-import antd.select.select
 import kotlinext.js.js
 import kotlinx.html.id
 import react.*
 import react.dom.*
 
-private fun handleChange(value: SelectValue, option: Any) {
+private fun handleChange(value: String, option: Any) {
     console.log("selected $value")
 }
 
 fun RBuilder.optGroup() {
     div("select-container") {
         attrs.id = "select-optgroup"
-        select {
+        select<String, SelectComponent<String>> {
             attrs {
                 defaultValue = "lucy"
                 style = js { width = 200 }

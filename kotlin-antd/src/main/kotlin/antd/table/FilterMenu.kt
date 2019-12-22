@@ -5,7 +5,7 @@ import react.RProps
 import react.RState
 import react.ReactElement
 
-external object FilterMenuComponent : Component<FilterMenuProps<Any>, FilterMenuState<Any>> {
+external class FilterMenuComponent<T> : Component<FilterMenuProps<T>, FilterMenuState<Any>> {
     override fun render(): ReactElement?
 }
 

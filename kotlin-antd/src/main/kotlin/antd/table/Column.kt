@@ -7,7 +7,7 @@ import react.RProps
 import react.RState
 import react.ReactElement
 
-external object ColumnComponent : Component<ColumnProps<Any>, RState> {
+external class ColumnComponent<T> : Component<ColumnProps<T>, RState> {
     override fun render(): ReactElement?
 }
 
