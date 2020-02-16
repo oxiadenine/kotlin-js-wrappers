@@ -11,11 +11,11 @@
     "internationalization"
   ],
   "files": [
-    "build/classes",
+    "kotlin",
     "package.json",
     "README.md"
   ],
-  "main": "build/classes/main/kotlin-react-intl.js",
+  "main": "kotlin/kotlin-js-wrappers-kotlin-react-intl.js",
   "repository": "https://github.com/samgarasx/kotlin-js-wrappers/tree/master/kotlin-react-intl",
   "peerDependencies": {
     "@jetbrains/kotlin-react": "^$kotlin_react_version",

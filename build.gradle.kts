@@ -1,16 +1,22 @@
 import com.moowork.gradle.node.npm.NpmTask
-import org.jetbrains.kotlin.gradle.tasks.Kotlin2JsCompile
 
 group = "com.github.samgarasx"
-version = "0.1.0"
 
 plugins {
-    id("kotlin2js") version "1.3.50" apply false
+    kotlin("js") version "1.3.61"
     id("com.jfrog.bintray") version "1.8.4"
     id("com.moowork.node") version "1.3.1"
     `maven-publish`
-    java
 }
+
+repositories {
+    jcenter()
+}
+
+project(":kotlin-antd").version = "3.20.3-pre.2"
+project(":kotlin-moment").version = "2.24.0-pre.1"
+project(":kotlin-react-intl").version = "3.1.12-pre.1"
+project(":kotlin-react-responsive").version = "7.0.0-pre.1"
 
 subprojects {
     apply("$rootDir/versions.gradle.kts")
@@ -21,50 +27,71 @@ subprojects {
         maven("https://dl.bintray.com/samgarasx/kotlin-js-wrappers")
     }
 
-    extra.set("applyKotlinJS", {
-        apply(plugin = "kotlin2js")
+    val projectVersion = project.version as String
+
+    val kotlinVersion: String by project.extra
+    val kotlinReactVersion: String by project.extra
+    val kotlinReactDomVersion: String by project.extra
+    val reactVersion: String by project.extra
+    val reactDomVersion: String by project.extra
+    val coreJsVersion: String by project.extra
+    val styleLoaderVersion: String by project.extra
+    val cssLoaderVersion: String by project.extra
+
+    extra.set("configureKotlinJs", {
+        apply(plugin = "org.jetbrains.kotlin.js")
 
         dependencies {
-            "implementation"(kotlin("stdlib-js"))
+            implementation(kotlin("stdlib-js"))
         }
 
-        tasks.withType<Kotlin2JsCompile> {
-            kotlinOptions {
-                outputFile = "$projectDir/build/classes/main/${project.name}.js"
-                moduleKind = "commonjs"
-                sourceMap = true
-                sourceMapEmbedSources = "always"
+        kotlin {
+            target {
+                browser {
+                    useCommonJs()
+                }
             }
         }
     })
 
-    extra.set("configurePublishing", { baseVersion: String ->
+    extra.set("configureSamples", {
+        val parentProjectNAme = parent!!.project.name
+        val parentProjectVersion = parent!!.project.version as String
+
+        dependencies {
+            implementation(project(":$parentProjectNAme"))
+
+            implementation("org.jetbrains:kotlin-react:$kotlinReactVersion-kotlin-$kotlinVersion")
+            implementation("org.jetbrains:kotlin-react-dom:$kotlinReactDomVersion-kotlin-$kotlinVersion")
+        }
+
+        kotlin {
+            val packageName = parentProjectNAme.replaceBefore("-", "").removePrefix("-")
+            val packageVersion = parentProjectVersion.replaceAfter("-", "").removeSuffix("-")
+
+            sourceSets {
+                main {
+                    dependencies {
+                        implementation(npm(packageName, packageVersion))
+                        implementation(npm("react", reactVersion))
+                        implementation(npm("react-dom", reactDomVersion))
+                        implementation(npm("core-js", coreJsVersion))
+                        implementation(npm("style-loader", styleLoaderVersion))
+                        implementation(npm("css-loader", cssLoaderVersion))
+                    }
+                }
+            }
+        }
+    })
+
+    extra.set("configureBintrayPublishing", {
         apply {
-            plugin("kotlin2js")
             plugin("com.jfrog.bintray")
             plugin("com.moowork.node")
             plugin("maven-publish")
-            plugin("java")
         }
 
-        val kotlinVersion: String by project.extra
-        val kotlinReactVersion: String by project.extra
-        val kotlinReactDomVersion: String by project.extra
-        val kotlinAntdVersion: String by project.extra
-        val kotlinMomentVersion: String by project.extra
-        val kotlinReactIntlVersion: String by project.extra
-        val kotlinReactResponsiveVersion: String by project.extra
-
-        val sourcesJar = task<Jar>("sourcesJar") {
-            setProperty("archiveClassifier", "sources")
-            from(sourceSets["main"].allSource)
-        }
-
-        artifacts {
-            add("archives", sourcesJar)
-        }
-
-        val versionName = "$baseVersion-kotlin-$kotlinVersion"
+        val pkgVersionName = "$projectVersion-kotlin-$kotlinVersion"
 
         bintray {
             user = System.getenv("BINTRAY_USER")
@@ -77,7 +104,7 @@ subprojects {
                 vcsUrl = "https://github.com/samgarasx/kotlin-js-wrappers.git"
                 setLicenses("Apache-2.0")
                 version = VersionConfig().apply {
-                    name = versionName
+                    name = pkgVersionName
                 }
 
                 setPublications("Publication")
@@ -86,38 +113,30 @@ subprojects {
 
         publishing {
             publications.register("Publication", MavenPublication::class) {
-                from(components["java"])
-                artifact(sourcesJar)
+                from(components["kotlin"])
                 groupId = "com.github.samgarasx"
                 artifactId = project.name
-                version = versionName
+                version = pkgVersionName
             }
         }
+    })
 
+    extra.set("configureNpmPublishing", { packageVersions: Map<String, String> ->
         tasks {
             register<Copy>("processPkg") {
-                from("..")
-                from(".")
-                into("build/npm")
+                from(project.projectDir)
+                into("${project.buildDir}/npm")
                 include("README.md")
                 include("package.json")
-                expand(
-                    Pair("kotlin_version", kotlinVersion),
-                    Pair("kotlin_react_version", kotlinReactVersion),
-                    Pair("kotlin_react_dom_version", kotlinReactDomVersion),
-                    Pair("kotlin_antd_version", kotlinAntdVersion),
-                    Pair("kotlin_moment_version", kotlinMomentVersion),
-                    Pair("kotlin_react_intl_version", kotlinReactIntlVersion),
-                    Pair("kotlin_react_responsive_version", kotlinReactResponsiveVersion)
-                )
+                expand(packageVersions)
             }
 
             register<Copy>("buildPkg") {
-                from(".")
-                into("build/npm")
-                exclude("README.md")
+                from("${rootProject.buildDir}/js/packages/${rootProject.name}-${project.name}")
+                into("${project.buildDir}/npm")
                 exclude("package.json")
-                exclude("build/npm")
+                exclude("package.json.hash")
+                exclude("webpack.config.js")
                 dependsOn("build")
             }
 
@@ -131,7 +150,7 @@ subprojects {
             task<NpmTask>("npmPack") {
                 setNpmCommand("pack")
                 setWorkingDir(file("${project.buildDir}/npm"))
-                dependsOn("buildPkg", "processPkg")
+                dependsOn( "buildPkg", "processPkg")
             }
         }
     })

@@ -1,9 +1,12 @@
 import org.jetbrains.kotlin.utils.addToStdlib.cast
 
-typealias ApplyKotlinJSFunc = () -> Unit
-typealias ConfigurePublishingFunc = (String) -> Unit
+val kotlinVersion: String by project.extra
 
-val kotlinMomentVersion: String by project.extra
+val packageVersions = mapOf(
+    "kotlin_version" to kotlinVersion,
+    "kotlin_moment_version" to project.version as String
+)
 
-extra.get("applyKotlinJS").cast<ApplyKotlinJSFunc>().invoke()
-extra.get("configurePublishing").cast<ConfigurePublishingFunc>().invoke(kotlinMomentVersion)
+extra.get("configureKotlinJs").cast<() -> Unit>().invoke()
+extra.get("configureBintrayPublishing").cast<() -> Unit>().invoke()
+extra.get("configureNpmPublishing").cast<(Map<String, String>) -> Unit>().invoke(packageVersions)

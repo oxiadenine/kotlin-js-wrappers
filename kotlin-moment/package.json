@@ -8,11 +8,11 @@
     "moment"
   ],
   "files": [
-    "build/classes",
+    "kotlin",
     "package.json",
     "README.md"
   ],
-  "main": "build/classes/main/kotlin-moment.js",
+  "main": "kotlin/kotlin-js-wrappers-kotlin-moment.js",
   "repository": "https://github.com/samgarasx/kotlin-js-wrappers/tree/master/kotlin-moment",
   "peerDependencies": {
     "kotlin": "^$kotlin_version",

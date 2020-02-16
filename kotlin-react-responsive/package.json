@@ -10,11 +10,11 @@
     "media query"
   ],
   "files": [
-    "build/classes",
+    "kotlin",
     "package.json",
     "README.md"
   ],
-  "main": "build/classes/main/kotlin-react-responsive.js",
+  "main": "kotlin/kotlin-js-wrappers-kotlin-react-responsive.js",
   "repository": "https://github.com/samgarasx/kotlin-js-wrappers/tree/master/kotlin-react-responsive",
   "peerDependencies": {
     "@jetbrains/kotlin-react": "^$kotlin_react_version",

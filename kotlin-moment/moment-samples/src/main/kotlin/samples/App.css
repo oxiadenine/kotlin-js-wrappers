@@ -1,0 +1,27 @@
+.app-container {
+  margin: 20px;
+  text-align: center;
+}
+
+.app-content {
+  margin: 50px;
+}
+
+.app-code-box {
+  padding: 10px 20px;
+  background: lightgrey;
+  border: darkgrey 1px solid;
+}
+
+.app-code {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.app-code * {
+  margin: 5px;
+}
+
+.app-code span {
+  margin-left: auto;
+}

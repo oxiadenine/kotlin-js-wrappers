@@ -1,16 +1,17 @@
 // Kotlin
-project.extra.set("kotlinVersion", "1.3.50")
+project.extra.set("kotlinVersion", "1.3.61")
 
 // Plugins
 project.extra.set("nodePluginVersion", "1.3.1")
 project.extra.set("bintrayPluginVersion", "1.8.4")
 
 // Dependencies
-project.extra.set("kotlinReactVersion", "16.9.0-pre.83")
-project.extra.set("kotlinReactDomVersion", "16.9.0-pre.83")
+project.extra.set("kotlinReactVersion", "16.9.0-pre.91")
+project.extra.set("kotlinReactDomVersion", "16.9.0-pre.91")
 
-// Projects
-project.extra.set("kotlinAntdVersion", "3.20.3-pre.1")
-project.extra.set("kotlinMomentVersion", "2.24.0-pre.0")
-project.extra.set("kotlinReactIntlVersion", "3.1.11-pre.0")
-project.extra.set("kotlinReactResponsiveVersion", "7.0.0-pre.0")
+// NPM Dependencies
+project.extra.set("reactVersion", "16.9.0")
+project.extra.set("reactDomVersion", "16.9.0")
+project.extra.set("coreJsVersion", "3.6.4")
+project.extra.set("styleLoaderVersion", "1.1.3")
+project.extra.set("cssLoaderVersion", "3.4.2")

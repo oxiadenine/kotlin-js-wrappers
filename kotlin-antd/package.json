@@ -9,16 +9,16 @@
     "design"
   ],
   "files": [
-    "build/classes",
+    "kotlin",
     "package.json",
     "README.md"
   ],
-  "main": "build/classes/main/kotlin-antd.js",
+  "main": "kotlin/kotlin-js-wrappers-kotlin-antd.js",
   "repository": "https://github.com/samgarasx/kotlin-js-wrappers/tree/master/kotlin-antd",
   "peerDependencies": {
     "@jetbrains/kotlin-react": "^$kotlin_react_version",
     "@jetbrains/kotlin-react-dom": "^$kotlin_react_dom_version",
-    "@kotlinspain/kotlin-moment": "^$kotlin_moment_version",
+    "kotlin-moment": "^$kotlin_moment_version",
     "kotlin": "^$kotlin_version",
     "antd": ">3.10.10 <=3.20.x"
   },
