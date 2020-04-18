@@ -5,8 +5,8 @@ val kotlinReactVersion: String by project.extra
 
 val packageVersions = mapOf(
     "kotlin_version" to kotlinVersion,
-    "kotlin_react_responsive_version" to project.version as String,
-    "kotlin_react_version" to kotlinReactVersion
+    "kotlin_react_version" to kotlinReactVersion,
+    "kotlin_react_responsive_version" to project.version as String
 )
 
 extra.get("configureKotlinJs").cast<() -> Unit>().invoke()

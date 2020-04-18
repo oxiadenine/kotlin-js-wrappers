@@ -3,8 +3,8 @@ import com.moowork.gradle.node.npm.NpmTask
 group = "com.github.samgarasx"
 
 plugins {
-    kotlin("js") version "1.3.61"
-    id("com.jfrog.bintray") version "1.8.4"
+    kotlin("js") version "1.3.72"
+    id("com.jfrog.bintray") version "1.8.5"
     id("com.moowork.node") version "1.3.1"
     `maven-publish`
 }
@@ -30,6 +30,8 @@ subprojects {
     val projectVersion = project.version as String
 
     val kotlinVersion: String by project.extra
+    val kotlinxHtmlVersion: String by project.extra
+    val kotlinExtensionsVersion: String by project.extra
     val kotlinReactVersion: String by project.extra
     val kotlinReactDomVersion: String by project.extra
     val reactVersion: String by project.extra
@@ -43,6 +45,9 @@ subprojects {
 
         dependencies {
             implementation(kotlin("stdlib-js"))
+
+            implementation("org.jetbrains.kotlinx:kotlinx-html-js:$kotlinxHtmlVersion")
+            implementation("org.jetbrains:kotlin-extensions:$kotlinExtensionsVersion-kotlin-$kotlinVersion")
         }
 
         kotlin {
@@ -55,18 +60,18 @@ subprojects {
     })
 
     extra.set("configureSamples", {
-        val parentProjectNAme = parent!!.project.name
+        val parentProjectName = parent!!.project.name
         val parentProjectVersion = parent!!.project.version as String
 
         dependencies {
-            implementation(project(":$parentProjectNAme"))
+            implementation(project(":$parentProjectName"))
 
             implementation("org.jetbrains:kotlin-react:$kotlinReactVersion-kotlin-$kotlinVersion")
             implementation("org.jetbrains:kotlin-react-dom:$kotlinReactDomVersion-kotlin-$kotlinVersion")
         }
 
         kotlin {
-            val packageName = parentProjectNAme.replaceBefore("-", "").removePrefix("-")
+            val packageName = parentProjectName.replaceBefore("-", "").removePrefix("-")
             val packageVersion = parentProjectVersion.replaceAfter("-", "").removeSuffix("-")
 
             sourceSets {
