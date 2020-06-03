@@ -13,10 +13,10 @@ repositories {
     jcenter()
 }
 
-project(":kotlin-antd").version = "3.20.3-pre.2"
-project(":kotlin-moment").version = "2.24.0-pre.1"
-project(":kotlin-react-intl").version = "3.1.12-pre.1"
-project(":kotlin-react-responsive").version = "7.0.0-pre.1"
+project(":kotlin-antd").version = "3.20.3-pre.3"
+project(":kotlin-moment").version = "2.24.0-pre.2"
+project(":kotlin-react-intl").version = "3.1.12-pre.2"
+project(":kotlin-react-responsive").version = "7.0.0-pre.2"
 
 subprojects {
     apply("$rootDir/versions.gradle.kts")

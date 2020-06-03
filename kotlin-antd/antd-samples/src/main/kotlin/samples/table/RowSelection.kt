@@ -31,7 +31,7 @@ private val tableColumns = arrayOf<ColumnProps<RowSelectionTableDataItem>>(
                         attrs.href = "javascript:;"
                         +text.unsafeCast<String>()
                     }
-                }!!
+                }
             }
         },
         jsObject {

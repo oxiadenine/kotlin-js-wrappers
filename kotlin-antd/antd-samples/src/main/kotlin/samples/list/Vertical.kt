@@ -85,7 +85,7 @@ fun RBuilder.vertical() {
                                                 text = "156"
                                             }
                                         }
-                                    }!!,
+                                    },
                                     buildElement {
                                         iconText {
                                             attrs {
@@ -93,7 +93,7 @@ fun RBuilder.vertical() {
                                                 text = "156"
                                             }
                                         }
-                                    }!!,
+                                    },
                                     buildElement {
                                         iconText {
                                             attrs {
@@ -101,7 +101,7 @@ fun RBuilder.vertical() {
                                                 text = "2"
                                             }
                                         }
-                                    }!!
+                                    }
 
                             )
                             extra = buildElement {

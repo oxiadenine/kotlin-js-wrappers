@@ -34,7 +34,7 @@ class DelayAndDebounceCard : RComponent<RProps, DelayAndDebounceCardState>() {
                     type = "info"
                 }
             }
-        }!!
+        }
 
         div {
             spin {

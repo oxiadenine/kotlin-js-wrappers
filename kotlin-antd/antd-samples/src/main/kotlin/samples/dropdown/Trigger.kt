@@ -32,7 +32,7 @@ private val menu = buildElement {
             +"3rd menu item"
         }
     }
-}!!
+}
 
 fun RBuilder.trigger() {
     div("dropdown-container") {

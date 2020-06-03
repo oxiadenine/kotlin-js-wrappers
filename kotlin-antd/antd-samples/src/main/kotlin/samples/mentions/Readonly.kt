@@ -17,7 +17,7 @@ private fun getOptions(): Array<ReactElement> {
                 }
                 +it
             }
-        }!!
+        }
     }.toTypedArray()
 }
 

@@ -50,7 +50,7 @@ class CoordinatedApp : RComponent<FormComponentProps<Any>, RState>() {
                     })
                 })(buildElement {
                     input {}
-                }!!))
+                }))
             }
             formItem {
                 attrs {
@@ -78,7 +78,7 @@ class CoordinatedApp : RComponent<FormComponentProps<Any>, RState>() {
                             +"female"
                         }
                     }
-                }!!))
+                }))
             }
             formItem {
                 attrs {

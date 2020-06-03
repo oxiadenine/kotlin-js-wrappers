@@ -30,17 +30,17 @@ fun RBuilder.meta() {
                             icon {
                                 attrs.type = "setting"
                             }
-                        }!!,
+                        },
                         buildElement {
                             icon {
                                 attrs.type = "edit"
                             }
-                        }!!,
+                        },
                         buildElement {
                             icon {
                                 attrs.type = "ellipsis"
                             }
-                        }!!
+                        }
                 )
             }
             cardMeta {

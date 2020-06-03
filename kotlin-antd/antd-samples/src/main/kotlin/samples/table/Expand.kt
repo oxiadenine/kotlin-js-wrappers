@@ -45,7 +45,7 @@ private val tableColumns = arrayOf<ColumnProps<ExpandTableDataItem>>(
                        attrs.href = "javascript:;"
                        +"Delete"
                    }
-                }!!
+                }
             }
         }
 )

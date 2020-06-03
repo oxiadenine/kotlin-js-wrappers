@@ -23,7 +23,7 @@ private val menu = buildElement {
             +"3rd menu item"
         }
     }
-}!!
+}
 
 fun RBuilder.contextMenu() {
     div("dropdown-container") {

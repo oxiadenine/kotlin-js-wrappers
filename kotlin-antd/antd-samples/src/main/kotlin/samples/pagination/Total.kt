@@ -13,7 +13,7 @@ fun RBuilder.total() {
                 attrs {
                     total = 85
                     showTotal = fun (total: Number, _: Array<Number>): ReactElement {
-                        return buildElement { +"Total $total items" }!!
+                        return buildElement { +"Total $total items" }
                     }
                     pageSize = 20
                     defaultCurrent = 1
@@ -24,7 +24,7 @@ fun RBuilder.total() {
                 attrs {
                     total = 85
                     showTotal = fun (total: Number, range: Array<Number>): ReactElement {
-                        return buildElement { +"${range[0]}-${range[1]} of $total items" }!!
+                        return buildElement { +"${range[0]}-${range[1]} of $total items" }
                     }
                     pageSize = 20
                     defaultCurrent = 1

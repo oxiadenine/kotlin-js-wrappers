@@ -10,7 +10,7 @@ import react.dom.div
 
 private val operation = buildElement {
    button { +"Extra Action" }
-}!!
+}
 
 fun RBuilder.extra() {
     div("tabs-container") {

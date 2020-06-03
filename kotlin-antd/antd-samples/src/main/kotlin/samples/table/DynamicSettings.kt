@@ -10,8 +10,8 @@ import antd.radio.radioButton
 import antd.radio.radioGroup
 import antd.switch.switch
 import antd.table.*
+import kotlinext.js.Object
 import kotlinext.js.jsObject
-import kotlinext.js.objectAssign
 import kotlinx.html.classes
 import kotlinx.html.id
 import react.*
@@ -40,7 +40,7 @@ private val tableColumns = arrayOf<ColumnProps<DynamicSettingsTableDataItem>>(
                         attrs.href = "javascript:;"
                         +text.unsafeCast<String>()
                     }
-                }!!
+                }
             }
         },
         jsObject {
@@ -86,7 +86,7 @@ private val tableColumns = arrayOf<ColumnProps<DynamicSettingsTableDataItem>>(
                            }
                        }
                    }
-                }!!
+                }
             }
         }
 )
@@ -104,7 +104,7 @@ private val data = (0..100).map { i ->
 private val tableExpandedRowRender: (DynamicSettingsTableDataItem) -> ReactElement = { record ->
     buildElement {
         p { +record.description }
-    }!!
+    }
 }
 private val tableTitle: () -> String = { "Here is title" }
 private const val tableShowHeader = true
@@ -342,7 +342,7 @@ class DynamicSettingsDemo : RComponent<RProps, DynamicSettingsDemoState>() {
                 }
             }
             table<DynamicSettingsTableDataItem, TableComponent<DynamicSettingsTableDataItem>> {
-                objectAssign(attrs, state)
+                Object.assign(attrs, state)
                 attrs {
                     columns = tableColumns
                     dataSource = if (state.hasData) data else null

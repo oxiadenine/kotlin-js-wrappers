@@ -9,9 +9,9 @@ import antd.select.SelectComponent
 import antd.select.option
 import antd.select.select
 import antd.timepicker.timePicker
+import kotlinext.js.Object
 import kotlinext.js.js
 import kotlinext.js.jsObject
-import kotlinext.js.objectAssign
 import kotlinx.html.id
 import react.*
 import react.dom.div
@@ -33,7 +33,7 @@ fun RBuilder.validateStatic() {
     div("form-container") {
         attrs.id = "form-validate-static"
         form {
-            objectAssign(attrs, formItemLayout)
+            Object.assign(attrs, formItemLayout)
             formItem {
                 attrs {
                     label = "Fail"

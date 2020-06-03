@@ -7,9 +7,9 @@ import antd.pagination.PaginationConfig
 import antd.popconfirm.popconfirm
 import antd.table.*
 import antd.table.table
+import kotlinext.js.Object
 import kotlinext.js.js
 import kotlinext.js.jsObject
-import kotlinext.js.objectAssign
 import kotlinx.html.id
 import kotlinx.html.js.onClickFunction
 import react.*
@@ -55,13 +55,13 @@ class EditRowEditableCell : RComponent<EditRowEditableCellProps, EditRowEditable
             }
 
             input {}
-        }!!
+        }
     }
 
     private val renderCell: (WrappedFormUtils<Any>) -> ReactElement = { form ->
         buildElement {
            td {
-               objectAssign(attrs, props)
+               Object.assign(attrs, props)
                if (props.editing) {
                    formItem {
                        attrs.style = js { margin = 0 }
@@ -75,7 +75,7 @@ class EditRowEditableCell : RComponent<EditRowEditableCellProps, EditRowEditable
                    }
                } else childList.add(props.children)
            }
-        }!!
+        }
     }
 
     override fun EditRowEditableCellState.init() {
@@ -154,7 +154,7 @@ class EditRowEditableTable : RComponent<EditRowEditableTableProps, EditRowEditab
                                 +"Edit"
                             }
                         }
-                    }!!
+                    }
                 }
             }
     ).unsafeCast<Array<Any>>()
@@ -177,7 +177,7 @@ class EditRowEditableTable : RComponent<EditRowEditableTableProps, EditRowEditab
 
             val newData = state.data.map { item ->
                 if (item.asDynamic().key.unsafeCast<String>() == key) {
-                    objectAssign(item, row)
+                    Object.assign(item, row)
                 } else item
             }.toTypedArray()
 
@@ -224,7 +224,7 @@ class EditRowEditableTable : RComponent<EditRowEditableTableProps, EditRowEditab
                 }
             }
 
-            objectAssign(obj, col)
+            Object.assign(obj, col)
         }.toTypedArray()
 
         div {

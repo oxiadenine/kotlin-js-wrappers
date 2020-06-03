@@ -26,7 +26,7 @@ fun RBuilder.customizedIcon() {
                        icon {
                            attrs.type = "smile-o"
                        }
-                    }!!
+                    }
                     title = "parent 1"
                     key = "0-0"
                 }
@@ -36,7 +36,7 @@ fun RBuilder.customizedIcon() {
                             icon {
                                 attrs.type = "meh-o"
                             }
-                        }!!
+                        }
                         title = "leaf"
                         key = "0-0-0"
                     }
@@ -48,7 +48,7 @@ fun RBuilder.customizedIcon() {
                                 icon {
                                     attrs.type = if (treeNode.selected) "frown" else "frown-o"
                                 }
-                            }!!
+                            }
                         }
                         title = "leaf"
                         key = "0-0-1"

@@ -55,7 +55,7 @@ class AjaxApp : RComponent<RProps, AjaxAppState>() {
 
         console.log(newPagination, filters, sorter)
 
-        val params = objectAssign(js {
+        val params = Object.assign(js {
             results = newPagination.pageSize
             page = newPagination.current
             sortField = sorter.field
@@ -72,7 +72,7 @@ class AjaxApp : RComponent<RProps, AjaxAppState>() {
             loading = true
         }
 
-        val queryParams = objectAssign(js {
+        val queryParams = Object.assign(js {
             results = 10
         }.unsafeCast<Any>(), params)
 

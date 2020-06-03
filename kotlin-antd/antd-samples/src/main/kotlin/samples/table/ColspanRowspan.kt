@@ -44,7 +44,7 @@ private val tableColumns = arrayOf<ColumnProps<ColspanRowspanTableDataItem>>(
                             attrs.href = "javascript:;"
                             +text.unsafeCast<String>()
                         }
-                    }!!
+                    }
                 } else {
                     val obj = js {
                         props = js {}
@@ -55,7 +55,7 @@ private val tableColumns = arrayOf<ColumnProps<ColspanRowspanTableDataItem>>(
                             attrs.href = "javascript:;"
                             +text.unsafeCast<String>()
                         }
-                    }!!
+                    }
                     obj.props.colSpan = 5
 
                     obj.unsafeCast<Any>()

@@ -43,7 +43,7 @@ private val menu = buildElement {
             +"3rd menu item（disabled）"
         }
     }
-}!!
+}
 
 fun RBuilder.item() {
     div("dropdown-container") {

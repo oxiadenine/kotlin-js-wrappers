@@ -95,7 +95,7 @@ class ListApp : RComponent<RProps, ListAppState>() {
                                                         text = "156"
                                                     }
                                                 }
-                                            }!!,
+                                            },
                                             buildElement {
                                                 iconText {
                                                     attrs {
@@ -103,7 +103,7 @@ class ListApp : RComponent<RProps, ListAppState>() {
                                                         text = "156"
                                                     }
                                                 }
-                                            }!!,
+                                            },
                                             buildElement {
                                                 iconText {
                                                     attrs {
@@ -111,7 +111,7 @@ class ListApp : RComponent<RProps, ListAppState>() {
                                                         text = "2"
                                                     }
                                                 }
-                                            }!!
+                                            }
                                     )
                                 } else null
                                 extra = if (!state.loading) {

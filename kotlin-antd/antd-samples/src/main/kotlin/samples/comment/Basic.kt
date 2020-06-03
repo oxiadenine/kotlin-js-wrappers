@@ -112,7 +112,7 @@ class BasicApp : RComponent<RProps, BasicAppState>() {
                             and efficiently.
                         """.trimIndent()
                     }
-                }!!
+                }
                 datetime = buildElement {
                     tooltip {
                         attrs.title = moment().format("YYYY-MM-DD HH:mm:ss")

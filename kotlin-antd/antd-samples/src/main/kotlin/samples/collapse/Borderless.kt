@@ -18,7 +18,7 @@ private val text = buildElement {
            as a welcome guest in many households across the world.
        """.trimIndent()
    }
-}!!
+}
 
 fun RBuilder.borderless() {
     div("collapse-container") {

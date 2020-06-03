@@ -52,7 +52,7 @@ private val menu = buildElement {
             +"3rd menu item"
         }
     }
-}!!
+}
 
 fun RBuilder.dropdownButton() {
     div("dropdown-container") {

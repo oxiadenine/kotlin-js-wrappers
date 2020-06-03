@@ -60,7 +60,7 @@ class PlaygroundApp : RComponent<RProps, PlaygroundAppState>() {
                     }
                     div { +"Column" }
                 }
-            }!!
+            }
             cols.add(col)
 
             colCode += "  <Col span={${24 / colCount}} />\n"

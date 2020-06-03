@@ -28,7 +28,7 @@ private val menu = buildElement {
             +"3rd item"
         }
     }
-}!!
+}
 
 fun RBuilder.multiple() {
     div("button-container") {

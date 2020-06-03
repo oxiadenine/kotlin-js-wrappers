@@ -9,10 +9,7 @@ import antd.select.SelectComponent
 import antd.select.SelectValue
 import antd.select.option
 import antd.select.select
-import kotlinext.js.Object
-import kotlinext.js.js
-import kotlinext.js.jsObject
-import kotlinext.js.objectAssign
+import kotlinext.js.*
 import kotlinx.html.id
 import org.w3c.dom.HTMLElement
 import org.w3c.dom.HTMLInputElement
@@ -68,7 +65,7 @@ class PriceInput : RComponent<PriceInputProps, PriceInputState>() {
         val onChange = props.onChange
 
         if (onChange != null) {
-            val obj = objectAssign(state, changedValue)
+            val obj = Object.assign(state, changedValue)
 
             onChange(obj)
         }
@@ -163,7 +160,7 @@ class CustomizedFormControlsDemo : RComponent<FormComponentProps<Any>, RState>()
                     rules = arrayOf(jsObject { validator = checkPrice })
                 })(buildElement {
                     priceInput()
-                }!!))
+                }))
             }
             formItem {
                 button {

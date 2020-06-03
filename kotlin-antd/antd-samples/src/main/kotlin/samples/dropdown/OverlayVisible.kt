@@ -50,7 +50,7 @@ class OverlayVisibleApp : RComponent<RProps, OverlayVisibleAppState>() {
                     +"Clicking me will close the menu"
                 }
             }
-        }!!
+        }
 
         dropdown {
             attrs {

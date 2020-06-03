@@ -19,9 +19,9 @@ import antd.select.SelectValue
 import antd.select.option
 import antd.select.select
 import antd.tooltip.tooltip
+import kotlinext.js.Object
 import kotlinext.js.js
 import kotlinext.js.jsObject
-import kotlinext.js.objectAssign
 import kotlinx.html.id
 import org.w3c.dom.HTMLElement
 import org.w3c.dom.HTMLInputElement
@@ -161,7 +161,7 @@ class RegistrationForm : RComponent<FormComponentProps<Any>, RegistrationFormSta
                     +"+87"
                 }
             }
-        }!!)
+        })
 
         val websiteOptions = state.autoCompleteResult.map { website ->
             buildElement {
@@ -173,7 +173,7 @@ class RegistrationForm : RComponent<FormComponentProps<Any>, RegistrationFormSta
         }.toTypedArray().unsafeCast<Array<DataSourceItemType>>()
 
         form {
-            objectAssign(attrs, formItemLayout)
+            Object.assign(attrs, formItemLayout)
             attrs.onSubmit = handleSubmit
             formItem {
                 attrs.label = "E-mail"
@@ -190,7 +190,7 @@ class RegistrationForm : RComponent<FormComponentProps<Any>, RegistrationFormSta
                     )
                 })(buildElement {
                     input {}
-                }!!))
+                }))
             }
             formItem {
                 attrs.label = "Password"
@@ -206,7 +206,7 @@ class RegistrationForm : RComponent<FormComponentProps<Any>, RegistrationFormSta
                     )
                 })(buildElement {
                     password {}
-                }!!))
+                }))
             }
             formItem {
                 attrs.label = "Confirm Password"
@@ -224,7 +224,7 @@ class RegistrationForm : RComponent<FormComponentProps<Any>, RegistrationFormSta
                     password {
                         attrs.onBlur = handleConfirmBlur
                     }
-                }!!))
+                }))
             }
             formItem {
                 attrs.label = buildElement {
@@ -247,7 +247,7 @@ class RegistrationForm : RComponent<FormComponentProps<Any>, RegistrationFormSta
                     )
                 })(buildElement {
                     input {}
-                }!!))
+                }))
             }
             formItem {
                 attrs.label = "Habitual Residence"
@@ -264,7 +264,7 @@ class RegistrationForm : RComponent<FormComponentProps<Any>, RegistrationFormSta
                     cascader {
                         attrs.options = residences
                     }
-                }!!))
+                }))
             }
             formItem {
                 attrs.label = "Phone Number"
@@ -282,7 +282,7 @@ class RegistrationForm : RComponent<FormComponentProps<Any>, RegistrationFormSta
                             style = js { width = "100%" }
                         }
                     }
-                }!!))
+                }))
             }
             formItem {
                 attrs.label = "Website"
@@ -302,7 +302,7 @@ class RegistrationForm : RComponent<FormComponentProps<Any>, RegistrationFormSta
                         }
                         input {}
                     }
-                }!!))
+                }))
             }
             formItem {
                 attrs {
@@ -322,7 +322,7 @@ class RegistrationForm : RComponent<FormComponentProps<Any>, RegistrationFormSta
                             )
                         })(buildElement {
                             input {}
-                        }!!))
+                        }))
                     }
                     col {
                         attrs.span = 12
@@ -331,7 +331,7 @@ class RegistrationForm : RComponent<FormComponentProps<Any>, RegistrationFormSta
                 }
             }
             formItem {
-                objectAssign(attrs, tailFormItemLayout)
+                Object.assign(attrs, tailFormItemLayout)
                 childList.add(props.form.getFieldDecorator("agreement", jsObject {
                     valuePropName = "checked"
                 })(buildElement {
@@ -342,10 +342,10 @@ class RegistrationForm : RComponent<FormComponentProps<Any>, RegistrationFormSta
                             +"agreement"
                         }
                     }
-                }!!))
+                }))
             }
             formItem {
-                objectAssign(attrs, tailFormItemLayout)
+                Object.assign(attrs, tailFormItemLayout)
                 button {
                     attrs {
                         type = "primary"

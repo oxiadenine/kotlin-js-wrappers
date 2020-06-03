@@ -25,7 +25,7 @@ private val tableColumns = arrayOf<ColumnProps<BorderedTableDataItem>>(
                         attrs.href = "javascript:;"
                         +text.unsafeCast<String>()
                     }
-                }!!
+                }
             }
         },
         jsObject {

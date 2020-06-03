@@ -15,7 +15,7 @@ private val data = arrayOf<CommentProps>(
         jsObject {
             actions = arrayOf(buildElement {
                 span { +"Reply to" }
-            }!!)
+            })
             author = "Han Solo"
             avatar = "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
             content = buildElement {
@@ -26,7 +26,7 @@ private val data = arrayOf<CommentProps>(
                         efficiently.
                     """.trimIndent()
                 }
-            }!!
+            }
             datetime = buildElement {
                 tooltip {
                     attrs.title = moment()
@@ -41,7 +41,7 @@ private val data = arrayOf<CommentProps>(
         jsObject {
             actions = arrayOf(buildElement {
                 span { +"Reply to" }
-            }!!)
+            })
             author = "Han Solo"
             avatar = "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
             content = buildElement {
@@ -52,7 +52,7 @@ private val data = arrayOf<CommentProps>(
                         efficiently.
                     """.trimIndent()
                 }
-            }!!
+            }
             datetime = buildElement {
                 tooltip {
                     attrs.title = moment()

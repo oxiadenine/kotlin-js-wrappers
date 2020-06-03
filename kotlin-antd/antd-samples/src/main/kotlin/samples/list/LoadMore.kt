@@ -116,8 +116,8 @@ class LoadMoreList : RComponent<RProps, LoadMoreListState>() {
                 renderItem = { item, _ ->
                     listItem {
                         attrs.actions = arrayOf(
-                                buildElement { a { +"edit" } }!!,
-                                buildElement { a { +"more" } }!!
+                                buildElement { a { +"edit" } },
+                                buildElement { a { +"more" } }
                         )
                         skeleton {
                             attrs {

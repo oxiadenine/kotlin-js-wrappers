@@ -34,7 +34,7 @@ private val genExtra: () -> ReactElement = {
                }
            }
        }
-    }!!
+    }
 }
 
 interface ExtraDemoState : RState {

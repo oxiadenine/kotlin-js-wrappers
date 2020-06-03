@@ -16,7 +16,7 @@ class ExampleComment : RComponent<ExampleCommentProps, RState>() {
             attrs {
                 actions = arrayOf(buildElement {
                    span { +"Reply to" }
-                }!!)
+                })
                 author = buildElement {
                     a { +"Han Solo" }
                 }
@@ -35,7 +35,7 @@ class ExampleComment : RComponent<ExampleCommentProps, RState>() {
                             resources (Sketch and Axure).
                         """.trimIndent()
                     }
-                }!!
+                }
             }
             childList.add(props.children)
         }

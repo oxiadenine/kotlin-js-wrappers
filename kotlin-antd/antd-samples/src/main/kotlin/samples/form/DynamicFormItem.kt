@@ -9,7 +9,6 @@ import antd.input.input
 import kotlinext.js.Object
 import kotlinext.js.js
 import kotlinext.js.jsObject
-import kotlinext.js.objectAssign
 import kotlinx.html.id
 import org.w3c.dom.HTMLElement
 import react.*
@@ -118,7 +117,7 @@ class DynamicFieldSet : RComponent<FormComponentProps<Any>, RState>() {
                                 }
                             }
                         }
-                    }!!))
+                    }))
                     if (keys.size > 1) {
                         icon {
                             attrs {
@@ -136,7 +135,7 @@ class DynamicFieldSet : RComponent<FormComponentProps<Any>, RState>() {
             attrs.onSubmit = handleSubmit
             childList.add(formItems)
             formItem {
-                objectAssign(attrs, formItemLayoutWithOutLabel)
+                Object.assign(attrs, formItemLayoutWithOutLabel)
                 button {
                     attrs {
                         type = "dashed"

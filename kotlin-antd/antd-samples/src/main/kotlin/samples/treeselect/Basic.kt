@@ -81,7 +81,7 @@ class BasicDemo : RComponent<RProps, BasicDemoState>() {
                                     attrs.jsStyle = js { color = "#08c" }
                                     +"sss"
                                 }
-                            }!!
+                            }
                             key = "random3"
                         }
                     }

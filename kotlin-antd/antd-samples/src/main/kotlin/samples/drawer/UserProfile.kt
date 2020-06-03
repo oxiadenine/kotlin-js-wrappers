@@ -114,7 +114,7 @@ class UserProfileApp : RComponent<RProps, UserProfileAppState>() {
                                         }
                                         +"View Profile"
                                     }
-                                }!!)
+                                })
                             }
                             listItemMeta {
                                 attrs {
@@ -268,7 +268,7 @@ class UserProfileApp : RComponent<RProps, UserProfileAppState>() {
                                 title = "Supervisor"
                                 content = buildElement {
                                     a { +"Lin" }
-                                }!!
+                                }
                             }
                         }
                     }
@@ -320,7 +320,7 @@ class UserProfileApp : RComponent<RProps, UserProfileAppState>() {
                                        attrs.href = "http://github.com/ant-design/ant-design/"
                                        +"github.com/ant-design/ant-design/"
                                    }
-                                }!!
+                                }
                             }
                         }
                     }

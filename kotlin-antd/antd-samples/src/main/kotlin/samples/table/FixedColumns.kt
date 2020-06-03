@@ -81,7 +81,7 @@ private val tableColumns = arrayOf<ColumnProps<FixedColumnsTableDataItem>>(
                        attrs.href = "javascript:;"
                        +"action"
                    }
-                }!!
+                }
             }
         }
 )

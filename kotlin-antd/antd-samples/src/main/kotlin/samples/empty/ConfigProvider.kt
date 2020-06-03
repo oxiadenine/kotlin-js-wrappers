@@ -34,7 +34,7 @@ private val customizeRenderEmpty: RenderEmptyHandler = {
             }
             p { +"Data Not Found" }
         }
-    }!!
+    }
 }
 
 private val customStyle = js { width = 200 }

@@ -71,7 +71,7 @@ class HorizontalLoginForm : RComponent<FormComponentProps<Any>, RState>() {
                             placeholder = "Username"
                         }
                     }
-                }!!))
+                }))
             }
             formItem {
                 attrs {
@@ -99,7 +99,7 @@ class HorizontalLoginForm : RComponent<FormComponentProps<Any>, RState>() {
                             placeholder = "Password"
                         }
                     }
-                }!!))
+                }))
             }
             formItem {
                 button {

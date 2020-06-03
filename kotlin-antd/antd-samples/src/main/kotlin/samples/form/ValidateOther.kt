@@ -17,9 +17,9 @@ import antd.slider.slider
 import antd.switch.switch
 import antd.upload.dragger
 import antd.upload.upload
+import kotlinext.js.Object
 import kotlinext.js.js
 import kotlinext.js.jsObject
-import kotlinext.js.objectAssign
 import kotlinx.html.classes
 import kotlinx.html.id
 import org.w3c.dom.HTMLElement
@@ -65,7 +65,7 @@ class ValidateOtherDemo : RComponent<FormComponentProps<Any>, RState>() {
         sliderMarks["100"] = "F"
 
         form {
-            objectAssign(attrs, formItemLayout)
+            Object.assign(attrs, formItemLayout)
             attrs.onSubmit = handleSubmit
             formItem {
                 attrs.label = "Plain Text"
@@ -96,7 +96,7 @@ class ValidateOtherDemo : RComponent<FormComponentProps<Any>, RState>() {
                             +"U.S.A"
                         }
                     }
-                }!!))
+                }))
             }
             formItem {
                 attrs.label = "Select[multiple]"
@@ -125,7 +125,7 @@ class ValidateOtherDemo : RComponent<FormComponentProps<Any>, RState>() {
                             +"Blue"
                         }
                     }
-                }!!))
+                }))
             }
             formItem {
                 attrs.label = "InputNumber"
@@ -137,7 +137,7 @@ class ValidateOtherDemo : RComponent<FormComponentProps<Any>, RState>() {
                             max = 10
                         }
                     }
-                }!!))
+                }))
                 span {
                     attrs.classes = setOf("ant-form-text")
                     +"machines"
@@ -148,7 +148,7 @@ class ValidateOtherDemo : RComponent<FormComponentProps<Any>, RState>() {
                 childList.add(props.form.getFieldDecorator("switch", jsObject { valuePropName = "checked" })
                 (buildElement {
                     switch {}
-                }!!))
+                }))
             }
             formItem {
                 attrs.label = "Slider"
@@ -157,7 +157,7 @@ class ValidateOtherDemo : RComponent<FormComponentProps<Any>, RState>() {
                     slider {
                         attrs.marks = sliderMarks.unsafeCast<SliderMarks>()
                     }
-                }!!))
+                }))
             }
             formItem {
                 attrs.label = "Radio.Group"
@@ -177,7 +177,7 @@ class ValidateOtherDemo : RComponent<FormComponentProps<Any>, RState>() {
                             +"item 3"
                         }
                     }
-                }!!))
+                }))
             }
             formItem {
                 attrs.label = "Radio.Button"
@@ -197,14 +197,14 @@ class ValidateOtherDemo : RComponent<FormComponentProps<Any>, RState>() {
                             +"item 3"
                         }
                     }
-                }!!))
+                }))
             }
             formItem {
                 attrs.label = "Rate"
                 childList.add(props.form.getFieldDecorator("rate", jsObject { initialValue = 3.5 })
                 (buildElement {
                     rate {}
-                }!!))
+                }))
             }
             formItem {
                 attrs {
@@ -228,7 +228,7 @@ class ValidateOtherDemo : RComponent<FormComponentProps<Any>, RState>() {
                             +"Click to upload"
                         }
                     }
-                }!!))
+                }))
             }
             formItem {
                 attrs.label = "Dragger"
@@ -256,7 +256,7 @@ class ValidateOtherDemo : RComponent<FormComponentProps<Any>, RState>() {
                             +"Support for a single or bulk upload."
                         }
                     }
-                }!!))
+                }))
             }
             formItem {
                 attrs {

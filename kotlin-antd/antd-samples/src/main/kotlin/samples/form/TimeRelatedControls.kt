@@ -7,9 +7,9 @@ import antd.datepicker.monthPicker
 import antd.datepicker.rangePicker
 import antd.form.*
 import antd.timepicker.timePicker
+import kotlinext.js.Object
 import kotlinext.js.js
 import kotlinext.js.jsObject
-import kotlinext.js.objectAssign
 import kotlinx.html.id
 import org.w3c.dom.HTMLElement
 import react.*
@@ -30,7 +30,7 @@ class TimeRelatedForm : RComponent<FormComponentProps<Any>, RState>() {
 
             val obj = js {}
 
-            val values: dynamic = objectAssign(obj, fieldsValue)
+            val values: dynamic = Object.assign(obj, fieldsValue)
 
             values["date-picker"] = fieldsValue["date-picker"].format("YYYY-MM-DD")
             values["date-time-picker"] = fieldsValue["date-time-picker"].format("YYYY-MM-DD HH:mm:ss")
@@ -75,14 +75,14 @@ class TimeRelatedForm : RComponent<FormComponentProps<Any>, RState>() {
         }
 
         form {
-            objectAssign(attrs, formItemLayout)
+            Object.assign(attrs, formItemLayout)
             attrs.onSubmit = handleSubmit
             formItem {
                 attrs.label = "DatePicker"
                 childList.add(props.form.getFieldDecorator("date-picker", config)
                 (buildElement {
                     datePicker {}
-                }!!))
+                }))
             }
             formItem {
                 attrs.label = "DatePicker[showTime]"
@@ -94,21 +94,21 @@ class TimeRelatedForm : RComponent<FormComponentProps<Any>, RState>() {
                             format = "YYYY-MM-DD HH:mm:ss"
                         }
                     }
-                }!!))
+                }))
             }
             formItem {
                 attrs.label = "MonthPicker"
                 childList.add(props.form.getFieldDecorator("month-picker", config)
                 (buildElement {
                     monthPicker {}
-                }!!))
+                }))
             }
             formItem {
                 attrs.label = "RangePicker"
                 childList.add(props.form.getFieldDecorator("range-time-picker", rangeConfig)
                 (buildElement {
                     rangePicker {}
-                }!!))
+                }))
             }
             formItem {
                 attrs.label = "RangePicker[showTime]"
@@ -120,14 +120,14 @@ class TimeRelatedForm : RComponent<FormComponentProps<Any>, RState>() {
                             format = "YYYY-MM-DD HH:mm:ss"
                         }
                     }
-                }!!))
+                }))
             }
             formItem {
                 attrs.label = "TimePicker"
                 childList.add(props.form.getFieldDecorator("time-picker", config)
                 (buildElement {
                     timePicker {}
-                }!!))
+                }))
             }
             formItem {
                 attrs {

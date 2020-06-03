@@ -10,11 +10,11 @@ private fun handleItemRender(page: Number, type: PageRenderType, element: ReactE
     if (type == "prev") {
         return buildElement {
             a { +"Previous" }
-        }!!
+        }
     } else if (type == "next") {
         return buildElement {
             a { +"Next" }
-        }!!
+        }
     }
 
     return element

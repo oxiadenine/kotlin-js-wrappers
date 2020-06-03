@@ -41,7 +41,7 @@ class CollectionCreateForm : RComponent<CollectionCreateFormProps, RState>() {
                         })
                     })(buildElement {
                         input {}
-                    }!!))
+                    }))
                 }
                 formItem {
                     attrs.label = "Description"
@@ -50,7 +50,7 @@ class CollectionCreateForm : RComponent<CollectionCreateFormProps, RState>() {
                         input {
                             attrs.type = "textarea"
                         }
-                    }!!))
+                    }))
                 }
                 formItem {
                     attrs.className = "collection-create-form_last-form-item"
@@ -67,7 +67,7 @@ class CollectionCreateForm : RComponent<CollectionCreateFormProps, RState>() {
                                 +"Private"
                             }
                         }
-                    }!!))
+                    }))
                 }
             }
         }

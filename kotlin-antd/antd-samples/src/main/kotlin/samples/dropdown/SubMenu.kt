@@ -28,7 +28,7 @@ private val menu = buildElement {
             menuItem { +"6th menu item" }
         }
     }
-}!!
+}
 
 fun RBuilder.subMenu() {
     div("dropdown-container") {

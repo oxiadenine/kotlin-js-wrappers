@@ -48,10 +48,10 @@ class AdvancedSearchForm : RComponent<FormComponentProps<Any>, AdvancedSearchFor
                             input {
                                 attrs.placeholder = "placeholder"
                             }
-                        }!!))
+                        }))
                     }
                 }
-            }!!
+            }
         }.toTypedArray()
     }
 

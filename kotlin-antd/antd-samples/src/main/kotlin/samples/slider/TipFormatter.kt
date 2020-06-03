@@ -6,7 +6,7 @@ import react.*
 import react.dom.*
 
 private fun formatter(value: Number): ReactElement {
-    return buildElement { +"$value%" }!!
+    return buildElement { +"$value%" }
 }
 
 fun RBuilder.tipFormatter() {

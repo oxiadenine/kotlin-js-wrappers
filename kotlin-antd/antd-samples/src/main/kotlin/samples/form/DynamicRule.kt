@@ -6,8 +6,8 @@ import antd.checkbox.CheckboxChangeEvent
 import antd.checkbox.checkbox
 import antd.form.*
 import antd.input.input
+import kotlinext.js.Object
 import kotlinext.js.jsObject
-import kotlinext.js.objectAssign
 import kotlinx.html.id
 import react.*
 import react.dom.div
@@ -53,7 +53,7 @@ class DynamicRuleApp : RComponent<FormComponentProps<Any>, DynamicRuleAppState>(
     override fun RBuilder.render() {
         div {
             formItem {
-                objectAssign(attrs, formItemLayout)
+                Object.assign(attrs, formItemLayout)
                 attrs.label = "Name"
                 childList.add(props.form.getFieldDecorator("username", jsObject {
                     rules = arrayOf(jsObject {
@@ -63,10 +63,10 @@ class DynamicRuleApp : RComponent<FormComponentProps<Any>, DynamicRuleAppState>(
                         input {
                             attrs.placeholder = "Please input your name"
                         }
-                    }!!))
+                    }))
             }
             formItem {
-                objectAssign(attrs, formItemLayout)
+                Object.assign(attrs, formItemLayout)
                 attrs.label = "Nickname"
                 childList.add(props.form.getFieldDecorator("nickname", jsObject {
                     rules = arrayOf(jsObject {
@@ -76,10 +76,10 @@ class DynamicRuleApp : RComponent<FormComponentProps<Any>, DynamicRuleAppState>(
                     input {
                         attrs.placeholder = "Please input your nickname"
                     }
-                }!!))
+                }))
             }
             formItem {
-                objectAssign(attrs, formTailLayout)
+                Object.assign(attrs, formTailLayout)
                 checkbox {
                     attrs {
                         checked = state.checkNick
@@ -89,7 +89,7 @@ class DynamicRuleApp : RComponent<FormComponentProps<Any>, DynamicRuleAppState>(
                 }
             }
             formItem {
-                objectAssign(attrs, formTailLayout)
+                Object.assign(attrs, formTailLayout)
                 button {
                     attrs {
                         type = "primary"

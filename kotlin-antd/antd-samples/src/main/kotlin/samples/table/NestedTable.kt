@@ -38,7 +38,7 @@ private val menu = buildElement {
         menuItem { +"Action 1" }
         menuItem { +"Action 2" }
     }
-}!!
+}
 
 class NestedTableApp : RComponent<RProps, RState>() {
     private val expandRowRender: (Any, Number, Number, Boolean) -> ReactElement = { _, _, _, _ ->
@@ -64,7 +64,7 @@ class NestedTableApp : RComponent<RProps, RState>() {
                                }
                                +"Finished"
                            }
-                        }!!
+                        }
                     }
                 },
                 jsObject {
@@ -99,7 +99,7 @@ class NestedTableApp : RComponent<RProps, RState>() {
                                    }
                                }
                            }
-                        }!!
+                        }
                     }
                 }
         )
@@ -121,7 +121,7 @@ class NestedTableApp : RComponent<RProps, RState>() {
                     pagination = false
                 }
             }
-        }!!
+        }
     }
 
     override fun RBuilder.render() {
@@ -165,7 +165,7 @@ class NestedTableApp : RComponent<RProps, RState>() {
                                 attrs.href = "javascript:;"
                                 +"Publish"
                             }
-                        }!!
+                        }
                     }
                 }
         )

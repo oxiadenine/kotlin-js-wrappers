@@ -72,7 +72,7 @@ class ControlledApp : RComponent<FormComponentProps<Any>, ControlledAppState>() 
                     mention {
                         attrs.suggestions = arrayOf("afc163", "benjycui", "yiminghe", "RaoHai", "中文", "にほんご")
                     }
-                }!!))
+                }))
             }
             formItem {
                 attrs {

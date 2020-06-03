@@ -59,7 +59,7 @@ class CustomItemApp : RComponent<RProps, CustomItemAppState>() {
             span("custom-item") {
                 +"${item.title} - ${item.description}"
             }
-        }!!
+        }
 
         return js {
             label = customLabel // for displayed item

@@ -24,7 +24,7 @@ private val customDot = fun (dot: ReactElement, step: CustomDotStep): ReactEleme
             }
             childList.add(dot)
         }
-    }!!
+    }
 }
 
 fun RBuilder.customizedProgressDot() {

@@ -85,7 +85,7 @@ private fun dateCellRender(value: Moment): ReactElement {
                 }
             }.toTypedArray()
         }
-    }!!
+    }
 }
 
 private fun getMonthData(value: Moment): Number? {
@@ -106,8 +106,8 @@ private fun monthCellRender(value: Moment): ReactElement {
                 section { +"$num" }
                 span { +"Backlog number" }
             }
-        }!!
-    } else buildElement {}!!
+        }
+    } else buildElement {}
 }
 
 fun RBuilder.noticeCalendar() {

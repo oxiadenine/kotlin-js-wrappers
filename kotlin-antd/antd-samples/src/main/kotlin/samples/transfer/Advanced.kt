@@ -67,7 +67,7 @@ class AdvancedApp : RComponent<RProps, AdvancedAppState>() {
                 }
                 +"reload"
             }
-        }!!
+        }
     }
 
     override fun componentDidMount() {

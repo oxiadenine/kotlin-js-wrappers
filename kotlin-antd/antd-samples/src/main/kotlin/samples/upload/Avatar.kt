@@ -78,7 +78,7 @@ class AvatarApp : RComponent<RProps, AvatarAppState>() {
                     +"Upload"
                 }
             }
-        }!!
+        }
 
         upload {
             attrs {

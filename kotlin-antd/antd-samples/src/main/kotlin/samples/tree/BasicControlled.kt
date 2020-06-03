@@ -1,8 +1,8 @@
 package samples.tree
 
 import antd.tree.*
+import kotlinext.js.Object
 import kotlinext.js.jsObject
-import kotlinext.js.objectAssign
 import kotlinx.html.id
 import react.*
 import react.dom.div
@@ -125,14 +125,14 @@ class BasicControlledDemo : RComponent<RProps, BasicControlledDemoState>() {
                         attrs.asDynamic()["dataRef"] = item
                         childList.add(renderTreeNodes(item.children!!))
                     }
-                }!!
+                }
             }
 
             return@map buildElement {
                treeNode {
-                   objectAssign(attrs, item)
+                   Object.assign(attrs, item)
                }
-            }!!
+            }
         }.toTypedArray()
     }
 

@@ -104,7 +104,7 @@ class EditorApp : RComponent<RProps, EditorAppState>() {
                                 avatar = "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
                                 content = buildElement {
                                     p { +"${state.value}" }
-                                }!!
+                                }
                                 datetime = moment().fromNow()
                             }
                     ).plus(state.comments)
@@ -153,7 +153,7 @@ class EditorApp : RComponent<RProps, EditorAppState>() {
                                 value = state.value
                             }
                         }
-                    }!!
+                    }
                 }
             }
         }

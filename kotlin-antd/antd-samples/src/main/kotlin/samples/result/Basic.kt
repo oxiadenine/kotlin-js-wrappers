@@ -35,7 +35,7 @@ class BasicDemo : RComponent<RProps, BasicDemoState>() {
                         attrs.type = "primary"
                         +"Back Home"
                     }
-                }!!
+                }
             }
             "404" -> jsObject {
                 status = resultStatus
@@ -46,7 +46,7 @@ class BasicDemo : RComponent<RProps, BasicDemoState>() {
                         attrs.type = "primary"
                         +"Back Home"
                     }
-                }!!
+                }
             }
             "500" -> jsObject {
                 status = resultStatus
@@ -57,7 +57,7 @@ class BasicDemo : RComponent<RProps, BasicDemoState>() {
                         attrs.type = "primary"
                         +"Back Home"
                     }
-                }!!
+                }
             }
             "success" -> jsObject {
                 status = resultStatus
@@ -72,13 +72,13 @@ class BasicDemo : RComponent<RProps, BasicDemoState>() {
                                 }
                                 +"Go Console"
                             }
-                        }!!,
+                        },
                         buildElement {
                             button {
                                 attrs.key = "buy"
                                 +"Buy Again"
                             }
-                        }!!
+                        }
                 )
             }
             "info" -> jsObject {
@@ -93,7 +93,7 @@ class BasicDemo : RComponent<RProps, BasicDemoState>() {
                         }
                         +"Go Console"
                     }
-                }!!
+                }
             }
             "error" -> jsObject {
                 status = resultStatus
@@ -108,13 +108,13 @@ class BasicDemo : RComponent<RProps, BasicDemoState>() {
                                 }
                                 +"Go Console"
                             }
-                        }!!,
+                        },
                         buildElement {
                             button {
                                 attrs.key = "buy"
                                 +"Buy Again"
                             }
-                        }!!
+                        }
                 )
             }
             "warning" -> jsObject {
@@ -129,7 +129,7 @@ class BasicDemo : RComponent<RProps, BasicDemoState>() {
                         }
                         +"Go Console"
                     }
-                }!!
+                }
             }
             else -> jsObject {}
         }
@@ -146,7 +146,7 @@ class BasicDemo : RComponent<RProps, BasicDemoState>() {
                 attrs.type = "primary"
                 +"Back Home"
             }
-        }!!
+        }
     }
 
     override fun RBuilder.render() {

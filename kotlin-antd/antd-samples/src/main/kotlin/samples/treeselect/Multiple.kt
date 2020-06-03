@@ -82,7 +82,7 @@ class MultipleDemo : RComponent<RProps, MultipleDemoState>() {
                                     attrs.jsStyle = js { color = "#08c" }
                                     +"sss"
                                 }
-                            }!!
+                            }
                             key = "random3"
                         }
                     }

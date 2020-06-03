@@ -89,7 +89,7 @@ class SuffixDemo : RComponent<RProps, SuffixDemoState>() {
                                     attrs.jsStyle = js { color = "#08c" }
                                     +"sss"
                                 }
-                            }!!
+                            }
                             key = "random3"
                         }
                     }

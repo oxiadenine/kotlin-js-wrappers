@@ -41,7 +41,7 @@ private val menu = buildElement {
             }
         }
     }
-}!!
+}
 
 fun RBuilder.placement() {
     div("dropdown-container") {

@@ -35,7 +35,7 @@ fun RBuilder.customDropdownMenu() {
                                 +"Add item"
                             }
                         }
-                    }!!
+                    }
                 }
 
             }

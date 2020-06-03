@@ -3,8 +3,8 @@ package samples.form
 import antd.ChangeEventHandler
 import antd.form.*
 import antd.inputnumber.inputNumber
+import kotlinext.js.Object
 import kotlinext.js.jsObject
-import kotlinext.js.objectAssign
 import kotlinx.html.id
 import org.w3c.dom.HTMLInputElement
 import react.*
@@ -63,7 +63,7 @@ class RawForm : RComponent<FormComponentProps<Any>, RawFormState>() {
 
         form {
             formItem {
-                objectAssign(attrs, formItemLayout)
+                Object.assign(attrs, formItemLayout)
                 attrs {
                     label = "Prime between 8 & 12"
                     validateStatus = state.number.validateStatus

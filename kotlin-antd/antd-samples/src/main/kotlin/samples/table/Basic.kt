@@ -32,7 +32,7 @@ private val tableColumns = arrayOf<ColumnProps<BasicTableDataItem>>(
                         attrs.href = "javascript:;"
                         +text.unsafeCast<String>()
                     }
-                }!!
+                }
             }
         },
         jsObject {
@@ -68,7 +68,7 @@ private val tableColumns = arrayOf<ColumnProps<BasicTableDataItem>>(
                             }
                         }.toTypedArray()
                     }
-                }!!
+                }
             }
         },
         jsObject {
@@ -89,7 +89,7 @@ private val tableColumns = arrayOf<ColumnProps<BasicTableDataItem>>(
                             +"Delete"
                         }
                     }
-                }!!
+                }
             }
         }
 )

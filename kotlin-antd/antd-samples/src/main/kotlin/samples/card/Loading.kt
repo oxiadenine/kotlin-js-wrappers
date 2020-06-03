@@ -66,17 +66,17 @@ class LoadingApp : RComponent<RProps, LoadingAppState>() {
                                icon {
                                    attrs.type = "setting"
                                }
-                            }!!,
+                            },
                             buildElement {
                                 icon {
                                     attrs.type = "edit"
                                 }
-                            }!!,
+                            },
                             buildElement {
                                 icon {
                                     attrs.type = "ellipsis"
                                 }
-                            }!!
+                            }
                     )
                 }
                 skeleton {

@@ -52,7 +52,7 @@ class NormalLoginForm : RComponent<FormComponentProps<Any>, RState>() {
                             placeholder = "Username"
                         }
                     }
-                }!!))
+                }))
             }
             formItem {
                 childList.add(props.form.getFieldDecorator("password", jsObject {
@@ -75,7 +75,7 @@ class NormalLoginForm : RComponent<FormComponentProps<Any>, RState>() {
                             placeholder = "Password"
                         }
                     }
-                }!!))
+                }))
             }
             formItem {
                 childList.add(props.form.getFieldDecorator("remember", jsObject {
@@ -83,7 +83,7 @@ class NormalLoginForm : RComponent<FormComponentProps<Any>, RState>() {
                     initialValue = true
                 })(buildElement {
                     checkbox { +"Remember me" }
-                }!!))
+                }))
                 a {
                     attrs {
                         classes = setOf("login-form-forgot")

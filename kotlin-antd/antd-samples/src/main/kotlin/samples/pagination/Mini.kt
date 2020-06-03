@@ -6,7 +6,7 @@ import react.*
 import react.dom.*
 
 private fun showTotal(total: Number, range: Array<Number>): ReactElement {
-    return buildElement { +"Total $total items" }!!
+    return buildElement { +"Total $total items" }
 }
 
 fun RBuilder.mini() {
