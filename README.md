@@ -9,9 +9,7 @@ To learn more please refer to the READMEs of individual modules:
 * [kotlin-react-intl](kotlin-react-intl/README.md)
 * [kotlin-react-responsive](kotlin-react-responsive/README.md)
 
-All wrappers are available on npm: `npm install <wrapper name>`
-
-Artifacts installable using Maven and Gradle are published to [Bintray](https://dl.bintray.com/samgarasx/kotlin-js-wrappers).
+Artifacts installable using Maven and Gradle are published to [Bintray](https://bintray.com/samgarasx/kotlin-js-wrappers).
 
 **All packages require JDK 8 to be installed.**
 

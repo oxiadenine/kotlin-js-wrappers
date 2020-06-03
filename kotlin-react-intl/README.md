@@ -1,12 +1,22 @@
 ## Introduction
 This project is a library wrapping [React Intl](https://github.com/yahoo/react-intl) to be used in an application 
-built with [React Kotlin](https://github.com/JetBrains/create-react-kotlin-app) or with 
-[Gradle Kotlin/JS](https://kotlinlang.org/docs/reference/js-project-setup.html).
+built with [Gradle Kotlin/JS](https://kotlinlang.org/docs/reference/js-project-setup.html).
 
 ### Installation
 
-1. `npm install kotlin-react-intl --save-dev`
-2. `npm run gen-idea-libs`
+To start using `kotlin-react-intl` make sure you have the Bintray repository and the following dependencies added to 
+the Gradle build file:
+
+```kotlin
+repositories {
+    maven("https://dl.bintray.com/samgarasx/kotlin-js-wrappers")
+}
+
+dependencies {
+    implementation("com.github.samgarasx:kotlin-react-intl:3.1.12-pre.2-kotlin-1.3.72")
+    implementation(npm("react-intl", "3.1.12"))
+}
+```
 
 See the [Bintray page](https://bintray.com/samgarasx/kotlin-js-wrappers/kotlin-react-intl) for Maven and Gradle 
 installation instructions.
