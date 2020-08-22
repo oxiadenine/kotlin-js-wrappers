@@ -2,7 +2,6 @@
 project.extra.set("kotlinVersion", "1.3.72")
 
 // Plugins
-project.extra.set("nodePluginVersion", "1.3.1")
 project.extra.set("bintrayPluginVersion", "1.8.5")
 
 // Dependencies

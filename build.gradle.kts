@@ -1,11 +1,8 @@
-import com.moowork.gradle.node.npm.NpmTask
-
 group = "com.github.samgarasx"
 
 plugins {
     kotlin("js") version "1.3.72"
     id("com.jfrog.bintray") version "1.8.5"
-    id("com.moowork.node") version "1.3.1"
     `maven-publish`
 }
 
@@ -92,7 +89,6 @@ subprojects {
     extra.set("configureBintrayPublishing", {
         apply {
             plugin("com.jfrog.bintray")
-            plugin("com.moowork.node")
             plugin("maven-publish")
         }
 
@@ -107,55 +103,20 @@ subprojects {
                 repo = "kotlin-js-wrappers"
                 name = project.name
                 vcsUrl = "https://github.com/samgarasx/kotlin-js-wrappers.git"
-                setLicenses("Apache-2.0")
                 version = VersionConfig().apply {
                     name = pkgVersionName
                 }
-
+                setLicenses("Apache-2.0")
                 setPublications("Publication")
             }
         }
 
         publishing {
-            publications.register("Publication", MavenPublication::class) {
+            publications.create<MavenPublication>("Publication") {
                 from(components["kotlin"])
                 groupId = "com.github.samgarasx"
                 artifactId = project.name
                 version = pkgVersionName
-            }
-        }
-    })
-
-    extra.set("configureNpmPublishing", { packageVersions: Map<String, String> ->
-        tasks {
-            register<Copy>("processPkg") {
-                from(project.projectDir)
-                into("${project.buildDir}/npm")
-                include("README.md")
-                include("package.json")
-                expand(packageVersions)
-            }
-
-            register<Copy>("buildPkg") {
-                from("${rootProject.buildDir}/js/packages/${rootProject.name}-${project.name}")
-                into("${project.buildDir}/npm")
-                exclude("package.json")
-                exclude("package.json.hash")
-                exclude("webpack.config.js")
-                dependsOn("build")
-            }
-
-            task<NpmTask>("npmPublish") {
-                setNpmCommand("publish")
-                setArgs(listOf("--access", "public"))
-                setWorkingDir(file("${project.buildDir}/npm"))
-                dependsOn("buildPkg", "processPkg")
-            }
-
-            task<NpmTask>("npmPack") {
-                setNpmCommand("pack")
-                setWorkingDir(file("${project.buildDir}/npm"))
-                dependsOn( "buildPkg", "processPkg")
             }
         }
     })
