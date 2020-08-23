@@ -6,7 +6,7 @@ import kotlinext.js.jsObject
 import kotlinx.html.id
 import react.*
 import react.dom.*
-import kotlin.browser.window
+import kotlinx.browser.window
 
 interface LazyCascaderOptionType : CascaderOptionType {
     var isLeaf: Boolean?
@@ -48,7 +48,7 @@ class LazyOptions : RComponent<RProps, LazyOptionsState>() {
                         value = "dynamic1"
                     },
                     jsObject {
-                        label = react.buildElement { +"${targetOption.label} Dynamic 2" }
+                        label = buildElement { +"${targetOption.label} Dynamic 2" }
                         value = "dynamic2"
                     }
             )

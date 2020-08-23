@@ -8,7 +8,7 @@ import kotlinext.js.js
 import kotlinx.html.id
 import react.*
 import react.dom.*
-import kotlin.browser.window
+import kotlinx.browser.window
 
 interface UserRemoteSelectState : RState {
     var data: Array<Any>

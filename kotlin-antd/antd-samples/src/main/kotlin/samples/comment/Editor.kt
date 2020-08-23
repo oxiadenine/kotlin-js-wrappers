@@ -16,7 +16,7 @@ import moment.moment
 import org.w3c.dom.HTMLTextAreaElement
 import react.*
 import react.dom.*
-import kotlin.browser.window
+import kotlinx.browser.window
 
 interface CommentListProps : RProps {
     var comments: Array<CommentProps>

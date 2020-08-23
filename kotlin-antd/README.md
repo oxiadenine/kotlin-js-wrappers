@@ -13,7 +13,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.github.samgarasx:kotlin-antd:3.20.3-pre.3-kotlin-1.3.72")
+    implementation("com.github.samgarasx:kotlin-antd:3.20.3-pre.3-kotlin-1.4.0")
     implementation(npm("antd", "3.20.3"))
 }
 ```

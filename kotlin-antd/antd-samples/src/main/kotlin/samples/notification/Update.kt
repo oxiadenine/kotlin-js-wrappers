@@ -7,7 +7,7 @@ import kotlinext.js.jsObject
 import kotlinx.html.id
 import react.RBuilder
 import react.dom.div
-import kotlin.browser.window
+import kotlinx.browser.window
 
 private val notKey = "updatable"
 

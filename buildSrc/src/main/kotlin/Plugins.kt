@@ -19,9 +19,17 @@ class KotlinJsPlugin : Plugin<Project> {
             }
 
             kotlin.apply {
-                target {
+                js {
                     browser {
-                        useCommonJs()
+                        binaries.executable()
+
+                        webpackTask {
+                            cssSupport.enabled = true
+                        }
+
+                        runTask {
+                            cssSupport.enabled = true
+                        }
                     }
                 }
             }
@@ -55,11 +63,6 @@ class SamplesPlugin : Plugin<Project> {
                     getByName("main") {
                         dependencies {
                             implementation(npm(packageName, packageVersion))
-                            implementation(npm("react", "16.13.1"))
-                            implementation(npm("react-dom", "16.13.1"))
-                            implementation(npm("core-js", "3.6.5"))
-                            implementation(npm("style-loader", "1.2.1"))
-                            implementation(npm("css-loader", "3.5.3"))
                         }
                     }
                 }

@@ -6,7 +6,7 @@ import kotlinext.js.js
 import kotlinx.html.id
 import react.*
 import react.dom.*
-import kotlin.browser.window
+import kotlinx.browser.window
 import kotlin.js.Promise
 
 interface AsyncMentionState : RState {
@@ -40,9 +40,7 @@ class AsyncMention : RComponent<RProps, AsyncMentionState>() {
         window.fetch("https://api.github.com/search/users?q=$key")
                 .then { res -> res.json() }
                 .then { json ->
-                    val items = json.asDynamic()["items"]?.unsafeCast<Array<Any>>()?.let {
-                        it.slice(0..10).toTypedArray()
-                    } ?: emptyArray()
+                    val items = json.asDynamic()["items"]?.unsafeCast<Array<Any>>()?.slice(0..10)?.toTypedArray() ?: emptyArray()
 
                     if (state.search != key) return@then
 

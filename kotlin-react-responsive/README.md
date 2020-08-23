@@ -13,7 +13,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.github.samgarasx:kotlin-react-responsive:7.0.0-pre.2-kotlin-1.3.72")
+    implementation("com.github.samgarasx:kotlin-react-responsive:7.0.0-pre.2-kotlin-1.4.0")
     implementation(npm("react-responsive", "7.0.0"))
 }
 ```

@@ -5,7 +5,7 @@ import kotlinext.js.js
 import kotlinx.html.id
 import react.*
 import react.dom.*
-import kotlin.browser.window
+import kotlinx.browser.window
 
 private val users = arrayOf("afc163", "benjycui", "yiminghe", "jljsj33", "dqaria", "RaoHai")
 

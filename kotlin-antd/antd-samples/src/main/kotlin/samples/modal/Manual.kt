@@ -7,7 +7,7 @@ import kotlinext.js.jsObject
 import kotlinx.html.id
 import react.*
 import react.dom.*
-import kotlin.browser.window
+import kotlinx.browser.window
 
 private val countDown: MouseEventHandler<Any> = {
     var secondsToGo = 5

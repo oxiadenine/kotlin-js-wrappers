@@ -6,7 +6,7 @@ import antd.message.message
 import kotlinx.html.id
 import react.*
 import react.dom.*
-import kotlin.browser.window
+import kotlinx.browser.window
 
 private val success: MouseEventHandler<Any> = {
     val hide = message.loading("Action in progress..", 0)

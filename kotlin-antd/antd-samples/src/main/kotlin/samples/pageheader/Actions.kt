@@ -13,7 +13,7 @@ import kotlinx.html.id
 import react.*
 import react.dom.a
 import react.dom.div
-import kotlin.browser.window
+import kotlinx.browser.window
 
 interface ActionsDescriptionProps : RProps {
     var term: String

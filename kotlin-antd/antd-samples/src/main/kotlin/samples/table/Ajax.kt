@@ -6,7 +6,7 @@ import kotlinext.js.*
 import kotlinx.html.id
 import react.*
 import react.dom.div
-import kotlin.browser.window
+import kotlinx.browser.window
 import kotlin.js.json
 
 private val tableColumns = arrayOf<ColumnProps<Any>>(

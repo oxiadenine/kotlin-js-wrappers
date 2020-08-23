@@ -16,7 +16,7 @@ import react.*
 import react.dom.a
 import react.dom.div
 import react.dom.jsStyle
-import kotlin.browser.window
+import kotlinx.browser.window
 import kotlin.js.json
 
 private val count = 3

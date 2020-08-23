@@ -13,7 +13,7 @@ import react.*
 import react.dom.div
 import react.dom.jsStyle
 import react.dom.span
-import kotlin.browser.window
+import kotlinx.browser.window
 
 private interface RowSelectionAndOperationTableDataItem {
     var key: String

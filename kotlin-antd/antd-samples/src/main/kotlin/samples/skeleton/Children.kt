@@ -6,7 +6,7 @@ import antd.skeleton.skeleton
 import kotlinx.html.id
 import react.*
 import react.dom.*
-import kotlin.browser.window
+import kotlinx.browser.window
 
 interface ChildrenDemoState : RState {
     var loading: Boolean

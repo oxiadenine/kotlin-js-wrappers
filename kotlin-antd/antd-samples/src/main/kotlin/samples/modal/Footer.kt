@@ -9,7 +9,7 @@ import kotlinx.html.id
 import org.w3c.dom.HTMLElement
 import react.*
 import react.dom.*
-import kotlin.browser.window
+import kotlinx.browser.window
 
 interface FooterAppState : RState {
     var loading: Boolean

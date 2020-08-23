@@ -6,7 +6,7 @@ import kotlinext.js.jsObject
 import kotlinx.html.id
 import react.*
 import react.dom.div
-import kotlin.browser.window
+import kotlinx.browser.window
 import kotlin.js.Promise
 
 interface DynamicDemoState : RState {
