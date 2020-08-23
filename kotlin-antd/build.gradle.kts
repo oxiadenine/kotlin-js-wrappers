@@ -1,11 +1,7 @@
-import org.jetbrains.kotlin.utils.addToStdlib.cast
+version = "3.20.3-pre.3"
 
-val kotlinVersion: String by project.extra
-val kotlinReactVersion: String by project.extra
-val kotlinReactDomVersion: String by project.extra
-
-extra.get("configureKotlinJs").cast<() -> Unit>().invoke()
-extra.get("configureBintrayPublishing").cast<() -> Unit>().invoke()
+apply(plugin = "kotlin-js")
+apply(plugin = "bintray-publish")
 
 dependencies {
     "implementation"(project(":kotlin-moment"))

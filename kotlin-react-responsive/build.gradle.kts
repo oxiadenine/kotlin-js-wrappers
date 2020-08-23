@@ -1,10 +1,7 @@
-import org.jetbrains.kotlin.utils.addToStdlib.cast
+version = "7.0.0-pre.2"
 
-val kotlinVersion: String by project.extra
-val kotlinReactVersion: String by project.extra
-
-extra.get("configureKotlinJs").cast<() -> Unit>().invoke()
-extra.get("configureBintrayPublishing").cast<() -> Unit>().invoke()
+apply(plugin = "kotlin-js")
+apply(plugin = "bintray-publish")
 
 dependencies {
     "implementation"("org.jetbrains:kotlin-react:$kotlinReactVersion-kotlin-$kotlinVersion")

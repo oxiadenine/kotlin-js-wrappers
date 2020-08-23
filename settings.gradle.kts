@@ -1,10 +1,3 @@
-pluginManagement {
-    repositories {
-        gradlePluginPortal()
-        mavenCentral()
-    }
-}
-
 rootProject.name = "kotlin-js-wrappers"
 
 include(":kotlin-antd", ":kotlin-antd:antd-samples")
