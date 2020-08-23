@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/affix")
+@file:JsNonModule
 
 package antd.affix
 

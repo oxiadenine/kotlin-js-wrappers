@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/cascader")
+@file:JsNonModule
 
 package antd.cascader
 

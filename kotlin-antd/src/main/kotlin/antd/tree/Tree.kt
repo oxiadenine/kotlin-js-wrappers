@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/tree")
+@file:JsNonModule
 
 package antd.tree
 

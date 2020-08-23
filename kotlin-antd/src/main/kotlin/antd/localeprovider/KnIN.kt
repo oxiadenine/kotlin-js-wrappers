@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/locale-provider/kn_IN")
+@file:JsNonModule
 
 package antd.localeprovider
 

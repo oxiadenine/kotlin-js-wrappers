@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/statistic")
+@file:JsNonModule
 
 package antd.statistic
 

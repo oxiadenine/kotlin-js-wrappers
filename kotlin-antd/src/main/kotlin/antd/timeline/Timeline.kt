@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/timeline")
+@file:JsNonModule
 
 package antd.timeline
 

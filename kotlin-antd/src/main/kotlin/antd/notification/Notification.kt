@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/notification")
+@file:JsNonModule
 
 package antd.notification
 

@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/switch")
+@file:JsNonModule
 
 package antd.switch
 

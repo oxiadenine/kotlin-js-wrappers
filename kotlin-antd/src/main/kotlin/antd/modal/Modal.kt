@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/modal")
+@file:JsNonModule
 
 package antd.modal
 

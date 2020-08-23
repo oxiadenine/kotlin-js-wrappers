@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/alert")
+@file:JsNonModule
 
 package antd.alert
 

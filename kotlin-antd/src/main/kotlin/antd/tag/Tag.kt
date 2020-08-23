@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/tag")
+@file:JsNonModule
 
 package antd.tag
 

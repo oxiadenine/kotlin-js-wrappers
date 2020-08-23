@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/popconfirm")
+@file:JsNonModule
 
 package antd.popconfirm
 

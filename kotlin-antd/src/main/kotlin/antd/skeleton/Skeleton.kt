@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/skeleton")
+@file:JsNonModule
 
 package antd.skeleton
 

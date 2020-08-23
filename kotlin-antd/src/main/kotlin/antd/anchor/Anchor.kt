@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/anchor")
+@file:JsNonModule
 
 package antd.anchor
 

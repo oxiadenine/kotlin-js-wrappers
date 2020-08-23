@@ -1,4 +1,5 @@
 @file:JsModule("react-responsive")
+@file:JsNonModule
 
 package reactresponsive
 

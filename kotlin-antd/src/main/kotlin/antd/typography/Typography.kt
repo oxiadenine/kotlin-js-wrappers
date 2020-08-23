@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/typography")
+@file:JsNonModule
 
 package antd.typography
 

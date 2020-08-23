@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/progress")
+@file:JsNonModule
 
 package antd.progress
 

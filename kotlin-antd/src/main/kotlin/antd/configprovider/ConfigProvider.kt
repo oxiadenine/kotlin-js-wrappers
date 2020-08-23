@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/config-provider")
+@file:JsNonModule
 
 package antd.configprovider
 

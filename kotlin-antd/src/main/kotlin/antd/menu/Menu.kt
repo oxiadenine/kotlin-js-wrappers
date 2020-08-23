@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/menu")
+@file:JsNonModule
 
 package antd.menu
 

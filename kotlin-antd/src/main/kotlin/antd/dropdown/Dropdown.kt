@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/dropdown")
+@file:JsNonModule
 
 package antd.dropdown
 

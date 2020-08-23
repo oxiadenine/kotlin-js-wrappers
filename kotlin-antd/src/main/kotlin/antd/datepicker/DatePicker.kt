@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/date-picker")
+@file:JsNonModule
 
 package antd.datepicker
 

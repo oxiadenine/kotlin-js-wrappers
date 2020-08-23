@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/form")
+@file:JsNonModule
 
 package antd.form
 

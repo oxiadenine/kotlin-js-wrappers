@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/auto-complete")
+@file:JsNonModule
 
 package antd.autocomplete
 

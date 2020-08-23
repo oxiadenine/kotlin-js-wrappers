@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/page-header")
+@file:JsNonModule
 
 package antd.pageheader
 

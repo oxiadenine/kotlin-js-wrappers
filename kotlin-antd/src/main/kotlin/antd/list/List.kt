@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/list")
+@file:JsNonModule
 
 package antd.list
 

@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/select")
+@file:JsNonModule
 
 package antd.select
 

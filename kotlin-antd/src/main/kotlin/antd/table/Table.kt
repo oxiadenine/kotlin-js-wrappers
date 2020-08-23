@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/table")
+@file:JsNonModule
 
 package antd.table
 

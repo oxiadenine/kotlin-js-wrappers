@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/breadcrumb")
+@file:JsNonModule
 
 package antd.breadcrumb
 

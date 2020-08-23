@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/grid/col")
+@file:JsNonModule
 
 package antd.grid
 

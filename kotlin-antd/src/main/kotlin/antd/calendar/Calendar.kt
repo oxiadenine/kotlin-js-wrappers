@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/calendar")
+@file:JsNonModule
 
 package antd.calendar
 

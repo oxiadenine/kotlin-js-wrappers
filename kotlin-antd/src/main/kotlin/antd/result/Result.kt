@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/result")
+@file:JsNonModule
 
 package antd.result
 

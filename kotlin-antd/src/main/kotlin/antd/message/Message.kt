@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/message")
+@file:JsNonModule
 
 package antd.message
 

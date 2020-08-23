@@ -1,4 +1,5 @@
 @file:JsModule("react-intl")
+@file:JsNonModule
 
 package reactintl
 
@@ -85,7 +86,7 @@ external interface IntlFormatters {
 
 external interface Formatters {
     fun getDateTimeFormat(vararg args: Any/* ConstructorParameters<typeof Intl.DateTimeFormat> */): Any /* Intl.DateTimeFormat */
-    fun getNumberFormat(vararg args: Any /* ConstructorParameters<typeof Intl.NumberFormat> */): Any /* Intl.NumberFormat */;
+    fun getNumberFormat(vararg args: Any /* ConstructorParameters<typeof Intl.NumberFormat> */): Any /* Intl.NumberFormat */
     fun getMessageFormat(vararg args: Any /* ConstructorParameters<typeof IntlMessageFormat> */): Any /* IntlMessageFormat */
     fun getRelativeTimeFormat(vararg args: Any /* ConstructorParameters<typeof IntlRelativeTimeFormat> */): Any /* IntlRelativeTimeFormat */
     fun getPluralRules(vararg args: Any /* ConstructorParameters<typeof Intl.PluralRules> */): Any /* Intl.PluralRules */

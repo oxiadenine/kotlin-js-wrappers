@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/slider")
+@file:JsNonModule
 
 package antd.slider
 

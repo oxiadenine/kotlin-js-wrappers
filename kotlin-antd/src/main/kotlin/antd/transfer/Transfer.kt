@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/transfer")
+@file:JsNonModule
 
 package antd.transfer
 

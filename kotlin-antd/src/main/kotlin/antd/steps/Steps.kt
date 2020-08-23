@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/steps")
+@file:JsNonModule
 
 package antd.steps
 

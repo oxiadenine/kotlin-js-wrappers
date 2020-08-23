@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/drawer")
+@file:JsNonModule
 
 package antd.drawer
 

@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/tree-select")
+@file:JsNonModule
 
 package antd.treeselect
 

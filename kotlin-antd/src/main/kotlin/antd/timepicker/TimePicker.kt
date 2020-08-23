@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/time-picker")
+@file:JsNonModule
 
 package antd.timepicker
 

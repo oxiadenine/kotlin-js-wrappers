@@ -1,4 +1,5 @@
 @file:JsModule("react-intl")
+@file:JsNonModule
 
 package reactintl.plural
 

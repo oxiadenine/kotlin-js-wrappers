@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/empty")
+@file:JsNonModule
 
 package antd.empty
 

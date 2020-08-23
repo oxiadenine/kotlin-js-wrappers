@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/checkbox")
+@file:JsNonModule
 
 package antd.checkbox
 

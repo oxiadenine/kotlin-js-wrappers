@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/carousel")
+@file:JsNonModule
 
 package antd.carousel
 

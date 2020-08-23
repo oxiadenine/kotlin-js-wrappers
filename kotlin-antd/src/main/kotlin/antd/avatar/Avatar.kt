@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/avatar")
+@file:JsNonModule
 
 package antd.avatar
 

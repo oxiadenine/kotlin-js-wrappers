@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/locale-provider/ar_EG")
+@file:JsNonModule
 
 package antd.localeprovider
 

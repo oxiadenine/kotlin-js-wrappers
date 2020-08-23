@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/badge")
+@file:JsNonModule
 
 package antd.badge
 

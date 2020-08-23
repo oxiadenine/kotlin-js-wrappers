@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/collapse")
+@file:JsNonModule
 
 package antd.collapse
 

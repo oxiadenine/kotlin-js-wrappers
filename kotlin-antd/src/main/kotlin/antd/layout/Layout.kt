@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/layout")
+@file:JsNonModule
 
 package antd.layout
 

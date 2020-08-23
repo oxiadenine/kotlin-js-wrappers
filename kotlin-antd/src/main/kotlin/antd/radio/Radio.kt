@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/radio")
+@file:JsNonModule
 
 package antd.radio
 

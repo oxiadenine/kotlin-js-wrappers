@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/spin")
+@file:JsNonModule
 
 package antd.spin
 

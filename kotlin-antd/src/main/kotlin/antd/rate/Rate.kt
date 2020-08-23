@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/rate")
+@file:JsNonModule
 
 package antd.rate
 

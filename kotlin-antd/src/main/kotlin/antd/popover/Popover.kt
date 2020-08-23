@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/popover")
+@file:JsNonModule
 
 package antd.popover
 

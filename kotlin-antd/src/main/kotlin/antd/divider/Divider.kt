@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/divider")
+@file:JsNonModule
 
 package antd.divider
 

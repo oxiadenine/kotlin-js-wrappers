@@ -1,4 +1,5 @@
 @file:JsModule("moment")
+@file:JsNonModule
 
 package moment
 

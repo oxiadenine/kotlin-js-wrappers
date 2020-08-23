@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/locale-provider/tr_TR")
+@file:JsNonModule
 
 package antd.localeprovider
 

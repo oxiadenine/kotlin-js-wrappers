@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/back-top")
+@file:JsNonModule
 
 package antd.backtop
 

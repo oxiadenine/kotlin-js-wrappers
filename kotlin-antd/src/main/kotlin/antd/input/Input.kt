@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/input")
+@file:JsNonModule
 
 package antd.input
 

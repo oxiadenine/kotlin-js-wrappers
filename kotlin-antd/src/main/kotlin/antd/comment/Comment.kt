@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/comment")
+@file:JsNonModule
 
 package antd.comment
 

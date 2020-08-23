@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/icon")
+@file:JsNonModule
 
 package antd.icon
 

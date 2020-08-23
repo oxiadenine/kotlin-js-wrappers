@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/pagination")
+@file:JsNonModule
 
 package antd.pagination
 

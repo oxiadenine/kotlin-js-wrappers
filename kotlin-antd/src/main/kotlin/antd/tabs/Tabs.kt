@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/tabs")
+@file:JsNonModule
 
 package antd.tabs
 

@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/mentions")
+@file:JsNonModule
 
 package antd.mentions
 

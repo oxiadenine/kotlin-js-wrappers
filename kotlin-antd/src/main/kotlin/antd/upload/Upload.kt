@@ -1,4 +1,5 @@
 @file:JsModule("antd/lib/upload")
+@file:JsNonModule
 
 package antd.upload
 
