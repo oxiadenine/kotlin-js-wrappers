@@ -22,5 +22,5 @@ See the [Bintray page](https://bintray.com/samgarasx/kotlin-js-wrappers/kotlin-r
 installation instructions.
 
 ### Getting Started
-You can view the [samples](https://github.com/samgarasx/kotlin-js-wrappers/tree/master/kotlin-react-intl/samples) to know 
+You can view the [samples](https://github.com/samgarasx/kotlin-js-wrappers/tree/master/kotlin-react-intl/react-intl-samples) to know 
 how to use this library.

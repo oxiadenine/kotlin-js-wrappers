@@ -22,5 +22,5 @@ See the [Bintray page](https://bintray.com/samgarasx/kotlin-js-wrappers/kotlin-m
 installation instructions.
 
 ### Getting Started
-You can view the [samples](https://github.com/samgarasx/kotlin-js-wrappers/tree/master/kotlin-moment/samples) to know 
+You can view the [samples](https://github.com/samgarasx/kotlin-js-wrappers/tree/master/kotlin-moment/moment-samples) to know 
 how to use this library.

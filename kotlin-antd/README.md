@@ -22,6 +22,6 @@ See the [Bintray page](https://bintray.com/samgarasx/kotlin-js-wrappers/kotlin-a
 installation instructions.
 
 ### Getting Started
-You can view the [samples](https://github.com/samgarasx/kotlin-js-wrappers/tree/master/kotlin-antd/samples) that follows 
+You can view the [samples](https://github.com/samgarasx/kotlin-js-wrappers/tree/master/kotlin-antd/antd-samples) that follows 
 Ant Design [demo](https://github.com/ant-design/ant-design/tree/master/components) of each component to know 
 how to use this library.
