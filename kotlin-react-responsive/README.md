@@ -1,6 +1,6 @@
 ## Introduction
 This project is a library wrapping [React Responsive](https://github.com/contra/react-responsive) to be used in an 
-application built with [Gradle Kotlin/JS](https://kotlinlang.org/docs/reference/js-project-setup.html).
+application built with [Kotlin/JS](https://kotlinlang.org/docs/reference/js-overview.html).
 
 ### Installation
 

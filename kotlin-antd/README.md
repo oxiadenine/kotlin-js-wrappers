@@ -1,6 +1,6 @@
 ## Introduction
 This project is a library wrapping [Ant Design](https://ant.design/docs/react/introduce) to be used in an application 
-built with [Gradle Kotlin/JS](https://kotlinlang.org/docs/reference/js-project-setup.html).
+built with [Kotlin/JS](https://kotlinlang.org/docs/reference/js-overview.html).
 
 ### Installation
 

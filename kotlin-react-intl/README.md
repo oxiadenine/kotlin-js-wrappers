@@ -1,6 +1,6 @@
 ## Introduction
 This project is a library wrapping [React Intl](https://github.com/yahoo/react-intl) to be used in an application 
-built with [Gradle Kotlin/JS](https://kotlinlang.org/docs/reference/js-project-setup.html).
+built with [Kotlin/JS](https://kotlinlang.org/docs/reference/js-overview.html).
 
 ### Installation
 

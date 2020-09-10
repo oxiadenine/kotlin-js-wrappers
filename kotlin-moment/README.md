@@ -1,6 +1,6 @@
 ## Introduction
 This project is a library wrapping [Moment.js](https://momentjs.com/) to be used in an application 
-built with [Gradle Kotlin/JS](https://kotlinlang.org/docs/reference/js-project-setup.html).
+built with [Kotlin/JS](https://kotlinlang.org/docs/reference/js-overview.html).
 
 ### Installation
 
