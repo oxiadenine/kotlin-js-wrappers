@@ -3,10 +3,7 @@
 
 package reactresponsive
 
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 
 @JsName("default")
 external class MediaQueryComponent : Component<MediaQueryProps, RState> {
@@ -15,78 +12,188 @@ external class MediaQueryComponent : Component<MediaQueryProps, RState> {
 
 external interface MediaQueryProps : MediaQueryAllQueryable, RProps {
     var component: Any? /* String | RClass<RProps> */
+        get() = definedExternally
+        set(value) = definedExternally
     var query: String?
+        get() = definedExternally
+        set(value) = definedExternally
     var style: dynamic
+        get() = definedExternally
+        set(value) = definedExternally
     var className: String?
+        get() = definedExternally
+        set(value) = definedExternally
     var children: Any? /* ReactElement | MediaQueryChildrenFn */
+        get() = definedExternally
+        set(value) = definedExternally
+    var device: MediaQueryMatchers?
+        get() = definedExternally
+        set(value) = definedExternally
     var values: MediaQueryMatchers?
+        get() = definedExternally
+        set(value) = definedExternally
     var onBeforeChange: ((matches: Boolean) -> Unit)?
+        get() = definedExternally
+        set(value) = definedExternally
     var onChange: ((matches: Boolean) -> Unit)?
-}
-
-external interface MediaQueryAllQueryable : MediaQueryFeatures, MediaQueryTypes
-
-external interface MediaQueryFeatures : MediaQueryMatchers {
-    var minAspectRatio: String?
-    var maxAspectRatio: String?
-
-    var minDeviceAspectRatio: String?
-    var maxDeviceAspectRatio: String?
-
-    var minHeight: Any? /* Number | String */
-    var maxHeight: Any? /* Number | String */
-
-    var minDeviceHeight: Any? /* Number | String */
-    var maxDeviceHeight: Any? /* Number | String */
-
-    var minWidth: Any? /* Number | String */
-    var maxWidth: Any? /* Number | String */
-
-    var minDeviceWidth: Any? /* Number | String */
-    var maxDeviceWidth: Any? /* Number | String */
-
-    var minColor: Number?
-    var maxColor: Number?
-
-    var minColorIndex: Number?
-    var maxColorIndex: Number?
-
-    var minMonochrome: Number?
-    var maxMonochrome: Number?
-
-    var minResolution: Any? /* Number | String */
-    var maxResolution: Any? /* Number | String */
-}
-
-external interface MediaQueryMatchers {
-    var aspectRatio: String?
-    var deviceAspectRatio: String?
-    var height: Any? /* Number | String */
-    var deviceHeight: Any? /* Number | String */
-    var width: Any? /* Number | String */
-    var deviceWidth: Any? /* Number | String */
-    var color: Boolean?
-    var colorIndex: Boolean?
-    var monochrome: Boolean?
-    var resolution: Any? /* Number | String */
-    var orientation: MediaQueryMatcherOrientation?
-    var scan: MediaQueryMatcherScan?
-    var type: MediaQueryType?
-}
-
-external interface MediaQueryTypes {
-    var all: Boolean?
-    var grid: Boolean?
-    var aural: Boolean?
-    var braille: Boolean?
-    var handheld: Boolean?
-    var print: Boolean?
-    var projection: Boolean?
-    var screen: Boolean?
-    var tty: Boolean?
-    var tv: Boolean?
-    var embossed: Boolean?
+        get() = definedExternally
+        set(value) = definedExternally
 }
 
 @JsName("toQuery")
 external fun toQuery(matchers: MediaQueryAllQueryable): String
+
+@JsName("context")
+external val context: RContext<MediaQueryAllQueryable>
+
+external interface MediaQueryTypes {
+    var all: Boolean?
+        get() = definedExternally
+        set(value) = definedExternally
+    var grid: Boolean?
+        get() = definedExternally
+        set(value) = definedExternally
+    var aural: Boolean?
+        get() = definedExternally
+        set(value) = definedExternally
+    var braille: Boolean?
+        get() = definedExternally
+        set(value) = definedExternally
+    var handheld: Boolean?
+        get() = definedExternally
+        set(value) = definedExternally
+    var print: Boolean?
+        get() = definedExternally
+        set(value) = definedExternally
+    var projection: Boolean?
+        get() = definedExternally
+        set(value) = definedExternally
+    var screen: Boolean?
+        get() = definedExternally
+        set(value) = definedExternally
+    var tty: Boolean?
+        get() = definedExternally
+        set(value) = definedExternally
+    var tv: Boolean?
+        get() = definedExternally
+        set(value) = definedExternally
+    var embossed: Boolean?
+        get() = definedExternally
+        set(value) = definedExternally
+}
+
+external interface MediaQueryMatchers {
+    var aspectRatio: String?
+        get() = definedExternally
+        set(value) = definedExternally
+    var deviceAspectRatio: String?
+        get() = definedExternally
+        set(value) = definedExternally
+    var height: Any? /* Number | String */
+        get() = definedExternally
+        set(value) = definedExternally
+    var deviceHeight: Any? /* Number | String */
+        get() = definedExternally
+        set(value) = definedExternally
+    var width: Any? /* Number | String */
+        get() = definedExternally
+        set(value) = definedExternally
+    var deviceWidth: Any? /* Number | String */
+        get() = definedExternally
+        set(value) = definedExternally
+    var color: Boolean?
+        get() = definedExternally
+        set(value) = definedExternally
+    var colorIndex: Boolean?
+        get() = definedExternally
+        set(value) = definedExternally
+    var monochrome: Boolean?
+        get() = definedExternally
+        set(value) = definedExternally
+    var resolution: Any? /* Number | String */
+        get() = definedExternally
+        set(value) = definedExternally
+    var orientation: MediaQueryMatcherOrientation?
+        get() = definedExternally
+        set(value) = definedExternally
+    var scan: MediaQueryMatcherScan?
+        get() = definedExternally
+        set(value) = definedExternally
+    var type: MediaQueryType?
+        get() = definedExternally
+        set(value) = definedExternally
+}
+
+external interface MediaQueryFeatures : MediaQueryMatchers {
+    var minAspectRatio: String?
+        get() = definedExternally
+        set(value) = definedExternally
+    var maxAspectRatio: String?
+        get() = definedExternally
+        set(value) = definedExternally
+
+    var minDeviceAspectRatio: String?
+        get() = definedExternally
+        set(value) = definedExternally
+    var maxDeviceAspectRatio: String?
+        get() = definedExternally
+        set(value) = definedExternally
+
+    var minHeight: Any? /* Number | String */
+        get() = definedExternally
+        set(value) = definedExternally
+    var maxHeight: Any? /* Number | String */
+        get() = definedExternally
+        set(value) = definedExternally
+
+    var minDeviceHeight: Any? /* Number | String */
+        get() = definedExternally
+        set(value) = definedExternally
+    var maxDeviceHeight: Any? /* Number | String */
+        get() = definedExternally
+        set(value) = definedExternally
+
+    var minWidth: Any? /* Number | String */
+        get() = definedExternally
+        set(value) = definedExternally
+    var maxWidth: Any? /* Number | String */
+        get() = definedExternally
+        set(value) = definedExternally
+
+    var minDeviceWidth: Any? /* Number | String */
+        get() = definedExternally
+        set(value) = definedExternally
+    var maxDeviceWidth: Any? /* Number | String */
+        get() = definedExternally
+        set(value) = definedExternally
+
+    var minColor: Number?
+        get() = definedExternally
+        set(value) = definedExternally
+    var maxColor: Number?
+        get() = definedExternally
+        set(value) = definedExternally
+
+    var minColorIndex: Number?
+        get() = definedExternally
+        set(value) = definedExternally
+    var maxColorIndex: Number?
+        get() = definedExternally
+        set(value) = definedExternally
+
+    var minMonochrome: Number?
+        get() = definedExternally
+        set(value) = definedExternally
+    var maxMonochrome: Number?
+        get() = definedExternally
+        set(value) = definedExternally
+
+    var minResolution: Any? /* Number | String */
+        get() = definedExternally
+        set(value) = definedExternally
+    var maxResolution: Any? /* Number | String */
+        get() = definedExternally
+        set(value) = definedExternally
+}
+
+external interface MediaQueryAllQueryable : MediaQueryFeatures, MediaQueryTypes
