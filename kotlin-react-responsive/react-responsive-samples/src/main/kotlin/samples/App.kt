@@ -15,6 +15,8 @@ class App : RComponent<RProps, RState>() {
             h1 { +"Examples" }
         }
         div("app-content") {
+            withHooks()
+            withComponents()
             static()
             sandbox()
         }

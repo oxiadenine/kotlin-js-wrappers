@@ -1,6 +1,5 @@
 package samples.sandbox
 
-import kotlinext.js.jsObject
 import react.RBuilder
 import react.RComponent
 import react.RProps
@@ -13,10 +12,7 @@ class Sandbox : RComponent<RProps, RState>() {
         div {
             div { +"Device Test!" }
             mediaQuery {
-                attrs {
-                    minDeviceWidth = 1224
-                    values = jsObject { deviceWidth = 1230 }
-                }
+                attrs.minDeviceWidth = 1224
                 div { +"You are a desktop or laptop" }
                 mediaQuery {
                     attrs.minDeviceWidth = 1824
