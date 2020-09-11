@@ -1,41 +1,42 @@
-package samples
+package samples.advanced
 
 import kotlinext.js.js
+import kotlinext.js.require
 import react.*
-import react.dom.br
-import react.dom.p
-import react.dom.strong
+import react.dom.*
 import reactintl.message.formattedMessage
 import reactintl.provider.intlProvider
 import kotlin.js.Date
 import kotlin.random.Random
 
-private val providerMessages = js {
-    simple = "Hello world"
-    placeholder = "Hello {name}"
-    date = "Hello {ts, date}"
-    time = "Hello {ts, time}"
-    number = "Hello {num, number}"
-    plural = "I have {num, plural, one {# dog} other {# dogs}}"
-    select = "I am a {gender, select, male {boy} female {girl}}"
-    selectordinal = """I am the {order, selectordinal,
-        one {#st person}
-        two {#nd person}
-        =3 {#rd person}
-        other {#th person}
-    }""".trimIndent()
-    richtext = "I have <bold>{num, plural, one {# dog} other {# dogs}}</bold>"
-    richertext = "I have <bold>{num, plural, one {# & dog} other {# dogs}}</bold>"
-    unicode = "Hello\u0020{placeholder}"
-}.unsafeCast<Any>()
+private fun loadLocaleData(locale: String): Any {
+    val advancedDir = "../../../../../kotlin-react-intl/react-intl-samples/src/main/kotlin/samples/advanced"
 
-private val app = functionalComponent<RProps> {
+    return when (locale) {
+        "fr" -> require("$advancedDir/fr.json")
+        "en" -> require("$advancedDir/en.json")
+        else -> require("$advancedDir/en.json")
+    }.unsafeCast<Any>()
+}
+
+interface AdvancedProps : RProps {
+    var locale: String
+    var messages: Any
+}
+
+private val app = functionalComponent<AdvancedProps> { props ->
     intlProvider {
         attrs {
-            locale = "en"
-            messages = providerMessages
+            locale = props.locale
+            defaultLocale = "en"
+            messages = props.messages
         }
         p {
+            span {
+                attrs.jsStyle = js {fontSize = "30px"}
+                +"AST"
+            }
+            br {}
             formattedMessage { attrs.id = "simple" }
             br {}
             formattedMessage {
@@ -133,35 +134,15 @@ private val app = functionalComponent<RProps> {
                     }.unsafeCast<Any>()
                 }
             }
-            br {}
-            formattedMessage {
-                attrs {
-                    id = "richertext"
-                    values = js {
-                        num = 99
-                        bold = fun (chunks: String): ReactElement {
-                            return strong { +chunks }
-                        }
-                    }.unsafeCast<Any>()
-                }
-            }
-            br {}
-            formattedMessage {
-                attrs {
-                    id = "unicode"
-                    values = js { placeholder = "world" }.unsafeCast<Any>()
-                }
-            }
-            br {}
-            formattedMessage {
-                attrs {
-                    id = "whatever"
-                    defaultMessage = "Hello\u0020{placeholder}"
-                    values = js { placeholder = "world" }.unsafeCast<Any>()
-                }
-            }
         }
     }
 }
 
-fun RBuilder.messages() = child(app)
+fun RBuilder.advanced() {
+    child(app) {
+        attrs {
+            locale = "en"
+            messages = loadLocaleData("en")
+        }
+    }
+}

@@ -6,6 +6,7 @@ import react.RProps
 import react.RState
 import react.dom.div
 import react.dom.h1
+import samples.advanced.advanced
 
 class App : RComponent<RProps, RState>() {
     override fun RBuilder.render() {
@@ -13,9 +14,12 @@ class App : RComponent<RProps, RState>() {
             h1 { +"Examples" }
         }
         div("app-content") {
-            helloWorld()
             timeZone()
             messages()
+            injected()
+            hooks()
+            handleChange()
+            advanced()
         }
     }
 }
