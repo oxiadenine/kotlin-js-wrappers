@@ -25,128 +25,124 @@ private val providerMessages = js {
         other {#th person}
     }""".trimIndent()
     richtext = "I have <bold>{num, plural, one {# dog} other {# dogs}}</bold>"
-}
+}.unsafeCast<Any>()
 
 interface MessagesProps : RProps {
     var currentTime: Any /* Date | Number */
 }
 
-class Messages : RComponent<MessagesProps, RState>() {
-    override fun RBuilder.render() {
-        intlProvider {
-            attrs {
-                locale = "en"
-                messages = providerMessages
+private val app = functionalComponent<MessagesProps> {
+    intlProvider {
+        attrs {
+            locale = "en"
+            messages = providerMessages
+        }
+        p {
+            formattedMessage {
+                attrs.id = "simple"
             }
-            p {
-                formattedMessage {
-                    attrs.id = "simple"
+            br {}
+            formattedMessage {
+                attrs {
+                    id = "placeholder"
+                    values = js { name = "John" }.unsafeCast<Any>()
                 }
-                br {}
-                formattedMessage {
-                    attrs {
-                        id = "placeholder"
-                        values = js { name = "John" }.unsafeCast<Any>()
-                    }
+            }
+            br {}
+            formattedMessage {
+                attrs {
+                    id = "date"
+                    values = js { ts = Date.now() }.unsafeCast<Any>()
                 }
-                br {}
-                formattedMessage {
-                    attrs {
-                        id = "date"
-                        values = js { ts = Date.now() }.unsafeCast<Any>()
-                    }
+            }
+            br {}
+            formattedMessage {
+                attrs {
+                    id = "time"
+                    values = js { ts = Date.now() }.unsafeCast<Any>()
                 }
-                br {}
-                formattedMessage {
-                    attrs {
-                        id = "time"
-                        values = js { ts = Date.now() }.unsafeCast<Any>()
-                    }
+            }
+            br {}
+            formattedMessage {
+                attrs {
+                    id = "number"
+                    values = js { num = Random.nextInt() * 1000 }.unsafeCast<Any>()
                 }
-                br {}
-                formattedMessage {
-                    attrs {
-                        id = "number"
-                        values = js { num = Random.nextInt() * 1000 }.unsafeCast<Any>()
-                    }
+            }
+            br {}
+            formattedMessage {
+                attrs {
+                    id = "plural"
+                    values = js { num = 1 }.unsafeCast<Any>()
                 }
-                br {}
-                formattedMessage {
-                    attrs {
-                        id = "plural"
-                        values = js { num = 1 }.unsafeCast<Any>()
-                    }
+            }
+            br {}
+            formattedMessage {
+                attrs {
+                    id = "plural"
+                    values = js { num = 99 }.unsafeCast<Any>()
                 }
-                br {}
-                formattedMessage {
-                    attrs {
-                        id = "plural"
-                        values = js { num = 99 }.unsafeCast<Any>()
-                    }
+            }
+            br {}
+            formattedMessage {
+                attrs {
+                    id = "select"
+                    values = js { gender = "male" }.unsafeCast<Any>()
                 }
-                br {}
-                formattedMessage {
-                    attrs {
-                        id = "select"
-                        values = js { gender = "male" }.unsafeCast<Any>()
-                    }
+            }
+            br {}
+            formattedMessage {
+                attrs {
+                    id = "select"
+                    values = js { gender = "female" }.unsafeCast<Any>()
                 }
-                br {}
-                formattedMessage {
-                    attrs {
-                        id = "select"
-                        values = js { gender = "female" }.unsafeCast<Any>()
-                    }
+            }
+            br {}
+            formattedMessage {
+                attrs {
+                    id = "selectordinal"
+                    values = js { order = 1 }.unsafeCast<Any>()
                 }
-                br {}
-                formattedMessage {
-                    attrs {
-                        id = "selectordinal"
-                        values = js { order = 1 }.unsafeCast<Any>()
-                    }
+            }
+            br {}
+            formattedMessage {
+                attrs {
+                    id = "selectordinal"
+                    values = js { order = 2 }.unsafeCast<Any>()
                 }
-                br {}
-                formattedMessage {
-                    attrs {
-                        id = "selectordinal"
-                        values = js { order = 2 }.unsafeCast<Any>()
-                    }
+            }
+            br {}
+            formattedMessage {
+                attrs {
+                    id = "selectordinal"
+                    values = js { order = 3 }.unsafeCast<Any>()
                 }
-                br {}
-                formattedMessage {
-                    attrs {
-                        id = "selectordinal"
-                        values = js { order = 3 }.unsafeCast<Any>()
-                    }
+            }
+            br {}
+            formattedMessage {
+                attrs {
+                    id = "selectordinal"
+                    values = js { order = 4 }.unsafeCast<Any>()
                 }
-                br {}
-                formattedMessage {
-                    attrs {
-                        id = "selectordinal"
-                        values = js { order = 4 }.unsafeCast<Any>()
-                    }
-                }
-                br {}
-                formattedMessage {
-                    attrs {
-                        id = "richtext"
-                        values = js {
-                            num = 99
-                            bold = fun (chunks: String): ReactElement {
-                                return strong { +chunks }
-                            }
-                        }.unsafeCast<Any>()
-                    }
+            }
+            br {}
+            formattedMessage {
+                attrs {
+                    id = "richtext"
+                    values = js {
+                        num = 99
+                        bold = fun (chunks: String): ReactElement {
+                            return strong { +chunks }
+                        }
+                    }.unsafeCast<Any>()
                 }
             }
         }
     }
 }
 
-fun RBuilder.messagesApp(handler: RHandler<MessagesProps>) = child(Messages::class, handler)
-
 fun RBuilder.messages() {
-    messagesApp {
+    child(app) {
         attrs.currentTime = Date()
     }
 }

@@ -1,4 +1,4 @@
-version = "3.1.12-pre.2"
+version = "5.8.1-pre.3"
 
 apply(plugin = "kotlin-js")
 apply(plugin = "bintray-publish")
