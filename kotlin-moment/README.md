@@ -1,10 +1,11 @@
 ## Introduction
+
 This project is a library wrapping [Moment.js](https://momentjs.com/) to be used in an application 
 built with [Kotlin/JS](https://kotlinlang.org/docs/reference/js-overview.html).
 
 ### Installation
 
-To start using `kotlin-moment` make sure you have the Bintray repository and the following dependencies added to 
+To start using `kotlin-moment` make sure you have the Bintray repository, and the following dependencies added to 
 the Gradle build file:
 
 ```kotlin
@@ -22,5 +23,6 @@ See the [Bintray page](https://bintray.com/samgarasx/kotlin-js-wrappers/kotlin-m
 installation instructions.
 
 ### Getting Started
+
 You can view the [samples](https://github.com/samgarasx/kotlin-js-wrappers/tree/master/kotlin-moment/moment-samples) to know 
 how to use this library.
