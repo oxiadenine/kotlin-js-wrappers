@@ -8,6 +8,7 @@ To learn more please refer to the READMEs of individual modules:
 * [kotlin-moment](kotlin-moment/README.md)
 * [kotlin-react-intl](kotlin-react-intl/README.md)
 * [kotlin-react-responsive](kotlin-react-responsive/README.md)
+* [kotlin-uikit](kotlin-uikit/README.md)
 
 Artifacts installable using Maven and Gradle are published to [Bintray](https://bintray.com/samgarasx/kotlin-js-wrappers).
 
