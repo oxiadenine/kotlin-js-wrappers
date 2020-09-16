@@ -18,7 +18,5 @@ external interface IntlProviderProps : OptionalIntlConfig, RProps
 external interface IntlProviderState : RState {
     var cache: IntlCache
     var intl: IntlShape?
-        get() = definedExternally
-        set(value) = definedExternally
     var prevConfig: OptionalIntlConfig
 }

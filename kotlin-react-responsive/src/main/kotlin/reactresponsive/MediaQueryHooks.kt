@@ -11,6 +11,4 @@ external fun useMediaQuery(
 
 external interface MediaQuerySettings : MediaQueryAllQueryable {
     var query: String?
-        get() = definedExternally
-        set(value) = definedExternally
 }

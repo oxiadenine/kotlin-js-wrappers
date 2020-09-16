@@ -5,32 +5,14 @@ package reactintl.number
 
 external interface IntlNumberFormatOptions {
     var style: String?
-        get() = definedExternally
-        set(value) = definedExternally
     var currency: String?
-        get() = definedExternally
-        set(value) = definedExternally
     var currencyDisplay: String?
-        get() = definedExternally
-        set(value) = definedExternally
     var useGrouping: Boolean?
-        get() = definedExternally
-        set(value) = definedExternally
     var minimumIntegerDigits: Number?
-        get() = definedExternally
-        set(value) = definedExternally
     var minimumFractionDigits: Number?
-        get() = definedExternally
-        set(value) = definedExternally
     var maximumFractionDigits: Number?
-        get() = definedExternally
-        set(value) = definedExternally
     var minimumSignificantDigits: Number?
-        get() = definedExternally
-        set(value) = definedExternally
     var maximumSignificantDigits: Number?
-        get() = definedExternally
-        set(value) = definedExternally
 }
 
 external interface IntlNumberFormat {
@@ -48,19 +30,11 @@ external interface ResolvedNumberFormatOptions {
     var numberingSystem: String
     var style: String
     var currency: String?
-        get() = definedExternally
-        set(value) = definedExternally
     var currencyDisplay: String?
-        get() = definedExternally
-        set(value) = definedExternally
     var minimumIntegerDigits: Number
     var minimumFractionDigits: Number
     var maximumFractionDigits: Number
     var minimumSignificantDigits: Number?
-        get() = definedExternally
-        set(value) = definedExternally
     var maximumSignificantDigits: Number?
-        get() = definedExternally
-        set(value) = definedExternally
     var useGrouping: Boolean
 }

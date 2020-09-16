@@ -57,36 +57,20 @@ external interface StandaloneFormatSpec {
     var format: Array<String>
     var standalone: Array<String>
     var isFormat: RegExp?
-        get() = definedExternally
-        set(value) = definedExternally
 }
 
 external interface WeekSpec {
     var dow: Number
     var doy: Number?
-        get() = definedExternally
-        set(value) = definedExternally
 }
 
 external interface CalendarSpec {
     var sameDay: CalendarSpecVal?
-        get() = definedExternally
-        set(value) = definedExternally
     var nextDay: CalendarSpecVal?
-        get() = definedExternally
-        set(value) = definedExternally
     var lastDay: CalendarSpecVal?
-        get() = definedExternally
-        set(value) = definedExternally
     var nextWeek: CalendarSpecVal?
-        get() = definedExternally
-        set(value) = definedExternally
     var lastWeek: CalendarSpecVal?
-        get() = definedExternally
-        set(value) = definedExternally
     var sameElse: CalendarSpecVal?
-        get() = definedExternally
-        set(value) = definedExternally
 
     // any additional properties might be used with moment.calendarFormat
     /* [x: String]: CalendarSpecVal | Unit // undefined */
@@ -94,50 +78,20 @@ external interface CalendarSpec {
 
 external interface RelativeTimeSpec {
     var future: RelativeTimeFuturePastVal?
-        get() = definedExternally
-        set(value) = definedExternally
     var past: RelativeTimeFuturePastVal?
-        get() = definedExternally
-        set(value) = definedExternally
     var s: RelativeTimeSpecVal?
-        get() = definedExternally
-        set(value) = definedExternally
     var ss: RelativeTimeSpecVal?
-        get() = definedExternally
-        set(value) = definedExternally
     var m: RelativeTimeSpecVal?
-        get() = definedExternally
-        set(value) = definedExternally
     var mm: RelativeTimeSpecVal?
-        get() = definedExternally
-        set(value) = definedExternally
     var h: RelativeTimeSpecVal?
-        get() = definedExternally
-        set(value) = definedExternally
     var hh: RelativeTimeSpecVal?
-        get() = definedExternally
-        set(value) = definedExternally
     var d: RelativeTimeSpecVal?
-        get() = definedExternally
-        set(value) = definedExternally
     var dd: RelativeTimeSpecVal?
-        get() = definedExternally
-        set(value) = definedExternally
     var w: RelativeTimeFuturePastVal?
-        get() = definedExternally
-        set(value) = definedExternally
     var M: RelativeTimeSpecVal?
-        get() = definedExternally
-        set(value) = definedExternally
     var MM: RelativeTimeSpecVal?
-        get() = definedExternally
-        set(value) = definedExternally
     var y: RelativeTimeSpecVal?
-        get() = definedExternally
-        set(value) = definedExternally
     var yy: RelativeTimeSpecVal?
-        get() = definedExternally
-        set(value) = definedExternally
 }
 
 external interface LongDateFormatSpec {
@@ -150,23 +104,11 @@ external interface LongDateFormatSpec {
 
     // lets forget for a sec that any upper/lower permutation will also work
     var lts: String?
-        get() = definedExternally
-        set(value) = definedExternally
     var lt: String?
-        get() = definedExternally
-        set(value) = definedExternally
     var l: String?
-        get() = definedExternally
-        set(value) = definedExternally
     var ll: String?
-        get() = definedExternally
-        set(value) = definedExternally
     var lll: String?
-        get() = definedExternally
-        set(value) = definedExternally
     var llll: String?
-        get() = definedExternally
-        set(value) = definedExternally
 }
 
 external interface EraSpec {
@@ -180,58 +122,26 @@ external interface EraSpec {
 
 external interface LocaleSpecification {
     var months: Any? /* Array<String> | StandaloneFormatSpec | MonthWeekdayFn */
-        get() = definedExternally
-        set(value) = definedExternally
     var monthsShort: Any? /* Array<String>| StandaloneFormatSpec | MonthWeekdayFn */
-        get() = definedExternally
-        set(value) = definedExternally
 
     var weekdays: Any? /* Array<String> | StandaloneFormatSpec | MonthWeekdayFn */
-        get() = definedExternally
-        set(value) = definedExternally
     var weekdaysShort: Any? /* Array<String> | StandaloneFormatSpec | WeekdaySimpleFn */
-        get() = definedExternally
-        set(value) = definedExternally
     var weekdaysMin: Any? /* Array<String> | StandaloneFormatSpec | WeekdaySimpleFn */
-        get() = definedExternally
-        set(value) = definedExternally
 
     var meridiemParse: RegExp?
-        get() = definedExternally
-        set(value) = definedExternally
     var meridiem: ((hour: Number, minute: Number, isLower: Boolean) -> String)?
-        get() = definedExternally
-        set(value) = definedExternally
 
     var isPM: ((input: String) -> Boolean)?
-        get() = definedExternally
-        set(value) = definedExternally
 
     var longDateFormat: LongDateFormatSpec?
-        get() = definedExternally
-        set(value) = definedExternally
     var calendar: CalendarSpec?
-        get() = definedExternally
-        set(value) = definedExternally
     var relativeTime: RelativeTimeSpec?
-        get() = definedExternally
-        set(value) = definedExternally
     var invalidDate: String?
-        get() = definedExternally
-        set(value) = definedExternally
     var ordinal: ((n: Number) -> String)?
-        get() = definedExternally
-        set(value) = definedExternally
     var ordinalParse: RegExp?
-        get() = definedExternally
-        set(value) = definedExternally
 
     var week: WeekSpec?
-        get() = definedExternally
-        set(value) = definedExternally
     var eras: Array<EraSpec>?
-        get() = definedExternally
-        set(value) = definedExternally
 
     // Allow anything: in general any property that is passed as locale spec is
     // put in the locale object so it can be used by locale functions
@@ -252,26 +162,12 @@ external interface MomentObjectOutput {
 
 external interface ArgThresholdOpts {
     var ss: Number?
-        get() = definedExternally
-        set(value) = definedExternally
     var s: Number?
-        get() = definedExternally
-        set(value) = definedExternally
     var m: Number?
-        get() = definedExternally
-        set(value) = definedExternally
     var h: Number?
-        get() = definedExternally
-        set(value) = definedExternally
     var d: Number?
-        get() = definedExternally
-        set(value) = definedExternally
     var w: Any? /* Number | Unit */
-        get() = definedExternally
-        set(value) = definedExternally
     var M: Number?
-        get() = definedExternally
-        set(value) = definedExternally
 }
 
 external interface Duration {
@@ -366,23 +262,11 @@ external interface MomentLongDateFormat {
     var LTS: String
 
     var l: String?
-        get() = definedExternally
-        set(value) = definedExternally
     var ll: String?
-        get() = definedExternally
-        set(value) = definedExternally
     var lll: String?
-        get() = definedExternally
-        set(value) = definedExternally
     var llll: String?
-        get() = definedExternally
-        set(value) = definedExternally
     var lt: String?
-        get() = definedExternally
-        set(value) = definedExternally
     var lts: String?
-        get() = definedExternally
-        set(value) = definedExternally
 }
 
 external interface MomentParsingFlags {
@@ -402,41 +286,17 @@ external interface MomentParsingFlags {
 
 external interface MomentParsingFlagsOpt {
     var empty: Boolean?
-        get() = definedExternally
-        set(value) = definedExternally
     var unusedTokens: Array<String>?
-        get() = definedExternally
-        set(value) = definedExternally
     var unusedInput: Array<String>?
-        get() = definedExternally
-        set(value) = definedExternally
     var overflow: Number?
-        get() = definedExternally
-        set(value) = definedExternally
     var charsLeftOver: Number?
-        get() = definedExternally
-        set(value) = definedExternally
     var nullInput: Boolean?
-        get() = definedExternally
-        set(value) = definedExternally
     var invalidMonth: String?
-        get() = definedExternally
-        set(value) = definedExternally
     var invalidFormat: Boolean?
-        get() = definedExternally
-        set(value) = definedExternally
     var userInvalidated: Boolean?
-        get() = definedExternally
-        set(value) = definedExternally
     var iso: Boolean?
-        get() = definedExternally
-        set(value) = definedExternally
     var parsedDateParts: Array<Any>?
-        get() = definedExternally
-        set(value) = definedExternally
     var meridiem: String?
-        get() = definedExternally
-        set(value) = definedExternally
 }
 
 external interface MomentBuiltinFormat {
@@ -445,188 +305,80 @@ external interface MomentBuiltinFormat {
 
 external interface MomentInputObject {
     var years: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
     var year: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
     var y: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
 
     var months: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
     var month: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
     var M: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
 
     var days: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
     var day: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
     var d: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
 
     var dates: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
     var date: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
     var D: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
 
     var hours: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
     var hour: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
     var h: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
 
     var minutes: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
     var minute: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
     var m: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
 
     var seconds: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
     var second: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
     var s: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
 
     var milliseconds: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
     var millisecond: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
     var ms: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
 }
 
 external interface DurationInputObject : MomentInputObject {
     var quarters: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
     var quarter: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
     var Q: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
 
     var weeks: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
     var week: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
     var w: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
 }
 
 external interface MomentSetObject : MomentInputObject {
     var weekYears: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
     var weekYear: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
     var gg: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
 
     var isoWeekYears: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
     var isoWeekYear: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
     var GG: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
 
     var quarters: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
     var quarter: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
     var Q: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
 
     var weeks: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
     var week: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
     var w: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
 
     var isoWeeks: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
     var isoWeek: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
     var W: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
 
     var dayOfYears: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
     var dayOfYear: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
     var DDD: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
 
     var weekdays: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
     var weekday: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
     var e: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
 
     var isoWeekdays: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
     var isoWeekday: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
     var E: NumberLike?
-        get() = definedExternally
-        set(value) = definedExternally
 }
 
 external interface FromTo {
@@ -637,13 +389,9 @@ external interface FromTo {
 external interface MomentCreationData {
     var input: MomentInput
     var format: MomentFormatSpecification?
-        get() = definedExternally
-        set(value) = definedExternally
     var locale: Locale
     var isUTC: Boolean
     var strict: Boolean?
-        get() = definedExternally
-        set(value) = definedExternally
 }
 
 external interface Moment {

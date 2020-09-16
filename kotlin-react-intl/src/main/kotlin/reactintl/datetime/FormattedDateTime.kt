@@ -31,8 +31,6 @@ external class FormattedTimePartsComponent : Component<FormattedTimePartsProps, 
 
 external interface FormattedDateProps : DateTimeFormatOptions, CustomFormatConfig, RProps {
     var value: Any? /* String | Number | Date */
-        get() = definedExternally
-        set(value) = definedExternally
 }
 
 external interface FormattedDatePartsProps : DateTimeFormatOptions, RProps {
@@ -42,8 +40,6 @@ external interface FormattedDatePartsProps : DateTimeFormatOptions, RProps {
 
 external interface FormattedTimeProps : DateTimeFormatOptions, CustomFormatConfig, RProps {
     var value: Any? /* String | Number | Date */
-        get() = definedExternally
-        set(value) = definedExternally
 }
 
 external interface FormattedTimePartsProps : DateTimeFormatOptions, RProps {
@@ -53,21 +49,9 @@ external interface FormattedTimePartsProps : DateTimeFormatOptions, RProps {
 
 external interface DateTimeFormatOptions : IntlDateTimeFormatOptions, CustomFormatConfig {
     var hourCycle: String? /* "h11" | "h12" | "h23" | "h24" */
-        get() = definedExternally
-        set(value) = definedExternally
     var dateStyle: String? /* "full" | "long" | "medium" | "short" */
-        get() = definedExternally
-        set(value) = definedExternally
     var timeStyle: String? /* "full" | "long" | "medium" | "short" */
-        get() = definedExternally
-        set(value) = definedExternally
     var fractionalSecondDigits: Number?
-        get() = definedExternally
-        set(value) = definedExternally
     var calendar: String? /* "buddhist" | "chinese" | "coptic" | "ethiopia" | "ethiopic" | "gregory" | "hebrew" | "indian" | "islamic" | "iso8601" | "japanese" | "persian" | "roc" */
-        get() = definedExternally
-        set(value) = definedExternally
     var numberingSystem: String?
-        get() = definedExternally
-        set(value) = definedExternally
 }

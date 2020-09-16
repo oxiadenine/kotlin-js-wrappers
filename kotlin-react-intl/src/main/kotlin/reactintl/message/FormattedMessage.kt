@@ -18,20 +18,12 @@ open external class FormattedMessageComponent : Component<FormattedMessageProps<
 
 external interface FormattedMessageProps<V> : MessageDescriptor, RProps {
     var values: V?
-        get() = definedExternally
-        set(value) = definedExternally
     var tagName: Any?
-        get() = definedExternally
-        set(value) = definedExternally
     var children: ((nodes: Array<Any>) -> ReactElement)?
-        get() = definedExternally
-        set(value) = definedExternally
 }
 
 external interface MessageFormatOptions {
     var formatters: Formatters?
-        get() = definedExternally
-        set(value) = definedExternally
     var ignoreTag: Boolean?
 }
 
@@ -48,12 +40,6 @@ external class MessageFormat(
 
 external interface MessageDescriptor {
     var id: Any? /* String | Number */
-        get() = definedExternally
-        set(value) = definedExternally
     var description: Any?
-        get() = definedExternally
-        set(value) = definedExternally
     var defaultMessage: Any? /* String | Array<MessageFormatElement> */
-        get() = definedExternally
-        set(value) = definedExternally
 }

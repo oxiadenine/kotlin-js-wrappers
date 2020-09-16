@@ -34,22 +34,14 @@ external fun createIntl(config: OptionalIntlConfig, cache: IntlCache? = definedE
 
 external interface Opts<IntlPropName, ForwardRef> {
     var intlPropName: IntlPropName?
-        get() = definedExternally
-        set(value) = definedExternally
     var forwardRef: ForwardRef?
-        get() = definedExternally
-        set(value) = definedExternally
     var enforceContext: Boolean?
-        get() = definedExternally
-        set(value) = definedExternally
 }
 
 external interface WrappedComponentProps<IntlPropName> : RProps
 
 external interface WithIntlProps<P> : RProps {
     var forwardedRef: RMutableRef<Any>?
-        get() = definedExternally
-        set(value) = definedExternally
 }
 
 external interface IntlShape : IntlConfig, IntlFormatters {
@@ -66,25 +58,17 @@ external interface IntlCache {
 
 external interface IntlConfig : CoreIntlConfig<ReactElement> {
     var textComponent: Any?
-        get() = definedExternally
-        set(value) = definedExternally
     var wrapRichTextChunksInFragment: Boolean?
-        get() = definedExternally
-        set(value) = definedExternally
 }
 
 external interface CoreIntlConfig<T> {
     var locale: String
     var timeZone: String?
-        get() = definedExternally
-        set(value) = definedExternally
     var formats: CustomFormats
     var messages: Any
     var defaultLocale: String
     var defaultFormats: CustomFormats
     var defaultRichTextElements: Any?
-        get() = definedExternally
-        set(value) = definedExternally
     var onError: (error: IntlError) -> Unit
 }
 
@@ -94,8 +78,6 @@ external interface CustomFormats {
 
 external interface CustomFormatConfig {
     var format: String?
-        get() = definedExternally
-        set(value) = definedExternally
 }
 
 external interface Location {
@@ -116,6 +98,4 @@ external interface LocaleData<T> {
 
 external interface LocaleFieldsData {
     var nu: Array<String>?
-        get() = definedExternally
-        set(value) = definedExternally
 }

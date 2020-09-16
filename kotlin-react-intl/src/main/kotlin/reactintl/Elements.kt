@@ -26,9 +26,6 @@ external interface BaseElement<T : MessageType> {
     var type: T
     var value: String
     var location: Location?
-        get() = definedExternally
-        set(value) = definedExternally
-
 }
 
 external interface LiteralElement : BaseElement<MessageType>
@@ -62,8 +59,6 @@ external interface DateTimeSkeleton {
     var type: MessageSkeletonType
     var pattern: String
     var location: Location?
-        get() = definedExternally
-        set(value) = definedExternally
     var parsedOptions: IntlDateTimeFormatOptions
 }
 
@@ -71,8 +66,6 @@ external interface NumberSkeleton {
     var type: MessageSkeletonType
     var tokens: Array<NumberSkeletonToken>
     var location: Location?
-        get() = definedExternally
-        set(value) = definedExternally
     var parsedOptions: IntlNumberFormatOptions
 }
 

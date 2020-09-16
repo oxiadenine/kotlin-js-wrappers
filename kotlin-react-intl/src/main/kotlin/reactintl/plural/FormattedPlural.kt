@@ -24,28 +24,14 @@ external interface FormattedPluralProps : IntlPluralFormatOptions, CustomFormatC
     var intl: IntlShape
     var other: Any /* String | ReactElement */
     var zero: Any? /* String | ReactElement */
-        get() = definedExternally
-        set(value) = definedExternally
     var one: Any? /* String | ReactElement */
-        get() = definedExternally
-        set(value) = definedExternally
     var two: Any? /* String | ReactElement */
-        get() = definedExternally
-        set(value) = definedExternally
     var few: Any? /* String | ReactElement */
-        get() = definedExternally
-        set(value) = definedExternally
     var many: Any? /* String | ReactElement */
-        get() = definedExternally
-        set(value) = definedExternally
     var children: ((value: ReactElement) -> ReactElement?)?
-        get() = definedExternally
-        set(value) = definedExternally
 }
 
 external interface PluralOrSelectOption {
     var value: Array<MessageFormatElement>
     var location: Location?
-        get() = definedExternally
-        set(value) = definedExternally
 }

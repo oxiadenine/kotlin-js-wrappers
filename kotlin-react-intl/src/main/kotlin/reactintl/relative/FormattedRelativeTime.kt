@@ -16,25 +16,13 @@ external class FormattedRelativeTimeComponent : Component<FormattedRelativeTimeP
 
 external interface FormattedRelativeTimeProps : IntlRelativeTimeFormatOptions, CustomFormatConfig, RProps {
     var value: Number?
-        get() = definedExternally
-        set(value) = definedExternally
     var unit: RelativeTimeUnit?
-        get() = definedExternally
-        set(value) = definedExternally
     var updateIntervalInSeconds: Number?
-        get() = definedExternally
-        set(value) = definedExternally
     var children: ((value: String) -> ReactElement)?
-        get() = definedExternally
-        set(value) = definedExternally
 }
 
 external interface FormattedRelativeTimeState : RState {
     var prevUnit: RelativeTimeUnit?
-        get() = definedExternally
-        set(value) = definedExternally
     var prevValue: Number?
-        get() = definedExternally
-        set(value) = definedExternally
     var currentValueInSeconds: Number
 }

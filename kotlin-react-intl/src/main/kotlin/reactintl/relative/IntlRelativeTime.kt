@@ -9,11 +9,7 @@ import reactintl.plural.IntlPluralRules
 
 external interface IntlRelativeTimeFormatOptions {
     var numeric: String? /* "always" | "auto" */
-        get() = definedExternally
-        set(value) = definedExternally
     var style: String? /* "long" | "short" | "narrow" */
-        get() = definedExternally
-        set(value) = definedExternally
 }
 
 external interface IntlRelativeTimeFormat {
@@ -37,9 +33,5 @@ external interface ResolvedRelativeTimeFormatOptions {
     var locale: String
     var numberingSystem: String
     var numeric: String? /* "always" | "auto" */
-        get() = definedExternally
-        set(value) = definedExternally
     var style: String? /* "long" | "short" | "narrow" */
-        get() = definedExternally
-        set(value) = definedExternally
 }

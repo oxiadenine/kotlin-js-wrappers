@@ -5,14 +5,8 @@ package reactintl.displayname
 
 external interface IntlDisplayNameFormatOptions {
     var style: String? /* "narrow" | "short" | "long" */
-        get() = definedExternally
-        set(value) = definedExternally
     var type: String? /* "language" | "region" | "script" | "currency" */
-        get() = definedExternally
-        set(value) = definedExternally
     var fallback: String? /* "code" | "none" */
-        get() = definedExternally
-        set(value) = definedExternally
 }
 
 external class IntlDisplayNames(
