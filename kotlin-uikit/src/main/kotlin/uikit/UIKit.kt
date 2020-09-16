@@ -4,7 +4,7 @@ package uikit
 @JsNonModule
 external val UIkit: UIKit
 
-external interface UIKit {
+external interface UIKit : UIKitComponent {
     val util: dynamic
     val prefix: String
     val data: String
