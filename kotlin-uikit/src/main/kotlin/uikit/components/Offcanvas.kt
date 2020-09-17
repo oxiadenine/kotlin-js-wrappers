@@ -1,6 +1,8 @@
 package uikit.components
 
-external interface OffcanvasElement {
+import uikit.Component
+
+external interface OffcanvasComponent : Component {
     fun show()
     fun hide()
 }

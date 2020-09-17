@@ -1,6 +1,8 @@
 package uikit.components
 
-external interface DropElement {
+import uikit.Component
+
+external interface DropComponent : Component {
     fun show()
     fun hide(delay: Boolean = definedExternally)
 }

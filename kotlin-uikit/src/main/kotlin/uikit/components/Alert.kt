@@ -1,6 +1,8 @@
 package uikit.components
 
-external interface AlertElement {
+import uikit.Component
+
+external interface AlertComponent : Component {
     fun close()
 }
 

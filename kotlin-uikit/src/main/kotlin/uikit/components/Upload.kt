@@ -1,9 +1,10 @@
 package uikit.components
 
 import org.w3c.dom.events.Event
+import uikit.Component
 import uikit.util.Environment
 
-external interface UploadElement
+external interface UploadComponent : Component
 
 external interface UploadOptions {
     var url: String?

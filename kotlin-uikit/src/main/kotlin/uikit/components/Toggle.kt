@@ -1,6 +1,8 @@
 package uikit.components
 
-external interface ToggleElement {
+import uikit.Component
+
+external interface ToggleComponent : Component {
     fun toggle()
 }
 

@@ -1,6 +1,8 @@
 package uikit.components
 
-external interface VideoElement
+import uikit.Component
+
+external interface VideoComponent : Component
 
 external interface VideoOptions {
     var autoplay: Any? /* Boolean | String */

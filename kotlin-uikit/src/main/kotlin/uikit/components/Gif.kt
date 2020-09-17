@@ -1,5 +1,7 @@
 package uikit.components
 
-external interface GifElement
+import uikit.Component
+
+external interface GifComponent : Component
 
 external interface GifOptions

@@ -1,5 +1,7 @@
 package uikit.components
 
-external interface OverflowElement
+import uikit.Component
+
+external interface OverflowComponent : Component
 
 external interface OverflowOptions

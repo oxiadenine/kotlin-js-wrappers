@@ -1,6 +1,8 @@
 package uikit.components
 
-external interface ParallaxElement
+import uikit.Component
+
+external interface ParallaxComponent : Component
 
 external interface ParallaxOptions {
     var easing: Number?

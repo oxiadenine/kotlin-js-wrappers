@@ -1,6 +1,8 @@
 package uikit.components
 
-external interface StickyElement
+import uikit.Component
+
+external interface StickyComponent : Component
 
 external interface StickyOptions {
     var top: Any? /* Number | String */

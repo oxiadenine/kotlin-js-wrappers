@@ -1,6 +1,8 @@
 package uikit.components
 
-external interface FilterElement
+import uikit.Component
+
+external interface FilterComponent : Component
 
 external interface FilterOptions {
     var target: String?

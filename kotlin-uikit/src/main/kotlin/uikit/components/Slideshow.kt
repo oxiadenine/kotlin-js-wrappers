@@ -1,6 +1,8 @@
 package uikit.components
 
-external interface SlideshowElement {
+import uikit.Component
+
+external interface SlideshowComponent : Component {
     fun show(index: Number = definedExternally)
     fun startAutoplay()
     fun stopAutoplay()

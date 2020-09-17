@@ -18,9 +18,9 @@ class App : RComponent<RProps, RState>() {
                     h3(classes = "uk-card-title") { +"Hello World" }
                     button(classes = "uk-button uk-button-default uk-button-small") {
                         attrs.onClickFunction = {
-                            UIkit.notification("Hello World!")
+                            val notification = UIkit.notification("Hello World!")
 
-                            UIkit.util.on("div.uk-notification-message", NotificationEvents.close, listener = { e ->
+                            UIkit.util.on(notification.`$el`, NotificationEvents.close, listener = { e ->
                                 console.log(e)
                             })
                         }

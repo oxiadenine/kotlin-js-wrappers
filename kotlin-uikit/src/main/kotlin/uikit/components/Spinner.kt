@@ -1,5 +1,7 @@
 package uikit.components
 
-external interface SpinnerElement
+import uikit.Component
+
+external interface SpinnerComponent : Component
 
 external interface SpinnerOptions

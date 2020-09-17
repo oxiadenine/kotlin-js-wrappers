@@ -1,6 +1,8 @@
 package uikit.components
 
-external interface SliderElement {
+import uikit.Component
+
+external interface SliderComponent : Component {
     fun show(index: Number = definedExternally)
     fun startAutoplay()
     fun stopAutoplay()

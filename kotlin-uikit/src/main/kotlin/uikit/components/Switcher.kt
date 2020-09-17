@@ -1,6 +1,8 @@
 package uikit.components
 
-external interface SwitcherElement {
+import uikit.Component
+
+external interface SwitcherComponent : Component {
     fun show(index: Any /* String | Int | Element */ = definedExternally)
 }
 

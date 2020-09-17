@@ -1,5 +1,7 @@
 package uikit.components
 
-external interface MarkerElement
+import uikit.Component
+
+external interface MarkerComponent : Component
 
 external interface MarkerOptions

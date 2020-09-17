@@ -1,6 +1,8 @@
 package uikit.components
 
-external interface DropdownElement {
+import uikit.Component
+
+external interface DropdownComponent : Component {
     fun show()
     fun hide(delay: Boolean = definedExternally)
 }

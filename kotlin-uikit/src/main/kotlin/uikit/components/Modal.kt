@@ -1,5 +1,6 @@
 package uikit.components
 
+import uikit.Component
 import kotlin.js.Promise
 
 external interface Modal {
@@ -10,10 +11,10 @@ external interface Modal {
 }
 
 external class ModalPromise : Promise<Unit> {
-    val dialog: ModalElement
+    val dialog: ModalComponent
 }
 
-external interface ModalElement {
+external interface ModalComponent : Component {
     fun show()
     fun hide()
 }

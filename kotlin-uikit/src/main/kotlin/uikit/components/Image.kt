@@ -1,6 +1,8 @@
 package uikit.components
 
-external interface ImageElement
+import uikit.Component
+
+external interface ImageComponent : Component
 
 external interface ImageOptions {
     var dataSrc: String?

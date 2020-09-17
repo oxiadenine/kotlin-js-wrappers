@@ -1,6 +1,8 @@
 package uikit.components
 
-external interface GridElement
+import uikit.Component
+
+external interface GridComponent : Component
 
 external interface GridOptions {
     var margin: String?

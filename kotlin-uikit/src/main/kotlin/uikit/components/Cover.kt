@@ -1,6 +1,8 @@
 package uikit.components
 
-external interface CoverElement
+import uikit.Component
+
+external interface CoverComponent : Component
 
 external interface CoverOptions {
     var automute: Boolean?

@@ -1,6 +1,8 @@
 package uikit.components
 
-external interface TooltipElement {
+import uikit.Component
+
+external interface TooltipComponent : Component {
     fun show()
     fun hide()
 }

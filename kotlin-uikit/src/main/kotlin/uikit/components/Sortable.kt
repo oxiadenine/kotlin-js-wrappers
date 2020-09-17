@@ -1,6 +1,8 @@
 package uikit.components
 
-external interface SortableElement
+import uikit.Component
+
+external interface SortableComponent : Component
 
 external interface SortableOptions {
     var group: String?

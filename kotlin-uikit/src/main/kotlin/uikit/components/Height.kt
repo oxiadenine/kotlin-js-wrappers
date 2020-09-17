@@ -1,6 +1,8 @@
 package uikit.components
 
-external interface HeightElement
+import uikit.Component
+
+external interface HeightComponent : Component
 
 external interface HeightOptions {
     var target: String?

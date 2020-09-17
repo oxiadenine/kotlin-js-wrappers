@@ -1,6 +1,8 @@
 package uikit.components
 
-external interface CountdownElement {
+import uikit.Component
+
+external interface CountdownComponent : Component {
     fun start()
     fun stop()
 }

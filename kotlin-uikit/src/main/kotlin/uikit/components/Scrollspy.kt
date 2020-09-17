@@ -1,6 +1,8 @@
 package uikit.components
 
-external interface ScrollspyElement
+import uikit.Component
+
+external interface ScrollspyComponent : Component
 
 external interface ScrollspyNavElement
 

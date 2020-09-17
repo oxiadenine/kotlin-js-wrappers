@@ -1,5 +1,7 @@
 package uikit.components
 
-external interface PaginationElement
+import uikit.Component
+
+external interface PaginationComponent : Component
 
 external interface PaginationOptions

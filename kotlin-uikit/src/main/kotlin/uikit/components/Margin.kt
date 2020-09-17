@@ -1,6 +1,8 @@
 package uikit.components
 
-external interface MarginElement
+import uikit.Component
+
+external interface MarginComponent : Component
 
 external interface MarginOptions {
     var margin: String?

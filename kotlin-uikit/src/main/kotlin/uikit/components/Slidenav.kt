@@ -1,5 +1,7 @@
 package uikit.components
 
-external interface SlidenavElement
+import uikit.Component
+
+external interface SlidenavComponent : Component
 
 external interface SlidenavOptions

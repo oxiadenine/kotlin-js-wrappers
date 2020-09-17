@@ -1,5 +1,7 @@
 package uikit.components
 
-external interface CloseElement
+import uikit.Component
+
+external interface CloseComponent : Component
 
 external interface CloseOptions

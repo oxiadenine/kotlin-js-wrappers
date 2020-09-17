@@ -1,6 +1,8 @@
 package uikit.components
 
-external interface NavbarElement
+import uikit.Component
+
+external interface NavbarComponent : Component
 
 external interface NavbarOptions {
     var align: String?

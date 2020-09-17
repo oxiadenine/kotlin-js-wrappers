@@ -1,5 +1,7 @@
 package uikit.components
 
-external interface OverlayElement
+import uikit.Component
+
+external interface OverlayComponent : Component
 
 external interface OverlayOptions

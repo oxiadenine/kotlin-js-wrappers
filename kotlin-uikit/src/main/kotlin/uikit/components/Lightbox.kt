@@ -1,6 +1,8 @@
 package uikit.components
 
-external interface LightboxElement {
+import uikit.Component
+
+external interface LightboxComponent : Component {
     fun show(index: Any /* String | Int */)
     fun hide()
     fun startAutoplay()

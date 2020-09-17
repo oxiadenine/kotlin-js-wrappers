@@ -1,6 +1,8 @@
 package uikit.components
 
-external interface LeaderElement
+import uikit.Component
+
+external interface LeaderComponent : Component
 
 external interface LeaderOptions {
     var fill: String?

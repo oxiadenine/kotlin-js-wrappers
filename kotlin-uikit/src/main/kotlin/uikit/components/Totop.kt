@@ -1,5 +1,7 @@
 package uikit.components
 
-external interface TotopElement
+import uikit.Component
+
+external interface TotopComponent : Component
 
 external interface TotopOptions

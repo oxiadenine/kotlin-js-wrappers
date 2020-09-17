@@ -1,10 +1,12 @@
 package uikit.components
 
+import uikit.Component
+
 external interface Notification {
     fun closeAll(group: Any? = definedExternally, immediate: Boolean? = definedExternally)
 }
 
-external interface NotificationElement {
+external interface NotificationComponent : Component {
     fun close(immediate: Boolean = definedExternally)
 }
 
