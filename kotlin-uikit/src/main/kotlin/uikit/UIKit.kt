@@ -5,7 +5,7 @@ package uikit
 external val UIkit: UIKit
 
 external interface UIKit : UIKitComponent {
-    val util: dynamic
+    val util: UIKitUtil
     val prefix: String
     val data: String
     val options: dynamic

@@ -1,7 +1,7 @@
 package uikit.components
 
 import org.w3c.dom.events.Event
-import org.w3c.dom.events.EventTarget
+import uikit.util.Environment
 
 external interface UploadElement
 
@@ -20,7 +20,7 @@ external interface UploadOptions {
     var clsDragOver: String?
     var abort: (() -> Unit)?
     var beforeAll: (() -> Unit)?
-    var beforeSend: ((env: dynamic) -> Unit)?
+    var beforeSend: ((env: Environment) -> Unit)?
     var complete: (() -> Unit)?
     var completeAll: (() -> Unit)?
     var error: (() -> Unit)?

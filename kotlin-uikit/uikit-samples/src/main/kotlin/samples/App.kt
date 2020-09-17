@@ -5,6 +5,7 @@ import kotlinx.html.js.onClickFunction
 import react.*
 import react.dom.*
 import uikit.UIkit
+import uikit.components.NotificationEvents
 
 class App : RComponent<RProps, RState>() {
     override fun RBuilder.render() {
@@ -18,6 +19,10 @@ class App : RComponent<RProps, RState>() {
                     button(classes = "uk-button uk-button-default uk-button-small") {
                         attrs.onClickFunction = {
                             UIkit.notification("Hello World!")
+
+                            UIkit.util.on("div.uk-notification-message", NotificationEvents.close, listener = { e ->
+                                console.log(e)
+                            })
                         }
                         div(classes = "uk-flex-inline uk-flex-center uk-flex-middle") {
                             attrs.jsStyle = js { width = 120 }
