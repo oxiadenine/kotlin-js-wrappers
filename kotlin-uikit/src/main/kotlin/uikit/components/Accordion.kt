@@ -5,7 +5,7 @@ external interface AccordionElement {
 }
 
 external interface AccordionOptions {
-    var acttive: Number?
+    var active: Number?
     var animation: Boolean?
     var collapsible: Boolean?
     var content: String?

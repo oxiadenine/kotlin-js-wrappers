@@ -7,7 +7,7 @@ external interface SortableOptions {
     var animation: Number?
     var treshold: Number?
     var clsItem: String?
-    var clsPalecholder: String?
+    var clsPlaceholder: String?
     var clsDrag: String?
     var clsDragState: String?
     var clsBase: String?
