@@ -4,17 +4,17 @@ plugins {
 
 gradlePlugin {
     plugins {
-        register("kotlin-js") {
-            id = "kotlin-js"
-            implementationClass = "KotlinJsPlugin"
+        register("kotlinJsWrapperPlugin") {
+            id = "kotlin-js-wrapper"
+            implementationClass = "KotlinJsWrapperPlugin"
         }
-        register("samples") {
-            id = "samples"
-            implementationClass = "SamplesPlugin"
+        register("kotlinJsWrapperSamplesPlugin") {
+            id = "kotlin-js-wrapper-samples"
+            implementationClass = "KotlinJsWrapperSamplesPlugin"
         }
-        register("bintray-publish") {
-            id = "bintray-publish"
-            implementationClass = "BintrayPublishPlugin"
+        register("kotlinJsWrapperPublishPlugin") {
+            id = "kotlin-js-wrapper-publish"
+            implementationClass = "KotlinJsWrapperPublishPlugin"
         }
     }
 }

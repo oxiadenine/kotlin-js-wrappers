@@ -3,7 +3,7 @@ import org.gradle.api.Project
 import org.gradle.api.publish.maven.MavenPublication
 import org.gradle.kotlin.dsl.*
 
-class KotlinJsPlugin : Plugin<Project> {
+class KotlinJsWrapperPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             apply(plugin = "org.jetbrains.kotlin.js")
@@ -37,7 +37,7 @@ class KotlinJsPlugin : Plugin<Project> {
     }
 }
 
-class SamplesPlugin : Plugin<Project> {
+class KotlinJsWrapperSamplesPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             val parentProjectName = parent!!.project.name
@@ -71,7 +71,7 @@ class SamplesPlugin : Plugin<Project> {
     }
 }
 
-class BintrayPublishPlugin : Plugin<Project> {
+class KotlinJsWrapperPublishPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             apply(plugin = "com.jfrog.bintray")
