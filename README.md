@@ -1,9 +1,8 @@
 ## Introduction
 
-This repository hosts a number of Kotlin JS wrappers for popular JavaScript libraries, such as 
-[Ant Design](https://ant.design/docs/react/introduce) and [Moment.js](https://momentjs.com/).
+This repository hosts a number of Kotlin JS wrappers for popular JavaScript libraries.
 
-To learn more please refer to the READMEs of individual modules:
+To learn more please refer to the README's of individual modules:
 * [kotlin-antd](kotlin-antd/README.md)
 * [kotlin-moment](kotlin-moment/README.md)
 * [kotlin-react-intl](kotlin-react-intl/README.md)
