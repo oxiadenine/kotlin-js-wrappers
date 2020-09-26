@@ -6,9 +6,10 @@ import antd.menu.ClickParam
 import antd.menu.menu
 import antd.menu.menuItem
 import kotlinx.html.classes
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 interface OverlayVisibleAppState : RState {
     var visible: Boolean
@@ -75,8 +76,8 @@ class OverlayVisibleApp : RComponent<RProps, OverlayVisibleAppState>() {
 fun RBuilder.overlayVisibleApp() = child(OverlayVisibleApp::class) {}
 
 fun RBuilder.overlayVisible() {
-    div("dropdown-container") {
-        attrs.id = "dropdown-overlay-visible"
+    styledDiv {
+        css { +DropdownStyles.overlayVisible }
         overlayVisibleApp()
     }
 }

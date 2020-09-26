@@ -2,13 +2,13 @@ package samples.tabs
 
 import antd.tabs.tabPane
 import antd.tabs.tabs
-import kotlinx.html.id
 import react.RBuilder
-import react.dom.div
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.disabled() {
-    div("tabs-container") {
-        attrs.id = "tabs-disabled"
+    styledDiv {
+        css { +TabsStyles.disabled }
         tabs {
             attrs.defaultActiveKey = "1"
             tabPane {

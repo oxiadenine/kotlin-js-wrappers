@@ -2,9 +2,9 @@ package samples.table
 
 import antd.table.*
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.*
-import react.dom.div
+import styled.css
+import styled.styledDiv
 
 private interface RowSelectionCustomTableDataItem {
     var key: String
@@ -119,8 +119,8 @@ class RowSelectionCustomApp : RComponent<RProps, RowSelectionCustomAppState>() {
 fun RBuilder.rowSelectionCustomApp() = child(RowSelectionCustomApp::class) {}
 
 fun RBuilder.rowSelectionCustom() {
-    div("table-container") {
-        attrs.id = "table-row-selection-custom"
+    styledDiv {
+        css { +TableStyles.rowSelectionCustom }
         rowSelectionCustomApp()
     }
 }

@@ -6,11 +6,11 @@ import antd.mention.mention
 import antd.popover.popover
 import kotlinext.js.js
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import org.w3c.dom.Element
 import org.w3c.dom.HTMLElement
 import react.*
-import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private fun handleChange(contentState: Any) {
     console.log(MentionComponent.toString(contentState, jsObject {  }))
@@ -68,8 +68,8 @@ class PopoverContainer : RComponent<RProps, RState>() {
 fun RBuilder.popoverContainer() = child(PopoverContainer::class) {}
 
 fun RBuilder.popupContainer() {
-    div("mention-container") {
-        attrs.id = "mention-popup-container"
+    styledDiv {
+        css { +MentionStyles.popupContainer }
         popoverContainer()
     }
 }

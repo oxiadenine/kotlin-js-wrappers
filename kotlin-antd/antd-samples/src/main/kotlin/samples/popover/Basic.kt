@@ -2,9 +2,10 @@ package samples.popover
 
 import antd.button.button
 import antd.popover.popover
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private val contentElement = buildElement {
     div {
@@ -14,8 +15,8 @@ private val contentElement = buildElement {
 }
 
 fun RBuilder.basic() {
-    div("popover-container") {
-        attrs.id = "popover-basic"
+    styledDiv {
+        css { +PopoverStyles.basic }
         popover {
             attrs {
                 content = contentElement

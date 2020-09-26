@@ -22,13 +22,13 @@ import antd.tooltip.tooltip
 import kotlinext.js.Object
 import kotlinext.js.js
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import org.w3c.dom.HTMLElement
 import org.w3c.dom.HTMLInputElement
 import react.*
 import react.dom.a
-import react.dom.div
 import react.dom.span
+import styled.css
+import styled.styledDiv
 
 private val residences: Array<CascaderOptionType> = arrayOf(
         jsObject {
@@ -364,8 +364,8 @@ private val wrappedRegistrationForm = FormComponent.create<FormComponentProps<An
 fun RBuilder.wrappedRegistrationForm(handler: RHandler<FormComponentProps<Any>>) = child(wrappedRegistrationForm, jsObject {}, handler)
 
 fun RBuilder.register() {
-    div("form-container") {
-        attrs.id = "form-register"
+    styledDiv {
+        css { +FormStyles.register }
         wrappedRegistrationForm {}
     }
 }

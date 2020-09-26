@@ -6,11 +6,12 @@ import antd.message.message
 import antd.popconfirm.popconfirm
 import kotlinext.js.js
 import kotlinx.html.classes
-import kotlinx.html.id
 import org.w3c.dom.HTMLElement
 import react.RBuilder
 import react.dom.div
 import react.dom.jsStyle
+import styled.css
+import styled.styledDiv
 
 private val text = "Are you sure to delete this task?"
 
@@ -19,8 +20,8 @@ private val confirm: (e: MouseEvent<HTMLElement>) -> Unit = { _ ->
 }
 
 fun RBuilder.placement() {
-    div("popconfirm-container") {
-        attrs.id = "popconfirm-placement"
+    styledDiv {
+        css { +PopconfirmStyles.placement }
         div {
             attrs.classes = setOf("demo")
             div {

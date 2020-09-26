@@ -3,9 +3,10 @@ package samples.switch
 import antd.MouseEventHandler
 import antd.button.button
 import antd.switch.switch
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 interface DisabledAppState : RState {
     var disabled: Boolean
@@ -45,8 +46,8 @@ class DisabledApp : RComponent<RProps, DisabledAppState>() {
 fun RBuilder.disabledApp() = child(DisabledApp::class) {}
 
 fun RBuilder.disabled() {
-    div("switch-container") {
-        attrs.id = "switch-disabled"
+    styledDiv {
+        css { +SwitchStyles.disabled }
         disabledApp()
     }
 }

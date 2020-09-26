@@ -12,11 +12,11 @@ import antd.timepicker.timePicker
 import kotlinext.js.Object
 import kotlinext.js.js
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.*
-import react.dom.div
 import react.dom.jsStyle
 import react.dom.span
+import styled.css
+import styled.styledDiv
 
 private val formItemLayout = jsObject<FormItemProps> {
     labelCol = jsObject {
@@ -30,8 +30,8 @@ private val formItemLayout = jsObject<FormItemProps> {
 }
 
 fun RBuilder.validateStatic() {
-    div("form-container") {
-        attrs.id = "form-validate-static"
+    styledDiv {
+        css { +FormStyles.validateStatic }
         form {
             Object.assign(attrs, formItemLayout)
             formItem {

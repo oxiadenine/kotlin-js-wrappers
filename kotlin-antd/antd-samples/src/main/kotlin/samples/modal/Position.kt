@@ -3,9 +3,10 @@ package samples.modal
 import antd.button.button
 import antd.modal.modal
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 interface PositionAppState : RState {
     var modal1Visible: Boolean
@@ -79,8 +80,8 @@ class PositionApp : RComponent<RProps, PositionAppState>() {
 fun RBuilder.positionApp() = child(PositionApp::class) {}
 
 fun RBuilder.position() {
-    div("modal-container") {
-        attrs.id = "modal-position"
+    styledDiv {
+        css { +ModalStyles.position }
         positionApp()
     }
 }

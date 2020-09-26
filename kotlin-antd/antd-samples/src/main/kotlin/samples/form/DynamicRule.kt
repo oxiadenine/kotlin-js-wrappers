@@ -8,9 +8,10 @@ import antd.form.*
 import antd.input.input
 import kotlinext.js.Object
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.*
 import react.dom.div
+import styled.css
+import styled.styledDiv
 
 private val formItemLayout = jsObject<FormItemProps> {
     labelCol = jsObject { span = 4 }
@@ -108,8 +109,8 @@ private val wrappedDynamicRuleApp = FormComponent.create<FormComponentProps<Any>
 fun RBuilder.wrappedDynamicRuleApp(handler: RHandler<FormComponentProps<Any>>) = child(wrappedDynamicRuleApp, jsObject {}, handler)
 
 fun RBuilder.dynamicRule() {
-    div("form-container") {
-        attrs.id = "form-dynamic-rule"
+    styledDiv {
+        css { +FormStyles.dynamicRule }
         wrappedDynamicRuleApp {}
     }
 }

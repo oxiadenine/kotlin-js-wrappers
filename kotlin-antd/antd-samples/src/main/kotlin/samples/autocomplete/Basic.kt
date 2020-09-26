@@ -5,9 +5,9 @@ import antd.autocomplete.autoComplete
 import antd.select.SelectValue
 import kotlinext.js.Object
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
-import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private fun handleSelect(value: SelectValue, option: Object) {
     console.log("onSelect", value)
@@ -48,8 +48,8 @@ class BasicComplete : RComponent<RProps, BasicCompleteState>() {
 fun RBuilder.basicComplete() = child(BasicComplete::class) {}
 
 fun RBuilder.basic() {
-    div("auto-complete-container") {
-        attrs.id = "auto-complete-basic"
+    styledDiv {
+        css { +AutoCompleteStyles.basic }
         basicComplete()
     }
 }

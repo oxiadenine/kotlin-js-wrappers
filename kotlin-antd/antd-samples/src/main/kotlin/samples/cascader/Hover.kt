@@ -3,9 +3,9 @@ package samples.cascader
 import antd.cascader.CascaderOptionType
 import antd.cascader.cascader
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.*
-import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private val cascaderOptions = arrayOf<CascaderOptionType>(
         jsObject {
@@ -51,8 +51,8 @@ private fun handleDisplayRender(label: Array<String>, selectedOptions: Array<Cas
 }
 
 fun RBuilder.hover() {
-    div("cascader-container") {
-        attrs.id = "cascader-hover"
+    styledDiv {
+        css { +CascaderStyles.hover }
         cascader {
             attrs {
                 options = cascaderOptions

@@ -3,9 +3,9 @@ package samples.tree
 import antd.tree.TreeNodeSelectedEvent
 import antd.tree.tree
 import antd.tree.treeNode
-import kotlinx.html.id
 import react.*
-import react.dom.div
+import styled.css
+import styled.styledDiv
 
 class LineDemo : RComponent<RProps, RState>() {
     private val handleSelect = fun (selectedKeys: Array<String>, info: TreeNodeSelectedEvent) {
@@ -87,8 +87,8 @@ class LineDemo : RComponent<RProps, RState>() {
 fun RBuilder.lineDemo() = child(LineDemo::class) {}
 
 fun RBuilder.line() {
-    div("tree-container") {
-        attrs.id = "tree-line"
+    styledDiv {
+        css { +TreeStyles.line }
         lineDemo()
     }
 }

@@ -8,10 +8,11 @@ import antd.icon.icon
 import antd.switch.switch
 import kotlinext.js.js
 import kotlinx.html.classes
-import kotlinx.html.id
 import org.w3c.dom.events.MouseEvent
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 interface ChangeDemoState : RState {
     var count: Any
@@ -57,8 +58,8 @@ class ChangeDemo : RComponent<RProps, ChangeDemoState>() {
                     attrs.count = state.count
                     a {
                         attrs {
-                            href = "#"
                             classes = setOf("head-example")
+                            href = "#"
                         }
                     }
                 }
@@ -83,8 +84,8 @@ class ChangeDemo : RComponent<RProps, ChangeDemoState>() {
                     attrs.dot = state.show
                     a {
                         attrs {
-                            href = "#"
                             classes = setOf("head-example")
+                            href = "#"
                         }
                     }
                 }
@@ -102,8 +103,8 @@ class ChangeDemo : RComponent<RProps, ChangeDemoState>() {
 fun RBuilder.changeDemo() = child(ChangeDemo::class) {}
 
 fun RBuilder.change() {
-    div("badge-container") {
-        attrs.id = "badge-change"
+    styledDiv {
+        css { +BadgeStyles.change }
         changeDemo()
     }
 }

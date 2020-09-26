@@ -5,10 +5,10 @@ import antd.select.option
 import antd.select.select
 import antd.spin.spin
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
-import react.dom.*
 import kotlinx.browser.window
+import styled.css
+import styled.styledDiv
 
 interface UserRemoteSelectState : RState {
     var data: Array<Any>
@@ -98,8 +98,8 @@ class UserRemoteSelect : RComponent<RProps, UserRemoteSelectState>() {
 fun RBuilder.userRemoteSelect() = child(UserRemoteSelect::class) {}
 
 fun RBuilder.selectUsers() {
-    div("select-container") {
-        attrs.id = "select-select-users"
+    styledDiv {
+        css { +SelectStyles.selectUsers }
         userRemoteSelect()
     }
 }

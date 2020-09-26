@@ -9,9 +9,10 @@ import antd.list.listItemMeta
 import antd.pagination.PaginationConfig
 import kotlinext.js.js
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private interface VerticalListDataItem {
     var href: String
@@ -53,8 +54,8 @@ class VerticalIconText : RComponent<VerticalIconTextProps, RState>() {
 fun RBuilder.iconText(handler: RHandler<VerticalIconTextProps>) = child(VerticalIconText::class, handler)
 
 fun RBuilder.vertical() {
-    div("list-container") {
-        attrs.id = "list-vertical"
+    styledDiv {
+        css { +ListStyles.vertical }
         list<VerticalListDataItem, ListComponent<VerticalListDataItem>> {
             attrs {
                 itemLayout = "vertical"

@@ -3,13 +3,13 @@ package samples.skeleton
 import antd.skeleton.SkeletonParagraphProps
 import antd.skeleton.skeleton
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.*
-import react.dom.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.complex() {
-    div("skeleton-container") {
-        attrs.id = "skeleton-complex"
+    styledDiv {
+        css { +SkeletonStyles.complex }
         skeleton {
             attrs {
                 avatar = true

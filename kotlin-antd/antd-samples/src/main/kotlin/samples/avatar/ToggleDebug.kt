@@ -4,9 +4,10 @@ import antd.MouseEventHandler
 import antd.avatar.avatar
 import antd.button.button
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 interface ToggleDebugAppState : RState {
     var hide: Boolean
@@ -115,8 +116,8 @@ class ToggleDebugApp : RComponent<RProps, ToggleDebugAppState>() {
 fun RBuilder.toggleDebugApp() = child(ToggleDebugApp::class) {}
 
 fun RBuilder.toggleDebug() {
-    div("avatar-container") {
-        attrs.id = "avatar-toggle-debug"
+    styledDiv {
+        css { +AvatarStyles.toggleDebug }
         toggleDebugApp()
     }
 }

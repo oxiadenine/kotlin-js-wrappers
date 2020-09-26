@@ -10,10 +10,11 @@ import antd.skeleton.skeleton
 import antd.switch.switch
 import kotlinext.js.js
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import org.w3c.dom.events.MouseEvent
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private interface ListListDataItem {
     var href: String
@@ -161,8 +162,8 @@ class ListApp : RComponent<RProps, ListAppState>() {
 fun RBuilder.listApp() = child(ListApp::class) {}
 
 fun RBuilder.list() {
-    div("skeleton-container") {
-        attrs.id = "skeleton-list"
+    styledDiv {
+        css { +SkeletonStyles.list }
         listApp()
     }
 }

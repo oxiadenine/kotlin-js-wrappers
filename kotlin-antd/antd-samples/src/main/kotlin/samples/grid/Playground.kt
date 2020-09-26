@@ -6,9 +6,10 @@ import antd.slider.SliderMarks
 import antd.slider.SliderValue
 import antd.slider.slider
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 interface PlaygroundAppState : RState {
     var gutterKey: Number
@@ -123,8 +124,8 @@ class PlaygroundApp : RComponent<RProps, PlaygroundAppState>() {
 fun RBuilder.playgroundApp() = child(PlaygroundApp::class) {}
 
 fun RBuilder.playground() {
-    div("grid-container") {
-        attrs.id = "grid-playground"
+    styledDiv {
+        css { +GridStyles.playground }
         playgroundApp()
     }
 }

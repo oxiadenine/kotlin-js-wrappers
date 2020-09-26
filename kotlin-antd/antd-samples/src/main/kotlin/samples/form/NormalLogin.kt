@@ -9,11 +9,11 @@ import antd.input.input
 import kotlinext.js.js
 import kotlinext.js.jsObject
 import kotlinx.html.classes
-import kotlinx.html.id
 import org.w3c.dom.HTMLElement
 import react.*
 import react.dom.a
-import react.dom.div
+import styled.css
+import styled.styledDiv
 
 class NormalLoginForm : RComponent<FormComponentProps<Any>, RState>() {
     private val handleSubmit: FormEventHandler<HTMLElement> = { e ->
@@ -115,8 +115,8 @@ private val wrappedNormalLoginForm = FormComponent.create<FormComponentProps<Any
 fun RBuilder.wrappedNormalLoginForm(handler: RHandler<FormComponentProps<Any>>) = child(wrappedNormalLoginForm, jsObject {}, handler)
 
 fun RBuilder.normalLogin() {
-    div("form-container") {
-        attrs.id = "form-normal-login"
+    styledDiv {
+        css { +FormStyles.normalLogin }
         wrappedNormalLoginForm {}
     }
 }

@@ -10,10 +10,10 @@ import antd.select.select
 import kotlinext.js.Object
 import kotlinext.js.js
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import org.w3c.dom.HTMLElement
 import react.*
-import react.dom.div
+import styled.css
+import styled.styledDiv
 
 class CoordinatedApp : RComponent<FormComponentProps<Any>, RState>() {
     private val handleSubmit: FormEventHandler<HTMLElement> = { e ->
@@ -105,8 +105,8 @@ private val wrappedCoordinatedApp = FormComponent.create<FormComponentProps<Any>
 fun RBuilder.wrappedCoordinatedApp(handler: RHandler<FormComponentProps<Any>>) = child(wrappedCoordinatedApp, jsObject {}, handler)
 
 fun RBuilder.coordinated() {
-    div("form-container") {
-        attrs.id = "form-coordinated"
+    styledDiv {
+        css { +FormStyles.coordinated }
         wrappedCoordinatedApp {}
     }
 }

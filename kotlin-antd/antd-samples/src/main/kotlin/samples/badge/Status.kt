@@ -1,13 +1,14 @@
 package samples.badge
 
 import antd.badge.badge
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.status() {
-    div("badge-container") {
-        attrs.id = "badge-status"
+    styledDiv {
+        css { +BadgeStyles.status }
         div {
             badge {
                 attrs.status = "success"

@@ -10,10 +10,11 @@ import antd.menu.menu
 import antd.menu.menuItem
 import antd.message.message
 import kotlinext.js.js
-import kotlinx.html.id
 import org.w3c.dom.HTMLButtonElement
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private val handleButtonClick: MouseEventHandler<HTMLButtonElement> = {
     message.info("Click on left button.")
@@ -55,8 +56,8 @@ private val menu = buildElement {
 }
 
 fun RBuilder.dropdownButton() {
-    div("dropdown-container") {
-        attrs.id = "dropdown-dropdown-button"
+    styledDiv {
+        css { +DropdownStyles.dropdownButton }
         div {
             dropdownButton {
                 attrs {

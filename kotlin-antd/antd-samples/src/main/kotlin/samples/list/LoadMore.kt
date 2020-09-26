@@ -10,13 +10,14 @@ import antd.list.listItemMeta
 import antd.skeleton.skeleton
 import kotlinext.js.js
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import org.w3c.dom.events.Event
 import react.*
 import react.dom.a
 import react.dom.div
 import react.dom.jsStyle
 import kotlinx.browser.window
+import styled.css
+import styled.styledDiv
 import kotlin.js.json
 
 private val count = 3
@@ -154,8 +155,8 @@ class LoadMoreList : RComponent<RProps, LoadMoreListState>() {
 fun RBuilder.loadMoreList() = child(LoadMoreList::class) {}
 
 fun RBuilder.loadMore() {
-    div("list-container") {
-        attrs.id = "list-load-more"
+    styledDiv {
+        css { +ListStyles.loadMore }
         loadMoreList()
     }
 }

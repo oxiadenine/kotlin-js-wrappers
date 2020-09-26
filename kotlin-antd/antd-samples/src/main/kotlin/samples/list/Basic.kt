@@ -6,11 +6,11 @@ import antd.list.list
 import antd.list.listItem
 import antd.list.listItemMeta
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.RBuilder
 import react.buildElement
 import react.dom.a
-import react.dom.div
+import styled.css
+import styled.styledDiv
 
 private interface BasicListDataItem {
     var title: String
@@ -32,8 +32,8 @@ private val data = arrayOf<BasicListDataItem>(
 )
 
 fun RBuilder.basic() {
-    div("list-container") {
-        attrs.id = "list-basic"
+    styledDiv {
+        css { +ListStyles.basic }
         list<BasicListDataItem, ListComponent<BasicListDataItem>> {
             attrs {
                 itemLayout = "horizontal"

@@ -6,15 +6,16 @@ import antd.grid.row
 import antd.icon.icon
 import antd.statistic.statistic
 import kotlinext.js.js
-import kotlinx.html.id
 import react.RBuilder
 import react.buildElement
 import react.dom.div
 import react.dom.jsStyle
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.card() {
-    div("statistic-container") {
-        attrs.id = "statistic-card"
+    styledDiv {
+        css { +StatisticStyles.card }
         div {
             attrs.jsStyle = js {
                 background = "#ECECEC"

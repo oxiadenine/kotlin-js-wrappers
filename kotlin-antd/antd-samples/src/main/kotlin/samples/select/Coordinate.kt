@@ -4,9 +4,10 @@ import antd.select.SelectComponent
 import antd.select.option
 import antd.select.select
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private val provinceData = arrayOf("Zhejiang", "Jiangsu")
 private val cityData = mapOf(
@@ -73,8 +74,8 @@ class CoordinateApp : RComponent<RProps, CoordinateAppState>() {
 fun RBuilder.coordinateApp() = child(CoordinateApp::class) {}
 
 fun RBuilder.coordinate() {
-    div("select-container") {
-        attrs.id = "select-coordinate"
+    styledDiv {
+        css { +SelectStyles.coordinate }
         coordinateApp()
     }
 }

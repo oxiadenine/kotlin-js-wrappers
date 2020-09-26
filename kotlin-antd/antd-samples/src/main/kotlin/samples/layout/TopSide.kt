@@ -10,13 +10,14 @@ import antd.layout.footer
 import antd.layout.sider
 import antd.menu.*
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.topSide() {
-    div("layout-container") {
-        attrs.id = "layout-top-side"
+    styledDiv {
+        css { +LayoutStyles.topSide }
         layout {
             header {
                 attrs.className = "header"

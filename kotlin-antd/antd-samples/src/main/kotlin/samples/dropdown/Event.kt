@@ -5,9 +5,10 @@ import antd.icon.icon
 import antd.menu.*
 import antd.message.message
 import kotlinx.html.classes
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private val handleClick = fun (param: ClickParam) {
     message.info("Click on item ${param.key}")
@@ -32,8 +33,8 @@ private val menu = buildElement {
 }
 
 fun RBuilder.event() {
-    div("dropdown-container") {
-        attrs.id = "dropdown-event"
+    styledDiv {
+        css { +DropdownStyles.event }
         dropdown {
             attrs.overlay = menu
             a {

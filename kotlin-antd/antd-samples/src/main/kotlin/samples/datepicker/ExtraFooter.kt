@@ -1,13 +1,14 @@
 package samples.datepicker
 
 import antd.datepicker.*
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.extraFooter() {
-    div("date-picker-container") {
-        attrs.id = "date-picker-extra-footer"
+    styledDiv {
+        css { +DatePickerStyles.extraFooter }
         div {
             datePicker {
                 attrs.renderExtraFooter = { "extra footer" }

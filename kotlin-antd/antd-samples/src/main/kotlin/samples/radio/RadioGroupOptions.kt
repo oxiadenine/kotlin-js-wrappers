@@ -5,9 +5,10 @@ import antd.checkbox.CheckboxValueType
 import antd.radio.RadioChangeEvent
 import antd.radio.radioGroup
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private val plainOptions: Array<CheckboxValueType> = arrayOf("Apple", "Pear", "Orange")
 private val groupOptions = arrayOf<CheckboxOptionType>(
@@ -109,8 +110,8 @@ class RadioGroupOptionsApp : RComponent<RProps, RadioGroupOptionsAppState>() {
 fun RBuilder.radioGroupOptionsApp() = child(RadioGroupOptionsApp::class) {}
 
 fun RBuilder.radioGroupOptions() {
-    div("radio-container") {
-        attrs.id = "radio-radio-group-options"
+    styledDiv {
+        css { +RadioStyles.radioGroupOptions }
         radioGroupOptionsApp()
     }
 }

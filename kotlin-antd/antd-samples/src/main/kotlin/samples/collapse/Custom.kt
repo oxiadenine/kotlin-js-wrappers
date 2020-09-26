@@ -4,10 +4,10 @@ import antd.collapse.collapse
 import antd.collapse.collapsePanel
 import antd.icon.icon
 import kotlinext.js.js
-import kotlinx.html.id
 import react.RBuilder
-import react.dom.div
 import react.dom.p
+import styled.css
+import styled.styledDiv
 
 private val text = """
     A dog is a type of domesticated animal. 
@@ -24,8 +24,8 @@ private val customPanelStyle = js {
 }
 
 fun RBuilder.custom() {
-    div("collapse-container") {
-        attrs.id = "collapse-custom"
+    styledDiv {
+        css { +CollapseStyles.custom }
         collapse {
             attrs {
                 bordered = false

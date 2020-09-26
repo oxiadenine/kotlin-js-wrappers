@@ -1,13 +1,13 @@
 package samples.rate
 
 import antd.rate.rate
-import kotlinx.html.id
 import react.*
-import react.dom.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.disabled() {
-    div("rate-container") {
-        attrs.id = "rate-disabled"
+    styledDiv {
+        css { +RateStyles.disabled }
         rate {
             attrs {
                 disabled = true

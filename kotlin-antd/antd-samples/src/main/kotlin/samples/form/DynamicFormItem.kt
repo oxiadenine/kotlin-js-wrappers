@@ -9,10 +9,10 @@ import antd.input.input
 import kotlinext.js.Object
 import kotlinext.js.js
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import org.w3c.dom.HTMLElement
 import react.*
-import react.dom.div
+import styled.css
+import styled.styledDiv
 
 private var uuid = 0
 
@@ -168,8 +168,8 @@ private val wrappedDynamicFieldSet = FormComponent.create<FormComponentProps<Any
 fun RBuilder.wrappedDynamicFieldSet(handler: RHandler<FormComponentProps<Any>>) = child(wrappedDynamicFieldSet, jsObject {}, handler)
 
 fun RBuilder.dynamicFormItem() {
-    div("form-container") {
-        attrs.id = "form-dynamic-form-item"
+    styledDiv {
+        css { +FormStyles.dynamicFormItem }
         wrappedDynamicFieldSet {}
     }
 }

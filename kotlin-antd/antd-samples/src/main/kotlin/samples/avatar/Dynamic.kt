@@ -4,9 +4,9 @@ import antd.MouseEventHandler
 import antd.avatar.avatar
 import antd.button.button
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
-import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private val userList = arrayOf("U", "Lucy", "Tom", "Edward")
 private val colorList = arrayOf("#f56a00", "#7265e6", "#ffbf00", "#00a2ae")
@@ -59,8 +59,8 @@ class Autoset : RComponent<RProps, AutosetState>() {
 fun RBuilder.autoset() = child(Autoset::class) {}
 
 fun RBuilder.dynamic() {
-    div("avatar-container") {
-        attrs.id = "avatar-dynamic"
+    styledDiv {
+        css { +AvatarStyles.dynamic }
         autoset()
     }
 }

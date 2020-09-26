@@ -6,13 +6,14 @@ import antd.select.SelectComponent
 import antd.select.option
 import antd.select.select
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.customDropdownMenu() {
-    div("select-container") {
-        attrs.id = "select-custom-dropdown-menu"
+    styledDiv {
+        css { +SelectStyles.customDropdownMenu }
         select<String, SelectComponent<String>> {
             attrs {
                 defaultValue = "lucy"

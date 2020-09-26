@@ -27,7 +27,6 @@ class Sandbox : RComponent<RProps, RState>() {
                 attrs.maxDeviceWidth = 1224
                 div { +"You are a tablet or mobile phone" }
             }
-
             mediaQuery {
                 attrs.orientation = "portrait"
                 div { +"You are portrait" }

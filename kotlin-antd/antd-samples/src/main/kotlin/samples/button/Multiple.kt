@@ -4,9 +4,10 @@ import antd.button.button
 import antd.dropdown.dropdown
 import antd.icon.icon
 import antd.menu.*
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private fun handleMenuClick(param: ClickParam) {
     console.log("click", param)
@@ -31,8 +32,8 @@ private val menu = buildElement {
 }
 
 fun RBuilder.multiple() {
-    div("button-container") {
-        attrs.id = "button-multiple"
+    styledDiv {
+        css { +ButtonStyles.multiple }
         div {
             button {
                 attrs.type = "primary"

@@ -8,11 +8,12 @@ import antd.tag.tag
 import antd.tooltip.tooltip
 import kotlinext.js.js
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import org.w3c.dom.HTMLDivElement
 import org.w3c.dom.HTMLInputElement
 import react.*
 import react.dom.div
+import styled.css
+import styled.styledDiv
 
 interface ControlEditableTagGroupState : RState {
     var tags: Array<String>
@@ -132,8 +133,8 @@ class ControlEditableTagGroup : RComponent<RProps, ControlEditableTagGroupState>
 fun RBuilder.controlEditableTagGroup() = child(ControlEditableTagGroup::class) {}
 
 fun RBuilder.control() {
-    div("tag-container") {
-        attrs.id = "tag-control"
+    styledDiv {
+        css { +TagStyles.control }
         controlEditableTagGroup()
     }
 }

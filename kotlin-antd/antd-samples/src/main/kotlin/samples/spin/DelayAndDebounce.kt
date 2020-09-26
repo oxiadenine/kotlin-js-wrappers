@@ -4,11 +4,12 @@ import antd.alert.alert
 import antd.spin.spin
 import antd.switch.switch
 import kotlinext.js.js
-import kotlinx.html.id
 import org.w3c.dom.events.MouseEvent
 import react.*
 import react.dom.div
 import react.dom.jsStyle
+import styled.css
+import styled.styledDiv
 
 interface DelayAndDebounceCardState : RState {
     var loading: Boolean
@@ -61,8 +62,8 @@ class DelayAndDebounceCard : RComponent<RProps, DelayAndDebounceCardState>() {
 fun RBuilder.delayAndDebounceCard() = child(DelayAndDebounceCard::class) {}
 
 fun RBuilder.delayAndDebounce() {
-    div("spin-container") {
-        attrs.id = "spin-delay-and-debounce"
+    styledDiv {
+        css { +SpinStyles.delayAndDebounce }
         delayAndDebounceCard()
     }
 }

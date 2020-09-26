@@ -2,10 +2,11 @@ package samples.tag
 
 import antd.button.button
 import antd.tag.tag
-import kotlinx.html.id
 import react.*
 import react.dom.br
 import react.dom.div
+import styled.css
+import styled.styledDiv
 
 interface ControlledDemoState : RState {
     var visible: Boolean
@@ -49,8 +50,8 @@ class ControlledDemo : RComponent<RProps, ControlledDemoState>() {
 fun RBuilder.controlledDemo() = child(ControlledDemo::class) {}
 
 fun RBuilder.controlled() {
-    div("tag-container") {
-        attrs.id = "tag-controlled"
+    styledDiv {
+        css { +TagStyles.controlled }
         controlledDemo()
     }
 }

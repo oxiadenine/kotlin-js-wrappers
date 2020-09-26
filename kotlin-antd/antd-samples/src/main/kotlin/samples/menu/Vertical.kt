@@ -3,17 +3,18 @@ package samples.menu
 import antd.icon.icon
 import antd.menu.*
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private fun handleClick(param: ClickParam) {
     console.log("click ", param)
 }
 
 fun RBuilder.vertical() {
-    div("menu-container") {
-        attrs.id = "menu-vertical"
+    styledDiv {
+        css { +MenuStyles.vertical }
         menu {
             attrs {
                 onClick = ::handleClick

@@ -3,12 +3,13 @@ package samples.card
 import antd.card.card
 import kotlinext.js.js
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.*
 import react.dom.a
 import react.dom.br
 import react.dom.div
 import react.dom.p
+import styled.css
+import styled.styledDiv
 
 private val cardTabList = arrayOf(
         js {
@@ -118,8 +119,8 @@ class TabsCard : RComponent<RProps, TabsCardState>() {
 fun RBuilder.tabsCard() = child(TabsCard::class) {}
 
 fun RBuilder.tabs() {
-    div("card-container") {
-        attrs.id = "card-tabs"
+    styledDiv {
+        css { +CardStyles.tabs }
         tabsCard()
     }
 }

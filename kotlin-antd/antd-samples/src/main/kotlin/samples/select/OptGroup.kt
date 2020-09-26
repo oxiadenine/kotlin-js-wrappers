@@ -4,17 +4,17 @@ import antd.select.*
 import antd.select.optGroup
 import antd.select.option
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
-import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private fun handleChange(value: String, option: Any) {
     console.log("selected $value")
 }
 
 fun RBuilder.optGroup() {
-    div("select-container") {
-        attrs.id = "select-optgroup"
+    styledDiv {
+        css { +SelectStyles.optgroup }
         select<String, SelectComponent<String>> {
             attrs {
                 defaultValue = "lucy"

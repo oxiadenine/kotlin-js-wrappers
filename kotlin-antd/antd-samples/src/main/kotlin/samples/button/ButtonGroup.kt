@@ -3,13 +3,14 @@ package samples.button
 import antd.button.button
 import antd.button.buttonGroup
 import antd.icon.icon
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.buttonGroup() {
-    div("button-container") {
-        attrs.id = "button-button-group"
+    styledDiv {
+        css { +ButtonStyles.buttonGroup }
         div {
             h4 { +"Basic" }
             buttonGroup {

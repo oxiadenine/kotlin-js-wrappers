@@ -2,13 +2,13 @@ package samples.descriptions
 
 import antd.descriptions.descriptions
 import antd.descriptions.descriptionsItem
-import kotlinx.html.id
 import react.RBuilder
-import react.dom.div
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.vertical() {
-    div("descriptions-container") {
-        attrs.id = "descriptions-vertical"
+    styledDiv {
+        css { +DescriptionsStyles.vertical }
         descriptions {
             attrs {
                 title = "User Info"

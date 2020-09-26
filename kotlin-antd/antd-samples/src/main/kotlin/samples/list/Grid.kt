@@ -5,9 +5,9 @@ import antd.list.ListComponent
 import antd.list.list
 import antd.list.listItem
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.RBuilder
-import react.dom.div
+import styled.css
+import styled.styledDiv
 
 private interface GridListDataItem {
     var title: String
@@ -29,8 +29,8 @@ private val data = arrayOf<GridListDataItem>(
 )
 
 fun RBuilder.grid() {
-    div("list-container") {
-        attrs.id = "list-grid"
+    styledDiv {
+        css { +ListStyles.grid }
         list<GridListDataItem, ListComponent<GridListDataItem>> {
             attrs {
                 grid = jsObject {

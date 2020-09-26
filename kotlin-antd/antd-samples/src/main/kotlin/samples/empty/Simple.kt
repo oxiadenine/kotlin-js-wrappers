@@ -2,13 +2,13 @@ package samples.empty
 
 import antd.empty.EmptyComponent
 import antd.empty.empty
-import kotlinx.html.id
 import react.RBuilder
-import react.dom.div
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.simple() {
-    div("empty-container") {
-        attrs.id = "empty-simple"
+    styledDiv {
+        css { +EmptyStyles.simple }
         empty {
             attrs.image = EmptyComponent.PRESENTED_IMAGE_SIMPLE
         }

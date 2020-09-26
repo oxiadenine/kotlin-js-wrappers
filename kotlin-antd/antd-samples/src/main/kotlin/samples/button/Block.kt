@@ -1,13 +1,14 @@
 package samples.button
 
 import antd.button.button
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.block() {
-    div("button-container") {
-        attrs.id = "button-block"
+    styledDiv {
+        css { +ButtonStyles.block }
         div {
             button {
                 attrs {

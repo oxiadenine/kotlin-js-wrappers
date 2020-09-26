@@ -10,12 +10,12 @@ import antd.select.SelectValue
 import antd.select.option
 import antd.select.select
 import kotlinext.js.*
-import kotlinx.html.id
 import org.w3c.dom.HTMLElement
 import org.w3c.dom.HTMLInputElement
 import react.*
-import react.dom.div
 import react.dom.span
+import styled.css
+import styled.styledDiv
 
 interface PriceInputProps : FormComponentProps<Any> {
     var value: Any?
@@ -181,8 +181,8 @@ private val wrappedCustomizedFormControlsDemo = FormComponent.create<FormCompone
 fun RBuilder.wrappedCustomizedFormControlsDemo(handler: RHandler<FormComponentProps<Any>>) = child(wrappedCustomizedFormControlsDemo, jsObject {}, handler)
 
 fun RBuilder.customizedFormControls() {
-    div("form-container") {
-        attrs.id = "form-customized-form-controls"
+    styledDiv {
+        css { +FormStyles.customizedFormControls }
         wrappedCustomizedFormControlsDemo {}
     }
 }

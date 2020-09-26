@@ -5,9 +5,9 @@ import antd.cascader.FilledFieldNamesType
 import antd.cascader.ShowSearchType
 import antd.cascader.cascader
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.*
-import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private val cascaderOptions= arrayOf<CascaderOptionType>(
         jsObject {
@@ -60,8 +60,8 @@ private fun searchFilter(inputValue: String, path: Array<CascaderOptionType>, na
 }
 
 fun RBuilder.search() {
-    div("cascader-container") {
-        attrs.id = "cascader-search"
+    styledDiv {
+        css { +CascaderStyles.search }
         cascader {
             attrs {
                 options = cascaderOptions

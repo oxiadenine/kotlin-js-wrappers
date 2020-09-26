@@ -3,9 +3,9 @@ package samples.autocomplete
 import antd.autocomplete.autoComplete
 import antd.select.option
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
-import react.dom.*
+import styled.css
+import styled.styledDiv
 
 interface OptionsCompleteState : RState {
     var result: Array<String>
@@ -53,8 +53,8 @@ class OptionsComplete : RComponent<RProps, OptionsCompleteState>() {
 fun RBuilder.optionsComplete() = child(OptionsComplete::class) {}
 
 fun RBuilder.options() {
-    div("auto-complete-container") {
-        attrs.id = "auto-complete-options"
+    styledDiv {
+        css { +AutoCompleteStyles.options }
         optionsComplete()
     }
 }

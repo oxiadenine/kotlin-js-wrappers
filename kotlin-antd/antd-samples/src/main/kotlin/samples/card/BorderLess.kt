@@ -2,15 +2,16 @@ package samples.card
 
 import antd.card.card
 import kotlinext.js.js
-import kotlinx.html.id
 import react.RBuilder
 import react.dom.div
 import react.dom.jsStyle
 import react.dom.p
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.borderLess() {
-    div("card-container") {
-        attrs.id = "card-border-less"
+    styledDiv {
+        css { +CardStyles.borderLess }
         div {
             attrs.jsStyle = js {
                 background = "#ECECEC"

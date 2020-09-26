@@ -4,17 +4,17 @@ import antd.mention.MentionComponent
 import antd.mention.mention
 import kotlinext.js.js
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.*
-import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private fun handleChange(contentState: Any) {
     console.log(MentionComponent.toString(contentState, jsObject {  }))
 }
 
 fun RBuilder.multilines() {
-    div("mention-container") {
-        attrs.id = "mention-multilines"
+    styledDiv {
+        css { +MentionStyles.multilines }
         mention {
             attrs {
                 style = js {

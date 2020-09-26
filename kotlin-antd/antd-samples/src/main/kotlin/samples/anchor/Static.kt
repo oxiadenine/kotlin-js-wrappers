@@ -2,13 +2,13 @@ package samples.anchor
 
 import antd.anchor.anchor
 import antd.anchor.anchorLink
-import kotlinx.html.id
 import react.*
-import react.dom.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.static() {
-    div("anchor-container") {
-        attrs.id = "anchor-static"
+    styledDiv {
+        css { +AnchorStyles.static }
         anchor {
             attrs.affix = false
             anchorLink {

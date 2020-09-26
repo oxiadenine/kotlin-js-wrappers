@@ -3,10 +3,10 @@ package samples.cascader
 import antd.cascader.CascaderOptionType
 import antd.cascader.cascader
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.*
-import react.dom.*
 import kotlinx.browser.window
+import styled.css
+import styled.styledDiv
 
 interface LazyCascaderOptionType : CascaderOptionType {
     var isLeaf: Boolean?
@@ -78,8 +78,8 @@ class LazyOptions : RComponent<RProps, LazyOptionsState>() {
 fun RBuilder.lazyOptions() = child(LazyOptions::class) {}
 
 fun RBuilder.lazy() {
-    div("cascader-container") {
-        attrs.id = "cascader-lazy"
+    styledDiv {
+        css { +CascaderStyles.lazy }
         lazyOptions()
     }
 }

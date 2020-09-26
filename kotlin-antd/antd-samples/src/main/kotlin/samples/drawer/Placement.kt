@@ -8,10 +8,11 @@ import antd.radio.RadioChangeEvent
 import antd.radio.radio
 import antd.radio.radioGroup
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
 import react.dom.div
 import react.dom.p
+import styled.css
+import styled.styledDiv
 
 interface PlacementAppState : RState {
     var visible: Boolean
@@ -93,8 +94,8 @@ class PlacementApp : RComponent<RProps, PlacementAppState>() {
 fun RBuilder.placementApp() = child(PlacementApp::class) {}
 
 fun RBuilder.placement() {
-    div("drawer-container") {
-        attrs.id = "drawer-placement"
+    styledDiv {
+        css { +DrawerStyles.placement }
         placementApp()
     }
 }

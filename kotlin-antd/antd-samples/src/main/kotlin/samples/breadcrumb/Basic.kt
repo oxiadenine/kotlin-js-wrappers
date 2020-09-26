@@ -2,13 +2,14 @@ package samples.breadcrumb
 
 import antd.breadcrumb.breadcrumb
 import antd.breadcrumb.breadcrumbItem
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.basic() {
-    div("breadcrumb-container") {
-        attrs.id = "breadcrumb-basic"
+    styledDiv {
+        css { +BreadcrumbStyles.basic }
         breadcrumb {
             breadcrumbItem { +"Home" }
             breadcrumbItem {

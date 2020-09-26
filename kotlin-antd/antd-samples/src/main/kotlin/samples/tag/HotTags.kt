@@ -2,11 +2,12 @@ package samples.tag
 
 import antd.tag.checkableTag
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
 import react.dom.div
 import react.dom.h6
 import react.dom.jsStyle
+import styled.css
+import styled.styledDiv
 
 private val tagsFromServer = arrayOf("Movies", "Books", "Music", "Sports")
 
@@ -59,8 +60,8 @@ class HotTagsApp : RComponent<RProps, HotTagsAppState>() {
 fun RBuilder.hotTagsApp() = child(HotTagsApp::class) {}
 
 fun RBuilder.hotTags() {
-    div("tag-container") {
-        attrs.id = "tag-hot-tags"
+    styledDiv {
+        css { +TagStyles.hotTags }
         hotTagsApp()
     }
 }

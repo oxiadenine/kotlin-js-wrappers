@@ -4,9 +4,10 @@ import antd.datepicker.*
 import antd.radio.RadioChangeEvent
 import antd.radio.radioButton
 import antd.radio.radioGroup
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 interface PickerSizesDemoState : RState {
     var size: String
@@ -73,8 +74,8 @@ class PickerSizesDemo : RComponent<RProps, PickerSizesDemoState>() {
 fun RBuilder.pickerSizesDemo() = child(PickerSizesDemo::class) {}
 
 fun RBuilder.size() {
-    div("date-picker-container") {
-        attrs.id = "date-pìcker-size"
+    styledDiv {
+        css { +DatePickerStyles.size }
         pickerSizesDemo()
     }
 }

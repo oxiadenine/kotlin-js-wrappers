@@ -1,13 +1,13 @@
 package samples.alert
 
 import antd.alert.alert
-import kotlinx.html.id
 import react.RBuilder
-import react.dom.div
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.closeText() {
-    div("alert-container") {
-        attrs.id = "alert-close-text"
+    styledDiv {
+        css { +AlertStyles.closeText }
         alert {
             attrs {
                 message = "Info Text"

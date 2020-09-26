@@ -7,11 +7,11 @@ import antd.table.table
 import kotlinext.js.Object
 import kotlinext.js.js
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.RBuilder
 import react.buildElement
 import react.dom.a
-import react.dom.div
+import styled.css
+import styled.styledDiv
 
 private interface RowSelectionTableDataItem {
     var key: String
@@ -87,8 +87,8 @@ private val tableRowSelection = jsObject<TableRowSelection<RowSelectionTableData
 }
 
 fun RBuilder.rowSelection() {
-    div("table-container") {
-        attrs.id = "table-row-selection"
+    styledDiv {
+        css { +TableStyles.rowSelection }
         table<RowSelectionTableDataItem, TableComponent<RowSelectionTableDataItem>> {
             attrs {
                 rowSelection = tableRowSelection

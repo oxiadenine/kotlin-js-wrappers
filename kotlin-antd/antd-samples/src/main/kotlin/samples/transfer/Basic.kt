@@ -6,12 +6,13 @@ import antd.transfer.TransferDirection
 import antd.transfer.TransferItem
 import antd.transfer.transfer
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import org.w3c.dom.HTMLDivElement
 import org.w3c.dom.events.Event
 import org.w3c.dom.events.MouseEvent
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private val mockData = (0..19).map { i ->
     jsObject<TransferItem> {
@@ -100,8 +101,8 @@ class BasicApp : RComponent<RProps, BasicAppState>() {
 fun RBuilder.basicApp() = child(BasicApp::class) {}
 
 fun RBuilder.basic() {
-    div("transfer-container") {
-        attrs.id = "transfer-basic"
+    styledDiv {
+        css { +TransferStyles.basic }
         basicApp()
     }
 }

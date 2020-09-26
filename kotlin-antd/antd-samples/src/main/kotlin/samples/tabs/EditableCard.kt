@@ -4,9 +4,9 @@ import antd.tabs.TabsEditAction
 import antd.tabs.tabPane
 import antd.tabs.tabs
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
-import react.dom.div
+import styled.css
+import styled.styledDiv
 
 interface EditableCardDemoState : RState {
     var activeKey: String
@@ -119,8 +119,8 @@ class EditableCardDemo : RComponent<RProps, EditableCardDemoState>() {
 fun RBuilder.editableCardDemo() = child(EditableCardDemo::class) {}
 
 fun RBuilder.editableCard() {
-    div("tabs-container") {
-        attrs.id = "tabs-editable-card"
+    styledDiv {
+        css { +TabsStyles.editableCard }
         editableCardDemo()
     }
 }

@@ -2,13 +2,13 @@ package samples.tree
 
 import antd.icon.icon
 import antd.tree.*
-import kotlinx.html.id
 import react.*
-import react.dom.div
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.customizedIcon() {
-    div("tree-container") {
-        attrs.id = "tree-customized-icon"
+    styledDiv {
+        css { +TreeStyles.customizedIcon }
         tree {
             attrs {
                 showIcon = true

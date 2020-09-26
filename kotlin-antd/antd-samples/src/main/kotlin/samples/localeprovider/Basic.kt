@@ -3,9 +3,10 @@ package samples.localeprovider
 import antd.localeprovider.localeProvider
 import antd.localeprovider.zhCN
 import antd.pagination.pagination
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.basicApp() {
     div {
@@ -20,8 +21,8 @@ fun RBuilder.basicApp() {
 }
 
 fun RBuilder.basic() {
-    div("locale-provider-container") {
-        attrs.id = "locale-provider-basic"
+    styledDiv {
+        css { LocaleProviderStyles.basic }
         localeProvider {
             attrs.locale = zhCN
             basicApp()

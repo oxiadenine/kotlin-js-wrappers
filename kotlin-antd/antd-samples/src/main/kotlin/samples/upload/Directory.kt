@@ -3,13 +3,13 @@ package samples.upload
 import antd.button.button
 import antd.icon.icon
 import antd.upload.upload
-import kotlinx.html.id
 import react.*
-import react.dom.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.directory() {
-    div("upload-container") {
-        attrs.id = "upload-directory"
+    styledDiv {
+        css { +UploadStyles.directory }
         upload {
             attrs {
                 action = "//jsonplaceholder.typicode.com/posts/"

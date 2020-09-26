@@ -8,13 +8,14 @@ import antd.layout.content
 import antd.layout.footer
 import antd.menu.*
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.fixed() {
-    div("layout-container") {
-        attrs.id = "layout-fixed"
+    styledDiv {
+        css { +LayoutStyles.fixed }
         layout {
             header {
                 attrs {

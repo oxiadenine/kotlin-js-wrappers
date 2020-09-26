@@ -1,13 +1,14 @@
 package samples.checkbox
 
 import antd.checkbox.checkbox
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.disabled() {
-    div("checkbox-container") {
-        attrs.id = "checkbox-disabled"
+    styledDiv {
+        css { +CheckboxStyles.disabled }
         div {
             checkbox {
                 attrs {

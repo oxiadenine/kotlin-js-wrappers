@@ -4,11 +4,12 @@ import antd.cascader.CascaderOptionType
 import antd.cascader.cascader
 import kotlinext.js.js
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import kotlinx.html.js.onClickFunction
 import org.w3c.dom.events.Event
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 interface CustomRenderCascaderOptionType : CascaderOptionType {
     var code: Number?
@@ -85,8 +86,8 @@ private val handleDisplayRender = fun (labels: Array<String>, selectedOptions: A
 }
 
 fun RBuilder.customRender() {
-    div("cascader-container") {
-        attrs.id = "cascader-custom-render"
+    styledDiv {
+        css { +CascaderStyles.customRender }
         cascader {
             attrs {
                 options = cascaderOptions

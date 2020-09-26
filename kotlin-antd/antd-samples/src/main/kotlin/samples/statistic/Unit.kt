@@ -4,14 +4,14 @@ import antd.grid.col
 import antd.grid.row
 import antd.icon.icon
 import antd.statistic.statistic
-import kotlinx.html.id
 import react.RBuilder
 import react.buildElement
-import react.dom.div
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.unit() {
-    div("statistic-container") {
-        attrs.id = "statistic-unit"
+    styledDiv {
+        css { +StatisticStyles.unit }
         row {
             attrs.gutter = 16
             col {

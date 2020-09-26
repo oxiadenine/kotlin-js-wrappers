@@ -2,13 +2,13 @@ package samples.grid
 
 import antd.grid.col
 import antd.grid.row
-import kotlinx.html.id
 import react.*
-import react.dom.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.responsive() {
-    div("grid-container") {
-        attrs.id = "grid-responsive"
+    styledDiv {
+        css { +GridStyles.responsive }
         row {
             col {
                 attrs {

@@ -2,13 +2,14 @@ package samples.switch
 
 import antd.icon.icon
 import antd.switch.switch
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.text() {
-    div("switch-container") {
-        attrs.id = "switch-text"
+    styledDiv {
+        css { +SwitchStyles.text }
         div {
             switch {
                 attrs {

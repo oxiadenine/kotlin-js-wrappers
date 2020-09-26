@@ -5,9 +5,9 @@ import antd.list.ListComponent
 import antd.list.list
 import antd.list.listItem
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.RBuilder
-import react.dom.div
+import styled.css
+import styled.styledDiv
 
 private interface ResponsiveListDataItem {
     var title: String
@@ -35,8 +35,8 @@ private val data = arrayOf<ResponsiveListDataItem>(
 )
 
 fun RBuilder.responsive() {
-    div("list-container") {
-        attrs.id = "list-responsive"
+    styledDiv {
+        css { +ListStyles.responsive }
         list<ResponsiveListDataItem, ListComponent<ResponsiveListDataItem>> {
             attrs {
                 grid = jsObject {

@@ -3,9 +3,9 @@ package samples.card
 import antd.card.card
 import antd.card.cardGrid
 import kotlinext.js.js
-import kotlinx.html.id
 import react.RBuilder
-import react.dom.div
+import styled.css
+import styled.styledDiv
 
 private val gridStyle = js {
     eidth = "25%"
@@ -13,8 +13,8 @@ private val gridStyle = js {
 }
 
 fun RBuilder.gridCard() {
-    div("card-container") {
-        attrs.id = "card-grid-card"
+    styledDiv {
+        css { +CardStyles.gridCard }
         card {
             attrs.title = "Card Title"
             cardGrid {

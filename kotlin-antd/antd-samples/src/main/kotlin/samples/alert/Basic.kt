@@ -1,13 +1,13 @@
 package samples.alert
 
 import antd.alert.alert
-import kotlinx.html.id
 import react.RBuilder
-import react.dom.div
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.basic() {
-    div("alert-container") {
-        attrs.id = "alert-basic"
+    styledDiv {
+        css { +AlertStyles.basic }
         alert {
             attrs {
                 message = "Success Text"

@@ -8,9 +8,10 @@ import antd.select.option
 import antd.select.select
 import kotlinext.js.js
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.RBuilder
 import react.dom.div
+import styled.css
+import styled.styledDiv
 
 private val options = arrayOf("topLeft", "topRight", "bottomLeft", "bottomRight")
 
@@ -22,8 +23,8 @@ private val openNotification: MouseEventHandler<Any> = {
 }
 
 fun RBuilder.placement() {
-    div("notification-container") {
-        attrs.id = "notification-placement"
+    styledDiv {
+        css { +NotificationStyles.placement }
         div {
             select<String, SelectComponent<String>> {
                 attrs {

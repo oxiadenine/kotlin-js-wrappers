@@ -4,9 +4,10 @@ import antd.checkbox.CheckboxOptionType
 import antd.checkbox.CheckboxValueType
 import antd.checkbox.checkboxGroup
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private val plainOptions: Array<CheckboxValueType> = arrayOf("Apple", "Pear", "Orange")
 private val options = arrayOf<CheckboxOptionType>(
@@ -44,8 +45,8 @@ private fun handleChange(checkedValues: Array<CheckboxValueType>) {
 }
 
 fun RBuilder.group() {
-    div("checkbox-container") {
-        attrs { id = "checkbox-group" }
+    styledDiv {
+        css { +CheckboxStyles.group }
         div {
             checkboxGroup {
                 attrs {

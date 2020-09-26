@@ -5,10 +5,11 @@ import antd.MouseEventHandler
 import antd.button.button
 import antd.modal.modal
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import org.w3c.dom.HTMLElement
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 interface ButtonPropsAppState : RState {
     var visible: Boolean
@@ -70,8 +71,8 @@ class ButtonPropsApp : RComponent<RProps, ButtonPropsAppState>() {
 fun RBuilder.buttonPropsApp() = child(ButtonPropsApp::class) {}
 
 fun RBuilder.buttonProps() {
-    div("modal-container") {
-        attrs.id = "modal-button-props"
+    styledDiv {
+        css { +ModalStyles.butonProps }
         buttonPropsApp()
     }
 }

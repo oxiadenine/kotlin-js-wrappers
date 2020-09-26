@@ -5,9 +5,10 @@ import antd.icon.icon
 import antd.upload.UploadFile
 import antd.upload.upload
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private val fileList = arrayOf<UploadFile>(
         jsObject {
@@ -27,8 +28,8 @@ private val fileList = arrayOf<UploadFile>(
 )
 
 fun RBuilder.pictureStyle() {
-    div("upload-container") {
-        attrs.id = "upload-picture-style"
+    styledDiv {
+        css { +UploadStyles.pictureStyle }
         div {
             upload {
                 attrs {

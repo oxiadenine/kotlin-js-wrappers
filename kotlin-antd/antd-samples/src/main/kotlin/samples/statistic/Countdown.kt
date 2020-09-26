@@ -4,9 +4,9 @@ import antd.grid.col
 import antd.grid.row
 import antd.statistic.countdown
 import kotlinext.js.js
-import kotlinx.html.id
 import react.RBuilder
-import react.dom.div
+import styled.css
+import styled.styledDiv
 import kotlin.js.Date
 
 private val decline = Date.now() + 1000 * 60 * 60 * 24 * 2 + 1000 * 30 // Moment is also OK
@@ -16,8 +16,8 @@ private fun onFinish() {
 }
 
 fun RBuilder.countdown() {
-    div("statistic-container") {
-        attrs.id = "statistic-countdown"
+    styledDiv {
+        css { +StatisticStyles.countdown }
         row {
             attrs.gutter = 16
             col {

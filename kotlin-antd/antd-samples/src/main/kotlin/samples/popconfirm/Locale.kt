@@ -1,14 +1,14 @@
 package samples.popconfirm
 
 import antd.popconfirm.popconfirm
-import kotlinx.html.id
 import react.RBuilder
 import react.dom.a
-import react.dom.div
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.locale() {
-    div("popconfirm-container") {
-        attrs.id = "popconfirm-locale"
+    styledDiv {
+        css { +PopconfirmStyles.locale }
         popconfirm {
             attrs {
                 title = "Are you sure？"

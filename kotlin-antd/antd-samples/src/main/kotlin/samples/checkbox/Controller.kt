@@ -5,9 +5,10 @@ import antd.button.button
 import antd.checkbox.CheckboxChangeEvent
 import antd.checkbox.checkbox
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 interface ControllerAppState : RState {
     var checked: Boolean
@@ -81,8 +82,8 @@ class ControllerApp : RComponent<RProps, ControllerAppState>() {
 fun RBuilder.controllerApp() = child(ControllerApp::class) {}
 
 fun RBuilder.controller() {
-    div("checkbox-container") {
-        attrs.id = "checkbox-controller"
+    styledDiv {
+        css { +CheckboxStyles.controller }
         controllerApp()
     }
 }

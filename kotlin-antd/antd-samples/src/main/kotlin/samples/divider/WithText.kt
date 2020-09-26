@@ -1,14 +1,15 @@
 package samples.divider
 
 import antd.divider.divider
-import kotlinx.html.id
 import react.RBuilder
 import react.dom.div
 import react.dom.p
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.withText() {
-    div("divider-container") {
-        attrs.id = "divider-with-text"
+    styledDiv {
+        css { +DividerStyles.withText }
         div {
             p {
                 +"""

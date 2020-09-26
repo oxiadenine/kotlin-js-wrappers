@@ -8,10 +8,11 @@ import antd.layout.content
 import antd.layout.sider
 import antd.menu.*
 import kotlinext.js.js
-import kotlinx.html.id
 import org.w3c.dom.HTMLElement
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 interface CustomTriggerDebugDemoState : RState {
     var collapsed: Boolean
@@ -140,8 +141,8 @@ class CustomTriggerDebugDemo : RComponent<RProps, CustomTriggerDebugDemoState>()
 fun RBuilder.customTriggerDebugDemo() = child(CustomTriggerDebugDemo::class) {}
 
 fun RBuilder.customTriggerDebug() {
-    div("layout-container") {
-        attrs.id = "layout-custom-trigger-debug"
+    styledDiv {
+        css { +LayoutStyles.customTriggerDebug }
         customTriggerDebugDemo()
     }
 }

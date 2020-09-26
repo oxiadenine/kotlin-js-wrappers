@@ -1,13 +1,14 @@
 package samples.switch
 
 import antd.switch.switch
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.loading() {
-    div("switch-container") {
-        attrs.id = "switch-loading"
+    styledDiv {
+        css { +SwitchStyles.loading }
         div {
             switch {
                 attrs {

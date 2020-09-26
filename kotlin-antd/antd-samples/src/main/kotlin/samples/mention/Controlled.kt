@@ -9,9 +9,9 @@ import antd.form.formItem
 import antd.mention.MentionComponent
 import antd.mention.mention
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.*
-import react.dom.*
+import styled.css
+import styled.styledDiv
 
 interface ControlledAppState : RState {
     var initValue: Any
@@ -103,8 +103,8 @@ private val wrappedControlledApp = FormComponent.create<FormComponentProps<Any>,
 fun RBuilder.wrappedControlledApp(handler: RHandler<FormComponentProps<Any>>) = child(wrappedControlledApp, jsObject {}, handler)
 
 fun RBuilder.controlled() {
-    div("mention-container") {
-        attrs.id = "mention-controlled"
+    styledDiv {
+        css { +MentionStyles.controlled }
         wrappedControlledApp {}
     }
 }

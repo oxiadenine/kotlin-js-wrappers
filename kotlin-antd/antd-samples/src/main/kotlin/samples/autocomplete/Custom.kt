@@ -7,10 +7,10 @@ import antd.input.textArea
 import antd.select.SelectValue
 import kotlinext.js.Object
 import kotlinext.js.js
-import kotlinx.html.id
 import org.w3c.dom.HTMLTextAreaElement
 import react.*
-import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private fun handleSelect(value: SelectValue, option: Object) {
     console.log("onSelect", value)
@@ -62,8 +62,8 @@ class CustomComplete : RComponent<RProps, CustomCompleteState>() {
 fun RBuilder.customComplete() = child(CustomComplete::class) {}
 
 fun RBuilder.custom() {
-    div("auto-complete-container") {
-        attrs.id = "auto-complete-custom"
+    styledDiv {
+        css { +AutoCompleteStyles.custom }
         customComplete()
     }
 }

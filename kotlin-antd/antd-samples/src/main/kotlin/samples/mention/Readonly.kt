@@ -4,9 +4,10 @@ import antd.mention.MentionComponent
 import antd.mention.mention
 import kotlinext.js.js
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private fun handleChange(contentState: Any) {
     console.log(MentionComponent.toString(contentState, jsObject {  }))
@@ -41,8 +42,8 @@ fun RBuilder.readonlyApp() {
 }
 
 fun RBuilder.readonly() {
-    div("mention-container") {
-        attrs.id = "mention-readonly"
+    styledDiv {
+        css { +MentionStyles.readonly }
         readonlyApp()
     }
 }

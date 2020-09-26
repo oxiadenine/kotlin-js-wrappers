@@ -2,13 +2,13 @@ package samples.steps
 
 import antd.steps.step
 import antd.steps.steps
-import kotlinx.html.id
 import react.*
-import react.dom.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.smallSize() {
-    div("steps-container") {
-        attrs.id = "steps-small-size"
+    styledDiv {
+        css { +StepsStyles.smallSize }
         steps {
             attrs {
                 size = "small"

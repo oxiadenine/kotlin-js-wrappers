@@ -6,9 +6,10 @@ import antd.radio.radioGroup
 import antd.tabs.tabPane
 import antd.tabs.tabs
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
 import react.dom.div
+import styled.css
+import styled.styledDiv
 
 interface SlidingTabsDemoState : RState {
     var mode: String
@@ -65,8 +66,8 @@ class SlidingTabsDemo : RComponent<RProps, SlidingTabsDemoState>() {
 fun RBuilder.slidingTabsDemo() = child(SlidingTabsDemo::class) {}
 
 fun RBuilder.slide() {
-    div("tabs-container") {
-        attrs.id = "tabs-slide"
+    styledDiv {
+        css { +TabsStyles.slide }
         slidingTabsDemo()
     }
 }

@@ -4,9 +4,9 @@ import antd.mention.MentionComponent
 import antd.mention.mention
 import kotlinext.js.js
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.*
-import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private fun handleChange(contentState: Any) {
     console.log(MentionComponent.toString(contentState, jsObject {  }))
@@ -17,8 +17,8 @@ private fun handleSelect(suggestion: String, data: Any?) {
 }
 
 fun RBuilder.placemenet() {
-    div("mention-container") {
-        attrs.id = "mention-placement"
+    styledDiv {
+        css { +MentionStyles.placement }
         mention {
             attrs {
                 style = js { width = "100%" }

@@ -3,16 +3,16 @@ package samples.empty
 import antd.button.button
 import antd.empty.empty
 import kotlinext.js.js
-import kotlinx.html.id
 import react.RBuilder
 import react.buildElement
 import react.dom.a
-import react.dom.div
 import react.dom.span
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.customize() {
-    div("empty-container") {
-        attrs.id = "empty-customize"
+    styledDiv {
+        css { +EmptyStyles.customize }
         empty {
             attrs {
                 image = "https://gw.alipayobjects.com/mdn/miniapp_social/afts/img/A*pevERLJC9v0AAAAAAAAAAABjAQAAAQ/original"

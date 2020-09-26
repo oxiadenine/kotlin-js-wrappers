@@ -2,13 +2,13 @@ package samples.configprovider
 
 import antd.button.button
 import antd.configprovider.configProvider
-import kotlinx.html.id
 import react.*
-import react.dom.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.basic() {
-    div("config-provider-container") {
-        attrs.id = "config-provider-basic"
+    styledDiv {
+        css { +ConfigProviderStyles.basic }
         configProvider {
             button { +"My Button" }
         }

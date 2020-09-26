@@ -4,10 +4,11 @@ import antd.icon.icon
 import antd.menu.*
 import antd.switch.switch
 import kotlinext.js.js
-import kotlinx.html.id
 import org.w3c.dom.events.MouseEvent
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 interface ThemeSiderState : RState {
     var theme: MenuTheme
@@ -156,8 +157,8 @@ class ThemeSider : RComponent<RProps, ThemeSiderState>() {
 fun RBuilder.themeSider() = child(ThemeSider::class) {}
 
 fun RBuilder.theme() {
-    div("menu-container") {
-        attrs.id = "menu-theme"
+    styledDiv {
+        css { +MenuStyles.theme }
         themeSider()
     }
 }

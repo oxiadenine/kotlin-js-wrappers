@@ -3,10 +3,10 @@ package samples.spin
 import antd.icon.icon
 import antd.spin.spin
 import kotlinext.js.js
-import kotlinx.html.id
 import react.RBuilder
 import react.buildElement
-import react.dom.div
+import styled.css
+import styled.styledDiv
 
 private val antIcon = buildElement {
     icon {
@@ -19,8 +19,8 @@ private val antIcon = buildElement {
 }
 
 fun RBuilder.customIndicator() {
-    div("spin-container") {
-        attrs.id = "spin-custom-indicator"
+    styledDiv {
+        css { +SpinStyles.customIndicator }
         spin {
             attrs.indicator = antIcon
         }

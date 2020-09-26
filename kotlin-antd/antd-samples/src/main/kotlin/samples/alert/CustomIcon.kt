@@ -2,10 +2,11 @@ package samples.alert
 
 import antd.alert.alert
 import antd.icon.icon
-import kotlinx.html.id
 import react.RBuilder
 import react.buildElement
 import react.dom.div
+import styled.css
+import styled.styledDiv
 
 private val smileIcon = buildElement {
     icon {
@@ -14,8 +15,8 @@ private val smileIcon = buildElement {
 }
 
 fun RBuilder.customIcon() {
-    div("alert-container") {
-        attrs.id = "alert-custom-icon"
+    styledDiv {
+        css { +AlertStyles.customIcon }
         div {
             alert {
                 attrs {

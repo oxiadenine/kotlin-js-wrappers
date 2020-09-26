@@ -5,10 +5,10 @@ import antd.form.*
 import antd.inputnumber.inputNumber
 import kotlinext.js.Object
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import org.w3c.dom.HTMLInputElement
 import react.*
-import react.dom.div
+import styled.css
+import styled.styledDiv
 
 private fun validatePrimeNumber(number: Number): RawFormValidation {
     if (number == 11) {
@@ -85,8 +85,8 @@ class RawForm : RComponent<FormComponentProps<Any>, RawFormState>() {
 fun RBuilder.rawForm() = child(RawForm::class) {}
 
 fun RBuilder.withoutFormCreate() {
-    div("form-container") {
-        attrs.id = "form-without-form-create"
+    styledDiv {
+        css { +FormStyles.withoutFormCreate }
         rawForm()
     }
 }

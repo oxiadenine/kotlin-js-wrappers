@@ -3,10 +3,11 @@ package samples.datepicker
 import antd.datepicker.*
 import antd.timepicker.TimePickerProps
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import moment.*
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private fun range(start: Number, end: Number): Array<Number> {
     return (start.toInt()..end.toInt()).toList().toTypedArray()
@@ -45,8 +46,8 @@ private fun handleDisabledRangeTime(current: Moment?, type: String): DatePickerD
 }
 
 fun RBuilder.disabledDate() {
-    div("date-picker-container") {
-        attrs.id = "date-picker-disabled-date"
+    styledDiv {
+        css { +DatePickerStyles.disabledDate }
         div {
             datePicker {
                 attrs {

@@ -4,9 +4,10 @@ import antd.MouseEventHandler
 import antd.button.button
 import antd.button.buttonGroup
 import antd.progress.progress
-import kotlinx.html.id
 import react.*
 import react.dom.div
+import styled.css
+import styled.styledDiv
 
 interface DynamicAppState : RState {
     var percent: Number
@@ -67,8 +68,8 @@ class DynamicApp : RComponent<RProps, DynamicAppState>() {
 fun RBuilder.dynamicApp() = child(DynamicApp::class) {}
 
 fun RBuilder.dynamic() {
-    div("progress-container") {
-        attrs.id = "progress-dynamic"
+    styledDiv {
+        css { +ProgressStyles.dynamic }
         dynamicApp()
     }
 }

@@ -3,13 +3,14 @@ package samples.avatar
 import antd.avatar.avatar
 import antd.badge.badge
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.badge() {
-    div("avatar-container") {
-        attrs.id = "avatar-badge"
+    styledDiv {
+        css { +AvatarStyles.badge }
         div {
             span {
                 attrs.jsStyle = js { marginRight = 24 }

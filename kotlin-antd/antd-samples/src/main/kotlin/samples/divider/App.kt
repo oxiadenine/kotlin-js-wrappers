@@ -2,11 +2,23 @@ package samples.divider
 
 import react.*
 import react.dom.*
+import styled.StyleSheet
+import styled.css
+import styled.styledDiv
+
+object DividerStyles : StyleSheet("divider", isStatic = true) {
+    val container by css {}
+    val horizontal by css {}
+    val withText by css {}
+    val vertical by css {}
+    val customizeStyle by css {}
+}
 
 class DividerApp : RComponent<RProps, RState>() {
     override fun RBuilder.render() {
         h2 { +"Divider" }
-        div {
+        styledDiv {
+            css { +DividerStyles.container }
             horizontal()
             withText()
             vertical()

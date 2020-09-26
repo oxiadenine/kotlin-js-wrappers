@@ -2,14 +2,15 @@ package samples.progress
 
 import antd.progress.progress
 import kotlinext.js.js
-import kotlinx.html.id
 import react.RBuilder
 import react.dom.div
 import react.dom.jsStyle
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.lineMini() {
-    div("progress-container") {
-        attrs.id = "progress-line-mini"
+    styledDiv {
+        css { +ProgressStyles.lineMini }
         div {
             attrs.jsStyle = js { width = 170 }
             progress {

@@ -5,10 +5,11 @@ import antd.radio.RadioChangeEvent
 import antd.radio.radioButton
 import antd.radio.radioGroup
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
 import react.dom.div
 import react.dom.h3
+import styled.css
+import styled.styledDiv
 
 interface PositionCarouselDemoState : RState {
     var dotPosition: String
@@ -74,8 +75,8 @@ class PositionCarouselDemo : RComponent<RProps, PositionCarouselDemoState>() {
 fun RBuilder.positionCarouselDemo() = child(PositionCarouselDemo::class) {}
 
 fun RBuilder.position() {
-    div("carousel-container") {
-        attrs.id = "carousel-position"
+    styledDiv {
+        css { +CarouselStyles.position }
         positionCarouselDemo()
     }
 }

@@ -5,11 +5,11 @@ import antd.tree.TreeNodeSelectedEvent
 import antd.tree.tree
 import antd.tree.treeNode
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
-import react.dom.div
 import react.dom.jsStyle
 import react.dom.span
+import styled.css
+import styled.styledDiv
 
 class BasicDemo : RComponent<RProps, RState>() {
     private val handleSelect = fun (selectedKeys: Array<String>, info: TreeNodeSelectedEvent) {
@@ -80,8 +80,8 @@ class BasicDemo : RComponent<RProps, RState>() {
 fun RBuilder.basicDemo() = child(BasicDemo::class) {}
 
 fun RBuilder.basic() {
-    div("tree-container") {
-        attrs.id = "tree-basic"
+    styledDiv {
+        css { +TreeStyles.basic }
         basicDemo()
     }
 }

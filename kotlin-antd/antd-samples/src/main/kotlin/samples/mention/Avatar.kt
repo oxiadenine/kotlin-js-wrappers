@@ -4,9 +4,9 @@ import antd.avatar.avatar
 import antd.mention.mention
 import antd.mention.nav
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
-import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private val webFrameworks = arrayOf(
         js {
@@ -89,8 +89,8 @@ class AvatarNavMention : RComponent<RProps, AvatarNavMentionState>() {
 fun RBuilder.avatarNavMention() = child(AvatarNavMention::class) {}
 
 fun RBuilder.avatar() {
-    div("mention-container") {
-        attrs.id = "mention-avatar"
+    styledDiv {
+        css { +MentionStyles.avatar }
         avatarNavMention()
     }
 }

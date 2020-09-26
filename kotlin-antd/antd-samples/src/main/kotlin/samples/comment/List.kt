@@ -6,10 +6,11 @@ import antd.list.ListComponent
 import antd.list.list
 import antd.tooltip.tooltip
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import moment.moment
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private val data = arrayOf<CommentProps>(
         jsObject {
@@ -67,8 +68,8 @@ private val data = arrayOf<CommentProps>(
 )
 
 fun RBuilder.list() {
-    div("comment-container") {
-        attrs.id = "comment-list"
+    styledDiv {
+        css { +CommentStyles.list }
         list<CommentProps, ListComponent<CommentProps>> {
             attrs {
                 className = "comment-list"

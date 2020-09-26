@@ -1,17 +1,18 @@
 package samples.pagination
 
 import antd.pagination.pagination
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private fun showTotal(total: Number, range: Array<Number>): ReactElement {
     return buildElement { +"Total $total items" }
 }
 
 fun RBuilder.mini() {
-    div("pagination-container") {
-        attrs.id = "pagination-mini"
+    styledDiv {
+        css { +PaginationStyles.mini }
         div {
             pagination {
                 attrs {

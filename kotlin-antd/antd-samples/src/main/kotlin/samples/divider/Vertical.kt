@@ -1,14 +1,15 @@
 package samples.divider
 
 import antd.divider.divider
-import kotlinx.html.id
 import react.RBuilder
 import react.dom.a
 import react.dom.div
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.vertical() {
-    div("divider-container") {
-        attrs.id = "divider-vertical"
+    styledDiv {
+        css { +DividerStyles.vertical }
         div {
             +"Text"
             divider {

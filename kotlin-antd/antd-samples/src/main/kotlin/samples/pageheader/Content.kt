@@ -5,13 +5,14 @@ import antd.pageheader.pageHeader
 import antd.typography.paragraph
 import kotlinext.js.jsObject
 import kotlinx.html.classes
-import kotlinx.html.id
 import react.RBuilder
 import react.buildElement
 import react.dom.a
 import react.dom.div
 import react.dom.img
 import react.dom.p
+import styled.css
+import styled.styledDiv
 
 private val breadcrumbRoutes = arrayOf<Route>(
         jsObject {
@@ -87,8 +88,8 @@ private val extraContent = buildElement {
 }
 
 fun RBuilder.content() {
-    div("page-header-container") {
-        attrs.id = "page-header-content"
+    styledDiv {
+        css { +PageHeaderStyles.content }
         pageHeader {
             attrs {
                 title = "Title"

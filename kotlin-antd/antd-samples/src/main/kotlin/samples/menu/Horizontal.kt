@@ -2,9 +2,10 @@ package samples.menu
 
 import antd.icon.icon
 import antd.menu.*
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 interface HorizontalAppState : RState {
     var current: String
@@ -99,8 +100,8 @@ class HorizontalApp : RComponent<RProps, HorizontalAppState>() {
 fun RBuilder.horizontalApp() = child(HorizontalApp::class) {}
 
 fun RBuilder.horizontal() {
-    div("menu-container") {
-        attrs.id = "menu-horizontal"
+    styledDiv {
+        css { +MenuStyles.horizontal }
         horizontalApp()
     }
 }

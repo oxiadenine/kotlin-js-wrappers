@@ -8,10 +8,10 @@ import antd.input.input
 import kotlinext.js.Object
 import kotlinext.js.js
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import org.w3c.dom.HTMLElement
 import react.*
-import react.dom.div
+import styled.css
+import styled.styledDiv
 
 private fun hasErrors(fieldsError: dynamic): Boolean {
     return Object.keys(fieldsError as Any).any { field -> fieldsError[field] != null }
@@ -121,8 +121,8 @@ private val wrappedHorizontalLoginForm = FormComponent.create<FormComponentProps
 fun RBuilder.wrappedHorizontalLoginForm(handler: RHandler<FormComponentProps<Any>>) = child(wrappedHorizontalLoginForm, jsObject {}, handler)
 
 fun RBuilder.horizontalLogin() {
-    div("form-container") {
-        attrs.id = "form-horizontal-login"
+    styledDiv {
+        css { +FormStyles.horizontalLogin }
         wrappedHorizontalLoginForm {}
     }
 }

@@ -9,11 +9,12 @@ import antd.tabs.tabPane
 import antd.tabs.tabs
 import antd.tag.tag
 import kotlinx.html.classes
-import kotlinx.html.id
 import react.*
 import react.dom.a
 import react.dom.div
 import kotlinx.browser.window
+import styled.css
+import styled.styledDiv
 
 interface ActionsDescriptionProps : RProps {
     var term: String
@@ -99,8 +100,8 @@ private val extraContent = buildElement {
 }
 
 fun RBuilder.actions() {
-    div("page-header-container") {
-        attrs.id = "page-header-actions"
+    styledDiv {
+        css { +PageHeaderStyles.actions }
         pageHeader {
             attrs {
                 onBack = { window.history.back() }

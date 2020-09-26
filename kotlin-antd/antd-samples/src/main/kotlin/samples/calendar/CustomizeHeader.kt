@@ -10,20 +10,21 @@ import antd.select.SelectComponent
 import antd.select.option
 import antd.select.select
 import kotlinext.js.js
-import kotlinx.html.id
 import moment.Moment
 import react.RBuilder
 import react.ReactElement
 import react.dom.div
 import react.dom.jsStyle
+import styled.css
+import styled.styledDiv
 
 private fun handlePanelChange(value: Moment?, mode: CalendarMode?) {
     console.log(value, mode)
 }
 
 fun RBuilder.customizeHeader() {
-    div("calendar-container") {
-        attrs.id = "calendar-customize-header"
+    styledDiv {
+        css { +CalendarStyles.customizeHeader }
         div {
             attrs.jsStyle = js {
                 width = 300

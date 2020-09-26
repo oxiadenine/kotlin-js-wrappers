@@ -18,9 +18,10 @@ import antd.treeselect.treeSelect
 import kotlinext.js.js
 import kotlinext.js.jsObject
 import kotlinx.html.classes
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private val customizeRenderEmpty: RenderEmptyHandler = {
     buildElement {
@@ -117,8 +118,8 @@ class ConfigProviderDemo : RComponent<RProps, ConfigProviderDemoState>() {
 fun RBuilder.configProviderDemo() = child(ConfigProviderDemo::class) {}
 
 fun RBuilder.configProvider() {
-    div("empty-container") {
-        attrs.id = "empty-config-provider"
+    styledDiv {
+        css { +EmptyStyles.configProvider }
         configProviderDemo()
     }
 }

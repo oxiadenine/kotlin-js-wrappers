@@ -1,13 +1,13 @@
 package samples.input
 
 import antd.input.textArea
-import kotlinx.html.id
 import react.*
-import react.dom.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.textarea() {
-    div("input-container") {
-        attrs.id = "input-textarea"
+    styledDiv {
+        css { +InputStyles.textarea }
         textArea {
             attrs.rows = 4
         }

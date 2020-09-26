@@ -4,10 +4,10 @@ import antd.MouseEventHandler
 import antd.button.button
 import antd.modal.ModalComponent
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.*
-import react.dom.*
 import kotlinx.browser.window
+import styled.css
+import styled.styledDiv
 
 private val countDown: MouseEventHandler<Any> = {
     var secondsToGo = 5
@@ -29,8 +29,8 @@ private val countDown: MouseEventHandler<Any> = {
 }
 
 fun RBuilder.manual() {
-    div("modal-container") {
-        attrs.id = "modal-manual"
+    styledDiv {
+        css { +ModalStyles.manual }
         button {
             attrs.onClick = countDown
             +"Open modal to close in 5s"

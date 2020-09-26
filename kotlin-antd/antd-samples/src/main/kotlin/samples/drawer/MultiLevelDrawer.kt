@@ -5,10 +5,11 @@ import antd.button.button
 import antd.drawer.EventType
 import antd.drawer.drawer
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
 import react.dom.div
 import react.dom.jsStyle
+import styled.css
+import styled.styledDiv
 
 interface MultiLevelDrawerAppState : RState {
     var visible: Boolean
@@ -114,8 +115,8 @@ class MultiLevelDrawerApp : RComponent<RProps, MultiLevelDrawerAppState>() {
 fun RBuilder.multiLevelDrawerApp() = child(MultiLevelDrawerApp::class) {}
 
 fun RBuilder.multiLevelDrawer() {
-    div("drawer-container") {
-        attrs.id = "drawer-multi-level-drawer"
+    styledDiv {
+        css { +DrawerStyles.multiLevelDrawer }
         multiLevelDrawerApp()
     }
 }

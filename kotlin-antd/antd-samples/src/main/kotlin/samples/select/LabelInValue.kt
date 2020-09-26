@@ -5,17 +5,18 @@ import antd.select.LabeledValue
 import antd.select.SelectComponent
 import kotlinext.js.js
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private fun handleChange(value: LabeledValue, option: Any) {
     console.log(value)  // { key: "lucy", label: "Lucy (101)" }
 }
 
 fun RBuilder.labelInValue() {
-    div("select-container") {
-        attrs.id = "select-label-in-value"
+    styledDiv {
+        css { +SelectStyles.labelInValue }
         select<LabeledValue, SelectComponent<LabeledValue>> {
             attrs {
                 labelInValue = true

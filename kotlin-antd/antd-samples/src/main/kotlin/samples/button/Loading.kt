@@ -2,9 +2,10 @@ package samples.button
 
 import antd.MouseEventHandler
 import antd.button.button
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 interface LoadingAppState : RState {
     var loading: Boolean
@@ -85,8 +86,8 @@ class LoadingApp : RComponent<RProps, LoadingAppState>() {
 fun RBuilder.loadingApp() = child(LoadingApp::class) {}
 
 fun RBuilder.loading() {
-    div("button-container") {
-        attrs.id = "button-loading"
+    styledDiv {
+        css { +ButtonStyles.loading }
         loadingApp()
     }
 }

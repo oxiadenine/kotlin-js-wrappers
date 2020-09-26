@@ -1,10 +1,10 @@
 package samples.timepicker
 
 import antd.timepicker.timePicker
-import kotlinx.html.id
 import moment.Moment
 import react.*
-import react.dom.*
+import styled.css
+import styled.styledDiv
 
 interface ValueDemoState : RState {
     var value: Moment?
@@ -36,8 +36,8 @@ class ValueDemo : RComponent<RProps, ValueDemoState>() {
 fun RBuilder.valueDemo() = child(ValueDemo::class) {}
 
 fun RBuilder.value() {
-    div("time-picker-container") {
-        attrs.id = "time-picker-value"
+    styledDiv {
+        css { +TimePickerStyles.value }
         valueDemo()
     }
 }

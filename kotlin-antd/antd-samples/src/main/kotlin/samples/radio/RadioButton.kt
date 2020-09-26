@@ -4,17 +4,18 @@ import antd.radio.RadioChangeEvent
 import antd.radio.radioButton
 import antd.radio.radioGroup
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private fun handleChange(event: RadioChangeEvent) {
     console.log("radio checked: ${event.target.value}")
 }
 
 fun RBuilder.radioButton() {
-    div("radio-container") {
-        attrs.id = "radio-radio-button"
+    styledDiv {
+        css { +RadioStyles.radioButton }
         div {
             div {
                 radioGroup {

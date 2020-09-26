@@ -7,11 +7,12 @@ import antd.upload.UploadChangeParam
 import antd.upload.UploadFile
 import antd.upload.upload
 import kotlinx.html.classes
-import kotlinx.html.id
 import org.w3c.files.File
 import org.w3c.files.FileReader
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private fun getBase64(img: File, callback: (imgUrl: String) -> Unit) {
     val reader = FileReader()
@@ -105,8 +106,8 @@ class AvatarApp : RComponent<RProps, AvatarAppState>() {
 fun RBuilder.avatarApp() = child(AvatarApp::class) {}
 
 fun RBuilder.avatar() {
-    div("upload-container") {
-        attrs.id = "upload-avatar"
+    styledDiv {
+        css { +UploadStyles.avatar }
         avatarApp()
     }
 }

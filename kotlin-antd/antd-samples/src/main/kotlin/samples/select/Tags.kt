@@ -4,9 +4,9 @@ import antd.select.SelectComponent
 import antd.select.select
 import antd.select.option
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
-import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private val children = (10..36).map { i ->
     buildElement {
@@ -22,8 +22,8 @@ private fun handleChange(value: Array<String>, option: Any) {
 }
 
 fun RBuilder.tags() {
-    div("select-container") {
-        attrs.id = "select-tags"
+    styledDiv {
+        css { +SelectStyles.tags }
         select<Array<String>, SelectComponent<Array<String>>> {
             attrs {
                 mode = "tags"

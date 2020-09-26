@@ -4,20 +4,21 @@ import antd.badge.badge
 import antd.icon.icon
 import kotlinext.js.js
 import kotlinx.html.classes
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.basic() {
-    div("badge-container") {
-        attrs.id = "badge-basic"
+    styledDiv {
+        css { +BadgeStyles.basic }
         div {
             badge {
                 attrs.count = 5
                 a {
                     attrs {
-                        href = "#"
                         classes = setOf("head-example")
+                        href = "#"
                     }
                 }
             }
@@ -28,8 +29,8 @@ fun RBuilder.basic() {
                 }
                 a {
                     attrs {
-                        href = "#"
                         classes = setOf("head-example")
+                        href = "#"
                     }
                 }
             }
@@ -46,8 +47,8 @@ fun RBuilder.basic() {
                 }
                 a {
                     attrs {
-                        href = "#"
                         classes = setOf("head-example")
+                        href = "#"
                     }
                 }
             }

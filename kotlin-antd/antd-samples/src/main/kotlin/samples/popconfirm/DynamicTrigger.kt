@@ -4,12 +4,13 @@ import antd.MouseEvent
 import antd.message.message
 import antd.popconfirm.popconfirm
 import antd.switch.switch
-import kotlinx.html.id
 import org.w3c.dom.HTMLElement
 import react.*
 import react.dom.a
 import react.dom.br
 import react.dom.div
+import styled.css
+import styled.styledDiv
 
 interface DynamicTriggerAppState : RState {
     var visible: Boolean
@@ -98,8 +99,8 @@ class DynamicTriggerApp : RComponent<RProps, DynamicTriggerAppState>() {
 fun RBuilder.dynamicTriggerApp() = child(DynamicTriggerApp::class) {}
 
 fun RBuilder.dynamicTrigger() {
-    div("popconfirm-container") {
-        attrs.id = "popconfirm-dynamic-trigger"
+    styledDiv {
+        css { +PopconfirmStyles.dynamicTrigger }
         dynamicTriggerApp()
     }
 }

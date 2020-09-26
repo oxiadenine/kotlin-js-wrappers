@@ -2,17 +2,17 @@ package samples.tabs
 
 import antd.tabs.tabPane
 import antd.tabs.tabs
-import kotlinx.html.id
 import react.RBuilder
-import react.dom.div
+import styled.css
+import styled.styledDiv
 
 private fun callback(key: String) {
     console.log(key)
 }
 
 fun RBuilder.card() {
-    div("tabs-container") {
-        attrs.id = "tabs-card"
+    styledDiv {
+        css { +TabsStyles.card }
         tabs {
             attrs {
                 onChange = ::callback

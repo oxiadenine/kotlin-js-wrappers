@@ -4,14 +4,14 @@ import antd.icon.icon
 import antd.timeline.timeline
 import antd.timeline.timelineItem
 import kotlinext.js.js
-import kotlinx.html.id
 import react.RBuilder
 import react.buildElement
-import react.dom.div
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.right() {
-    div("timeline-container") {
-        attrs.id = "timeline-right"
+    styledDiv {
+        css { +TimelineStyles.right }
         timeline {
             attrs.mode = "right"
             timelineItem { +"Create a services site 2015-09-01" }

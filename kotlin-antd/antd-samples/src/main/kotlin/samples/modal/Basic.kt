@@ -4,10 +4,11 @@ import antd.MouseEvent
 import antd.MouseEventHandler
 import antd.button.button
 import antd.modal.modal
-import kotlinx.html.id
 import org.w3c.dom.HTMLElement
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 interface BasicAppState : RState {
     var visible: Boolean
@@ -67,8 +68,8 @@ class BasicApp : RComponent<RProps, BasicAppState>() {
 fun RBuilder.basicApp() = child(BasicApp::class) {}
 
 fun RBuilder.basic() {
-    div("modal-container") {
-        attrs.id = "modal-basic"
+    styledDiv {
+        css { +ModalStyles.basic }
         basicApp()
     }
 }

@@ -3,9 +3,10 @@ package samples.steps
 import antd.popover.popover
 import antd.steps.step
 import antd.steps.steps
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 interface CustomDotStep {
     var index: String
@@ -28,8 +29,8 @@ private val customDot = fun (dot: ReactElement, step: CustomDotStep): ReactEleme
 }
 
 fun RBuilder.customizedProgressDot() {
-    div("steps-container") {
-        attrs.id = "steps-customized-progress-dot"
+    styledDiv {
+        css { +StepsStyles.customizedProgressDot }
         steps {
             attrs {
                 current = 1

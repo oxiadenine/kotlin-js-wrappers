@@ -9,10 +9,11 @@ import antd.upload.upload
 import kotlinext.js.js
 import kotlinext.js.jsObject
 import kotlinx.html.classes
-import kotlinx.html.id
 import org.w3c.dom.HTMLElement
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 interface PicturesWallState : RState {
     var previewVisible: Boolean
@@ -101,8 +102,8 @@ class PicturesWall : RComponent<RProps, PicturesWallState>() {
 fun RBuilder.picturesWall() = child(PicturesWall::class) {}
 
 fun RBuilder.pictureCard() {
-    div("upload-container") {
-        attrs.id = "upload-picture-card"
+    styledDiv {
+        css { +UploadStyles.pictureCard }
         picturesWall()
     }
 }

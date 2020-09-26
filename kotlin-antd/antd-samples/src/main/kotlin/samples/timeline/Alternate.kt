@@ -4,14 +4,14 @@ import antd.icon.icon
 import antd.timeline.timeline
 import antd.timeline.timelineItem
 import kotlinext.js.js
-import kotlinx.html.id
 import react.RBuilder
 import react.buildElement
-import react.dom.div
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.alternate() {
-    div("timeline-container") {
-        attrs.id = "timeline-alternate"
+    styledDiv {
+        css { +TimelineStyles.alternate }
         timeline {
             attrs.mode = "alternate"
             timelineItem { +"Create a services site 2015-09-01" }

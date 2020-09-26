@@ -3,9 +3,9 @@ package samples.select
 import antd.select.*
 import antd.select.option
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
-import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private fun handleChange(value: String, option: Any) {
     console.log("selected $value")
@@ -28,8 +28,8 @@ private val filter: SelectFilterOption = { inputValue, option ->
 }
 
 fun RBuilder.search() {
-    div("select-container") {
-        attrs.id = "select-search"
+    styledDiv {
+        css { +SelectStyles.search }
         select<String, SelectComponent<String>> {
             attrs {
                 showSearch = true

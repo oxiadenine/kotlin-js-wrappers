@@ -4,11 +4,12 @@ import antd.MouseEvent
 import antd.MouseEventHandler
 import antd.button.button
 import antd.modal.modal
-import kotlinx.html.id
 import org.w3c.dom.HTMLElement
 import react.*
 import react.dom.*
 import kotlinx.browser.window
+import styled.css
+import styled.styledDiv
 
 interface AsyncAppState : RState {
     var modalText: String
@@ -77,8 +78,8 @@ class AsyncApp : RComponent<RProps, AsyncAppState>() {
 fun RBuilder.asyncApp() = child(AsyncApp::class) {}
 
 fun RBuilder.async() {
-    div("modal-container") {
-        attrs.id = "modal-async"
+    styledDiv {
+        css { +ModalStyles.async }
         asyncApp()
     }
 }

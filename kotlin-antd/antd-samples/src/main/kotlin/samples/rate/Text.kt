@@ -1,9 +1,10 @@
 package samples.rate
 
 import antd.rate.rate
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 interface RaterState : RState {
     var value: Number?
@@ -40,8 +41,8 @@ class Rater : RComponent<RProps, RaterState>() {
 fun RBuilder.rater() = child(Rater::class) {}
 
 fun RBuilder.text() {
-    div("rate-container") {
-        attrs.id = "rate-text"
+    styledDiv {
+        css { +RateStyles.text }
         rater()
     }
 }

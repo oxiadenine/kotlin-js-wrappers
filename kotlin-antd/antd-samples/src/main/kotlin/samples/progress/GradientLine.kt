@@ -4,13 +4,14 @@ import antd.progress.FromToGradients
 import antd.progress.StringGradients
 import antd.progress.progress
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.RBuilder
 import react.dom.div
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.gradientLine() {
-    div("progress-container") {
-        attrs.id = "progress-gradient-line"
+    styledDiv {
+        css { +ProgressStyles.gradientLine }
         div {
             progress {
                 val gradient: dynamic = jsObject<StringGradients> {}

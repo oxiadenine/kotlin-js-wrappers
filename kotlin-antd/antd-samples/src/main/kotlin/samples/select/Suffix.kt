@@ -5,9 +5,10 @@ import antd.select.SelectComponent
 import antd.select.option
 import antd.select.select
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private val smileIcon = buildElement {
     icon {
@@ -26,8 +27,8 @@ private fun handleChange(value: String, option: Any) {
 }
 
 fun RBuilder.suffix() {
-    div("select-container") {
-        attrs.id = "select-suffix"
+    styledDiv {
+        css { +SelectStyles.suffix }
         div {
             select<String, SelectComponent<String>> {
                 attrs {

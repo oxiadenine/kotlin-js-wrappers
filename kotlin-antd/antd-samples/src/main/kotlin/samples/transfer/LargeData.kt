@@ -6,9 +6,9 @@ import antd.transfer.TransferItem
 import antd.transfer.transfer
 import kotlinext.js.js
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.*
-import react.dom.*
+import styled.css
+import styled.styledDiv
 import kotlin.random.Random
 
 interface LargeDataTransferItem : TransferItem {
@@ -78,8 +78,8 @@ class LargeDataApp : RComponent<RProps, LargeDataAppState>() {
 fun RBuilder.largeDataApp() = child(LargeDataApp::class) {}
 
 fun RBuilder.largeData() {
-    div("transfer-container") {
-        attrs.id = "transfer-large-data"
+    styledDiv {
+        css { +TransferStyles.largeData }
         largeDataApp()
     }
 }

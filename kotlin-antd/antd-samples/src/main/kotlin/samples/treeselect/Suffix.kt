@@ -5,9 +5,10 @@ import antd.treeselect.TreeSelectComponent
 import antd.treeselect.treeNode
 import antd.treeselect.treeSelect
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private val icon = buildElement {
     icon {
@@ -102,8 +103,8 @@ class SuffixDemo : RComponent<RProps, SuffixDemoState>() {
 fun RBuilder.suffixMultipleDemo() = child(SuffixDemo::class) {}
 
 fun RBuilder.suffix() {
-    div("tree-select-container") {
-        attrs.id = "tree-select-suffix"
+    styledDiv {
+        css { +TreeSelectStyles.suffix }
         suffixMultipleDemo()
     }
 }

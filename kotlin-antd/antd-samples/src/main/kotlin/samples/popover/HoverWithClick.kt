@@ -3,11 +3,12 @@ package samples.popover
 import antd.button.button
 import antd.popover.popover
 import kotlinext.js.js
-import kotlinx.html.id
 import kotlinx.html.js.onClickFunction
 import org.w3c.dom.events.Event
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 interface HoverWithClickAppState : RState {
     var clicked: Boolean
@@ -84,8 +85,8 @@ class HoverWithClickApp : RComponent<RProps, HoverWithClickAppState>() {
 fun RBuilder.hoverWithClickApp() = child(HoverWithClickApp::class) {}
 
 fun RBuilder.hoverWithClick() {
-    div("popover-container") {
-        attrs.id = "popover-hover-with-click"
+    styledDiv {
+        css { +PopoverStyles.hoverWithClick }
         hoverWithClickApp()
     }
 }

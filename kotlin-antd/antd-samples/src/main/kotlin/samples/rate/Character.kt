@@ -3,13 +3,14 @@ package samples.rate
 import antd.icon.icon
 import antd.rate.rate
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.character() {
-    div("rate-container") {
-        attrs.id = "rate-character"
+    styledDiv {
+        css { +RateStyles.character }
         div {
             rate {
                 attrs {

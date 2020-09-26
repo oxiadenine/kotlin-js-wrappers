@@ -1,13 +1,14 @@
 package samples.alert
 
 import antd.alert.alert
-import kotlinx.html.id
 import react.RBuilder
 import react.dom.div
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.description() {
-    div("alert-container") {
-        attrs.id = "alert-description"
+    styledDiv {
+        css { +AlertStyles.description }
         div {
             alert {
                 attrs {

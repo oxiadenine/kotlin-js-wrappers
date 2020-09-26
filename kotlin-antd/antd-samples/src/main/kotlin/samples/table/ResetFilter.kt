@@ -7,9 +7,10 @@ import antd.table.*
 import kotlinext.js.js
 import kotlinext.js.jsObject
 import kotlinx.html.classes
-import kotlinx.html.id
 import react.*
 import react.dom.div
+import styled.css
+import styled.styledDiv
 
 interface ResetFilterTableDataItem {
     var key: String
@@ -182,8 +183,8 @@ class ResetFilterApp : RComponent<RProps, ResetFilterAppState>() {
 fun RBuilder.resetFilterApp() = child(ResetFilterApp::class) {}
 
 fun RBuilder.resetFilter() {
-    div("table-container") {
-        attrs.id = "table-reset-filter"
+    styledDiv {
+        css { +TableStyles.resetFilter }
         resetFilterApp()
     }
 }

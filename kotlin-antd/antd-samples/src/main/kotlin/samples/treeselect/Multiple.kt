@@ -4,9 +4,10 @@ import antd.treeselect.TreeSelectComponent
 import antd.treeselect.treeNode
 import antd.treeselect.treeSelect
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 interface MultipleDemoState : RState {
     var value: String?
@@ -95,8 +96,8 @@ class MultipleDemo : RComponent<RProps, MultipleDemoState>() {
 fun RBuilder.multipleDemo() = child(MultipleDemo::class) {}
 
 fun RBuilder.multiple() {
-    div("tree-select-container") {
-        attrs.id = "tree-select-multiple"
+    styledDiv {
+        css { +TreeSelectStyles.multiple }
         multipleDemo()
     }
 }

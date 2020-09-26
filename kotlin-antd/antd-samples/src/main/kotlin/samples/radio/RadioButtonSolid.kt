@@ -3,13 +3,14 @@ package samples.radio
 import antd.radio.radioButton
 import antd.radio.radioGroup
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.radioButtonSolid() {
-    div("radio-container") {
-        attrs.id = "radio-radio-button-solid"
+    styledDiv {
+        css { +RadioStyles.radioButtonSolid }
         div {
             div {
                 radioGroup {

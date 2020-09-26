@@ -2,9 +2,10 @@ package samples.pagination
 
 import antd.pagination.PageRenderType
 import antd.pagination.pagination
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private fun handleItemRender(page: Number, type: PageRenderType, element: ReactElement): ReactElement {
     if (type == "prev") {
@@ -21,8 +22,8 @@ private fun handleItemRender(page: Number, type: PageRenderType, element: ReactE
 }
 
 fun RBuilder.itemRender() {
-    div("pagination-container") {
-        attrs.id = "pagination-item-render"
+    styledDiv {
+        css { +PaginationStyles.itemRender }
         pagination {
             attrs {
                 total = 500

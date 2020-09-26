@@ -5,9 +5,10 @@ import antd.button.button
 import antd.icon.icon
 import antd.menu.*
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 interface InlineCollapsedAppState : RState {
     var collapsed: Boolean
@@ -138,8 +139,8 @@ class InlineCollapsedApp : RComponent<RProps, InlineCollapsedAppState>() {
 fun RBuilder.inlineCollapsedApp() = child(InlineCollapsedApp::class) {}
 
 fun RBuilder.inlineCollapsed() {
-    div("menu-container") {
-        attrs.id = "menu-inline-collapsed"
+    styledDiv {
+        css { +MenuStyles.inlineCollapsed }
         inlineCollapsedApp()
     }
 }

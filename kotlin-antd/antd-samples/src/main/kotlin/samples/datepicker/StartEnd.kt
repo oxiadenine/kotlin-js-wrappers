@@ -1,10 +1,11 @@
 package samples.datepicker
 
 import antd.datepicker.*
-import kotlinx.html.id
 import moment.Moment
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 interface DateRangeState : RState {
     var startValue: Moment?
@@ -98,8 +99,8 @@ class DateRange : RComponent<RProps, DateRangeState>() {
 fun RBuilder.dateRange() = child(DateRange::class) {}
 
 fun RBuilder.startEnd() {
-    div("date-picker-container") {
-        attrs.id = "date-picker-start-end"
+    styledDiv {
+        css { +DatePickerStyles.startEnd }
         dateRange()
     }
 }

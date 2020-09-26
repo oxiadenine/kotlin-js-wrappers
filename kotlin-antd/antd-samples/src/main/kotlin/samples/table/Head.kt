@@ -3,9 +3,9 @@ package samples.table
 import antd.pagination.PaginationConfig
 import antd.table.*
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.RBuilder
-import react.dom.div
+import styled.css
+import styled.styledDiv
 
 private interface HeadTableDataItem {
     var key: String
@@ -117,8 +117,8 @@ private fun onChange(pagination: PaginationConfig, filters: Any, sorter: SorterR
 }
 
 fun RBuilder.head() {
-    div("table-container") {
-        attrs.id = "table-head"
+    styledDiv {
+        css { +TableStyles.head }
         table<HeadTableDataItem, TableComponent<HeadTableDataItem>> {
             attrs {
                 columns = tableColumns

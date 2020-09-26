@@ -1,11 +1,12 @@
 package samples.tag
 
 import antd.tag.tag
-import kotlinx.html.id
 import org.w3c.dom.events.Event
 import react.RBuilder
 import react.dom.a
 import react.dom.div
+import styled.css
+import styled.styledDiv
 
 private fun log(e: Event) {
     console.log(e)
@@ -18,8 +19,8 @@ private fun preventDefault(e: Event) {
 }
 
 fun RBuilder.basic() {
-    div("tag-container") {
-        attrs.id = "tag-basic"
+    styledDiv {
+        css { +TagStyles.basic }
         div {
             tag { +"Tag 1" }
             tag {

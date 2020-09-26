@@ -10,10 +10,10 @@ import antd.timepicker.timePicker
 import kotlinext.js.Object
 import kotlinext.js.js
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import org.w3c.dom.HTMLElement
 import react.*
-import react.dom.div
+import styled.css
+import styled.styledDiv
 
 class TimeRelatedForm : RComponent<FormComponentProps<Any>, RState>() {
     private val handleSubmit: FormEventHandler<HTMLElement> = { e ->
@@ -160,8 +160,8 @@ private val wrappedTimeRelatedForm = FormComponent.create<FormComponentProps<Any
 fun RBuilder.wrappedTimeRelatedForm(handler: RHandler<FormComponentProps<Any>>) = child(wrappedTimeRelatedForm, jsObject {}, handler)
 
 fun RBuilder.timeRelatedControls() {
-    div("form-container") {
-        attrs.id = "form-time-related-controls"
+    styledDiv {
+        css { +FormStyles.timeRelatedControls }
         wrappedTimeRelatedForm {}
     }
 }

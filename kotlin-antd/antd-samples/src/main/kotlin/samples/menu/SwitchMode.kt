@@ -5,10 +5,11 @@ import antd.menu.*
 import antd.switch.switch
 import kotlinext.js.js
 import kotlinx.html.classes
-import kotlinx.html.id
 import org.w3c.dom.events.MouseEvent
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 interface SwitchModeSiderState : RState {
     var mode: MenuMode
@@ -145,8 +146,8 @@ class SwitchModeSider : RComponent<RProps, SwitchModeSiderState>() {
 fun RBuilder.switchModeSider() = child(SwitchModeSider::class) {}
 
 fun RBuilder.switchMode() {
-    div("menu-container") {
-        attrs.id = "menu-switch-mode"
+    styledDiv {
+        css { +MenuStyles.switchMode }
         switchModeSider()
     }
 }

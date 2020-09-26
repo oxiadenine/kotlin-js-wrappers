@@ -3,14 +3,14 @@ package samples.descriptions
 import antd.badge.badge
 import antd.descriptions.descriptions
 import antd.descriptions.descriptionsItem
-import kotlinx.html.id
 import react.RBuilder
 import react.dom.br
-import react.dom.div
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.verticalBorder() {
-    div("descriptions-container") {
-        attrs.id = "descriptions-vertical-border"
+    styledDiv {
+        css { +DescriptionsStyles.verticalBorder }
         descriptions {
             attrs {
                 title = "User Info"

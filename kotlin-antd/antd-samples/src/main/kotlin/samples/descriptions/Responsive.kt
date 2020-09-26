@@ -4,10 +4,10 @@ import antd.descriptions.ColumnBreakpoint
 import antd.descriptions.descriptions
 import antd.descriptions.descriptionsItem
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.*
 import react.dom.br
-import react.dom.div
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.responsiveDemo() {
     descriptions {
@@ -65,8 +65,8 @@ fun RBuilder.responsiveDemo() {
 }
 
 fun RBuilder.responsive() {
-    div("descriptions-container") {
-        attrs.id = "descriptions-responsive"
+    styledDiv {
+        css { +DescriptionsStyles.responsive }
         responsiveDemo()
     }
 }

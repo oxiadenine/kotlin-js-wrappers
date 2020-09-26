@@ -3,10 +3,10 @@ package samples.table
 import antd.pagination.PaginationConfig
 import antd.table.*
 import kotlinext.js.*
-import kotlinx.html.id
 import react.*
-import react.dom.div
 import kotlinx.browser.window
+import styled.css
+import styled.styledDiv
 import kotlin.js.json
 
 private val tableColumns = arrayOf<ColumnProps<Any>>(
@@ -134,8 +134,8 @@ class AjaxApp : RComponent<RProps, AjaxAppState>() {
 fun RBuilder.ajaxApp() = child(AjaxApp::class) {}
 
 fun RBuilder.ajax() {
-    div("table-container") {
-        attrs.id = "table-ajax"
+    styledDiv {
+        css { +TableStyles.ajax }
         ajaxApp()
     }
 }

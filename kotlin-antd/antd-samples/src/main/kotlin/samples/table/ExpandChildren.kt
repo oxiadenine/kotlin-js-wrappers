@@ -2,9 +2,9 @@ package samples.table
 
 import antd.table.*
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.RBuilder
-import react.dom.div
+import styled.css
+import styled.styledDiv
 
 private interface ExpandChildrenTableDataItem {
     var key: String
@@ -112,8 +112,8 @@ private val tableRowSelection = jsObject<TableRowSelection<ExpandChildrenTableDa
 }
 
 fun RBuilder.expandChildren() {
-    div("table-container") {
-        attrs.id = "table-expand-children"
+    styledDiv {
+        css { +TableStyles.expandChildren }
         table<ExpandChildrenTableDataItem, TableComponent<ExpandChildrenTableDataItem>> {
             attrs {
                 columns = tableColumns

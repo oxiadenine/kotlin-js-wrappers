@@ -2,13 +2,14 @@ package samples.grid
 
 import antd.grid.col
 import antd.grid.row
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.basic() {
-    div("grid-container") {
-        attrs.id = "grid-basic"
+    styledDiv {
+        css { +GridStyles.basic }
         div {
             row {
                 col {

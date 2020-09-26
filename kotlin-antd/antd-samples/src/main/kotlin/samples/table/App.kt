@@ -1,12 +1,83 @@
 package samples.table
 
+import kotlinx.css.Position
+import kotlinx.css.TextAlign
+import kotlinx.css.fontSize
+import kotlinx.css.marginBottom
+import kotlinx.css.marginRight
+import kotlinx.css.marginTop
+import kotlinx.css.position
+import kotlinx.css.px
+import kotlinx.css.textAlign
 import react.*
 import react.dom.*
+import styled.StyleSheet
+import styled.css
+import styled.styledDiv
+
+object TableStyles : StyleSheet("table", isStatic = true) {
+    val container by css {}
+    val basic by css {}
+    val jsx by css {}
+    val rowSelection by css {}
+    val rowSelectionAndOperation by css {}
+    val rowSelectionCustom by css {}
+    val head by css {}
+    val resetFilter by css {
+        descendants(".table-operations") {
+            marginBottom = 16.px
+            children("button") {
+                marginRight = 8.px
+            }
+        }
+    }
+    val ajax by css {}
+    val size by css {
+        descendants("h4") {
+            marginBottom = 16.px
+        }
+    }
+    val bordered by css {
+        descendants("th.column-money") {
+            textAlign = TextAlign.right
+        }
+        descendants("td.column-money") {
+            textAlign = TextAlign.right
+        }
+    }
+    val expand by css {}
+    val colspanRowspan by css {}
+    val expandChildren by css {}
+    val fixedHeader by css {}
+    val fixedColumns by css {}
+    val fixedColumnsHeader by css {}
+    val groupingColumns by css {}
+    val editRow by css {
+        descendants(".editable-row") {
+            descendants(".ant-form-explain") {
+                position = Position.absolute
+                marginTop = (-4).px
+                fontSize = 12.px
+            }
+        }
+    }
+    val nestedTable by css {}
+    val dynamicSettings by css {
+        descendants(".components-table-demo-control-bar") {
+            marginBottom = 10.px
+            descendants(".ant-form-item") {
+                marginRight = 16.px
+                marginBottom = 8.px
+            }
+        }
+    }
+}
 
 class TableApp : RComponent<RProps, RState>() {
     override fun RBuilder.render() {
         h2 { +"Table" }
-        div {
+        styledDiv {
+            css { +TableStyles.container }
             basic()
             jsx()
             rowSelection()

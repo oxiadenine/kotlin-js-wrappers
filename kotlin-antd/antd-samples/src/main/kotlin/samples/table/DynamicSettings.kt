@@ -13,12 +13,13 @@ import antd.table.*
 import kotlinext.js.Object
 import kotlinext.js.jsObject
 import kotlinx.html.classes
-import kotlinx.html.id
 import react.*
 import react.dom.a
 import react.dom.div
 import react.dom.p
 import react.dom.span
+import styled.css
+import styled.styledDiv
 
 interface DynamicSettingsTableDataItem {
     var key: String
@@ -355,8 +356,8 @@ class DynamicSettingsDemo : RComponent<RProps, DynamicSettingsDemoState>() {
 fun RBuilder.dynamicSettingsDemo() = child(DynamicSettingsDemo::class) {}
 
 fun RBuilder.dynamicSettings() {
-    div("table-container") {
-        attrs.id = "table-dynamic-settings"
+    styledDiv {
+        css { +TableStyles.dynamicSettings }
         dynamicSettingsDemo()
     }
 }

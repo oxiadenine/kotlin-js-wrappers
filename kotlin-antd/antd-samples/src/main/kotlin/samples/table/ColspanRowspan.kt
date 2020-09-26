@@ -3,11 +3,11 @@ package samples.table
 import antd.table.*
 import kotlinext.js.js
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.RBuilder
 import react.buildElement
 import react.dom.a
-import react.dom.div
+import styled.css
+import styled.styledDiv
 
 private interface ColspanRowspanTableDataItem {
     var key: String
@@ -150,8 +150,8 @@ private val data = arrayOf<ColspanRowspanTableDataItem>(
 )
 
 fun RBuilder.colspanRowspan() {
-    div("table-container") {
-        attrs.id = "table-colspan-rowspan"
+    styledDiv {
+        css { +TableStyles.colspanRowspan }
         table<ColspanRowspanTableDataItem, TableComponent<ColspanRowspanTableDataItem>> {
             attrs {
                 columns = tableColumns

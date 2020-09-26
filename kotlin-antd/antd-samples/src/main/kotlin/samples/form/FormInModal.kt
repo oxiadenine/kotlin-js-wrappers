@@ -9,10 +9,11 @@ import antd.modal.modal
 import antd.radio.radio
 import antd.radio.radioGroup
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import org.w3c.dom.HTMLElement
 import react.*
 import react.dom.div
+import styled.css
+import styled.styledDiv
 
 interface CollectionCreateFormProps : FormComponentProps<Any> {
     var visible: Boolean?
@@ -148,8 +149,8 @@ class CollectionsPage : RComponent<FormComponentProps<Any>, CollectionsPageState
 fun RBuilder.collectionsPage() = child(CollectionsPage::class) {}
 
 fun RBuilder.formInModal() {
-    div("form-container") {
-        attrs.id = "form-form-in-modal"
+    styledDiv {
+        css { +FormStyles.fornInModal }
         collectionsPage()
     }
 }

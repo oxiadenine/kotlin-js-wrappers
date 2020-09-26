@@ -2,13 +2,14 @@ package samples.button
 
 import antd.button.button
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.ghost() {
-    div("button-container") {
-        attrs.id = "button-ghost"
+    styledDiv {
+        css { +ButtonStyles.ghost }
         div {
             attrs.jsStyle = js {
                 background = "rgb(190, 200, 200)"

@@ -4,9 +4,10 @@ import antd.MouseEventHandler
 import antd.button.button
 import antd.modal.ModalComponent
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 import kotlin.js.Promise
 
 private val info: MouseEventHandler<Any> = {
@@ -44,8 +45,8 @@ private val warning: MouseEventHandler<Any> = {
 }
 
 fun RBuilder.info() {
-    div("modal-container") {
-        attrs.id = "modal-info"
+    styledDiv {
+        css { +ModalStyles.info }
         div {
             button {
                 attrs.onClick = info

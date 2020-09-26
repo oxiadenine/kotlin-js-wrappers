@@ -3,9 +3,10 @@ package samples.mentions
 import antd.mentions.mentions
 import antd.mentions.option
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private fun getOptions(): Array<ReactElement> {
     return arrayOf("afc163", "zombiej", "yesmeck").map {
@@ -22,8 +23,8 @@ private fun getOptions(): Array<ReactElement> {
 }
 
 fun RBuilder.readonly() {
-    div("mentions-container") {
-        attrs.id = "mentions-readonly"
+    styledDiv {
+        css { MentionsStyles.readonly }
         div {
             div {
                 attrs.jsStyle = js { marginBottom = 10 }

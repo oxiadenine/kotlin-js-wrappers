@@ -2,13 +2,14 @@ package samples.button
 
 import antd.button.button
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.disabled() {
-    div("button-container") {
-        attrs.id = "button-disabled"
+    styledDiv {
+        css { +ButtonStyles.disabled }
         div {
             button {
                 attrs.type = "primary"

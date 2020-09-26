@@ -2,9 +2,9 @@ package samples.table
 
 import antd.table.*
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.RBuilder
-import react.dom.div
+import styled.css
+import styled.styledDiv
 
 private interface GroupingColumnsTableDataItem {
     var key: String
@@ -118,8 +118,8 @@ private val data = (0..100).map { i ->
 }.toTypedArray()
 
 fun RBuilder.groupingColumns() {
-    div("table-container") {
-        attrs.id = "table-groping-columns"
+    styledDiv {
+        css { +TableStyles.groupingColumns }
         table<GroupingColumnsTableDataItem, TableComponent<GroupingColumnsTableDataItem>> {
             attrs {
                 columns = tableColumns

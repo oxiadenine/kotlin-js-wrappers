@@ -1,13 +1,14 @@
 package samples.progress
 
 import antd.progress.progress
-import kotlinx.html.id
 import react.RBuilder
 import react.dom.div
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.line() {
-    div("progress-container") {
-        attrs.id = "progress-line"
+    styledDiv {
+        css { +ProgressStyles.line }
         div {
             progress {
                 attrs.percent = 30

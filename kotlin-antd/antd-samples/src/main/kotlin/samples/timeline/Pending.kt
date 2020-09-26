@@ -5,9 +5,10 @@ import antd.button.button
 import antd.timeline.timeline
 import antd.timeline.timelineItem
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
 import react.dom.div
+import styled.css
+import styled.styledDiv
 
 interface PendingTimeLineState : RState {
     var reverse: Boolean
@@ -50,8 +51,8 @@ class PendingTimeLine : RComponent<RProps, PendingTimeLineState>() {
 fun RBuilder.pendingTimeLine() = child(PendingTimeLine::class) {}
 
 fun RBuilder.pending() {
-    div("timeline-container") {
-        attrs.id = "timeline-pending"
+    styledDiv {
+        css { +TimelineStyles.pending }
         pendingTimeLine()
     }
 }

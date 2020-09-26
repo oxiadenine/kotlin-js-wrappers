@@ -1,5 +1,6 @@
 package samples
 
+import kotlinx.css.*
 import react.*
 import react.dom.*
 import samples.affix.affixApp
@@ -65,13 +66,40 @@ import samples.tree.treeApp
 import samples.treeselect.treeSelectApp
 import samples.typography.typographyApp
 import samples.upload.uploadApp
+import styled.StyleSheet
+import styled.css
+import styled.styledDiv
+
+object AppStyles : StyleSheet("app", isStatic = true) {
+    val header by css {
+        padding(all = 10.px)
+        textAlign = TextAlign.center
+    }
+
+    val content by css {
+        display = Display.flex
+        flexDirection = FlexDirection.column
+        justifyContent = JustifyContent.center
+        alignItems = Align.center
+        padding(all = 10.px)
+        children("*") {
+            margin(all = 24.px)
+            children("div") {
+                width = 1200.px
+                margin(12.px)
+            }
+        }
+    }
+}
 
 class App : RComponent<RProps, RState>() {
     override fun RBuilder.render() {
-        div("app-header") {
+        styledDiv {
+            css { +AppStyles.header }
             h1 { +"Examples" }
         }
-        div("app-content") {
+        styledDiv {
+            css { +AppStyles.content }
             affixApp()
             alertApp()
             anchorApp()

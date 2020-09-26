@@ -11,10 +11,11 @@ import antd.typography.text
 import kotlinext.js.js
 import kotlinext.js.jsObject
 import kotlinx.html.classes
-import kotlinx.html.id
 import react.*
 import react.dom.a
 import react.dom.div
+import styled.css
+import styled.styledDiv
 
 interface BasicDemoState : RState {
     var status: String
@@ -234,8 +235,8 @@ class BasicDemo : RComponent<RProps, BasicDemoState>() {
 fun RBuilder.basicDemo() = child(BasicDemo::class) {}
 
 fun RBuilder.basic() {
-    div("result-container") {
-        attrs.id = "result-basic"
+    styledDiv {
+        css { +ResultStyles.basic }
         basicDemo()
     }
 }

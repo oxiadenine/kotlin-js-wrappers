@@ -2,11 +2,11 @@ package samples.table
 
 import antd.table.*
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.RBuilder
 import react.buildElement
 import react.dom.a
-import react.dom.div
+import styled.css
+import styled.styledDiv
 
 private interface FixedColumnsTableDataItem {
     var key: String
@@ -102,8 +102,8 @@ private val data = arrayOf<FixedColumnsTableDataItem>(
 )
 
 fun RBuilder.fixedColumns() {
-    div("table-container") {
-        attrs.id = "table-fixed-columns"
+    styledDiv {
+        css { +TableStyles.fixedColumns }
         table<FixedColumnsTableDataItem, TableComponent<FixedColumnsTableDataItem>> {
             attrs {
                 columns = tableColumns

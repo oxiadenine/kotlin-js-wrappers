@@ -4,11 +4,11 @@ import antd.divider.divider
 import antd.table.*
 import antd.tag.tag
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.RBuilder
 import react.dom.a
-import react.dom.div
 import react.dom.span
+import styled.css
+import styled.styledDiv
 
 private interface JsxTableDataItem {
     var key: String
@@ -47,8 +47,8 @@ private val data = arrayOf<JsxTableDataItem>(
 )
 
 fun RBuilder.jsx() {
-    div("table-container") {
-        attrs.id = "table-jsx"
+    styledDiv {
+        css { +TableStyles.jsx }
         table<JsxTableDataItem, TableComponent<JsxTableDataItem>> {
             attrs.dataSource = data
             columnGroup {

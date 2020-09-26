@@ -8,12 +8,13 @@ import antd.table.TableRowSelection
 import antd.table.table
 import kotlinext.js.js
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.*
 import react.dom.div
 import react.dom.jsStyle
 import react.dom.span
 import kotlinx.browser.window
+import styled.css
+import styled.styledDiv
 
 private interface RowSelectionAndOperationTableDataItem {
     var key: String
@@ -119,8 +120,8 @@ class RowSelectionAndOperationApp : RComponent<RProps, RowSelectionAndOperationA
 fun RBuilder.rowSelectionAndOperationApp() = child(RowSelectionAndOperationApp::class) {}
 
 fun RBuilder.rowSelectionAndOperation() {
-    div("table-container") {
-        attrs.id = "table-row-selection-and-operation"
+    styledDiv {
+        css { +TableStyles.rowSelectionAndOperation }
         rowSelectionAndOperationApp()
     }
 }

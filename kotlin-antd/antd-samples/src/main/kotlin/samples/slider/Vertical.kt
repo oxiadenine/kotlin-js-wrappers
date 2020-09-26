@@ -3,9 +3,10 @@ package samples.slider
 import antd.slider.SliderMarks
 import antd.slider.slider
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 class VerticalDemo : RComponent<RProps, RState>() {
     private val divStyle = js {
@@ -71,8 +72,8 @@ class VerticalDemo : RComponent<RProps, RState>() {
 fun RBuilder.verticalDemo() = child(VerticalDemo::class) {}
 
 fun RBuilder.vertical() {
-    div("slider-container") {
-        attrs.id = "slider-vertical"
+    styledDiv {
+        css { +SliderStyles.vertical }
         verticalDemo()
     }
 }

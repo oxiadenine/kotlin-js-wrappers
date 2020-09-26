@@ -2,10 +2,11 @@ package samples.slider
 
 import antd.slider.slider
 import antd.switch.switch
-import kotlinx.html.id
 import org.w3c.dom.events.MouseEvent
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 interface BasicDemoState : RState {
     var disabled: Boolean
@@ -52,8 +53,8 @@ class BasicDemo : RComponent<RProps, BasicDemoState>() {
 fun RBuilder.basicDemo() = child(BasicDemo::class) {}
 
 fun RBuilder.basic() {
-    div("slider-container") {
-        attrs.id = "slider-basic"
+    styledDiv {
+        css { +SliderStyles.basic }
         basicDemo()
     }
 }

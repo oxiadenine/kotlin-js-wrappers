@@ -4,12 +4,13 @@ import antd.badge.badge
 import antd.calendar.calendar
 import kotlinext.js.js
 import kotlinx.html.classes
-import kotlinx.html.id
 import moment.Moment
 import react.RBuilder
 import react.ReactElement
 import react.buildElement
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private fun getListData(value: Moment): Array<Any> {
     return when (value.date()) {
@@ -111,8 +112,8 @@ private fun monthCellRender(value: Moment): ReactElement {
 }
 
 fun RBuilder.noticeCalendar() {
-    div("calendar-container") {
-        attrs.id = "calendar-notice-calendar"
+    styledDiv {
+        css { +CalendarStyles.noticeCalendar }
         calendar {
             attrs {
                 dateCellRender = ::dateCellRender

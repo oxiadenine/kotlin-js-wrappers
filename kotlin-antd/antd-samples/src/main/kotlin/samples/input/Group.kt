@@ -15,9 +15,10 @@ import antd.select.option
 import antd.select.select
 import kotlinext.js.js
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private val cascaderOptions = arrayOf<CascaderOptionType>(
         jsObject {
@@ -288,8 +289,8 @@ class GroupCompactDemo : RComponent<RProps, GroupCompactDemoState>() {
 fun RBuilder.groupCompactDemo() = child(GroupCompactDemo::class) {}
 
 fun RBuilder.group() {
-    div("input-container") {
-        attrs.id = "input-group"
+    styledDiv {
+        css { +InputStyles.group }
         groupCompactDemo()
     }
 }

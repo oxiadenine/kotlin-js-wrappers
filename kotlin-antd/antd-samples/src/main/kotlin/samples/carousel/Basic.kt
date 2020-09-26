@@ -1,18 +1,19 @@
 package samples.carousel
 
 import antd.carousel.carousel
-import kotlinx.html.id
 import react.RBuilder
 import react.dom.div
 import react.dom.h3
+import styled.css
+import styled.styledDiv
 
 private fun onChange(currentSlide: Number) {
     console.log(currentSlide)
 }
 
 fun RBuilder.basic() {
-    div("carousel-container") {
-        attrs.id = "carousel-basic"
+    styledDiv {
+        css { +CarouselStyles.basic }
         carousel {
             attrs.afterChange = ::onChange
             div {

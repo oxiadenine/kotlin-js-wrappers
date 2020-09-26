@@ -4,9 +4,10 @@ import antd.button.button
 import antd.dropdown.dropdown
 import antd.menu.menu
 import antd.menu.menuItem
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private val menu = buildElement {
     menu {
@@ -44,8 +45,8 @@ private val menu = buildElement {
 }
 
 fun RBuilder.placement() {
-    div("dropdown-container") {
-        attrs.id = "dopdown-placement"
+    styledDiv {
+        css { +DropdownStyles.placement }
         div {
             dropdown {
                 attrs {

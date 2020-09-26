@@ -8,9 +8,10 @@ import antd.select.SelectValue
 import antd.select.select
 import antd.select.option
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private val children = (10..36).map { i ->
     buildElement {
@@ -102,8 +103,8 @@ class SelectSizesDemo : RComponent<RProps, SelectSizesDemoState>() {
 fun RBuilder.selectSizesDemo() = child(SelectSizesDemo::class) {}
 
 fun RBuilder.size() {
-    div("select-container") {
-        attrs.id = "select-size"
+    styledDiv {
+        css { +SelectStyles.size }
         selectSizesDemo()
     }
 }

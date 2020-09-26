@@ -6,9 +6,10 @@ import antd.select.SelectComponent
 import antd.select.option
 import antd.select.select
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private val selectBefore = buildElement {
     select<String, SelectComponent<String>> {
@@ -53,8 +54,8 @@ private val selectAfter = buildElement {
 }
 
 fun RBuilder.addon() {
-    div("input-container") {
-        attrs.id = "input-addon"
+    styledDiv {
+        css { +InputStyles.addon }
         div {
             div {
                 attrs.jsStyle = js { marginBottom = 16 }

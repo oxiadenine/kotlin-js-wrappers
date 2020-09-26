@@ -2,9 +2,10 @@ package samples.comment
 
 import antd.avatar.avatar
 import antd.comment.comment
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 interface ExampleCommentProps : RProps {
     var children: ReactElement
@@ -45,8 +46,8 @@ class ExampleComment : RComponent<ExampleCommentProps, RState>() {
 fun RBuilder.exampleComment(handler: RHandler<ExampleCommentProps>) = child(ExampleComment::class, handler)
 
 fun RBuilder.nested() {
-    div("comment-container") {
-        attrs.id = "comment-basic"
+    styledDiv {
+        css { +CommentStyles.nested }
         exampleComment {
             exampleComment {
                 exampleComment {}

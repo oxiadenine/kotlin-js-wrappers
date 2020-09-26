@@ -4,9 +4,10 @@ import antd.button.button
 import antd.button.buttonGroup
 import antd.icon.icon
 import antd.radio.*
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 interface ButtonSizeState : RState {
     var size: String
@@ -128,8 +129,8 @@ class ButtonSize : RComponent<RProps, ButtonSizeState>() {
 fun RBuilder.buttonSize() = child(ButtonSize::class) {}
 
 fun RBuilder.size() {
-    div("button-container") {
-        attrs { id = "button-size" }
+    styledDiv {
+        css { +ButtonStyles.size }
         buttonSize()
     }
 }

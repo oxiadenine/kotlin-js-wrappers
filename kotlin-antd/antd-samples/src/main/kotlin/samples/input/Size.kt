@@ -1,14 +1,17 @@
 package samples.input
 
 import antd.input.input
-import kotlinx.html.id
+import kotlinx.html.classes
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.size() {
-    div("input-container") {
-        attrs.id = "input-size"
-        div("example-input") {
+    styledDiv {
+        css { +InputStyles.size }
+        div {
+            attrs.classes = setOf("example-input")
             input {
                 attrs {
                     size = "large"

@@ -2,10 +2,11 @@ package samples.datepicker
 
 import antd.datepicker.*
 import antd.icon.icon
-import kotlinx.html.id
 import moment.Moment
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private val smileIcon = buildElement {
     icon {
@@ -22,8 +23,8 @@ private fun handleRangeChange(dates: RangePickerValue, dateStrings: Array<String
 }
 
 fun RBuilder.suffix() {
-    div("date-picker-container") {
-        attrs.id = "date-picker-suffix"
+    styledDiv {
+        css { +DatePickerStyles.suffix }
         div {
             datePicker {
                 attrs {

@@ -5,16 +5,16 @@ import antd.typography.paragraph
 import antd.typography.text
 import antd.typography.title
 import antd.typography.typography
-import kotlinx.html.id
 import react.RBuilder
 import react.dom.a
-import react.dom.div
 import react.dom.li
 import react.dom.ul
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.basic() {
-    div("typography-container") {
-        attrs.id = "typography-basic"
+    styledDiv {
+        css { +TypographyStyles.basic }
         typography {
             title { +"Introduction" }
             paragraph {

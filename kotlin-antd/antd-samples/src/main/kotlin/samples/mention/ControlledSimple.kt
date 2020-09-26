@@ -2,9 +2,9 @@ package samples.mention
 
 import antd.mention.MentionComponent
 import antd.mention.mention
-import kotlinx.html.id
 import react.*
-import react.dom.*
+import styled.css
+import styled.styledDiv
 
 interface ControlledSimpleAppState : RState {
     var value: Any
@@ -42,8 +42,8 @@ class ControlledSimpleApp : RComponent<RProps, ControlledSimpleAppState>() {
 fun RBuilder.controlledSimpleApp() = child(ControlledSimpleApp::class) {}
 
 fun RBuilder.controlledSimple() {
-    div("mention-container") {
-        attrs.id = "mention-controlled-simple"
+    styledDiv {
+        css { +MentionStyles.controlledSimple }
         controlledSimpleApp()
     }
 }

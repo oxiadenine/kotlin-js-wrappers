@@ -2,13 +2,14 @@ package samples.progress
 
 import antd.progress.progress
 import antd.tooltip.tooltip
-import kotlinx.html.id
 import react.RBuilder
 import react.dom.div
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.segment() {
-    div("progress-container") {
-        attrs.id = "progress-segment"
+    styledDiv {
+        css { +ProgressStyles.segment }
         div {
             tooltip {
                 attrs.title = "3 done / 3 in progress / 4 to do"

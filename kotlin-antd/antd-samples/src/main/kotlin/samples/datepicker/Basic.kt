@@ -1,10 +1,11 @@
 package samples.datepicker
 
 import antd.datepicker.*
-import kotlinx.html.id
 import moment.Moment
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private fun handleChange(date: Moment, dateString: String) {
     console.log(date, dateString)
@@ -15,8 +16,8 @@ private fun handleRangeChange(dates: RangePickerValue, dateStrings: Array<String
 }
 
 fun RBuilder.basic() {
-    div("date-picker-container") {
-        attrs.id = "date-picker-basic"
+    styledDiv {
+        css { +DatePickerStyles.basic }
         div {
             datePicker {
                 attrs.onChange = ::handleChange

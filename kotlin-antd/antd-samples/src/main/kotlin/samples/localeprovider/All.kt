@@ -27,11 +27,12 @@ import antd.transfer.transfer
 import kotlinext.js.js
 import kotlinext.js.jsObject
 import kotlinx.html.classes
-import kotlinx.html.id
 import moment.moment
 import org.w3c.dom.HTMLElement
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private val tableColumns = arrayOf<ColumnProps<Any>>(
         jsObject {
@@ -261,8 +262,8 @@ class PageApp : RComponent<RProps, PageAppState>() {
 fun RBuilder.pageApp() = child(PageApp::class) {}
 
 fun RBuilder.all() {
-    div("locale-provider-container") {
-        attrs.id = "locale-provider-all"
+    styledDiv {
+        css { LocaleProviderStyles.all }
         pageApp()
     }
 }

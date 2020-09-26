@@ -3,13 +3,14 @@ package samples.datepicker
 import antd.datepicker.*
 import kotlinext.js.js
 import kotlinx.html.classes
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.dateRender() {
-    div("date-picker-container") {
-        attrs.id = "date-picker-date-render"
+    styledDiv {
+        css { +DatePickerStyles.dateRender }
         div {
             datePicker {
                 attrs.dateRender = { current, _ ->

@@ -3,11 +3,11 @@ package samples.mentions
 import antd.mentions.mentions
 import antd.mentions.option
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
 import react.dom.*
 import kotlinx.browser.window
-import kotlin.js.Promise
+import styled.css
+import styled.styledDiv
 
 interface AsyncMentionState : RState {
     var search: String
@@ -94,8 +94,8 @@ class AsyncMention : RComponent<RProps, AsyncMentionState>() {
 fun RBuilder.asyncMention() = child(AsyncMention::class) {}
 
 fun RBuilder.async() {
-    div("mentions-container") {
-        attrs.id = "mentions-async"
+    styledDiv {
+        css { MentionsStyles.async }
         asyncMention()
     }
 }

@@ -3,9 +3,10 @@ package samples.menu
 import antd.icon.icon
 import antd.menu.*
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 interface SiderCurrentSiderState : RState {
     var openKeys: Array<String>
@@ -138,8 +139,8 @@ class SiderCurrentSider : RComponent<RProps, SiderCurrentSiderState>() {
 fun RBuilder.siderCurrentSider() = child(SiderCurrentSider::class) {}
 
 fun RBuilder.siderCurrent() {
-    div("menu-container") {
-        attrs.id = "menu-sider-current"
+    styledDiv {
+        css { +MenuStyles.siderCurrent }
         siderCurrentSider()
     }
 }

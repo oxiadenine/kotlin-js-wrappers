@@ -2,14 +2,14 @@ package samples.divider
 
 import antd.divider.divider
 import kotlinext.js.js
-import kotlinx.html.id
 import react.RBuilder
-import react.dom.a
 import react.dom.div
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.customizeStyle() {
-    div("divider-container") {
-        attrs.id = "divider-customize-style"
+    styledDiv {
+        css { +DividerStyles.customizeStyle }
         div {
             +"Text"
             divider {

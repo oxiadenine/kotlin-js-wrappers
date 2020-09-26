@@ -1,13 +1,14 @@
 package samples.switch
 
 import antd.switch.switch
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.size() {
-    div("switch-container") {
-        attrs.id = "switch-size"
+    styledDiv {
+        css { +SwitchStyles.size }
         div {
             switch {
                 attrs.defaultChecked = true

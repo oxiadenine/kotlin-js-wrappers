@@ -5,9 +5,10 @@ import antd.message.message
 import antd.steps.step
 import antd.steps.steps
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private data class Step(val title: String, val content: String)
 
@@ -90,8 +91,8 @@ class StepNextApp : RComponent<RProps, StepNextAppState>() {
 fun RBuilder.stepNextApp() = child(StepNextApp::class) {}
 
 fun RBuilder.stepNext() {
-    div("steps-container") {
-        attrs.id = "steps-step-next"
+    styledDiv {
+        css { +StepsStyles.stepNext }
         stepNextApp()
     }
 }

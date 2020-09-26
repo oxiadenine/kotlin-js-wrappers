@@ -5,9 +5,10 @@ import antd.form.*
 import antd.input.input
 import antd.radio.*
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.*
 import react.dom.div
+import styled.css
+import styled.styledDiv
 
 interface FormLayoutDemoState : RState {
     var formLayout: String
@@ -104,8 +105,8 @@ class FormLayoutDemo : RComponent<FormComponentProps<Any>, FormLayoutDemoState>(
 fun RBuilder.formLayoutDemo() = child(FormLayoutDemo::class) {}
 
 fun RBuilder.layout() {
-    div("form-container") {
-        attrs.id = "form-layout"
+    styledDiv {
+        css { +FormStyles.layout }
         formLayoutDemo()
     }
 }

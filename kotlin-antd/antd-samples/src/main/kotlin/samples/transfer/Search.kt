@@ -6,9 +6,9 @@ import antd.transfer.TransferItem
 import antd.transfer.transfer
 import kotlinext.js.js
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.*
-import react.dom.*
+import styled.css
+import styled.styledDiv
 import kotlin.random.Random
 
 interface SearchTransferItem : TransferItem {
@@ -87,8 +87,8 @@ class SearchApp : RComponent<RProps, SearchAppState>() {
 fun RBuilder.searchApp() = child(SearchApp::class) {}
 
 fun RBuilder.search() {
-    div("transfer-container") {
-        attrs.id = "transfer-search"
+    styledDiv {
+        css { +TransferStyles.search }
         searchApp()
     }
 }

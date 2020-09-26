@@ -8,13 +8,14 @@ import antd.layout.footer
 import antd.layout.sider
 import antd.menu.*
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.responsive() {
-    div("layout-container") {
-        attrs.id = "layout-responsive"
+    styledDiv {
+        css { +LayoutStyles.responsive }
         layout {
             sider {
                 attrs {

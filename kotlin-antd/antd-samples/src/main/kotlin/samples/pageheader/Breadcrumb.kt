@@ -3,9 +3,9 @@ package samples.pageheader
 import antd.breadcrumb.Route
 import antd.pageheader.pageHeader
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.RBuilder
-import react.dom.div
+import styled.css
+import styled.styledDiv
 
 private val breadcrumbRoutes = arrayOf<Route>(
         jsObject {
@@ -23,8 +23,8 @@ private val breadcrumbRoutes = arrayOf<Route>(
 )
 
 fun RBuilder.breadcrumb() {
-    div("page-header-container") {
-        attrs.id = "page-header-breadcrumb"
+    styledDiv {
+        css { +PageHeaderStyles.breadcrumb }
         pageHeader {
             attrs {
                 title = "Title"

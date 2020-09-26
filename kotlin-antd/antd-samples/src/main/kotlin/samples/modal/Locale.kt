@@ -6,10 +6,11 @@ import antd.button.button
 import antd.modal.ModalComponent
 import antd.modal.modal
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import org.w3c.dom.HTMLElement
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 interface LocalizedModalState : RState {
     var visible: Boolean
@@ -70,8 +71,8 @@ private val confirmModal: MouseEventHandler<Any> = {
 }
 
 fun RBuilder.locale() {
-    div("modal-container") {
-        attrs.id = "modal-locale"
+    styledDiv {
+        css { +ModalStyles.locale }
         div {
             localizedModal()
             br {}

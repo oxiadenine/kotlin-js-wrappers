@@ -10,11 +10,11 @@ import antd.table.TableComponent
 import antd.table.table
 import kotlinext.js.jsObject
 import kotlinx.html.classes
-import kotlinx.html.id
 import react.*
 import react.dom.a
-import react.dom.div
 import react.dom.span
+import styled.css
+import styled.styledDiv
 
 private interface NestedTableNestedTableDataItem {
     var key: String
@@ -196,8 +196,8 @@ class NestedTableApp : RComponent<RProps, RState>() {
 fun RBuilder.nestedTableApp() = child(NestedTableApp::class) {}
 
 fun RBuilder.nestedTable() {
-    div("table-container") {
-        attrs.id = "table-nested-table"
+    styledDiv {
+        css { +TableStyles.nestedTable }
         nestedTableApp()
     }
 }

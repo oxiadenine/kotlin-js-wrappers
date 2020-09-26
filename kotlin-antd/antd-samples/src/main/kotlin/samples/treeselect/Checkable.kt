@@ -3,9 +3,9 @@ package samples.treeselect
 import antd.treeselect.*
 import kotlinext.js.js
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.*
-import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private val data: Array<TreeNodeNormal> = arrayOf(
         jsObject {
@@ -79,8 +79,8 @@ class CheckableDemo : RComponent<RProps, CheckableDemoState>() {
 fun RBuilder.checkableDemo() = child(CheckableDemo::class) {}
 
 fun RBuilder.checkable() {
-    div("tree-select-container") {
-        attrs.id = "tree-select-checkable"
+    styledDiv {
+        css { +TreeSelectStyles.checkable }
         checkableDemo()
     }
 }

@@ -1,13 +1,14 @@
 package samples.avatar
 
 import antd.avatar.avatar
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.basic() {
-    div("avatar-container") {
-        attrs.id = "avatar-basic"
+    styledDiv {
+        css { +AvatarStyles.basic }
         div {
             div {
                 avatar {

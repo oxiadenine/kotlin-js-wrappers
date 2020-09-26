@@ -53,6 +53,7 @@ class KotlinJsWrapperSamplesPlugin : Plugin<Project> {
 
                 "implementation"("org.jetbrains:kotlin-react:$kotlinReactVersion-kotlin-$kotlinVersion")
                 "implementation"("org.jetbrains:kotlin-react-dom:$kotlinReactDomVersion-kotlin-$kotlinVersion")
+                "implementation"("org.jetbrains:kotlin-styled:$kotlinStyledVersion-kotlin-$kotlinVersion")
             }
 
             kotlin.apply {

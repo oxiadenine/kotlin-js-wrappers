@@ -2,10 +2,10 @@ package samples.collapse
 
 import antd.collapse.collapse
 import antd.collapse.collapsePanel
-import kotlinx.html.id
 import react.RBuilder
-import react.dom.div
 import react.dom.p
+import styled.css
+import styled.styledDiv
 
 private fun callback(key: Any) {
     console.log(key)
@@ -18,8 +18,8 @@ private val text = """
 """.trimIndent()
 
 fun RBuilder.mix() {
-    div("collapse-container") {
-        attrs.id = "collapse-mix"
+    styledDiv {
+        css { +CollapseStyles.mix }
         collapse {
             attrs.onChange = ::callback
             collapsePanel {

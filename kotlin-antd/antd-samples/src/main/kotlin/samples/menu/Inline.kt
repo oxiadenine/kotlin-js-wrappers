@@ -3,9 +3,10 @@ package samples.menu
 import antd.icon.icon
 import antd.menu.*
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 class InlineSider : RComponent<RProps, RState>() {
     private val handleClick = fun (param: ClickParam) {
@@ -133,8 +134,8 @@ class InlineSider : RComponent<RProps, RState>() {
 fun RBuilder.inlineSider() = child(InlineSider::class) {}
 
 fun RBuilder.inline() {
-    div("menu-container") {
-        attrs.id = "menu-inline"
+    styledDiv {
+        css { +MenuStyles.inline }
         inlineSider()
     }
 }

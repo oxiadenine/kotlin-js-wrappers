@@ -2,10 +2,10 @@ package samples.mention
 
 import antd.mention.mention
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
-import react.dom.*
 import kotlinx.browser.window
+import styled.css
+import styled.styledDiv
 
 private val users = arrayOf("afc163", "benjycui", "yiminghe", "jljsj33", "dqaria", "RaoHai")
 
@@ -54,8 +54,8 @@ class AsyncMention : RComponent<RProps, AsyncMentionState>() {
 fun RBuilder.asyncMention() = child(AsyncMention::class) {}
 
 fun RBuilder.async() {
-    div("mention-container") {
-        attrs.id = "mention-async"
+    styledDiv {
+        css { +MentionStyles.async }
         asyncMention()
     }
 }

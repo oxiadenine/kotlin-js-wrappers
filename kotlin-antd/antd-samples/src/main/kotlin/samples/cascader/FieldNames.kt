@@ -3,9 +3,9 @@ package samples.cascader
 import antd.cascader.CascaderOptionType
 import antd.cascader.cascader
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.*
-import react.dom.*
+import styled.css
+import styled.styledDiv
 
 interface FieldNamesCascaderOptionType : CascaderOptionType {
     var code: String?
@@ -53,8 +53,8 @@ private fun handleChange(value: Array<String>, selectedOptions: Array<CascaderOp
 }
 
 fun RBuilder.fieldNames() {
-    div("cascader-container") {
-        attrs.id = "cascader-field-names"
+    styledDiv {
+        css { +CascaderStyles.fieldNames }
         cascader {
             attrs {
                 fieldNames = jsObject {

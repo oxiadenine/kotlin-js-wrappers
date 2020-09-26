@@ -4,9 +4,10 @@ import antd.MouseEventHandler
 import antd.button.button
 import antd.button.buttonGroup
 import antd.progress.progress
-import kotlinx.html.id
 import react.*
 import react.dom.div
+import styled.css
+import styled.styledDiv
 
 interface CircleDynamicAppState : RState {
     var percent: Number
@@ -70,8 +71,8 @@ class CircleDynamicApp : RComponent<RProps, CircleDynamicAppState>() {
 fun RBuilder.circleDynamicApp() = child(CircleDynamicApp::class) {}
 
 fun RBuilder.circleDynamic() {
-    div("progress-container") {
-        attrs.id = "progress-circle-dynamic"
+    styledDiv {
+        css { +ProgressStyles.circleDynamic }
         circleDynamicApp()
     }
 }

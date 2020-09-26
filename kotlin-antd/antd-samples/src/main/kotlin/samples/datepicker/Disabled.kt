@@ -1,16 +1,17 @@
 package samples.datepicker
 
 import antd.datepicker.*
-import kotlinx.html.id
 import moment.moment
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private val dateformat = "YYYY-MM-DD"
 
 fun RBuilder.disabled() {
-    div("date-picker-container") {
-        attrs.id = "date-picker-disabled"
+    styledDiv {
+        css { +DatePickerStyles.disabled }
         div {
             datePicker {
                 attrs {

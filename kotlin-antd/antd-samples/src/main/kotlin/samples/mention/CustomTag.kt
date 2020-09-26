@@ -3,9 +3,10 @@ package samples.mention
 import antd.mention.mention
 import antd.mention.nav
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private val webFrameworks = arrayOf(
         js {
@@ -81,8 +82,8 @@ class CustomTagNavMention : RComponent<RProps, CustomTagNavMentionState>() {
 fun RBuilder.customTagNavMention() = child(CustomTagNavMention::class) {}
 
 fun RBuilder.customTag() {
-    div("mention-container") {
-        attrs.id = "mention-custom-tag"
+    styledDiv {
+        css { +MentionStyles.customTag }
         customTagNavMention()
     }
 }

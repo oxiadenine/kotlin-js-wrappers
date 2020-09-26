@@ -4,9 +4,9 @@ import antd.autocomplete.DataSourceItemType
 import antd.autocomplete.autoComplete
 import antd.select.SelectFilterOption
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
-import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private val datasource = arrayOf("Burns Bay Road", "Downing Street", "Wall Street")
 
@@ -26,8 +26,8 @@ fun RBuilder.nonCaseSensitiveComplete() {
 }
 
 fun RBuilder.nonCaseSensitive() {
-    div("auto-complete-container") {
-        attrs.id = "auto-complete-non-case-sensitive"
+    styledDiv {
+        css { +AutoCompleteStyles.nonCaseSensitive }
         nonCaseSensitiveComplete()
     }
 }

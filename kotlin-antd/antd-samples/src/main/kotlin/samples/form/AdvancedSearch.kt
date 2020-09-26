@@ -11,7 +11,6 @@ import antd.input.input
 import kotlinext.js.js
 import kotlinext.js.jsObject
 import kotlinx.html.classes
-import kotlinx.html.id
 import kotlinx.html.js.onClickFunction
 import org.w3c.dom.HTMLElement
 import org.w3c.dom.events.Event
@@ -19,6 +18,8 @@ import react.*
 import react.dom.a
 import react.dom.div
 import react.dom.jsStyle
+import styled.css
+import styled.styledDiv
 
 interface AdvancedSearchFormState : RState {
     var expand: Boolean
@@ -130,8 +131,8 @@ private val wrappedAdvancedSearchForm = FormComponent.create<FormComponentProps<
 fun RBuilder.wrappedAdvancedSearchForm(handler: RHandler<FormComponentProps<Any>>) = child(wrappedAdvancedSearchForm, jsObject {}, handler)
 
 fun RBuilder.advancedSearch() {
-    div("form-container") {
-        attrs.id = "form-advanced-search"
+    styledDiv {
+        css { +FormStyles.advancedSearch }
         div {
             wrappedAdvancedSearchForm {}
             div {

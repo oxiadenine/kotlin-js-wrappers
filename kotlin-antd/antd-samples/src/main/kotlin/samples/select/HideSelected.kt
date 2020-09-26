@@ -4,9 +4,9 @@ import antd.select.SelectComponent
 import antd.select.option
 import antd.select.select
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
-import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private val options = arrayOf("Apples", "Nails", "Bananas", "Helicopters")
 
@@ -52,8 +52,8 @@ class SelectWithHiddenSelectedOptions : RComponent<RProps, SelectWithHiddenSelec
 fun RBuilder.selectWithHiddenSelectedOptions() = child(SelectWithHiddenSelectedOptions::class) {}
 
 fun RBuilder.hideSelected() {
-    div("select-container") {
-        attrs.id = "select-hide-selected"
+    styledDiv {
+        css { +SelectStyles.hideSelected }
         selectWithHiddenSelectedOptions()
     }
 }

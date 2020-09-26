@@ -7,11 +7,12 @@ import antd.select.SelectComponent
 import antd.select.SelectValue
 import antd.select.option
 import antd.select.select
-import kotlinx.html.id
 import react.*
 import react.dom.br
 import react.dom.div
 import react.dom.p
+import styled.css
+import styled.styledDiv
 
 private fun callback(key: Any) {
     console.log(key)
@@ -108,8 +109,8 @@ class ExtraDemo : RComponent<RProps, ExtraDemoState>() {
 fun RBuilder.extraDemo() = child(ExtraDemo::class) {}
 
 fun RBuilder.extra() {
-    div("collapse-container") {
-        attrs.id = "collapse-extra"
+    styledDiv {
+        css { +CollapseStyles.extra }
         extraDemo()
     }
 }

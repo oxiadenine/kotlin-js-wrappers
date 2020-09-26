@@ -3,9 +3,10 @@ package samples.affix
 import antd.affix.affix
 import antd.button.button
 import kotlinx.html.classes
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 class TargetDemo : RComponent<RProps, RState>() {
     private var container: dynamic = null
@@ -31,8 +32,8 @@ class TargetDemo : RComponent<RProps, RState>() {
 fun RBuilder.targetDemo() = child(TargetDemo::class) {}
 
 fun RBuilder.target() {
-    div("affix-container") {
-        attrs.id = "affix-target"
+    styledDiv {
+        css { +AffixStyles.target }
         targetDemo()
     }
 }

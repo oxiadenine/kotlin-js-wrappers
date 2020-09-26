@@ -2,13 +2,13 @@ package samples.spin
 
 import antd.alert.alert
 import antd.spin.spin
-import kotlinx.html.id
 import react.RBuilder
-import react.dom.div
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.tip() {
-    div("spin-container") {
-        attrs.id = "spin-tip"
+    styledDiv {
+        css { +SpinStyles.tip }
         spin {
             attrs.tip = "Loading..."
             alert {

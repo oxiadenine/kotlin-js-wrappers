@@ -2,10 +2,11 @@ package samples.table
 
 import antd.table.*
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.RBuilder
 import react.dom.div
 import react.dom.h4
+import styled.css
+import styled.styledDiv
 
 private interface SizeTableDataItem {
     var key: String
@@ -51,8 +52,8 @@ private val data = arrayOf<SizeTableDataItem>(
 )
 
 fun RBuilder.size() {
-    div("table-container") {
-        attrs.id = "table-size"
+    styledDiv {
+        css { +TableStyles.size }
         div {
             h4 { +"Middle size table" }
             table<SizeTableDataItem, TableComponent<SizeTableDataItem>> {

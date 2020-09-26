@@ -3,9 +3,9 @@ package samples.treeselect
 import antd.treeselect.*
 import kotlinext.js.js
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.*
-import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private val data: Array<TreeNodeNormal> = arrayOf(
         jsObject {
@@ -70,8 +70,8 @@ class TreeDataDemo : RComponent<RProps, TreeDataDemoState>() {
 fun RBuilder.treeDataDemo() = child(TreeDataDemo::class) {}
 
 fun RBuilder.treeData() {
-    div("tree-select-container") {
-        attrs.id = "tree-select-tree-data"
+    styledDiv {
+        css { +TreeSelectStyles.treeData }
         treeDataDemo()
     }
 }

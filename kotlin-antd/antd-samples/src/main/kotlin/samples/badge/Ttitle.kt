@@ -2,13 +2,14 @@ package samples.badge
 
 import antd.badge.badge
 import kotlinx.html.classes
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.title() {
-    div("badge-container") {
-        attrs.id = "badge-title"
+    styledDiv {
+        css { +BadgeStyles.title }
         div {
             badge {
                 attrs {
@@ -17,8 +18,8 @@ fun RBuilder.title() {
                 }
                 a {
                     attrs {
-                        href = "#"
                         classes = setOf("head-example")
+                        href = "#"
                     }
                 }
             }

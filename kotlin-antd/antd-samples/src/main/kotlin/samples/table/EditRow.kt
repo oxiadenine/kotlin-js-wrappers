@@ -10,10 +10,11 @@ import antd.table.table
 import kotlinext.js.Object
 import kotlinext.js.js
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import kotlinx.html.js.onClickFunction
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 interface EditRowTableDataItem {
     var key: String
@@ -252,8 +253,8 @@ private val editRowEditableForm = FormComponent.create<EditRowEditableTableProps
 fun RBuilder.editRowEditableTable(handler: RHandler<EditRowEditableTableProps>) = child(editRowEditableForm, jsObject {}, handler)
 
 fun RBuilder.editRow() {
-    div("table-container") {
-        attrs.id = "table-edit-row"
+    styledDiv {
+        css { +TableStyles.editRow }
         editRowEditableTable {}
     }
 }

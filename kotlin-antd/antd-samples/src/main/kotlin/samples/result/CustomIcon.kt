@@ -3,14 +3,14 @@ package samples.result
 import antd.button.button
 import antd.icon.icon
 import antd.result.result
-import kotlinx.html.id
 import react.RBuilder
 import react.buildElement
-import react.dom.div
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.customIcon() {
-    div("result-container") {
-        attrs.id = "result-custom-icon"
+    styledDiv {
+        css { +ResultStyles.customIcon }
         result {
             attrs {
                 icon = buildElement {

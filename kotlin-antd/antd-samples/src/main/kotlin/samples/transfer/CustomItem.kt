@@ -6,9 +6,10 @@ import antd.transfer.TransferItem
 import antd.transfer.transfer
 import kotlinext.js.js
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 import kotlin.random.Random
 
 interface CustomItemTransferItem : TransferItem {
@@ -95,8 +96,8 @@ class CustomItemApp : RComponent<RProps, CustomItemAppState>() {
 fun RBuilder.customItemApp() = child(CustomItemApp::class) {}
 
 fun RBuilder.customItem() {
-    div("transfer-container") {
-        attrs.id = "transfer-custom-item"
+    styledDiv {
+        css { +TransferStyles.customItem }
         customItemApp()
     }
 }

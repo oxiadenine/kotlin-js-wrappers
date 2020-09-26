@@ -2,13 +2,13 @@ package samples.timeline
 
 import antd.timeline.timeline
 import antd.timeline.timelineItem
-import kotlinx.html.id
 import react.RBuilder
-import react.dom.div
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.basic() {
-    div("timeline-container") {
-        attrs.id = "timeline-basic"
+    styledDiv {
+        css { +TimelineStyles.basic }
         timeline {
             timelineItem { +"Create a services site 2015-09-01" }
             timelineItem { +"Solve initial network problems 2015-09-01" }

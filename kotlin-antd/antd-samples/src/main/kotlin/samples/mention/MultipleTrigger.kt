@@ -4,9 +4,9 @@ import antd.mention.MentionComponent
 import antd.mention.mention
 import kotlinext.js.js
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.*
-import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private fun handleChange(contentState: Any) {
     console.log(MentionComponent.toString(contentState, jsObject {}))
@@ -56,8 +56,8 @@ class MultipleTriggerApp : RComponent<RProps, MultipleTriggerAppState>() {
 fun RBuilder.multipleTriggerApp() = child(MultipleTriggerApp::class) { }
 
 fun RBuilder.multipleTrigger() {
-    div("mention-container") {
-        attrs.id = "mention-multiple-trigger"
+    styledDiv {
+        css { +MentionStyles.multipleTrigger }
         multipleTriggerApp()
     }
 }

@@ -5,10 +5,11 @@ import antd.tabs.TabsEditAction
 import antd.tabs.tabPane
 import antd.tabs.tabs
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
 import react.dom.div
 import react.dom.jsStyle
+import styled.css
+import styled.styledDiv
 
 interface CustomAddTriggerDemoState : RState {
     var activeKey: String
@@ -125,8 +126,8 @@ class CustomAddTriggerDemo : RComponent<RProps, CustomAddTriggerDemoState>() {
 fun RBuilder.customAddTriggerDemo() = child(CustomAddTriggerDemo::class) {}
 
 fun RBuilder.customAddTrigger() {
-    div("tabs-container") {
-        attrs.id = "tabs-custom-add-trigger"
+    styledDiv {
+        css { +TabsStyles.customAddTrigger }
         customAddTriggerDemo()
     }
 }

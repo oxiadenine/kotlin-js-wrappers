@@ -4,9 +4,10 @@ import antd.dropdown.dropdown
 import antd.menu.menu
 import antd.menu.menuItem
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private val menu = buildElement {
     menu {
@@ -26,8 +27,8 @@ private val menu = buildElement {
 }
 
 fun RBuilder.contextMenu() {
-    div("dropdown-container") {
-        attrs.id = "dopdown-context-menu"
+    styledDiv {
+        css { +DropdownStyles.contextMenu }
         dropdown {
             attrs {
                 overlay = menu

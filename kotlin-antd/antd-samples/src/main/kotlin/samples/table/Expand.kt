@@ -3,13 +3,13 @@ package samples.table
 import antd.table.*
 import kotlinext.js.js
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.RBuilder
 import react.buildElement
 import react.dom.a
-import react.dom.div
 import react.dom.jsStyle
 import react.dom.p
+import styled.css
+import styled.styledDiv
 
 private interface ExpandTableDataItem {
     var key: String
@@ -75,8 +75,8 @@ private val data = arrayOf<ExpandTableDataItem>(
 )
 
 fun RBuilder.expand() {
-    div("table-container") {
-        attrs.id = "table-expand"
+    styledDiv {
+        css { +TableStyles.expand }
         table<ExpandTableDataItem, TableComponent<ExpandTableDataItem>> {
             attrs {
                 columns = tableColumns

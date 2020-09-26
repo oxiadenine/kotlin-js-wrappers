@@ -5,9 +5,11 @@ import antd.icon.IconProps
 import antd.icon.icon
 import kotlinext.js.js
 import kotlinx.html.HTMLTag
-import kotlinx.html.id
+import kotlinx.html.classes
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.path(tagName: String, block: RDOMBuilder<HTMLTag>.() -> Unit): ReactElement = tag(block) {
     HTMLTag(tagName, it, mapOf(), null, inlineTag = true, emptyTag = false)
@@ -107,9 +109,10 @@ class PandaIcon : RComponent<IconProps, RState>() {
 fun RBuilder.pandaIcon(handler: RHandler<IconProps>) = child(PandaIcon::class, handler)
 
 fun RBuilder.custom() {
-    div("icon-container") {
-        attrs.id = "icon-custom"
-        div("custom-icons-list") {
+    styledDiv {
+        css { +IconStyles.custom }
+        div {
+            attrs.classes = setOf("custom-icons-list")
             heartIcon {
                 attrs.style = js { color = "hotpink" }
             }

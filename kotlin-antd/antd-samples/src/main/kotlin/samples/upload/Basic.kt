@@ -6,13 +6,13 @@ import antd.message.message
 import antd.upload.HttpRequestHeader
 import antd.upload.upload
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
-import react.dom.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.basic() {
-    div("upload-container") {
-        attrs.id = "upload-basic"
+    styledDiv {
+        css { +UploadStyles.basic }
         upload {
             attrs {
                 name = "file"

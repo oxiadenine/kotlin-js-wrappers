@@ -3,11 +3,12 @@ package samples.calendar
 import antd.alert.alert
 import antd.calendar.CalendarMode
 import antd.calendar.calendar
-import kotlinx.html.id
 import moment.Moment
 import moment.moment
 import react.*
 import react.dom.div
+import styled.css
+import styled.styledDiv
 
 interface SelectAppState : RState {
     var value: Moment
@@ -52,8 +53,8 @@ class SelectApp : RComponent<RProps, SelectAppState>() {
 fun RBuilder.selectApp() = child(SelectApp::class) {}
 
 fun RBuilder.select() {
-    div("calendar-container") {
-        attrs.id = "calendar-select"
+    styledDiv {
+        css { +CalendarStyles.select }
         selectApp()
     }
 }

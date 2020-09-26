@@ -7,10 +7,11 @@ import antd.select.select
 import antd.tabs.tabPane
 import antd.tabs.tabs
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
 import react.dom.div
 import react.dom.jsStyle
+import styled.css
+import styled.styledDiv
 
 interface PositionDemoState : RState {
     var tabPosition: String
@@ -87,8 +88,8 @@ class PositionDemo : RComponent<RProps, PositionDemoState>() {
 fun RBuilder.positionDemo() = child(PositionDemo::class) {}
 
 fun RBuilder.position() {
-    div("tabs-container") {
-        attrs.id = "tabs-position"
+    styledDiv {
+        css { +TabsStyles.position }
         positionDemo()
     }
 }

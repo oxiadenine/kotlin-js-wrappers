@@ -5,14 +5,14 @@ import antd.layout.header
 import antd.layout.content
 import antd.layout.footer
 import antd.layout.sider
-import kotlinx.html.id
 import react.*
 import react.dom.*
-
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.basic() {
-    div("layout-container") {
-        attrs.id = "layout-basic"
+    styledDiv {
+        css { +LayoutStyles.basic }
         div {
             layout {
                 header { +"Header" }

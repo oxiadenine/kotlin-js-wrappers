@@ -1,14 +1,15 @@
 package samples.carousel
 
 import antd.carousel.carousel
-import kotlinx.html.id
 import react.RBuilder
 import react.dom.div
 import react.dom.h3
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.fade() {
-    div("carousel-container") {
-        attrs.id = "carousel-fade"
+    styledDiv {
+        css { +CarouselStyles.fade }
         carousel {
             attrs.effect = "fade"
             div {

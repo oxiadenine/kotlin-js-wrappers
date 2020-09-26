@@ -4,9 +4,10 @@ import antd.treeselect.TreeSelectComponent
 import antd.treeselect.treeNode
 import antd.treeselect.treeSelect
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 interface BasicDemoState : RState {
     var value: String?
@@ -94,8 +95,8 @@ class BasicDemo : RComponent<RProps, BasicDemoState>() {
 fun RBuilder.basicDemo() = child(BasicDemo::class) {}
 
 fun RBuilder.basic() {
-    div("tree-select-container") {
-        attrs.id = "tree-select-basic"
+    styledDiv {
+        css { +TreeSelectStyles.basic }
         basicDemo()
     }
 }

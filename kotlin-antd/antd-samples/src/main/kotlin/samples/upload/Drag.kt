@@ -4,13 +4,14 @@ import antd.icon.icon
 import antd.message.message
 import antd.upload.dragger
 import kotlinx.html.classes
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.drag() {
-    div("upload-container") {
-        attrs.id = "upload-drag"
+    styledDiv {
+        css { +UploadStyles.drag }
         dragger {
             attrs {
                 name = "file"

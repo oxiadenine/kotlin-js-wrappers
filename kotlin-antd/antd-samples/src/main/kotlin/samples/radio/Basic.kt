@@ -1,13 +1,13 @@
 package samples.radio
 
 import antd.radio.radio
-import kotlinx.html.id
 import react.*
-import react.dom.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.basic() {
-    div("radio-container") {
-        attrs.id = "radio-basic"
+    styledDiv {
+        css { +RadioStyles.basic }
         radio { +"Radio" }
     }
 }

@@ -1,13 +1,14 @@
 package samples.rate
 
 import antd.rate.rate
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.clear() {
-    div("rate-container") {
-        attrs.id = "rate-clear"
+    styledDiv {
+        css { +RateStyles.clear }
         div {
             rate {
                 attrs.defaultValue = 3

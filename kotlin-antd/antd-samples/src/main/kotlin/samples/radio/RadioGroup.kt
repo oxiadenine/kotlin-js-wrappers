@@ -3,9 +3,9 @@ package samples.radio
 import antd.radio.RadioChangeEvent
 import antd.radio.radio
 import antd.radio.radioGroup
-import kotlinx.html.id
 import react.*
-import react.dom.*
+import styled.css
+import styled.styledDiv
 
 interface RadioGroupAppState : RState {
     var value: Any
@@ -53,8 +53,8 @@ class RadioGroupApp : RComponent<RProps, RadioGroupAppState>() {
 fun RBuilder.radioGroupApp() = child(RadioGroupApp::class) {}
 
 fun RBuilder.radioGroup() {
-    div("radio-container") {
-        attrs.id = "radio-radio-group"
+    styledDiv {
+        css { +RadioStyles.radioGroup }
         radioGroupApp()
     }
 }

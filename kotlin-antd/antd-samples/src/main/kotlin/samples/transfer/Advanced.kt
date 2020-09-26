@@ -8,9 +8,9 @@ import antd.transfer.TransferListProps
 import antd.transfer.transfer
 import kotlinext.js.js
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.*
-import react.dom.*
+import styled.css
+import styled.styledDiv
 import kotlin.random.Random
 
 interface AdvancedTransferItem : TransferItem {
@@ -101,8 +101,8 @@ class AdvancedApp : RComponent<RProps, AdvancedAppState>() {
 fun RBuilder.advancedApp() = child(AdvancedApp::class) {}
 
 fun RBuilder.advanced() {
-    div("transfer-container") {
-        attrs.id = "transfer-advanced"
+    styledDiv {
+        css { +TransferStyles.advanced }
         advancedApp()
     }
 }

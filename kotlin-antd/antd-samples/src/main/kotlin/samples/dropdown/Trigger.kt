@@ -6,9 +6,10 @@ import antd.menu.menu
 import antd.menu.menuDivider
 import antd.menu.menuItem
 import kotlinx.html.classes
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private val menu = buildElement {
     menu {
@@ -35,8 +36,8 @@ private val menu = buildElement {
 }
 
 fun RBuilder.trigger() {
-    div("dropdown-container") {
-        attrs.id = "dropdown-trigger"
+    styledDiv {
+        css { +DropdownStyles.trigger }
         dropdown {
             attrs {
                 overlay = menu

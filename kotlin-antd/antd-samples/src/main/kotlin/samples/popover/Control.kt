@@ -2,11 +2,12 @@ package samples.popover
 
 import antd.button.button
 import antd.popover.popover
-import kotlinx.html.id
 import kotlinx.html.js.onClickFunction
 import org.w3c.dom.events.Event
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 interface ControlAppState : RState {
     var visible: Boolean
@@ -54,8 +55,8 @@ class ControlApp : RComponent<RProps, ControlAppState>() {
 fun RBuilder.controlApp() = child(ControlApp::class) {}
 
 fun RBuilder.control() {
-    div("popover-container") {
-        attrs.id = "placement-control"
+    styledDiv {
+        css { +PopoverStyles.control }
         controlApp()
     }
 }

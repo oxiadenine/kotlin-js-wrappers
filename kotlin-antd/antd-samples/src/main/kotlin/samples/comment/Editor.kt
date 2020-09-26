@@ -11,12 +11,13 @@ import antd.input.textArea
 import antd.list.ListComponent
 import antd.list.list
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import moment.moment
 import org.w3c.dom.HTMLTextAreaElement
 import react.*
 import react.dom.*
 import kotlinx.browser.window
+import styled.css
+import styled.styledDiv
 
 interface CommentListProps : RProps {
     var comments: Array<CommentProps>
@@ -163,8 +164,8 @@ class EditorApp : RComponent<RProps, EditorAppState>() {
 fun RBuilder.editorApp() = child(EditorApp::class) {}
 
 fun RBuilder.editor() {
-    div("comment-container") {
-        attrs.id = "comment-editor"
+    styledDiv {
+        css { +CommentStyles.editor }
         editorApp()
     }
 }

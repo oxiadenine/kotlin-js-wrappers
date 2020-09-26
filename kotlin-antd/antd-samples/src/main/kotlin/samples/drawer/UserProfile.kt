@@ -16,13 +16,14 @@ import antd.list.listItem
 import antd.list.listItemMeta
 import kotlinext.js.js
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import kotlinx.html.js.onClickFunction
 import react.*
 import react.dom.a
 import react.dom.div
 import react.dom.jsStyle
 import react.dom.p
+import styled.css
+import styled.styledDiv
 
 private interface  UserProfileListDataItem {
     var id: String
@@ -333,8 +334,8 @@ class UserProfileApp : RComponent<RProps, UserProfileAppState>() {
 fun RBuilder.userProfileApp() = child(UserProfileApp::class) {}
 
 fun RBuilder.userProfile() {
-    div("drawer-container") {
-        attrs.id = "drawer-user-profile"
+    styledDiv {
+        css { +DrawerStyles.userProfile }
         userProfileApp()
     }
 }

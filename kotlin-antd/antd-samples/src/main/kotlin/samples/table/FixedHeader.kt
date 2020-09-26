@@ -5,9 +5,9 @@ import antd.table.ColumnProps
 import antd.table.TableComponent
 import antd.table.table
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.RBuilder
-import react.dom.div
+import styled.css
+import styled.styledDiv
 
 private interface FixedHeaderTableDataItem {
     var key: String
@@ -43,8 +43,8 @@ private val data = (0..100).map { i ->
 }.toTypedArray()
 
 fun RBuilder.fixedHeader() {
-    div("table-container") {
-        attrs.id = "table-fixed-header"
+    styledDiv {
+        css { +TableStyles.fixedHeader }
         table<FixedHeaderTableDataItem, TableComponent<FixedHeaderTableDataItem>> {
             attrs {
                 columns = tableColumns

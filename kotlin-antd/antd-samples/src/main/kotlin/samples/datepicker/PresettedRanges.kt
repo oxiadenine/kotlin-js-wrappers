@@ -2,10 +2,11 @@ package samples.datepicker
 
 import antd.datepicker.*
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import moment.*
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 class Range(val today: Array<Moment>, val thisMonth: Array<Moment>)
 
@@ -15,8 +16,8 @@ private fun handleChange(dates: RangePickerValue, dateStrings: Array<String>) {
 }
 
 fun RBuilder.presettedRanges() {
-    div("date-picker-container") {
-        attrs.id = "date-picker-presetted-ranges"
+    styledDiv {
+        css { +DatePickerStyles.presettedRanges }
         div {
             rangePicker {
                 attrs {

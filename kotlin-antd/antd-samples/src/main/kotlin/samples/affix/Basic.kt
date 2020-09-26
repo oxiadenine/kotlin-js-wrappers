@@ -2,9 +2,10 @@ package samples.affix
 
 import antd.affix.affix
 import antd.button.button
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 interface BasicDemoState : RState {
     var top: Number
@@ -55,8 +56,8 @@ class BasicDemo : RComponent<RProps, BasicDemoState>() {
 fun RBuilder.basicDemo() = child(BasicDemo::class) {}
 
 fun RBuilder.basic() {
-    div("affix-container") {
-        attrs.id = "affix-basic"
+    styledDiv {
+        css { +AffixStyles.basic }
         basicDemo()
     }
 }

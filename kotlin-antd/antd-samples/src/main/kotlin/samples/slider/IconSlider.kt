@@ -4,9 +4,11 @@ import antd.icon.icon
 import antd.slider.SliderValue
 import antd.slider.slider
 import kotlinext.js.js
-import kotlinx.html.id
+import kotlinx.html.classes
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 interface IconSliderDemoProps : RProps {
     var min: Number
@@ -67,8 +69,9 @@ class IconSliderDemo : RComponent<IconSliderDemoProps, IconSliderDemoState>() {
 fun RBuilder.iconSliderDemo(handler: RHandler<IconSliderDemoProps>) = child(IconSliderDemo::class, handler)
 
 fun RBuilder.iconSlider() {
-    div("slider-container icon-wrapper") {
-        attrs.id = "slider-icon-slider"
+    styledDiv {
+        css { +SliderStyles.iconSlider }
+        attrs.classes = setOf("icon-wrapper")
         iconSliderDemo {
             attrs {
                 min = 0

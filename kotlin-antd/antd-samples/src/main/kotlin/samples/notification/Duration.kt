@@ -5,9 +5,9 @@ import antd.button.button
 import antd.notification.ArgsProps
 import antd.notification.notification
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.RBuilder
-import react.dom.div
+import styled.css
+import styled.styledDiv
 
 private val openNotification: MouseEventHandler<Any> = {
     val args = jsObject<ArgsProps> {
@@ -20,8 +20,8 @@ private val openNotification: MouseEventHandler<Any> = {
 }
 
 fun RBuilder.duration() {
-    div("notification-container") {
-        attrs.id = "notification-duration"
+    styledDiv {
+        css { +NotificationStyles.duration }
         button {
             attrs {
                 type = "primary"

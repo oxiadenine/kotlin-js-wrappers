@@ -2,13 +2,14 @@ package samples.badge
 
 import antd.badge.badge
 import kotlinx.html.classes
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.link() {
-    div("badge-container") {
-        attrs.id = "badge-link"
+    styledDiv {
+        css { +BadgeStyles.link }
         a {
             attrs.href = "#"
             badge {

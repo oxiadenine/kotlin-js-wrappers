@@ -3,10 +3,11 @@ package samples.tooltip
 import antd.button.button
 import antd.tooltip.tooltip
 import kotlinext.js.js
-import kotlinx.html.id
 import org.w3c.dom.HTMLElement
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private val wrapStyles = js {
     overflow = "hidden"
@@ -16,8 +17,8 @@ private val wrapStyles = js {
 }
 
 fun RBuilder.autoAdjustOverflow() {
-    div("tooltip-container") {
-        attrs.id = "tooltip-auto-adjust-overflow"
+    styledDiv {
+        css { +TooltipStyles.autoAdjustOverflow }
         div {
             attrs.jsStyle = wrapStyles
             tooltip {

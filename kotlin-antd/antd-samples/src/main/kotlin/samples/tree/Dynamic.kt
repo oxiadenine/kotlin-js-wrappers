@@ -3,10 +3,10 @@ package samples.tree
 import antd.tree.*
 import kotlinext.js.Object
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.*
-import react.dom.div
 import kotlinx.browser.window
+import styled.css
+import styled.styledDiv
 import kotlin.js.Promise
 
 interface DynamicDemoState : RState {
@@ -96,8 +96,8 @@ class DynamicDemo : RComponent<RProps, DynamicDemoState>() {
 fun RBuilder.dynamicDemo() = child(DynamicDemo::class) {}
 
 fun RBuilder.dynamic() {
-    div("tree-container") {
-        attrs.id = "tree-dynamic"
+    styledDiv {
+        css { +TreeStyles.dynamic }
         dynamicDemo()
     }
 }

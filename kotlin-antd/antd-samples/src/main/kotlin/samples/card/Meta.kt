@@ -5,15 +5,15 @@ import antd.card.card
 import antd.card.cardMeta
 import antd.icon.icon
 import kotlinext.js.js
-import kotlinx.html.id
 import react.RBuilder
 import react.buildElement
-import react.dom.div
 import react.dom.img
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.meta() {
-    div("card-container") {
-        attrs.id = "card-meta"
+    styledDiv {
+        css { +CardStyles.meta }
         card {
             attrs {
                 style = js { width = 300 }

@@ -2,17 +2,17 @@ package samples.checkbox
 
 import antd.checkbox.CheckboxChangeEvent
 import antd.checkbox.checkbox
-import kotlinx.html.id
 import react.*
-import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private fun handleChange(event: CheckboxChangeEvent) {
     console.log("checked = ${event.target.checked}")
 }
 
 fun RBuilder.basic() {
-    div("checkbox-container") {
-        attrs.id = "checkbox-basic"
+    styledDiv {
+        css { +CheckboxStyles.basic }
         checkbox {
             attrs.onChange = ::handleChange
             +"Checkbox"

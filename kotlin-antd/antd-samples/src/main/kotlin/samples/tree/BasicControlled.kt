@@ -3,9 +3,9 @@ package samples.tree
 import antd.tree.*
 import kotlinext.js.Object
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.*
-import react.dom.div
+import styled.css
+import styled.styledDiv
 
 private val treeData = arrayOf<TreeNodeNormal>(
         jsObject {
@@ -162,8 +162,8 @@ class BasicControlledDemo : RComponent<RProps, BasicControlledDemoState>() {
 fun RBuilder.basicControlledDemo() = child(BasicControlledDemo::class) {}
 
 fun RBuilder.basicControlled() {
-    div("tree-container") {
-        attrs.id = "tree-basic-controlled"
+    styledDiv {
+        css { +TreeStyles.basicControlled }
         basicControlledDemo()
     }
 }

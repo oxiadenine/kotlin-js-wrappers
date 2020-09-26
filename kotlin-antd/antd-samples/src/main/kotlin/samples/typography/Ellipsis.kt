@@ -3,13 +3,14 @@ package samples.typography
 import antd.typography.EllipsisConfig
 import antd.typography.paragraph
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.RBuilder
 import react.dom.div
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.ellipsis() {
-    div("typography-container") {
-        attrs.id = "typography-ellipsis"
+    styledDiv {
+        css { +TypographyStyles.ellipsis }
         div {
             paragraph {
                 attrs.ellipsis = true

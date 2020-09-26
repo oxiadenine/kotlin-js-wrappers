@@ -6,9 +6,10 @@ import antd.inputnumber.inputNumber
 import antd.slider.SliderValue
 import antd.slider.slider
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 interface IntegerStepState : RState {
     var inputValue: SliderValue
@@ -111,8 +112,8 @@ class DecimalStep : RComponent<RProps, DecimalStepState>() {
 fun RBuilder.decimalStep() = child(DecimalStep::class) {}
 
 fun RBuilder.inputNumber() {
-    div("slider-container") {
-        attrs.id = "slider-input-number"
+    styledDiv {
+        css { +SliderStyles.inputNumber }
         div {
             integerStep()
             decimalStep()

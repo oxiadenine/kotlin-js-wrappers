@@ -3,13 +3,13 @@ package samples.mentions
 import antd.mentions.mentions
 import antd.mentions.option
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
-import react.dom.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.placement() {
-    div("mentions-container") {
-        attrs.id = "mentions-placement"
+    styledDiv {
+        css { MentionsStyles.placement }
         mentions {
             attrs {
                 style = js { width = "100%" }

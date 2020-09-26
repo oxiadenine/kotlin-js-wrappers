@@ -2,13 +2,14 @@ package samples.grid
 
 import antd.grid.row
 import antd.grid.col
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.flex() {
-    div("grid-container") {
-        attrs.id = "grid-flex"
+    styledDiv {
+        css { +GridStyles.flex }
         div {
             p { +"sub-element align left" }
             row {

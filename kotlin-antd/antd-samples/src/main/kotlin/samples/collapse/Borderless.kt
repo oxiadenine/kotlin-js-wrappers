@@ -3,12 +3,12 @@ package samples.collapse
 import antd.collapse.collapse
 import antd.collapse.collapsePanel
 import kotlinext.js.js
-import kotlinx.html.id
 import react.RBuilder
 import react.buildElement
-import react.dom.div
 import react.dom.jsStyle
 import react.dom.p
+import styled.css
+import styled.styledDiv
 
 private val text = buildElement {
    p {
@@ -21,8 +21,8 @@ private val text = buildElement {
 }
 
 fun RBuilder.borderless() {
-    div("collapse-container") {
-        attrs.id = "collapse-borderless"
+    styledDiv {
+        css { +CollapseStyles.borderless }
         collapse {
             attrs {
                 bordered = false

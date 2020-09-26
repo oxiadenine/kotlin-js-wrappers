@@ -4,9 +4,10 @@ import antd.MouseEventHandler
 import antd.button.button
 import antd.inputnumber.inputNumber
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 interface DisabledAppState : RState {
     var disabled: Boolean
@@ -50,8 +51,8 @@ class DisabledApp : RComponent<RProps, DisabledAppState>() {
 fun RBuilder.disabledApp() = child(DisabledApp::class) {}
 
 fun RBuilder.disabled() {
-    div("input-number-container") {
-        attrs.id = "input-number-disabled"
+    styledDiv {
+        css { +InputNumberStyles.disabled }
         disabledApp()
     }
 }

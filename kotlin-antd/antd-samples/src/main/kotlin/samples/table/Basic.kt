@@ -6,12 +6,12 @@ import antd.table.TableComponent
 import antd.table.table
 import antd.tag.tag
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.RBuilder
 import react.buildElement
 import react.dom.a
-import react.dom.div
 import react.dom.span
+import styled.css
+import styled.styledDiv
 
 private interface BasicTableDataItem {
     var key: String
@@ -119,8 +119,8 @@ private val data = arrayOf<BasicTableDataItem>(
 )
 
 fun RBuilder.basic() {
-    div("table-container") {
-        attrs.id = "table-basic"
+    styledDiv {
+        css { +TableStyles.basic }
         table<BasicTableDataItem, TableComponent<BasicTableDataItem>> {
             attrs {
                 columns = tableColumns

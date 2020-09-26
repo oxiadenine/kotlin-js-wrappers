@@ -3,9 +3,9 @@ package samples.cascader
 import antd.cascader.CascaderOptionType
 import antd.cascader.cascader
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.*
-import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private val cascaderOptions = arrayOf<CascaderOptionType>(
         jsObject {
@@ -48,8 +48,8 @@ private fun handleChange(value: Array<String>, selectedOptions: Array<CascaderOp
 }
 
 fun RBuilder.disabledOption() {
-    div("cascader-container") {
-        attrs.id = "cascader-disabled-option"
+    styledDiv {
+        css { +CascaderStyles.disabledOption }
         cascader {
             attrs {
                 options = cascaderOptions

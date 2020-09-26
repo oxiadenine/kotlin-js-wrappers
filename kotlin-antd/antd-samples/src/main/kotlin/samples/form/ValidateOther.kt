@@ -21,12 +21,12 @@ import kotlinext.js.Object
 import kotlinext.js.js
 import kotlinext.js.jsObject
 import kotlinx.html.classes
-import kotlinx.html.id
 import org.w3c.dom.HTMLElement
 import react.*
-import react.dom.div
 import react.dom.p
 import react.dom.span
+import styled.css
+import styled.styledDiv
 
 class ValidateOtherDemo : RComponent<FormComponentProps<Any>, RState>() {
     private val handleSubmit: FormEventHandler<HTMLElement> = { e ->
@@ -283,8 +283,8 @@ private val wrappedValidateOtherDemo = FormComponent.create<FormComponentProps<A
 fun RBuilder.wrappedValidateOtherDemo(handler: RHandler<FormComponentProps<Any>>) = child(wrappedValidateOtherDemo, jsObject {}, handler)
 
 fun RBuilder.validateOther() {
-    div("form-container") {
-        attrs.id = "form-validate-other"
+    styledDiv {
+        css { +FormStyles.validateOther }
         wrappedValidateOtherDemo {}
     }
 }

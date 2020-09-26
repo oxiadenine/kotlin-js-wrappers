@@ -1,9 +1,10 @@
 package samples.icon
 
 import antd.icon.icon
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private val icons = arrayOf(
         "step-backward",
@@ -296,8 +297,8 @@ private val icons = arrayOf(
 )
 
 fun RBuilder.oldIcons() {
-    div("icon-container") {
-        attrs.id = "icon-old-icons"
+    styledDiv {
+        css { +IconStyles.oldIcons }
         div {
             icons.map { icon ->
                 icon {

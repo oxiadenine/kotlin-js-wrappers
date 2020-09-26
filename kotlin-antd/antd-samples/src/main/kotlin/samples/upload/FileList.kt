@@ -6,9 +6,9 @@ import antd.upload.UploadChangeParam
 import antd.upload.UploadFile
 import antd.upload.upload
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.*
-import react.dom.*
+import styled.css
+import styled.styledDiv
 
 interface MyUploadState : RState {
     var fileList: Array<UploadFile>
@@ -76,8 +76,8 @@ class MyUpload : RComponent<RProps, MyUploadState>() {
 fun RBuilder.myUpload() = child(MyUpload::class) {}
 
 fun RBuilder.fileList() {
-    div("upload-container") {
-        attrs.id = "upload-file-list"
+    styledDiv {
+        css { +UploadStyles.fileList }
         myUpload()
     }
 }

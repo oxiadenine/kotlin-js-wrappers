@@ -1,10 +1,11 @@
 package samples.datepicker
 
 import antd.datepicker.*
-import kotlinx.html.id
 import moment.Moment
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 interface ControlledDatePickerState : RState {
     var mode: DatePickerMode
@@ -89,8 +90,8 @@ class ControlledRangePicker : RComponent<RProps, ControlledRangePickerState>() {
 fun RBuilder.controlledRangePicker() = child(ControlledRangePicker::class) {}
 
 fun RBuilder.mode() {
-    div("date-picker-container") {
-        attrs.id = "date-picker-mode"
+    styledDiv {
+        css { +DatePickerStyles.mode }
         div {
             controlledDatePicker()
             br {}

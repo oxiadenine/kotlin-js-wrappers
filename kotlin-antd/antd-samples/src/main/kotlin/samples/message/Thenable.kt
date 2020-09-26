@@ -3,9 +3,9 @@ package samples.message
 import antd.MouseEventHandler
 import antd.button.button
 import antd.message.message
-import kotlinx.html.id
 import react.*
-import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private val success: MouseEventHandler<Any> = {
     message.loading("Action in progress..", 2.5).promise
@@ -14,8 +14,8 @@ private val success: MouseEventHandler<Any> = {
 }
 
 fun RBuilder.thenable() {
-    div("message-container") {
-        attrs.id = "message-thenable"
+    styledDiv {
+        css { +MessageStyles.thenable }
         button {
             attrs.onClick = success
             +"Display a sequence of message"

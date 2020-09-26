@@ -3,10 +3,11 @@ package samples.datepicker
 import antd.datepicker.*
 import antd.timepicker.TimePickerProps
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import moment.Moment
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private fun handleChange(date: Moment, dateString: String) {
     console.log("Selected Time: ", date)
@@ -22,8 +23,8 @@ private fun handleOk(selectedTime: RangePickerPresetRange) {
 }
 
 fun RBuilder.time() {
-    div("date-picker-container") {
-        attrs.id = "date-picker-time"
+    styledDiv {
+        css { +DatePickerStyles.time }
         div {
             datePicker {
                 attrs {

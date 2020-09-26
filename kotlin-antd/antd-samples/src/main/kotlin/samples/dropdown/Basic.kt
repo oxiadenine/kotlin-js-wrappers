@@ -5,9 +5,10 @@ import antd.icon.icon
 import antd.menu.menu
 import antd.menu.menuItem
 import kotlinx.html.classes
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private val menu = buildElement {
     menu {
@@ -45,8 +46,8 @@ private val menu = buildElement {
 }
 
 fun RBuilder.basic() {
-    div("dropdown-container") {
-        attrs.id = "dropdown-basic"
+    styledDiv {
+        css { +DropdownStyles.basic }
         dropdown {
             attrs.overlay = menu
             a {

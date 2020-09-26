@@ -4,11 +4,12 @@ import antd.alert.alert
 import antd.spin.spin
 import antd.switch.switch
 import kotlinext.js.js
-import kotlinx.html.id
 import org.w3c.dom.events.MouseEvent
 import react.*
 import react.dom.div
 import react.dom.jsStyle
+import styled.css
+import styled.styledDiv
 
 interface NestedCardState : RState {
     var loading: Boolean
@@ -54,8 +55,8 @@ class NestedCard : RComponent<RProps, NestedCardState>() {
 fun RBuilder.nestedCard() = child(NestedCard::class) {}
 
 fun RBuilder.nested() {
-    div("spin-container") {
-        attrs.id = "spin-nested"
+    styledDiv {
+        css { +SpinStyles.nested }
         nestedCard()
     }
 }

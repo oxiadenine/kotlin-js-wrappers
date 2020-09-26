@@ -1,13 +1,13 @@
 package samples.rate
 
 import antd.rate.rate
-import kotlinx.html.id
 import react.*
-import react.dom.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.basic() {
-    div("rate-container") {
-        attrs.id = "rate-basic"
+    styledDiv {
+        css { +RateStyles.basic }
         rate {}
     }
 }

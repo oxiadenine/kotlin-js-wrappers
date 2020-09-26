@@ -1,14 +1,17 @@
 package samples.icon
 
 import antd.icon.icon
-import kotlinx.html.id
+import kotlinx.html.classes
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.basic() {
-    div("icon-container") {
-        attrs.id = "icon-basic"
-        div("icons-list") {
+    styledDiv {
+        css { +IconStyles.basic }
+        div {
+            attrs.classes = setOf("icons-list")
             icon {
                 attrs.type = "home"
             }

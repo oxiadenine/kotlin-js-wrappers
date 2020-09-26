@@ -4,13 +4,13 @@ import antd.button.button
 import antd.icon.icon
 import antd.upload.upload
 import kotlinext.js.jsObject
-import kotlinx.html.id
 import react.*
-import react.dom.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.defaultFileList() {
-    div("upload-container") {
-        attrs.id = "upload-default-file-list"
+    styledDiv {
+        css { +UploadStyles.defaultFileList }
         upload {
             attrs {
                 action = "//jsonplaceholder.typicode.com/posts/"

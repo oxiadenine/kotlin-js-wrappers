@@ -1,14 +1,15 @@
 package samples.carousel
 
 import antd.carousel.carousel
-import kotlinx.html.id
 import react.RBuilder
 import react.dom.div
 import react.dom.h3
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.autoplay() {
-    div("carousel-container") {
-        attrs.id = "carousel-autoplay"
+    styledDiv {
+        css { +CarouselStyles.autoplay }
         carousel {
             attrs.autoplay = true
             div {

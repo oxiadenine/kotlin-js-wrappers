@@ -6,11 +6,12 @@ import antd.comment.comment
 import antd.icon.icon
 import antd.tooltip.tooltip
 import kotlinext.js.js
-import kotlinx.html.id
 import moment.moment
 import org.w3c.dom.HTMLElement
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 interface BasicAppState : RState {
     var likes: Number
@@ -127,8 +128,8 @@ class BasicApp : RComponent<RProps, BasicAppState>() {
 fun RBuilder.basicApp() = child(BasicApp::class) {}
 
 fun RBuilder.basic() {
-    div("comment-container") {
-        attrs.id = "comment-basic"
+    styledDiv {
+        css { +CommentStyles.basic }
         basicApp()
     }
 }

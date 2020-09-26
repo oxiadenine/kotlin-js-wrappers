@@ -2,9 +2,10 @@ package samples.checkbox
 
 import antd.checkbox.*
 import kotlinext.js.js
-import kotlinx.html.id
 import react.*
 import react.dom.*
+import styled.css
+import styled.styledDiv
 
 private val plainOptions: Array<CheckboxValueType> = arrayOf("Apple", "Pear", "Orange")
 private val defaultCheckedList: Array<CheckboxValueType> = arrayOf("Apple", "Orange")
@@ -66,8 +67,8 @@ class CheckAllApp : RComponent<RProps, CheckAllAppState>() {
 fun RBuilder.checkAllApp() = child(CheckAllApp::class) {}
 
 fun RBuilder.checkAll() {
-    div("checkbox-container") {
-        attrs.id = "checkbox-check-all"
+    styledDiv {
+        css { +CheckboxStyles.checkAll }
         checkAllApp()
     }
 }
