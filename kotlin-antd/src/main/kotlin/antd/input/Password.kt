@@ -1,8 +1,6 @@
 package antd.input
 
-import react.Component
-import react.RState
-import react.ReactElement
+import react.*
 
 external object PasswordComponent : Component<PasswordProps, PasswordState> {
     override fun render(): ReactElement?

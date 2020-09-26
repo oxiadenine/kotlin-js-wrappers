@@ -1,13 +1,12 @@
 package samples.tooltip
 
 import antd.button.button
-import antd.tooltip.tooltip
-import kotlinext.js.js
-import org.w3c.dom.HTMLElement
+import antd.tooltip.*
+import kotlinext.js.*
+import org.w3c.dom.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private val wrapStyles = js {
     overflow = "hidden"

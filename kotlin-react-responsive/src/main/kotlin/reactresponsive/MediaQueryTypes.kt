@@ -1,6 +1,6 @@
 package reactresponsive
 
-import react.ReactElement
+import react.*
 
 typealias MediaQueryChildrenFn = (matches: Boolean) -> ReactElement
 

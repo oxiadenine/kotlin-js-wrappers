@@ -1,11 +1,10 @@
 package samples.switch
 
-import antd.icon.icon
-import antd.switch.switch
+import antd.icon.*
+import antd.switch.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 fun RBuilder.text() {
     styledDiv {

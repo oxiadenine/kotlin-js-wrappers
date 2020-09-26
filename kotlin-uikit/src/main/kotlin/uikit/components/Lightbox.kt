@@ -1,6 +1,6 @@
 package uikit.components
 
-import uikit.Component
+import uikit.*
 
 external interface LightboxComponent : Component {
     fun show(index: Any /* String | Int */)

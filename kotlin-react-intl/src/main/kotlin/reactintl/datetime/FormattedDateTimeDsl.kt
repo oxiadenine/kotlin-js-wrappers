@@ -1,7 +1,6 @@
 package reactintl.datetime
 
-import react.RBuilder
-import react.RHandler
+import react.*
 
 fun RBuilder.formattedDate(handler: RHandler<FormattedDateProps>) = child(FormattedDateComponent::class, handler)
 fun RBuilder.formattedDateParts(handler: RHandler<FormattedDatePartsProps>) = child(FormattedDatePartsComponent::class, handler)

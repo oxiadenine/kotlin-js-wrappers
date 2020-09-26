@@ -3,9 +3,8 @@
 
 package antd.input
 
-import antd.InputHTMLAttributes
-import antd.KeyboardEventHandler
-import org.w3c.dom.HTMLInputElement
+import antd.*
+import org.w3c.dom.*
 import react.*
 
 @JsName("default")

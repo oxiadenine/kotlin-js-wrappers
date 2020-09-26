@@ -1,17 +1,12 @@
 package samples.transfer
 
-import antd.MouseEvent
-import antd.MouseEventHandler
-import antd.button.button
-import antd.transfer.TransferItem
-import antd.transfer.TransferListProps
-import antd.transfer.transfer
-import kotlinext.js.js
-import kotlinext.js.jsObject
+import antd.*
+import antd.button.*
+import antd.transfer.*
+import kotlinext.js.*
 import react.*
-import styled.css
-import styled.styledDiv
-import kotlin.random.Random
+import styled.*
+import kotlin.random.*
 
 interface AdvancedTransferItem : TransferItem {
     var chosen: Boolean
@@ -48,13 +43,13 @@ class AdvancedApp : RComponent<RProps, AdvancedAppState>() {
         }
     }
 
-    private val handleChange = fun (nextTargetKeys: Array<String>, _: String, _: Any) {
+    private val handleChange = fun(nextTargetKeys: Array<String>, _: String, _: Any) {
         setState {
             targetKeys = nextTargetKeys
         }
     }
 
-    private val renderFooter = fun (_: TransferListProps): ReactElement {
+    private val renderFooter = fun(_: TransferListProps): ReactElement {
         return buildElement {
             button {
                 attrs {

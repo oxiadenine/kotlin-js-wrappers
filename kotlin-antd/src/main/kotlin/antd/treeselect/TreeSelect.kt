@@ -3,13 +3,10 @@
 
 package antd.treeselect
 
-import antd.FocusEventHandler
-import antd.select.AbstractSelectProps
-import org.w3c.dom.HTMLInputElement
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import antd.*
+import antd.select.*
+import org.w3c.dom.*
+import react.*
 
 @JsName("default")
 external class TreeSelectComponent<T : TreeNodeValue> : Component<TreeSelectProps<T>, RState> {

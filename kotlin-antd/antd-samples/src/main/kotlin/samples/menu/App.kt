@@ -2,9 +2,7 @@ package samples.menu
 
 import react.*
 import react.dom.*
-import styled.StyleSheet
-import styled.css
-import styled.styledDiv
+import styled.*
 
 object MenuStyles : StyleSheet("menu", isStatic = true) {
     val container by css {}

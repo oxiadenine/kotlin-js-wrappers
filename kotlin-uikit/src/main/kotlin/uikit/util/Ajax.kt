@@ -1,6 +1,6 @@
 package uikit.util
 
-import org.w3c.xhr.XMLHttpRequest
+import org.w3c.xhr.*
 
 external interface Environment {
     var data: dynamic

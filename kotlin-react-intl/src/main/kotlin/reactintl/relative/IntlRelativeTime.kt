@@ -3,9 +3,9 @@
 
 package reactintl.relative
 
-import reactintl.LocaleFieldsData
-import reactintl.number.IntlNumberFormat
-import reactintl.plural.IntlPluralRules
+import reactintl.*
+import reactintl.number.*
+import reactintl.plural.*
 
 external interface IntlRelativeTimeFormatOptions {
     var numeric: String? /* "always" | "auto" */

@@ -1,18 +1,17 @@
 package samples.datepicker
 
 import antd.datepicker.*
-import moment.Moment
+import moment.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface ControlledDatePickerState : RState {
     var mode: DatePickerMode
 }
 
 class ControlledDatePicker : RComponent<RProps, ControlledDatePickerState>() {
-    private val handleOpenChange = fun (open: Boolean) {
+    private val handleOpenChange = fun(open: Boolean) {
         if (open) {
             setState {
                 mode = "time"
@@ -20,7 +19,7 @@ class ControlledDatePicker : RComponent<RProps, ControlledDatePickerState>() {
         }
     }
 
-    private val handlePanelChange = fun (_: Moment?, newMode: DatePickerMode?) {
+    private val handlePanelChange = fun(_: Moment?, newMode: DatePickerMode?) {
         setState {
             mode = newMode!!
         }
@@ -50,19 +49,19 @@ interface ControlledRangePickerState : RState {
 }
 
 class ControlledRangePicker : RComponent<RProps, ControlledRangePickerState>() {
-    private val handlePanelChange = fun (newValue: RangePickerValue?, newMode: Any?) {
+    private val handlePanelChange = fun(newValue: RangePickerValue?, newMode: Any?) {
         val currentMode = newMode.unsafeCast<Array<String>>()
 
         setState {
             value = newValue!!
             mode = arrayOf(
-                    if (currentMode[0] == "date") "month" else currentMode[0],
-                    if (currentMode[1] == "date") "month" else currentMode[1]
+                if (currentMode[0] == "date") "month" else currentMode[0],
+                if (currentMode[1] == "date") "month" else currentMode[1]
             )
         }
     }
 
-    private val handleChange = fun (newValue: RangePickerValue?, _: Any?) {
+    private val handleChange = fun(newValue: RangePickerValue?, _: Any?) {
         setState {
             value = newValue!!
         }

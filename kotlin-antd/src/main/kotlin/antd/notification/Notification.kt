@@ -3,8 +3,8 @@
 
 package antd.notification
 
-import org.w3c.dom.HTMLElement
-import react.ReactElement
+import org.w3c.dom.*
+import react.*
 
 @JsName("default")
 external val notification: Notification

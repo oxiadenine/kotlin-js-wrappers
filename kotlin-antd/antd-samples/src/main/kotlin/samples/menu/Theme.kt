@@ -1,14 +1,13 @@
 package samples.menu
 
-import antd.icon.icon
+import antd.icon.*
 import antd.menu.*
-import antd.switch.switch
-import kotlinext.js.js
-import org.w3c.dom.events.MouseEvent
+import antd.switch.*
+import kotlinext.js.*
+import org.w3c.dom.events.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface ThemeSiderState : RState {
     var theme: MenuTheme
@@ -16,13 +15,13 @@ interface ThemeSiderState : RState {
 }
 
 class ThemeSider : RComponent<RProps, ThemeSiderState>() {
-    private val changeTheme = fun (checked: Boolean, _: MouseEvent) {
+    private val changeTheme = fun(checked: Boolean, _: MouseEvent) {
         setState {
             theme = if (checked) "dark" else "light"
         }
     }
 
-    private val handleClick = fun (param: ClickParam) {
+    private val handleClick = fun(param: ClickParam) {
         console.log("click ", param)
 
         setState {
@@ -42,7 +41,7 @@ class ThemeSider : RComponent<RProps, ThemeSiderState>() {
                     checked = state.theme == "dark"
                     onChange = changeTheme
                     checkedChildren = "Dark"
-                    unCheckedChildren ="Light"
+                    unCheckedChildren = "Light"
                 }
             }
             br {}

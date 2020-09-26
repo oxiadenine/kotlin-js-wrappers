@@ -1,9 +1,6 @@
 package antd.autocomplete
 
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 
 external object InputElementComponent : Component<InputElementProps, RState> {
     override fun render(): ReactElement?

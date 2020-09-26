@@ -2,19 +2,15 @@ package samples.table
 
 import antd.form.*
 import antd.input.input
-import antd.inputnumber.inputNumber
-import antd.pagination.PaginationConfig
-import antd.popconfirm.popconfirm
+import antd.inputnumber.*
+import antd.pagination.*
+import antd.popconfirm.*
 import antd.table.*
-import antd.table.table
-import kotlinext.js.Object
-import kotlinext.js.js
-import kotlinext.js.jsObject
-import kotlinx.html.js.onClickFunction
+import kotlinext.js.*
+import kotlinx.html.js.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface EditRowTableDataItem {
     var key: String
@@ -61,21 +57,21 @@ class EditRowEditableCell : RComponent<EditRowEditableCellProps, EditRowEditable
 
     private val renderCell: (WrappedFormUtils<Any>) -> ReactElement = { form ->
         buildElement {
-           td {
-               Object.assign(attrs, props)
-               if (props.editing) {
-                   formItem {
-                       attrs.style = js { margin = 0 }
-                       childList.add(form.getFieldDecorator(props.dataIndex, jsObject {
-                           rules = arrayOf(jsObject {
-                               required = true
-                               message = "Please Input ${props.title}"
-                           })
-                           initialValue = props.record.asDynamic()[props.dataIndex].unsafeCast<Any>()
-                       })(getInput()))
-                   }
-               } else childList.add(props.children)
-           }
+            td {
+                Object.assign(attrs, props)
+                if (props.editing) {
+                    formItem {
+                        attrs.style = js { margin = 0 }
+                        childList.add(form.getFieldDecorator(props.dataIndex, jsObject {
+                            rules = arrayOf(jsObject {
+                                required = true
+                                message = "Please Input ${props.title}"
+                            })
+                            initialValue = props.record.asDynamic()[props.dataIndex].unsafeCast<Any>()
+                        })(getInput()))
+                    }
+                } else childList.add(props.children)
+            }
         }
     }
 
@@ -99,65 +95,65 @@ interface EditRowEditableTableState : RState {
 
 class EditRowEditableTable : RComponent<EditRowEditableTableProps, EditRowEditableTableState>() {
     private val tableColumns = arrayOf(
-            js {
-                title = "name"
-                dataIndex = "name"
-                width = "25%"
-                editable = true
-            },
-            js {
-                title = "age"
-                dataIndex = "age"
-                width = "15%"
-                editable = true
-            },
-            js {
-                title = "address"
-                dataIndex = "address"
-                width = "40%"
-                editable = true
-            },
-            jsObject<ColumnProps<EditRowTableDataItem>> {
-                title = "operation"
-                dataIndex = "operation"
-                render = { _, record, _ ->
-                    val editable = isEditing(record)
+        js {
+            title = "name"
+            dataIndex = "name"
+            width = "25%"
+            editable = true
+        },
+        js {
+            title = "age"
+            dataIndex = "age"
+            width = "15%"
+            editable = true
+        },
+        js {
+            title = "address"
+            dataIndex = "address"
+            width = "40%"
+            editable = true
+        },
+        jsObject<ColumnProps<EditRowTableDataItem>> {
+            title = "operation"
+            dataIndex = "operation"
+            render = { _, record, _ ->
+                val editable = isEditing(record)
 
-                    buildElement {
-                        if (editable) {
-                            span {
-                                editableContext.Consumer { form ->
-                                    a {
-                                        attrs {
-                                            href = "javascript:;"
-                                            onClickFunction = {
-                                                save(form.unsafeCast<WrappedFormUtils<Any>>(), record.key)
-                                            }
-                                            jsStyle = js { marginRight = 8 }
-                                        }
-                                        +"Save"
-                                    }
-                                }
-                                popconfirm {
+                buildElement {
+                    if (editable) {
+                        span {
+                            editableContext.Consumer { form ->
+                                a {
                                     attrs {
-                                        title = "Sure to cancel?"
-                                        onConfirm = { cancel() }
+                                        href = "javascript:;"
+                                        onClickFunction = {
+                                            save(form.unsafeCast<WrappedFormUtils<Any>>(), record.key)
+                                        }
+                                        jsStyle = js { marginRight = 8 }
                                     }
-                                    a { +"Cancel" }
+                                    +"Save"
                                 }
                             }
-                        } else {
-                            a {
-                                attrs["disabled"] = state.editingKey != ""
-                                attrs.onClickFunction = {
-                                    edit(record.key)
+                            popconfirm {
+                                attrs {
+                                    title = "Sure to cancel?"
+                                    onConfirm = { cancel() }
                                 }
-                                +"Edit"
+                                a { +"Cancel" }
                             }
+                        }
+                    } else {
+                        a {
+                            attrs["disabled"] = state.editingKey != ""
+                            attrs.onClickFunction = {
+                                edit(record.key)
+                            }
+                            +"Edit"
                         }
                     }
                 }
             }
+        }
     ).unsafeCast<Array<Any>>()
 
     private val isEditing: (Any) -> Boolean = { record ->
@@ -170,7 +166,7 @@ class EditRowEditableTable : RComponent<EditRowEditableTableProps, EditRowEditab
         }
     }
 
-    private val save = fun (form: WrappedFormUtils<Any>, key: String) {
+    private val save = fun(form: WrappedFormUtils<Any>, key: String) {
         form.validateFields { errors, row ->
             if (errors != null) {
                 return@validateFields
@@ -216,7 +212,7 @@ class EditRowEditableTable : RComponent<EditRowEditableTableProps, EditRowEditab
                 onCell = { cellRecord: Any ->
                     js {
                         record = cellRecord
-                        inputType =  if (col.asDynamic().dataIndex.unsafeCast<String>() == "age") "number" else "text"
+                        inputType = if (col.asDynamic().dataIndex.unsafeCast<String>() == "age") "number" else "text"
                         editable = col.asDynamic().editable.unsafeCast<Boolean>()
                         dataIndex = col.asDynamic().dataIndex.unsafeCast<String>()
                         title = col.asDynamic().title.unsafeCast<String>()
@@ -248,7 +244,7 @@ class EditRowEditableTable : RComponent<EditRowEditableTableProps, EditRowEditab
 }
 
 private val editRowEditableForm = FormComponent.create<EditRowEditableTableProps, EditRowEditableTableState>()(
-        EditRowEditableTable::class.js.unsafeCast<JsClass<Component<EditRowEditableTableProps, EditRowEditableTableState>>>())
+    EditRowEditableTable::class.js.unsafeCast<JsClass<Component<EditRowEditableTableProps, EditRowEditableTableState>>>())
 
 fun RBuilder.editRowEditableTable(handler: RHandler<EditRowEditableTableProps>) = child(editRowEditableForm, jsObject {}, handler)
 

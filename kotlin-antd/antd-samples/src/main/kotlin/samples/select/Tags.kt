@@ -1,12 +1,9 @@
 package samples.select
 
-import antd.select.SelectComponent
-import antd.select.select
-import antd.select.option
-import kotlinext.js.js
+import antd.select.*
+import kotlinext.js.*
 import react.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private val children = (10..36).map { i ->
     buildElement {

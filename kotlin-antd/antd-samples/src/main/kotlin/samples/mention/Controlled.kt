@@ -1,17 +1,12 @@
 package samples.mention
 
-import antd.MouseEventHandler
-import antd.button.button
-import antd.form.FormComponent
-import antd.form.FormComponentProps
-import antd.form.form
-import antd.form.formItem
-import antd.mention.MentionComponent
-import antd.mention.mention
-import kotlinext.js.jsObject
+import antd.*
+import antd.button.*
+import antd.form.*
+import antd.mention.*
+import kotlinext.js.*
 import react.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface ControlledAppState : RState {
     var initValue: Any
@@ -39,7 +34,7 @@ class ControlledApp : RComponent<FormComponentProps<Any>, ControlledAppState>() 
         }
     }
 
-    private val checkMention = fun (_: Any, _: Any?, callback: Any, _: Any?, _: Any?) {
+    private val checkMention = fun(_: Any, _: Any?, callback: Any, _: Any?, _: Any?) {
         val mentions = MentionComponent.getMentions(props.form.getFieldValue("mention"))
 
         if (mentions.size < 2) {

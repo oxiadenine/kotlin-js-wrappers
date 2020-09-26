@@ -1,10 +1,9 @@
 package samples.table
 
 import antd.table.*
-import kotlinext.js.jsObject
+import kotlinext.js.*
 import react.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private interface RowSelectionCustomTableDataItem {
     var key: String
@@ -14,18 +13,18 @@ private interface RowSelectionCustomTableDataItem {
 }
 
 private val tableColumns = arrayOf<ColumnProps<RowSelectionCustomTableDataItem>>(
-        jsObject {
-            title = "Name"
-            dataIndex = "name"
-        },
-        jsObject {
-            title = "Age"
-            dataIndex = "age"
-        },
-        jsObject {
-            title = "Address"
-            dataIndex = "address"
-        }
+    jsObject {
+        title = "Name"
+        dataIndex = "name"
+    },
+    jsObject {
+        title = "Age"
+        dataIndex = "age"
+    },
+    jsObject {
+        title = "Address"
+        dataIndex = "address"
+    }
 )
 
 private val data = (0..46).map { i ->
@@ -42,7 +41,7 @@ interface RowSelectionCustomAppState : RState {
 }
 
 class RowSelectionCustomApp : RComponent<RProps, RowSelectionCustomAppState>() {
-    private val handleSelectChange = fun (rowKeys: Any?, _: Array<RowSelectionCustomTableDataItem>) {
+    private val handleSelectChange = fun(rowKeys: Any?, _: Array<RowSelectionCustomTableDataItem>) {
         console.log("selectedRowKeys changed: ", rowKeys)
 
         setState {
@@ -60,49 +59,49 @@ class RowSelectionCustomApp : RComponent<RProps, RowSelectionCustomAppState>() {
             onChange = handleSelectChange
             hideDefaultSelections = true
             selections = arrayOf<SelectionItem>(
-                    jsObject {
-                        key = "all-data"
-                        text = "Select All Data"
-                        onSelect = { changableRowKeys ->
-                            setState {
-                                selectedRowKeys = changableRowKeys // 0...45
-                            }
-                        }
-                    },
-                    jsObject {
-                        key = "odd"
-                        text = "Select Odd Row"
-                        onSelect = { changableRowKeys ->
-                            val newSelectedRowKeys = changableRowKeys.filterIndexed { index, _ ->
-                                if (index % 2 != 0) {
-                                    return@filterIndexed false
-                                }
-
-                                true
-                            }.toTypedArray()
-
-                            setState {
-                                selectedRowKeys = newSelectedRowKeys
-                            }
-                        }
-                    },
-                    jsObject {
-                        key = "even"
-                        text = "Select Even Row"
-                        onSelect = { changableRowKeys ->
-                            val newSelectedRowKeys = changableRowKeys.filterIndexed { index, _ ->
-                                if (index % 2 != 0) {
-                                    return@filterIndexed true
-                                }
-
-                                false
-                            }.toTypedArray()
-
-                            setState {
-                                selectedRowKeys = newSelectedRowKeys
-                            }
+                jsObject {
+                    key = "all-data"
+                    text = "Select All Data"
+                    onSelect = { changableRowKeys ->
+                        setState {
+                            selectedRowKeys = changableRowKeys // 0...45
                         }
                     }
+                },
+                jsObject {
+                    key = "odd"
+                    text = "Select Odd Row"
+                    onSelect = { changableRowKeys ->
+                        val newSelectedRowKeys = changableRowKeys.filterIndexed { index, _ ->
+                            if (index % 2 != 0) {
+                                return@filterIndexed false
+                            }
+
+                            true
+                        }.toTypedArray()
+
+                        setState {
+                            selectedRowKeys = newSelectedRowKeys
+                        }
+                    }
+                },
+                jsObject {
+                    key = "even"
+                    text = "Select Even Row"
+                    onSelect = { changableRowKeys ->
+                        val newSelectedRowKeys = changableRowKeys.filterIndexed { index, _ ->
+                            if (index % 2 != 0) {
+                                return@filterIndexed true
+                            }
+
+                            false
+                        }.toTypedArray()
+
+                        setState {
+                            selectedRowKeys = newSelectedRowKeys
+                        }
+                    }
+                }
             ).unsafeCast<Array<Any>>()
         }
 

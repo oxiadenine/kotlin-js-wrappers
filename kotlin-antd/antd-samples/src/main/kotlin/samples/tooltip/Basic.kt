@@ -1,10 +1,9 @@
 package samples.tooltip
 
-import antd.tooltip.tooltip
+import antd.tooltip.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 fun RBuilder.basic() {
     styledDiv {

@@ -1,10 +1,8 @@
 package uikit
 
-import org.w3c.dom.HTMLImageElement
-import org.w3c.dom.events.Event
-import uikit.util.Animation
-import uikit.util.Environment
-import uikit.util.OffFun
+import org.w3c.dom.*
+import org.w3c.dom.events.*
+import uikit.util.*
 import kotlin.js.Promise
 
 external interface UIKitUtil {

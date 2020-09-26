@@ -1,58 +1,52 @@
 package samples.input
 
-import antd.autocomplete.DataSourceItemType
-import antd.autocomplete.autoComplete
-import antd.cascader.CascaderOptionType
-import antd.cascader.cascader
-import antd.datepicker.datePicker
+import antd.autocomplete.*
+import antd.cascader.*
+import antd.datepicker.*
 import antd.grid.col
+import antd.input.*
 import antd.input.input
-import antd.input.inputGroup
-import antd.inputnumber.inputNumber
-import antd.select.SelectComponent
-import antd.select.SelectValue
+import antd.inputnumber.*
+import antd.select.*
 import antd.select.option
-import antd.select.select
-import kotlinext.js.js
-import kotlinext.js.jsObject
+import kotlinext.js.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private val cascaderOptions = arrayOf<CascaderOptionType>(
-        jsObject {
-            value = "zhejiang"
-            label = "Zhejiang"
-            children = arrayOf(
+    jsObject {
+        value = "zhejiang"
+        label = "Zhejiang"
+        children = arrayOf(
+            jsObject {
+                value = "hangzhou"
+                label = "Hangzhou"
+                children = arrayOf(
                     jsObject {
-                        value = "hangzhou"
-                        label = "Hangzhou"
-                        children = arrayOf(
-                                jsObject {
-                                    value = "xihu"
-                                    label = "West Lake"
-                                }
-                        )
+                        value = "xihu"
+                        label = "West Lake"
                     }
-            )
-        },
-        jsObject{
-            value = "jiangsu"
-            label = "Jiangsu"
-            children = arrayOf(
+                )
+            }
+        )
+    },
+    jsObject {
+        value = "jiangsu"
+        label = "Jiangsu"
+        children = arrayOf(
+            jsObject {
+                value = "nanjing"
+                label = "Nanjing"
+                children = arrayOf(
                     jsObject {
-                        value = "nanjing"
-                        label = "Nanjing"
-                        children = arrayOf(
-                                jsObject{
-                                    value = "zhonghuamen"
-                                    label = "Zhong Hua Men"
-                                }
-                        )
+                        value = "zhonghuamen"
+                        label = "Zhong Hua Men"
                     }
-            )
-        }
+                )
+            }
+        )
+    }
 )
 
 interface GroupCompactDemoState : RState {

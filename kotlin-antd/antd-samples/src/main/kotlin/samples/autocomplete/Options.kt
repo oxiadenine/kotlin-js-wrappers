@@ -1,23 +1,22 @@
 package samples.autocomplete
 
-import antd.autocomplete.autoComplete
-import antd.select.option
-import kotlinext.js.js
+import antd.autocomplete.*
+import antd.select.*
+import kotlinext.js.*
 import react.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface OptionsCompleteState : RState {
     var result: Array<String>
 }
 
 class OptionsComplete : RComponent<RProps, OptionsCompleteState>() {
-    private val handleSearch = fun (value: String) {
+    private val handleSearch = fun(value: String) {
         val newResult = if (value.isEmpty() || value.contains("@")) {
             emptyArray()
         } else {
             arrayOf("gmail.com", "163.com", "qq.com")
-                    .map { domain -> "$value@$domain" }.toTypedArray()
+                .map { domain -> "$value@$domain" }.toTypedArray()
         }
 
         setState {

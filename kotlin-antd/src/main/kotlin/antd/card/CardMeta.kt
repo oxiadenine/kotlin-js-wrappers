@@ -1,9 +1,6 @@
 package antd.card
 
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 
 external object CardMetaComponent : Component<CardMetaProps, RState> {
     override fun render(): ReactElement?

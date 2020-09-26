@@ -1,9 +1,8 @@
 package samples.input
 
-import antd.input.password
-import react.RBuilder
-import styled.css
-import styled.styledDiv
+import antd.input.*
+import react.*
+import styled.*
 
 fun RBuilder.passwordInput() {
     styledDiv {

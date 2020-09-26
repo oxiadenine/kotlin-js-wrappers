@@ -1,12 +1,10 @@
 package samples.spin
 
-import antd.icon.icon
-import antd.spin.spin
-import kotlinext.js.js
-import react.RBuilder
-import react.buildElement
-import styled.css
-import styled.styledDiv
+import antd.icon.*
+import antd.spin.*
+import kotlinext.js.*
+import react.*
+import styled.*
 
 private val antIcon = buildElement {
     icon {

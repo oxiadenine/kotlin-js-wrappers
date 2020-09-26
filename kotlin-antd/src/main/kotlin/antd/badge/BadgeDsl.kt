@@ -1,6 +1,5 @@
 package antd.badge
 
-import react.RBuilder
-import react.RHandler
+import react.*
 
 fun RBuilder.badge(handler: RHandler<BadgeProps>) = child(BadgeComponent::class, handler)

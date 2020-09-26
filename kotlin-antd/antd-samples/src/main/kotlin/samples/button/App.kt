@@ -1,19 +1,10 @@
 package samples.button
 
-import kotlinx.css.FontWeight
-import kotlinx.css.fontSize
-import kotlinx.css.fontWeight
-import kotlinx.css.lineHeight
-import kotlinx.css.margin
-import kotlinx.css.marginBottom
-import kotlinx.css.marginTop
-import kotlinx.css.properties.LineHeight
-import kotlinx.css.px
+import kotlinx.css.*
+import kotlinx.css.properties.*
 import react.*
 import react.dom.*
-import styled.StyleSheet
-import styled.css
-import styled.styledDiv
+import styled.*
 
 object ButtonStyles : StyleSheet("button", isStatic = true) {
     val container by css {}

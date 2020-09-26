@@ -3,23 +3,13 @@
 
 package reactintl
 
-import reactintl.datetime.DateTimeFormatOptions
-import reactintl.datetime.IntlDateTimeFormat
-import reactintl.datetime.IntlDateTimeFormatOptions
-import reactintl.datetime.IntlDateTimeFormatPart
-import reactintl.displayname.IntlDisplayNameFormatOptions
-import reactintl.displayname.IntlDisplayNames
-import reactintl.list.IntlListFormat
-import reactintl.list.IntlListFormatOptions
-import reactintl.message.MessageDescriptor
-import reactintl.message.MessageFormat
-import reactintl.number.IntlNumberFormat
-import reactintl.number.IntlNumberFormatOptions
-import reactintl.number.IntlNumberFormatPart
-import reactintl.number.NumberFormatOptions
-import reactintl.plural.IntlPluralFormatOptions
-import reactintl.plural.IntlPluralRules
-import reactintl.relative.IntlRelativeTimeFormat
+import reactintl.datetime.*
+import reactintl.displayname.*
+import reactintl.list.*
+import reactintl.message.*
+import reactintl.number.*
+import reactintl.plural.*
+import reactintl.relative.*
 
 external interface Formats {
     var number: Any
@@ -47,28 +37,36 @@ external interface IntlFormatters {
     fun formatDate(
         value: Any? = definedExternally,
         opts: DateTimeFormatOptions? = definedExternally): String
+
     fun formatTime(
         value: Any? = definedExternally,
         opts: DateTimeFormatOptions? = definedExternally): String
+
     fun formatDateToParts(
         value: Any? = definedExternally,
         opts: DateTimeFormatOptions? = definedExternally): Array<IntlDateTimeFormatPart>
+
     fun formatTimeToParts(
         value: Any? = definedExternally,
         opts: DateTimeFormatOptions? = definedExternally): Array<IntlDateTimeFormatPart>
+
     fun formatRelativeTime(
         value: Any? = definedExternally,
         unit: Any? = definedExternally,
         opts: DateTimeFormatOptions? = definedExternally): String
+
     fun formatNumber(
         value: Any? = definedExternally,
         opts: NumberFormatOptions? = definedExternally): String
+
     fun formatNumberToParts(
         value: Any? = definedExternally,
         opts: NumberFormatOptions? = definedExternally): Array<IntlNumberFormatPart>
+
     fun formatPlural(
         value: Any? = definedExternally,
         opts: IntlPluralFormatOptions? = definedExternally): Any?
+
     fun formatMessage(descriptor: MessageDescriptor, values: Any? = definedExternally): String
     fun formatList(values: Array<Any>, opts: IntlListFormatOptions): Any
     fun formatDisplayName(value: Any, opts: IntlDisplayNameFormatOptions): String?

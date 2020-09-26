@@ -1,12 +1,10 @@
 package samples.cascader
 
-import antd.cascader.CascaderOptionType
-import antd.cascader.cascader
-import kotlinext.js.jsObject
+import antd.cascader.*
+import kotlinext.js.*
+import kotlinx.browser.*
 import react.*
-import kotlinx.browser.window
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface LazyCascaderOptionType : CascaderOptionType {
     var isLeaf: Boolean?
@@ -14,16 +12,16 @@ interface LazyCascaderOptionType : CascaderOptionType {
 }
 
 private val cascaderOptions = arrayOf<LazyCascaderOptionType>(
-        jsObject {
-            value = "zhejiang"
-            label = "Zhejiang"
-            isLeaf = false
-        },
-        jsObject {
-            value = "jiangsu"
-            label = "Jiangsu"
-            isLeaf = false
-        }
+    jsObject {
+        value = "zhejiang"
+        label = "Zhejiang"
+        isLeaf = false
+    },
+    jsObject {
+        value = "jiangsu"
+        label = "Jiangsu"
+        isLeaf = false
+    }
 )
 
 interface LazyOptionsState : RState {
@@ -31,11 +29,11 @@ interface LazyOptionsState : RState {
 }
 
 class LazyOptions : RComponent<RProps, LazyOptionsState>() {
-    private val handleChange = fun (value: Array<String>, selectedOptions: Array<CascaderOptionType>?) {
+    private val handleChange = fun(value: Array<String>, selectedOptions: Array<CascaderOptionType>?) {
         console.log(value, selectedOptions!!)
     }
 
-    private val handleLoadData = fun (selectedOptions: Array<CascaderOptionType>?) {
+    private val handleLoadData = fun(selectedOptions: Array<CascaderOptionType>?) {
         val targetOption = selectedOptions!![selectedOptions.size - 1].unsafeCast<LazyCascaderOptionType>()
         targetOption.loading = true
 
@@ -43,14 +41,14 @@ class LazyOptions : RComponent<RProps, LazyOptionsState>() {
         window.setTimeout({
             targetOption.loading = false
             targetOption.children = arrayOf(
-                    jsObject {
-                        label = buildElement { +"${targetOption.label} Dynamic 1" }
-                        value = "dynamic1"
-                    },
-                    jsObject {
-                        label = buildElement { +"${targetOption.label} Dynamic 2" }
-                        value = "dynamic2"
-                    }
+                jsObject {
+                    label = buildElement { +"${targetOption.label} Dynamic 1" }
+                    value = "dynamic1"
+                },
+                jsObject {
+                    label = buildElement { +"${targetOption.label} Dynamic 2" }
+                    value = "dynamic2"
+                }
             )
 
             setState {

@@ -1,16 +1,15 @@
 package samples.pagination
 
-import antd.pagination.pagination
+import antd.pagination.*
 import react.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface ControlledAppState : RState {
     var current: Number
 }
 
 class ControlledApp : RComponent<RProps, ControlledAppState>() {
-    private val handleChange = fun (page: Number, _: Number?) {
+    private val handleChange = fun(page: Number, _: Number?) {
         console.log(page)
 
         setState {

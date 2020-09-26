@@ -1,24 +1,20 @@
 package samples.tabs
 
-import antd.select.SelectComponent
-import antd.select.SelectValue
+import antd.select.*
 import antd.select.option
-import antd.select.select
-import antd.tabs.tabPane
-import antd.tabs.tabs
-import kotlinext.js.js
+import antd.tabs.*
+import kotlinext.js.*
 import react.*
 import react.dom.div
 import react.dom.jsStyle
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface PositionDemoState : RState {
     var tabPosition: String
 }
 
 class PositionDemo : RComponent<RProps, PositionDemoState>() {
-    private val changeTabPosition = fun (value: SelectValue, _: Any) {
+    private val changeTabPosition = fun(value: SelectValue, _: Any) {
         setState {
             tabPosition = value.unsafeCast<String>()
         }

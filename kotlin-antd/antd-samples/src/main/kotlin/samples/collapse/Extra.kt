@@ -1,18 +1,14 @@
 package samples.collapse
 
-import antd.collapse.collapse
-import antd.collapse.collapsePanel
-import antd.icon.icon
-import antd.select.SelectComponent
-import antd.select.SelectValue
+import antd.collapse.*
+import antd.icon.*
+import antd.select.*
 import antd.select.option
-import antd.select.select
 import react.*
 import react.dom.br
 import react.dom.div
 import react.dom.p
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private fun callback(key: Any) {
     console.log(key)
@@ -26,15 +22,15 @@ private val text = """
 
 private val genExtra: () -> ReactElement = {
     buildElement {
-       icon {
-           attrs {
-               type = "setting"
-               onClick = { event ->
-                   // If you don't want click extra trigger collapse, you can prevent this:
-                   event.stopPropagation()
-               }
-           }
-       }
+        icon {
+            attrs {
+                type = "setting"
+                onClick = { event ->
+                    // If you don't want click extra trigger collapse, you can prevent this:
+                    event.stopPropagation()
+                }
+            }
+        }
     }
 }
 

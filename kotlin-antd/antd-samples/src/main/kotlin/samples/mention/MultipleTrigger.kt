@@ -1,12 +1,9 @@
 package samples.mention
 
-import antd.mention.MentionComponent
-import antd.mention.mention
-import kotlinext.js.js
-import kotlinext.js.jsObject
+import antd.mention.*
+import kotlinext.js.*
 import react.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private fun handleChange(contentState: Any) {
     console.log(MentionComponent.toString(contentState, jsObject {}))
@@ -24,7 +21,7 @@ interface MultipleTriggerAppState : RState {
 }
 
 class MultipleTriggerApp : RComponent<RProps, MultipleTriggerAppState>() {
-    private val handleSearchChange = fun (value: String, trigger: String) {
+    private val handleSearchChange = fun(value: String, trigger: String) {
         console.log("onSearchChange", value, trigger)
 
         val dataSource = if (trigger == "@") users else tags

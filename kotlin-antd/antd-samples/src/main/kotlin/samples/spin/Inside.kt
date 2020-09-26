@@ -1,11 +1,10 @@
 package samples.spin
 
-import antd.spin.spin
-import kotlinx.html.classes
-import react.RBuilder
-import react.dom.div
-import styled.css
-import styled.styledDiv
+import antd.spin.*
+import kotlinx.html.*
+import react.*
+import react.dom.*
+import styled.*
 
 fun RBuilder.inside() {
     styledDiv {

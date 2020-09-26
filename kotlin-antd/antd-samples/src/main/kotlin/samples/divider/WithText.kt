@@ -1,11 +1,9 @@
 package samples.divider
 
-import antd.divider.divider
-import react.RBuilder
-import react.dom.div
-import react.dom.p
-import styled.css
-import styled.styledDiv
+import antd.divider.*
+import react.*
+import react.dom.*
+import styled.*
 
 fun RBuilder.withText() {
     styledDiv {

@@ -1,14 +1,12 @@
 package samples.select
 
-import antd.icon.icon
-import antd.select.SelectComponent
+import antd.icon.*
+import antd.select.*
 import antd.select.option
-import antd.select.select
-import kotlinext.js.js
+import kotlinext.js.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private val smileIcon = buildElement {
     icon {

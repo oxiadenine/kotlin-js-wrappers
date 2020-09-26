@@ -1,18 +1,17 @@
 package samples.menu
 
-import antd.icon.icon
+import antd.icon.*
 import antd.menu.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface HorizontalAppState : RState {
     var current: String
 }
 
 class HorizontalApp : RComponent<RProps, HorizontalAppState>() {
-    private val handleClick = fun (param: ClickParam) {
+    private val handleClick = fun(param: ClickParam) {
         console.log("click ", param)
 
         setState {

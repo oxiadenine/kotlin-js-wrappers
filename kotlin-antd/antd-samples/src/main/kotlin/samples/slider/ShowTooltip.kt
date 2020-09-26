@@ -1,9 +1,8 @@
 package samples.slider
 
-import antd.slider.slider
+import antd.slider.*
 import react.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 fun RBuilder.showTooltip() {
     styledDiv {

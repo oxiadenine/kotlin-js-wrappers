@@ -1,16 +1,10 @@
 package samples.skeleton
 
-import kotlinx.css.BorderStyle
-import kotlinx.css.Color
-import kotlinx.css.marginBottom
-import kotlinx.css.marginTop
-import kotlinx.css.properties.border
-import kotlinx.css.px
+import kotlinx.css.*
+import kotlinx.css.properties.*
 import react.*
 import react.dom.*
-import styled.StyleSheet
-import styled.css
-import styled.styledDiv
+import styled.*
 
 object SkeletonStyles : StyleSheet("skeleton", isStatic = true) {
     val container by css {}

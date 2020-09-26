@@ -1,35 +1,34 @@
 package samples.mention
 
-import antd.mention.mention
+import antd.mention.*
 import antd.mention.nav
-import kotlinext.js.js
+import kotlinext.js.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private val webFrameworks = arrayOf(
-        js {
-            name = "React"
-            type = "JavaScript"
-        },
-        js {
-            name = "Angular"
-            type = "JavaScript"
-        },
-        js {
-            name = "Laravel"
-            type = "PHP"
-            disabled = true
-        },
-        js {
-            name = "Flask"
-            type = "Python"
-        },
-        js {
-            name = "Django"
-            type = "Python"
-        }
+    js {
+        name = "React"
+        type = "JavaScript"
+    },
+    js {
+        name = "Angular"
+        type = "JavaScript"
+    },
+    js {
+        name = "Laravel"
+        type = "PHP"
+        disabled = true
+    },
+    js {
+        name = "Flask"
+        type = "Python"
+    },
+    js {
+        name = "Django"
+        type = "Python"
+    }
 )
 
 private fun handleSelect(suggestion: Any, data: Any?) {
@@ -41,7 +40,7 @@ interface CustomTagNavMentionState : RState {
 }
 
 class CustomTagNavMention : RComponent<RProps, CustomTagNavMentionState>() {
-    private val handleSearchChange = fun (searchValue: String, _: String) {
+    private val handleSearchChange = fun(searchValue: String, _: String) {
         val filtered = webFrameworks.filter { item ->
             item.name.unsafeCast<String>().toLowerCase().contains(searchValue.toLowerCase())
         }

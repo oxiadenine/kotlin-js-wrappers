@@ -1,6 +1,5 @@
 package antd.popconfirm
 
-import react.RBuilder
-import react.RHandler
+import react.*
 
 fun RBuilder.popconfirm(handler: RHandler<PopconfirmProps>) = child(PopconfirmComponent::class, handler)

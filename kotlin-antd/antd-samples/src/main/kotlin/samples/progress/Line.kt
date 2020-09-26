@@ -1,10 +1,9 @@
 package samples.progress
 
 import antd.progress.progress
-import react.RBuilder
+import react.*
 import react.dom.div
-import styled.css
-import styled.styledDiv
+import styled.*
 
 fun RBuilder.line() {
     styledDiv {

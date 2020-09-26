@@ -1,20 +1,15 @@
 package samples.table
 
-import antd.badge.badge
-import antd.dropdown.dropdown
-import antd.icon.icon
-import antd.menu.menu
-import antd.menu.menuItem
-import antd.table.ColumnProps
-import antd.table.TableComponent
-import antd.table.table
-import kotlinext.js.jsObject
-import kotlinx.html.classes
+import antd.badge.*
+import antd.dropdown.*
+import antd.icon.*
+import antd.menu.*
+import antd.table.*
+import kotlinext.js.*
+import kotlinx.html.*
 import react.*
-import react.dom.a
-import react.dom.span
-import styled.css
-import styled.styledDiv
+import react.dom.*
+import styled.*
 
 private interface NestedTableNestedTableDataItem {
     var key: String
@@ -43,65 +38,65 @@ private val menu = buildElement {
 class NestedTableApp : RComponent<RProps, RState>() {
     private val expandRowRender: (Any, Number, Number, Boolean) -> ReactElement = { _, _, _, _ ->
         val tableColumns = arrayOf<ColumnProps<NestedTableNestedTableDataItem>>(
-                jsObject {
-                    title = "Date"
-                    dataIndex = "date"
-                    key = "date"
-                },
-                jsObject {
-                    title = "Name"
-                    dataIndex = "name"
-                    key = "name"
-                },
-                jsObject {
-                    title = "Status"
-                    key = "state"
-                    render = { _, _, _ ->
-                        buildElement {
-                           span {
-                               badge {
-                                   attrs.status = "success"
-                               }
-                               +"Finished"
-                           }
-                        }
-                    }
-                },
-                jsObject {
-                    title = "Upgrade Status"
-                    dataIndex = "upgradeNum"
-                    key = "upgradeNum"
-                },
-                jsObject {
-                    title = "Action"
-                    dataIndex = "operation"
-                    key = "operation"
-                    render = { _, _, _ ->
-                        buildElement {
-                           span {
-                               attrs.classes = setOf("table-operation")
-                               a {
-                                   attrs.href = "javascript:;"
-                                   +"Pause"
-                               }
-                               a {
-                                   attrs.href = "javascript:;"
-                                   +"Stop"
-                               }
-                               dropdown {
-                                   attrs.overlay = menu
-                                   a {
-                                       attrs.href = "javascript:;"
-                                       +"More "
-                                       icon {
-                                           attrs.type = "down"
-                                       }
-                                   }
-                               }
-                           }
+            jsObject {
+                title = "Date"
+                dataIndex = "date"
+                key = "date"
+            },
+            jsObject {
+                title = "Name"
+                dataIndex = "name"
+                key = "name"
+            },
+            jsObject {
+                title = "Status"
+                key = "state"
+                render = { _, _, _ ->
+                    buildElement {
+                        span {
+                            badge {
+                                attrs.status = "success"
+                            }
+                            +"Finished"
                         }
                     }
                 }
+            },
+            jsObject {
+                title = "Upgrade Status"
+                dataIndex = "upgradeNum"
+                key = "upgradeNum"
+            },
+            jsObject {
+                title = "Action"
+                dataIndex = "operation"
+                key = "operation"
+                render = { _, _, _ ->
+                    buildElement {
+                        span {
+                            attrs.classes = setOf("table-operation")
+                            a {
+                                attrs.href = "javascript:;"
+                                +"Pause"
+                            }
+                            a {
+                                attrs.href = "javascript:;"
+                                +"Stop"
+                            }
+                            dropdown {
+                                attrs.overlay = menu
+                                a {
+                                    attrs.href = "javascript:;"
+                                    +"More "
+                                    icon {
+                                        attrs.type = "down"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         )
 
         val data = (0..3).map { i ->
@@ -126,48 +121,48 @@ class NestedTableApp : RComponent<RProps, RState>() {
 
     override fun RBuilder.render() {
         val tableColumns = arrayOf<ColumnProps<NestedTableTableDataItem>>(
-                jsObject {
-                    title = "Name"
-                    dataIndex = "name"
-                    key = "name"
-                },
-                jsObject {
-                    title = "Platform"
-                    dataIndex = "platform"
-                    key = "platform"
-                },
-                jsObject {
-                    title = "Version"
-                    dataIndex = "version"
-                    key = "version"
-                },
-                jsObject {
-                    title = "Upgraded"
-                    dataIndex = "upgraded"
-                    key = "upgraded"
-                },
-                jsObject {
-                    title = "Creator"
-                    dataIndex = "creator"
-                    key = "creator"
-                },
-                jsObject {
-                    title = "Date"
-                    dataIndex = "createdAt"
-                    key = "createdAt"
-                },
-                jsObject {
-                    title = "Action"
-                    key = "creator"
-                    render = { _, _, _ ->
-                        buildElement {
-                            a {
-                                attrs.href = "javascript:;"
-                                +"Publish"
-                            }
+            jsObject {
+                title = "Name"
+                dataIndex = "name"
+                key = "name"
+            },
+            jsObject {
+                title = "Platform"
+                dataIndex = "platform"
+                key = "platform"
+            },
+            jsObject {
+                title = "Version"
+                dataIndex = "version"
+                key = "version"
+            },
+            jsObject {
+                title = "Upgraded"
+                dataIndex = "upgraded"
+                key = "upgraded"
+            },
+            jsObject {
+                title = "Creator"
+                dataIndex = "creator"
+                key = "creator"
+            },
+            jsObject {
+                title = "Date"
+                dataIndex = "createdAt"
+                key = "createdAt"
+            },
+            jsObject {
+                title = "Action"
+                key = "creator"
+                render = { _, _, _ ->
+                    buildElement {
+                        a {
+                            attrs.href = "javascript:;"
+                            +"Publish"
                         }
                     }
                 }
+            }
         )
 
         val data = (0..3).map { i ->

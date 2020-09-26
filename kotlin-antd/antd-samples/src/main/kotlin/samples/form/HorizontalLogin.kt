@@ -1,17 +1,14 @@
 package samples.form
 
-import antd.FormEventHandler
-import antd.button.button
+import antd.*
+import antd.button.*
 import antd.form.*
-import antd.icon.icon
-import antd.input.input
-import kotlinext.js.Object
-import kotlinext.js.js
-import kotlinext.js.jsObject
-import org.w3c.dom.HTMLElement
+import antd.icon.*
+import antd.input.*
+import kotlinext.js.*
+import org.w3c.dom.*
 import react.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private fun hasErrors(fieldsError: dynamic): Boolean {
     return Object.keys(fieldsError as Any).any { field -> fieldsError[field] != null }
@@ -116,7 +113,7 @@ class HorizontalLoginForm : RComponent<FormComponentProps<Any>, RState>() {
 }
 
 private val wrappedHorizontalLoginForm = FormComponent.create<FormComponentProps<Any>, RState>(
-        jsObject { name = "horizontal_login" })(HorizontalLoginForm::class.js)
+    jsObject { name = "horizontal_login" })(HorizontalLoginForm::class.js)
 
 fun RBuilder.wrappedHorizontalLoginForm(handler: RHandler<FormComponentProps<Any>>) = child(wrappedHorizontalLoginForm, jsObject {}, handler)
 

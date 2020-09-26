@@ -1,26 +1,25 @@
 package samples.popover
 
 import antd.button.button
-import antd.popover.popover
-import kotlinx.html.js.onClickFunction
-import org.w3c.dom.events.Event
+import antd.popover.*
+import kotlinx.html.js.*
+import org.w3c.dom.events.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface ControlAppState : RState {
     var visible: Boolean
 }
 
 class ControlApp : RComponent<RProps, ControlAppState>() {
-    private val hide = fun (_: Event) {
+    private val hide = fun(_: Event) {
         setState {
             visible = false
         }
     }
 
-    private val handleVisibleChange = fun (visibleFlag: Boolean) {
+    private val handleVisibleChange = fun(visibleFlag: Boolean) {
         setState {
             visible = visibleFlag
         }

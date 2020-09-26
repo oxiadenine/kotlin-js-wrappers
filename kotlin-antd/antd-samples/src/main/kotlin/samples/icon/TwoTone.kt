@@ -1,11 +1,10 @@
 package samples.icon
 
-import antd.icon.icon
-import kotlinx.html.classes
+import antd.icon.*
+import kotlinx.html.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 fun RBuilder.twoTone() {
     styledDiv {

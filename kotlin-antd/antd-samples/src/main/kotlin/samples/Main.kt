@@ -1,8 +1,8 @@
 package samples
 
 import kotlinext.js.*
-import react.dom.render
-import kotlinx.browser.document
+import kotlinx.browser.*
+import react.dom.*
 
 fun main() {
     require("antd/dist/antd.css")

@@ -2,9 +2,7 @@ package samples.message
 
 import react.*
 import react.dom.*
-import styled.StyleSheet
-import styled.css
-import styled.styledDiv
+import styled.*
 
 object MessageStyles : StyleSheet("message", isStatic = true) {
     val container by css {}

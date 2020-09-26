@@ -3,7 +3,7 @@
 
 package antd.switch
 
-import org.w3c.dom.events.MouseEvent
+import org.w3c.dom.events.*
 import react.*
 
 @JsName("default")

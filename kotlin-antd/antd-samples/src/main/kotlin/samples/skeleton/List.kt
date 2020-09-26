@@ -1,20 +1,15 @@
 package samples.skeleton
 
-import antd.avatar.avatar
-import antd.icon.icon
-import antd.list.ListComponent
-import antd.list.list
-import antd.list.listItem
-import antd.list.listItemMeta
-import antd.skeleton.skeleton
-import antd.switch.switch
-import kotlinext.js.js
-import kotlinext.js.jsObject
-import org.w3c.dom.events.MouseEvent
+import antd.avatar.*
+import antd.icon.*
+import antd.list.*
+import antd.skeleton.*
+import antd.switch.*
+import kotlinext.js.*
+import org.w3c.dom.events.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private interface ListListDataItem {
     var href: String
@@ -60,7 +55,7 @@ interface ListAppState : RState {
 }
 
 class ListApp : RComponent<RProps, ListAppState>() {
-    private val handleChange = fun (checked: Boolean, _: MouseEvent) {
+    private val handleChange = fun(checked: Boolean, _: MouseEvent) {
         setState {
             loading = !checked
         }
@@ -89,30 +84,30 @@ class ListApp : RComponent<RProps, ListAppState>() {
                                 key = item.title
                                 actions = if (!state.loading) {
                                     arrayOf(
-                                            buildElement {
-                                                iconText {
-                                                    attrs {
-                                                        type = "star-o"
-                                                        text = "156"
-                                                    }
-                                                }
-                                            },
-                                            buildElement {
-                                                iconText {
-                                                    attrs {
-                                                        type = "like-o"
-                                                        text = "156"
-                                                    }
-                                                }
-                                            },
-                                            buildElement {
-                                                iconText {
-                                                    attrs {
-                                                        type = "message"
-                                                        text = "2"
-                                                    }
+                                        buildElement {
+                                            iconText {
+                                                attrs {
+                                                    type = "star-o"
+                                                    text = "156"
                                                 }
                                             }
+                                        },
+                                        buildElement {
+                                            iconText {
+                                                attrs {
+                                                    type = "like-o"
+                                                    text = "156"
+                                                }
+                                            }
+                                        },
+                                        buildElement {
+                                            iconText {
+                                                attrs {
+                                                    type = "message"
+                                                    text = "2"
+                                                }
+                                            }
+                                        }
                                     )
                                 } else null
                                 extra = if (!state.loading) {

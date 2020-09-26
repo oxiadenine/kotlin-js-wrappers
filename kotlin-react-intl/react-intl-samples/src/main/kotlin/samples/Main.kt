@@ -1,7 +1,7 @@
 package samples
 
-import react.dom.render
-import kotlinx.browser.document
+import kotlinx.browser.*
+import react.dom.*
 
 fun main() {
     render(document.getElementById("root")) {

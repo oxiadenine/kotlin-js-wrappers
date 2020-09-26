@@ -1,19 +1,18 @@
 package samples.switch
 
-import antd.MouseEventHandler
+import antd.*
 import antd.button.button
-import antd.switch.switch
+import antd.switch.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface DisabledAppState : RState {
     var disabled: Boolean
 }
 
 class DisabledApp : RComponent<RProps, DisabledAppState>() {
-    private val toggle: MouseEventHandler<Any> =  {
+    private val toggle: MouseEventHandler<Any> = {
         setState {
             disabled = !state.disabled
         }

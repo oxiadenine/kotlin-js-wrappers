@@ -1,18 +1,13 @@
 package samples.list
 
-import antd.avatar.avatar
-import antd.icon.icon
-import antd.list.ListComponent
-import antd.list.list
-import antd.list.listItem
-import antd.list.listItemMeta
-import antd.pagination.PaginationConfig
-import kotlinext.js.js
-import kotlinext.js.jsObject
+import antd.avatar.*
+import antd.icon.*
+import antd.list.*
+import antd.pagination.*
+import kotlinext.js.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private interface VerticalListDataItem {
     var href: String
@@ -79,30 +74,30 @@ fun RBuilder.vertical() {
                         attrs {
                             key = item.title
                             actions = arrayOf(
-                                    buildElement {
-                                        iconText {
-                                            attrs {
-                                                type = "star-o"
-                                                text = "156"
-                                            }
-                                        }
-                                    },
-                                    buildElement {
-                                        iconText {
-                                            attrs {
-                                                type = "like-o"
-                                                text = "156"
-                                            }
-                                        }
-                                    },
-                                    buildElement {
-                                        iconText {
-                                            attrs {
-                                                type = "message"
-                                                text = "2"
-                                            }
+                                buildElement {
+                                    iconText {
+                                        attrs {
+                                            type = "star-o"
+                                            text = "156"
                                         }
                                     }
+                                },
+                                buildElement {
+                                    iconText {
+                                        attrs {
+                                            type = "like-o"
+                                            text = "156"
+                                        }
+                                    }
+                                },
+                                buildElement {
+                                    iconText {
+                                        attrs {
+                                            type = "message"
+                                            text = "2"
+                                        }
+                                    }
+                                }
 
                             )
                             extra = buildElement {

@@ -1,8 +1,7 @@
 package antd.typography
 
-import kotlinext.js.jsObject
-import react.RBuilder
-import react.RHandler
+import kotlinext.js.*
+import react.*
 
 fun RBuilder.typography(handler: RHandler<InternalTypographyProps>) = child(TypographyComponent::class, handler)
 fun RBuilder.text(handler: RHandler<TextProps>) = child(TypographyComponent.Text, jsObject {}, handler)

@@ -1,43 +1,40 @@
 package samples.checkbox
 
-import antd.checkbox.CheckboxOptionType
-import antd.checkbox.CheckboxValueType
-import antd.checkbox.checkboxGroup
-import kotlinext.js.jsObject
+import antd.checkbox.*
+import kotlinext.js.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private val plainOptions: Array<CheckboxValueType> = arrayOf("Apple", "Pear", "Orange")
 private val options = arrayOf<CheckboxOptionType>(
-        jsObject {
-            label = "Apple"
-            value = "Apple"
-        },
-        jsObject {
-            label = "Pear"
-            value = "Pear"
-        },
-        jsObject {
-            label = "Orange"
-            value = "Orange"
-        }
+    jsObject {
+        label = "Apple"
+        value = "Apple"
+    },
+    jsObject {
+        label = "Pear"
+        value = "Pear"
+    },
+    jsObject {
+        label = "Orange"
+        value = "Orange"
+    }
 )
 private val optionsWithDisabled = arrayOf<CheckboxOptionType>(
-        jsObject {
-            label = "Apple"
-            value = "Apple"
-        },
-        jsObject {
-            label = "Pear"
-            value = "Pear"
-        },
-        jsObject {
-            label = "Orange"
-            value = "Orange"
-            disabled = true
-        }
+    jsObject {
+        label = "Apple"
+        value = "Apple"
+    },
+    jsObject {
+        label = "Pear"
+        value = "Pear"
+    },
+    jsObject {
+        label = "Orange"
+        value = "Orange"
+        disabled = true
+    }
 )
 
 private fun handleChange(checkedValues: Array<CheckboxValueType>) {

@@ -1,6 +1,6 @@
 package uikit.components
 
-import uikit.Component
+import uikit.*
 
 external interface Notification {
     fun closeAll(group: Any? = definedExternally, immediate: Boolean? = definedExternally)

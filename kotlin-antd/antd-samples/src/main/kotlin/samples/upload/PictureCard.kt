@@ -1,19 +1,15 @@
 package samples.upload
 
-import antd.MouseEvent
-import antd.icon.icon
-import antd.modal.modal
-import antd.upload.UploadChangeParam
-import antd.upload.UploadFile
-import antd.upload.upload
-import kotlinext.js.js
-import kotlinext.js.jsObject
-import kotlinx.html.classes
-import org.w3c.dom.HTMLElement
+import antd.*
+import antd.icon.*
+import antd.modal.*
+import antd.upload.*
+import kotlinext.js.*
+import kotlinx.html.*
+import org.w3c.dom.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface PicturesWallState : RState {
     var previewVisible: Boolean
@@ -22,20 +18,20 @@ interface PicturesWallState : RState {
 }
 
 class PicturesWall : RComponent<RProps, PicturesWallState>() {
-    private val handleCancel = fun (_: MouseEvent<HTMLElement>) {
+    private val handleCancel = fun(_: MouseEvent<HTMLElement>) {
         setState {
             previewVisible = false
         }
     }
 
-    private val handlePreview = fun (file: UploadFile) {
+    private val handlePreview = fun(file: UploadFile) {
         setState {
             previewImage = file.url ?: file.thumbUrl ?: ""
             previewVisible = true
         }
     }
 
-    private val handleChange = fun (info: UploadChangeParam<UploadFile>) {
+    private val handleChange = fun(info: UploadChangeParam<UploadFile>) {
         val nefFileList = info.fileList
 
         setState {

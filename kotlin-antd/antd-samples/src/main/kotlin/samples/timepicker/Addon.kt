@@ -1,18 +1,17 @@
 package samples.timepicker
 
-import antd.MouseEventHandler
-import antd.button.button
-import antd.timepicker.timePicker
+import antd.*
+import antd.button.*
+import antd.timepicker.*
 import react.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface AddonDemoState : RState {
     var open: Boolean
 }
 
 class AddonDemo : RComponent<RProps, AddonDemoState>() {
-    private val handleOpenChange = fun (openFlag: Boolean) {
+    private val handleOpenChange = fun(openFlag: Boolean) {
         setState {
             open = openFlag
         }

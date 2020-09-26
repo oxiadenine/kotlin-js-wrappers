@@ -1,15 +1,11 @@
 package samples.transfer
 
-import antd.MouseEvent
-import antd.MouseEventHandler
-import antd.transfer.TransferItem
-import antd.transfer.transfer
-import kotlinext.js.js
-import kotlinext.js.jsObject
+import antd.*
+import antd.transfer.*
+import kotlinext.js.*
 import react.*
-import styled.css
-import styled.styledDiv
-import kotlin.random.Random
+import styled.*
+import kotlin.random.*
 
 interface SearchTransferItem : TransferItem {
     var chosen: Boolean
@@ -55,17 +51,17 @@ class SearchApp : RComponent<RProps, SearchAppState>() {
         }
     }
 
-    private val handleFilterOption = fun (inputValue: Any, item: Any): Boolean {
+    private val handleFilterOption = fun(inputValue: Any, item: Any): Boolean {
         return item.unsafeCast<SearchTransferItem>().description!!.contains(inputValue.unsafeCast<String>())
     }
 
-    private val handleChange = fun (nextTargetKeys: Array<String>, _: String, _: Any) {
+    private val handleChange = fun(nextTargetKeys: Array<String>, _: String, _: Any) {
         setState {
             targetKeys = nextTargetKeys
         }
     }
 
-    private val handleSearch = fun (direction: String, value: String) {
+    private val handleSearch = fun(direction: String, value: String) {
         console.log("search:", direction, value)
     }
 

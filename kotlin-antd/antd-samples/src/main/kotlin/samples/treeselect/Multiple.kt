@@ -1,20 +1,17 @@
 package samples.treeselect
 
-import antd.treeselect.TreeSelectComponent
-import antd.treeselect.treeNode
-import antd.treeselect.treeSelect
-import kotlinext.js.js
+import antd.treeselect.*
+import kotlinext.js.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface MultipleDemoState : RState {
     var value: String?
 }
 
 class MultipleDemo : RComponent<RProps, MultipleDemoState>() {
-    private val handleChange = fun (newValue: String, _: Any, _: Any) {
+    private val handleChange = fun(newValue: String, _: Any, _: Any) {
         console.log(newValue)
 
         setState {

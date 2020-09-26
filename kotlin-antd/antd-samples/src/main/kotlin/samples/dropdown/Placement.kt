@@ -1,17 +1,15 @@
 package samples.dropdown
 
 import antd.button.button
-import antd.dropdown.dropdown
-import antd.menu.menu
-import antd.menu.menuItem
+import antd.dropdown.*
+import antd.menu.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private val menu = buildElement {
     menu {
-       menuItem {
+        menuItem {
             a {
                 attrs {
                     target = "_blank"

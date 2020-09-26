@@ -3,10 +3,7 @@
 
 package reactintl.list
 
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 
 @JsName("FormattedList")
 external class FormattedListComponent : Component<FormattedListProps, RState> {

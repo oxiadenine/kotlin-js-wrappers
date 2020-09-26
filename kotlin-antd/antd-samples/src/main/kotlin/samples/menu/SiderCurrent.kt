@@ -1,12 +1,11 @@
 package samples.menu
 
-import antd.icon.icon
+import antd.icon.*
 import antd.menu.*
-import kotlinext.js.js
+import kotlinext.js.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface SiderCurrentSiderState : RState {
     var openKeys: Array<String>
@@ -15,7 +14,7 @@ interface SiderCurrentSiderState : RState {
 class SiderCurrentSider : RComponent<RProps, SiderCurrentSiderState>() {
     private val rootSubmenuKeys = arrayOf("sub1", "sub2", "sub4")
 
-    private val handleOpenChange = fun (keys: Array<String>) {
+    private val handleOpenChange = fun(keys: Array<String>) {
         val latestOpenKey = keys.find { key -> !state.openKeys.contains(key) }
 
         if (!rootSubmenuKeys.contains(latestOpenKey)) {

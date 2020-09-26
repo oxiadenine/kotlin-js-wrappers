@@ -3,8 +3,8 @@
 
 package antd.timepicker
 
-import moment.Moment
-import org.w3c.dom.HTMLElement
+import moment.*
+import org.w3c.dom.*
 import react.*
 
 @JsName("default")

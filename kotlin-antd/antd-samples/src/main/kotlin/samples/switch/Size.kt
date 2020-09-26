@@ -1,10 +1,9 @@
 package samples.switch
 
-import antd.switch.switch
+import antd.switch.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 fun RBuilder.size() {
     styledDiv {

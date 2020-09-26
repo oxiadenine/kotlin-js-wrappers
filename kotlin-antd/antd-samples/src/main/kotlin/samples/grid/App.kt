@@ -1,33 +1,10 @@
 package samples.grid
 
-import kotlinx.css.BoxSizing
-import kotlinx.css.Color
-import kotlinx.css.Display
-import kotlinx.css.LinearDimension
-import kotlinx.css.TextAlign
-import kotlinx.css.background
-import kotlinx.css.border
-import kotlinx.css.borderRadius
-import kotlinx.css.boxSizing
-import kotlinx.css.color
-import kotlinx.css.display
-import kotlinx.css.fontSize
-import kotlinx.css.height
-import kotlinx.css.lineHeight
-import kotlinx.css.marginBottom
-import kotlinx.css.marginTop
-import kotlinx.css.minHeight
-import kotlinx.css.padding
-import kotlinx.css.properties.LineHeight
-import kotlinx.css.px
-import kotlinx.css.rgba
-import kotlinx.css.textAlign
-import kotlinx.css.width
+import kotlinx.css.*
+import kotlinx.css.properties.*
 import react.*
 import react.dom.*
-import styled.StyleSheet
-import styled.css
-import styled.styledDiv
+import styled.*
 
 object GridStyles : StyleSheet("grid", isStatic = true) {
     val container by css {

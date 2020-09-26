@@ -1,17 +1,16 @@
 package samples.rate
 
-import antd.rate.rate
+import antd.rate.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface RaterState : RState {
     var value: Number?
 }
 
 class Rater : RComponent<RProps, RaterState>() {
-    private val handleChange = fun (newValue: Number) {
+    private val handleChange = fun(newValue: Number) {
         setState {
             value = newValue
         }

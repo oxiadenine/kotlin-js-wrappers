@@ -1,20 +1,10 @@
 package samples.input
 
-import kotlinx.css.Color
-import kotlinx.css.Cursor
-import kotlinx.css.color
-import kotlinx.css.cursor
-import kotlinx.css.fontSize
-import kotlinx.css.margin
-import kotlinx.css.properties.s
-import kotlinx.css.properties.transition
-import kotlinx.css.px
-import kotlinx.css.width
+import kotlinx.css.*
+import kotlinx.css.properties.*
 import react.*
 import react.dom.*
-import styled.StyleSheet
-import styled.css
-import styled.styledDiv
+import styled.*
 
 object InputStyles : StyleSheet("input", isStatic = true) {
     val container by css {}

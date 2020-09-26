@@ -1,11 +1,9 @@
 package samples
 
-import moment.moment
-import react.RBuilder
-import react.dom.h2
-import react.dom.span
-import styled.css
-import styled.styledDiv
+import moment.*
+import react.*
+import react.dom.*
+import styled.*
 
 fun RBuilder.multipleLocale() {
     h2 { +"Multiple Locale Support" }
@@ -29,7 +27,7 @@ fun RBuilder.multipleLocale() {
         styledDiv {
             css { +AppStyles.code }
             +"moment().format('L') "
-            span { +moment().format("L")  }
+            span { +moment().format("L") }
         }
         styledDiv {
             css { +AppStyles.code }

@@ -2,9 +2,7 @@ package samples.configprovider
 
 import react.*
 import react.dom.*
-import styled.StyleSheet
-import styled.css
-import styled.styledDiv
+import styled.*
 
 object ConfigProviderStyles : StyleSheet("config-provider", isStatic = true) {
     val container by css {}

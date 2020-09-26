@@ -3,10 +3,7 @@
 
 package reactintl.number
 
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 import reactintl.*
 
 @JsName("FormattedNumber")

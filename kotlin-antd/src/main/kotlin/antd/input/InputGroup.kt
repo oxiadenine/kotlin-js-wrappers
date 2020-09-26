@@ -1,8 +1,7 @@
 package antd.input
 
-import antd.FocusEventHandler
-import antd.MouseEventHandler
-import org.w3c.dom.HTMLSpanElement
+import antd.*
+import org.w3c.dom.*
 import react.*
 
 external object InputGroupComponent : Component<InputGroupProps, RState> {

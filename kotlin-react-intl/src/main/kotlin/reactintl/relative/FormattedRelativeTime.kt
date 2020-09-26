@@ -3,11 +3,8 @@
 
 package reactintl.relative
 
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
-import reactintl.CustomFormatConfig
+import react.*
+import reactintl.*
 
 @JsName("FormattedRelativeTime")
 external class FormattedRelativeTimeComponent : Component<FormattedRelativeTimeProps, FormattedRelativeTimeState> {

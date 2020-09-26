@@ -3,13 +3,10 @@
 
 package antd.pageheader
 
-import antd.MouseEvent
-import antd.breadcrumb.BreadcrumbProps
-import org.w3c.dom.HTMLDivElement
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import antd.*
+import antd.breadcrumb.*
+import org.w3c.dom.*
+import react.*
 
 @JsName("default")
 external object PageHeaderComponent : Component<PageHeaderProps, RState> {

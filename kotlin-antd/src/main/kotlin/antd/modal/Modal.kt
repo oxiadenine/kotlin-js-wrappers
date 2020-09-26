@@ -3,10 +3,9 @@
 
 package antd.modal
 
-import antd.MouseEvent
-import antd.button.ButtonType
-import antd.button.NativeButtonProps
-import org.w3c.dom.HTMLElement
+import antd.*
+import antd.button.*
+import org.w3c.dom.*
 import react.*
 
 @JsName("default")
@@ -33,9 +32,9 @@ external interface ModalProps : RProps {
     var centered: Boolean?
     var width: Any? /* String | Number */
     var footer: Any? /* String | ReactElement */
-    var okText:  Any? /* String | ReactElement */
+    var okText: Any? /* String | ReactElement */
     var okType: ButtonType?
-    var cancelText:  Any? /* String | ReactElement */
+    var cancelText: Any? /* String | ReactElement */
     var maskClosable: Boolean?
     var forceRender: Boolean?
     var okButtonProps: NativeButtonProps?

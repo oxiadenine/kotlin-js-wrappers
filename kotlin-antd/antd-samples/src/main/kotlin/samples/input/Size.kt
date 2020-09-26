@@ -1,11 +1,10 @@
 package samples.input
 
 import antd.input.input
-import kotlinx.html.classes
+import kotlinx.html.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 fun RBuilder.size() {
     styledDiv {

@@ -1,11 +1,9 @@
 package samples.timeline
 
-import antd.timeline.timeline
-import antd.timeline.timelineItem
-import react.RBuilder
-import react.dom.p
-import styled.css
-import styled.styledDiv
+import antd.timeline.*
+import react.*
+import react.dom.*
+import styled.*
 
 fun RBuilder.color() {
     styledDiv {

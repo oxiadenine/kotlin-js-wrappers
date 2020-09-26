@@ -1,7 +1,6 @@
 package antd.configprovider
 
-import react.RClass
-import react.ReactElement
+import react.*
 
 typealias RenderEmptyHandler = (componentName: String?) -> ReactElement
 

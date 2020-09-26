@@ -1,60 +1,51 @@
 package samples.form
 
-import antd.FocusEventHandler
-import antd.FormEventHandler
-import antd.autocomplete.DataSourceItemType
-import antd.autocomplete.autoComplete
+import antd.*
+import antd.autocomplete.*
 import antd.button.button
-import antd.cascader.CascaderOptionType
-import antd.cascader.cascader
-import antd.checkbox.checkbox
+import antd.cascader.*
+import antd.checkbox.*
 import antd.form.*
+import antd.grid.*
 import antd.grid.col
-import antd.grid.row
-import antd.icon.icon
+import antd.icon.*
+import antd.input.*
 import antd.input.input
-import antd.input.password
-import antd.select.SelectComponent
-import antd.select.SelectValue
+import antd.select.*
 import antd.select.option
-import antd.select.select
-import antd.tooltip.tooltip
-import kotlinext.js.Object
-import kotlinext.js.js
-import kotlinext.js.jsObject
-import org.w3c.dom.HTMLElement
-import org.w3c.dom.HTMLInputElement
+import antd.tooltip.*
+import kotlinext.js.*
+import org.w3c.dom.*
 import react.*
 import react.dom.a
 import react.dom.span
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private val residences: Array<CascaderOptionType> = arrayOf(
-        jsObject {
-            value = "zhejiang"
-            label = "Zhejiang"
+    jsObject {
+        value = "zhejiang"
+        label = "Zhejiang"
+        children = arrayOf(jsObject {
+            value = "hangzhou"
+            label = "Hangzhou"
             children = arrayOf(jsObject {
-                value = "hangzhou"
-                label = "Hangzhou"
-                children = arrayOf(jsObject {
-                    value = "xihu"
-                    label = "West Lake"
-                })
+                value = "xihu"
+                label = "West Lake"
             })
-        },
-        jsObject {
-            value = "jiangsu"
-            label = "Jiangsu"
+        })
+    },
+    jsObject {
+        value = "jiangsu"
+        label = "Jiangsu"
+        children = arrayOf(jsObject {
+            value = "nanjing"
+            label = "Nanjing"
             children = arrayOf(jsObject {
-                value = "nanjing"
-                label = "Nanjing"
-                children = arrayOf(jsObject {
-                    value = "zhonghuamen"
-                    label = "Zhong Hua Men"
-                })
+                value = "zhonghuamen"
+                label = "Zhong Hua Men"
             })
-        }
+        })
+    }
 )
 
 interface RegistrationFormState : RState {
@@ -81,7 +72,7 @@ class RegistrationForm : RComponent<FormComponentProps<Any>, RegistrationFormSta
         }
     }
 
-    private val compareToFirstPassword = fun (_: Any, value: Any?, callback: Any, _: Any?, _: Any?) {
+    private val compareToFirstPassword = fun(_: Any, value: Any?, callback: Any, _: Any?, _: Any?) {
         val form = props.form
 
         if (value != null && value != form.getFieldValue("password")) {
@@ -91,7 +82,7 @@ class RegistrationForm : RComponent<FormComponentProps<Any>, RegistrationFormSta
         }
     }
 
-    private val validateToNextPassword = fun (_: Any, value: Any?, callback: Any, _: Any?, _: Any?) {
+    private val validateToNextPassword = fun(_: Any, value: Any?, callback: Any, _: Any?, _: Any?) {
         val form = props.form
 
         if (value != null && state.confirmDirty) {
@@ -101,15 +92,15 @@ class RegistrationForm : RComponent<FormComponentProps<Any>, RegistrationFormSta
         callback.asDynamic()()
     }
 
-    private val handleWebsiteChange = fun (value: SelectValue) {
+    private val handleWebsiteChange = fun(value: SelectValue) {
         val result: Array<DataSourceItemType>
 
         result = if (value.unsafeCast<String>().isEmpty()) {
             emptyArray()
         } else {
             arrayOf(".com", ".org", ".net")
-                    .map { domain -> "$value$domain" }
-                    .toTypedArray()
+                .map { domain -> "$value$domain" }
+                .toTypedArray()
         }
 
         setState {
@@ -179,14 +170,14 @@ class RegistrationForm : RComponent<FormComponentProps<Any>, RegistrationFormSta
                 attrs.label = "E-mail"
                 childList.add(props.form.getFieldDecorator("email", jsObject {
                     rules = arrayOf(
-                            jsObject {
-                                type = "email"
-                                message = "The input is not valid E-mail!"
-                            },
-                            jsObject {
-                                required = true
-                                message = "Please input your E-mail!"
-                            }
+                        jsObject {
+                            type = "email"
+                            message = "The input is not valid E-mail!"
+                        },
+                        jsObject {
+                            required = true
+                            message = "Please input your E-mail!"
+                        }
                     )
                 })(buildElement {
                     input {}
@@ -196,13 +187,13 @@ class RegistrationForm : RComponent<FormComponentProps<Any>, RegistrationFormSta
                 attrs.label = "Password"
                 childList.add(props.form.getFieldDecorator("password", jsObject {
                     rules = arrayOf(
-                            jsObject {
-                                required = true
-                                message = "Please input your password!"
-                            },
-                            jsObject {
-                                validator = validateToNextPassword
-                            }
+                        jsObject {
+                            required = true
+                            message = "Please input your password!"
+                        },
+                        jsObject {
+                            validator = validateToNextPassword
+                        }
                     )
                 })(buildElement {
                     password {}
@@ -212,13 +203,13 @@ class RegistrationForm : RComponent<FormComponentProps<Any>, RegistrationFormSta
                 attrs.label = "Confirm Password"
                 childList.add(props.form.getFieldDecorator("confirm", jsObject {
                     rules = arrayOf(
-                            jsObject {
-                                required = true
-                                message = "Please confirm your password!"
-                            },
-                            jsObject {
-                                validator = compareToFirstPassword
-                            }
+                        jsObject {
+                            required = true
+                            message = "Please confirm your password!"
+                        },
+                        jsObject {
+                            validator = compareToFirstPassword
+                        }
                     )
                 })(buildElement {
                     password {
@@ -240,10 +231,10 @@ class RegistrationForm : RComponent<FormComponentProps<Any>, RegistrationFormSta
                 }
                 childList.add(props.form.getFieldDecorator("nickname", jsObject {
                     rules = arrayOf(
-                            jsObject {
-                                required = true
-                                message = "Please input your nickname!"
-                            }
+                        jsObject {
+                            required = true
+                            message = "Please input your nickname!"
+                        }
                     )
                 })(buildElement {
                     input {}
@@ -254,11 +245,11 @@ class RegistrationForm : RComponent<FormComponentProps<Any>, RegistrationFormSta
                 childList.add(props.form.getFieldDecorator("residence", jsObject {
                     initialValue = arrayOf("zhejiang", "hangzhou", "xihu")
                     rules = arrayOf(
-                            jsObject {
-                                type = "array"
-                                required = true
-                                message = "Please input your habitual residence!"
-                            }
+                        jsObject {
+                            type = "array"
+                            required = true
+                            message = "Please input your habitual residence!"
+                        }
                     )
                 })(buildElement {
                     cascader {
@@ -270,10 +261,10 @@ class RegistrationForm : RComponent<FormComponentProps<Any>, RegistrationFormSta
                 attrs.label = "Phone Number"
                 childList.add(props.form.getFieldDecorator("phone", jsObject {
                     rules = arrayOf(
-                            jsObject {
-                                required = true
-                                message = "Please input your phone number!"
-                            }
+                        jsObject {
+                            required = true
+                            message = "Please input your phone number!"
+                        }
                     )
                 })(buildElement {
                     input {
@@ -288,10 +279,10 @@ class RegistrationForm : RComponent<FormComponentProps<Any>, RegistrationFormSta
                 attrs.label = "Website"
                 childList.add(props.form.getFieldDecorator("website", jsObject {
                     rules = arrayOf(
-                            jsObject {
-                                required = true
-                                message = "Please input your website!"
-                            }
+                        jsObject {
+                            required = true
+                            message = "Please input your website!"
+                        }
                     )
                 })(buildElement {
                     autoComplete {
@@ -315,10 +306,10 @@ class RegistrationForm : RComponent<FormComponentProps<Any>, RegistrationFormSta
                         attrs.span = 12
                         childList.add(props.form.getFieldDecorator("captcha", jsObject {
                             rules = arrayOf(
-                                    jsObject {
-                                        required = true
-                                        message = "Please input the captcha you got!"
-                                    }
+                                jsObject {
+                                    required = true
+                                    message = "Please input the captcha you got!"
+                                }
                             )
                         })(buildElement {
                             input {}
@@ -359,7 +350,7 @@ class RegistrationForm : RComponent<FormComponentProps<Any>, RegistrationFormSta
 }
 
 private val wrappedRegistrationForm = FormComponent.create<FormComponentProps<Any>, RegistrationFormState>(
-        jsObject { name = "register" })(RegistrationForm::class.js)
+    jsObject { name = "register" })(RegistrationForm::class.js)
 
 fun RBuilder.wrappedRegistrationForm(handler: RHandler<FormComponentProps<Any>>) = child(wrappedRegistrationForm, jsObject {}, handler)
 

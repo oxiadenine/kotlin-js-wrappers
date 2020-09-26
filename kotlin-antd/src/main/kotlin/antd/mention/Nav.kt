@@ -1,9 +1,6 @@
 package antd.mention
 
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 
 external object NavComponent : Component<NavProps, RState> {
     override fun render(): ReactElement?

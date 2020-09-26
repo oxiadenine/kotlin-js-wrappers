@@ -1,18 +1,17 @@
 package samples.badge
 
-import antd.MouseEventHandler
-import antd.badge.badge
+import antd.*
+import antd.badge.*
+import antd.button.*
 import antd.button.button
-import antd.button.buttonGroup
-import antd.icon.icon
-import antd.switch.switch
-import kotlinext.js.js
-import kotlinx.html.classes
+import antd.icon.*
+import antd.switch.*
+import kotlinext.js.*
+import kotlinx.html.*
 import org.w3c.dom.events.MouseEvent
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface ChangeDemoState : RState {
     var count: Any
@@ -40,7 +39,7 @@ class ChangeDemo : RComponent<RProps, ChangeDemoState>() {
         }
     }
 
-    private val handleChange = fun (checked: Boolean, _: MouseEvent) {
+    private val handleChange = fun(checked: Boolean, _: MouseEvent) {
         setState {
             show = checked
         }

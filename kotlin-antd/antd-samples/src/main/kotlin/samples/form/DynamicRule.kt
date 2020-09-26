@@ -1,17 +1,14 @@
 package samples.form
 
-import antd.MouseEventHandler
+import antd.*
 import antd.button.button
-import antd.checkbox.CheckboxChangeEvent
-import antd.checkbox.checkbox
+import antd.checkbox.*
 import antd.form.*
 import antd.input.input
-import kotlinext.js.Object
-import kotlinext.js.jsObject
+import kotlinext.js.*
 import react.*
 import react.dom.div
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private val formItemLayout = jsObject<FormItemProps> {
     labelCol = jsObject { span = 4 }
@@ -39,7 +36,7 @@ class DynamicRuleApp : RComponent<FormComponentProps<Any>, DynamicRuleAppState>(
         }
     }
 
-    private val handleChange = fun (e: CheckboxChangeEvent) {
+    private val handleChange = fun(e: CheckboxChangeEvent) {
         setState(jsObject<DynamicRuleAppState> {
             checkNick = e.target.checked!!
         }) {
@@ -60,11 +57,12 @@ class DynamicRuleApp : RComponent<FormComponentProps<Any>, DynamicRuleAppState>(
                     rules = arrayOf(jsObject {
                         required = true
                         message = "Please input your name"
-                    })})(buildElement {
-                        input {
-                            attrs.placeholder = "Please input your name"
-                        }
-                    }))
+                    })
+                })(buildElement {
+                    input {
+                        attrs.placeholder = "Please input your name"
+                    }
+                }))
             }
             formItem {
                 Object.assign(attrs, formItemLayout)
@@ -73,7 +71,8 @@ class DynamicRuleApp : RComponent<FormComponentProps<Any>, DynamicRuleAppState>(
                     rules = arrayOf(jsObject {
                         required = state.checkNick
                         message = "Please input your nickname"
-                })})(buildElement {
+                    })
+                })(buildElement {
                     input {
                         attrs.placeholder = "Please input your nickname"
                     }
@@ -104,7 +103,7 @@ class DynamicRuleApp : RComponent<FormComponentProps<Any>, DynamicRuleAppState>(
 }
 
 private val wrappedDynamicRuleApp = FormComponent.create<FormComponentProps<Any>, DynamicRuleAppState>(
-        jsObject { name = "dynamic_rule" })(DynamicRuleApp::class.js)
+    jsObject { name = "dynamic_rule" })(DynamicRuleApp::class.js)
 
 fun RBuilder.wrappedDynamicRuleApp(handler: RHandler<FormComponentProps<Any>>) = child(wrappedDynamicRuleApp, jsObject {}, handler)
 

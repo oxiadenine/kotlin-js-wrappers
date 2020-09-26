@@ -1,14 +1,12 @@
 package samples.modal
 
-import antd.MouseEvent
-import antd.MouseEventHandler
+import antd.*
 import antd.button.button
-import antd.modal.modal
-import org.w3c.dom.HTMLElement
+import antd.modal.*
+import org.w3c.dom.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface BasicAppState : RState {
     var visible: Boolean

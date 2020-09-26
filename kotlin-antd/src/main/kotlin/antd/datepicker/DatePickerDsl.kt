@@ -1,8 +1,7 @@
 package antd.datepicker
 
-import kotlinext.js.jsObject
-import react.RBuilder
-import react.RHandler
+import kotlinext.js.*
+import react.*
 
 fun RBuilder.datePicker(handler: RHandler<DatePickerProps>) = child(DatePickerComponent::class, handler)
 fun RBuilder.rangePicker(handler: RHandler<RangePickerProps>) = child(DatePickerComponent.RangePicker, jsObject {}, handler)

@@ -1,14 +1,12 @@
 package samples
 
-import kotlinext.js.js
+import kotlinext.js.*
 import react.*
-import react.dom.br
-import react.dom.p
-import react.dom.strong
-import reactintl.message.formattedMessage
-import reactintl.provider.intlProvider
+import react.dom.*
+import reactintl.message.*
+import reactintl.provider.*
 import kotlin.js.Date
-import kotlin.random.Random
+import kotlin.random.*
 
 private val providerMessages = js {
     simple = "Hello world"
@@ -127,7 +125,7 @@ private val app = functionalComponent<RProps> {
                     id = "richtext"
                     values = js {
                         num = 99
-                        bold = fun (chunks: String): ReactElement {
+                        bold = fun(chunks: String): ReactElement {
                             return strong { +chunks }
                         }
                     }.unsafeCast<Any>()
@@ -139,7 +137,7 @@ private val app = functionalComponent<RProps> {
                     id = "richertext"
                     values = js {
                         num = 99
-                        bold = fun (chunks: String): ReactElement {
+                        bold = fun(chunks: String): ReactElement {
                             return strong { +chunks }
                         }
                     }.unsafeCast<Any>()

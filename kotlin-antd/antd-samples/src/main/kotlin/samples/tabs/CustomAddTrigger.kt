@@ -1,15 +1,12 @@
 package samples.tabs
 
 import antd.button.button
-import antd.tabs.TabsEditAction
-import antd.tabs.tabPane
-import antd.tabs.tabs
-import kotlinext.js.js
+import antd.tabs.*
+import kotlinext.js.*
 import react.*
 import react.dom.div
 import react.dom.jsStyle
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface CustomAddTriggerDemoState : RState {
     var activeKey: String
@@ -77,16 +74,16 @@ class CustomAddTriggerDemo : RComponent<RProps, CustomAddTriggerDemoState>() {
 
     override fun CustomAddTriggerDemoState.init() {
         panes = arrayOf(
-                js {
-                    title = "Tab 1"
-                    content = "Content of Tab 1"
-                    key = "1"
-                },
-                js {
-                    title = "Tab 2"
-                    content = "Content of Tab 2"
-                    key = "2"
-                }
+            js {
+                title = "Tab 1"
+                content = "Content of Tab 1"
+                key = "1"
+            },
+            js {
+                title = "Tab 2"
+                content = "Content of Tab 2"
+                key = "2"
+            }
         ).unsafeCast<Array<Any>>()
         activeKey = panes[0].asDynamic().key.unsafeCast<String>()
     }

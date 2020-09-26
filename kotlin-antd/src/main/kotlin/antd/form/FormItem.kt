@@ -1,6 +1,6 @@
 package antd.form
 
-import antd.grid.ColProps
+import antd.grid.*
 import react.*
 
 external object FormItemComponent : Component<FormItemProps, RState> {

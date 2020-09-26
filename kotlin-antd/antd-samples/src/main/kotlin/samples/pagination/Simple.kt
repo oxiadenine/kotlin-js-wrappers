@@ -1,9 +1,8 @@
 package samples.pagination
 
-import antd.pagination.pagination
+import antd.pagination.*
 import react.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 fun RBuilder.simple() {
     styledDiv {

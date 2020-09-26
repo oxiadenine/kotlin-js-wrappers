@@ -1,6 +1,6 @@
 package antd.menu
 
-import org.w3c.dom.events.Event
+import org.w3c.dom.events.*
 import react.*
 
 external object SubMenuComponent : Component<SubMenuProps, MenuState> {

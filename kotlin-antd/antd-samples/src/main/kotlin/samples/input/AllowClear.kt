@@ -1,11 +1,10 @@
 package samples.input
 
-import antd.ChangeEventHandler
-import antd.input.input
-import org.w3c.dom.HTMLInputElement
-import react.RBuilder
-import styled.css
-import styled.styledDiv
+import antd.*
+import antd.input.*
+import org.w3c.dom.*
+import react.*
+import styled.*
 
 private val handleChange: ChangeEventHandler<HTMLInputElement> = {
     console.log(it)

@@ -1,6 +1,5 @@
 package reactintl.relative
 
-import react.RBuilder
-import react.RHandler
+import react.*
 
 fun RBuilder.formattedRelative(handler: RHandler<FormattedRelativeTimeProps>) = child(FormattedRelativeTimeComponent::class, handler)

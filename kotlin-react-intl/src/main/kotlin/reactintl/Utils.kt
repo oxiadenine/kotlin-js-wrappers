@@ -3,7 +3,7 @@
 
 package reactintl
 
-import react.ReactElement
+import react.*
 
 external val DEFAULT_INTL_CONFIG: IntlConfig
 

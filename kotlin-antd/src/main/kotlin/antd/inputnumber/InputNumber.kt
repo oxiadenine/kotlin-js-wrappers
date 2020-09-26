@@ -3,12 +3,9 @@
 
 package antd.inputnumber
 
-import antd.InputHTMLAttributes
-import org.w3c.dom.HTMLInputElement
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import antd.*
+import org.w3c.dom.*
+import react.*
 
 @JsName("default")
 external object InputNumberComponent : Component<InputNumberProps, RState> {

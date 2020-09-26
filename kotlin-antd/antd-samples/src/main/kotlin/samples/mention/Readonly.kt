@@ -1,16 +1,13 @@
 package samples.mention
 
-import antd.mention.MentionComponent
-import antd.mention.mention
-import kotlinext.js.js
-import kotlinext.js.jsObject
+import antd.mention.*
+import kotlinext.js.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private fun handleChange(contentState: Any) {
-    console.log(MentionComponent.toString(contentState, jsObject {  }))
+    console.log(MentionComponent.toString(contentState, jsObject { }))
 }
 
 private val users = arrayOf("afc163", "benjycui", "yiminghe", "jljsj33", "dqaria", "RaoHai")

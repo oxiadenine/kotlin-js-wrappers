@@ -1,10 +1,9 @@
 package samples.switch
 
-import antd.switch.switch
-import org.w3c.dom.events.MouseEvent
+import antd.switch.*
+import org.w3c.dom.events.*
 import react.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private fun handleChange(checked: Boolean, event: MouseEvent) {
     console.log("switch to $checked")

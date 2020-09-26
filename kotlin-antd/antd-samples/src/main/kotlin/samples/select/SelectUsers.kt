@@ -1,14 +1,11 @@
 package samples.select
 
-import antd.select.SelectComponent
-import antd.select.option
-import antd.select.select
-import antd.spin.spin
-import kotlinext.js.js
+import antd.select.*
+import antd.spin.*
+import kotlinext.js.*
+import kotlinx.browser.*
 import react.*
-import kotlinx.browser.window
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface UserRemoteSelectState : RState {
     var data: Array<Any>
@@ -19,7 +16,7 @@ interface UserRemoteSelectState : RState {
 class UserRemoteSelect : RComponent<RProps, UserRemoteSelectState>() {
     private var lastFetchId = 0
 
-    private val fetchUser = fun (value: String) {
+    private val fetchUser = fun(value: String) {
         console.log("fetching user", value)
 
         lastFetchId = lastFetchId++
@@ -32,25 +29,25 @@ class UserRemoteSelect : RComponent<RProps, UserRemoteSelectState>() {
         }
 
         window.fetch("https://randomuser.me/api/?results=5")
-                .then { res -> res.json() }
-                .then { body ->
-                    if (fetchId == lastFetchId) { // for fetch callback order
-                        val userData = body.asDynamic().results.unsafeCast<Array<Any>>().map { user ->
-                            js {
-                                name = "${user.asDynamic().name.first} ${user.asDynamic().name.last}"
-                                username = user.asDynamic().login.username.unsafeCast<String>()
-                            }.unsafeCast<Any>()
-                        }.toTypedArray()
+            .then { res -> res.json() }
+            .then { body ->
+                if (fetchId == lastFetchId) { // for fetch callback order
+                    val userData = body.asDynamic().results.unsafeCast<Array<Any>>().map { user ->
+                        js {
+                            name = "${user.asDynamic().name.first} ${user.asDynamic().name.last}"
+                            username = user.asDynamic().login.username.unsafeCast<String>()
+                        }.unsafeCast<Any>()
+                    }.toTypedArray()
 
-                        setState {
-                            data = userData
-                            fetching = false
-                        }
+                    setState {
+                        data = userData
+                        fetching = false
                     }
                 }
+            }
     }
 
-    private val handleChange = fun (newValue: Array<Any>, _: Any) {
+    private val handleChange = fun(newValue: Array<Any>, _: Any) {
         setState {
             value = newValue
             data = emptyArray()

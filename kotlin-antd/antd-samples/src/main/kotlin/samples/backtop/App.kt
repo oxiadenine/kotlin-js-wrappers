@@ -1,23 +1,10 @@
 package samples.backtop
 
-import kotlinx.css.Color
-import kotlinx.css.TextAlign
-import kotlinx.css.backgroundColor
-import kotlinx.css.borderRadius
-import kotlinx.css.bottom
-import kotlinx.css.color
-import kotlinx.css.fontSize
-import kotlinx.css.height
-import kotlinx.css.lineHeight
-import kotlinx.css.properties.LineHeight
-import kotlinx.css.px
-import kotlinx.css.textAlign
-import kotlinx.css.width
+import kotlinx.css.*
+import kotlinx.css.properties.*
 import react.*
 import react.dom.*
-import styled.StyleSheet
-import styled.css
-import styled.styledDiv
+import styled.*
 
 object BackTopStyles : StyleSheet("back-top", isStatic = true) {
     val container by css {}

@@ -1,17 +1,12 @@
 package samples.select
 
-import antd.radio.RadioChangeEvent
-import antd.radio.radioButton
-import antd.radio.radioGroup
-import antd.select.SelectComponent
-import antd.select.SelectValue
-import antd.select.select
+import antd.radio.*
+import antd.select.*
 import antd.select.option
-import kotlinext.js.js
+import kotlinext.js.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private val children = (10..36).map { i ->
     buildElement {
@@ -31,7 +26,7 @@ interface SelectSizesDemoState : RState {
 }
 
 class SelectSizesDemo : RComponent<RProps, SelectSizesDemoState>() {
-    private val handleSizeChange = fun (event: RadioChangeEvent) {
+    private val handleSizeChange = fun(event: RadioChangeEvent) {
         setState {
             size = event.target.value as String
         }

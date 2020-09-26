@@ -3,10 +3,7 @@
 
 package antd.comment
 
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 
 @JsName("default")
 external object CommentComponent : Component<CommentProps, RState> {

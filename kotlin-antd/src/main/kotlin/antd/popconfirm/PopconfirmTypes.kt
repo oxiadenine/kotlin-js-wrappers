@@ -1,5 +1,5 @@
 package antd.popconfirm
 
-import antd.MouseEvent
+import antd.*
 
 typealias PopconfirmVisibleChange = (visible: Boolean, e: MouseEvent<Any>?) -> Unit

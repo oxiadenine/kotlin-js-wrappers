@@ -1,6 +1,5 @@
 package reactintl.list
 
-import react.RBuilder
-import react.RHandler
+import react.*
 
 fun RBuilder.formattedList(handler: RHandler<FormattedListProps>) = child(FormattedListComponent::class, handler)

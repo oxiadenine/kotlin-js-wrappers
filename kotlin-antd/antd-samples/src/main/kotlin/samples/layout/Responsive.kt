@@ -1,17 +1,14 @@
 package samples.layout
 
-import antd.icon.icon
-import antd.layout.layout
-import antd.layout.header
-import antd.layout.content
+import antd.icon.*
+import antd.layout.*
 import antd.layout.footer
-import antd.layout.sider
+import antd.layout.header
 import antd.menu.*
-import kotlinext.js.js
+import kotlinext.js.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 fun RBuilder.responsive() {
     styledDiv {

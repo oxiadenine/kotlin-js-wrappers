@@ -1,8 +1,6 @@
 package antd.progress
 
-import react.Component
-import react.RState
-import react.ReactElement
+import react.*
 
 external object LineComponent : Component<LineProps, RState> {
     override fun render(): ReactElement?

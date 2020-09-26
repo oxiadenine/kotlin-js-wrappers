@@ -1,14 +1,11 @@
 package samples.tree
 
-import antd.tree.TreeNodeSelectedEvent
-import antd.tree.directoryTree
-import antd.tree.treeNode
+import antd.tree.*
 import react.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 class DirectoryDemo : RComponent<RProps, RState>() {
-    private val handleSelect = fun (selectedKeys: Array<String>, info: TreeNodeSelectedEvent) {
+    private val handleSelect = fun(selectedKeys: Array<String>, info: TreeNodeSelectedEvent) {
         console.log("selected", selectedKeys, info)
     }
 

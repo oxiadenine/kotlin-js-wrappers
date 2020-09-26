@@ -1,12 +1,11 @@
 package samples.tag
 
 import antd.button.button
-import antd.tag.tag
+import antd.tag.*
 import react.*
 import react.dom.br
 import react.dom.div
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface ControlledDemoState : RState {
     var visible: Boolean

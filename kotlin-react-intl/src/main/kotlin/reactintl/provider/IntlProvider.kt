@@ -4,9 +4,7 @@
 package reactintl.provider
 
 import react.*
-import reactintl.IntlCache
-import reactintl.IntlShape
-import reactintl.OptionalIntlConfig
+import reactintl.*
 
 @JsName("IntlProvider")
 external class IntlProviderComponent : Component<IntlProviderProps, IntlProviderState> {

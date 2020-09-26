@@ -1,9 +1,8 @@
 package samples.timepicker
 
-import antd.timepicker.timePicker
+import antd.timepicker.*
 import react.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 fun RBuilder.intervalOptions() {
     styledDiv {

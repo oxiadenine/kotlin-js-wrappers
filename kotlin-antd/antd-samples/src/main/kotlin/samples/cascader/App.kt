@@ -1,20 +1,10 @@
 package samples.cascader
 
-import kotlinx.css.Color
-import kotlinx.css.Cursor
-import kotlinx.css.Outline
-import kotlinx.css.backgroundColor
-import kotlinx.css.color
-import kotlinx.css.cursor
-import kotlinx.css.outline
-import kotlinx.css.properties.Timing
-import kotlinx.css.properties.s
-import kotlinx.css.properties.transition
+import kotlinx.css.*
+import kotlinx.css.properties.*
 import react.*
 import react.dom.*
-import styled.StyleSheet
-import styled.css
-import styled.styledDiv
+import styled.*
 
 object CascaderStyles : StyleSheet("cascader", isStatic = true) {
     val container by css {

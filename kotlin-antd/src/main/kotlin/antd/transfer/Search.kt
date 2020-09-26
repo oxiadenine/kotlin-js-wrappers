@@ -1,12 +1,8 @@
 package antd.transfer
 
-import antd.FormEvent
-import antd.MouseEvent
-import org.w3c.dom.HTMLElement
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import antd.*
+import org.w3c.dom.*
+import react.*
 
 external object TransferSearchComponent : Component<TransferSearchProps, RState> {
     override fun render(): ReactElement?

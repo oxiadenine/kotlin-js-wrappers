@@ -1,9 +1,8 @@
 package samples.skeleton
 
-import antd.skeleton.skeleton
+import antd.skeleton.*
 import react.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 fun RBuilder.basic() {
     styledDiv {

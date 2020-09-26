@@ -1,12 +1,10 @@
 package samples.slider
 
-import antd.slider.SliderMarks
-import antd.slider.slider
-import kotlinext.js.js
+import antd.slider.*
+import kotlinext.js.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 class VerticalDemo : RComponent<RProps, RState>() {
     private val divStyle = js {

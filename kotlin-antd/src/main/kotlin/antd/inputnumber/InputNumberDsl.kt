@@ -1,6 +1,5 @@
 package antd.inputnumber
 
-import react.RBuilder
-import react.RHandler
+import react.*
 
 fun RBuilder.inputNumber(handler: RHandler<InputNumberProps>) = child(InputNumberComponent::class, handler)

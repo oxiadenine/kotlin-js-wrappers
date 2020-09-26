@@ -1,11 +1,10 @@
 package samples.button
 
-import antd.MouseEventHandler
+import antd.*
 import antd.button.button
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface LoadingAppState : RState {
     var loading: Boolean

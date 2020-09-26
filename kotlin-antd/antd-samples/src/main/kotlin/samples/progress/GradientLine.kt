@@ -1,13 +1,11 @@
 package samples.progress
 
-import antd.progress.FromToGradients
-import antd.progress.StringGradients
+import antd.progress.*
 import antd.progress.progress
-import kotlinext.js.jsObject
-import react.RBuilder
+import kotlinext.js.*
+import react.*
 import react.dom.div
-import styled.css
-import styled.styledDiv
+import styled.*
 
 fun RBuilder.gradientLine() {
     styledDiv {

@@ -1,17 +1,16 @@
 package samples.popconfirm
 
-import antd.MouseEvent
+import antd.*
 import antd.button.button
-import antd.message.message
-import antd.popconfirm.popconfirm
-import kotlinext.js.js
-import kotlinx.html.classes
-import org.w3c.dom.HTMLElement
-import react.RBuilder
+import antd.message.*
+import antd.popconfirm.*
+import kotlinext.js.*
+import kotlinx.html.*
+import org.w3c.dom.*
+import react.*
 import react.dom.div
 import react.dom.jsStyle
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private val text = "Are you sure to delete this task?"
 

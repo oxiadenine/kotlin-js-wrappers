@@ -3,10 +3,7 @@
 
 package antd.result
 
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 
 @JsName("default")
 external object ResultComponent : Component<ResultProps, RState> {

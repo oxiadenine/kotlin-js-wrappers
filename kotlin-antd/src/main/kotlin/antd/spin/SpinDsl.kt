@@ -1,6 +1,5 @@
 package antd.spin
 
-import react.RBuilder
-import react.RHandler
+import react.*
 
 fun RBuilder.spin(handler: RHandler<SpinProps>) = child(SpinComponent::class, handler)

@@ -1,6 +1,6 @@
 package antd.slider
 
-import react.ReactElement
+import react.*
 
 typealias SliderValue = Any /* Number | Array<Number> */
 

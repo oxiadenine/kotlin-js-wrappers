@@ -1,19 +1,14 @@
 package samples.form
 
-import antd.FormEventHandler
-import antd.button.button
+import antd.*
+import antd.button.*
 import antd.form.*
-import antd.input.input
-import antd.select.SelectComponent
-import antd.select.option
-import antd.select.select
-import kotlinext.js.Object
-import kotlinext.js.js
-import kotlinext.js.jsObject
-import org.w3c.dom.HTMLElement
+import antd.input.*
+import antd.select.*
+import kotlinext.js.*
+import org.w3c.dom.*
 import react.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 class CoordinatedApp : RComponent<FormComponentProps<Any>, RState>() {
     private val handleSubmit: FormEventHandler<HTMLElement> = { e ->
@@ -26,7 +21,7 @@ class CoordinatedApp : RComponent<FormComponentProps<Any>, RState>() {
         }
     }
 
-    private val handleSelectChange = fun (value: String, _: Any) {
+    private val handleSelectChange = fun(value: String, _: Any) {
         console.log(value)
 
         props.form.setFieldsValue(js {
@@ -100,7 +95,7 @@ class CoordinatedApp : RComponent<FormComponentProps<Any>, RState>() {
 }
 
 private val wrappedCoordinatedApp = FormComponent.create<FormComponentProps<Any>, RState>(
-        jsObject { name = "coordinated" })(CoordinatedApp::class.js)
+    jsObject { name = "coordinated" })(CoordinatedApp::class.js)
 
 fun RBuilder.wrappedCoordinatedApp(handler: RHandler<FormComponentProps<Any>>) = child(wrappedCoordinatedApp, jsObject {}, handler)
 

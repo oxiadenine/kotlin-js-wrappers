@@ -1,11 +1,10 @@
 package samples.comment
 
-import antd.avatar.avatar
-import antd.comment.comment
+import antd.avatar.*
+import antd.comment.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface ExampleCommentProps : RProps {
     var children: ReactElement
@@ -16,7 +15,7 @@ class ExampleComment : RComponent<ExampleCommentProps, RState>() {
         comment {
             attrs {
                 actions = arrayOf(buildElement {
-                   span { +"Reply to" }
+                    span { +"Reply to" }
                 })
                 author = buildElement {
                     a { +"Han Solo" }

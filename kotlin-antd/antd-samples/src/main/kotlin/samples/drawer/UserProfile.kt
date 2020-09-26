@@ -1,31 +1,23 @@
 package samples.drawer
 
-import antd.MouseEvent
-import antd.MouseEventHandler
-import antd.avatar.avatar
+import antd.*
+import antd.avatar.*
 import antd.button.button
-import antd.divider.divider
-import antd.drawer.EventType
-import antd.drawer.drawer
-import antd.grid.RowState
+import antd.divider.*
+import antd.drawer.*
+import antd.grid.*
 import antd.grid.col
-import antd.grid.row
-import antd.list.ListComponent
-import antd.list.list
-import antd.list.listItem
-import antd.list.listItemMeta
-import kotlinext.js.js
-import kotlinext.js.jsObject
-import kotlinx.html.js.onClickFunction
+import antd.list.*
+import kotlinext.js.*
+import kotlinx.html.js.*
 import react.*
 import react.dom.a
 import react.dom.div
 import react.dom.jsStyle
 import react.dom.p
-import styled.css
-import styled.styledDiv
+import styled.*
 
-private interface  UserProfileListDataItem {
+private interface UserProfileListDataItem {
     var id: String
     var name: String
 }
@@ -96,12 +88,12 @@ class UserProfileApp : RComponent<RProps, UserProfileAppState>() {
             list<UserProfileListDataItem, ListComponent<UserProfileListDataItem>> {
                 attrs {
                     dataSource = arrayOf(
-                            jsObject {
-                                name = "Lily"
-                            },
-                            jsObject {
-                                name = "Lily"
-                            }
+                        jsObject {
+                            name = "Lily"
+                        },
+                        jsObject {
+                            name = "Lily"
+                        }
                     )
                     bordered = true
                     renderItem = { item, _ ->
@@ -317,10 +309,10 @@ class UserProfileApp : RComponent<RProps, UserProfileAppState>() {
                             attrs {
                                 title = "Github"
                                 content = buildElement {
-                                   a {
-                                       attrs.href = "http://github.com/ant-design/ant-design/"
-                                       +"github.com/ant-design/ant-design/"
-                                   }
+                                    a {
+                                        attrs.href = "http://github.com/ant-design/ant-design/"
+                                        +"github.com/ant-design/ant-design/"
+                                    }
                                 }
                             }
                         }

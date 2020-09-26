@@ -1,11 +1,8 @@
 package antd.tree
 
-import antd.MouseEvent
-import org.w3c.dom.HTMLElement
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import antd.*
+import org.w3c.dom.*
+import react.*
 
 external object TreeNodeComponent : Component<TreeNodeProps, RState> {
     override fun render(): ReactElement?

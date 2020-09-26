@@ -1,17 +1,14 @@
 package samples.layout
 
-import antd.breadcrumb.breadcrumb
-import antd.breadcrumb.breadcrumbItem
-import antd.layout.layout
-import antd.layout.header
-import antd.layout.content
+import antd.breadcrumb.*
+import antd.layout.*
 import antd.layout.footer
+import antd.layout.header
 import antd.menu.*
-import kotlinext.js.js
+import kotlinext.js.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 fun RBuilder.top() {
     styledDiv {
@@ -55,7 +52,7 @@ fun RBuilder.top() {
                         padding = 24
                         minHeight = 280
                     }
-                    + "Content"
+                    +"Content"
                 }
             }
             footer {

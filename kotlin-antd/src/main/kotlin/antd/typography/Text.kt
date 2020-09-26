@@ -1,9 +1,6 @@
 package antd.typography
 
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 
 external object TextComponent : Component<TextProps, RState> {
     override fun render(): ReactElement?

@@ -3,11 +3,8 @@
 
 package antd.configprovider
 
-import org.w3c.dom.HTMLElement
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import org.w3c.dom.*
+import react.*
 
 @JsName("default")
 external object ConfigProviderComponent : Component<ConfigProviderProps, RState> {

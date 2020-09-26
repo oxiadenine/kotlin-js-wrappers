@@ -1,10 +1,8 @@
 package samples.mention
 
-import antd.mention.MentionComponent
-import antd.mention.mention
+import antd.mention.*
 import react.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface ControlledSimpleAppState : RState {
     var value: Any
@@ -13,7 +11,7 @@ interface ControlledSimpleAppState : RState {
 class ControlledSimpleApp : RComponent<RProps, ControlledSimpleAppState>() {
     private var mention: dynamic = null
 
-    private val handleChange = fun (contentState: Any) {
+    private val handleChange = fun(contentState: Any) {
         setState {
             value = contentState
         }

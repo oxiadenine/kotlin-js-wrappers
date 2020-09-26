@@ -1,8 +1,7 @@
 package antd.input
 
-import antd.KeyboardEventHandler
-import antd.TextareaHTMLAttributes
-import org.w3c.dom.HTMLTextAreaElement
+import antd.*
+import org.w3c.dom.*
 import react.*
 
 external object TextAreaComponent : Component<TextAreaProps, TextAreaState> {

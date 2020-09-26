@@ -1,15 +1,12 @@
 package samples.tabs
 
-import antd.select.SelectComponent
+import antd.select.*
 import antd.select.option
-import antd.select.select
-import antd.tabs.tabPane
-import antd.tabs.tabs
-import kotlinext.js.js
+import antd.tabs.*
+import kotlinext.js.*
 import react.*
 import react.dom.div
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private val positionList = arrayOf("left", "right", "top", "bottom")
 

@@ -1,21 +1,10 @@
 package samples.badge
 
-import kotlinx.css.Display
-import kotlinx.css.background
-import kotlinx.css.borderRadius
-import kotlinx.css.display
-import kotlinx.css.height
-import kotlinx.css.lineHeight
-import kotlinx.css.marginBottom
-import kotlinx.css.marginRight
-import kotlinx.css.properties.LineHeight
-import kotlinx.css.px
-import kotlinx.css.width
+import kotlinx.css.*
+import kotlinx.css.properties.*
 import react.*
 import react.dom.*
-import styled.StyleSheet
-import styled.css
-import styled.styledDiv
+import styled.*
 
 object BadgeStyles : StyleSheet("badge", isStatic = true) {
     val container by css {

@@ -1,11 +1,9 @@
 package samples.breadcrumb
 
-import antd.breadcrumb.breadcrumb
-import antd.breadcrumb.breadcrumbItem
+import antd.breadcrumb.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 fun RBuilder.separator() {
     styledDiv {

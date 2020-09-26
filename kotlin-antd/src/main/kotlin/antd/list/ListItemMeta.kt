@@ -1,9 +1,6 @@
 package antd.list
 
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 
 external object ListItemMetaComponent : Component<ListItemMetaProps, RState> {
     override fun render(): ReactElement?

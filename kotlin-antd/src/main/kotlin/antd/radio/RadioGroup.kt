@@ -1,8 +1,8 @@
 package antd.radio
 
-import antd.MouseEventHandler
-import antd.checkbox.AbstractCheckboxGroupProps
-import org.w3c.dom.HTMLDivElement
+import antd.*
+import antd.checkbox.*
+import org.w3c.dom.*
 import react.*
 
 external object RadioGroupComponent : Component<RadioGroupProps, RadioGroupState> {

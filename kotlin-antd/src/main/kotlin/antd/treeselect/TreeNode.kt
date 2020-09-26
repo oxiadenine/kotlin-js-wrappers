@@ -1,9 +1,6 @@
 package antd.treeselect
 
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 
 external object TreeNodeComponent : Component<TreeNodeProps, RState> {
     override fun render(): ReactElement?

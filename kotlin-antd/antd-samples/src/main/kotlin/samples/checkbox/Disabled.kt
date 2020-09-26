@@ -1,10 +1,9 @@
 package samples.checkbox
 
-import antd.checkbox.checkbox
+import antd.checkbox.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 fun RBuilder.disabled() {
     styledDiv {

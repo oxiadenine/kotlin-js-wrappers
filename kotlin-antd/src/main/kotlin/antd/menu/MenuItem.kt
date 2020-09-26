@@ -1,6 +1,6 @@
 package antd.menu
 
-import org.w3c.dom.events.MouseEvent
+import org.w3c.dom.events.*
 import react.*
 
 external object MenuItemComponent : Component<MenuItemProps, MenuState> {

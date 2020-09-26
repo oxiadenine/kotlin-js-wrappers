@@ -1,15 +1,12 @@
 package samples.mention
 
-import antd.mention.MentionComponent
-import antd.mention.mention
-import kotlinext.js.js
-import kotlinext.js.jsObject
+import antd.mention.*
+import kotlinext.js.*
 import react.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private fun handleChange(contentState: Any) {
-    console.log(MentionComponent.toString(contentState, jsObject {  }))
+    console.log(MentionComponent.toString(contentState, jsObject { }))
 }
 
 fun RBuilder.multilines() {

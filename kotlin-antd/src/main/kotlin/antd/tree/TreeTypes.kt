@@ -1,6 +1,6 @@
 package antd.tree
 
-import react.ReactElement
+import react.*
 
 typealias TreeExpandFn = (expandedKeys: Array<String>, info: TreeNodeExpandedEvent) -> Unit
 

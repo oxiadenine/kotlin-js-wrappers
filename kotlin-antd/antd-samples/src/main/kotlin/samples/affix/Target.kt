@@ -1,12 +1,11 @@
 package samples.affix
 
-import antd.affix.affix
+import antd.affix.*
 import antd.button.button
-import kotlinx.html.classes
+import kotlinx.html.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 class TargetDemo : RComponent<RProps, RState>() {
     private var container: dynamic = null

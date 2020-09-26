@@ -2,9 +2,7 @@ package samples.timepicker
 
 import react.*
 import react.dom.*
-import styled.StyleSheet
-import styled.css
-import styled.styledDiv
+import styled.*
 
 object TimePickerStyles : StyleSheet("time-picker", isStatic = true) {
     val container by css {}

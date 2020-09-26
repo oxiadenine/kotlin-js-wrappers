@@ -1,20 +1,17 @@
 package samples.radio
 
-import antd.input.input
-import antd.radio.RadioChangeEvent
-import antd.radio.radio
-import antd.radio.radioGroup
-import kotlinext.js.js
+import antd.input.*
+import antd.radio.*
+import kotlinext.js.*
 import react.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface RadioGroupMoreAppState : RState {
     var value: Any
 }
 
 class RadioGroupMoreApp : RComponent<RProps, RadioGroupMoreAppState>() {
-    private val handleChange = fun (event: RadioChangeEvent) {
+    private val handleChange = fun(event: RadioChangeEvent) {
         console.log("radio checked", event.target.value)
 
         setState {

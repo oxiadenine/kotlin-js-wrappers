@@ -3,10 +3,7 @@
 
 package antd.timeline
 
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 
 @JsName("default")
 external object TimelineComponent : Component<TimelineProps, RState> {

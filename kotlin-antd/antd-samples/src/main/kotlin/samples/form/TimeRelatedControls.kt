@@ -1,19 +1,14 @@
 package samples.form
 
-import antd.FormEventHandler
-import antd.button.button
-import antd.datepicker.datePicker
-import antd.datepicker.monthPicker
-import antd.datepicker.rangePicker
+import antd.*
+import antd.button.*
+import antd.datepicker.*
 import antd.form.*
-import antd.timepicker.timePicker
-import kotlinext.js.Object
-import kotlinext.js.js
-import kotlinext.js.jsObject
-import org.w3c.dom.HTMLElement
+import antd.timepicker.*
+import kotlinext.js.*
+import org.w3c.dom.*
 import react.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 class TimeRelatedForm : RComponent<FormComponentProps<Any>, RState>() {
     private val handleSubmit: FormEventHandler<HTMLElement> = { e ->
@@ -37,12 +32,12 @@ class TimeRelatedForm : RComponent<FormComponentProps<Any>, RState>() {
             values["month-picker"] = fieldsValue["month-picker"].format("YYYY-MM")
             values["range-picker"] = arrayOf(rangeValue[0].format("YYYY-MM-DD"), rangeValue[1].format("YYYY-MM-DD"))
             values["range-time-picker"] = arrayOf(
-                    rangeTimeValue[0].format("YYYY-MM-DD HH:mm:ss"),
-                    rangeTimeValue[1].format("YYYY-MM-DD HH:mm:ss")
+                rangeTimeValue[0].format("YYYY-MM-DD HH:mm:ss"),
+                rangeTimeValue[1].format("YYYY-MM-DD HH:mm:ss")
             )
             values["time-picker"] = fieldsValue["time-picker"].format("HH:mm:ss")
 
-            console.log("Received values of form: ", values.unsafeCast<Any())
+            console.log("Received values of form: ", values.unsafeCast < Any())
         }
     }
 
@@ -155,7 +150,7 @@ class TimeRelatedForm : RComponent<FormComponentProps<Any>, RState>() {
 }
 
 private val wrappedTimeRelatedForm = FormComponent.create<FormComponentProps<Any>, RState>(
-        jsObject { name = "time_related_controls" })(TimeRelatedForm::class.js)
+    jsObject { name = "time_related_controls" })(TimeRelatedForm::class.js)
 
 fun RBuilder.wrappedTimeRelatedForm(handler: RHandler<FormComponentProps<Any>>) = child(wrappedTimeRelatedForm, jsObject {}, handler)
 

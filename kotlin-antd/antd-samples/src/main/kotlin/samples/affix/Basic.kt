@@ -1,11 +1,10 @@
 package samples.affix
 
-import antd.affix.affix
+import antd.affix.*
 import antd.button.button
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface BasicDemoState : RState {
     var top: Number

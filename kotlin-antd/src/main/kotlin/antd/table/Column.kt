@@ -1,11 +1,8 @@
 package antd.table
 
-import org.w3c.dom.HTMLElement
-import org.w3c.dom.events.Event
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import org.w3c.dom.*
+import org.w3c.dom.events.*
+import react.*
 
 external class ColumnComponent<T> : Component<ColumnProps<T>, RState> {
     override fun render(): ReactElement?

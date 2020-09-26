@@ -1,12 +1,10 @@
 package samples.breadcrumb
 
-import antd.breadcrumb.breadcrumb
-import antd.breadcrumb.breadcrumbItem
-import antd.icon.icon
+import antd.breadcrumb.*
+import antd.icon.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 fun RBuilder.withIcon() {
     styledDiv {

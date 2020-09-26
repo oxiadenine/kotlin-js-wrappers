@@ -1,11 +1,8 @@
 package antd.transfer
 
-import antd.MouseEventHandler
-import org.w3c.dom.HTMLButtonElement
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import antd.*
+import org.w3c.dom.*
+import react.*
 
 external object TransferOperationComponent : Component<TransferOperationProps, RState> {
     override fun render(): ReactElement?

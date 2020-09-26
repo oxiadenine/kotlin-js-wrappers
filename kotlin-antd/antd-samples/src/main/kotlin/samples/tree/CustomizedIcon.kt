@@ -1,10 +1,9 @@
 package samples.tree
 
-import antd.icon.icon
+import antd.icon.*
 import antd.tree.*
 import react.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 fun RBuilder.customizedIcon() {
     styledDiv {
@@ -23,9 +22,9 @@ fun RBuilder.customizedIcon() {
             treeNode {
                 attrs {
                     icon = buildElement {
-                       icon {
-                           attrs.type = "smile-o"
-                       }
+                        icon {
+                            attrs.type = "smile-o"
+                        }
                     }
                     title = "parent 1"
                     key = "0-0"
@@ -43,7 +42,7 @@ fun RBuilder.customizedIcon() {
                 }
                 treeNode {
                     attrs {
-                        icon = fun (treeNode: TreeNodeAttribute): ReactElement {
+                        icon = fun(treeNode: TreeNodeAttribute): ReactElement {
                             return buildElement {
                                 icon {
                                     attrs.type = if (treeNode.selected) "frown" else "frown-o"

@@ -1,47 +1,45 @@
 package samples.treeselect
 
 import antd.treeselect.*
-import kotlinext.js.js
-import kotlinext.js.jsObject
+import kotlinext.js.*
 import react.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private val data: Array<TreeNodeNormal> = arrayOf(
-        jsObject {
-            title = "Node1"
-            value = "0-0"
-            key = "0-0"
-            children = arrayOf(
-                    jsObject{
-                        title = "Child Node1"
-                        value = "0-0-0"
-                        key = "0-0-0"
-                    }
-            )
-        },
-        jsObject {
-            title = "Node2"
-            value = "0-1"
-            key = "0-1"
-            children = arrayOf(
-                    jsObject{
-                        title = "Child Node3"
-                        value = "0-1-0"
-                        key = "0-1-0"
-                    },
-                    jsObject{
-                        title = "Child Node4"
-                        value = "0-1-1"
-                        key = "0-1-1"
-                    },
-                    jsObject{
-                        title = "Child Node5"
-                        value = "0-1-2"
-                        key = "0-1-2"
-                    }
-            )
-        }
+    jsObject {
+        title = "Node1"
+        value = "0-0"
+        key = "0-0"
+        children = arrayOf(
+            jsObject {
+                title = "Child Node1"
+                value = "0-0-0"
+                key = "0-0-0"
+            }
+        )
+    },
+    jsObject {
+        title = "Node2"
+        value = "0-1"
+        key = "0-1"
+        children = arrayOf(
+            jsObject {
+                title = "Child Node3"
+                value = "0-1-0"
+                key = "0-1-0"
+            },
+            jsObject {
+                title = "Child Node4"
+                value = "0-1-1"
+                key = "0-1-1"
+            },
+            jsObject {
+                title = "Child Node5"
+                value = "0-1-2"
+                key = "0-1-2"
+            }
+        )
+    }
 )
 
 interface CheckableDemoState : RState {
@@ -49,7 +47,7 @@ interface CheckableDemoState : RState {
 }
 
 class CheckableDemo : RComponent<RProps, CheckableDemoState>() {
-    private val handleChange = fun (newValue: Array<String>, _: Any, _: Any) {
+    private val handleChange = fun(newValue: Array<String>, _: Any, _: Any) {
         console.log(newValue)
 
         setState {

@@ -1,6 +1,5 @@
 package antd.configprovider
 
-import react.RBuilder
-import react.RHandler
+import react.*
 
 fun RBuilder.configProvider(handler: RHandler<ConfigProviderProps>) = child(ConfigProviderComponent::class, handler)

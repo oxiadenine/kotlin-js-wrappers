@@ -1,6 +1,5 @@
 package antd.pageheader
 
-import react.RBuilder
-import react.RHandler
+import react.*
 
 fun RBuilder.pageHeader(handler: RHandler<PageHeaderProps>) = child(PageHeaderComponent::class, handler)

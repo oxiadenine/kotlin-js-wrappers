@@ -18,6 +18,7 @@ external interface Animation {
         animation: Animation? = definedExternally,
         duration: Number? = definedExternally,
         origin: dynamic = definedExternally): AnimateFun
+
     fun inProgress(element: Any /* String | Array<String> | Element */): Boolean
     fun cancel(element: Any /* String | Array<String> | Element */)
 }

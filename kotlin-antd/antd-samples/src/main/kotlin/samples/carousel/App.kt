@@ -1,21 +1,10 @@
 package samples.carousel
 
-import kotlinx.css.Color
-import kotlinx.css.Overflow
-import kotlinx.css.TextAlign
-import kotlinx.css.background
-import kotlinx.css.color
-import kotlinx.css.height
-import kotlinx.css.lineHeight
-import kotlinx.css.overflow
-import kotlinx.css.properties.LineHeight
-import kotlinx.css.px
-import kotlinx.css.textAlign
+import kotlinx.css.*
+import kotlinx.css.properties.*
 import react.*
 import react.dom.*
-import styled.StyleSheet
-import styled.css
-import styled.styledDiv
+import styled.*
 
 object CarouselStyles : StyleSheet("carousel", isStatic = true) {
     val container by css {

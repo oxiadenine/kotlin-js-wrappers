@@ -1,13 +1,10 @@
 package samples.table
 
-import antd.pagination.PaginationConfig
-import antd.table.ColumnProps
-import antd.table.TableComponent
-import antd.table.table
-import kotlinext.js.jsObject
-import react.RBuilder
-import styled.css
-import styled.styledDiv
+import antd.pagination.*
+import antd.table.*
+import kotlinext.js.*
+import react.*
+import styled.*
 
 private interface FixedHeaderTableDataItem {
     var key: String
@@ -17,20 +14,20 @@ private interface FixedHeaderTableDataItem {
 }
 
 private val tableColumns = arrayOf<ColumnProps<FixedHeaderTableDataItem>>(
-        jsObject {
-            title = "Name"
-            dataIndex = "name"
-            width = 150
-        },
-        jsObject {
-            title = "Age"
-            dataIndex = "age"
-            width = 150
-        },
-        jsObject {
-            title = "Address"
-            dataIndex = "address"
-        }
+    jsObject {
+        title = "Name"
+        dataIndex = "name"
+        width = 150
+    },
+    jsObject {
+        title = "Age"
+        dataIndex = "age"
+        width = 150
+    },
+    jsObject {
+        title = "Address"
+        dataIndex = "address"
+    }
 )
 
 private val data = (0..100).map { i ->

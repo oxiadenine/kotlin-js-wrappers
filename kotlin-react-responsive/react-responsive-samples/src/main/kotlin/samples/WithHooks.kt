@@ -1,11 +1,9 @@
 package samples
 
-import kotlinext.js.jsObject
+import kotlinext.js.*
 import react.*
-import react.dom.div
-import react.dom.h1
-import react.dom.p
-import reactresponsive.useMediaQuery
+import react.dom.*
+import reactresponsive.*
 
 private val example = functionalComponent<RProps> {
     val isDesktopOrLaptop = useMediaQuery(jsObject {
@@ -14,7 +12,7 @@ private val example = functionalComponent<RProps> {
     val isBigScreen = useMediaQuery(jsObject { query = "(min-device-width: 1824px)" })
     val isTabletOrMobile = useMediaQuery(jsObject { query = "(max-width: 1224px)" })
     val isTabletOrMobileDevice = useMediaQuery(jsObject {
-            query = "(max-device-width: 1224px)"
+        query = "(max-device-width: 1224px)"
     })
     val isPortrait = useMediaQuery(jsObject { query = "(orientation: portrait)" })
     val isRetina = useMediaQuery(jsObject { query = "(min-resolution: 2dppx)" })

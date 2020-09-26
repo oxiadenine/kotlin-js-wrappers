@@ -2,8 +2,7 @@ package samples.steps
 
 import antd.steps.*
 import react.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 fun RBuilder.verticalSmall() {
     styledDiv {

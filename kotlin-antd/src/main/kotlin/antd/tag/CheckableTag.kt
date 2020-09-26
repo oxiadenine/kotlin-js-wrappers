@@ -1,9 +1,6 @@
 package antd.tag
 
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 
 external object CheckableTagComponent : Component<CheckableTagProps, RState> {
     override fun render(): ReactElement?

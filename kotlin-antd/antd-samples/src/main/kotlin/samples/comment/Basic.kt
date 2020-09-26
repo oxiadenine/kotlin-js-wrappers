@@ -1,17 +1,16 @@
 package samples.comment
 
-import antd.MouseEventHandler
-import antd.avatar.avatar
-import antd.comment.comment
-import antd.icon.icon
-import antd.tooltip.tooltip
-import kotlinext.js.js
-import moment.moment
-import org.w3c.dom.HTMLElement
+import antd.*
+import antd.avatar.*
+import antd.comment.*
+import antd.icon.*
+import antd.tooltip.*
+import kotlinext.js.*
+import moment.*
+import org.w3c.dom.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface BasicAppState : RState {
     var likes: Number
@@ -44,51 +43,51 @@ class BasicApp : RComponent<RProps, BasicAppState>() {
 
     override fun RBuilder.render() {
         val commnetActions = arrayOf(
-                buildElement {
-                    span {
-                        tooltip {
-                            attrs.title = "Like"
-                            icon {
-                                attrs {
-                                    type = "like"
-                                    theme = if (state.action == "liked") "filled" else "outlined"
-                                    onClick = like
-                                }
+            buildElement {
+                span {
+                    tooltip {
+                        attrs.title = "Like"
+                        icon {
+                            attrs {
+                                type = "like"
+                                theme = if (state.action == "liked") "filled" else "outlined"
+                                onClick = like
                             }
-                        }
-                        span {
-                            attrs.jsStyle = js {
-                                paddingLeft = 8
-                                cursor = "auto"
-                            }
-                            +"${state.likes}"
                         }
                     }
-                },
-                buildElement {
                     span {
-                        tooltip {
-                            attrs.title = "Dislike"
-                            icon {
-                                attrs {
-                                    type = "dislike"
-                                    theme = if (state.action == "disliked") "filled" else "outlined"
-                                    onClick = dislike
-                                }
-                            }
+                        attrs.jsStyle = js {
+                            paddingLeft = 8
+                            cursor = "auto"
                         }
-                        span {
-                            attrs.jsStyle = js {
-                                paddingLeft = 8
-                                cursor = "auto"
-                            }
-                            +"${state.dislikes}"
-                        }
+                        +"${state.likes}"
                     }
-                },
-                buildElement {
-                    span { +"Reply to" }
                 }
+            },
+            buildElement {
+                span {
+                    tooltip {
+                        attrs.title = "Dislike"
+                        icon {
+                            attrs {
+                                type = "dislike"
+                                theme = if (state.action == "disliked") "filled" else "outlined"
+                                onClick = dislike
+                            }
+                        }
+                    }
+                    span {
+                        attrs.jsStyle = js {
+                            paddingLeft = 8
+                            cursor = "auto"
+                        }
+                        +"${state.dislikes}"
+                    }
+                }
+            },
+            buildElement {
+                span { +"Reply to" }
+            }
         ).unsafeCast<Array<Any>>()
 
         comment {

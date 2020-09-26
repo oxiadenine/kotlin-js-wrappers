@@ -1,41 +1,40 @@
 package samples.table
 
-import antd.pagination.PaginationConfig
+import antd.pagination.*
 import antd.table.*
 import kotlinext.js.*
+import kotlinx.browser.*
 import react.*
-import kotlinx.browser.window
-import styled.css
-import styled.styledDiv
+import styled.*
 import kotlin.js.json
 
 private val tableColumns = arrayOf<ColumnProps<Any>>(
-        jsObject {
-            title = "Name"
-            dataIndex = "name"
-            sorter = true
-            render = { name, _, _ -> "${name.asDynamic().first} ${name.asDynamic().last}" }
-            width = "20%"
-        },
-        jsObject {
-            title = "Gender"
-            dataIndex = "gender"
-            filters = arrayOf(
-                    jsObject {
-                        text = "Male"
-                        value = "male"
-                    },
-                    jsObject {
-                        text = "Female"
-                        value = "female"
-                    }
-            )
-            width = "20%"
-        },
-        jsObject {
-            title = "Email"
-            dataIndex = "email"
-        }
+    jsObject {
+        title = "Name"
+        dataIndex = "name"
+        sorter = true
+        render = { name, _, _ -> "${name.asDynamic().first} ${name.asDynamic().last}" }
+        width = "20%"
+    },
+    jsObject {
+        title = "Gender"
+        dataIndex = "gender"
+        filters = arrayOf(
+            jsObject {
+                text = "Male"
+                value = "male"
+            },
+            jsObject {
+                text = "Female"
+                value = "female"
+            }
+        )
+        width = "20%"
+    },
+    jsObject {
+        title = "Email"
+        dataIndex = "email"
+    }
 )
 
 interface AjaxAppState : RState {
@@ -45,7 +44,7 @@ interface AjaxAppState : RState {
 }
 
 class AjaxApp : RComponent<RProps, AjaxAppState>() {
-    private val handleTableChange = fun (newPagination: PaginationConfig, filters: Any, sorter: SorterResult<Any>, _: TableCurrentDataSource<Any>) {
+    private val handleTableChange = fun(newPagination: PaginationConfig, filters: Any, sorter: SorterResult<Any>, _: TableCurrentDataSource<Any>) {
         val pager = state.pagination
         pager.current = newPagination.current
 
@@ -65,7 +64,7 @@ class AjaxApp : RComponent<RProps, AjaxAppState>() {
         fetch(params)
     }
 
-    private val fetch = fun (params: Any) {
+    private val fetch = fun(params: Any) {
         console.log("params:", params)
 
         setState {
@@ -119,7 +118,7 @@ class AjaxApp : RComponent<RProps, AjaxAppState>() {
         table<Any, TableComponent<Any>> {
             attrs {
                 columns = tableColumns
-                rowKey = fun (record: Any, _: Number): String {
+                rowKey = fun(record: Any, _: Number): String {
                     return record.asDynamic().login.uuid.unsafeCast<String>()
                 }
                 dataSource = state.data

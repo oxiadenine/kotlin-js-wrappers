@@ -1,11 +1,8 @@
 package samples.sandbox
 
-import react.RBuilder
-import react.RComponent
-import react.RProps
-import react.RState
-import react.dom.div
-import reactresponsive.mediaQuery
+import react.*
+import react.dom.*
+import reactresponsive.*
 
 class Sandbox : RComponent<RProps, RState>() {
     override fun RBuilder.render() {

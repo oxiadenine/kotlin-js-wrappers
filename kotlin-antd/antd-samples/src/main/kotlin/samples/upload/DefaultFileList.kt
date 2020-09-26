@@ -1,12 +1,11 @@
 package samples.upload
 
-import antd.button.button
-import antd.icon.icon
-import antd.upload.upload
-import kotlinext.js.jsObject
+import antd.button.*
+import antd.icon.*
+import antd.upload.*
+import kotlinext.js.*
 import react.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 fun RBuilder.defaultFileList() {
     styledDiv {
@@ -23,26 +22,26 @@ fun RBuilder.defaultFileList() {
                     }
                 }
                 defaultFileList = arrayOf(
-                        jsObject {
-                            uid = "1"
-                            name = "xxx.png"
-                            status = "done"
-                            response = "Server Error 500" // custom error message to show
-                            url = "http://www.baidu.com/xxx.png"
-                        },
-                        jsObject {
-                            uid = "2"
-                            name = "yyy.png"
-                            status = "done"
-                            url = "http://www.baidu.com/yyy.png"
-                        },
-                        jsObject {
-                            uid = "3"
-                            name = "zzz.png"
-                            status = "error"
-                            response = "Server Error 500" // custom error message to show
-                            url = "http://www.baidu.com/zzz.png"
-                        }
+                    jsObject {
+                        uid = "1"
+                        name = "xxx.png"
+                        status = "done"
+                        response = "Server Error 500" // custom error message to show
+                        url = "http://www.baidu.com/xxx.png"
+                    },
+                    jsObject {
+                        uid = "2"
+                        name = "yyy.png"
+                        status = "done"
+                        url = "http://www.baidu.com/yyy.png"
+                    },
+                    jsObject {
+                        uid = "3"
+                        name = "zzz.png"
+                        status = "error"
+                        response = "Server Error 500" // custom error message to show
+                        url = "http://www.baidu.com/zzz.png"
+                    }
                 )
             }
             button {

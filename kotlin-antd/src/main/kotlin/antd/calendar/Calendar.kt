@@ -3,11 +3,8 @@
 
 package antd.calendar
 
-import moment.Moment
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import moment.*
+import react.*
 
 @JsName("default")
 external object CalendarComponent : Component<CalendarProps, CalendarState> {

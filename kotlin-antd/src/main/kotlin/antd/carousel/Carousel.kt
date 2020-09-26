@@ -3,10 +3,7 @@
 
 package antd.carousel
 
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 
 @JsName("default")
 external object CarouselComponent : Component<CarouselProps, RState> {

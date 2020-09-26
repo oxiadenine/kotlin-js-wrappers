@@ -1,6 +1,6 @@
 package uikit.components
 
-import uikit.Component
+import uikit.*
 
 external interface TabComponent : Component {
     fun show(index: Any /* String | Int | Element */ = definedExternally)

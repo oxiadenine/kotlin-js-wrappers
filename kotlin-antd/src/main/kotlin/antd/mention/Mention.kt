@@ -3,14 +3,10 @@
 
 package antd.mention
 
-import antd.FocusEventHandler
-import kotlinext.js.Object
-import org.w3c.dom.Element
-import org.w3c.dom.HTMLElement
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import antd.*
+import kotlinext.js.*
+import org.w3c.dom.*
+import react.*
 
 @JsName("default")
 external object MentionComponent : Component<MentionProps, MentionState> {

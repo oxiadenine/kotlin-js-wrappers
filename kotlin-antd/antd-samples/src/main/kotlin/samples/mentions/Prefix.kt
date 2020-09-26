@@ -1,11 +1,9 @@
 package samples.mentions
 
-import antd.mentions.mentions
-import antd.mentions.option
-import kotlinext.js.js
+import antd.mentions.*
+import kotlinext.js.*
 import react.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface PrefixAppState : RState {
     var prefix: String
@@ -37,7 +35,8 @@ class PrefixApp : RComponent<RProps, PrefixAppState>() {
                 prefix = arrayOf("@", "#")
                 onSearch = handleSearch
             }
-            val options = (mockData[state.prefix] as Array<String>? ?: emptyArray()).map {
+            val options = (mockData[state.prefix] as Array<String>?
+                ?: emptyArray()).map {
                 option {
                     attrs {
                         key = it

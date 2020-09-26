@@ -1,12 +1,11 @@
 package samples.tooltip
 
 import antd.button.button
-import antd.tooltip.tooltip
-import kotlinext.js.js
+import antd.tooltip.*
+import kotlinext.js.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private val text = buildElement {
     span { +"prompt text" }

@@ -1,15 +1,14 @@
 package samples.menu
 
-import antd.icon.icon
+import antd.icon.*
 import antd.menu.*
-import antd.switch.switch
-import kotlinext.js.js
-import kotlinx.html.classes
-import org.w3c.dom.events.MouseEvent
+import antd.switch.*
+import kotlinext.js.*
+import kotlinx.html.*
+import org.w3c.dom.events.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface SwitchModeSiderState : RState {
     var mode: MenuMode
@@ -17,13 +16,13 @@ interface SwitchModeSiderState : RState {
 }
 
 class SwitchModeSider : RComponent<RProps, SwitchModeSiderState>() {
-    private val changeMode = fun (checked: Boolean, _: MouseEvent) {
+    private val changeMode = fun(checked: Boolean, _: MouseEvent) {
         setState {
             mode = if (checked) "vertical" else "inline"
         }
     }
 
-    private val changeTheme = fun (checked: Boolean, _: MouseEvent) {
+    private val changeTheme = fun(checked: Boolean, _: MouseEvent) {
         setState {
             theme = if (checked) "dark" else "light"
         }

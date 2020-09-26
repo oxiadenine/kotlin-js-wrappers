@@ -1,15 +1,13 @@
 package samples.modal
 
-import antd.MouseEvent
-import antd.MouseEventHandler
+import antd.*
 import antd.button.button
-import antd.modal.modal
-import org.w3c.dom.HTMLElement
+import antd.modal.*
+import kotlinx.browser.*
+import org.w3c.dom.*
 import react.*
 import react.dom.*
-import kotlinx.browser.window
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface AsyncAppState : RState {
     var modalText: String

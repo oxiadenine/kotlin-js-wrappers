@@ -1,9 +1,6 @@
 package antd.table
 
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 
 external object FilterDropdownMenuWrapperComponent : Component<FilterDropdownMenuWrapperProps, RState> {
     override fun render(): ReactElement?

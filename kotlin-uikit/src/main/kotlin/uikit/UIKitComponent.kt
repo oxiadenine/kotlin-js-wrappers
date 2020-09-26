@@ -1,7 +1,8 @@
 package uikit
 
-import org.w3c.dom.Element
+import org.w3c.dom.*
 import uikit.components.*
+import uikit.components.ScrollOptions
 
 external interface UIKitComponent {
     val icon: Icon

@@ -1,9 +1,8 @@
 package samples.pageheader
 
-import antd.pageheader.pageHeader
-import react.RBuilder
-import styled.css
-import styled.styledDiv
+import antd.pageheader.*
+import react.*
+import styled.*
 
 fun RBuilder.basic() {
     styledDiv {

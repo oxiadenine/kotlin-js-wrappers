@@ -1,12 +1,11 @@
 package samples.input
 
-import antd.icon.icon
-import antd.input.input
-import antd.tooltip.tooltip
-import kotlinext.js.js
+import antd.icon.*
+import antd.input.*
+import antd.tooltip.*
+import kotlinext.js.*
 import react.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 fun RBuilder.presuffix() {
     styledDiv {

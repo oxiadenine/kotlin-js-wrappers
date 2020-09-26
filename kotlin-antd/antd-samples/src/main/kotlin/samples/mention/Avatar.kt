@@ -1,34 +1,32 @@
 package samples.mention
 
-import antd.avatar.avatar
-import antd.mention.mention
-import antd.mention.nav
-import kotlinext.js.js
+import antd.avatar.*
+import antd.mention.*
+import kotlinext.js.*
 import react.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private val webFrameworks = arrayOf(
-        js {
-            name = "React"
-            type = "JavaScript"
-            icon = "https://zos.alipayobjects.com/rmsportal/LFIeMPzdLcLnEUe.svg"
-        },
-        js {
-            name = "Angular"
-            type = "JavaScript"
-            icon = "https://zos.alipayobjects.com/rmsportal/PJTbxSvzYWjDZnJ.png"
-        },
-        js {
-            name = "Dva"
-            type = "JavaScript"
-            icon = "https://zos.alipayobjects.com/rmsportal/EYPwSeEJKxDtVxI.png"
-        },
-        js {
-            name = "Flask"
-            type = "Python"
-            icon = "https://zos.alipayobjects.com/rmsportal/xaypBUijfnpAlXE.png"
-        }
+    js {
+        name = "React"
+        type = "JavaScript"
+        icon = "https://zos.alipayobjects.com/rmsportal/LFIeMPzdLcLnEUe.svg"
+    },
+    js {
+        name = "Angular"
+        type = "JavaScript"
+        icon = "https://zos.alipayobjects.com/rmsportal/PJTbxSvzYWjDZnJ.png"
+    },
+    js {
+        name = "Dva"
+        type = "JavaScript"
+        icon = "https://zos.alipayobjects.com/rmsportal/EYPwSeEJKxDtVxI.png"
+    },
+    js {
+        name = "Flask"
+        type = "Python"
+        icon = "https://zos.alipayobjects.com/rmsportal/xaypBUijfnpAlXE.png"
+    }
 )
 
 interface AvatarNavMentionState : RState {
@@ -36,7 +34,7 @@ interface AvatarNavMentionState : RState {
 }
 
 class AvatarNavMention : RComponent<RProps, AvatarNavMentionState>() {
-    private val handleSearchChange = fun (searchValue: String, _: String) {
+    private val handleSearchChange = fun(searchValue: String, _: String) {
         val filtered = webFrameworks.filter { item ->
             item.name.unsafeCast<String>().toLowerCase().contains(searchValue.toLowerCase())
         }

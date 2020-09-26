@@ -3,10 +3,10 @@
 
 package antd.form
 
-import antd.FormHTMLAttributes
-import antd.grid.ColProps
-import kotlinext.js.Object
-import org.w3c.dom.HTMLFormElement
+import antd.*
+import antd.grid.*
+import kotlinext.js.*
+import org.w3c.dom.*
 import react.*
 import kotlin.js.RegExp
 

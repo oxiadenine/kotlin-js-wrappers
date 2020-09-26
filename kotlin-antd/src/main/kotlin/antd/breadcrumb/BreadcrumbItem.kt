@@ -1,6 +1,6 @@
 package antd.breadcrumb
 
-import antd.MouseEventHandler
+import antd.*
 import react.*
 
 external object BreadcrumbItemComponent : Component<BreadcrumbItemProps, RState> {

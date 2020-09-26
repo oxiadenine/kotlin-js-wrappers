@@ -1,9 +1,6 @@
 package antd.timeline
 
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 
 external object TimelineItemComponent : Component<TimelineItemProps, RState> {
     override fun render(): ReactElement?

@@ -1,6 +1,5 @@
 package antd.modal
 
-import react.RBuilder
-import react.RHandler
+import react.*
 
 fun RBuilder.modal(handler: RHandler<ModalProps>) = child(ModalComponent::class, handler)

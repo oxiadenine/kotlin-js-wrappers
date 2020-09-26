@@ -1,6 +1,6 @@
 package uikit.util
 
-import org.w3c.dom.events.Event
+import org.w3c.dom.events.*
 
 typealias OnFun = (
     targets: Any /* String | Array<String> | Element */,

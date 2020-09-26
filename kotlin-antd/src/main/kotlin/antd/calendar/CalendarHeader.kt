@@ -1,10 +1,7 @@
 package antd.calendar
 
-import moment.Moment
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import moment.*
+import react.*
 
 external object HeaderComponent : Component<HeaderProps, RState> {
     override fun render(): ReactElement?

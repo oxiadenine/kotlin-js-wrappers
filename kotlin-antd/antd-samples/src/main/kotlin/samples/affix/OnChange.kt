@@ -1,10 +1,9 @@
 package samples.affix
 
-import antd.affix.affix
-import antd.button.button
+import antd.affix.*
+import antd.button.*
 import react.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 fun RBuilder.onChange() {
     styledDiv {

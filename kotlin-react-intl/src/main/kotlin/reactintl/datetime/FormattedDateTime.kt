@@ -3,11 +3,8 @@
 
 package reactintl.datetime
 
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
-import reactintl.CustomFormatConfig
+import react.*
+import reactintl.*
 
 @JsName("FormattedDate")
 external class FormattedDateComponent : Component<FormattedDateProps, RState> {

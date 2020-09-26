@@ -1,17 +1,15 @@
 package samples.statistic
 
-import antd.card.card
+import antd.card.*
+import antd.grid.*
 import antd.grid.col
-import antd.grid.row
-import antd.icon.icon
-import antd.statistic.statistic
-import kotlinext.js.js
-import react.RBuilder
-import react.buildElement
+import antd.icon.*
+import antd.statistic.*
+import kotlinext.js.*
+import react.*
 import react.dom.div
 import react.dom.jsStyle
-import styled.css
-import styled.styledDiv
+import styled.*
 
 fun RBuilder.card() {
     styledDiv {

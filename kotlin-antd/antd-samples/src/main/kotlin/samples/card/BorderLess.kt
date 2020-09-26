@@ -1,13 +1,10 @@
 package samples.card
 
-import antd.card.card
-import kotlinext.js.js
-import react.RBuilder
-import react.dom.div
-import react.dom.jsStyle
-import react.dom.p
-import styled.css
-import styled.styledDiv
+import antd.card.*
+import kotlinext.js.*
+import react.*
+import react.dom.*
+import styled.*
 
 fun RBuilder.borderLess() {
     styledDiv {

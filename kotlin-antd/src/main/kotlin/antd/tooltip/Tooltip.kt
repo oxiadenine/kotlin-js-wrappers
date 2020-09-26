@@ -3,8 +3,8 @@
 
 package antd.tooltip
 
-import kotlinext.js.Object
-import org.w3c.dom.HTMLElement
+import kotlinext.js.*
+import org.w3c.dom.*
 import react.*
 
 @JsName("default")

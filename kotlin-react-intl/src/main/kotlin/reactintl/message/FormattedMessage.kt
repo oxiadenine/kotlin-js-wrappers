@@ -3,13 +3,8 @@
 
 package reactintl.message
 
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 import reactintl.*
-import reactintl.Formats
-import reactintl.Formatters
 
 @JsName("FormattedMessage")
 open external class FormattedMessageComponent : Component<FormattedMessageProps<Any>, RState> {

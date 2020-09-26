@@ -1,11 +1,10 @@
 package samples.grid
 
+import antd.grid.*
 import antd.grid.col
-import antd.grid.row
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 fun RBuilder.flexOrder() {
     styledDiv {

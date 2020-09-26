@@ -1,19 +1,9 @@
 package samples.table
 
-import kotlinx.css.Position
-import kotlinx.css.TextAlign
-import kotlinx.css.fontSize
-import kotlinx.css.marginBottom
-import kotlinx.css.marginRight
-import kotlinx.css.marginTop
-import kotlinx.css.position
-import kotlinx.css.px
-import kotlinx.css.textAlign
+import kotlinx.css.*
 import react.*
 import react.dom.*
-import styled.StyleSheet
-import styled.css
-import styled.styledDiv
+import styled.*
 
 object TableStyles : StyleSheet("table", isStatic = true) {
     val container by css {}

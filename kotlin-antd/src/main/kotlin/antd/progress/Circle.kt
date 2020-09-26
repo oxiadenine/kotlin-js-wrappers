@@ -1,8 +1,6 @@
 package antd.progress
 
-import react.Component
-import react.RState
-import react.ReactElement
+import react.*
 
 external object CircleComponent : Component<CircleProps, RState> {
     override fun render(): ReactElement?

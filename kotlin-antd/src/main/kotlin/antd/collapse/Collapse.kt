@@ -3,10 +3,7 @@
 
 package antd.collapse
 
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 
 @JsName("default")
 external object CollapseComponent : Component<CollapseProps, RState> {

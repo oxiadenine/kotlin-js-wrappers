@@ -1,13 +1,12 @@
 package samples.button
 
 import antd.button.button
-import antd.dropdown.dropdown
-import antd.icon.icon
+import antd.dropdown.*
+import antd.icon.*
 import antd.menu.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private fun handleMenuClick(param: ClickParam) {
     console.log("click", param)

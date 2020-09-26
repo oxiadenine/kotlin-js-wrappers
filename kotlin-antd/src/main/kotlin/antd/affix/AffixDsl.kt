@@ -1,6 +1,5 @@
 package antd.affix
 
-import react.RBuilder
-import react.RHandler
+import react.*
 
 fun RBuilder.affix(handler: RHandler<AffixProps>) = child(AffixComponent::class, handler)

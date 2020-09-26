@@ -1,19 +1,15 @@
 package samples.mention
 
-import antd.button.button
-import antd.mention.MentionComponent
-import antd.mention.mention
-import antd.popover.popover
-import kotlinext.js.js
-import kotlinext.js.jsObject
-import org.w3c.dom.Element
-import org.w3c.dom.HTMLElement
+import antd.button.*
+import antd.mention.*
+import antd.popover.*
+import kotlinext.js.*
+import org.w3c.dom.*
 import react.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private fun handleChange(contentState: Any) {
-    console.log(MentionComponent.toString(contentState, jsObject {  }))
+    console.log(MentionComponent.toString(contentState, jsObject { }))
 }
 
 private fun handleSelect(suggestion: String, data: Any?) {
@@ -24,11 +20,11 @@ class PopoverContainer : RComponent<RProps, RState>() {
     private var mention: dynamic = null
     private var popover: dynamic = null
 
-    private val getSuggestionContainer = fun (_: Element): HTMLElement {
+    private val getSuggestionContainer = fun(_: Element): HTMLElement {
         return popover.getPopupDomNode().unsafeCast<HTMLElement>()
     }
 
-    private val visibleChange = fun (visible: Boolean) {
+    private val visibleChange = fun(visible: Boolean) {
         if (visible && mention != null) {
             mention.focus()
         }

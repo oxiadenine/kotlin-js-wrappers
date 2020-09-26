@@ -1,13 +1,11 @@
 package samples.statistic
 
-import antd.button.button
-import antd.grid.col
-import antd.grid.row
-import antd.statistic.statistic
-import kotlinext.js.js
-import react.RBuilder
-import styled.css
-import styled.styledDiv
+import antd.button.*
+import antd.grid.*
+import antd.statistic.*
+import kotlinext.js.*
+import react.*
+import styled.*
 
 fun RBuilder.basic() {
     styledDiv {

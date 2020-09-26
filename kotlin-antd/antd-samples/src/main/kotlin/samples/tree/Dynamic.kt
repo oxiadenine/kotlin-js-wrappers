@@ -1,12 +1,10 @@
 package samples.tree
 
 import antd.tree.*
-import kotlinext.js.Object
-import kotlinext.js.jsObject
+import kotlinext.js.*
+import kotlinx.browser.*
 import react.*
-import kotlinx.browser.window
-import styled.css
-import styled.styledDiv
+import styled.*
 import kotlin.js.Promise
 
 interface DynamicDemoState : RState {
@@ -14,7 +12,7 @@ interface DynamicDemoState : RState {
 }
 
 class DynamicDemo : RComponent<RProps, DynamicDemoState>() {
-    private val onLoadData = fun (treeNode: TreeNodeComponent): Promise<Unit> {
+    private val onLoadData = fun(treeNode: TreeNodeComponent): Promise<Unit> {
         return Promise { resolve, _ ->
             if (treeNode.props.children != null) {
                 resolve(Unit)
@@ -24,14 +22,14 @@ class DynamicDemo : RComponent<RProps, DynamicDemoState>() {
 
             window.setTimeout({
                 treeNode.props.asDynamic().dataRef.children = arrayOf<TreeNodeNormal>(
-                        jsObject {
-                            title = "Child Node"
-                            key = "${treeNode.props.eventKey}-0"
-                        },
-                        jsObject {
-                            title = "Child Node"
-                            key = "${treeNode.props.eventKey}-1"
-                        }
+                    jsObject {
+                        title = "Child Node"
+                        key = "${treeNode.props.eventKey}-0"
+                    },
+                    jsObject {
+                        title = "Child Node"
+                        key = "${treeNode.props.eventKey}-1"
+                    }
                 )
 
                 setState {
@@ -59,29 +57,29 @@ class DynamicDemo : RComponent<RProps, DynamicDemoState>() {
             }
 
             return@map buildElement {
-               treeNode {
-                   Object.assign(attrs, item)
-                   attrs.asDynamic()["dataRef"] = item
-               }
+                treeNode {
+                    Object.assign(attrs, item)
+                    attrs.asDynamic()["dataRef"] = item
+                }
             }
         }.toTypedArray()
     }
 
     override fun DynamicDemoState.init() {
         treeData = arrayOf(
-                jsObject {
-                    title = "Expand to load"
-                    key = "0"
-                },
-                jsObject {
-                    title = "Expand to load"
-                    key = "1"
-                },
-                jsObject {
-                    title = "Tree Node"
-                    key = "2"
-                    isLeaf = true
-                }
+            jsObject {
+                title = "Expand to load"
+                key = "0"
+            },
+            jsObject {
+                title = "Expand to load"
+                key = "1"
+            },
+            jsObject {
+                title = "Tree Node"
+                key = "2"
+                isLeaf = true
+            }
         )
     }
 

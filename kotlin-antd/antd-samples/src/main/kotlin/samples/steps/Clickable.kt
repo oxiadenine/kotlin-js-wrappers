@@ -1,12 +1,10 @@
 package samples.steps
 
-import antd.divider.divider
-import antd.steps.step
-import antd.steps.steps
+import antd.divider.*
+import antd.steps.*
 import react.*
-import react.dom.div
-import styled.css
-import styled.styledDiv
+import react.dom.*
+import styled.*
 
 interface ClickableDemoState : RState {
     var current: Number

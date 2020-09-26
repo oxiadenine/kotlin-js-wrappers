@@ -1,9 +1,6 @@
 package antd.descriptions
 
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 
 external object DescriptionsItemComponent : Component<DescriptionsItemProps, RState> {
     override fun render(): ReactElement?

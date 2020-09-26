@@ -2,9 +2,7 @@ package samples.datepicker
 
 import react.*
 import react.dom.*
-import styled.StyleSheet
-import styled.css
-import styled.styledDiv
+import styled.*
 
 object DatePickerStyles : StyleSheet("date-picker", isStatic = true) {
     val container by css {}

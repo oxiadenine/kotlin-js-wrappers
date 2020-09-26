@@ -1,16 +1,14 @@
 package samples.table
 
-import antd.MouseEventHandler
+import antd.*
 import antd.button.button
-import antd.pagination.PaginationConfig
+import antd.pagination.*
 import antd.table.*
-import kotlinext.js.js
-import kotlinext.js.jsObject
-import kotlinx.html.classes
+import kotlinext.js.*
+import kotlinx.html.*
 import react.*
 import react.dom.div
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface ResetFilterTableDataItem {
     var key: String
@@ -21,31 +19,31 @@ interface ResetFilterTableDataItem {
 }
 
 private val data = arrayOf<ResetFilterTableDataItem>(
-        jsObject {
-            key = "1"
-            name = "John Brown"
-            age = 32
-            address = "New York No. 1 Lake Park"
-            tags = arrayOf("nice", "developer")
-        },
-        jsObject {
-            key = "2"
-            name = "Jim Green"
-            age = 42
-            address = "London No. 1 Lake Park"
-        },
-        jsObject {
-            key = "3"
-            name = "Joe Black"
-            age = 32
-            address = "Sidney No. 1 Lake Park"
-        },
-        jsObject {
-            key = "4"
-            name = "Jim Red"
-            age = 32
-            address = "London No. 2 Lake Park"
-        }
+    jsObject {
+        key = "1"
+        name = "John Brown"
+        age = 32
+        address = "New York No. 1 Lake Park"
+        tags = arrayOf("nice", "developer")
+    },
+    jsObject {
+        key = "2"
+        name = "Jim Green"
+        age = 42
+        address = "London No. 1 Lake Park"
+    },
+    jsObject {
+        key = "3"
+        name = "Joe Black"
+        age = 32
+        address = "Sidney No. 1 Lake Park"
+    },
+    jsObject {
+        key = "4"
+        name = "Jim Red"
+        age = 32
+        address = "London No. 2 Lake Park"
+    }
 )
 
 interface ResetFilterAppState : RState {
@@ -54,7 +52,7 @@ interface ResetFilterAppState : RState {
 }
 
 class ResetFilterApp : RComponent<RProps, ResetFilterAppState>() {
-    private val handleChange = fun (pagination: PaginationConfig, filters: Any, sorter: SorterResult<ResetFilterTableDataItem>, _: TableCurrentDataSource<ResetFilterTableDataItem>) {
+    private val handleChange = fun(pagination: PaginationConfig, filters: Any, sorter: SorterResult<ResetFilterTableDataItem>, _: TableCurrentDataSource<ResetFilterTableDataItem>) {
         console.log("Various parameters", pagination, filters, sorter)
 
         setState {
@@ -95,62 +93,62 @@ class ResetFilterApp : RComponent<RProps, ResetFilterAppState>() {
         val filteredInfo = state.filteredInfo ?: js {}
 
         val tableColumns = arrayOf<ColumnProps<ResetFilterTableDataItem>>(
-                jsObject {
-                    title = "Name"
-                    dataIndex = "name"
-                    key = "name"
-                    filters = arrayOf(
-                            jsObject {
-                                text = "Joe"
-                                value = "Joe"
-                            },
-                            jsObject {
-                                text = "Jim"
-                                value = "Jim"
-                            }
-                    )
-                    filteredValue = filteredInfo.name?.unsafeCast<Array<Any>>()
-                    onFilter = { value, record ->
-                        record.name.contains(value.unsafeCast<String>())
+            jsObject {
+                title = "Name"
+                dataIndex = "name"
+                key = "name"
+                filters = arrayOf(
+                    jsObject {
+                        text = "Joe"
+                        value = "Joe"
+                    },
+                    jsObject {
+                        text = "Jim"
+                        value = "Jim"
                     }
-                    sorter = fun (a: ResetFilterTableDataItem, b: ResetFilterTableDataItem): Number {
-                        return  a.name.length - b.name.length
-                    }
-                    sortOrder = if (sortedInfo.columnKey == "name") sortedInfo.order else null
-
-                },
-                jsObject {
-                    title = "Age"
-                    dataIndex = "age"
-                    key = "age"
-                    sorter = fun (a: ResetFilterTableDataItem, b: ResetFilterTableDataItem): Number {
-                        return a.age.toInt() - b.age.toInt()
-                    }
-                    sortOrder = if (sortedInfo.columnKey == "age") sortedInfo.order else null
-                },
-                jsObject {
-                    title = "Address"
-                    dataIndex = "address"
-                    key = "address"
-                    filters = arrayOf(
-                            jsObject {
-                                text = "London"
-                                value = "London"
-                            },
-                            jsObject {
-                                text = "New York"
-                                value = "New York"
-                            }
-                    )
-                    filteredValue = filteredInfo.address?.unsafeCast<Array<Any>>()
-                    onFilter = { value, record ->
-                        record.address.contains(value.unsafeCast<String>())
-                    }
-                    sorter =  fun (a: ResetFilterTableDataItem, b: ResetFilterTableDataItem): Number {
-                        return a.address.length - b.address.length
-                    }
-                    sortOrder = if (sortedInfo.columnKey == "address") sortedInfo.order else null
+                )
+                filteredValue = filteredInfo.name?.unsafeCast<Array<Any>>()
+                onFilter = { value, record ->
+                    record.name.contains(value.unsafeCast<String>())
                 }
+                sorter = fun(a: ResetFilterTableDataItem, b: ResetFilterTableDataItem): Number {
+                    return a.name.length - b.name.length
+                }
+                sortOrder = if (sortedInfo.columnKey == "name") sortedInfo.order else null
+
+            },
+            jsObject {
+                title = "Age"
+                dataIndex = "age"
+                key = "age"
+                sorter = fun(a: ResetFilterTableDataItem, b: ResetFilterTableDataItem): Number {
+                    return a.age.toInt() - b.age.toInt()
+                }
+                sortOrder = if (sortedInfo.columnKey == "age") sortedInfo.order else null
+            },
+            jsObject {
+                title = "Address"
+                dataIndex = "address"
+                key = "address"
+                filters = arrayOf(
+                    jsObject {
+                        text = "London"
+                        value = "London"
+                    },
+                    jsObject {
+                        text = "New York"
+                        value = "New York"
+                    }
+                )
+                filteredValue = filteredInfo.address?.unsafeCast<Array<Any>>()
+                onFilter = { value, record ->
+                    record.address.contains(value.unsafeCast<String>())
+                }
+                sorter = fun(a: ResetFilterTableDataItem, b: ResetFilterTableDataItem): Number {
+                    return a.address.length - b.address.length
+                }
+                sortOrder = if (sortedInfo.columnKey == "address") sortedInfo.order else null
+            }
         )
 
         div {

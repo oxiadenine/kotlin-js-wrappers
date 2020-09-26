@@ -1,11 +1,9 @@
 package samples.pagination
 
-import antd.pagination.PageRenderType
-import antd.pagination.pagination
+import antd.pagination.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private fun handleItemRender(page: Number, type: PageRenderType, element: ReactElement): ReactElement {
     if (type == "prev") {

@@ -1,6 +1,5 @@
 package antd.divider
 
-import react.RBuilder
-import react.RHandler
+import react.*
 
 fun RBuilder.divider(handler: RHandler<DividerProps>) = child(DividerComponent::class, handler)

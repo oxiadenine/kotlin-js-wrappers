@@ -1,6 +1,6 @@
 package antd.pagination
 
-import antd.select.OptionComponent
+import antd.select.*
 import react.*
 
 external object MiniSelectComponent : Component<RProps, RState> {

@@ -3,7 +3,7 @@
 
 package antd.pagination
 
-import kotlinext.js.Object
+import kotlinext.js.*
 import react.*
 
 @JsName("default")

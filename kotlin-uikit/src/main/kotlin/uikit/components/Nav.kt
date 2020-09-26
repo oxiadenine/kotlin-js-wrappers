@@ -1,6 +1,6 @@
 package uikit.components
 
-import uikit.Component
+import uikit.*
 
 external interface NavComponent : Component {
     fun toggle(index: Any /* String | Int | Element */ = definedExternally, animate: Boolean = definedExternally)

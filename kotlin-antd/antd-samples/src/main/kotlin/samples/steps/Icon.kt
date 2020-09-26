@@ -1,11 +1,9 @@
 package samples.steps
 
-import antd.icon.icon
-import antd.steps.step
-import antd.steps.steps
+import antd.icon.*
+import antd.steps.*
 import react.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 fun RBuilder.icon() {
     styledDiv {

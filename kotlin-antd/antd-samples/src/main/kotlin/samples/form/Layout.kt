@@ -4,18 +4,17 @@ import antd.button.button
 import antd.form.*
 import antd.input.input
 import antd.radio.*
-import kotlinext.js.jsObject
+import kotlinext.js.*
 import react.*
 import react.dom.div
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface FormLayoutDemoState : RState {
     var formLayout: String
 }
 
 class FormLayoutDemo : RComponent<FormComponentProps<Any>, FormLayoutDemoState>() {
-    private val handleFormLayoutChange = fun (event: RadioChangeEvent) {
+    private val handleFormLayoutChange = fun(event: RadioChangeEvent) {
         setState {
             formLayout = event.target.value.unsafeCast<String>()
         }

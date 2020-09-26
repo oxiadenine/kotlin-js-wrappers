@@ -1,6 +1,5 @@
 package antd.switch
 
-import react.RBuilder
-import react.RHandler
+import react.*
 
 fun RBuilder.switch(handler: RHandler<SwitchProps>) = child(SwitchComponent::class, handler)

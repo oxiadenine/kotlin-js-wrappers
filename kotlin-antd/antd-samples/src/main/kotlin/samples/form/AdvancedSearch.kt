@@ -1,25 +1,22 @@
 package samples.form
 
-import antd.FormEventHandler
-import antd.MouseEventHandler
+import antd.*
 import antd.button.button
 import antd.form.*
+import antd.grid.*
 import antd.grid.col
-import antd.grid.row
-import antd.icon.icon
+import antd.icon.*
 import antd.input.input
-import kotlinext.js.js
-import kotlinext.js.jsObject
-import kotlinx.html.classes
-import kotlinx.html.js.onClickFunction
-import org.w3c.dom.HTMLElement
-import org.w3c.dom.events.Event
+import kotlinext.js.*
+import kotlinx.html.*
+import kotlinx.html.js.*
+import org.w3c.dom.*
+import org.w3c.dom.events.*
 import react.*
 import react.dom.a
 import react.dom.div
 import react.dom.jsStyle
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface AdvancedSearchFormState : RState {
     var expand: Boolean
@@ -126,7 +123,7 @@ class AdvancedSearchForm : RComponent<FormComponentProps<Any>, AdvancedSearchFor
 }
 
 private val wrappedAdvancedSearchForm = FormComponent.create<FormComponentProps<Any>, AdvancedSearchFormState>(
-        jsObject { name = "advanced_search" })(AdvancedSearchForm::class.js)
+    jsObject { name = "advanced_search" })(AdvancedSearchForm::class.js)
 
 fun RBuilder.wrappedAdvancedSearchForm(handler: RHandler<FormComponentProps<Any>>) = child(wrappedAdvancedSearchForm, jsObject {}, handler)
 

@@ -1,11 +1,10 @@
 package samples.mention
 
-import antd.mention.mention
-import kotlinext.js.js
+import antd.mention.*
+import kotlinext.js.*
+import kotlinx.browser.*
 import react.*
-import kotlinx.browser.window
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private val users = arrayOf("afc163", "benjycui", "yiminghe", "jljsj33", "dqaria", "RaoHai")
 
@@ -15,13 +14,13 @@ interface AsyncMentionState : RState {
 }
 
 class AsyncMention : RComponent<RProps, AsyncMentionState>() {
-    private val fetchSuggestions = fun (value: String, callback: (suggestions: Array<Any>) -> Unit) {
+    private val fetchSuggestions = fun(value: String, callback: (suggestions: Array<Any>) -> Unit) {
         window.setTimeout({
             callback(users.filter { item -> item.contains(value) }.toTypedArray())
         }, 500)
     }
 
-    private val handleSearchChange = fun (value: String, _: String) {
+    private val handleSearchChange = fun(value: String, _: String) {
         fetchSuggestions(value) {
             setState {
                 suggestions = it

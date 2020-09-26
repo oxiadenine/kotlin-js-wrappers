@@ -1,10 +1,9 @@
 package samples.avatar
 
-import antd.avatar.avatar
+import antd.avatar.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 fun RBuilder.basic() {
     styledDiv {

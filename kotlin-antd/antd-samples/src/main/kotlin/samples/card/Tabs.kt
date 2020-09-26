@@ -1,25 +1,20 @@
 package samples.card
 
-import antd.card.card
-import kotlinext.js.js
-import kotlinext.js.jsObject
+import antd.card.*
+import kotlinext.js.*
 import react.*
-import react.dom.a
-import react.dom.br
-import react.dom.div
-import react.dom.p
-import styled.css
-import styled.styledDiv
+import react.dom.*
+import styled.*
 
 private val cardTabList = arrayOf(
-        js {
-            key = "tab1"
-            tab = "tab1"
-        },
-        js {
-            key = "tab2"
-            tab = "tab2"
-        }
+    js {
+        key = "tab1"
+        tab = "tab1"
+    },
+    js {
+        key = "tab2"
+        tab = "tab2"
+    }
 )
 
 private val contentList = js {
@@ -32,18 +27,18 @@ private val contentList = js {
 }
 
 private val cardTabListNoTitle = arrayOf(
-        js {
-            key = "article"
-            tab = "article"
-        },
-        js {
-            key = "app"
-            tab = "app"
-        },
-        js {
-            key = "project"
-            tab = "project"
-        }
+    js {
+        key = "article"
+        tab = "article"
+    },
+    js {
+        key = "app"
+        tab = "app"
+    },
+    js {
+        key = "project"
+        tab = "project"
+    }
 )
 
 private val contentListNoTitle = js {
@@ -64,7 +59,7 @@ interface TabsCardState : RState {
 }
 
 class TabsCard : RComponent<RProps, TabsCardState>() {
-    private val handleTabChange = fun (key: String, type: String) {
+    private val handleTabChange = fun(key: String, type: String) {
         console.log(key, type)
 
         val newState: dynamic = jsObject<TabsCardState> {}
@@ -87,7 +82,7 @@ class TabsCard : RComponent<RProps, TabsCardState>() {
                     title = "Card title"
                     extra = buildElement {
                         a {
-                            attrs.href ="#"
+                            attrs.href = "#"
                             +"More"
                         }
                     }

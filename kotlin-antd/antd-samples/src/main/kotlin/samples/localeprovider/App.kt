@@ -1,18 +1,10 @@
 package samples.localeprovider
 
-import kotlinx.css.BorderStyle
-import kotlinx.css.Color
-import kotlinx.css.margin
-import kotlinx.css.marginBottom
-import kotlinx.css.marginRight
-import kotlinx.css.paddingTop
-import kotlinx.css.properties.borderTop
-import kotlinx.css.px
+import kotlinx.css.*
+import kotlinx.css.properties.*
 import react.*
 import react.dom.*
-import styled.StyleSheet
-import styled.css
-import styled.styledDiv
+import styled.*
 
 object LocaleProviderStyles : StyleSheet("locale-provider", isStatic = true) {
     val container by css {}

@@ -3,7 +3,7 @@
 
 package antd.cascader
 
-import org.w3c.dom.HTMLElement
+import org.w3c.dom.*
 import react.*
 
 @JsName("default")

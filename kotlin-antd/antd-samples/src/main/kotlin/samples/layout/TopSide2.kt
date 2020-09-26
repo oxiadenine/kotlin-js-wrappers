@@ -1,18 +1,14 @@
 package samples.layout
 
-import antd.breadcrumb.breadcrumb
-import antd.breadcrumb.breadcrumbItem
-import antd.icon.icon
-import antd.layout.layout
+import antd.breadcrumb.*
+import antd.icon.*
+import antd.layout.*
 import antd.layout.header
-import antd.layout.content
-import antd.layout.sider
 import antd.menu.*
-import kotlinext.js.js
+import kotlinext.js.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 fun RBuilder.topSide2() {
     styledDiv {
@@ -116,7 +112,7 @@ fun RBuilder.topSide2() {
                                 +"option8"
                             }
                         }
-                       subMenu {
+                        subMenu {
                             attrs {
                                 key = "sub3"
                                 title = buildElement {
@@ -162,7 +158,7 @@ fun RBuilder.topSide2() {
                             margin = 0
                             minHeight = 280
                         }
-                        + "Content"
+                        +"Content"
                     }
                 }
             }

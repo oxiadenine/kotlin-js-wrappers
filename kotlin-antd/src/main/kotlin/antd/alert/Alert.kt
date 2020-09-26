@@ -3,12 +3,9 @@
 
 package antd.alert
 
-import antd.MouseEventHandler
-import org.w3c.dom.HTMLAnchorElement
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import antd.*
+import org.w3c.dom.*
+import react.*
 
 @JsName("default")
 external object AlertComponent : Component<AlertProps, AlertState> {

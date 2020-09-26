@@ -1,13 +1,11 @@
 package samples.collapse
 
-import antd.collapse.collapse
-import antd.collapse.collapsePanel
-import antd.icon.icon
-import kotlinext.js.js
-import react.RBuilder
-import react.dom.p
-import styled.css
-import styled.styledDiv
+import antd.collapse.*
+import antd.icon.*
+import kotlinext.js.*
+import react.*
+import react.dom.*
+import styled.*
 
 private val text = """
     A dog is a type of domesticated animal. 
@@ -30,7 +28,7 @@ fun RBuilder.custom() {
             attrs {
                 bordered = false
                 defaultActiveKey = arrayOf("1")
-                expandIcon = {panelProps ->
+                expandIcon = { panelProps ->
                     icon {
                         attrs {
                             type = "caret-right"

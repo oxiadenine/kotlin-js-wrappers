@@ -1,15 +1,12 @@
 package samples.dropdown
 
-import antd.dropdown.dropdown
-import antd.icon.icon
-import antd.menu.ClickParam
-import antd.menu.menu
-import antd.menu.menuItem
-import kotlinx.html.classes
+import antd.dropdown.*
+import antd.icon.*
+import antd.menu.*
+import kotlinx.html.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface OverlayVisibleAppState : RState {
     var visible: Boolean
@@ -24,7 +21,7 @@ class OverlayVisibleApp : RComponent<RProps, OverlayVisibleAppState>() {
         }
     }
 
-    private val handleVisibleChange = fun (visibleFlag: Boolean?) {
+    private val handleVisibleChange = fun(visibleFlag: Boolean?) {
         setState {
             visible = visibleFlag!!
         }

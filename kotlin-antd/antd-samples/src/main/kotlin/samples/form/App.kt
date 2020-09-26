@@ -1,41 +1,10 @@
 package samples.form
 
-import kotlinx.css.BorderStyle
-import kotlinx.css.Color
-import kotlinx.css.Cursor
-import kotlinx.css.Display
-import kotlinx.css.Float
-import kotlinx.css.LinearDimension
-import kotlinx.css.Position
-import kotlinx.css.TextAlign
-import kotlinx.css.background
-import kotlinx.css.backgroundColor
-import kotlinx.css.borderRadius
-import kotlinx.css.color
-import kotlinx.css.cursor
-import kotlinx.css.display
-import kotlinx.css.flex
-import kotlinx.css.float
-import kotlinx.css.fontSize
-import kotlinx.css.marginBottom
-import kotlinx.css.marginTop
-import kotlinx.css.maxWidth
-import kotlinx.css.minHeight
-import kotlinx.css.opacity
-import kotlinx.css.padding
-import kotlinx.css.paddingTop
-import kotlinx.css.position
-import kotlinx.css.properties.border
-import kotlinx.css.properties.s
-import kotlinx.css.properties.transition
-import kotlinx.css.px
-import kotlinx.css.textAlign
-import kotlinx.css.top
+import kotlinx.css.*
+import kotlinx.css.properties.*
 import react.*
 import react.dom.*
-import styled.StyleSheet
-import styled.css
-import styled.styledDiv
+import styled.*
 
 object FormStyles : StyleSheet("form", isStatic = true) {
     val container by css {}

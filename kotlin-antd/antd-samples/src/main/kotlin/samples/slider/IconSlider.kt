@@ -1,14 +1,12 @@
 package samples.slider
 
-import antd.icon.icon
-import antd.slider.SliderValue
-import antd.slider.slider
-import kotlinext.js.js
-import kotlinx.html.classes
+import antd.icon.*
+import antd.slider.*
+import kotlinext.js.*
+import kotlinx.html.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface IconSliderDemoProps : RProps {
     var min: Number

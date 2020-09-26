@@ -1,12 +1,11 @@
 package samples.avatar
 
-import antd.MouseEventHandler
-import antd.avatar.avatar
-import antd.button.button
-import kotlinext.js.js
+import antd.*
+import antd.avatar.*
+import antd.button.*
+import kotlinext.js.*
 import react.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private val userList = arrayOf("U", "Lucy", "Tom", "Edward")
 private val colorList = arrayOf("#f56a00", "#7265e6", "#ffbf00", "#00a2ae")
@@ -22,7 +21,7 @@ class Autoset : RComponent<RProps, AutosetState>() {
 
         setState {
             user = if (index < userList.size - 1) userList[index + 1] else userList[0]
-            color = if (index < colorList.size - 1)  colorList[index + 1] else colorList[0]
+            color = if (index < colorList.size - 1) colorList[index + 1] else colorList[0]
         }
     }
 

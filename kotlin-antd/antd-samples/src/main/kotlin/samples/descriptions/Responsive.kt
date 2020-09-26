@@ -1,13 +1,10 @@
 package samples.descriptions
 
-import antd.descriptions.ColumnBreakpoint
-import antd.descriptions.descriptions
-import antd.descriptions.descriptionsItem
-import kotlinext.js.jsObject
+import antd.descriptions.*
+import kotlinext.js.*
 import react.*
-import react.dom.br
-import styled.css
-import styled.styledDiv
+import react.dom.*
+import styled.*
 
 fun RBuilder.responsiveDemo() {
     descriptions {

@@ -3,8 +3,7 @@ package samples.datepicker
 import antd.datepicker.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 fun RBuilder.extraFooter() {
     styledDiv {

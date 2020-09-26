@@ -1,8 +1,7 @@
 package antd.input
 
-import kotlinext.js.jsObject
-import react.RBuilder
-import react.RHandler
+import kotlinext.js.*
+import react.*
 
 fun RBuilder.input(handler: RHandler<InputProps>) = child(InputComponent::class, handler)
 fun RBuilder.inputGroup(handler: RHandler<InputGroupProps>) = child(InputComponent.Group, jsObject {}, handler)

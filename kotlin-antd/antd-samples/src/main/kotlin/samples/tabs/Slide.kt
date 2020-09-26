@@ -1,15 +1,11 @@
 package samples.tabs
 
-import antd.radio.RadioChangeEvent
-import antd.radio.radioButton
-import antd.radio.radioGroup
-import antd.tabs.tabPane
-import antd.tabs.tabs
-import kotlinext.js.js
+import antd.radio.*
+import antd.tabs.*
+import kotlinext.js.*
 import react.*
-import react.dom.div
-import styled.css
-import styled.styledDiv
+import react.dom.*
+import styled.*
 
 interface SlidingTabsDemoState : RState {
     var mode: String

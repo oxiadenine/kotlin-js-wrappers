@@ -1,8 +1,7 @@
 package antd.table
 
-import kotlinext.js.jsObject
-import react.RBuilder
-import react.RHandler
+import kotlinext.js.*
+import react.*
 
 inline fun <T, reified TC : TableComponent<T>> RBuilder.table(noinline handler: RHandler<TableProps<T>>) = child(TC::class, handler)
 fun <T> RBuilder.column(handler: RHandler<ColumnProps<T>>) = child(TableComponent.Column, jsObject {}, handler)

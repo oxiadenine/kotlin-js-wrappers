@@ -1,11 +1,9 @@
 package samples.alert
 
-import antd.alert.alert
+import antd.alert.*
 import react.*
-import react.dom.div
-import react.dom.p
-import styled.css
-import styled.styledDiv
+import react.dom.*
+import styled.*
 
 interface SmoothClosedState : RState {
     var visible: Boolean

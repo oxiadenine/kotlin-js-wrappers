@@ -3,7 +3,7 @@
 
 package reactintl.list
 
-import reactintl.Part
+import reactintl.*
 
 external interface IntlListFormatOptions {
     var type: String? /* "conjunction" | "disjunction" | "unit" */

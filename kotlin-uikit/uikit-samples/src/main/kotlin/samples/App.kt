@@ -1,16 +1,14 @@
 package samples
 
-import kotlinext.js.js
+import kotlinext.js.*
 import kotlinx.css.*
-import kotlinx.html.classes
-import kotlinx.html.js.onClickFunction
+import kotlinx.html.*
+import kotlinx.html.js.*
 import react.*
 import react.dom.*
-import styled.StyleSheet
-import styled.css
-import styled.styledDiv
-import uikit.UIkit
-import uikit.components.NotificationEvents
+import styled.*
+import uikit.*
+import uikit.components.*
 
 object AppStyles : StyleSheet("app", isStatic = true) {
     val header by css {
@@ -42,12 +40,12 @@ class App : RComponent<RProps, RState>() {
                 div {
                     attrs.classes = setOf("uk-card", "uk-card-body", "uk-card-primary")
                     h3 {
-                        attrs.classes = setOf( "uk-card-title")
+                        attrs.classes = setOf("uk-card-title")
                         +"Hello World"
                     }
                     button {
                         attrs {
-                            classes = setOf( "uk-button", "uk-button-default", "uk-button-small")
+                            classes = setOf("uk-button", "uk-button-default", "uk-button-small")
                             onClickFunction = {
                                 val notification = UIkit.notification("Hello World!")
 

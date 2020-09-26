@@ -1,10 +1,9 @@
 package samples.typography
 
-import antd.typography.text
-import react.RBuilder
+import antd.typography.*
+import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 fun RBuilder.text() {
     styledDiv {

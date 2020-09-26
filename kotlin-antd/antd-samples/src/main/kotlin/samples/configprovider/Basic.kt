@@ -1,10 +1,9 @@
 package samples.configprovider
 
-import antd.button.button
-import antd.configprovider.configProvider
+import antd.button.*
+import antd.configprovider.*
 import react.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 fun RBuilder.basic() {
     styledDiv {

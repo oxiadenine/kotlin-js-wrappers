@@ -3,8 +3,8 @@
 
 package antd.message
 
-import org.w3c.dom.HTMLElement
-import react.ReactElement
+import org.w3c.dom.*
+import react.*
 import kotlin.js.Promise
 
 @JsName("default")

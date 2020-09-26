@@ -3,15 +3,11 @@
 
 package antd.popconfirm
 
-import antd.MouseEvent
-import antd.button.ButtonType
-import antd.button.NativeButtonProps
-import antd.tooltip.AbstractTooltipProps
-import org.w3c.dom.HTMLElement
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import antd.*
+import antd.button.*
+import antd.tooltip.*
+import org.w3c.dom.*
+import react.*
 
 @JsName("default")
 external object PopconfirmComponent : Component<PopconfirmProps, PopconfirmState> {

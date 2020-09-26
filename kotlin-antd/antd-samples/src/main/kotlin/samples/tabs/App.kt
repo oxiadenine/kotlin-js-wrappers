@@ -1,17 +1,9 @@
 package samples.tabs
 
-import kotlinx.css.Color
-import kotlinx.css.Overflow
-import kotlinx.css.background
-import kotlinx.css.borderColor
-import kotlinx.css.overflow
-import kotlinx.css.padding
-import kotlinx.css.px
+import kotlinx.css.*
 import react.*
 import react.dom.*
-import styled.StyleSheet
-import styled.css
-import styled.styledDiv
+import styled.*
 
 object TabsStyles : StyleSheet("tabs", isStatic = true) {
     val container by css {}

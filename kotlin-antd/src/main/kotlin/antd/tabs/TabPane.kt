@@ -1,9 +1,6 @@
 package antd.tabs
 
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 
 external object TabPaneComponent : Component<TabPaneProps, RState> {
     override fun render(): ReactElement?

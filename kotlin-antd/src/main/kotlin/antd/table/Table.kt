@@ -3,17 +3,13 @@
 
 package antd.table
 
-import antd.MouseEventHandler
-import antd.SyntheticEvent
-import antd.pagination.PaginationConfig
-import kotlinext.js.Object
-import org.w3c.dom.HTMLElement
-import org.w3c.dom.events.Event
+import antd.*
+import antd.pagination.*
+import kotlinext.js.*
+import org.w3c.dom.*
+import org.w3c.dom.events.*
 import org.w3c.dom.events.MouseEvent
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 
 @JsName("default")
 external class TableComponent<T> : Component<TableProps<T>, TableState<T>> {
@@ -167,7 +163,7 @@ external interface TableLocale {
     var sortTitle: String?
 }
 
-external fun flatArray(data:Array<Any> = definedExternally, childrenName: String = definedExternally): Array<Any>
+external fun flatArray(data: Array<Any> = definedExternally, childrenName: String = definedExternally): Array<Any>
 external fun <Node> treeMap(tree: Array<Node>, mapper: (node: Node, index: Number) -> Any, childrenName: String = definedExternally): Any
 external fun flatFilter(tree: Array<Any>, callback: Function<Any>): Any
 external fun normalizeColumns(elements: Any /* Array<Any> | Array<ReactElement> */): Array<Any>

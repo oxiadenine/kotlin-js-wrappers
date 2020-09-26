@@ -1,6 +1,5 @@
 package antd.pagination
 
-import react.RBuilder
-import react.RHandler
+import react.*
 
 fun RBuilder.pagination(handler: RHandler<PaginationProps>) = child(PaginationComponent::class, handler)

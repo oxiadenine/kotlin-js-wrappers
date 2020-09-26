@@ -1,25 +1,21 @@
 package samples.table
 
-import antd.divider.divider
+import antd.divider.*
+import antd.form.*
 import antd.form.form
-import antd.form.formItem
-import antd.icon.icon
-import antd.pagination.PaginationConfig
-import antd.radio.RadioChangeEvent
-import antd.radio.radioButton
-import antd.radio.radioGroup
-import antd.switch.switch
+import antd.icon.*
+import antd.pagination.*
+import antd.radio.*
+import antd.switch.*
 import antd.table.*
-import kotlinext.js.Object
-import kotlinext.js.jsObject
-import kotlinx.html.classes
+import kotlinext.js.*
+import kotlinx.html.*
 import react.*
 import react.dom.a
 import react.dom.div
 import react.dom.p
 import react.dom.span
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface DynamicSettingsTableDataItem {
     var key: String
@@ -30,66 +26,66 @@ interface DynamicSettingsTableDataItem {
 }
 
 private val tableColumns = arrayOf<ColumnProps<DynamicSettingsTableDataItem>>(
-        jsObject {
-            title = "Name"
-            dataIndex = "name"
-            key = "name"
-            width = 150
-            render = { text, _, _ ->
-                buildElement {
-                    a {
-                        attrs.href = "javascript:;"
-                        +text.unsafeCast<String>()
-                    }
-                }
-            }
-        },
-        jsObject {
-            title = "Age"
-            dataIndex = "age"
-            key = "age"
-            width = 70
-        },
-        jsObject {
-            title = "Address"
-            dataIndex = "address"
-            key = "address"
-        },
-        jsObject {
-            title = "Action"
-            key = "action"
-            width = 360
-            render = { _, record, _ ->
-                buildElement {
-                   span {
-                       a {
-                           attrs.href = "javascript:;"
-                           +"Action 一 ${record.name}"
-                       }
-                       divider {
-                           attrs.type = "vertical"
-                       }
-                       a {
-                           attrs.href = "javascript:;"
-                           +"Delete"
-                       }
-                       divider {
-                           attrs.type = "vertical"
-                       }
-                       a {
-                           attrs {
-                               href = "javascript:;"
-                               className = "ant-dropdown-link"
-                           }
-                           +"More actions "
-                           icon {
-                               attrs.type = "down"
-                           }
-                       }
-                   }
+    jsObject {
+        title = "Name"
+        dataIndex = "name"
+        key = "name"
+        width = 150
+        render = { text, _, _ ->
+            buildElement {
+                a {
+                    attrs.href = "javascript:;"
+                    +text.unsafeCast<String>()
                 }
             }
         }
+    },
+    jsObject {
+        title = "Age"
+        dataIndex = "age"
+        key = "age"
+        width = 70
+    },
+    jsObject {
+        title = "Address"
+        dataIndex = "address"
+        key = "address"
+    },
+    jsObject {
+        title = "Action"
+        key = "action"
+        width = 360
+        render = { _, record, _ ->
+            buildElement {
+                span {
+                    a {
+                        attrs.href = "javascript:;"
+                        +"Action 一 ${record.name}"
+                    }
+                    divider {
+                        attrs.type = "vertical"
+                    }
+                    a {
+                        attrs.href = "javascript:;"
+                        +"Delete"
+                    }
+                    divider {
+                        attrs.type = "vertical"
+                    }
+                    a {
+                        attrs {
+                            href = "javascript:;"
+                            className = "ant-dropdown-link"
+                        }
+                        +"More actions "
+                        icon {
+                            attrs.type = "down"
+                        }
+                    }
+                }
+            }
+        }
+    }
 )
 
 private val data = (0..100).map { i ->
@@ -128,7 +124,7 @@ interface DynamicSettingsDemoState : RState {
 }
 
 class DynamicSettingsDemo : RComponent<RProps, DynamicSettingsDemoState>() {
-    private val handleToggle = fun (prop: String, enable: Boolean) {
+    private val handleToggle = fun(prop: String, enable: Boolean) {
         val objState: dynamic = state
 
         objState[prop] = enable
@@ -136,55 +132,55 @@ class DynamicSettingsDemo : RComponent<RProps, DynamicSettingsDemoState>() {
         setState(objState.unsafeCast<DynamicSettingsDemoState>())
     }
 
-    private val handleSizeChange = fun (e: RadioChangeEvent) {
+    private val handleSizeChange = fun(e: RadioChangeEvent) {
         setState {
             size = e.target.value.unsafeCast<TableSize>()
         }
     }
 
-    private val handleExpandChange = fun (enable: Boolean) {
+    private val handleExpandChange = fun(enable: Boolean) {
         setState {
             expandedRowRender = if (enable) tableExpandedRowRender else undefined
         }
     }
 
-    private val handleTitleChange = fun (enable: Boolean) {
+    private val handleTitleChange = fun(enable: Boolean) {
         setState {
             title = if (enable) tableTitle else undefined
         }
     }
 
-    private val handleHeaderChange = fun (enable: Boolean) {
+    private val handleHeaderChange = fun(enable: Boolean) {
         setState {
             showHeader = if (enable) tableShowHeader else false
         }
     }
 
-    private val handleFooterChange = fun (enable: Boolean) {
+    private val handleFooterChange = fun(enable: Boolean) {
         setState {
             footer = if (enable) tableFooter else undefined
         }
     }
 
-    private val handleRowSelectionChange = fun (enable: Boolean) {
+    private val handleRowSelectionChange = fun(enable: Boolean) {
         setState {
             rowSelection = if (enable) jsObject {} else undefined
         }
     }
 
-    private val handleScrollChange = fun (enable: Boolean) {
+    private val handleScrollChange = fun(enable: Boolean) {
         setState {
             scroll = if (enable) tableScroll else undefined
         }
     }
 
-    private val handleDataChange = fun (enable: Boolean) {
+    private val handleDataChange = fun(enable: Boolean) {
         setState {
             hasData = enable
         }
     }
 
-    private val handlePaginationChange = fun (e: RadioChangeEvent) {
+    private val handlePaginationChange = fun(e: RadioChangeEvent) {
         val value = e.target.value.unsafeCast<String>()
 
         setState {
@@ -319,7 +315,8 @@ class DynamicSettingsDemo : RComponent<RProps, DynamicSettingsDemoState>() {
                         attrs.label = "Pagination"
                         radioGroup {
                             attrs {
-                                value = state.pagination?.unsafeCast<PaginationConfig>()!!.position ?: "none"
+                                value = state.pagination?.unsafeCast<PaginationConfig>()!!.position
+                                    ?: "none"
                                 onChange = handlePaginationChange
                             }
                             radioButton {

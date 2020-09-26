@@ -1,13 +1,11 @@
 package samples.icon
 
-import antd.icon.IconComponent
-import antd.icon.IconProps
-import kotlinext.js.jsObject
-import kotlinx.html.classes
+import antd.icon.*
+import kotlinext.js.*
+import kotlinx.html.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private val iconFontComponent = IconComponent.createFromIconfontCN(jsObject {
     scriptUrl = "//at.alicdn.com/t/font_8d5l8fzk5b87iudi.js"

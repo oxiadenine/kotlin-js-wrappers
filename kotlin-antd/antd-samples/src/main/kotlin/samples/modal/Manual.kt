@@ -1,13 +1,12 @@
 package samples.modal
 
-import antd.MouseEventHandler
-import antd.button.button
-import antd.modal.ModalComponent
-import kotlinext.js.jsObject
+import antd.*
+import antd.button.*
+import antd.modal.*
+import kotlinext.js.*
+import kotlinx.browser.*
 import react.*
-import kotlinx.browser.window
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private val countDown: MouseEventHandler<Any> = {
     var secondsToGo = 5
@@ -21,7 +20,7 @@ private val countDown: MouseEventHandler<Any> = {
         secondsToGo -= 1
 
         modal.update(jsObject {
-            content =  "This modal will be destroyed after $secondsToGo second"
+            content = "This modal will be destroyed after $secondsToGo second"
         })
     }, 1000)
 

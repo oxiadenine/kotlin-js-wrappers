@@ -1,21 +1,10 @@
 package samples.upload
 
-import kotlinx.css.Color
-import kotlinx.css.Float
-import kotlinx.css.color
-import kotlinx.css.float
-import kotlinx.css.fontSize
-import kotlinx.css.height
-import kotlinx.css.marginRight
-import kotlinx.css.marginTop
-import kotlinx.css.properties.animation
-import kotlinx.css.px
-import kotlinx.css.width
+import kotlinx.css.*
+import kotlinx.css.properties.*
 import react.*
 import react.dom.*
-import styled.StyleSheet
-import styled.css
-import styled.styledDiv
+import styled.*
 
 object UploadStyles : StyleSheet("upload", isStatic = true) {
     val container by css {}

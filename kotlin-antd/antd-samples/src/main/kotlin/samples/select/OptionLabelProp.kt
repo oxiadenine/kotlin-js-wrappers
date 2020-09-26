@@ -1,14 +1,12 @@
 package samples.select
 
-import antd.select.SelectComponent
+import antd.select.*
 import antd.select.option
-import antd.select.select
-import kotlinext.js.js
-import kotlinx.html.role
+import kotlinext.js.*
+import kotlinx.html.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private fun handleChange(value: Array<String>, option: Any) {
     console.log("selected $value")

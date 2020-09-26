@@ -1,6 +1,5 @@
 package antd.calendar
 
-import react.RBuilder
-import react.RHandler
+import react.*
 
 fun RBuilder.calendar(handler: RHandler<CalendarProps>) = child(CalendarComponent::class, handler)

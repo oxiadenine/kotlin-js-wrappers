@@ -1,40 +1,10 @@
 package samples.pageheader
 
-import kotlinx.css.BorderStyle
-import kotlinx.css.Display
-import kotlinx.css.FlexBasis
-import kotlinx.css.LinearDimension
-import kotlinx.css.Position
-import kotlinx.css.QuotedString
-import kotlinx.css.TextAlign
-import kotlinx.css.VerticalAlign
-import kotlinx.css.WhiteSpace
-import kotlinx.css.content
-import kotlinx.css.display
-import kotlinx.css.flex
-import kotlinx.css.lineHeight
-import kotlinx.css.margin
-import kotlinx.css.marginBottom
-import kotlinx.css.marginRight
-import kotlinx.css.minWidth
-import kotlinx.css.paddingBottom
-import kotlinx.css.paddingLeft
-import kotlinx.css.paddingTop
-import kotlinx.css.position
-import kotlinx.css.properties.LineHeight
-import kotlinx.css.properties.border
-import kotlinx.css.px
-import kotlinx.css.rgb
-import kotlinx.css.textAlign
-import kotlinx.css.top
-import kotlinx.css.verticalAlign
-import kotlinx.css.whiteSpace
-import kotlinx.css.width
+import kotlinx.css.*
+import kotlinx.css.properties.*
 import react.*
 import react.dom.*
-import styled.StyleSheet
-import styled.css
-import styled.styledDiv
+import styled.*
 
 object PageHeaderStyles : StyleSheet("page-header", isStatic = true) {
     val container by css {

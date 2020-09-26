@@ -1,19 +1,17 @@
 package samples.form
 
-import antd.FormEventHandler
+import antd.*
 import antd.button.button
-import antd.checkbox.checkbox
+import antd.checkbox.*
 import antd.form.*
-import antd.icon.icon
+import antd.icon.*
 import antd.input.input
-import kotlinext.js.js
-import kotlinext.js.jsObject
-import kotlinx.html.classes
-import org.w3c.dom.HTMLElement
+import kotlinext.js.*
+import kotlinx.html.*
+import org.w3c.dom.*
 import react.*
 import react.dom.a
-import styled.css
-import styled.styledDiv
+import styled.*
 
 class NormalLoginForm : RComponent<FormComponentProps<Any>, RState>() {
     private val handleSubmit: FormEventHandler<HTMLElement> = { e ->
@@ -110,7 +108,7 @@ class NormalLoginForm : RComponent<FormComponentProps<Any>, RState>() {
 }
 
 private val wrappedNormalLoginForm = FormComponent.create<FormComponentProps<Any>, RState>(
-        jsObject { name = "normal_login" })(NormalLoginForm::class.js)
+    jsObject { name = "normal_login" })(NormalLoginForm::class.js)
 
 fun RBuilder.wrappedNormalLoginForm(handler: RHandler<FormComponentProps<Any>>) = child(wrappedNormalLoginForm, jsObject {}, handler)
 

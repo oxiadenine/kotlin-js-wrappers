@@ -1,18 +1,15 @@
 package samples.layout
 
-import antd.MouseEventHandler
-import antd.icon.icon
-import antd.layout.layout
+import antd.*
+import antd.icon.*
+import antd.layout.*
 import antd.layout.header
-import antd.layout.content
-import antd.layout.sider
 import antd.menu.*
-import kotlinext.js.js
-import org.w3c.dom.HTMLElement
+import kotlinext.js.*
+import org.w3c.dom.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface CustomTriggerDemoState : RState {
     var collapsed: Boolean

@@ -1,9 +1,6 @@
 package antd.carousel
 
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 
 external object SliderComponent : Component<SlideProps, RState> {
     fun slickNext()
@@ -63,7 +60,7 @@ external interface Settings {
     var swipeToSlide: Boolean?
     var swipe: Boolean?
     var swipeEvent: ((swipeDirection: SwipeDirection) -> Unit)?
-    var touchMove:Boolean?
+    var touchMove: Boolean?
     var touchThreshold: Number?
     var useCSS: Boolean?
     var useTransform: Boolean?

@@ -1,9 +1,8 @@
 package samples.radio
 
-import antd.radio.radio
+import antd.radio.*
 import react.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 fun RBuilder.basic() {
     styledDiv {

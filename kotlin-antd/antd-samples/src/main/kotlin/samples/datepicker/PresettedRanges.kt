@@ -1,12 +1,11 @@
 package samples.datepicker
 
 import antd.datepicker.*
-import kotlinext.js.jsObject
+import kotlinext.js.*
 import moment.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 class Range(val today: Array<Moment>, val thisMonth: Array<Moment>)
 

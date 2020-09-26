@@ -1,7 +1,7 @@
 package antd.steps
 
-import antd.MouseEventHandler
-import org.w3c.dom.HTMLElement
+import antd.*
+import org.w3c.dom.*
 import react.*
 
 external object StepComponent : Component<StepProps, RState> {

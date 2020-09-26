@@ -1,15 +1,11 @@
 package samples.carousel
 
-import antd.carousel.carousel
-import antd.radio.RadioChangeEvent
-import antd.radio.radioButton
-import antd.radio.radioGroup
-import kotlinext.js.js
+import antd.carousel.*
+import antd.radio.*
+import kotlinext.js.*
 import react.*
-import react.dom.div
-import react.dom.h3
-import styled.css
-import styled.styledDiv
+import react.dom.*
+import styled.*
 
 interface PositionCarouselDemoState : RState {
     var dotPosition: String

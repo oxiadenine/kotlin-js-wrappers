@@ -1,22 +1,20 @@
 package samples.spin
 
-import antd.alert.alert
-import antd.spin.spin
-import antd.switch.switch
-import kotlinext.js.js
-import org.w3c.dom.events.MouseEvent
+import antd.alert.*
+import antd.spin.*
+import antd.switch.*
+import kotlinext.js.*
+import org.w3c.dom.events.*
 import react.*
-import react.dom.div
-import react.dom.jsStyle
-import styled.css
-import styled.styledDiv
+import react.dom.*
+import styled.*
 
 interface DelayAndDebounceCardState : RState {
     var loading: Boolean
 }
 
 class DelayAndDebounceCard : RComponent<RProps, DelayAndDebounceCardState>() {
-    private val toggle = fun (value: Boolean, _: MouseEvent) {
+    private val toggle = fun(value: Boolean, _: MouseEvent) {
         setState {
             loading = value
         }

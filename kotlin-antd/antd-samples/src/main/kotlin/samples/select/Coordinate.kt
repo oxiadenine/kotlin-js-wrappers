@@ -1,18 +1,16 @@
 package samples.select
 
-import antd.select.SelectComponent
+import antd.select.*
 import antd.select.option
-import antd.select.select
-import kotlinext.js.js
+import kotlinext.js.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private val provinceData = arrayOf("Zhejiang", "Jiangsu")
 private val cityData = mapOf(
-        Pair("Zhejiang", arrayOf("Hangzhou", "Ningbo", "Wenzhou")),
-        Pair("Jiangsu", arrayOf("Nanjing", "Suzhou", "Zhenjiang"))
+    Pair("Zhejiang", arrayOf("Hangzhou", "Ningbo", "Wenzhou")),
+    Pair("Jiangsu", arrayOf("Nanjing", "Suzhou", "Zhenjiang"))
 )
 
 interface CoordinateAppState : RState {
@@ -21,14 +19,14 @@ interface CoordinateAppState : RState {
 }
 
 class CoordinateApp : RComponent<RProps, CoordinateAppState>() {
-    private val handleProvinceChange = fun (value: String, _: Any) {
+    private val handleProvinceChange = fun(value: String, _: Any) {
         setState {
             cities = cityData[value] ?: error("")
             secondCity = (cityData[value] ?: error(""))[0]
         }
     }
 
-    private val handleSecondCityChange = fun (value: String, _: Any) {
+    private val handleSecondCityChange = fun(value: String, _: Any) {
         setState {
             secondCity = value
         }

@@ -1,6 +1,6 @@
 package antd.form
 
-import react.Component
+import react.*
 
 typealias ComponentDecorator<P, S> = (component: Any /*JsClass<Component<P, S>> */) -> JsClass<Component<P /* RcBaseFormProps, Omit<P, FormComponentProps> */, S>>
 

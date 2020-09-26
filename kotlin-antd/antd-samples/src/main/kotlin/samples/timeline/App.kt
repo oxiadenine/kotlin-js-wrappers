@@ -2,9 +2,7 @@ package samples.timeline
 
 import react.*
 import react.dom.*
-import styled.StyleSheet
-import styled.css
-import styled.styledDiv
+import styled.*
 
 object TimelineStyles : StyleSheet("timeline", isStatic = true) {
     val container by css {}

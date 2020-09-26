@@ -1,7 +1,7 @@
 package antd.layout
 
-import antd.HTMLAttributes
-import org.w3c.dom.HTMLDivElement
+import antd.*
+import org.w3c.dom.*
 import react.*
 
 external object SiderComponent : Component<SiderProps, SiderState> {

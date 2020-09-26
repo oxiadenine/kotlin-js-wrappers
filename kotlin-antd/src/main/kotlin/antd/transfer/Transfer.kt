@@ -3,16 +3,11 @@
 
 package antd.transfer
 
-import antd.ChangeEventHandler
-import antd.SyntheticEvent
-import kotlinext.js.Object
-import org.w3c.dom.HTMLDivElement
-import org.w3c.dom.HTMLInputElement
-import org.w3c.dom.events.Event
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import antd.*
+import kotlinext.js.*
+import org.w3c.dom.*
+import org.w3c.dom.events.*
+import react.*
 
 @JsName("default")
 external object TransferComponent : Component<TransferProps, RState> {
@@ -38,7 +33,7 @@ external interface TransferProps : RProps {
     var operationStyle: dynamic
     var titles: Array<String>?
     var operations: Array<String>?
-    var showSearch:  Boolean?
+    var showSearch: Boolean?
     var filterOption: ((inputValue: String, item: TransferItem) -> Boolean)?
     var searchPlaceholder: String?
     var notFoundContent: Any? /* String | ReactElement */

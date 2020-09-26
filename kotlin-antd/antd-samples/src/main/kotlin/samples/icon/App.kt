@@ -1,13 +1,9 @@
 package samples.icon
 
-import kotlinx.css.fontSize
-import kotlinx.css.marginRight
-import kotlinx.css.px
+import kotlinx.css.*
 import react.*
 import react.dom.*
-import styled.StyleSheet
-import styled.css
-import styled.styledDiv
+import styled.*
 
 object IconStyles : StyleSheet("icon", isStatic = true) {
     val container by css {

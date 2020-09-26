@@ -1,24 +1,22 @@
 package samples.card
 
-import antd.avatar.avatar
-import antd.card.card
-import antd.card.cardMeta
-import antd.icon.icon
-import antd.skeleton.skeleton
-import antd.switch.switch
-import kotlinext.js.js
-import org.w3c.dom.events.MouseEvent
+import antd.avatar.*
+import antd.card.*
+import antd.icon.*
+import antd.skeleton.*
+import antd.switch.*
+import kotlinext.js.*
+import org.w3c.dom.events.*
 import react.*
-import react.dom.div
-import styled.css
-import styled.styledDiv
+import react.dom.*
+import styled.*
 
 interface LoadingAppState : RState {
     var loading: Boolean
 }
 
 class LoadingApp : RComponent<RProps, LoadingAppState>() {
-    private val handleChange = fun (checked: Boolean, _: MouseEvent) {
+    private val handleChange = fun(checked: Boolean, _: MouseEvent) {
         setState {
             loading = !checked
         }
@@ -63,21 +61,21 @@ class LoadingApp : RComponent<RProps, LoadingAppState>() {
                         marginTop = 16
                     }
                     actions = arrayOf(
-                            buildElement {
-                               icon {
-                                   attrs.type = "setting"
-                               }
-                            },
-                            buildElement {
-                                icon {
-                                    attrs.type = "edit"
-                                }
-                            },
-                            buildElement {
-                                icon {
-                                    attrs.type = "ellipsis"
-                                }
+                        buildElement {
+                            icon {
+                                attrs.type = "setting"
                             }
+                        },
+                        buildElement {
+                            icon {
+                                attrs.type = "edit"
+                            }
+                        },
+                        buildElement {
+                            icon {
+                                attrs.type = "ellipsis"
+                            }
+                        }
                     )
                 }
                 skeleton {

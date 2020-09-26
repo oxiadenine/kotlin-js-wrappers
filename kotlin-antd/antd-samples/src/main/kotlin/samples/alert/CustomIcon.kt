@@ -1,12 +1,10 @@
 package samples.alert
 
-import antd.alert.alert
-import antd.icon.icon
-import react.RBuilder
-import react.buildElement
-import react.dom.div
-import styled.css
-import styled.styledDiv
+import antd.alert.*
+import antd.icon.*
+import react.*
+import react.dom.*
+import styled.*
 
 private val smileIcon = buildElement {
     icon {

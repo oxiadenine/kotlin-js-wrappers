@@ -1,10 +1,9 @@
 package samples
 
 import kotlinext.js.*
-import kotlinx.browser.document
-import react.dom.render
-import uikit.Icons
-import uikit.UIkit
+import kotlinx.browser.*
+import react.dom.*
+import uikit.*
 
 fun main() {
     require("uikit/dist/css/uikit.css")

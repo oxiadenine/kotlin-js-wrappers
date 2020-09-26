@@ -1,12 +1,10 @@
 package samples.autocomplete
 
-import antd.autocomplete.DataSourceItemType
-import antd.autocomplete.autoComplete
-import antd.select.SelectFilterOption
-import kotlinext.js.js
+import antd.autocomplete.*
+import antd.select.*
+import kotlinext.js.*
 import react.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private val datasource = arrayOf("Burns Bay Road", "Downing Street", "Wall Street")
 

@@ -1,22 +1,20 @@
 package samples.slider
 
+import antd.grid.*
 import antd.grid.col
-import antd.grid.row
-import antd.inputnumber.inputNumber
-import antd.slider.SliderValue
-import antd.slider.slider
-import kotlinext.js.js
+import antd.inputnumber.*
+import antd.slider.*
+import kotlinext.js.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface IntegerStepState : RState {
     var inputValue: SliderValue
 }
 
 class IntegerStep : RComponent<RProps, IntegerStepState>() {
-    private val handleChange = fun (value: SliderValue) {
+    private val handleChange = fun(value: SliderValue) {
         setState {
             inputValue = value
         }
@@ -63,7 +61,7 @@ interface DecimalStepState : RState {
 }
 
 class DecimalStep : RComponent<RProps, DecimalStepState>() {
-    private val handleChange = fun (value: SliderValue) {
+    private val handleChange = fun(value: SliderValue) {
         if (value.unsafeCast<Double>().isNaN()) {
             return
         }

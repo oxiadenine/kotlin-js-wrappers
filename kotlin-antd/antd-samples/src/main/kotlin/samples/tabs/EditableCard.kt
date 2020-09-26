@@ -1,12 +1,9 @@
 package samples.tabs
 
-import antd.tabs.TabsEditAction
-import antd.tabs.tabPane
-import antd.tabs.tabs
-import kotlinext.js.js
+import antd.tabs.*
+import kotlinext.js.*
 import react.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface EditableCardDemoState : RState {
     var activeKey: String
@@ -74,22 +71,22 @@ class EditableCardDemo : RComponent<RProps, EditableCardDemoState>() {
 
     override fun EditableCardDemoState.init() {
         panes = arrayOf(
-                js {
-                    title = "Tab 1"
-                    content = "Content of Tab 1"
-                    key = "1"
-                },
-                js {
-                    title = "Tab 2"
-                    content = "Content of Tab 2"
-                    key = "2"
-                },
-                js {
-                    title = "Tab 3"
-                    content = "Content of Tab 3"
-                    key = "3"
-                    closable = false
-                }
+            js {
+                title = "Tab 1"
+                content = "Content of Tab 1"
+                key = "1"
+            },
+            js {
+                title = "Tab 2"
+                content = "Content of Tab 2"
+                key = "2"
+            },
+            js {
+                title = "Tab 3"
+                content = "Content of Tab 3"
+                key = "3"
+                closable = false
+            }
         ).unsafeCast<Array<Any>>()
         activeKey = panes[0].asDynamic().key.unsafeCast<String>()
     }

@@ -1,18 +1,15 @@
 package samples.transfer
 
-import antd.SyntheticEvent
-import antd.switch.switch
-import antd.transfer.TransferDirection
-import antd.transfer.TransferItem
-import antd.transfer.transfer
-import kotlinext.js.jsObject
-import org.w3c.dom.HTMLDivElement
-import org.w3c.dom.events.Event
+import antd.*
+import antd.switch.*
+import antd.transfer.*
+import kotlinext.js.*
+import org.w3c.dom.*
+import org.w3c.dom.events.*
 import org.w3c.dom.events.MouseEvent
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private val mockData = (0..19).map { i ->
     jsObject<TransferItem> {
@@ -24,9 +21,9 @@ private val mockData = (0..19).map { i ->
 }.toTypedArray()
 
 private val oriTargetKeys = mockData
-        .filter { item -> item.key.toInt() % 3 > 1 }
-        .map { item -> item.key }
-        .toTypedArray()
+    .filter { item -> item.key.toInt() % 3 > 1 }
+    .map { item -> item.key }
+    .toTypedArray()
 
 interface BasicAppState : RState {
     var targetKeys: Array<String>
@@ -35,7 +32,7 @@ interface BasicAppState : RState {
 }
 
 class BasicApp : RComponent<RProps, BasicAppState>() {
-    private val handleChange = fun (nextTargetKeys: Array<String>, direction: String, moveKeys: Any) {
+    private val handleChange = fun(nextTargetKeys: Array<String>, direction: String, moveKeys: Any) {
         setState {
             targetKeys = nextTargetKeys
         }
@@ -45,7 +42,7 @@ class BasicApp : RComponent<RProps, BasicAppState>() {
         console.log("moveKeys: ", moveKeys)
     }
 
-    private val handleSelectChange = fun (sourceSelectedKeys: Array<String>, targetSelectedKeys: Array<String>) {
+    private val handleSelectChange = fun(sourceSelectedKeys: Array<String>, targetSelectedKeys: Array<String>) {
         setState {
             selectedKeys = sourceSelectedKeys + targetSelectedKeys
         }
@@ -54,12 +51,12 @@ class BasicApp : RComponent<RProps, BasicAppState>() {
         console.log("targetSelectedKeys: ", targetSelectedKeys)
     }
 
-    private val handleScroll = fun (direction: TransferDirection, event: SyntheticEvent<HTMLDivElement, Event>) {
+    private val handleScroll = fun(direction: TransferDirection, event: SyntheticEvent<HTMLDivElement, Event>) {
         console.log("direction:", direction)
         console.log("target:", event.target)
     }
 
-    private val handleDisable = fun (checked: Boolean, _: MouseEvent) {
+    private val handleDisable = fun(checked: Boolean, _: MouseEvent) {
         setState {
             disabled = checked
         }

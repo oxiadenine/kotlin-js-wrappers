@@ -1,6 +1,5 @@
 package antd.carousel
 
-import react.RBuilder
-import react.RHandler
+import react.*
 
 fun RBuilder.carousel(handler: RHandler<CarouselProps>) = child(CarouselComponent::class, handler)

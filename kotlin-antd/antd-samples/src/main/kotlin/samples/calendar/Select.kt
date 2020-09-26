@@ -1,14 +1,11 @@
 package samples.calendar
 
-import antd.alert.alert
-import antd.calendar.CalendarMode
-import antd.calendar.calendar
-import moment.Moment
-import moment.moment
+import antd.alert.*
+import antd.calendar.*
+import moment.*
 import react.*
-import react.dom.div
-import styled.css
-import styled.styledDiv
+import react.dom.*
+import styled.*
 
 interface SelectAppState : RState {
     var value: Moment
@@ -16,14 +13,14 @@ interface SelectAppState : RState {
 }
 
 class SelectApp : RComponent<RProps, SelectAppState>() {
-    private val handleSelect = fun (date: Moment?) {
+    private val handleSelect = fun(date: Moment?) {
         setState {
             value = date!!
             selectedValue = date
         }
     }
 
-    private val handlePanelChange = fun (date: Moment?, _: CalendarMode?) {
+    private val handlePanelChange = fun(date: Moment?, _: CalendarMode?) {
         setState {
             value = date!!
         }

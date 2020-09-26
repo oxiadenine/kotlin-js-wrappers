@@ -1,35 +1,33 @@
 package samples.treeselect
 
 import antd.treeselect.*
-import kotlinext.js.js
-import kotlinext.js.jsObject
+import kotlinext.js.*
 import react.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private val data: Array<TreeNodeNormal> = arrayOf(
-        jsObject {
-            title = "Node1"
-            value = "0-0"
-            key = "0-0"
-            children = arrayOf(
-                    jsObject {
-                        title = "Child Node1"
-                        value = "0-0-1"
-                        key = "0-0-1"
-                    },
-                    jsObject {
-                        title = "Child Node1"
-                        value = "0-0-2"
-                        key = "0-0-2"
-                    }
-            )
-        },
-        jsObject {
-            title = "Node2"
-            value = "0-1"
-            key = "0-1"
-        }
+    jsObject {
+        title = "Node1"
+        value = "0-0"
+        key = "0-0"
+        children = arrayOf(
+            jsObject {
+                title = "Child Node1"
+                value = "0-0-1"
+                key = "0-0-1"
+            },
+            jsObject {
+                title = "Child Node1"
+                value = "0-0-2"
+                key = "0-0-2"
+            }
+        )
+    },
+    jsObject {
+        title = "Node2"
+        value = "0-1"
+        key = "0-1"
+    }
 )
 
 interface TreeDataDemoState : RState {
@@ -37,7 +35,7 @@ interface TreeDataDemoState : RState {
 }
 
 class TreeDataDemo : RComponent<RProps, TreeDataDemoState>() {
-    private val handleChange = fun (newValue: String, _: Any, _: Any) {
+    private val handleChange = fun(newValue: String, _: Any, _: Any) {
         console.log(newValue)
 
         setState {

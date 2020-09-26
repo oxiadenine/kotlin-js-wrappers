@@ -1,13 +1,12 @@
 package samples.datepicker
 
 import antd.datepicker.*
-import antd.timepicker.TimePickerProps
-import kotlinext.js.jsObject
+import antd.timepicker.*
+import kotlinext.js.*
 import moment.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private fun range(start: Number, end: Number): Array<Number> {
     return (start.toInt()..end.toInt()).toList().toTypedArray()
@@ -74,8 +73,8 @@ fun RBuilder.disabledDate() {
                     showTime = jsObject<TimePickerProps> {
                         hideDisabledOptions = true
                         defaultValue = arrayOf(
-                                moment("00:00:00", "HH:mm:ss"),
-                                moment("11:59:59", "HH:mm:ss")
+                            moment("00:00:00", "HH:mm:ss"),
+                            moment("11:59:59", "HH:mm:ss")
                         )
                     }
                     format = "YYYY-MM-DD HH:mm:ss"

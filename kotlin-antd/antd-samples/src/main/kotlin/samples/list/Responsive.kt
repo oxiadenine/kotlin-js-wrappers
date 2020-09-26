@@ -1,37 +1,34 @@
 package samples.list
 
-import antd.card.card
-import antd.list.ListComponent
-import antd.list.list
-import antd.list.listItem
-import kotlinext.js.jsObject
-import react.RBuilder
-import styled.css
-import styled.styledDiv
+import antd.card.*
+import antd.list.*
+import kotlinext.js.*
+import react.*
+import styled.*
 
 private interface ResponsiveListDataItem {
     var title: String
 }
 
 private val data = arrayOf<ResponsiveListDataItem>(
-        jsObject {
-            title = "Title 1"
-        },
-        jsObject {
-            title = "Title 2"
-        },
-        jsObject {
-            title = "Title 3"
-        },
-        jsObject {
-            title = "Title 4"
-        },
-        jsObject {
-            title = "Title 5"
-        },
-        jsObject {
-            title = "Title 6"
-        }
+    jsObject {
+        title = "Title 1"
+    },
+    jsObject {
+        title = "Title 2"
+    },
+    jsObject {
+        title = "Title 3"
+    },
+    jsObject {
+        title = "Title 4"
+    },
+    jsObject {
+        title = "Title 5"
+    },
+    jsObject {
+        title = "Title 6"
+    }
 )
 
 fun RBuilder.responsive() {

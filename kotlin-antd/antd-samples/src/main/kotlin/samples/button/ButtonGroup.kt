@@ -1,12 +1,11 @@
 package samples.button
 
+import antd.button.*
 import antd.button.button
-import antd.button.buttonGroup
-import antd.icon.icon
+import antd.icon.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 fun RBuilder.buttonGroup() {
     styledDiv {

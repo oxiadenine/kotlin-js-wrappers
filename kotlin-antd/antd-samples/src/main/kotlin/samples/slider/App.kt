@@ -1,26 +1,10 @@
 package samples.slider
 
-import kotlinx.css.Position
-import kotlinx.css.color
-import kotlinx.css.fontSize
-import kotlinx.css.height
-import kotlinx.css.left
-import kotlinx.css.lineHeight
-import kotlinx.css.margin
-import kotlinx.css.marginBottom
-import kotlinx.css.padding
-import kotlinx.css.position
-import kotlinx.css.properties.LineHeight
-import kotlinx.css.px
-import kotlinx.css.rgba
-import kotlinx.css.right
-import kotlinx.css.top
-import kotlinx.css.width
+import kotlinx.css.*
+import kotlinx.css.properties.*
 import react.*
 import react.dom.*
-import styled.StyleSheet
-import styled.css
-import styled.styledDiv
+import styled.*
 
 object SliderStyles : StyleSheet("slider", isStatic = true) {
     val container by css {}

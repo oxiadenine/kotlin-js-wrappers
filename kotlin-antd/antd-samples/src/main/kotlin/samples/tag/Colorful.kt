@@ -1,13 +1,10 @@
 package samples.tag
 
-import antd.tag.tag
-import kotlinext.js.js
-import react.RBuilder
-import react.dom.div
-import react.dom.h4
-import react.dom.jsStyle
-import styled.css
-import styled.styledDiv
+import antd.tag.*
+import kotlinext.js.*
+import react.*
+import react.dom.*
+import styled.*
 
 fun RBuilder.colorful() {
     styledDiv {

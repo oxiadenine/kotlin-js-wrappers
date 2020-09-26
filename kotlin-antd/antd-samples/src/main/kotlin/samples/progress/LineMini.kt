@@ -1,12 +1,11 @@
 package samples.progress
 
 import antd.progress.progress
-import kotlinext.js.js
-import react.RBuilder
+import kotlinext.js.*
+import react.*
 import react.dom.div
 import react.dom.jsStyle
-import styled.css
-import styled.styledDiv
+import styled.*
 
 fun RBuilder.lineMini() {
     styledDiv {

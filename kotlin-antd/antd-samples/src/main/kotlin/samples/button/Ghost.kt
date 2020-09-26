@@ -1,11 +1,10 @@
 package samples.button
 
 import antd.button.button
-import kotlinext.js.js
+import kotlinext.js.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 fun RBuilder.ghost() {
     styledDiv {

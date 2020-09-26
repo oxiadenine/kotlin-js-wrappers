@@ -1,21 +1,10 @@
 package samples.steps
 
-import kotlinx.css.BorderStyle
-import kotlinx.css.Color
-import kotlinx.css.TextAlign
-import kotlinx.css.backgroundColor
-import kotlinx.css.borderRadius
-import kotlinx.css.marginTop
-import kotlinx.css.minHeight
-import kotlinx.css.paddingTop
-import kotlinx.css.properties.border
-import kotlinx.css.px
-import kotlinx.css.textAlign
+import kotlinx.css.*
+import kotlinx.css.properties.*
 import react.*
 import react.dom.*
-import styled.StyleSheet
-import styled.css
-import styled.styledDiv
+import styled.*
 
 object StepsStyles : StyleSheet("steps", isStatic = true) {
     val container by css {}

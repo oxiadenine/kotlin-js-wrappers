@@ -1,6 +1,6 @@
 package antd.upload
 
-import kotlin.js.Promise
+import kotlin.js.*
 
 typealias UploadFileStatus = String /* "error" | "success" | "done" | "uploading" | "removed" */
 typealias UploadType = String /* "drag" | "select" */

@@ -1,16 +1,15 @@
 package samples.dropdown
 
-import antd.dropdown.dropdown
-import antd.icon.icon
+import antd.dropdown.*
+import antd.icon.*
 import antd.menu.*
-import antd.message.message
-import kotlinx.html.classes
+import antd.message.*
+import kotlinx.html.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
-private val handleClick = fun (param: ClickParam) {
+private val handleClick = fun(param: ClickParam) {
     message.info("Click on item ${param.key}")
 }
 

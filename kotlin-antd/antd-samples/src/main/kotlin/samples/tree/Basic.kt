@@ -1,22 +1,17 @@
 package samples.tree
 
-import antd.tree.TreeNodeCheckedEvent
-import antd.tree.TreeNodeSelectedEvent
-import antd.tree.tree
-import antd.tree.treeNode
-import kotlinext.js.js
+import antd.tree.*
+import kotlinext.js.*
 import react.*
-import react.dom.jsStyle
-import react.dom.span
-import styled.css
-import styled.styledDiv
+import react.dom.*
+import styled.*
 
 class BasicDemo : RComponent<RProps, RState>() {
-    private val handleSelect = fun (selectedKeys: Array<String>, info: TreeNodeSelectedEvent) {
+    private val handleSelect = fun(selectedKeys: Array<String>, info: TreeNodeSelectedEvent) {
         console.log("selected", selectedKeys, info)
     }
 
-    private val handleCheck = fun (checkedKeys: Any, info: TreeNodeCheckedEvent) {
+    private val handleCheck = fun(checkedKeys: Any, info: TreeNodeCheckedEvent) {
         console.log("onCheck", checkedKeys, info)
     }
 

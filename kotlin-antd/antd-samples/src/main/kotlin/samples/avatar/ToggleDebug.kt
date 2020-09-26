@@ -1,13 +1,12 @@
 package samples.avatar
 
-import antd.MouseEventHandler
-import antd.avatar.avatar
+import antd.*
+import antd.avatar.*
 import antd.button.button
-import kotlinext.js.js
+import kotlinext.js.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface ToggleDebugAppState : RState {
     var hide: Boolean

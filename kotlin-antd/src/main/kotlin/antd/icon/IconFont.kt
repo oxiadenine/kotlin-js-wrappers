@@ -3,8 +3,7 @@
 
 package antd.icon
 
-import react.Component
-import react.RState
+import react.*
 
 external interface CustomIconOptions {
     var scriptUrl: String

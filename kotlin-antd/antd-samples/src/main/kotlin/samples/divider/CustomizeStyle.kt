@@ -1,11 +1,10 @@
 package samples.divider
 
-import antd.divider.divider
-import kotlinext.js.js
-import react.RBuilder
-import react.dom.div
-import styled.css
-import styled.styledDiv
+import antd.divider.*
+import kotlinext.js.*
+import react.*
+import react.dom.*
+import styled.*
 
 fun RBuilder.customizeStyle() {
     styledDiv {

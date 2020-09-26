@@ -1,13 +1,12 @@
 package samples.advanced
 
-import kotlinext.js.js
-import kotlinext.js.require
+import kotlinext.js.*
 import react.*
 import react.dom.*
-import reactintl.message.formattedMessage
-import reactintl.provider.intlProvider
+import reactintl.message.*
+import reactintl.provider.*
 import kotlin.js.Date
-import kotlin.random.Random
+import kotlin.random.*
 
 private fun loadLocaleData(locale: String): Any {
     val advancedDir = "../../../../../kotlin-react-intl/react-intl-samples/src/main/kotlin/samples/advanced"
@@ -33,7 +32,7 @@ private val app = functionalComponent<AdvancedProps> { props ->
         }
         p {
             span {
-                attrs.jsStyle = js {fontSize = "30px"}
+                attrs.jsStyle = js { fontSize = "30px" }
                 +"AST"
             }
             br {}
@@ -128,7 +127,7 @@ private val app = functionalComponent<AdvancedProps> { props ->
                     id = "richtext"
                     values = js {
                         num = 99
-                        bold = fun (chunks: String): ReactElement {
+                        bold = fun(chunks: String): ReactElement {
                             return strong { +chunks }
                         }
                     }.unsafeCast<Any>()

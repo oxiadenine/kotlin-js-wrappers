@@ -1,10 +1,9 @@
 package samples.spin
 
-import antd.alert.alert
-import antd.spin.spin
-import react.RBuilder
-import styled.css
-import styled.styledDiv
+import antd.alert.*
+import antd.spin.*
+import react.*
+import styled.*
 
 fun RBuilder.tip() {
     styledDiv {

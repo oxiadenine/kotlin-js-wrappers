@@ -1,20 +1,9 @@
 package samples.tooltip
 
-import kotlinx.css.Overflow
-import kotlinx.css.TextAlign
-import kotlinx.css.em
-import kotlinx.css.marginBottom
-import kotlinx.css.marginRight
-import kotlinx.css.overflow
-import kotlinx.css.padding
-import kotlinx.css.px
-import kotlinx.css.textAlign
-import kotlinx.css.width
+import kotlinx.css.*
 import react.*
 import react.dom.*
-import styled.StyleSheet
-import styled.css
-import styled.styledDiv
+import styled.*
 
 object TooltipStyles : StyleSheet("tooltip", isStatic = true) {
     val container by css {}

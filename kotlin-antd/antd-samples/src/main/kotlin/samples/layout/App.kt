@@ -1,31 +1,10 @@
 package samples.layout
 
-import kotlinx.css.Color
-import kotlinx.css.Cursor
-import kotlinx.css.Float
-import kotlinx.css.TextAlign
-import kotlinx.css.background
-import kotlinx.css.color
-import kotlinx.css.cursor
-import kotlinx.css.float
-import kotlinx.css.fontSize
-import kotlinx.css.height
-import kotlinx.css.lineHeight
-import kotlinx.css.margin
-import kotlinx.css.minHeight
-import kotlinx.css.padding
-import kotlinx.css.properties.LineHeight
-import kotlinx.css.properties.s
-import kotlinx.css.properties.transition
-import kotlinx.css.px
-import kotlinx.css.rgba
-import kotlinx.css.textAlign
-import kotlinx.css.width
+import kotlinx.css.*
+import kotlinx.css.properties.*
 import react.*
 import react.dom.*
-import styled.StyleSheet
-import styled.css
-import styled.styledDiv
+import styled.*
 
 object LayoutStyles : StyleSheet("layout", isStatic = true) {
     val container by css {
@@ -33,7 +12,7 @@ object LayoutStyles : StyleSheet("layout", isStatic = true) {
             width = 120.px
             height = 30.px
             margin(16.px, 24.px, 16.px, 0.px)
-            background = rgba(255,255,255,.2).toString()
+            background = rgba(255, 255, 255, .2).toString()
             float = Float.left
         }
         descendants(".trigger") {

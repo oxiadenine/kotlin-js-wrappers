@@ -1,6 +1,5 @@
 package reactresponsive
 
-import react.RBuilder
-import react.RHandler
+import react.*
 
 fun RBuilder.mediaQuery(handler: RHandler<MediaQueryProps>) = child(MediaQueryComponent::class, handler)

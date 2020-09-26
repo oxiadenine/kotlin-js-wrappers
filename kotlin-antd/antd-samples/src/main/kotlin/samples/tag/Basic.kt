@@ -1,12 +1,10 @@
 package samples.tag
 
-import antd.tag.tag
-import org.w3c.dom.events.Event
-import react.RBuilder
-import react.dom.a
-import react.dom.div
-import styled.css
-import styled.styledDiv
+import antd.tag.*
+import org.w3c.dom.events.*
+import react.*
+import react.dom.*
+import styled.*
 
 private fun log(e: Event) {
     console.log(e)

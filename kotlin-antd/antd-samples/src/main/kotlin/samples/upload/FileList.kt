@@ -1,21 +1,18 @@
 package samples.upload
 
-import antd.button.button
-import antd.icon.icon
-import antd.upload.UploadChangeParam
-import antd.upload.UploadFile
-import antd.upload.upload
-import kotlinext.js.jsObject
+import antd.button.*
+import antd.icon.*
+import antd.upload.*
+import kotlinext.js.*
 import react.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface MyUploadState : RState {
     var fileList: Array<UploadFile>
 }
 
 class MyUpload : RComponent<RProps, MyUploadState>() {
-    private val handleChange = fun (info: UploadChangeParam<UploadFile>) {
+    private val handleChange = fun(info: UploadChangeParam<UploadFile>) {
         var newFileList = info.fileList
 
         // 1. Limit the number of uploaded files
@@ -38,7 +35,7 @@ class MyUpload : RComponent<RProps, MyUploadState>() {
                 return@filter file.response.asDynamic().status.unsafeCast<String>() == "success"
             }
 
-           return@filter true
+            return@filter true
         }.toTypedArray()
 
         setState {

@@ -1,11 +1,9 @@
 package samples.slider
 
-import antd.slider.SliderValue
-import antd.slider.slider
+import antd.slider.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private fun handleChange(value: SliderValue) {
     console.log("onChange: ", value)

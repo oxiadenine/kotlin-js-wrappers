@@ -1,14 +1,11 @@
 package samples.calendar
 
-import antd.calendar.CalendarMode
-import antd.calendar.calendar
-import kotlinext.js.js
-import moment.Moment
-import react.RBuilder
-import react.dom.div
-import react.dom.jsStyle
-import styled.css
-import styled.styledDiv
+import antd.calendar.*
+import kotlinext.js.*
+import moment.*
+import react.*
+import react.dom.*
+import styled.*
 
 private fun handlePanelChange(value: Moment?, mode: CalendarMode?) {
     console.log(value, mode)

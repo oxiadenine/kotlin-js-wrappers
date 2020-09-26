@@ -1,9 +1,9 @@
 package antd.table
 
-import kotlinext.js.Object
-import org.w3c.dom.HTMLElement
-import org.w3c.dom.events.Event
-import react.ReactElement
+import kotlinext.js.*
+import org.w3c.dom.*
+import org.w3c.dom.events.*
+import react.*
 
 typealias TableSize = String /* "default" | "middle" | "small" */
 typealias TableSelectWay = String /* "onSelect" | "onSelectMultiple" | "onSelectAll" | "onSelectInvert" */

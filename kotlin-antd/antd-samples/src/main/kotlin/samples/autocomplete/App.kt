@@ -2,9 +2,7 @@ package samples.autocomplete
 
 import react.*
 import react.dom.*
-import styled.StyleSheet
-import styled.css
-import styled.styledDiv
+import styled.*
 
 object AutoCompleteStyles : StyleSheet("auto-complete", isStatic = true) {
     val container by css {}

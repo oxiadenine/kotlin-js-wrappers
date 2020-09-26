@@ -1,10 +1,7 @@
 package antd.typography
 
-import antd.configprovider.ConfigConsumerProps
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import antd.configprovider.*
+import react.*
 
 external object BaseComponent : Component<BaseProps, BaseState> {
     override fun render(): ReactElement?

@@ -1,7 +1,6 @@
 package antd.radio
 
-import antd.checkbox.AbstractCheckboxProps
-import react.Component
+import antd.checkbox.*
 import react.*
 
 external object RadioButtonComponent : Component<RadioButtonProps, RState> {

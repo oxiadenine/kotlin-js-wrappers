@@ -1,9 +1,7 @@
 package antd.menu
 
-import kotlinext.js.jsObject
-import react.RBuilder
-import react.RHandler
-import react.RProps
+import kotlinext.js.*
+import react.*
 
 fun RBuilder.menu(handler: RHandler<MenuProps>) = child(MenuComponent::class, handler)
 fun RBuilder.menuItem(handler: RHandler<MenuItemProps>) = child(MenuComponent.Item, jsObject {}, handler)

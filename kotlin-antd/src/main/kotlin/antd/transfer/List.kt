@@ -1,11 +1,8 @@
 package antd.transfer
 
-import antd.ChangeEvent
-import org.w3c.dom.HTMLInputElement
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import antd.*
+import org.w3c.dom.*
+import react.*
 
 external object TransferListComponent : Component<TransferListProps, TransferListState> {
     override fun render(): ReactElement?

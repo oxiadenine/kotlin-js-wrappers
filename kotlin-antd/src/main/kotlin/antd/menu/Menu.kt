@@ -3,10 +3,9 @@
 
 package antd.menu
 
-import antd.layout.SiderContextProps
-import org.w3c.dom.HTMLElement
-import org.w3c.dom.events.Event
-import org.w3c.dom.events.MouseEvent
+import antd.layout.*
+import org.w3c.dom.*
+import org.w3c.dom.events.*
 import react.*
 
 @JsName("default")

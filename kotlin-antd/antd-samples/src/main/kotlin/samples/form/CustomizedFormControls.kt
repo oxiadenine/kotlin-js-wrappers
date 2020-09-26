@@ -1,21 +1,16 @@
 package samples.form
 
-import antd.ChangeEventHandler
-import antd.FormEventHandler
+import antd.*
 import antd.button.button
 import antd.form.*
 import antd.input.input
-import antd.select.SelectComponent
-import antd.select.SelectValue
+import antd.select.*
 import antd.select.option
-import antd.select.select
 import kotlinext.js.*
-import org.w3c.dom.HTMLElement
-import org.w3c.dom.HTMLInputElement
+import org.w3c.dom.*
 import react.*
 import react.dom.span
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface PriceInputProps : FormComponentProps<Any> {
     var value: Any?
@@ -41,16 +36,16 @@ class PriceInput : RComponent<PriceInputProps, PriceInputState>() {
 
         if (!numberValue.isNaN()) {
             if (!Object.keys(props).contains("value")) {
-                 setState {
-                     number = numberValue.unsafeCast<Number>()
-                 }
+                setState {
+                    number = numberValue.unsafeCast<Number>()
+                }
             }
 
             triggerChange(js { number = numberValue }.unsafeCast<Any>())
         }
     }
 
-    private val handleCurrencyChange = fun (value: SelectValue, _: Any) {
+    private val handleCurrencyChange = fun(value: SelectValue, _: Any) {
         if (!Object.keys(props).contains("value")) {
             setState {
                 currency = value.unsafeCast<String>()
@@ -60,7 +55,7 @@ class PriceInput : RComponent<PriceInputProps, PriceInputState>() {
         triggerChange(js { currency = value }.unsafeCast<Any>())
     }
 
-    private val triggerChange = fun (changedValue: Any) {
+    private val triggerChange = fun(changedValue: Any) {
         // Should provide an event to pass value to Form.
         val onChange = props.onChange
 
@@ -77,7 +72,7 @@ class PriceInput : RComponent<PriceInputProps, PriceInputState>() {
         number = value.number?.unsafeCast<Number>() ?: 0
         currency = value.currency?.unsafeCast<String>() ?: "rmb"
 
-        PriceInput::class.js.asDynamic().getDerivedStateFromProps = fun (nextProps: PriceInputProps): Any? {
+        PriceInput::class.js.asDynamic().getDerivedStateFromProps = fun(nextProps: PriceInputProps): Any? {
             // Should be a controlled component.
             if (Object.keys(nextProps).contains("value")) {
                 return if (nextProps.value != null) nextProps else js {}.unsafeCast<Any>()
@@ -134,7 +129,7 @@ class CustomizedFormControlsDemo : RComponent<FormComponentProps<Any>, RState>()
         }
     }
 
-    private val checkPrice = fun (_: Any, value: Any?, callback: Any, _: Any?, _: Any?) {
+    private val checkPrice = fun(_: Any, value: Any?, callback: Any, _: Any?, _: Any?) {
         if (value != null && value.asDynamic().number.unsafeCast<Number>().toInt() > 0) {
             callback.asDynamic()()
 
@@ -155,7 +150,7 @@ class CustomizedFormControlsDemo : RComponent<FormComponentProps<Any>, RState>()
                 childList.add(props.form.getFieldDecorator("price", jsObject {
                     initialValue = js {
                         number = 0
-                        currency ="rmb"
+                        currency = "rmb"
                     }.unsafeCast<Object>()
                     rules = arrayOf(jsObject { validator = checkPrice })
                 })(buildElement {
@@ -176,7 +171,7 @@ class CustomizedFormControlsDemo : RComponent<FormComponentProps<Any>, RState>()
 }
 
 private val wrappedCustomizedFormControlsDemo = FormComponent.create<FormComponentProps<Any>, RState>(
-        jsObject { name = "customized_form_controls" })(CustomizedFormControlsDemo::class.js)
+    jsObject { name = "customized_form_controls" })(CustomizedFormControlsDemo::class.js)
 
 fun RBuilder.wrappedCustomizedFormControlsDemo(handler: RHandler<FormComponentProps<Any>>) = child(wrappedCustomizedFormControlsDemo, jsObject {}, handler)
 

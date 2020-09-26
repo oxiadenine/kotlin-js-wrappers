@@ -1,15 +1,12 @@
 package samples
 
-import kotlinext.js.js
-import kotlinext.js.jsObject
+import kotlinext.js.*
 import react.*
-import react.dom.br
-import react.dom.p
-import react.dom.strong
-import reactintl.provider.intlProvider
-import reactintl.useIntl
+import react.dom.*
+import reactintl.*
+import reactintl.provider.*
 import kotlin.js.Date
-import kotlin.random.Random
+import kotlin.random.*
 
 private val providerMessages = js {
     simple = "Hello world"

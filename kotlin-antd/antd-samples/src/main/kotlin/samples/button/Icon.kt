@@ -3,8 +3,7 @@ package samples.button
 import antd.button.button
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 fun RBuilder.icon() {
     styledDiv {

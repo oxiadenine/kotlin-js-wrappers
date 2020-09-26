@@ -1,14 +1,13 @@
 package samples.popover
 
 import antd.button.button
-import antd.popover.popover
-import kotlinext.js.js
-import kotlinx.html.js.onClickFunction
-import org.w3c.dom.events.Event
+import antd.popover.*
+import kotlinext.js.*
+import kotlinx.html.js.*
+import org.w3c.dom.events.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface HoverWithClickAppState : RState {
     var clicked: Boolean
@@ -16,23 +15,23 @@ interface HoverWithClickAppState : RState {
 }
 
 class HoverWithClickApp : RComponent<RProps, HoverWithClickAppState>() {
-    private val hide = fun (_: Event) {
+    private val hide = fun(_: Event) {
         setState {
             clicked = false
             hovered = false
         }
     }
 
-    private val handleHoverChange = fun (visible: Boolean) {
+    private val handleHoverChange = fun(visible: Boolean) {
         setState {
             hovered = visible
             clicked = false
         }
     }
 
-    private val handleClickChange = fun (visible: Boolean) {
+    private val handleClickChange = fun(visible: Boolean) {
         setState {
-            clicked =visible
+            clicked = visible
             hovered = false
         }
     }

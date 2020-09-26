@@ -1,30 +1,28 @@
 package samples.upload
 
 import antd.button.button
-import antd.icon.icon
-import antd.upload.UploadFile
-import antd.upload.upload
-import kotlinext.js.jsObject
+import antd.icon.*
+import antd.upload.*
+import kotlinext.js.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private val fileList = arrayOf<UploadFile>(
-        jsObject {
-            uid = "-1"
-            name = "xxx.png"
-            status = "done"
-            url = "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
-            thumbUrl = "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
-        },
-        jsObject {
-            uid = "-2"
-            name = "yyy.png"
-            status = "done"
-            url = "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
-            thumbUrl = "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
-        }
+    jsObject {
+        uid = "-1"
+        name = "xxx.png"
+        status = "done"
+        url = "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+        thumbUrl = "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+    },
+    jsObject {
+        uid = "-2"
+        name = "yyy.png"
+        status = "done"
+        url = "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+        thumbUrl = "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+    }
 )
 
 fun RBuilder.pictureStyle() {

@@ -2,9 +2,7 @@ package samples.dropdown
 
 import react.*
 import react.dom.*
-import styled.StyleSheet
-import styled.css
-import styled.styledDiv
+import styled.*
 
 object DropdownStyles : StyleSheet("dropdown", isStatic = true) {
     val container by css {}

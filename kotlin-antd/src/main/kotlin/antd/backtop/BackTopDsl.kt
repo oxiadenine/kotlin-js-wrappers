@@ -1,6 +1,5 @@
 package antd.backtop
 
-import react.RBuilder
-import react.RHandler
+import react.*
 
 fun RBuilder.backTop(handler: RHandler<BackTopProps>) = child(BackTopComponent::class, handler)

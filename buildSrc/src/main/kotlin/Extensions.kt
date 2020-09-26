@@ -1,8 +1,8 @@
-import com.jfrog.bintray.gradle.BintrayExtension
-import org.gradle.api.Project
-import org.gradle.api.publish.PublishingExtension
-import org.gradle.kotlin.dsl.getByType
-import org.jetbrains.kotlin.gradle.dsl.KotlinJsProjectExtension
+import com.jfrog.bintray.gradle.*
+import org.gradle.api.*
+import org.gradle.api.publish.*
+import org.gradle.kotlin.dsl.*
+import org.jetbrains.kotlin.gradle.dsl.*
 
 val Project.kotlin: KotlinJsProjectExtension
     get() = extensions.getByType()

@@ -3,7 +3,7 @@
 
 package antd.popover
 
-import antd.tooltip.AbstractTooltipProps
+import antd.tooltip.*
 import react.*
 
 @JsName("default")

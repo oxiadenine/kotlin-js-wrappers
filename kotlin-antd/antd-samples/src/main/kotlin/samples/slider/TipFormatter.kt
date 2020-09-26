@@ -1,10 +1,9 @@
 package samples.slider
 
-import antd.slider.slider
+import antd.slider.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private fun formatter(value: Number): ReactElement {
     return buildElement { +"$value%" }

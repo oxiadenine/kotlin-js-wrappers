@@ -1,15 +1,11 @@
 package samples.icon
 
-import antd.icon.CustomIconComponentProps
-import antd.icon.IconProps
-import antd.icon.icon
-import kotlinext.js.js
-import kotlinx.html.HTMLTag
-import kotlinx.html.classes
+import antd.icon.*
+import kotlinext.js.*
+import kotlinx.html.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 fun RBuilder.path(tagName: String, block: RDOMBuilder<HTMLTag>.() -> Unit): ReactElement = tag(block) {
     HTMLTag(tagName, it, mapOf(), null, inlineTag = true, emptyTag = false)

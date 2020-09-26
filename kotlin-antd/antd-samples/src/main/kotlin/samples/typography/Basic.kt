@@ -1,16 +1,13 @@
 package samples.typography
 
-import antd.divider.divider
-import antd.typography.paragraph
-import antd.typography.text
+import antd.divider.*
+import antd.typography.*
 import antd.typography.title
-import antd.typography.typography
-import react.RBuilder
+import react.*
 import react.dom.a
 import react.dom.li
 import react.dom.ul
-import styled.css
-import styled.styledDiv
+import styled.*
 
 fun RBuilder.basic() {
     styledDiv {

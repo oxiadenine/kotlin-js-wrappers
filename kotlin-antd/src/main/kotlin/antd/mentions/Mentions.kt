@@ -3,13 +3,9 @@
 
 package antd.mentions
 
-import antd.FocusEventHandler
-import antd.TextareaHTMLAttributes
-import org.w3c.dom.HTMLTextAreaElement
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import antd.*
+import org.w3c.dom.*
+import react.*
 
 @JsName("default")
 external object MentionsComponent : Component<MentionsProps, MentionState> {

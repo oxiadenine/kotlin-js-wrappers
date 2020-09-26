@@ -1,8 +1,7 @@
 package antd.select
 
-import kotlinext.js.jsObject
-import react.RBuilder
-import react.RHandler
+import kotlinext.js.*
+import react.*
 
 inline fun <T : SelectValue, reified SC : SelectComponent<T>> RBuilder.select(noinline handler: RHandler<SelectProps<T>>) = child(SC::class, handler)
 fun RBuilder.option(handler: RHandler<OptionProps>) = child(SelectComponent.Option, jsObject {}, handler)

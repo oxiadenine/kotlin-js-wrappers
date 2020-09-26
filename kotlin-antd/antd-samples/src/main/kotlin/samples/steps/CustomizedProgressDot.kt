@@ -1,19 +1,17 @@
 package samples.steps
 
-import antd.popover.popover
-import antd.steps.step
-import antd.steps.steps
+import antd.popover.*
+import antd.steps.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface CustomDotStep {
     var index: String
     var status: String
 }
 
-private val customDot = fun (dot: ReactElement, step: CustomDotStep): ReactElement {
+private val customDot = fun(dot: ReactElement, step: CustomDotStep): ReactElement {
     return buildElement {
         popover {
             attrs {

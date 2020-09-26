@@ -3,12 +3,9 @@
 
 package antd.localeprovider
 
-import antd.modal.ModalLocale
-import kotlinext.js.Object
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import antd.modal.*
+import kotlinext.js.*
+import react.*
 
 @JsName("default")
 external object LocaleProviderComponent : Component<LocaleProviderProps, RState> {

@@ -1,8 +1,7 @@
 package antd.tree
 
-import kotlinext.js.jsObject
-import react.RBuilder
-import react.RHandler
+import kotlinext.js.*
+import react.*
 
 fun RBuilder.tree(handler: RHandler<TreeProps>) = child(TreeComponent::class, handler)
 fun RBuilder.treeNode(handler: RHandler<TreeNodeProps>) = child(TreeComponent.TreeNode, jsObject {}, handler)

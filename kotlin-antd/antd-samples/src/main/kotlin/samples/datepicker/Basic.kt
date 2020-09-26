@@ -1,11 +1,10 @@
 package samples.datepicker
 
 import antd.datepicker.*
-import moment.Moment
+import moment.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private fun handleChange(date: Moment, dateString: String) {
     console.log(date, dateString)

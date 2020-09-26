@@ -1,23 +1,19 @@
 package samples.form
 
-import antd.FormEventHandler
-import antd.MouseEventHandler
-import antd.button.button
+import antd.*
+import antd.button.*
 import antd.form.*
-import antd.icon.icon
-import antd.input.input
-import kotlinext.js.Object
-import kotlinext.js.js
-import kotlinext.js.jsObject
-import org.w3c.dom.HTMLElement
+import antd.icon.*
+import antd.input.*
+import kotlinext.js.*
+import org.w3c.dom.*
 import react.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private var uuid = 0
 
 class DynamicFieldSet : RComponent<FormComponentProps<Any>, RState>() {
-    private val remove = fun (k: String) {
+    private val remove = fun(k: String) {
         // can use data-binding to get
         val formKeys = props.form.getFieldValue("keys").unsafeCast<Array<String>>()
 
@@ -163,7 +159,7 @@ class DynamicFieldSet : RComponent<FormComponentProps<Any>, RState>() {
 }
 
 private val wrappedDynamicFieldSet = FormComponent.create<FormComponentProps<Any>, RState>(
-        jsObject { name = "dynamic_form_item" })(DynamicFieldSet::class.js)
+    jsObject { name = "dynamic_form_item" })(DynamicFieldSet::class.js)
 
 fun RBuilder.wrappedDynamicFieldSet(handler: RHandler<FormComponentProps<Any>>) = child(wrappedDynamicFieldSet, jsObject {}, handler)
 

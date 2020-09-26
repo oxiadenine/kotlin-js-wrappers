@@ -1,15 +1,10 @@
 package samples
 
 import kotlinx.css.*
-import react.RBuilder
-import react.RComponent
-import react.RProps
-import react.RState
-import react.dom.h1
-import samples.advanced.advanced
-import styled.StyleSheet
-import styled.css
-import styled.styledDiv
+import react.*
+import react.dom.*
+import samples.advanced.*
+import styled.*
 
 object AppStyles : StyleSheet("app", isStatic = true) {
     val header by css {

@@ -1,8 +1,7 @@
 package antd.layout
 
-import kotlinext.js.jsObject
-import react.RBuilder
-import react.RHandler
+import kotlinext.js.*
+import react.*
 
 fun RBuilder.layout(handler: RHandler<LayoutProps>) = child(LayoutComponent::class, handler)
 fun RBuilder.header(handler: RHandler<LayoutProps>) = child(LayoutComponent.Header, jsObject {}, handler)

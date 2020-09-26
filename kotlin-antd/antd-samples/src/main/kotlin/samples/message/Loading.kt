@@ -1,12 +1,11 @@
 package samples.message
 
-import antd.MouseEventHandler
-import antd.button.button
-import antd.message.message
+import antd.*
+import antd.button.*
+import antd.message.*
+import kotlinx.browser.*
 import react.*
-import kotlinx.browser.window
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private val success: MouseEventHandler<Any> = {
     val hide = message.loading("Action in progress..", 0)

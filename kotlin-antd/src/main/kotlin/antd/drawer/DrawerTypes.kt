@@ -1,6 +1,6 @@
 package antd.drawer
 
-import org.w3c.dom.HTMLElement
+import org.w3c.dom.*
 
 typealias PlacementType = String /* "top" | "right" | "bottom" | "left" */
 

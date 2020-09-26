@@ -1,10 +1,8 @@
 package samples.steps
 
-import antd.steps.step
-import antd.steps.steps
+import antd.steps.*
 import react.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 fun RBuilder.simple() {
     styledDiv {

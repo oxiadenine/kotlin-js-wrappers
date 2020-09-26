@@ -1,7 +1,6 @@
 package antd
 
-import org.w3c.dom.Element
-import react.ReactElement
+import react.*
 
 external interface DOMAttributes<T> {
     var children: ReactElement?

@@ -1,17 +1,9 @@
 package samples.affix
 
-import kotlinx.css.Image
-import kotlinx.css.Overflow
-import kotlinx.css.backgroundImage
-import kotlinx.css.height
-import kotlinx.css.overflowY
-import kotlinx.css.paddingTop
-import kotlinx.css.px
+import kotlinx.css.*
 import react.*
-import react.dom.h2
-import styled.StyleSheet
-import styled.css
-import styled.styledDiv
+import react.dom.*
+import styled.*
 
 object AffixStyles : StyleSheet("affix", isStatic = true) {
     val container by css {}

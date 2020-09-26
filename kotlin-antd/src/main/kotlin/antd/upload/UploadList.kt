@@ -1,10 +1,7 @@
 package antd.upload
 
-import kotlinext.js.Object
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import kotlinext.js.*
+import react.*
 
 external object UploadListComponent : Component<UploadListProps, RState> {
     override fun render(): ReactElement?

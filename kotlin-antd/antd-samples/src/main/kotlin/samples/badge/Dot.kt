@@ -1,11 +1,10 @@
 package samples.badge
 
-import antd.badge.badge
-import antd.icon.icon
+import antd.badge.*
+import antd.icon.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 fun RBuilder.dot() {
     styledDiv {

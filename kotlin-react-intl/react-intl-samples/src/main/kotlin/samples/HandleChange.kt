@@ -1,17 +1,12 @@
 package samples
 
-import kotlinext.js.Object
-import kotlinext.js.js
-import kotlinext.js.jsObject
-import kotlinx.browser.document
-import kotlinx.html.id
-import kotlinx.html.js.onChangeFunction
+import kotlinext.js.*
+import kotlinx.browser.*
+import kotlinx.html.*
+import kotlinx.html.js.*
 import react.*
 import react.dom.*
-import reactintl.IntlShape
-import reactintl.createIntl
-import reactintl.createIntlCache
-import reactintl.rawIntlProvider
+import reactintl.*
 
 private val intlMessages = run {
     val messages = js {}
@@ -34,7 +29,7 @@ var intl = createIntl(jsObject {
 private val app = functionalComponent<RProps> {
     val (language, setLanguage) = useState(initialLocale)
 
-    val changeLanguage = fun (newLocale: String) {
+    val changeLanguage = fun(newLocale: String) {
         intl = createIntl(jsObject {
             locale = newLocale
             messages = intlMessages.asDynamic()[newLocale].unsafeCast<Any>()

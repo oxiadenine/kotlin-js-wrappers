@@ -2,9 +2,7 @@ package samples.rate
 
 import react.*
 import react.dom.*
-import styled.StyleSheet
-import styled.css
-import styled.styledDiv
+import styled.*
 
 object RateStyles : StyleSheet("rate", isStatic = true) {
     val container by css {}

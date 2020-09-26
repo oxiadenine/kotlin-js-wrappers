@@ -1,13 +1,12 @@
 package samples.upload
 
-import antd.icon.icon
-import antd.message.message
-import antd.upload.dragger
-import kotlinx.html.classes
+import antd.icon.*
+import antd.message.*
+import antd.upload.*
+import kotlinx.html.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 fun RBuilder.drag() {
     styledDiv {

@@ -1,18 +1,13 @@
 package samples.upload
 
-import antd.icon.icon
-import antd.message.message
-import antd.upload.RcFile
-import antd.upload.UploadChangeParam
-import antd.upload.UploadFile
-import antd.upload.upload
-import kotlinx.html.classes
-import org.w3c.files.File
-import org.w3c.files.FileReader
+import antd.icon.*
+import antd.message.*
+import antd.upload.*
+import kotlinx.html.*
+import org.w3c.files.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private fun getBase64(img: File, callback: (imgUrl: String) -> Unit) {
     val reader = FileReader()
@@ -44,7 +39,7 @@ interface AvatarAppState : RState {
 }
 
 class AvatarApp : RComponent<RProps, AvatarAppState>() {
-    private val handleChange = fun (info: UploadChangeParam<UploadFile>) {
+    private val handleChange = fun(info: UploadChangeParam<UploadFile>) {
         if (info.file.status == "uploading") {
             setState {
                 loading = true

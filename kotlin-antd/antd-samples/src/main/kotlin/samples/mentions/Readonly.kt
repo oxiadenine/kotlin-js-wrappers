@@ -1,12 +1,11 @@
 package samples.mentions
 
-import antd.mentions.mentions
+import antd.mentions.*
 import antd.mentions.option
-import kotlinext.js.js
+import kotlinext.js.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private fun getOptions(): Array<ReactElement> {
     return arrayOf("afc163", "zombiej", "yesmeck").map {

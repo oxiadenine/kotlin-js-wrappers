@@ -3,8 +3,8 @@
 
 package antd.radio
 
-import antd.checkbox.AbstractCheckboxProps
-import org.w3c.dom.events.MouseEvent
+import antd.checkbox.*
+import org.w3c.dom.events.*
 import react.*
 
 @JsName("default")

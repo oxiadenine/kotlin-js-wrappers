@@ -1,8 +1,6 @@
 package antd.statistic
 
-import react.Component
-import react.RState
-import react.ReactElement
+import react.*
 
 external object CountdownComponent : Component<CountdownProps, RState> {
     override fun render(): ReactElement?

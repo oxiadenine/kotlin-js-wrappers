@@ -1,16 +1,13 @@
 package samples.modal
 
-import antd.MouseEvent
-import antd.MouseEventHandler
+import antd.*
 import antd.button.button
-import antd.modal.ModalComponent
-import antd.modal.modal
-import kotlinext.js.jsObject
-import org.w3c.dom.HTMLElement
+import antd.modal.*
+import kotlinext.js.*
+import org.w3c.dom.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface LocalizedModalState : RState {
     var visible: Boolean

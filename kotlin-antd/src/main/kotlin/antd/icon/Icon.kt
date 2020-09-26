@@ -3,9 +3,8 @@
 
 package antd.icon
 
-import antd.KeyboardEventHandler
-import antd.MouseEventHandler
-import org.w3c.dom.HTMLElement
+import antd.*
+import org.w3c.dom.*
 import react.*
 
 @JsName("default")

@@ -1,14 +1,10 @@
 package samples.breadcrumb
 
-import antd.breadcrumb.breadcrumb
-import antd.breadcrumb.breadcrumbItem
-import antd.menu.menu
-import antd.menu.menuItem
-import react.RBuilder
-import react.buildElement
-import react.dom.a
-import styled.css
-import styled.styledDiv
+import antd.breadcrumb.*
+import antd.menu.*
+import react.*
+import react.dom.*
+import styled.*
 
 private val menu = buildElement {
     menu {

@@ -1,15 +1,12 @@
 package samples.grid
 
+import antd.grid.*
 import antd.grid.col
-import antd.grid.row
-import antd.slider.SliderMarks
-import antd.slider.SliderValue
-import antd.slider.slider
-import kotlinext.js.js
+import antd.slider.*
+import kotlinext.js.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface PlaygroundAppState : RState {
     var gutterKey: Number
@@ -30,13 +27,13 @@ class PlaygroundApp : RComponent<RProps, PlaygroundAppState>() {
         }
     }
 
-    private val handleGutterChange = fun (value: SliderValue) {
+    private val handleGutterChange = fun(value: SliderValue) {
         setState {
             gutterKey = value as Number
         }
     }
 
-    private val handleColCountChange = fun (value: SliderValue) {
+    private val handleColCountChange = fun(value: SliderValue) {
         setState {
             colCountKey = value as Number
         }

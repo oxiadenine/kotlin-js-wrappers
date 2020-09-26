@@ -1,10 +1,8 @@
 package samples.tabs
 
-import antd.tabs.tabPane
-import antd.tabs.tabs
-import react.RBuilder
-import styled.css
-import styled.styledDiv
+import antd.tabs.*
+import react.*
+import styled.*
 
 private fun callback(key: String) {
     console.log(key)

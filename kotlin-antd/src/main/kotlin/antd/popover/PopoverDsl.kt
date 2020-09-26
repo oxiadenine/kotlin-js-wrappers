@@ -1,6 +1,5 @@
 package antd.popover
 
-import react.RBuilder
-import react.RHandler
+import react.*
 
 fun RBuilder.popover(handler: RHandler<PopoverProps>) = child(PopoverComponent::class, handler)

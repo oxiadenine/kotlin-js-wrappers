@@ -3,12 +3,8 @@
 
 package antd.select
 
-import antd.KeyboardEventHandler
-import antd.MouseEventHandler
-import antd.UIEventHandler
-import org.w3c.dom.HTMLDivElement
-import org.w3c.dom.HTMLElement
-import org.w3c.dom.HTMLInputElement
+import antd.*
+import org.w3c.dom.*
 import react.*
 
 @JsName("default")

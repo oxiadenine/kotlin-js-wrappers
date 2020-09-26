@@ -1,11 +1,9 @@
 package samples
 
-import moment.moment
-import react.RBuilder
-import react.dom.h2
-import react.dom.span
-import styled.css
-import styled.styledDiv
+import moment.*
+import react.*
+import react.dom.*
+import styled.*
 
 fun RBuilder.relativeTime() {
     h2 { +"Relative Time" }

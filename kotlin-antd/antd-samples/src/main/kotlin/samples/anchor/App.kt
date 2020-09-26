@@ -1,11 +1,9 @@
 package samples.anchor
 
-import kotlinx.css.zIndex
+import kotlinx.css.*
 import react.*
 import react.dom.*
-import styled.StyleSheet
-import styled.css
-import styled.styledDiv
+import styled.*
 
 object AnchorStyles : StyleSheet("anchor", isStatic = true) {
     val container by css {}

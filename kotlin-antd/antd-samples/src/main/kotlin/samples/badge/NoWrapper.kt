@@ -1,11 +1,10 @@
 package samples.badge
 
-import antd.badge.badge
-import kotlinext.js.js
+import antd.badge.*
+import kotlinext.js.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 fun RBuilder.noWrapper() {
     styledDiv {

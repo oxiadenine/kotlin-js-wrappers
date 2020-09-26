@@ -1,6 +1,5 @@
 package reactintl.provider
 
-import react.RBuilder
-import react.RHandler
+import react.*
 
 fun RBuilder.intlProvider(handler: RHandler<IntlProviderProps>) = child(IntlProviderComponent::class, handler)

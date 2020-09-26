@@ -1,6 +1,6 @@
 package uikit.components
 
-import uikit.Component
+import uikit.*
 import kotlin.js.Promise
 
 external interface Modal {

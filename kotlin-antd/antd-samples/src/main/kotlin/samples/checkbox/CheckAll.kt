@@ -1,11 +1,10 @@
 package samples.checkbox
 
 import antd.checkbox.*
-import kotlinext.js.js
+import kotlinext.js.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private val plainOptions: Array<CheckboxValueType> = arrayOf("Apple", "Pear", "Orange")
 private val defaultCheckedList: Array<CheckboxValueType> = arrayOf("Apple", "Orange")
@@ -17,7 +16,7 @@ interface CheckAllAppState : RState {
 }
 
 class CheckAllApp : RComponent<RProps, CheckAllAppState>() {
-    private val handleGroupChange = fun (checkedValues: Array<CheckboxValueType>) {
+    private val handleGroupChange = fun(checkedValues: Array<CheckboxValueType>) {
         setState {
             checkedList = checkedValues
             indeterminate = checkedValues.isNotEmpty() && (checkedValues.size < plainOptions.size)
@@ -25,7 +24,7 @@ class CheckAllApp : RComponent<RProps, CheckAllAppState>() {
         }
     }
 
-    private val handleCheckAllChange = fun (event: CheckboxChangeEvent?) {
+    private val handleCheckAllChange = fun(event: CheckboxChangeEvent?) {
         setState {
             checkedList = if (event?.target?.checked!!) plainOptions else emptyArray()
             indeterminate = false

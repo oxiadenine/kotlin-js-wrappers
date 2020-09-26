@@ -1,20 +1,17 @@
 package samples.datepicker
 
 import antd.datepicker.*
-import antd.radio.RadioChangeEvent
-import antd.radio.radioButton
-import antd.radio.radioGroup
+import antd.radio.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface PickerSizesDemoState : RState {
     var size: String
 }
 
 class PickerSizesDemo : RComponent<RProps, PickerSizesDemoState>() {
-    private val handleSizeChange = fun (event: RadioChangeEvent) {
+    private val handleSizeChange = fun(event: RadioChangeEvent) {
         setState {
             size = event.target.value as String
         }

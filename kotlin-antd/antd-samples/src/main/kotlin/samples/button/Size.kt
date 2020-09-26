@@ -2,19 +2,18 @@ package samples.button
 
 import antd.button.button
 import antd.button.buttonGroup
-import antd.icon.icon
+import antd.icon.*
 import antd.radio.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface ButtonSizeState : RState {
     var size: String
 }
 
 class ButtonSize : RComponent<RProps, ButtonSizeState>() {
-    private val handleSizeChange = fun (event: RadioChangeEvent) {
+    private val handleSizeChange = fun(event: RadioChangeEvent) {
         setState {
             size = event.target.value as String
         }

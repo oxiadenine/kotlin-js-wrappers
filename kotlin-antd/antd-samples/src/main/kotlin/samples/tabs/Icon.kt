@@ -1,13 +1,10 @@
 package samples.tabs
 
-import antd.icon.icon
-import antd.tabs.tabPane
-import antd.tabs.tabs
-import react.RBuilder
-import react.buildElement
-import react.dom.span
-import styled.css
-import styled.styledDiv
+import antd.icon.*
+import antd.tabs.*
+import react.*
+import react.dom.*
+import styled.*
 
 fun RBuilder.icon() {
     styledDiv {

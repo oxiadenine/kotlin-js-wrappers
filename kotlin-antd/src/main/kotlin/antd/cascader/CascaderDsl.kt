@@ -1,6 +1,5 @@
 package antd.cascader
 
-import react.RBuilder
-import react.RHandler
+import react.*
 
 fun RBuilder.cascader(handler: RHandler<CascaderProps>) = child(CascaderComponent::class, handler)

@@ -1,11 +1,7 @@
 package antd.modal
 
-import antd.button.ButtonType
-import antd.button.NativeButtonProps
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import antd.button.*
+import react.*
 
 external object ActionButtonComponent : Component<ActionButtonProps, ActionButtonState> {
     override fun render(): ReactElement?

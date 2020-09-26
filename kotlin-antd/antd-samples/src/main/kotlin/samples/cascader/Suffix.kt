@@ -1,48 +1,45 @@
 package samples.cascader
 
-import antd.cascader.CascaderOptionType
-import antd.cascader.cascader
-import antd.icon.icon
-import kotlinext.js.js
-import kotlinext.js.jsObject
+import antd.cascader.*
+import antd.icon.*
+import kotlinext.js.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
-private val cascaderOptions= arrayOf<CascaderOptionType>(
-        jsObject {
-            value = "zhejiang"
-            label = "Zhejiang"
-            children = arrayOf(
+private val cascaderOptions = arrayOf<CascaderOptionType>(
+    jsObject {
+        value = "zhejiang"
+        label = "Zhejiang"
+        children = arrayOf(
+            jsObject {
+                value = "hangzhou"
+                label = "Hangzhou"
+                children = arrayOf(
                     jsObject {
-                        value = "hangzhou"
-                        label = "Hangzhou"
-                        children = arrayOf(
-                                jsObject {
-                                    value = "xihu"
-                                    label = "West Lake"
-                                }
-                        )
+                        value = "xihu"
+                        label = "West Lake"
                     }
-            )
-        },
-        jsObject {
-            value = "jiangsu"
-            label = "Jiangsu"
-            children = arrayOf(
+                )
+            }
+        )
+    },
+    jsObject {
+        value = "jiangsu"
+        label = "Jiangsu"
+        children = arrayOf(
+            jsObject {
+                value = "nanjing"
+                label = "Nanjing"
+                children = arrayOf(
                     jsObject {
-                        value = "nanjing"
-                        label = "Nanjing"
-                        children = arrayOf(
-                                jsObject {
-                                    value = "zhonghuamen"
-                                    label = "Zhong Hua Men"
-                                }
-                        )
+                        value = "zhonghuamen"
+                        label = "Zhong Hua Men"
                     }
-            )
-        }
+                )
+            }
+        )
+    }
 )
 
 private fun handleChange(value: Array<String>, selectedOptions: Array<CascaderOptionType>?) {
@@ -68,7 +65,7 @@ fun RBuilder.suffix() {
             cascader {
                 attrs {
                     suffixIcon = "ab"
-                    style = js { marginTop ="1rem" }
+                    style = js { marginTop = "1rem" }
                     options = cascaderOptions
                     onChange = ::handleChange
                     placeholder = "Please select"

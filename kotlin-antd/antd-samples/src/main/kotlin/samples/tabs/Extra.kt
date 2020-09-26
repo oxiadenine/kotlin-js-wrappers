@@ -1,15 +1,12 @@
 package samples.tabs
 
-import antd.button.button
-import antd.tabs.tabPane
-import antd.tabs.tabs
-import react.RBuilder
-import react.buildElement
-import styled.css
-import styled.styledDiv
+import antd.button.*
+import antd.tabs.*
+import react.*
+import styled.*
 
 private val operation = buildElement {
-   button { +"Extra Action" }
+    button { +"Extra Action" }
 }
 
 fun RBuilder.extra() {

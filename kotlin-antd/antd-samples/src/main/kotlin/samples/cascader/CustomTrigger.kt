@@ -1,34 +1,32 @@
 package samples.cascader
 
-import antd.cascader.CascaderOptionType
-import antd.cascader.cascader
-import kotlinext.js.jsObject
+import antd.cascader.*
+import kotlinext.js.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private val cascaderOptions = arrayOf<CascaderOptionType>(
-        jsObject {
-            value = "zhejiang"
-            label = "Zhejiang"
-            children = arrayOf(
-                    jsObject{
-                        value = "hangzhou"
-                        label = "Hangzhou"
-                    }
-            )
-        },
-        jsObject {
-            value = "jiangsu"
-            label = "Jiangsu"
-            children = arrayOf(
-                    jsObject {
-                        value = "nanjing"
-                        label = "Nanjing"
-                    }
-            )
-        }
+    jsObject {
+        value = "zhejiang"
+        label = "Zhejiang"
+        children = arrayOf(
+            jsObject {
+                value = "hangzhou"
+                label = "Hangzhou"
+            }
+        )
+    },
+    jsObject {
+        value = "jiangsu"
+        label = "Jiangsu"
+        children = arrayOf(
+            jsObject {
+                value = "nanjing"
+                label = "Nanjing"
+            }
+        )
+    }
 )
 
 interface CustomTriggerCitySwitcherState : RState {
@@ -36,10 +34,10 @@ interface CustomTriggerCitySwitcherState : RState {
 }
 
 class CustomTriggerCitySwitcher : RComponent<RProps, CustomTriggerCitySwitcherState>() {
-    private val handleChange = fun (_: Array<String>, selectedOptions: Array<CascaderOptionType>?) {
+    private val handleChange = fun(_: Array<String>, selectedOptions: Array<CascaderOptionType>?) {
         setState {
-            text = selectedOptions!!.joinToString(", ") {
-                selectedOption -> selectedOption.label!!.unsafeCast<String>()
+            text = selectedOptions!!.joinToString(", ") { selectedOption ->
+                selectedOption.label!!.unsafeCast<String>()
             }
         }
     }

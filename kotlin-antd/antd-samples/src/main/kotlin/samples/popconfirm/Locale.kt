@@ -1,10 +1,9 @@
 package samples.popconfirm
 
-import antd.popconfirm.popconfirm
-import react.RBuilder
-import react.dom.a
-import styled.css
-import styled.styledDiv
+import antd.popconfirm.*
+import react.*
+import react.dom.*
+import styled.*
 
 fun RBuilder.locale() {
     styledDiv {

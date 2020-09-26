@@ -1,6 +1,5 @@
 package antd.tooltip
 
-import react.RBuilder
-import react.RHandler
+import react.*
 
 fun RBuilder.tooltip(handler: RHandler<TooltipProps>) = child(TooltipComponent::class, handler)

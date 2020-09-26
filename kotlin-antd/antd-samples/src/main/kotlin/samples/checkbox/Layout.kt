@@ -1,14 +1,10 @@
 package samples.checkbox
 
-import antd.checkbox.CheckboxValueType
-import antd.checkbox.checkbox
-import antd.checkbox.checkboxGroup
-import antd.grid.col
-import antd.grid.row
-import kotlinext.js.js
+import antd.checkbox.*
+import antd.grid.*
+import kotlinext.js.*
 import react.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private fun handleChange(checkedValues: Array<CheckboxValueType>) {
     console.log("checked = ", checkedValues)

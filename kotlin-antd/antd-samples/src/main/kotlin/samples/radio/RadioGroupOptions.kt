@@ -1,44 +1,41 @@
 package samples.radio
 
-import antd.checkbox.CheckboxOptionType
-import antd.checkbox.CheckboxValueType
-import antd.radio.RadioChangeEvent
-import antd.radio.radioGroup
-import kotlinext.js.jsObject
+import antd.checkbox.*
+import antd.radio.*
+import kotlinext.js.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private val plainOptions: Array<CheckboxValueType> = arrayOf("Apple", "Pear", "Orange")
 private val groupOptions = arrayOf<CheckboxOptionType>(
-        jsObject {
-            label = "Apple"
-            value = "Apple"
-        },
-        jsObject {
-            label = "Pear"
-            value = "Pear"
-        },
-        jsObject {
-            label = "Orange"
-            value = "Orange"
-        }
+    jsObject {
+        label = "Apple"
+        value = "Apple"
+    },
+    jsObject {
+        label = "Pear"
+        value = "Pear"
+    },
+    jsObject {
+        label = "Orange"
+        value = "Orange"
+    }
 )
 private val optionsWithDisabled = arrayOf<CheckboxOptionType>(
-        jsObject {
-            label = "Apple"
-            value = "Apple"
-        },
-        jsObject {
-            label = "Pear"
-            value = "Pear"
-        },
-        jsObject {
-            label = "Orange"
-            value = "Orange"
-            disabled = false
-        }
+    jsObject {
+        label = "Apple"
+        value = "Apple"
+    },
+    jsObject {
+        label = "Pear"
+        value = "Pear"
+    },
+    jsObject {
+        label = "Orange"
+        value = "Orange"
+        disabled = false
+    }
 )
 
 interface RadioGroupOptionsAppState : RState {
@@ -48,7 +45,7 @@ interface RadioGroupOptionsAppState : RState {
 }
 
 class RadioGroupOptionsApp : RComponent<RProps, RadioGroupOptionsAppState>() {
-    private val handleChange1 = fun (event: RadioChangeEvent) {
+    private val handleChange1 = fun(event: RadioChangeEvent) {
         console.log("radio1 checked", event.target.value)
 
         setState {
@@ -56,7 +53,7 @@ class RadioGroupOptionsApp : RComponent<RProps, RadioGroupOptionsAppState>() {
         }
     }
 
-    private val handleChange2 = fun (event: RadioChangeEvent) {
+    private val handleChange2 = fun(event: RadioChangeEvent) {
         console.log("radio2 checked", event.target.value)
 
         setState {
@@ -64,7 +61,7 @@ class RadioGroupOptionsApp : RComponent<RProps, RadioGroupOptionsAppState>() {
         }
     }
 
-    private val handleChange3 = fun (event: RadioChangeEvent) {
+    private val handleChange3 = fun(event: RadioChangeEvent) {
         console.log("radio3 checked", event.target.value)
 
         setState {

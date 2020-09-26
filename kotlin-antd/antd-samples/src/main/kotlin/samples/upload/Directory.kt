@@ -1,11 +1,10 @@
 package samples.upload
 
-import antd.button.button
-import antd.icon.icon
-import antd.upload.upload
+import antd.button.*
+import antd.icon.*
+import antd.upload.*
 import react.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 fun RBuilder.directory() {
     styledDiv {

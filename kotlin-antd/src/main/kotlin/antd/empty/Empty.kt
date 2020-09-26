@@ -3,10 +3,7 @@
 
 package antd.empty
 
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 
 @JsName("default")
 external object EmptyComponent : Component<EmptyProps, RState> {

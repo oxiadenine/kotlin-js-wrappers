@@ -1,14 +1,11 @@
 package samples.treeselect
 
-import antd.icon.icon
-import antd.treeselect.TreeSelectComponent
-import antd.treeselect.treeNode
-import antd.treeselect.treeSelect
-import kotlinext.js.js
+import antd.icon.*
+import antd.treeselect.*
+import kotlinext.js.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private val icon = buildElement {
     icon {
@@ -21,7 +18,7 @@ interface SuffixDemoState : RState {
 }
 
 class SuffixDemo : RComponent<RProps, SuffixDemoState>() {
-    private val handleChange = fun (newValue: String, _: Any, _: Any) {
+    private val handleChange = fun(newValue: String, _: Any, _: Any) {
         console.log(newValue)
 
         setState {

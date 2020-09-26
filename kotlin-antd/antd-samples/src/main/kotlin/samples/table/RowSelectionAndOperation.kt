@@ -1,20 +1,15 @@
 package samples.table
 
-import antd.MouseEventHandler
+import antd.*
 import antd.button.button
-import antd.table.ColumnProps
-import antd.table.TableComponent
-import antd.table.TableRowSelection
-import antd.table.table
-import kotlinext.js.js
-import kotlinext.js.jsObject
+import antd.table.*
+import kotlinext.js.*
+import kotlinx.browser.*
 import react.*
 import react.dom.div
 import react.dom.jsStyle
 import react.dom.span
-import kotlinx.browser.window
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private interface RowSelectionAndOperationTableDataItem {
     var key: String
@@ -24,18 +19,18 @@ private interface RowSelectionAndOperationTableDataItem {
 }
 
 private val tableColumns = arrayOf<ColumnProps<RowSelectionAndOperationTableDataItem>>(
-        jsObject {
-            title = "Name"
-            dataIndex = "name"
-        },
-        jsObject {
-            title = "Age"
-            dataIndex = "age"
-        },
-        jsObject {
-            title = "Address"
-            dataIndex = "address"
-        }
+    jsObject {
+        title = "Name"
+        dataIndex = "name"
+    },
+    jsObject {
+        title = "Age"
+        dataIndex = "age"
+    },
+    jsObject {
+        title = "Address"
+        dataIndex = "address"
+    }
 )
 
 private val data = (0..46).map { i ->
@@ -66,7 +61,7 @@ class RowSelectionAndOperationApp : RComponent<RProps, RowSelectionAndOperationA
         }, 1000)
     }
 
-    private val handleSelectChange = fun (rowKeys: Any?, _: Array<RowSelectionAndOperationTableDataItem>) {
+    private val handleSelectChange = fun(rowKeys: Any?, _: Array<RowSelectionAndOperationTableDataItem>) {
         console.log("selectedRowKeys changed: ", rowKeys)
 
         setState {

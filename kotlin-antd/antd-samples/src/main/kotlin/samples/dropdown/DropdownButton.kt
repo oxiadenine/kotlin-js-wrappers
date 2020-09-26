@@ -1,20 +1,16 @@
 package samples.dropdown
 
-import antd.MouseEventHandler
+import antd.*
 import antd.button.button
-import antd.dropdown.dropdown
-import antd.dropdown.dropdownButton
-import antd.icon.icon
-import antd.menu.ClickParam
-import antd.menu.menu
-import antd.menu.menuItem
-import antd.message.message
-import kotlinext.js.js
-import org.w3c.dom.HTMLButtonElement
+import antd.dropdown.*
+import antd.icon.*
+import antd.menu.*
+import antd.message.*
+import kotlinext.js.*
+import org.w3c.dom.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private val handleButtonClick: MouseEventHandler<HTMLButtonElement> = {
     message.info("Click on left button.")

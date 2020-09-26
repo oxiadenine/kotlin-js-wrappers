@@ -3,10 +3,7 @@
 
 package antd.skeleton
 
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 
 @JsName("default")
 external object SkeletonComponent : Component<SkeletonProps, RState> {

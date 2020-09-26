@@ -1,16 +1,15 @@
 package samples.message
 
-import antd.MouseEventHandler
-import antd.button.button
-import antd.message.message
+import antd.*
+import antd.button.*
+import antd.message.*
 import react.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private val success: MouseEventHandler<Any> = {
     message.loading("Action in progress..", 2.5).promise
-            .then { message.success("Loading finished", 2.5) }
-            .then { message.info("Loading finished is finished", 2.5) }
+        .then { message.success("Loading finished", 2.5) }
+        .then { message.info("Loading finished is finished", 2.5) }
 }
 
 fun RBuilder.thenable() {

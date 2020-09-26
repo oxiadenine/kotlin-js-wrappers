@@ -1,32 +1,24 @@
 package samples.form
 
-import antd.FormEventHandler
+import antd.*
 import antd.button.button
 import antd.form.*
-import antd.icon.icon
-import antd.inputnumber.inputNumber
-import antd.radio.radio
-import antd.radio.radioButton
-import antd.radio.radioGroup
-import antd.rate.rate
-import antd.select.SelectComponent
+import antd.icon.*
+import antd.inputnumber.*
+import antd.radio.*
+import antd.rate.*
+import antd.select.*
 import antd.select.option
-import antd.select.select
-import antd.slider.SliderMarks
-import antd.slider.slider
-import antd.switch.switch
-import antd.upload.dragger
-import antd.upload.upload
-import kotlinext.js.Object
-import kotlinext.js.js
-import kotlinext.js.jsObject
-import kotlinx.html.classes
-import org.w3c.dom.HTMLElement
+import antd.slider.*
+import antd.switch.*
+import antd.upload.*
+import kotlinext.js.*
+import kotlinx.html.*
+import org.w3c.dom.*
 import react.*
 import react.dom.p
 import react.dom.span
-import styled.css
-import styled.styledDiv
+import styled.*
 
 class ValidateOtherDemo : RComponent<FormComponentProps<Any>, RState>() {
     private val handleSubmit: FormEventHandler<HTMLElement> = { e ->
@@ -39,7 +31,7 @@ class ValidateOtherDemo : RComponent<FormComponentProps<Any>, RState>() {
         }
     }
 
-    private val normFile = fun (e: Any?): Any {
+    private val normFile = fun(e: Any?): Any {
         console.log("Upload event:", e)
 
         if (jsTypeOf(e) == "array") {
@@ -278,7 +270,7 @@ class ValidateOtherDemo : RComponent<FormComponentProps<Any>, RState>() {
 }
 
 private val wrappedValidateOtherDemo = FormComponent.create<FormComponentProps<Any>, RState>(
-        jsObject { name = "validate_other" })(ValidateOtherDemo::class.js)
+    jsObject { name = "validate_other" })(ValidateOtherDemo::class.js)
 
 fun RBuilder.wrappedValidateOtherDemo(handler: RHandler<FormComponentProps<Any>>) = child(wrappedValidateOtherDemo, jsObject {}, handler)
 

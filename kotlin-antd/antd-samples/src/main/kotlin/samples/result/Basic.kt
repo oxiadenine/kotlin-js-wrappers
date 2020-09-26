@@ -1,21 +1,16 @@
 package samples.result
 
 import antd.button.button
-import antd.icon.icon
-import antd.radio.RadioChangeEvent
-import antd.radio.radio
-import antd.radio.radioGroup
-import antd.result.result
-import antd.typography.paragraph
-import antd.typography.text
-import kotlinext.js.js
-import kotlinext.js.jsObject
-import kotlinx.html.classes
+import antd.icon.*
+import antd.radio.*
+import antd.result.*
+import antd.typography.*
+import kotlinext.js.*
+import kotlinx.html.*
 import react.*
 import react.dom.a
 import react.dom.div
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface BasicDemoState : RState {
     var status: String
@@ -65,21 +60,21 @@ class BasicDemo : RComponent<RProps, BasicDemoState>() {
                 title = "Successfully Purchased Cloud Server ECS!"
                 subTitle = "Order number: 2017182818828182881 Cloud server configuration takes 1-5 minutes, please wait."
                 extra = arrayOf(
-                        buildElement {
-                            button {
-                                attrs {
-                                    type = "primary"
-                                    key = "console"
-                                }
-                                +"Go Console"
+                    buildElement {
+                        button {
+                            attrs {
+                                type = "primary"
+                                key = "console"
                             }
-                        },
-                        buildElement {
-                            button {
-                                attrs.key = "buy"
-                                +"Buy Again"
-                            }
+                            +"Go Console"
                         }
+                    },
+                    buildElement {
+                        button {
+                            attrs.key = "buy"
+                            +"Buy Again"
+                        }
+                    }
                 )
             }
             "info" -> jsObject {
@@ -101,21 +96,21 @@ class BasicDemo : RComponent<RProps, BasicDemoState>() {
                 title = "Submission Failed"
                 subTitle = "Please check and modify the following information before resubmitting."
                 extra = arrayOf(
-                        buildElement {
-                            button {
-                                attrs {
-                                    type = "primary"
-                                    key = "console"
-                                }
-                                +"Go Console"
+                    buildElement {
+                        button {
+                            attrs {
+                                type = "primary"
+                                key = "console"
                             }
-                        },
-                        buildElement {
-                            button {
-                                attrs.key = "buy"
-                                +"Buy Again"
-                            }
+                            +"Go Console"
                         }
+                    },
+                    buildElement {
+                        button {
+                            attrs.key = "buy"
+                            +"Buy Again"
+                        }
+                    }
                 )
             }
             "warning" -> jsObject {

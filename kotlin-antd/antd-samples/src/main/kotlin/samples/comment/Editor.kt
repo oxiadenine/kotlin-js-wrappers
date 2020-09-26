@@ -1,23 +1,19 @@
 package samples.comment
 
-import antd.ChangeEventHandler
-import antd.MouseEventHandler
-import antd.avatar.avatar
+import antd.*
+import antd.avatar.*
 import antd.button.button
-import antd.comment.CommentProps
-import antd.comment.comment
-import antd.form.formItem
+import antd.comment.*
+import antd.form.*
 import antd.input.textArea
-import antd.list.ListComponent
-import antd.list.list
-import kotlinext.js.jsObject
-import moment.moment
-import org.w3c.dom.HTMLTextAreaElement
+import antd.list.*
+import kotlinext.js.*
+import kotlinx.browser.*
+import moment.*
+import org.w3c.dom.*
 import react.*
 import react.dom.*
-import kotlinx.browser.window
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface CommentListProps : RProps {
     var comments: Array<CommentProps>
@@ -100,14 +96,14 @@ class EditorApp : RComponent<RProps, EditorAppState>() {
                     submitting = false
                     value = ""
                     comments = arrayOf<CommentProps>(
-                            jsObject {
-                                author = "Han Solo"
-                                avatar = "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-                                content = buildElement {
-                                    p { +"${state.value}" }
-                                }
-                                datetime = moment().fromNow()
+                        jsObject {
+                            author = "Han Solo"
+                            avatar = "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+                            content = buildElement {
+                                p { +"${state.value}" }
                             }
+                            datetime = moment().fromNow()
+                        }
                     ).plus(state.comments)
                 }
             }, 1000)

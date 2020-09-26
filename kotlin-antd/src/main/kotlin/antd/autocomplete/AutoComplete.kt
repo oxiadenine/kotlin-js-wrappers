@@ -3,16 +3,10 @@
 
 package antd.autocomplete
 
-import antd.FormEventHandler
-import antd.select.AbstractSelectProps
-import antd.select.OptionComponent
-import antd.select.OptionGroupComponent
-import antd.select.SelectValue
-import kotlinext.js.Object
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import antd.*
+import antd.select.*
+import kotlinext.js.*
+import react.*
 
 @JsName("default")
 external object AutoCompleteComponent : Component<AutoCompleteProps, RState> {

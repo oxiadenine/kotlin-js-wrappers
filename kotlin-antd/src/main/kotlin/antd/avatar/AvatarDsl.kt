@@ -1,6 +1,5 @@
 package antd.avatar
 
-import react.RBuilder
-import react.RHandler
+import react.*
 
 fun RBuilder.avatar(handler: RHandler<AvatarProps>) = child(AvatarComponent::class, handler)

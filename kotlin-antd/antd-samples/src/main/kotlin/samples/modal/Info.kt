@@ -1,14 +1,13 @@
 package samples.modal
 
-import antd.MouseEventHandler
+import antd.*
 import antd.button.button
-import antd.modal.ModalComponent
-import kotlinext.js.jsObject
+import antd.modal.*
+import kotlinext.js.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
-import kotlin.js.Promise
+import styled.*
+import kotlin.js.*
 
 private val info: MouseEventHandler<Any> = {
     ModalComponent.info(jsObject {

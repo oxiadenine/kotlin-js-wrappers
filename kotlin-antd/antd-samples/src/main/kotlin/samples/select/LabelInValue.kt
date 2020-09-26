@@ -1,14 +1,12 @@
 package samples.select
 
-import antd.select.select
 import antd.select.LabeledValue
 import antd.select.SelectComponent
-import kotlinext.js.js
-import kotlinext.js.jsObject
+import antd.select.select
+import kotlinext.js.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private fun handleChange(value: LabeledValue, option: Any) {
     console.log(value)  // { key: "lucy", label: "Lucy (101)" }

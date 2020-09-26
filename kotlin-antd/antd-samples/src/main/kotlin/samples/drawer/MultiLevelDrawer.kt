@@ -1,15 +1,13 @@
 package samples.drawer
 
-import antd.MouseEventHandler
+import antd.*
 import antd.button.button
-import antd.drawer.EventType
-import antd.drawer.drawer
-import kotlinext.js.js
+import antd.drawer.*
+import kotlinext.js.*
 import react.*
 import react.dom.div
 import react.dom.jsStyle
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface MultiLevelDrawerAppState : RState {
     var visible: Boolean

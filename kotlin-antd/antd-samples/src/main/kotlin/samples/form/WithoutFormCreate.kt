@@ -1,14 +1,12 @@
 package samples.form
 
-import antd.ChangeEventHandler
+import antd.*
 import antd.form.*
-import antd.inputnumber.inputNumber
-import kotlinext.js.Object
-import kotlinext.js.jsObject
-import org.w3c.dom.HTMLInputElement
+import antd.inputnumber.*
+import kotlinext.js.*
+import org.w3c.dom.*
 import react.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private fun validatePrimeNumber(number: Number): RawFormValidation {
     if (number == 11) {

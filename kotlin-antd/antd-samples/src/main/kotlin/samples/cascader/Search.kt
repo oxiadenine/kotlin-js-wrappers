@@ -1,52 +1,48 @@
 package samples.cascader
 
-import antd.cascader.CascaderOptionType
-import antd.cascader.FilledFieldNamesType
-import antd.cascader.ShowSearchType
-import antd.cascader.cascader
-import kotlinext.js.jsObject
+import antd.cascader.*
+import kotlinext.js.*
 import react.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
-private val cascaderOptions= arrayOf<CascaderOptionType>(
-        jsObject {
-            value = "zhejiang"
-            label = "Zhejiang"
-            children = arrayOf(
+private val cascaderOptions = arrayOf<CascaderOptionType>(
+    jsObject {
+        value = "zhejiang"
+        label = "Zhejiang"
+        children = arrayOf(
+            jsObject {
+                value = "hangzhou"
+                label = "Hangzhou"
+                children = arrayOf(
                     jsObject {
-                        value = "hangzhou"
-                        label = "Hangzhou"
-                        children = arrayOf(
-                                jsObject {
-                                    value = "xihu"
-                                    label = "West Lake"
-                                },
-                                jsObject {
-                                    value = "xiasha"
-                                    label = "Xia Sha"
-                                    disabled = true
-                                }
-                        )
-                    }
-            )
-        },
-        jsObject {
-            value = "jiangsu"
-            label = "Jiangsu"
-            children = arrayOf(
+                        value = "xihu"
+                        label = "West Lake"
+                    },
                     jsObject {
-                        value = "nanjing"
-                        label = "Nanjing"
-                        children = arrayOf(
-                                jsObject {
-                                    value = "zhonghuamen"
-                                    label = "Zhong Hua Men"
-                                }
-                        )
+                        value = "xiasha"
+                        label = "Xia Sha"
+                        disabled = true
                     }
-            )
-        }
+                )
+            }
+        )
+    },
+    jsObject {
+        value = "jiangsu"
+        label = "Jiangsu"
+        children = arrayOf(
+            jsObject {
+                value = "nanjing"
+                label = "Nanjing"
+                children = arrayOf(
+                    jsObject {
+                        value = "zhonghuamen"
+                        label = "Zhong Hua Men"
+                    }
+                )
+            }
+        )
+    }
 )
 
 private fun handleChange(value: Array<String>, selectedOptions: Array<CascaderOptionType>?) {

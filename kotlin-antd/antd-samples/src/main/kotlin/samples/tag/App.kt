@@ -1,12 +1,9 @@
 package samples.tag
 
-import kotlinx.css.marginBottom
-import kotlinx.css.px
+import kotlinx.css.*
 import react.*
 import react.dom.*
-import styled.StyleSheet
-import styled.css
-import styled.styledDiv
+import styled.*
 
 object TagStyles : StyleSheet("tag", isStatic = true) {
     val container by css {}

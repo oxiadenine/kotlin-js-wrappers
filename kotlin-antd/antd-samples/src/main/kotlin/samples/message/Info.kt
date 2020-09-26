@@ -1,11 +1,10 @@
 package samples.message
 
-import antd.MouseEventHandler
-import antd.button.button
-import antd.message.message
+import antd.*
+import antd.button.*
+import antd.message.*
 import react.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private val info: MouseEventHandler<Any> = {
     message.info("This is a normal message")

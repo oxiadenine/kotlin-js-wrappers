@@ -1,12 +1,9 @@
 package samples.collapse
 
-import kotlinx.css.margin
-import kotlinx.css.px
+import kotlinx.css.*
 import react.*
 import react.dom.*
-import styled.StyleSheet
-import styled.css
-import styled.styledDiv
+import styled.*
 
 object CollapseStyles : StyleSheet("collapse", isStatic = true) {
     val container by css {}

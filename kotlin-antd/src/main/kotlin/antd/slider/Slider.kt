@@ -3,8 +3,8 @@
 
 package antd.slider
 
-import antd.tooltip.TooltipPlacement
-import org.w3c.dom.HTMLElement
+import antd.tooltip.*
+import org.w3c.dom.*
 import react.*
 
 @JsName("default")

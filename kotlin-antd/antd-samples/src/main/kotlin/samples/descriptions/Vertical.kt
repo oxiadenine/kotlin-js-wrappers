@@ -1,10 +1,8 @@
 package samples.descriptions
 
-import antd.descriptions.descriptions
-import antd.descriptions.descriptionsItem
-import react.RBuilder
-import styled.css
-import styled.styledDiv
+import antd.descriptions.*
+import react.*
+import styled.*
 
 fun RBuilder.vertical() {
     styledDiv {

@@ -1,14 +1,12 @@
 package samples.checkbox
 
-import antd.MouseEventHandler
+import antd.*
 import antd.button.button
-import antd.checkbox.CheckboxChangeEvent
-import antd.checkbox.checkbox
-import kotlinext.js.js
+import antd.checkbox.*
+import kotlinext.js.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface ControllerAppState : RState {
     var checked: Boolean
@@ -16,7 +14,7 @@ interface ControllerAppState : RState {
 }
 
 class ControllerApp : RComponent<RProps, ControllerAppState>() {
-    private val toggleChecked: MouseEventHandler<Any> =  {
+    private val toggleChecked: MouseEventHandler<Any> = {
         setState {
             checked = !state.checked
         }
@@ -28,7 +26,7 @@ class ControllerApp : RComponent<RProps, ControllerAppState>() {
         }
     }
 
-    val handleChange = fun (event: CheckboxChangeEvent) {
+    val handleChange = fun(event: CheckboxChangeEvent) {
         console.log("checked = ${event.target.checked}")
 
         setState {

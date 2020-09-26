@@ -1,12 +1,11 @@
 package samples.message
 
-import antd.MouseEventHandler
+import antd.*
 import antd.button.button
-import antd.message.message
+import antd.message.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private val success: MouseEventHandler<Any> = {
     message.success("This is a message of success")

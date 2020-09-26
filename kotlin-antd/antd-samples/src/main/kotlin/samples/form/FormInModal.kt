@@ -1,19 +1,16 @@
 package samples.form
 
-import antd.MouseEvent
-import antd.MouseEventHandler
+import antd.*
 import antd.button.button
 import antd.form.*
 import antd.input.input
-import antd.modal.modal
-import antd.radio.radio
-import antd.radio.radioGroup
-import kotlinext.js.jsObject
-import org.w3c.dom.HTMLElement
+import antd.modal.*
+import antd.radio.*
+import kotlinext.js.*
+import org.w3c.dom.*
 import react.*
 import react.dom.div
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface CollectionCreateFormProps : FormComponentProps<Any> {
     var visible: Boolean?
@@ -76,7 +73,7 @@ class CollectionCreateForm : RComponent<CollectionCreateFormProps, RState>() {
 }
 
 private val wrappedCollectionCreateForm = FormComponent.create<CollectionCreateFormProps, RState>(
-        jsObject { name = "form_in_modal" })(CollectionCreateForm::class.js)
+    jsObject { name = "form_in_modal" })(CollectionCreateForm::class.js)
 
 fun RBuilder.wrappedCollectionCreateForm(handler: RHandler<CollectionCreateFormProps>) = child(wrappedCollectionCreateForm, jsObject {}, handler)
 
@@ -117,7 +114,7 @@ class CollectionsPage : RComponent<FormComponentProps<Any>, CollectionsPageState
         }
     }
 
-    private val saveFormRef = fun (formReference: CollectionCreateForm) {
+    private val saveFormRef = fun(formReference: CollectionCreateForm) {
         formRef = formReference
     }
 

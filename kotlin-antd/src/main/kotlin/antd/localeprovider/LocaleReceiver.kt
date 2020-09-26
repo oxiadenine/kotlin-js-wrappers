@@ -1,9 +1,6 @@
 package antd.localeprovider
 
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 
 external object LocaleReceiverComponent : Component<LocaleReceiverProps, RState> {
     override fun render(): ReactElement?

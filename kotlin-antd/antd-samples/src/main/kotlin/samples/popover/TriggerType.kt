@@ -1,11 +1,10 @@
 package samples.popover
 
 import antd.button.button
-import antd.popover.popover
+import antd.popover.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private val contentElement = buildElement {
     div {

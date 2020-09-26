@@ -3,10 +3,7 @@
 
 package reactintl.displayname
 
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 
 @JsName("FormattedDisplayName")
 external class FormattedDisplayNameComponent : Component<FormattedDisplayNameProps, RState> {

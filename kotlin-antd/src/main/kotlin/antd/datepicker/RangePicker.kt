@@ -1,8 +1,7 @@
 package antd.datepicker
 
-import moment.Moment
-import org.w3c.dom.Element
-import org.w3c.dom.HTMLElement
+import moment.*
+import org.w3c.dom.*
 import react.*
 
 external object RangePickerComponent : Component<RangePickerProps, RangePickerState> {

@@ -8,9 +8,9 @@ import kotlin.js.RegExp
 
 external interface Locale {
     fun calendar(
-            key: CalendarKey? = definedExternally,
-            m: Moment? = definedExternally,
-            now: Moment? = definedExternally): String
+        key: CalendarKey? = definedExternally,
+        m: Moment? = definedExternally,
+        now: Moment? = definedExternally): String
 
     fun longDateFormat(key: LongDateFormatKey): String
     fun invalidDate(): String
@@ -19,10 +19,11 @@ external interface Locale {
     fun preparse(inp: String): String
     fun postformat(inp: String): String
     fun relativeTime(
-            n: Number,
-            withoutSuffix: Boolean,
-            key: RelativeTimeKey,
-            isFuture: Boolean): String
+        n: Number,
+        withoutSuffix: Boolean,
+        key: RelativeTimeKey,
+        isFuture: Boolean): String
+
     fun pastFuture(diff: Number, absRelTime: String): String
     fun set(config: Any)
 
@@ -150,8 +151,10 @@ external interface LocaleSpecification {
 
 external interface MomentObjectOutput {
     var years: Number
+
     /* One digit */
     var months: Number
+
     /* Day of the month */
     var date: Number
     var hours: Number
@@ -174,8 +177,8 @@ external interface Duration {
     fun clone(): Duration
 
     fun humanize(
-            withSuffix: Boolean? = definedExternally,
-            argThresholds: ArgThresholdOpts? = definedExternally): String
+        withSuffix: Boolean? = definedExternally,
+        argThresholds: ArgThresholdOpts? = definedExternally): String
 
     fun abs(): Duration
 
@@ -207,11 +210,12 @@ external interface Duration {
     fun asYears(): Number
 
     fun add(
-            inp: DurationInputArg1? = definedExternally,
-            unit: DurationInputArg2? = definedExternally): Duration
+        inp: DurationInputArg1? = definedExternally,
+        unit: DurationInputArg2? = definedExternally): Duration
+
     fun subtract(
-            inp: DurationInputArg1? = definedExternally,
-            unit: DurationInputArg2? = definedExternally): Duration
+        inp: DurationInputArg1? = definedExternally,
+        unit: DurationInputArg2? = definedExternally): Duration
 
     fun locale(): String
     fun locale(locale: LocaleSpecifier): Duration
@@ -226,10 +230,12 @@ external interface Duration {
      * @deprecated since version 2.8.0
      */
     fun lang(locale: LocaleSpecifier): Moment
+
     /**
      * @deprecated since version 2.8.0
      */
     fun lang(): Locale
+
     /**
      * @deprecated
      */
@@ -401,16 +407,18 @@ external interface Moment {
     fun endOf(unitOfTime: StartOf): Moment
 
     fun add(
-            amount: DurationInputArg1? = definedExternally,
-            unit: DurationInputArg2? = definedExternally): Moment
+        amount: DurationInputArg1? = definedExternally,
+        unit: DurationInputArg2? = definedExternally): Moment
+
     /**
      * @deprecated reverse syntax
      */
     fun add(unit: DurationConstructor, amount: Any /* Number | String */): Moment
 
     fun subtract(
-            amount: DurationInputArg1? = definedExternally,
-            unit: DurationInputArg2? = definedExternally): Moment
+        amount: DurationInputArg1? = definedExternally,
+        unit: DurationInputArg2? = definedExternally): Moment
+
     /**
      * @deprecated reverse syntax
      */
@@ -434,6 +442,7 @@ external interface Moment {
     // current date/time in UTC mode
     fun utc(keepLocalTime: Boolean? = definedExternally): Moment
     fun isUTC(): Boolean
+
     /**
      * @deprecated use isUTC
      */
@@ -450,10 +459,12 @@ external interface Moment {
 
     fun year(y: Number): Moment
     fun year(): Number
+
     /**
      * @deprecated use year(y)
      */
     fun years(y: Number): Moment
+
     /**
      * @deprecated use year()
      */
@@ -464,10 +475,12 @@ external interface Moment {
     fun quarters(q: Number): Moment
     fun month(M: Any /* Number | String */): Moment
     fun month(): Number
+
     /**
      * @deprecated use month(M)
      */
     fun months(M: Any /* Number | String */): Moment
+
     /**
      * @deprecated use month()
      */
@@ -478,10 +491,12 @@ external interface Moment {
     fun days(): Number
     fun date(d: Number): Moment
     fun date(): Number
+
     /**
      * @deprecated use date(d)
      */
     fun dates(d: Number): Moment
+
     /**
      * @deprecated use date()
      */
@@ -531,9 +546,9 @@ external interface Moment {
     fun toNow(withoutPrefix: Boolean? = definedExternally): String
 
     fun diff(
-            b: MomentInput,
-            unitOfTime: Diff? = definedExternally,
-            precise: Boolean? = definedExternally): Number
+        b: MomentInput,
+        unitOfTime: Diff? = definedExternally,
+        precise: Boolean? = definedExternally): Number
 
     fun toArray(): Array<Number>
     fun toDate(): Date
@@ -543,6 +558,7 @@ external interface Moment {
     fun unix(): Number
 
     fun isLeapYear(): Boolean
+
     /**
      * @deprecated in favor of utcOffset
      */
@@ -550,8 +566,9 @@ external interface Moment {
     fun zone(b: Any /* Number | String */): Moment
     fun utcOffset(): Number
     fun utcOffset(
-            b: Any /* Number | String */,
-            keepLocalTime: Boolean? = definedExternally): Moment
+        b: Any /* Number | String */,
+        keepLocalTime: Boolean? = definedExternally): Moment
+
     fun isUtcOffset(): Boolean
     fun daysInMonth(): Number
     fun isDST(): Boolean
@@ -560,30 +577,36 @@ external interface Moment {
     fun zoneName(): String
 
     fun isBefore(
-            inp: MomentInput? = definedExternally,
-            granularity: StartOf? = definedExternally): Boolean
+        inp: MomentInput? = definedExternally,
+        granularity: StartOf? = definedExternally): Boolean
+
     fun isAfter(
-            inp: MomentInput? = definedExternally,
-            granularity: StartOf? = definedExternally): Boolean
+        inp: MomentInput? = definedExternally,
+        granularity: StartOf? = definedExternally): Boolean
+
     fun isSame(
-            inp: MomentInput? = definedExternally,
-            granularity: StartOf? = definedExternally): Boolean
+        inp: MomentInput? = definedExternally,
+        granularity: StartOf? = definedExternally): Boolean
+
     fun isSameOrAfter(
-            inp: MomentInput? = definedExternally,
-            granularity: StartOf? = definedExternally): Boolean
+        inp: MomentInput? = definedExternally,
+        granularity: StartOf? = definedExternally): Boolean
+
     fun isSameOrBefore(
-            inp: MomentInput? = definedExternally,
-            granularity: StartOf? = definedExternally): Boolean
+        inp: MomentInput? = definedExternally,
+        granularity: StartOf? = definedExternally): Boolean
+
     fun isBetween(
-            a: MomentInput,
-            b: MomentInput,
-            granularity: StartOf? = definedExternally,
-            inclusivity: String? = definedExternally /* "()" | "[)" | "(]" | "[]" */): Boolean
+        a: MomentInput,
+        b: MomentInput,
+        granularity: StartOf? = definedExternally,
+        inclusivity: String? = definedExternally /* "()" | "[)" | "(]" | "[]" */): Boolean
 
     /**
      * @deprecated as of 2.8.0, use locale
      */
     fun lang(language: LocaleSpecifier): Moment
+
     /**
      * @deprecated as of 2.8.0, use locale
      */
@@ -604,34 +627,36 @@ external interface Moment {
      * @deprecated as of 2.7.0, use moment.min/max
      */
     fun max(
-            inp: MomentInput? = definedExternally,
-            format: MomentFormatSpecification? = definedExternally,
-            strict: Boolean? = definedExternally): Moment
+        inp: MomentInput? = definedExternally,
+        format: MomentFormatSpecification? = definedExternally,
+        strict: Boolean? = definedExternally): Moment
+
     /**
      * @deprecated as of 2.7.0, use moment.min/max
      */
     fun max(
-            inp: MomentInput? = definedExternally,
-            format: MomentFormatSpecification? = definedExternally,
-            language: String? = definedExternally,
-            strict: Boolean? = definedExternally): Moment
+        inp: MomentInput? = definedExternally,
+        format: MomentFormatSpecification? = definedExternally,
+        language: String? = definedExternally,
+        strict: Boolean? = definedExternally): Moment
 
     // NOTE(constructor): Same as moment constructor
     /**
      * @deprecated as of 2.7.0, use moment.min/max
      */
     fun min(
-            inp: MomentInput? = definedExternally,
-            format: MomentFormatSpecification? = definedExternally,
-            strict: Boolean? = definedExternally): Moment
+        inp: MomentInput? = definedExternally,
+        format: MomentFormatSpecification? = definedExternally,
+        strict: Boolean? = definedExternally): Moment
+
     /**
      * @deprecated as of 2.7.0, use moment.min/max
      */
     fun min(
-            inp: MomentInput? = definedExternally,
-            format: MomentFormatSpecification? = definedExternally,
-            language: String? = definedExternally,
-            strict: Boolean? = definedExternally): Moment
+        inp: MomentInput? = definedExternally,
+        format: MomentFormatSpecification? = definedExternally,
+        language: String? = definedExternally,
+        strict: Boolean? = definedExternally): Moment
 
     fun get(unit: All): Number
     fun set(unit: All, value: Number): Moment
@@ -645,14 +670,15 @@ external var fn: Moment
 
 // NOTE(constructor): Same as moment constructor
 external fun utc(
-        inp: MomentInput? = definedExternally,
-        format: MomentFormatSpecification? = definedExternally,
-        strict: Boolean? = definedExternally): Moment
+    inp: MomentInput? = definedExternally,
+    format: MomentFormatSpecification? = definedExternally,
+    strict: Boolean? = definedExternally): Moment
+
 external fun utc(
-        inp: MomentInput? = definedExternally,
-        format: MomentFormatSpecification? = definedExternally,
-        language: String? = definedExternally,
-        strict: Boolean? = definedExternally): Moment
+    inp: MomentInput? = definedExternally,
+    format: MomentFormatSpecification? = definedExternally,
+    language: String? = definedExternally,
+    strict: Boolean? = definedExternally): Moment
 
 external fun unix(timestamp: Number): Moment
 
@@ -665,35 +691,37 @@ external fun isDuration(d: Any): Boolean
  * @deprecated in 2.8.0
  */
 external fun lang(language: String? = definedExternally): String
+
 /**
  * @deprecated in 2.8.0
  */
 external fun lang(
-        language: String? = definedExternally,
-        definition: Locale? = definedExternally): String
+    language: String? = definedExternally,
+    definition: Locale? = definedExternally): String
 
 external fun locale(language: String? = definedExternally): String
 external fun locale(language: Array<String>? = definedExternally): String
 external fun locale(
-        language: String? = definedExternally,
-        definition: Any? = definedExternally /* LocaleSpecification | Unit */): String
+    language: String? = definedExternally,
+    definition: Any? = definedExternally /* LocaleSpecification | Unit */): String
 
 external fun localeData(key: Any? = definedExternally /* String | Array<String> */): Locale
 
 external fun duration(
-        inp: DurationInputArg1? = definedExternally,
-        unit: DurationInputArg2? = definedExternally): Duration
+    inp: DurationInputArg1? = definedExternally,
+    unit: DurationInputArg2? = definedExternally): Duration
 
 // NOTE(constructor): Same as moment constructor
 external fun parseZone(
-        inp: MomentInput? = definedExternally,
-        format: MomentFormatSpecification? = definedExternally,
-        strict: Boolean? = definedExternally): Moment
+    inp: MomentInput? = definedExternally,
+    format: MomentFormatSpecification? = definedExternally,
+    strict: Boolean? = definedExternally): Moment
+
 external fun parseZone(
-        inp: MomentInput? = definedExternally,
-        format: MomentFormatSpecification? = definedExternally,
-        language: String? = definedExternally,
-        strict: Boolean? = definedExternally): Moment
+    inp: MomentInput? = definedExternally,
+    format: MomentFormatSpecification? = definedExternally,
+    language: String? = definedExternally,
+    strict: Boolean? = definedExternally): Moment
 
 external fun months(): Array<String>
 external fun months(index: Number): String

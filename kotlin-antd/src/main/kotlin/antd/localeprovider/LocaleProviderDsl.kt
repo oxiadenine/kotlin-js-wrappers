@@ -1,6 +1,5 @@
 package antd.localeprovider
 
-import react.RBuilder
-import react.RHandler
+import react.*
 
 fun RBuilder.localeProvider(handler: RHandler<LocaleProviderProps>) = child(LocaleProviderComponent::class, handler)

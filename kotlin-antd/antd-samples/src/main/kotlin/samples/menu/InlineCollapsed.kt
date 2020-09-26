@@ -1,14 +1,13 @@
 package samples.menu
 
-import antd.MouseEventHandler
+import antd.*
 import antd.button.button
-import antd.icon.icon
+import antd.icon.*
 import antd.menu.*
-import kotlinext.js.js
+import kotlinext.js.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface InlineCollapsedAppState : RState {
     var collapsed: Boolean

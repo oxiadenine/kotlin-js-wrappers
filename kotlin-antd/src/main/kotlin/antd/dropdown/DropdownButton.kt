@@ -1,9 +1,8 @@
 package antd.dropdown
 
-import antd.MouseEventHandler
-import antd.button.ButtonGroupProps
-import antd.button.ButtonHTMLType
-import org.w3c.dom.HTMLButtonElement
+import antd.*
+import antd.button.*
+import org.w3c.dom.*
 import react.*
 
 external object DropdownButtonComponent : Component<DropdownButtonProps, RState> {

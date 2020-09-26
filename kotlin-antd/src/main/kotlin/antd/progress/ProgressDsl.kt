@@ -1,6 +1,5 @@
 package antd.progress
 
-import react.RBuilder
-import react.RHandler
+import react.*
 
 fun RBuilder.progress(handler: RHandler<ProgressProps>) = child(ProgressComponent::class, handler)

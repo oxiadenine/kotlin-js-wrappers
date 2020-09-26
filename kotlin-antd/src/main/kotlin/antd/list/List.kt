@@ -3,10 +3,7 @@
 
 package antd.list
 
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 
 @JsName("default")
 external class ListComponent<T> : Component<ListProps<T>, ListState> {

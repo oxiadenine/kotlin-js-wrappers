@@ -1,10 +1,9 @@
 package samples
 
-import kotlinext.js.jsObject
+import kotlinext.js.*
 import react.*
-import react.dom.div
-import react.dom.p
-import reactresponsive.mediaQuery
+import react.dom.*
+import reactresponsive.*
 
 private val example = functionalComponent<RProps> {
     div {
@@ -24,7 +23,7 @@ private val example = functionalComponent<RProps> {
             attrs.minResolution = "2dppx"
             /* You can also use a function (render prop) as a child */
             childList.add(
-                fun (matches: Boolean): ReactElement {
+                fun(matches: Boolean): ReactElement {
                     return if (matches) {
                         p { +"You are retina" }
                     } else p { +"You are not retina" }

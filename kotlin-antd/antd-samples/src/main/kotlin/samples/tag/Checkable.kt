@@ -1,17 +1,16 @@
 package samples.tag
 
-import antd.tag.checkableTag
+import antd.tag.*
 import react.*
-import react.dom.div
-import styled.css
-import styled.styledDiv
+import react.dom.*
+import styled.*
 
 interface MyTagState : RState {
     var checked: Boolean
 }
 
 class MyTag : RComponent<RProps, MyTagState>() {
-    private val handleChange = fun (value: Boolean) {
+    private val handleChange = fun(value: Boolean) {
         setState {
             checked = value
         }

@@ -1,15 +1,10 @@
 package samples
 
-import kotlinext.js.jsObject
+import kotlinext.js.*
 import react.*
-import react.dom.div
-import react.dom.h1
-import react.dom.h2
-import reactintl.IntlShape
-import reactintl.WrappedComponentProps
-import reactintl.injectIntl
-import reactintl.provider.intlProvider
-import reactintl.useIntl
+import react.dom.*
+import reactintl.*
+import reactintl.provider.*
 import kotlin.js.Date
 
 private val comp = functionalComponent<RProps> {

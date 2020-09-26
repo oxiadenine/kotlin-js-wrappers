@@ -1,9 +1,6 @@
 package antd.table
 
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 
 external class SelectionCheckboxAllComponent<T> : Component<SelectionCheckboxAllProps<T>, SelectionCheckboxAllState> {
     override fun render(): ReactElement?

@@ -3,9 +3,8 @@
 
 package antd.checkbox
 
-import antd.KeyboardEventHandler
-import antd.MouseEventHandler
-import org.w3c.dom.HTMLElement
+import antd.*
+import org.w3c.dom.*
 import org.w3c.dom.events.MouseEvent
 import react.*
 

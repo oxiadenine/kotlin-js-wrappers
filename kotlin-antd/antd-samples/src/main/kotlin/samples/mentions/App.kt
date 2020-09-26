@@ -2,9 +2,7 @@ package samples.mentions
 
 import react.*
 import react.dom.*
-import styled.StyleSheet
-import styled.css
-import styled.styledDiv
+import styled.*
 
 object MentionsStyles : StyleSheet("mentions", isStatic = true) {
     val container by css {}

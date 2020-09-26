@@ -1,6 +1,5 @@
 package antd.rate
 
-import react.RBuilder
-import react.RHandler
+import react.*
 
 fun RBuilder.rate(handler: RHandler<RateProps>) = child(RateComponent::class, handler)

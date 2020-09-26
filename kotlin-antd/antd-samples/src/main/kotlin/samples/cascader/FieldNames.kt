@@ -1,11 +1,9 @@
 package samples.cascader
 
-import antd.cascader.CascaderOptionType
-import antd.cascader.cascader
-import kotlinext.js.jsObject
+import antd.cascader.*
+import kotlinext.js.*
 import react.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 interface FieldNamesCascaderOptionType : CascaderOptionType {
     var code: String?
@@ -14,38 +12,38 @@ interface FieldNamesCascaderOptionType : CascaderOptionType {
 }
 
 private val cascaderOptions = arrayOf<FieldNamesCascaderOptionType>(
-        jsObject {
-            code = "zhejiang"
-            name = "Zhejiang"
-            items = arrayOf(
+    jsObject {
+        code = "zhejiang"
+        name = "Zhejiang"
+        items = arrayOf(
+            jsObject {
+                code = "hangzhou"
+                name = "Hangzhou"
+                items = arrayOf(
                     jsObject {
-                        code = "hangzhou"
-                        name = "Hangzhou"
-                        items = arrayOf(
-                                jsObject {
-                                    code = "xihu"
-                                    name = "West Lake"
-                                }
-                        )
+                        code = "xihu"
+                        name = "West Lake"
                     }
-            )
-        },
-        jsObject {
-            code = "jiangsu"
-            name = "Jiangsu"
-            items = arrayOf(
+                )
+            }
+        )
+    },
+    jsObject {
+        code = "jiangsu"
+        name = "Jiangsu"
+        items = arrayOf(
+            jsObject {
+                code = "nanjing"
+                name = "Nanjing"
+                items = arrayOf(
                     jsObject {
-                        code = "nanjing"
-                        name = "Nanjing"
-                        items = arrayOf(
-                                jsObject {
-                                    code = "zhonghuamen"
-                                    name = "Zhong Hua Men"
-                                }
-                        )
+                        code = "zhonghuamen"
+                        name = "Zhong Hua Men"
                     }
-            )
-        }
+                )
+            }
+        )
+    }
 )
 
 private fun handleChange(value: Array<String>, selectedOptions: Array<CascaderOptionType>?) {

@@ -3,9 +3,7 @@
 
 package antd.button
 
-import antd.AnchorHTMLAttributes
-import antd.ButtonHTMLAttributes
-import antd.MouseEventHandler
+import antd.*
 import react.*
 
 @JsName("default")

@@ -1,11 +1,10 @@
 package samples.datepicker
 
 import antd.datepicker.*
-import moment.moment
+import moment.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 private val dateformat = "YYYY-MM-DD"
 
@@ -30,8 +29,8 @@ fun RBuilder.disabled() {
             rangePicker {
                 attrs {
                     defaultValue = arrayOf(
-                            moment("2015-06-06", dateformat),
-                            moment("2015-06-06", dateformat)
+                        moment("2015-06-06", dateformat),
+                        moment("2015-06-06", dateformat)
                     )
                     disabled = true
                 }

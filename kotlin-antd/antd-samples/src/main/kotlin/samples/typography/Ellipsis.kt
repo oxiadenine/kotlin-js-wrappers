@@ -1,12 +1,10 @@
 package samples.typography
 
-import antd.typography.EllipsisConfig
-import antd.typography.paragraph
-import kotlinext.js.jsObject
-import react.RBuilder
-import react.dom.div
-import styled.css
-import styled.styledDiv
+import antd.typography.*
+import kotlinext.js.*
+import react.*
+import react.dom.*
+import styled.*
 
 fun RBuilder.ellipsis() {
     styledDiv {

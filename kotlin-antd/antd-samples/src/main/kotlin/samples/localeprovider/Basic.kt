@@ -1,12 +1,10 @@
 package samples.localeprovider
 
-import antd.localeprovider.localeProvider
-import antd.localeprovider.zhCN
-import antd.pagination.pagination
+import antd.localeprovider.*
+import antd.pagination.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 fun RBuilder.basicApp() {
     div {

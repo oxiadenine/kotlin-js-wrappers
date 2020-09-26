@@ -1,15 +1,14 @@
 package samples.menu
 
-import antd.icon.icon
+import antd.icon.*
 import antd.menu.*
-import kotlinext.js.js
+import kotlinext.js.*
 import react.*
 import react.dom.*
-import styled.css
-import styled.styledDiv
+import styled.*
 
 class InlineSider : RComponent<RProps, RState>() {
-    private val handleClick = fun (param: ClickParam) {
+    private val handleClick = fun(param: ClickParam) {
         console.log("click ", param)
     }
 

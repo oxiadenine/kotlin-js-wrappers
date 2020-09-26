@@ -1,6 +1,6 @@
 package antd.spin
 
-import react.ReactElement
+import react.*
 
 typealias SpinSize = String /* "small" | "default" | "large" */
 typealias SpinIndicator = ReactElement
