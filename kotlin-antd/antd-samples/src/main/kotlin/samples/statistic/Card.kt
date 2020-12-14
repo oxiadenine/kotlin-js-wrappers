@@ -31,9 +31,7 @@ fun RBuilder.card() {
                                 precision = 2
                                 valueStyle = js { color = "#3f8600" }
                                 prefix = buildElement {
-                                    icon {
-                                        attrs.type = "arrow-up"
-                                    }
+                                    arrowUpOutlined {}
                                 }
                                 suffix = "%"
                             }
@@ -50,9 +48,7 @@ fun RBuilder.card() {
                                 precision = 2
                                 valueStyle = js { color = "#cf1322" }
                                 prefix = buildElement {
-                                    icon {
-                                        attrs.type = "arrow-down"
-                                    }
+                                    arrowDownOutlined {}
                                 }
                                 suffix = "%"
                             }

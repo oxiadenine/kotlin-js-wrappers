@@ -43,9 +43,7 @@ fun RBuilder.multiple() {
                 attrs.overlay = menu
                 button {
                     +"Actions "
-                    icon {
-                        attrs.type = "down"
-                    }
+                    downOutlined {}
                 }
             }
         }

@@ -82,7 +82,9 @@ class ButtonSize : RComponent<RProps, ButtonSizeState>() {
                 attrs {
                     type = "primary"
                     shape = "circle"
-                    icon = "download"
+                    icon = buildElement {
+                        downloadOutlined {}
+                    }
                     size = state.size
                 }
             }
@@ -90,7 +92,9 @@ class ButtonSize : RComponent<RProps, ButtonSizeState>() {
                 attrs {
                     type = "primary"
                     shape = "round"
-                    icon = "download"
+                    icon = buildElement {
+                        downloadOutlined {}
+                    }
                     size = state.size
                 }
                 +"Download"
@@ -98,7 +102,9 @@ class ButtonSize : RComponent<RProps, ButtonSizeState>() {
             button {
                 attrs {
                     type = "primary"
-                    icon = "download"
+                    icon = buildElement {
+                        downloadOutlined {}
+                    }
                     size = state.size
                 }
                 +"Download"
@@ -108,17 +114,13 @@ class ButtonSize : RComponent<RProps, ButtonSizeState>() {
                 attrs.size = state.size
                 button {
                     attrs.type = "primary"
-                    icon {
-                        attrs.type = "left"
-                    }
+                    leftOutlined {}
                     +"Backward"
                 }
                 button {
                     attrs.type = "primary"
                     +"Forward"
-                    icon {
-                        attrs.type = "right"
-                    }
+                    rightOutlined {}
                 }
             }
         }

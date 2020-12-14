@@ -28,9 +28,7 @@ fun RBuilder.customDropdownMenu() {
                                     padding = "8px"
                                     cursor = "pointer"
                                 }
-                                icon {
-                                    attrs.type = "plus"
-                                }
+                                plusOutlined {}
                                 +"Add item"
                             }
                         }

@@ -3,6 +3,7 @@ package samples.progress
 import antd.*
 import antd.button.*
 import antd.button.button
+import antd.icon.*
 import antd.progress.progress
 import react.*
 import react.dom.div
@@ -50,13 +51,17 @@ class DynamicApp : RComponent<RProps, DynamicAppState>() {
                 button {
                     attrs {
                         onClick = decline
-                        icon = "minus"
+                        icon = buildElement {
+                            minusOutlined {}
+                        }
                     }
                 }
                 button {
                     attrs {
                         onClick = increase
-                        icon = "plus"
+                        icon = buildElement {
+                            plusOutlined {}
+                        }
                     }
                 }
             }

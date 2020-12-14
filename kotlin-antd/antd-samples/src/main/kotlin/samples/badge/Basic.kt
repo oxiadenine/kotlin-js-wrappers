@@ -36,11 +36,8 @@ fun RBuilder.basic() {
             badge {
                 attrs {
                     count = buildElement {
-                        icon {
-                            attrs {
-                                type = "clock-circle"
-                                style = js { color = "#f5222d" }
-                            }
+                        clockCircleOutlined {
+                            attrs.style = js { color = "#f5222d" }
                         }
                     }
                 }

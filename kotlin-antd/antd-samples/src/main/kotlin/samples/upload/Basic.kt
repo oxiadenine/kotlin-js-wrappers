@@ -30,9 +30,7 @@ fun RBuilder.basic() {
                 }
             }
             button {
-                icon {
-                    attrs.type = "upload"
-                }
+                uploadOutlined {}
                 +"Click to upload"
             }
         }

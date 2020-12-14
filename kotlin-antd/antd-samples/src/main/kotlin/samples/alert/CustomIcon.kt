@@ -7,9 +7,7 @@ import react.dom.*
 import styled.*
 
 private val smileIcon = buildElement {
-    icon {
-        attrs.type = "smile"
-    }
+    smileOutlined {}
 }
 
 fun RBuilder.customIcon() {

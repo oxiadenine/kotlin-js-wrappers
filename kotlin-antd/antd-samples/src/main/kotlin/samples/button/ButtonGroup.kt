@@ -39,30 +39,30 @@ fun RBuilder.buttonGroup() {
             buttonGroup {
                 button {
                     attrs.type = "primary"
-                    icon {
-                        attrs.type = "left"
-                    }
+                    leftOutlined {}
                     +"Go back"
                 }
                 button {
                     attrs.type = "primary"
                     +"Go forward"
-                    icon {
-                        attrs.type = "right"
-                    }
+                    rightOutlined {}
                 }
             }
             buttonGroup {
                 button {
                     attrs {
                         type = "primary"
-                        icon = "cloud"
+                        icon = buildElement {
+                            cloudOutlined {}
+                        }
                     }
                 }
                 button {
                     attrs {
                         type = "primary"
-                        icon = "cloud-download"
+                        icon = buildElement {
+                            cloudDownloadOutlined {}
+                        }
                     }
                 }
             }

@@ -40,11 +40,8 @@ class IconSliderDemo : RComponent<IconSliderDemoProps, IconSliderDemoState>() {
         val nextColor = if (sliderValue >= sliderMid) "rgba(0, 0, 0, .45)" else ""
 
         div("icon-wrapper") {
-            icon {
-                attrs {
-                    style = js { color = nextColor }
-                    type = "frown-o"
-                }
+            frownOutlined {
+                attrs.style = js { color = nextColor }
             }
             slider {
                 attrs {
@@ -54,11 +51,8 @@ class IconSliderDemo : RComponent<IconSliderDemoProps, IconSliderDemoState>() {
                     value = sliderValue
                 }
             }
-            icon {
-                attrs {
-                    style = js { color = preColor }
-                    type = "smile-o"
-                }
+            smileOutlined {
+                attrs.style = js { color = preColor }
             }
         }
     }

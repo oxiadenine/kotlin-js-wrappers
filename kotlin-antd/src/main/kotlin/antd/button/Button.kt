@@ -33,7 +33,7 @@ external interface NativeButtonProps : BaseButtonProps, ButtonHTMLAttributes<Any
 
 external interface BaseButtonProps {
     var type: ButtonType?
-    var icon: String?
+    var icon: ReactElement?
     var shape: ButtonShape?
     var size: ButtonSize?
     var loading: Any? /* Boolean | ButtonLoading */

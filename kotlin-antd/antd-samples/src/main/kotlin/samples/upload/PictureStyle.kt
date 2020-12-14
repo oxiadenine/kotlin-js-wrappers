@@ -36,9 +36,7 @@ fun RBuilder.pictureStyle() {
                     defaultFileList = fileList
                 }
                 button {
-                    icon {
-                        attrs.type = "upload"
-                    }
+                    uploadOutlined {}
                     +"Upload"
                 }
             }
@@ -52,9 +50,7 @@ fun RBuilder.pictureStyle() {
                     className = "upload-list-inline"
                 }
                 button {
-                    icon {
-                        attrs.type = "upload"
-                    }
+                    uploadOutlined {}
                     +"Upload"
                 }
             }

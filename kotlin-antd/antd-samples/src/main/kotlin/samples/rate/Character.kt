@@ -14,9 +14,7 @@ fun RBuilder.character() {
             rate {
                 attrs {
                     character = buildElement {
-                        icon {
-                            attrs.type = "heart"
-                        }
+                        heartOutlined {}
                     }
                     allowHalf = true
                 }

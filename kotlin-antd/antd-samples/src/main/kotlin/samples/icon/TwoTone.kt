@@ -11,25 +11,12 @@ fun RBuilder.twoTone() {
         css { +IconStyles.twoTone }
         div {
             attrs.classes = setOf("icons-list")
-            icon {
-                attrs {
-                    type = "smile"
-                    theme = "twoTone"
-                }
+            smileTwoTone {}
+            heartTwoTone {
+                attrs.twoToneColor = "#eb2f96"
             }
-            icon {
-                attrs {
-                    type = "heart"
-                    theme = "twoTone"
-                    twoToneColor = "#eb2f96"
-                }
-            }
-            icon {
-                attrs {
-                    type = "check-circle"
-                    theme = "twoTone"
-                    twoToneColor = "#52c41a"
-                }
+            checkCircleTwoTone {
+                attrs.twoToneColor = "#52c41a"
             }
         }
     }

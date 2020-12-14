@@ -33,9 +33,7 @@ fun RBuilder.previewFile() {
                     previewFile = props.previewFile
                 }
                 button {
-                    icon {
-                        attrs.type = "upload"
-                    }
+                    uploadOutlined {}
                     +"Upload"
                 }
             }

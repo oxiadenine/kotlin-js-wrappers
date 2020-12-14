@@ -27,26 +27,19 @@ private val listData = (0..23).mapIndexed { i, _ ->
     }
 }.toTypedArray()
 
-interface VerticalIconTextProps : RProps {
-    var type: String
+interface IconTextProps : RProps {
+    var icon: ReactElement
     var text: String
 }
 
-class VerticalIconText : RComponent<VerticalIconTextProps, RState>() {
-    override fun RBuilder.render() {
-        span {
-            icon {
-                attrs {
-                    type = props.type
-                    style = js { marginRight = 8 }
-                }
-            }
-            +props.text
-        }
+private val iconText = functionalComponent<IconTextProps> { props ->
+    span {
+        childList += props.icon
+        +" ${props.text}"
     }
 }
 
-fun RBuilder.iconText(handler: RHandler<VerticalIconTextProps>) = child(VerticalIconText::class, handler)
+fun RBuilder.iconText(handler: RHandler<IconTextProps>) = child(iconText, jsObject {}, handler)
 
 fun RBuilder.vertical() {
     styledDiv {
@@ -77,7 +70,7 @@ fun RBuilder.vertical() {
                                 buildElement {
                                     iconText {
                                         attrs {
-                                            type = "star-o"
+                                            icon = starOutlined {}
                                             text = "156"
                                         }
                                     }
@@ -85,7 +78,7 @@ fun RBuilder.vertical() {
                                 buildElement {
                                     iconText {
                                         attrs {
-                                            type = "like-o"
+                                            icon = likeOutlined {}
                                             text = "156"
                                         }
                                     }
@@ -93,7 +86,7 @@ fun RBuilder.vertical() {
                                 buildElement {
                                     iconText {
                                         attrs {
-                                            type = "message"
+                                            icon = messageOutlined {}
                                             text = "2"
                                         }
                                     }

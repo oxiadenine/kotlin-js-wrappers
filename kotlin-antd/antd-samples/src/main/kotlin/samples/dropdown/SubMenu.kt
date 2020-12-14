@@ -39,9 +39,7 @@ fun RBuilder.subMenu() {
                     href = "#"
                 }
                 +"Cascading menu "
-                icon {
-                    attrs.type = "down"
-                }
+                downOutlined {}
             }
         }
     }

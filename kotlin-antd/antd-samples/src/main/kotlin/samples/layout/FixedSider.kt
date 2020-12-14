@@ -32,58 +32,42 @@ fun RBuilder.fixedSider() {
                     }
                     menuItem {
                         attrs.key = "1"
-                        icon {
-                            attrs.type = "user"
-                        }
+                        userOutlined {}
                         span("nav-text") { +"mav 1" }
                     }
                     menuItem {
                         attrs.key = "2"
-                        icon {
-                            attrs.type = "video-camera"
-                        }
+                        videoCameraOutlined {}
                         span("nav-text") { +"nav 2" }
                     }
                     menuItem {
                         attrs.key = "3"
-                        icon {
-                            attrs.type = "upload"
-                        }
+                        uploadOutlined {}
                         span("nav-text") { +"nav 3" }
                     }
                     menuItem {
                         attrs.key = "4"
-                        icon {
-                            attrs.type = "bar-chart"
-                        }
+                        barChartOutlined {}
                         span("nav-text") { +"nav 4" }
                     }
                     menuItem {
                         attrs.key = "5"
-                        icon {
-                            attrs.type = "cloud-o"
-                        }
+                        cloudOutlined {}
                         span("nav-text") { +"nav 5" }
                     }
                     menuItem {
                         attrs.key = "6"
-                        icon {
-                            attrs.type = "appstore-o"
-                        }
+                        appstoreOutlined {}
                         span("nav-text") { +"nav 6" }
                     }
                     menuItem {
                         attrs.key = "7"
-                        icon {
-                            attrs.type = "team"
-                        }
+                        teamOutlined {}
                         span("nav-text") { +"nav 7" }
                     }
                     menuItem {
                         attrs.key = "8"
-                        icon {
-                            attrs.type = "shop"
-                        }
+                        shopOutlined {}
                         span("nav-text") { +"nav 8" }
                     }
                 }

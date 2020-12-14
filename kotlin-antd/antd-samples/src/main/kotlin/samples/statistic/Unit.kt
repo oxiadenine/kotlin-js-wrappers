@@ -18,9 +18,7 @@ fun RBuilder.unit() {
                         title = "Feedback"
                         value = 1128
                         prefix = buildElement {
-                            icon {
-                                attrs.type = "like"
-                            }
+                            likeOutlined {}
                         }
                     }
                 }

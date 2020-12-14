@@ -80,9 +80,7 @@ fun RBuilder.addon() {
                 input {
                     attrs {
                         addonAfter = buildElement {
-                            icon {
-                                attrs.type = "setting"
-                            }
+                            settingOutlined {}
                         }
                         defaultValue = "mysite"
                     }

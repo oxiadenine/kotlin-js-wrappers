@@ -65,15 +65,11 @@ class ChangeDemo : RComponent<RProps, ChangeDemoState>() {
                 buttonGroup {
                     button {
                         attrs.onClick = decline
-                        icon {
-                            attrs.type = "minus"
-                        }
+                        minusOutlined {}
                     }
                     button {
                         attrs.onClick = increase
-                        icon {
-                            attrs.type = "plus"
-                        }
+                        plusOutlined {}
                     }
                 }
             }

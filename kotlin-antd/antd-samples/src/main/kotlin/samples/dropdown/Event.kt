@@ -42,9 +42,7 @@ fun RBuilder.event() {
                     href = "#"
                 }
                 +"Hover me, Click menu item "
-                icon {
-                    attrs.type = "down"
-                }
+                downOutlined {}
             }
         }
     }

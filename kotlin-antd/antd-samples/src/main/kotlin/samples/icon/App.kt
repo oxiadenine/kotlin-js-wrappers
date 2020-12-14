@@ -25,7 +25,7 @@ object IconStyles : StyleSheet("icon", isStatic = true) {
     val twoTone by css {}
     val iconfont by css {}
     val icons by css {}
-    val oldIcons by css {}
+    val scriptUrl by css {}
 }
 
 class IconApp : RComponent<RProps, RState>() {
@@ -37,7 +37,7 @@ class IconApp : RComponent<RProps, RState>() {
             custom()
             twoTone()
             iconfont()
-            oldIcons()
+            scriptUrl()
         }
     }
 }

@@ -2,6 +2,7 @@ package samples.button
 
 import antd.*
 import antd.button.button
+import antd.icon.*
 import react.*
 import react.dom.*
 import styled.*
@@ -58,7 +59,9 @@ class LoadingApp : RComponent<RProps, LoadingAppState>() {
             button {
                 attrs {
                     type = "primary"
-                    icon = "poweroff"
+                    icon = buildElement {
+                        poweroffOutlined {}
+                    }
                     loading = state.iconLoading
                     onClick = enterIconLoading
                 }

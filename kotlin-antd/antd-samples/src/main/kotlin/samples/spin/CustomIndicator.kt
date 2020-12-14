@@ -7,9 +7,8 @@ import react.*
 import styled.*
 
 private val antIcon = buildElement {
-    icon {
-        attrs {
-            type = "loading"
+    loadingOutlined {
+        attrs{
             style = js { fontSize = 24 }
             spin = true
         }

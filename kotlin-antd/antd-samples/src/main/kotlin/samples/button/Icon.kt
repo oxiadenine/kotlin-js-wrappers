@@ -1,6 +1,7 @@
 package samples.button
 
 import antd.button.button
+import antd.icon.*
 import react.*
 import react.dom.*
 import styled.*
@@ -13,48 +14,64 @@ fun RBuilder.icon() {
                 attrs {
                     type = "primary"
                     shape = "circle"
-                    icon = "search"
+                    icon = buildElement {
+                        searchOutlined {}
+                    }
                 }
             }
             button {
                 attrs {
                     type = "primary"
-                    icon = "search"
+                    icon = buildElement {
+                        searchOutlined {}
+                    }
                 }
                 +"Search"
             }
             button {
                 attrs {
                     shape = "circle"
-                    icon = "search"
+                    icon = buildElement {
+                        searchOutlined {}
+                    }
                 }
             }
             button {
-                attrs.icon = "search"
+                attrs.icon = buildElement {
+                    searchOutlined {}
+                }
                 +"Search"
             }
             br {}
             button {
                 attrs {
                     shape = "circle"
-                    icon = "search"
+                    icon = buildElement {
+                        searchOutlined {}
+                    }
                 }
             }
             button {
-                attrs.icon = "search"
+                attrs.icon = buildElement {
+                    searchOutlined {}
+                }
                 +"Search"
             }
             button {
                 attrs {
                     type = "dashed"
                     shape = "circle"
-                    icon = "search"
+                    icon = buildElement {
+                        searchOutlined {}
+                    }
                 }
             }
             button {
                 attrs {
                     type = "dashed"
-                    icon = "search"
+                    icon = buildElement {
+                        searchOutlined {}
+                    }
                 }
                 +"Search"
             }

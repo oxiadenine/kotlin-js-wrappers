@@ -15,9 +15,7 @@ fun RBuilder.icon() {
                 attrs {
                     tab = buildElement {
                         span {
-                            icon {
-                                attrs.type = "apple"
-                            }
+                            appleOutlined {}
                             +"Tab 1"
                         }
                     }
@@ -29,9 +27,7 @@ fun RBuilder.icon() {
                 attrs {
                     tab = buildElement {
                         span {
-                            icon {
-                                attrs.type = "android"
-                            }
+                            androidOutlined {}
                             +"Tab 2"
                         }
                     }

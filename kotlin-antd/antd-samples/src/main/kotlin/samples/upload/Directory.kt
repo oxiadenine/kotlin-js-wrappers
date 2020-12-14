@@ -15,9 +15,7 @@ fun RBuilder.directory() {
                 directory = true
             }
             button {
-                icon {
-                    attrs.type = "upload"
-                }
+                uploadOutlined {}
                 +"Upload Directory"
             }
         }

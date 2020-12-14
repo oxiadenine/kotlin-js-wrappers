@@ -6,7 +6,6 @@ import antd.layout.*
 import antd.layout.header
 import antd.menu.*
 import kotlinext.js.*
-import org.w3c.dom.*
 import react.*
 import react.dom.*
 import styled.*
@@ -16,7 +15,7 @@ interface CustomTriggerDemoState : RState {
 }
 
 class CustomTriggerDemo : RComponent<RProps, CustomTriggerDemoState>() {
-    private val toggle: MouseEventHandler<HTMLElement> = {
+    private val toggle: MouseEventHandler<Any> = {
         setState {
             collapsed = !state.collapsed
         }
@@ -43,23 +42,17 @@ class CustomTriggerDemo : RComponent<RProps, CustomTriggerDemoState>() {
                     }
                     menuItem {
                         attrs.key = "1"
-                        icon {
-                            attrs.type = "user"
-                        }
+                        userOutlined {}
                         span { +"mav 1" }
                     }
                     menuItem {
                         attrs.key = "2"
-                        icon {
-                            attrs.type = "video-camera"
-                        }
+                        videoCameraOutlined {}
                         span { +"nav 2" }
                     }
                     menuItem {
                         attrs.key = "3"
-                        icon {
-                            attrs.type = "upload"
-                        }
+                        uploadOutlined {}
                         span { +"nav 3" }
                     }
                 }
@@ -72,11 +65,19 @@ class CustomTriggerDemo : RComponent<RProps, CustomTriggerDemoState>() {
                             padding = 0
                         }
                     }
-                    icon {
-                        attrs {
-                            className = "trigger"
-                            type = if (state.collapsed) "menu-unfold" else "menu-fold"
-                            onClick = toggle
+                    if (state.collapsed){
+                        menuUnfoldOutlined {
+                            attrs {
+                                className = "trigger"
+                                onClick = toggle
+                            }
+                        }
+                    } else {
+                        menuFoldOutlined {
+                            attrs {
+                                className = "trigger"
+                                onClick = toggle
+                            }
                         }
                     }
                 }

@@ -62,19 +62,13 @@ class LoadingApp : RComponent<RProps, LoadingAppState>() {
                     }
                     actions = arrayOf(
                         buildElement {
-                            icon {
-                                attrs.type = "setting"
-                            }
+                            settingOutlined {}
                         },
                         buildElement {
-                            icon {
-                                attrs.type = "edit"
-                            }
+                            editOutlined {}
                         },
                         buildElement {
-                            icon {
-                                attrs.type = "ellipsis"
-                            }
+                            ellipsisOutlined {}
                         }
                     )
                 }

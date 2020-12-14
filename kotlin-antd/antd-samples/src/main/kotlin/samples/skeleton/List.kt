@@ -30,25 +30,20 @@ private val listData = (0..2).map { i ->
 }.toTypedArray()
 
 interface ListIconTextProps : RProps {
-    var type: String
+    var icon: ReactElement
     var text: String
 }
 
-class ListIconText : RComponent<ListIconTextProps, RState>() {
-    override fun RBuilder.render() {
-        span {
-            icon {
-                attrs {
-                    type = props.type
-                    style = js { marginRight = 8 }
-                }
-            }
-            +props.text
-        }
+private val iconText = functionalComponent<ListIconTextProps> { props ->
+    props.icon.props.unsafeCast<IconProps>().style = js { marginRight = 8 }
+
+    span {
+        childList += props.icon
+        +" ${props.text}"
     }
 }
 
-fun RBuilder.iconText(handler: RHandler<ListIconTextProps>) = child(ListIconText::class, handler)
+fun RBuilder.iconText(handler: RHandler<ListIconTextProps>) = child(iconText, jsObject {}, handler)
 
 interface ListAppState : RState {
     var loading: Boolean
@@ -87,7 +82,7 @@ class ListApp : RComponent<RProps, ListAppState>() {
                                         buildElement {
                                             iconText {
                                                 attrs {
-                                                    type = "star-o"
+                                                    icon = starOutlined {}
                                                     text = "156"
                                                 }
                                             }
@@ -95,7 +90,7 @@ class ListApp : RComponent<RProps, ListAppState>() {
                                         buildElement {
                                             iconText {
                                                 attrs {
-                                                    type = "like-o"
+                                                    icon = likeOutlined {}
                                                     text = "156"
                                                 }
                                             }
@@ -103,7 +98,7 @@ class ListApp : RComponent<RProps, ListAppState>() {
                                         buildElement {
                                             iconText {
                                                 attrs {
-                                                    type = "message"
+                                                    icon = messageOutlined {}
                                                     text = "2"
                                                 }
                                             }

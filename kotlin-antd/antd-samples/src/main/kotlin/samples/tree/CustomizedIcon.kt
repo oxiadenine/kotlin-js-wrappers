@@ -14,17 +14,13 @@ fun RBuilder.customizedIcon() {
                 defaultExpandAll = true
                 defaultSelectedKeys = arrayOf("0-0-0")
                 switcherIcon = buildElement {
-                    icon {
-                        attrs.type = "down"
-                    }
+                    downOutlined {}
                 }
             }
             treeNode {
                 attrs {
                     icon = buildElement {
-                        icon {
-                            attrs.type = "smile-o"
-                        }
+                        smileOutlined {}
                     }
                     title = "parent 1"
                     key = "0-0"
@@ -32,9 +28,7 @@ fun RBuilder.customizedIcon() {
                 treeNode {
                     attrs {
                         icon = buildElement {
-                            icon {
-                                attrs.type = "meh-o"
-                            }
+                            mehOutlined {}
                         }
                         title = "leaf"
                         key = "0-0-0"
@@ -44,9 +38,9 @@ fun RBuilder.customizedIcon() {
                     attrs {
                         icon = fun(treeNode: TreeNodeAttribute): ReactElement {
                             return buildElement {
-                                icon {
-                                    attrs.type = if (treeNode.selected) "frown" else "frown-o"
-                                }
+                                if (treeNode.selected) {
+                                    frownFilled {}
+                                } else frownOutlined {}
                             }
                         }
                         title = "leaf"

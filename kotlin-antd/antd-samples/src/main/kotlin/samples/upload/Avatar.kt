@@ -66,9 +66,9 @@ class AvatarApp : RComponent<RProps, AvatarAppState>() {
     override fun RBuilder.render() {
         val uploadButton = buildElement {
             div {
-                icon {
-                    attrs.type = if (state.loading) "loading" else "plus"
-                }
+                if (state.loading) {
+                    loadingOutlined {}
+                } else plusOutlined {}
                 div {
                     attrs.classes = setOf("ant-upload-text")
                     +"Upload"

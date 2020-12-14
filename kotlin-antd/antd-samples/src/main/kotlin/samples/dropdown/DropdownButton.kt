@@ -29,23 +29,17 @@ private val menu = buildElement {
         attrs.onClick = ::handleMenuClick
         menuItem {
             attrs.key = "1"
-            icon {
-                attrs.type = "user"
-            }
+            userOutlined {}
             +"1st menu item"
         }
         menuItem {
             attrs.key = "2"
-            icon {
-                attrs.type = "user"
-            }
+            userOutlined {}
             +"2nd menu item"
         }
         menuItem {
             attrs.key = "3"
-            icon {
-                attrs.type = "user"
-            }
+            userOutlined {}
             +"3rd menu item"
         }
     }
@@ -66,9 +60,7 @@ fun RBuilder.dropdownButton() {
                 attrs {
                     overlay = menu
                     icon = buildElement {
-                        icon {
-                            attrs.type = "user"
-                        }
+                        userOutlined {}
                     }
                 }
                 +"Dropdown"
@@ -87,9 +79,7 @@ fun RBuilder.dropdownButton() {
                 button {
                     attrs.style = js { marginLeft = 8 }
                     +"Button "
-                    icon {
-                        attrs.type = "down"
-                    }
+                    downOutlined {}
                 }
             }
         }

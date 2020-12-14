@@ -15,9 +15,8 @@ fun RBuilder.custom() {
             timelineItem {
                 attrs {
                     dot = buildElement {
-                        icon {
+                        clockCircleOutlined {
                             attrs {
-                                type = "clock-circle-o"
                                 style = js { fontSize = "16px" }
                                 color = "red"
                             }

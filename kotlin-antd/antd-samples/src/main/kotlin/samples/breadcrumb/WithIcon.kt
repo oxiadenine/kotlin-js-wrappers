@@ -12,15 +12,11 @@ fun RBuilder.withIcon() {
         breadcrumb {
             breadcrumbItem {
                 attrs.href = ""
-                icon {
-                    attrs.type = "home"
-                }
+                homeOutlined {}
             }
             breadcrumbItem {
                 attrs.href = ""
-                icon {
-                    attrs.type = "user"
-                }
+                userOutlined {}
                 span { +"Application List" }
             }
             breadcrumbItem { +"Application" }

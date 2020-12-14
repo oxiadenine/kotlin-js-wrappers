@@ -54,9 +54,7 @@ fun RBuilder.item() {
                     href = "#"
                 }
                 +"Hover me "
-                icon {
-                    attrs.type = "down"
-                }
+                downOutlined {}
             }
         }
     }

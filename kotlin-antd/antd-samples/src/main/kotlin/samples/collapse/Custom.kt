@@ -29,11 +29,8 @@ fun RBuilder.custom() {
                 bordered = false
                 defaultActiveKey = arrayOf("1")
                 expandIcon = { panelProps ->
-                    icon {
-                        attrs {
-                            type = "caret-right"
-                            rotate = if (panelProps.isActive!!) 90 else 0
-                        }
+                    caretRightOutlined {
+                        attrs.rotate = if (panelProps.isActive!!) 90 else 0
                     }
                 }
             }

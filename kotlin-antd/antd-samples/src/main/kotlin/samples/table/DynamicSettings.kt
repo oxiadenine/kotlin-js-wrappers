@@ -78,9 +78,7 @@ private val tableColumns = arrayOf<ColumnProps<DynamicSettingsTableDataItem>>(
                             className = "ant-dropdown-link"
                         }
                         +"More actions "
-                        icon {
-                            attrs.type = "down"
-                        }
+                        downOutlined {}
                     }
                 }
             }

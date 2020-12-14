@@ -16,7 +16,7 @@ interface CustomTriggerDebugDemoState : RState {
 }
 
 class CustomTriggerDebugDemo : RComponent<RProps, CustomTriggerDebugDemoState>() {
-    private val toggle: MouseEventHandler<HTMLElement> = {
+    private val toggle: MouseEventHandler<Any> = {
         setState {
             collapsed = !state.collapsed
         }
@@ -44,16 +44,12 @@ class CustomTriggerDebugDemo : RComponent<RProps, CustomTriggerDebugDemoState>()
                     }
                     menuItem {
                         attrs.key = "1"
-                        icon {
-                            attrs.type = "pie-chart"
-                        }
+                        pieChartOutlined {}
                         span { +"Option 1" }
                     }
                     menuItem {
                         attrs.key = "2"
-                        icon {
-                            attrs.type = "desktop"
-                        }
+                        desktopOutlined {}
                         span { +"Option 2" }
                     }
                     subMenu {
@@ -61,9 +57,7 @@ class CustomTriggerDebugDemo : RComponent<RProps, CustomTriggerDebugDemoState>()
                             key = "sub1"
                             title = buildElement {
                                 span {
-                                    icon {
-                                        attrs.type = "user"
-                                    }
+                                    userOutlined {}
                                     span { +"User" }
                                 }
                             }
@@ -86,18 +80,14 @@ class CustomTriggerDebugDemo : RComponent<RProps, CustomTriggerDebugDemoState>()
                             key = "sub2"
                             title = buildElement {
                                 span {
-                                    icon {
-                                        attrs.type = "team"
-                                    }
+                                    teamOutlined {}
                                     span { +"Team" }
                                 }
                             }
                         }
                         menuItem {
                             attrs.key = "9"
-                            icon {
-                                attrs.type = "file"
-                            }
+                            fileOutlined {}
                             span { +"File" }
                         }
                     }
@@ -111,11 +101,19 @@ class CustomTriggerDebugDemo : RComponent<RProps, CustomTriggerDebugDemoState>()
                             padding = 0
                         }
                     }
-                    icon {
-                        attrs {
-                            className = "trigger"
-                            type = if (state.collapsed) "menu-unfold" else "menu-fold"
-                            onClick = toggle
+                    if (state.collapsed){
+                        menuUnfoldOutlined {
+                            attrs {
+                                className = "trigger"
+                                onClick = toggle
+                            }
+                        }
+                    } else {
+                        menuFoldOutlined {
+                            attrs {
+                                className = "trigger"
+                                onClick = toggle
+                            }
                         }
                     }
                 }

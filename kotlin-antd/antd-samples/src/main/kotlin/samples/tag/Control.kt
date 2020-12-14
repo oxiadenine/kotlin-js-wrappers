@@ -116,9 +116,7 @@ class ControlEditableTagGroup : RComponent<RProps, ControlEditableTagGroupState>
                             borderStyle = "dashed"
                         }
                     }
-                    icon {
-                        attrs.type = "plus"
-                    }
+                    plusOutlined {}
                     +" New Tag "
                 }
             }

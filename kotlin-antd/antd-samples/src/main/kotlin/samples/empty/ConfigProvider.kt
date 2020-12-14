@@ -20,11 +20,8 @@ private val customizeRenderEmpty: RenderEmptyHandler = {
     buildElement {
         div {
             attrs.jsStyle = js { textAlign = "center" }
-            icon {
-                attrs {
-                    type = "smile"
-                    style = js { fontSize = 20 }
-                }
+            smileOutlined {
+                attrs.style = js { fontSize = 20 }
             }
             p { +"Data Not Found" }
         }

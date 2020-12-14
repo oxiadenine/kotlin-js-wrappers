@@ -14,11 +14,8 @@ fun RBuilder.icon() {
             attrs {
                 title = "Are you sure？"
                 icon = buildElement {
-                    icon {
-                        attrs {
-                            type = "question-circle-o"
-                            style = js { color = "red" }
-                        }
+                    questionCircleOutlined {
+                        attrs.style = js { color = "red" }
                     }
                 }
             }

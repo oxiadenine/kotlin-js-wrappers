@@ -27,12 +27,8 @@ fun RBuilder.text() {
             br {}
             switch {
                 attrs {
-                    checkedChildren = icon {
-                        attrs.type = "check"
-                    }
-                    unCheckedChildren = icon {
-                        attrs.type = "cross"
-                    }
+                    checkedChildren = checkOutlined {}
+                    unCheckedChildren = closeOutlined {}
                     defaultChecked = true
                 }
             }

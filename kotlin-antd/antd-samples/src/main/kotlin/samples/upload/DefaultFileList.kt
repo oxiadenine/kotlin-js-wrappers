@@ -45,9 +45,7 @@ fun RBuilder.defaultFileList() {
                 )
             }
             button {
-                icon {
-                    attrs.type = "upload"
-                }
+                uploadOutlined {}
                 +"Click to upload"
             }
         }

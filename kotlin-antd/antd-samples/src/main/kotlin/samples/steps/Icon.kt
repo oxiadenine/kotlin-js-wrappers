@@ -14,9 +14,7 @@ fun RBuilder.icon() {
                     status = "finish"
                     title = "Login"
                     icon = buildElement {
-                        icon {
-                            attrs.type = "user"
-                        }
+                        userOutlined {}
                     }
                 }
             }
@@ -25,9 +23,7 @@ fun RBuilder.icon() {
                     status = "finish"
                     title = "Verification"
                     icon = buildElement {
-                        icon {
-                            attrs.type = "solution"
-                        }
+                        solutionOutlined {}
                     }
                 }
             }
@@ -36,9 +32,7 @@ fun RBuilder.icon() {
                     status = "process"
                     title = "Pay"
                     icon = buildElement {
-                        icon {
-                            attrs.type = "loading"
-                        }
+                        loadingOutlined {}
                     }
                 }
             }
@@ -47,9 +41,7 @@ fun RBuilder.icon() {
                     status = "wait"
                     title = "Done"
                     icon = buildElement {
-                        icon {
-                            attrs.type = "smile-o"
-                        }
+                        smileOutlined {}
                     }
                 }
             }

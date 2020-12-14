@@ -29,9 +29,7 @@ fun RBuilder.drag() {
             }
             p {
                 attrs.classes = setOf("ant-upload-drag-icon")
-                icon {
-                    attrs.type = "inbox"
-                }
+                inboxOutlined {}
             }
             p {
                 attrs.classes = setOf("ant-upload-text")

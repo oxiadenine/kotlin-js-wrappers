@@ -60,9 +60,7 @@ class ThemeSider : RComponent<RProps, ThemeSiderState>() {
                         key = "sub1"
                         title = buildElement {
                             span {
-                                icon {
-                                    attrs.type = "mail"
-                                }
+                                mailOutlined {}
                                 span { +"Navigation One" }
                             }
                         }
@@ -89,9 +87,7 @@ class ThemeSider : RComponent<RProps, ThemeSiderState>() {
                         key = "sub2"
                         title = buildElement {
                             span {
-                                icon {
-                                    attrs.type = "appstore"
-                                }
+                                appstoreOutlined {}
                                 span { +"Navigation Two" }
                             }
                         }
@@ -124,9 +120,7 @@ class ThemeSider : RComponent<RProps, ThemeSiderState>() {
                         key = "sub4"
                         title = buildElement {
                             span {
-                                icon {
-                                    attrs.type = "setting"
-                                }
+                                settingOutlined {}
                                 span { +"Navigation Three" }
                             }
                         }

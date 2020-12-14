@@ -69,9 +69,7 @@ fun RBuilder.topSide() {
                                     key = "sub1"
                                     title = buildElement {
                                         span {
-                                            icon {
-                                                attrs.type = "user"
-                                            }
+                                            userOutlined {}
                                             +"subnav 1"
                                         }
                                     }
@@ -98,9 +96,7 @@ fun RBuilder.topSide() {
                                     key = "sub2"
                                     title = buildElement {
                                         span {
-                                            icon {
-                                                attrs.type = "laptop"
-                                            }
+                                            laptopOutlined {}
                                             +"subnav 2"
                                         }
                                     }
@@ -127,9 +123,7 @@ fun RBuilder.topSide() {
                                     key = "sub3"
                                     title = buildElement {
                                         span {
-                                            icon {
-                                                attrs.type = "notification"
-                                            }
+                                            notificationOutlined {}
                                             +"subnav 3"
                                         }
                                     }

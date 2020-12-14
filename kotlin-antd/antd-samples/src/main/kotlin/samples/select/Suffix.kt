@@ -10,14 +10,12 @@ import styled.*
 
 private val smileIcon = buildElement {
     icon {
-        attrs.type = "smile"
+        //attrs.type = "smile"
     }
 }
 
 private val mehIcon = buildElement {
-    icon {
-        attrs.type = "meh"
-    }
+    mehOutlined {}
 }
 
 private fun handleChange(value: String, option: Any) {

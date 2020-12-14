@@ -8,9 +8,7 @@ import react.dom.*
 import styled.*
 
 private val icon = buildElement {
-    icon {
-        attrs.type = "smile"
-    }
+    smileOutlined {}
 }
 
 interface SuffixDemoState : RState {

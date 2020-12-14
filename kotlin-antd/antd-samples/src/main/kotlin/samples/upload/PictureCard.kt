@@ -53,9 +53,7 @@ class PicturesWall : RComponent<RProps, PicturesWallState>() {
     override fun RBuilder.render() {
         val uploadButton = buildElement {
             div {
-                icon {
-                    attrs.type = "plus"
-                }
+                plusOutlined {}
                 div {
                     attrs.classes = setOf("ant-upload-text")
                     +"Upload"

@@ -1,13 +1,13 @@
 package samples.comment
 
-import antd.*
 import antd.avatar.*
 import antd.comment.*
 import antd.icon.*
 import antd.tooltip.*
 import kotlinext.js.*
+import kotlinx.html.js.*
 import moment.*
-import org.w3c.dom.*
+import org.w3c.dom.events.*
 import react.*
 import react.dom.*
 import styled.*
@@ -19,7 +19,7 @@ interface BasicAppState : RState {
 }
 
 class BasicApp : RComponent<RProps, BasicAppState>() {
-    private val like: MouseEventHandler<HTMLElement> = {
+    private val like = { _: Event ->
         setState {
             likes = 1
             dislikes = 0
@@ -27,7 +27,7 @@ class BasicApp : RComponent<RProps, BasicAppState>() {
         }
     }
 
-    private val dislike: MouseEventHandler<HTMLElement> = {
+    private val dislike = { _: Event ->
         setState {
             likes = 0
             dislikes = 1
@@ -42,17 +42,16 @@ class BasicApp : RComponent<RProps, BasicAppState>() {
     }
 
     override fun RBuilder.render() {
-        val commnetActions = arrayOf(
+        val commentActions = arrayOf(
             buildElement {
                 span {
                     tooltip {
                         attrs.title = "Like"
-                        icon {
-                            attrs {
-                                type = "like"
-                                theme = if (state.action == "liked") "filled" else "outlined"
-                                onClick = like
-                            }
+                        span {
+                            attrs.onClickFunction = like
+                            if (state.action == "liked") {
+                                likeFilled {}
+                            } else likeOutlined {}
                         }
                     }
                     span {
@@ -68,12 +67,11 @@ class BasicApp : RComponent<RProps, BasicAppState>() {
                 span {
                     tooltip {
                         attrs.title = "Dislike"
-                        icon {
-                            attrs {
-                                type = "dislike"
-                                theme = if (state.action == "disliked") "filled" else "outlined"
-                                onClick = dislike
-                            }
+                        span {
+                            attrs.onClickFunction = dislike
+                            if (state.action == "disliked") {
+                                dislikeFilled {}
+                            } else dislikeOutlined {}
                         }
                     }
                     span {
@@ -92,7 +90,7 @@ class BasicApp : RComponent<RProps, BasicAppState>() {
 
         comment {
             attrs {
-                actions = commnetActions
+                actions = commentActions
                 author = buildElement {
                     a { +"Han Solo" }
                 }

@@ -1,16 +1,18 @@
-@file:JsModule("antd/lib/icon/IconFont")
+@file:JsModule("@ant-design/icons/lib")
 @file:JsNonModule
 
 package antd.icon
 
 import react.*
 
+@JsName("createFromIconfontCN")
+external fun createFromIconfontCN(options: CustomIconOptions? = definedExternally): Component<IconFontProps, RState>
+
 external interface CustomIconOptions {
-    var scriptUrl: String
-    var extraCommonProps: dynamic /* {
-        [key: String]: Any
-    } */
+    var scriptUrl: Any /* String | Array<String> */
+    var extraCommonProps: dynamic
 }
 
-@JsName("create")
-external fun create(options: CustomIconOptions? = definedExternally): Component<IconProps, RState>
+external interface IconFontProps : IconBaseProps, RProps {
+    var type: String
+}

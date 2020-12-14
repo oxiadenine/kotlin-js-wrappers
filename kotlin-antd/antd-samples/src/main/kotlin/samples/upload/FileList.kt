@@ -61,9 +61,7 @@ class MyUpload : RComponent<RProps, MyUploadState>() {
                 fileList = state.fileList
             }
             button {
-                icon {
-                    attrs.type = "upload"
-                }
+                uploadOutlined {}
                 +"Upload"
             }
         }

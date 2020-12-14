@@ -11,28 +11,13 @@ fun RBuilder.basic() {
         css { +IconStyles.basic }
         div {
             attrs.classes = setOf("icons-list")
-            icon {
-                attrs.type = "home"
+            homeOutlined {}
+            settingFilled {}
+            smileOutlined {}
+            syncOutlined {
+                attrs.spin = true
             }
-            icon {
-                attrs {
-                    type = "setting"
-                    theme = "filled"
-                }
-            }
-            icon {
-                attrs {
-                    type = "smile"
-                    theme = "outlined"
-                }
-            }
-            icon {
-                attrs {
-                    type = "sync"
-                    spin = true
-                }
-            }
-            icon {
+            /*icon {
                 attrs {
                     type = "smile"
                     rotate = 180
@@ -40,7 +25,7 @@ fun RBuilder.basic() {
             }
             icon {
                 attrs.type = "loading"
-            }
+            }*/
         }
     }
 }

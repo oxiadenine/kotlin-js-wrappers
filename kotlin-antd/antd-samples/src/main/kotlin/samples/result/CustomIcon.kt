@@ -12,12 +12,7 @@ fun RBuilder.customIcon() {
         result {
             attrs {
                 icon = buildElement {
-                    icon {
-                        attrs {
-                            type = "smile"
-                            theme = "twoTone"
-                        }
-                    }
+                    smileTwoTone {}
                 }
                 title = "Great, we have done all the operations!"
                 extra = buildElement {

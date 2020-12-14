@@ -32,9 +32,7 @@ class HorizontalApp : RComponent<RProps, HorizontalAppState>() {
             }
             menuItem {
                 attrs.key = "mail"
-                icon {
-                    attrs.type = "mail"
-                }
+                mailOutlined {}
                 +"Navigation One"
             }
             menuItem {
@@ -42,18 +40,14 @@ class HorizontalApp : RComponent<RProps, HorizontalAppState>() {
                     key = "app"
                     disabled = true
                 }
-                icon {
-                    attrs.type = "appstore"
-                }
+                appstoreOutlined {}
                 +"Navigation Two"
             }
             subMenu {
                 attrs {
                     title = buildElement {
                         span("submenu-title-wrapper") {
-                            icon {
-                                attrs.type = "setting"
-                            }
+                            settingOutlined {}
                             +"Navigation Three - Submenu"
                         }
                     }

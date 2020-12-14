@@ -201,21 +201,15 @@ class BasicDemo : RComponent<RProps, BasicDemoState>() {
                             }
                         }
                         paragraph {
-                            icon {
-                                attrs {
-                                    style = js { color = "red" }
-                                    type = "close-circle"
-                                }
+                            closeCircleOutlined {
+                                attrs.style = js { color = "red" }
                             }
                             +" Your account has been frozen "
                             a { +"Thaw immediately >" }
                         }
                         paragraph {
-                            icon {
-                                attrs {
-                                    style = js { color = "red" }
-                                    type = "close-circle"
-                                }
+                            closeCircleOutlined {
+                                attrs.style = js { color = "red" }
                             }
                             +" Your account is not yet eligible to apply "
                             a { +"Apply Unlock >" }

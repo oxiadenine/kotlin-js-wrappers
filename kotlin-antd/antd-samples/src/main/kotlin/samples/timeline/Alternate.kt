@@ -19,9 +19,8 @@ fun RBuilder.alternate() {
             timelineItem {
                 attrs {
                     dot = buildElement {
-                        icon {
-                            attrs {
-                                type = "clock-circle-o"
+                        clockCircleOutlined {
+                            attrs{
                                 style = js { fontSize = "16px" }
                                 color = "red"
                             }
@@ -42,9 +41,8 @@ fun RBuilder.alternate() {
             timelineItem {
                 attrs {
                     dot = buildElement {
-                        icon {
-                            attrs {
-                                type = "clock-circle-o"
+                        clockCircleOutlined {
+                            attrs{
                                 style = js { fontSize = "16px" }
                                 color = "red"
                             }

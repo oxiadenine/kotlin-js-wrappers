@@ -61,16 +61,12 @@ class SwitchModeSider : RComponent<RProps, SwitchModeSiderState>() {
                 }
                 menuItem {
                     attrs.key = "1"
-                    icon {
-                        attrs.type = "mail"
-                    }
+                    mailOutlined {}
                     +"Navigation One"
                 }
                 menuItem {
                     attrs.key = "2"
-                    icon {
-                        attrs.type = "calendar"
-                    }
+                    calendarOutlined {}
                     +"Navigation Two"
                 }
                 subMenu {
@@ -78,9 +74,7 @@ class SwitchModeSider : RComponent<RProps, SwitchModeSiderState>() {
                         key = "sub1"
                         title = buildElement {
                             span {
-                                icon {
-                                    attrs.type = "appstore"
-                                }
+                                appstoreOutlined {}
                                 span { +"Navigation Three" }
                             }
                         }
@@ -113,9 +107,7 @@ class SwitchModeSider : RComponent<RProps, SwitchModeSiderState>() {
                         key = "sub2"
                         title = buildElement {
                             span {
-                                icon {
-                                    attrs.type = "setting"
-                                }
+                                settingOutlined {}
                                 span { +"Navigation Four" }
                             }
                         }

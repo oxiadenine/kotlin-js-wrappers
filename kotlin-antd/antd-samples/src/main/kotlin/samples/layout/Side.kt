@@ -46,16 +46,12 @@ class SiderDemo : RComponent<RProps, SiderDemoState>() {
                     }
                     menuItem {
                         attrs.key = "1"
-                        icon {
-                            attrs.type = "pie-chart"
-                        }
+                        pieChartOutlined {}
                         span { +"Option 1" }
                     }
                     menuItem {
                         attrs.key = "2"
-                        icon {
-                            attrs.type = "desktop"
-                        }
+                        desktopOutlined {}
                         span { +"Option 2" }
                     }
                     subMenu {
@@ -63,9 +59,7 @@ class SiderDemo : RComponent<RProps, SiderDemoState>() {
                             key = "sub1"
                             title = buildElement {
                                 span {
-                                    icon {
-                                        attrs.type = "user"
-                                    }
+                                    userOutlined {}
                                     span { +"User" }
                                 }
                             }
@@ -88,9 +82,7 @@ class SiderDemo : RComponent<RProps, SiderDemoState>() {
                             key = "sub2"
                             title = buildElement {
                                 span {
-                                    icon {
-                                        attrs.type = "team"
-                                    }
+                                    teamOutlined {}
                                     span { +"Team" }
                                 }
                             }
@@ -106,9 +98,7 @@ class SiderDemo : RComponent<RProps, SiderDemoState>() {
                     }
                     menuItem {
                         attrs.key = "9"
-                        icon {
-                            attrs.type = "file"
-                        }
+                        fileOutlined {}
                         span { +"File" }
                     }
                 }

@@ -53,9 +53,7 @@ fun RBuilder.suffix() {
             cascader {
                 attrs {
                     suffixIcon = buildElement {
-                        icon {
-                            attrs.type = "smile"
-                        }
+                        smileOutlined {}
                     }
                     options = cascaderOptions
                     onChange = ::handleChange

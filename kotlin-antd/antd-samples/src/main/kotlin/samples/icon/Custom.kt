@@ -78,31 +78,29 @@ object PandaSvg : RComponent<CustomIconComponentProps, RState>() {
     }
 }
 
-class HeartIcon : RComponent<IconProps, RState>() {
+class HeartIcon : RComponent<CustomIconComponentProps, RState>() {
     override fun RBuilder.render() {
         icon {
             attrs {
                 component = HeartSvg::class.js
-                style = props.style
             }
         }
     }
 }
 
-fun RBuilder.heartIcon(handler: RHandler<IconProps>) = child(HeartIcon::class, handler)
+fun RBuilder.heartIcon(handler: RHandler<CustomIconComponentProps>) = child(HeartIcon::class, handler)
 
-class PandaIcon : RComponent<IconProps, RState>() {
+class PandaIcon : RComponent<CustomIconComponentProps, RState>() {
     override fun RBuilder.render() {
         icon {
             attrs {
                 component = PandaSvg::class.js
-                style = props.style
             }
         }
     }
 }
 
-fun RBuilder.pandaIcon(handler: RHandler<IconProps>) = child(PandaIcon::class, handler)
+fun RBuilder.pandaIcon(handler: RHandler<CustomIconComponentProps>) = child(PandaIcon::class, handler)
 
 fun RBuilder.custom() {
     styledDiv {

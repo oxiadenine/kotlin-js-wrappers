@@ -46,9 +46,7 @@ fun RBuilder.trigger() {
                     href = "#"
                 }
                 +"Click me "
-                icon {
-                    attrs.type = "down"
-                }
+                downOutlined {}
             }
         }
     }

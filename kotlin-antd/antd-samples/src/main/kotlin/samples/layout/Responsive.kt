@@ -30,30 +30,22 @@ fun RBuilder.responsive() {
                     }
                     menuItem {
                         attrs.key = "1"
-                        icon {
-                            attrs.type = "user"
-                        }
+                        userOutlined {}
                         span("nav-text") { +"mav 1" }
                     }
                     menuItem {
                         attrs.key = "2"
-                        icon {
-                            attrs.type = "video-camera"
-                        }
+                        videoCameraOutlined {}
                         span("nav-text") { +"nav 2" }
                     }
                     menuItem {
                         attrs.key = "3"
-                        icon {
-                            attrs.type = "upload"
-                        }
+                        uploadOutlined {}
                         span("nav-text") { +"nav 3" }
                     }
                     menuItem {
                         attrs.key = "4"
-                        icon {
-                            attrs.type = "user"
-                        }
+                        userOutlined {}
                         span("nav-text") { +"nav 4" }
                     }
                 }

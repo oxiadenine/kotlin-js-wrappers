@@ -22,9 +22,8 @@ private val text = """
 
 private val genExtra: () -> ReactElement = {
     buildElement {
-        icon {
+        settingOutlined {
             attrs {
-                type = "setting"
                 onClick = { event ->
                     // If you don't want click extra trigger collapse, you can prevent this:
                     event.stopPropagation()

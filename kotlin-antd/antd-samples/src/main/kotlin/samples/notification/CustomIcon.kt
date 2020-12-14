@@ -13,11 +13,8 @@ private val openNotification: MouseEventHandler<Any> = {
         message = "Notification Title"
         description = "This is the content of the notification. This is the content of the notification. This is the content of the notification."
         icon = buildElement {
-            icon {
-                attrs {
-                    type = "smile"
-                    style = js { color = "#108ee9" }
-                }
+            smileOutlined {
+                attrs.style = js { color = "#108ee9" }
             }
         }
     })

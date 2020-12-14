@@ -88,9 +88,7 @@ class NestedTableApp : RComponent<RProps, RState>() {
                                 a {
                                     attrs.href = "javascript:;"
                                     +"More "
-                                    icon {
-                                        attrs.type = "down"
-                                    }
+                                    downOutlined {}
                                 }
                             }
                         }

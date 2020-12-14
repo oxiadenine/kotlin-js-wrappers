@@ -8,9 +8,7 @@ import react.dom.*
 import styled.*
 
 private val smileIcon = buildElement {
-    icon {
-        attrs.type = "smile"
-    }
+    smileOutlined {}
 }
 
 private fun handleChange(date: Moment, dateString: String) {

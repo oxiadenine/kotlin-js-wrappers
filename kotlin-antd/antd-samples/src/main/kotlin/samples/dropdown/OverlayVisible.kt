@@ -62,9 +62,7 @@ class OverlayVisibleApp : RComponent<RProps, OverlayVisibleAppState>() {
                     href = "#"
                 }
                 +"Hover me "
-                icon {
-                    attrs.type = "down"
-                }
+                downOutlined {}
             }
         }
     }

@@ -26,9 +26,7 @@ class InlineSider : RComponent<RProps, RState>() {
                     key = "sub1"
                     title = buildElement {
                         span {
-                            icon {
-                                attrs.type = "mail"
-                            }
+                            mailOutlined {}
                             span { +"Navigation One" }
                         }
                     }
@@ -67,9 +65,7 @@ class InlineSider : RComponent<RProps, RState>() {
                     key = "sub2"
                     title = buildElement {
                         span {
-                            icon {
-                                attrs.type = "appstore"
-                            }
+                            appstoreOutlined {}
                             span { +"Navigation Two" }
                         }
                     }
@@ -102,9 +98,7 @@ class InlineSider : RComponent<RProps, RState>() {
                     key = "sub4"
                     title = buildElement {
                         span {
-                            icon {
-                                attrs.type = "setting"
-                            }
+                            settingOutlined {}
                             span { +"Navigation Three" }
                         }
                     }

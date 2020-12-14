@@ -11,9 +11,7 @@ private fun handleChange(time: Moment, timeString: String) {
 }
 
 private val icon = buildElement {
-    icon {
-        attrs.type = "smile"
-    }
+    smileOutlined {}
 }
 
 fun RBuilder.suffix() {

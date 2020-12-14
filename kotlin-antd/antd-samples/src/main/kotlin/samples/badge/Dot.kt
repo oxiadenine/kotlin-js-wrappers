@@ -12,18 +12,14 @@ fun RBuilder.dot() {
         div {
             badge {
                 attrs.dot = true
-                icon {
-                    attrs.type = "notification"
-                }
+                notificationOutlined {}
             }
             badge {
                 attrs {
                     count = 0
                     dot = true
                 }
-                icon {
-                    attrs.type = "notification"
-                }
+                notificationOutlined {}
             }
             badge {
                 attrs.dot = true
