@@ -8,7 +8,13 @@ import org.w3c.dom.*
 import react.*
 import styled.*
 
-private fun validatePrimeNumber(number: Number): RawFormValidation {
+private interface PrimeNumber {
+    var validateStatus: FormItemValidateStatus?
+    var errorMsg: String?
+    var value: Number?
+}
+
+private fun validatePrimeNumber(number: Number): PrimeNumber {
     if (number == 11) {
         return jsObject {
             validateStatus = "success"
@@ -22,65 +28,48 @@ private fun validatePrimeNumber(number: Number): RawFormValidation {
     }
 }
 
-interface RawFormValidation {
-    var validateStatus: String
-    var errorMsg: String?
-    var value: Number
+private val formItemLayout = jsObject<FormItemProps<Any>> {
+    labelCol = jsObject { span = 7 }
+    wrapperCol = jsObject { span = 12 }
 }
 
-interface RawFormState : RState {
-    var number: RawFormValidation
-}
+private val rawForm = functionalComponent<RProps> {
+    val (number, setNumber) = useState(jsObject<PrimeNumber> { value = 11 })
 
-class RawForm : RComponent<FormComponentProps<Any>, RawFormState>() {
-    private val handleNumberChange: ChangeEventHandler<HTMLInputElement> = { inputValue ->
+    val tips = "A prime is a natural number greater than 1 that has no positive divisors other than 1 and itself."
+
+    val handleNumberChange: ChangeEventHandler<HTMLInputElement> = { inputValue ->
         val validation = validatePrimeNumber(inputValue.unsafeCast<Number>())
 
-        setState {
-            number = jsObject {
-                validateStatus = validation.validateStatus
-                errorMsg = validation.errorMsg
-                value = inputValue.unsafeCast<Number>()
+        setNumber(jsObject {
+            validateStatus = validation.validateStatus
+            errorMsg = validation.errorMsg
+            value = inputValue.unsafeCast<Number>()
+        })
+    }
+
+    form {
+        formItem {
+            attrs {
+                labelCol = formItemLayout.labelCol
+                wrapperCol = formItemLayout.wrapperCol
+                label = "Prime between 8 & 12"
+                validateStatus = number.validateStatus
+                help = if (number.errorMsg !== null) number.errorMsg else tips
             }
-        }
-    }
-
-    override fun RawFormState.init() {
-        number = jsObject {
-            value = 11
-        }
-    }
-
-    override fun RBuilder.render() {
-        val formItemLayout = jsObject<FormItemProps> {
-            labelCol = jsObject { span = 7 }
-            wrapperCol = jsObject { span = 12 }
-        }
-
-        val tips = "A prime is a natural number greater than 1 that has no positive divisors other than 1 and itself."
-
-        form {
-            formItem {
-                Object.assign(attrs, formItemLayout)
+            inputNumber {
                 attrs {
-                    label = "Prime between 8 & 12"
-                    validateStatus = state.number.validateStatus
-                    help = state.number.errorMsg ?: tips
-                }
-                inputNumber {
-                    attrs {
-                        min = 8
-                        max = 12
-                        value = state.number.value
-                        onChange = handleNumberChange
-                    }
+                    min = 8
+                    max = 12
+                    value = number.value
+                    onChange = handleNumberChange
                 }
             }
         }
     }
 }
 
-fun RBuilder.rawForm() = child(RawForm::class) {}
+fun RBuilder.rawForm() = child(rawForm) {}
 
 fun RBuilder.withoutFormCreate() {
     styledDiv {

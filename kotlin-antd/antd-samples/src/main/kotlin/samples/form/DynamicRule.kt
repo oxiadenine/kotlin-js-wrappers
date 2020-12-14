@@ -7,15 +7,14 @@ import antd.form.*
 import antd.input.input
 import kotlinext.js.*
 import react.*
-import react.dom.div
 import styled.*
 
-private val formItemLayout = jsObject<FormItemProps> {
+private val formItemLayout = jsObject<FormItemProps<Any>> {
     labelCol = jsObject { span = 4 }
     wrapperCol = jsObject { span = 8 }
 }
 
-private val formTailLayout = jsObject<FormItemProps> {
+private val formTailLayout = jsObject<FormItemProps<Any>> {
     labelCol = jsObject { span = 4 }
     wrapperCol = jsObject {
         span = 8
@@ -23,93 +22,96 @@ private val formTailLayout = jsObject<FormItemProps> {
     }
 }
 
-interface DynamicRuleAppState : RState {
-    var checkNick: Boolean
+private val dynamicRuleApp = functionalComponent<RProps> {
+    val formInstance = FormComponent.useForm()[0]
+    val (checkNick, setCheckNick) = useState(false)
+
+    useEffect(dependencies = listOf(checkNick)) {
+        formInstance.validateFields(arrayOf("nickname"))
+    }
+
+    val onCheckboxChange = { e: CheckboxChangeEvent ->
+        setCheckNick(e.target.checked!!)
+    }
+
+    val onCheck: MouseEventHandler<Any> = {
+        try {
+            val values = formInstance.validateFields()
+            console.log("Success:", values)
+        } catch (e: Exception) {
+            console.log("Failed:", e)
+        }
+    }
+
+    form {
+        attrs {
+            form = formInstance
+            name = "dynamic_rule"
+        }
+        formItem {
+            attrs {
+                labelCol = formItemLayout.labelCol
+                wrapperCol = formItemLayout.wrapperCol
+                name = "name"
+                label = "Name"
+                rules = arrayOf(jsObject<AggregationRule> {
+                    required = true
+                    message = "Please input your name"
+                })
+            }
+            input {
+                attrs.placeholder = "Please input your name"
+            }
+        }
+        formItem {
+            attrs {
+                labelCol = formItemLayout.labelCol
+                wrapperCol = formItemLayout.wrapperCol
+                name = "nickname"
+                label = "Nickname"
+                rules = arrayOf(jsObject<AggregationRule> {
+                    required = checkNick
+                    message = "Please input your nickname"
+                })
+            }
+            input {
+                attrs.placeholder = "Please input your nickname"
+            }
+        }
+        formItem {
+            attrs {
+                labelCol = formTailLayout.labelCol
+                wrapperCol = formTailLayout.wrapperCol
+            }
+            checkbox {
+                attrs {
+                    checked = checkNick
+                    onChange = onCheckboxChange
+                }
+                +"Nickname is required"
+            }
+        }
+        formItem {
+            attrs {
+                labelCol = formTailLayout.labelCol
+                wrapperCol = formTailLayout.wrapperCol
+            }
+            button {
+                attrs {
+                    type = "primary"
+                    onClick = onCheck
+                }
+                +"Submit"
+            }
+        }
+    }
 }
 
-class DynamicRuleApp : RComponent<FormComponentProps<Any>, DynamicRuleAppState>() {
-    private val check: MouseEventHandler<Any> = {
-        props.form.validateFields { err, _ ->
-            if (err != null) {
-                console.info("success")
-            }
-        }
-    }
-
-    private val handleChange = fun(e: CheckboxChangeEvent) {
-        setState(jsObject<DynamicRuleAppState> {
-            checkNick = e.target.checked!!
-        }) {
-            props.form.validateFields(arrayOf("nickname"), jsObject<ValidateFieldsOptions> { force = true })
-        }
-    }
-
-    override fun DynamicRuleAppState.init() {
-        checkNick = false
-    }
-
-    override fun RBuilder.render() {
-        div {
-            formItem {
-                Object.assign(attrs, formItemLayout)
-                attrs.label = "Name"
-                childList.add(props.form.getFieldDecorator("username", jsObject {
-                    rules = arrayOf(jsObject {
-                        required = true
-                        message = "Please input your name"
-                    })
-                })(buildElement {
-                    input {
-                        attrs.placeholder = "Please input your name"
-                    }
-                }))
-            }
-            formItem {
-                Object.assign(attrs, formItemLayout)
-                attrs.label = "Nickname"
-                childList.add(props.form.getFieldDecorator("nickname", jsObject {
-                    rules = arrayOf(jsObject {
-                        required = state.checkNick
-                        message = "Please input your nickname"
-                    })
-                })(buildElement {
-                    input {
-                        attrs.placeholder = "Please input your nickname"
-                    }
-                }))
-            }
-            formItem {
-                Object.assign(attrs, formTailLayout)
-                checkbox {
-                    attrs {
-                        checked = state.checkNick
-                        onChange = handleChange
-                    }
-                    +"Nickname is required"
-                }
-            }
-            formItem {
-                Object.assign(attrs, formTailLayout)
-                button {
-                    attrs {
-                        type = "primary"
-                        onClick = check
-                    }
-                    +"Submit"
-                }
-            }
-        }
-    }
-}
-
-private val wrappedDynamicRuleApp = FormComponent.create<FormComponentProps<Any>, DynamicRuleAppState>(
-    jsObject { name = "dynamic_rule" })(DynamicRuleApp::class.js)
-
-fun RBuilder.wrappedDynamicRuleApp(handler: RHandler<FormComponentProps<Any>>) = child(wrappedDynamicRuleApp, jsObject {}, handler)
+fun RBuilder.dynamicRuleApp() = child(dynamicRuleApp) {}
 
 fun RBuilder.dynamicRule() {
     styledDiv {
         css { +FormStyles.dynamicRule }
-        wrappedDynamicRuleApp {}
+        dynamicRuleApp()
     }
 }

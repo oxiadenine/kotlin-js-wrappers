@@ -8,13 +8,35 @@ import styled.*
 
 object FormStyles : StyleSheet("form", isStatic = true) {
     val container by css {}
-    val horizontalLogin by css {}
+    val basic by css {}
+    val controlHooks by css {
+        descendants(".ant-btn") {
+            marginRight = 8.px
+        }
+    }
+    val controlRef by css {
+        descendants(".ant-btn") {
+            marginRight = 8.px
+        }
+    }
+    val layout by css {}
+    val requiredMark by css {}
+    val size by css {}
+    val nestMessages by css {}
     val normalLogin by css {
         descendants(".login-form") {
             maxWidth = 300.px
         }
         descendants(".login-form-forgot") {
             float = Float.right
+        }
+        descendants(".ant-col-rtl") {
+            descendants(".login-form-forgot") {
+                float = Float.left
+            }
+        }
+        descendants(".login-form-button") {
+            width = LinearDimension("100%")
         }
     }
     val register by css {}
@@ -43,36 +65,9 @@ object FormStyles : StyleSheet("form", isStatic = true) {
             textAlign = TextAlign.center
         }
     }
-    val fornInModal by css {
-        descendants(".collection-create-form_last-form-item") {
-            marginBottom = 0.px
-        }
-    }
-    val dynamicFormItem by css {
-        descendants(".dynamic-delete-button") {
-            position = Position.relative
-            top = 4.px
-            color = Color("#999")
-            fontSize = 24.px
-            cursor = Cursor.pointer
-            transition(duration = 3.s)
-        }
-        descendants(".dynamic-delete-button") {
-            hover {
-                color = Color("#777")
-            }
-            disabled {
-                opacity = 0.5
-                cursor = Cursor.notAllowed
-            }
-        }
-    }
     val timeRelatedControls by css {}
-    val customizedFormControls by css {}
     val withoutFormCreate by css {}
     val validateStatic by css {}
-    val coordinated by css {}
-    val layout by css {}
     val dynamicRule by css {}
     val validateOther by css {}
 }
@@ -82,18 +77,19 @@ class FormApp : RComponent<RProps, RState>() {
         h2 { +"Form" }
         styledDiv {
             css { +FormStyles.container }
-            horizontalLogin()
+            basic()
+            controlHooks()
+            controlRef()
+            layout()
+            requiredMark()
+            size()
+            nestMessages()
             normalLogin()
             register()
             advancedSearch()
-            formInModal()
-            dynamicFormItem()
             timeRelatedControls()
-            customizedFormControls()
             withoutFormCreate()
             validateStatic()
-            coordinated()
-            layout()
             dynamicRule()
             validateOther()
         }

@@ -85,7 +85,7 @@ class TableApp : RComponent<RProps, RState>() {
             fixedColumns()
             fixedColumnsHeader()
             groupingColumns()
-            editRow()
+            //editRow()
             nestedTable()
             dynamicSettings()
         }

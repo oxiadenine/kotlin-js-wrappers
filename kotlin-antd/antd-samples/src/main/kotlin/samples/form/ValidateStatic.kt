@@ -14,7 +14,7 @@ import react.dom.jsStyle
 import react.dom.span
 import styled.*
 
-private val formItemLayout = jsObject<FormItemProps> {
+private val formItemLayout = jsObject<FormItemProps<Any>> {
     labelCol = jsObject {
         xs = jsObject { span = 24 }
         sm = jsObject { span = 5 }
@@ -29,7 +29,10 @@ fun RBuilder.validateStatic() {
     styledDiv {
         css { +FormStyles.validateStatic }
         form {
-            Object.assign(attrs, formItemLayout)
+            attrs {
+                labelCol = formItemLayout.labelCol
+                wrapperCol = formItemLayout.wrapperCol
+            }
             formItem {
                 attrs {
                     label = "Fail"

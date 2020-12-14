@@ -1,11 +1,11 @@
 package samples.form
 
-import antd.*
 import antd.autocomplete.*
 import antd.button.button
 import antd.cascader.*
 import antd.checkbox.*
 import antd.form.*
+import antd.form.form
 import antd.grid.*
 import antd.grid.col
 import antd.icon.*
@@ -15,11 +15,10 @@ import antd.select.*
 import antd.select.option
 import antd.tooltip.*
 import kotlinext.js.*
-import org.w3c.dom.*
 import react.*
-import react.dom.a
-import react.dom.span
+import react.dom.*
 import styled.*
+import kotlin.js.*
 
 private val residences: Array<CascaderOptionType> = arrayOf(
     jsObject {
@@ -48,315 +47,295 @@ private val residences: Array<CascaderOptionType> = arrayOf(
     }
 )
 
+private val formItemLayout = jsObject<FormItemProps<Any>> {
+    labelCol = jsObject {
+        xs = jsObject { span = 24 }
+        sm = jsObject { span = 8 }
+    }
+    wrapperCol = jsObject {
+        xs = jsObject { span = 24 }
+        sm = jsObject { span = 16 }
+    }
+}
+
+private val tailFormItemLayout = jsObject<FormProps<Any>> {
+    wrapperCol = jsObject {
+        xs = jsObject {
+            span = 24
+            offset = 0
+        }
+        sm = jsObject {
+            span = 16
+            offset = 8
+        }
+    }
+}
+
 interface RegistrationFormState : RState {
     var confirmDirty: Boolean
     var autoCompleteResult: Array<DataSourceItemType>
 }
 
-class RegistrationForm : RComponent<FormComponentProps<Any>, RegistrationFormState>() {
-    private val handleSubmit: FormEventHandler<HTMLElement> = { e ->
-        e.preventDefault()
+private val registrationForm = functionalComponent<RProps> {
+    val formInstance = FormComponent.useForm()[0]
 
-        props.form.validateFields { err, values ->
-            if (err != null) {
-                console.log("Received values of form: ", values)
+    val handleFinish = { values: Any ->
+        console.log("Received values of form: ", values)
+    }
+
+    val prefixSelector = buildElement {
+        formItem {
+            attrs {
+                name = "prefix"
+                noStyle = true
             }
-        }
-    }
-
-    private val handleConfirmBlur: FocusEventHandler<HTMLInputElement> = { e ->
-        val value = e.target.asDynamic().value.unsafeCast<String>()
-
-        setState {
-            confirmDirty = state.confirmDirty || value.isNotEmpty()
-        }
-    }
-
-    private val compareToFirstPassword = fun(_: Any, value: Any?, callback: Any, _: Any?, _: Any?) {
-        val form = props.form
-
-        if (value != null && value != form.getFieldValue("password")) {
-            callback.asDynamic()("Two passwords that you enter is inconsistent!")
-        } else {
-            callback.asDynamic()()
-        }
-    }
-
-    private val validateToNextPassword = fun(_: Any, value: Any?, callback: Any, _: Any?, _: Any?) {
-        val form = props.form
-
-        if (value != null && state.confirmDirty) {
-            form.validateFields(arrayOf("confirm"), jsObject<ValidateFieldsOptions> { force = true })
-        }
-
-        callback.asDynamic()()
-    }
-
-    private val handleWebsiteChange = fun(value: SelectValue) {
-        val result: Array<DataSourceItemType>
-
-        result = if (value.unsafeCast<String>().isEmpty()) {
-            emptyArray()
-        } else {
-            arrayOf(".com", ".org", ".net")
-                .map { domain -> "$value$domain" }
-                .toTypedArray()
-        }
-
-        setState {
-            autoCompleteResult = result
-        }
-    }
-
-    override fun RegistrationFormState.init() {
-        confirmDirty = false
-        autoCompleteResult = emptyArray()
-    }
-
-    override fun RBuilder.render() {
-        val formItemLayout = jsObject<FormItemProps> {
-            labelCol = jsObject {
-                xs = jsObject { span = 24 }
-                sm = jsObject { span = 8 }
-            }
-            wrapperCol = jsObject {
-                xs = jsObject { span = 24 }
-                sm = jsObject { span = 16 }
-            }
-        }
-
-        val tailFormItemLayout = jsObject<FormItemProps> {
-            wrapperCol = jsObject {
-                xs = jsObject {
-                    span = 24
-                    offset = 0
-                }
-                sm = jsObject {
-                    span = 16
-                    offset = 8
-                }
-            }
-        }
-
-        val prefixSelector = props.form.getFieldDecorator("prefix", jsObject {
-            initialValue = "86"
-        })(buildElement {
             select<String, SelectComponent<String>> {
-                attrs.style = js { width = 70 }
                 option {
                     attrs.value = "86"
-                    +"+86"
+                    +"86"
                 }
                 option {
                     attrs.value = "87"
-                    +"+87"
+                    +"87"
                 }
             }
-        })
+        }
+    }
 
-        val websiteOptions = state.autoCompleteResult.map { website ->
-            buildElement {
-                option {
-                    attrs.key = website.unsafeCast<String>()
-                    +website.unsafeCast<String>()
-                }
-            }
-        }.toTypedArray().unsafeCast<Array<DataSourceItemType>>()
+    val (autoCompleteResult, setAutoCompleteResult) = useState(emptyArray<String>())
 
-        form {
-            Object.assign(attrs, formItemLayout)
-            attrs.onSubmit = handleSubmit
-            formItem {
-                attrs.label = "E-mail"
-                childList.add(props.form.getFieldDecorator("email", jsObject {
-                    rules = arrayOf(
-                        jsObject {
-                            type = "email"
-                            message = "The input is not valid E-mail!"
-                        },
-                        jsObject {
-                            required = true
-                            message = "Please input your E-mail!"
-                        }
-                    )
-                })(buildElement {
-                    input {}
-                }))
-            }
-            formItem {
-                attrs.label = "Password"
-                childList.add(props.form.getFieldDecorator("password", jsObject {
-                    rules = arrayOf(
-                        jsObject {
-                            required = true
-                            message = "Please input your password!"
-                        },
-                        jsObject {
-                            validator = validateToNextPassword
-                        }
-                    )
-                })(buildElement {
-                    password {}
-                }))
-            }
-            formItem {
-                attrs.label = "Confirm Password"
-                childList.add(props.form.getFieldDecorator("confirm", jsObject {
-                    rules = arrayOf(
-                        jsObject {
-                            required = true
-                            message = "Please confirm your password!"
-                        },
-                        jsObject {
-                            validator = compareToFirstPassword
-                        }
-                    )
-                })(buildElement {
-                    password {
-                        attrs.onBlur = handleConfirmBlur
+    val onWebsiteChange = { value: Any? ->
+        if (value !== null) {
+            setAutoCompleteResult(emptyArray())
+        } else {
+            setAutoCompleteResult(arrayOf(".com", ".org", ".net")
+                .map { domain -> "$value$domain" }
+                .toTypedArray()
+            )
+        }
+    }
+
+    val websiteOptions = autoCompleteResult.map { website ->
+        js {
+            label = website
+            value = website
+        }
+    }.toTypedArray()
+
+    form {
+        attrs {
+            labelCol = formItemLayout.labelCol
+            wrapperCol = formItemLayout.wrapperCol
+            form = formInstance
+            name = "register"
+            onFinish = handleFinish
+            initialValues = js {
+                residance = arrayOf("zhejiang", "hangzhou", "xihu")
+                prefix = "86"
+            }.unsafeCast<Store>()
+            scrollToFirstError = true
+        }
+        formItem {
+            attrs {
+                name = "email"
+                label = "Email"
+                rules = arrayOf(
+                    jsObject<AggregationRule> {
+                        type = "email"
+                        message = "The input is not valid E-mail!"
+                    },
+                    jsObject<AggregationRule> {
+                        required = true
+                        message = "Please input your E-mail!"
                     }
-                }))
+                )
             }
-            formItem {
-                attrs.label = buildElement {
+            input {}
+        }
+        formItem {
+            attrs {
+                name = "password"
+                label = "Password"
+                rules = arrayOf(
+                    jsObject<AggregationRule> {
+                        required = true
+                        message = "Please input your password!"
+                    }
+                )
+                hasFeedback = true
+            }
+            password {}
+        }
+        formItem {
+            attrs {
+                name = "confirm"
+                label = "Confirm Password"
+                dependencies = arrayOf("password")
+                hasFeedback = true
+                rules = arrayOf(
+                    jsObject<AggregationRule> {
+                        required = true
+                        message = "Please confirm your password!"
+                    },
+                    jsObject<ValidatorRule> {
+                        validator = { _, value, _ ->
+                            if (value !== null || formInstance.getFieldValue("password") === value) {
+                                Promise.resolve(Unit)
+                            }
+                            Promise.reject(Error("The two passwords that you entered do not match!"))
+                        }
+                    }
+                )
+            }
+            password {}
+        }
+        formItem {
+            attrs {
+                name = "nickname"
+                label = buildElement {
                     span {
-                        +"Nickname "
+                        +"Nickname"
                         tooltip {
                             attrs.title = "What do you want others to call you?"
-                            icon {
-                                attrs.type = "question-circle-o"
-                            }
+                            questionCircleOutlined {}
                         }
                     }
                 }
-                childList.add(props.form.getFieldDecorator("nickname", jsObject {
-                    rules = arrayOf(
-                        jsObject {
-                            required = true
-                            message = "Please input your nickname!"
-                        }
-                    )
-                })(buildElement {
-                    input {}
-                }))
-            }
-            formItem {
-                attrs.label = "Habitual Residence"
-                childList.add(props.form.getFieldDecorator("residence", jsObject {
-                    initialValue = arrayOf("zhejiang", "hangzhou", "xihu")
-                    rules = arrayOf(
-                        jsObject {
-                            type = "array"
-                            required = true
-                            message = "Please input your habitual residence!"
-                        }
-                    )
-                })(buildElement {
-                    cascader {
-                        attrs.options = residences
+                rules = arrayOf(
+                    jsObject<AggregationRule> {
+                        required = true
+                        message = "Please input your nickname!"
+                        whitespace = true
                     }
-                }))
+                )
             }
-            formItem {
-                attrs.label = "Phone Number"
-                childList.add(props.form.getFieldDecorator("phone", jsObject {
-                    rules = arrayOf(
-                        jsObject {
-                            required = true
-                            message = "Please input your phone number!"
-                        }
-                    )
-                })(buildElement {
-                    input {
-                        attrs {
-                            addonBefore = prefixSelector
-                            style = js { width = "100%" }
-                        }
+            input {}
+        }
+        formItem {
+            attrs {
+                name = "residence"
+                label = "Habitual Residence"
+                rules = arrayOf(
+                    jsObject<AggregationRule> {
+                        type = "array"
+                        required = true
+                        message = "Please select your habitual residence!"
                     }
-                }))
+                )
             }
-            formItem {
-                attrs.label = "Website"
-                childList.add(props.form.getFieldDecorator("website", jsObject {
-                    rules = arrayOf(
-                        jsObject {
-                            required = true
-                            message = "Please input your website!"
-                        }
-                    )
-                })(buildElement {
-                    autoComplete {
-                        attrs {
-                            dataSource = websiteOptions
-                            onChange = handleWebsiteChange
-                            placeholder = "website"
-                        }
-                        input {}
+            cascader {
+                attrs.options = residences
+            }
+        }
+        formItem {
+            attrs {
+                name = "phone"
+                label = "Phone Number"
+                rules = arrayOf(
+                    jsObject<AggregationRule> {
+                        required = true
+                        message = "Please input your phone number!"
                     }
-                }))
+                )
             }
-            formItem {
+            input {
                 attrs {
-                    label = "Captcha"
-                    extra = "We must make sure that your are a human."
+                    addonBefore = prefixSelector
+                    style = js { width = "100%" }
                 }
-                row {
-                    attrs.gutter = 8
-                    col {
-                        attrs.span = 12
-                        childList.add(props.form.getFieldDecorator("captcha", jsObject {
+            }
+        }
+        formItem {
+            attrs {
+                name = "website"
+                label = "Website"
+                rules = arrayOf(
+                    jsObject<AggregationRule> {
+                        required = true
+                        message = "Please input website!"
+                    }
+                )
+            }
+            autoComplete {
+                attrs {
+                    dataSource = websiteOptions
+                    onChange = onWebsiteChange
+                    placeholder = "website"
+                }
+                input {}
+            }
+        }
+        formItem {
+            attrs {
+                label = "Captcha"
+                extra = "We must make sure that your are a human."
+            }
+            row {
+                attrs.gutter = 8
+                col {
+                    attrs.span = 12
+                    formItem {
+                        attrs {
+                            name = "captcha"
+                            noStyle = true
                             rules = arrayOf(
-                                jsObject {
+                                jsObject<AggregationRule> {
                                     required = true
                                     message = "Please input the captcha you got!"
                                 }
                             )
-                        })(buildElement {
-                            input {}
-                        }))
-                    }
-                    col {
-                        attrs.span = 12
-                        button { +"Get captcha" }
+                        }
+                        input {}
                     }
                 }
+                col {
+                    attrs.span = 12
+                    button { +"Get captcha" }
+                }
             }
-            formItem {
-                Object.assign(attrs, tailFormItemLayout)
-                childList.add(props.form.getFieldDecorator("agreement", jsObject {
-                    valuePropName = "checked"
-                })(buildElement {
-                    checkbox {
-                        +"I have read the "
-                        a {
-                            attrs.href = ""
-                            +"agreement"
+        }
+        formItem {
+            attrs {
+                name = "agreement"
+                valuePropName = "checked"
+                rules = arrayOf(
+                    jsObject<ValidatorRule> {
+                        validator = { _, value, _ ->
+                            if (value !== null) {
+                                Promise.resolve(Unit)
+                            } else Promise.reject(Error("Should accept agreement"))
                         }
                     }
-                }))
+                )
+                labelCol = tailFormItemLayout.labelCol
+                wrapperCol = tailFormItemLayout.wrapperCol
             }
-            formItem {
-                Object.assign(attrs, tailFormItemLayout)
-                button {
-                    attrs {
-                        type = "primary"
-                        htmlType = "submit"
-                    }
-                    +"Register"
+            checkbox {
+                +"I have read the "
+                a(href = "") { +"agreement" }
+            }
+        }
+        formItem {
+            attrs {
+                labelCol = tailFormItemLayout.labelCol
+                wrapperCol = tailFormItemLayout.wrapperCol
+            }
+            button {
+                attrs {
+                    type = "primary"
+                    htmlType = "submit"
                 }
+                +"Register"
             }
         }
     }
 }
 
-private val wrappedRegistrationForm = FormComponent.create<FormComponentProps<Any>, RegistrationFormState>(
-    jsObject { name = "register" })(RegistrationForm::class.js)
-
-fun RBuilder.wrappedRegistrationForm(handler: RHandler<FormComponentProps<Any>>) = child(wrappedRegistrationForm, jsObject {}, handler)
+fun RBuilder.registrationForm() = child(registrationForm) {}
 
 fun RBuilder.register() {
     styledDiv {
         css { +FormStyles.register }
-        wrappedRegistrationForm {}
+        registrationForm()
     }
 }

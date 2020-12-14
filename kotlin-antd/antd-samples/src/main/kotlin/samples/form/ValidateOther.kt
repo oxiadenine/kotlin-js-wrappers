@@ -1,8 +1,9 @@
 package samples.form
 
-import antd.*
 import antd.button.button
+import antd.checkbox.*
 import antd.form.*
+import antd.grid.*
 import antd.icon.*
 import antd.inputnumber.*
 import antd.radio.*
@@ -14,39 +15,32 @@ import antd.switch.*
 import antd.upload.*
 import kotlinext.js.*
 import kotlinx.html.*
-import org.w3c.dom.*
 import react.*
 import react.dom.p
 import react.dom.span
 import styled.*
 
-class ValidateOtherDemo : RComponent<FormComponentProps<Any>, RState>() {
-    private val handleSubmit: FormEventHandler<HTMLElement> = { e ->
-        e.preventDefault()
+private val formItemLayout = jsObject<FormProps<Any>> {
+    labelCol = jsObject { span = 6 }
+    wrapperCol = jsObject { span = 14 }
+}
 
-        props.form.validateFields { err, values ->
-            if (err != null) {
-                console.log("Received values of form: ", values)
-            }
-        }
+private val normFile = { e: EventArgs ->
+    console.log("Upload event:", e)
+
+    if (jsTypeOf(e) == "array") {
+        e
+    } else {
+        e.asDynamic()?.fileList?.unsafeCast<Any>() ?: e
+    }
+}
+
+private val demo = functionalComponent<RProps> {
+    val handleFinish = { values: Any ->
+        console.log("Received values of form: ", values)
     }
 
-    private val normFile = fun(e: Any?): Any {
-        console.log("Upload event:", e)
-
-        if (jsTypeOf(e) == "array") {
-            return e!!
-        }
-
-        return e?.asDynamic()?.fileList?.unsafeCast<Any>() ?: e!!
-    }
-
-    override fun RBuilder.render() {
-        val formItemLayout = jsObject<FormItemProps> {
-            labelCol = jsObject { span = 6 }
-            wrapperCol = jsObject { span = 14 }
-        }
-
+    val sliderMarks = {
         val sliderMarks: dynamic = js {}
 
         sliderMarks["0"] = "A"
@@ -56,227 +50,293 @@ class ValidateOtherDemo : RComponent<FormComponentProps<Any>, RState>() {
         sliderMarks["80"] = "E"
         sliderMarks["100"] = "F"
 
-        form {
-            Object.assign(attrs, formItemLayout)
-            attrs.onSubmit = handleSubmit
-            formItem {
-                attrs.label = "Plain Text"
-                span {
-                    attrs.classes = setOf("ant-form-text")
+        sliderMarks
+    }
+
+    form {
+        attrs {
+            name = "validate_other"
+            labelCol = formItemLayout.labelCol
+            wrapperCol = formItemLayout.wrapperCol
+            onFinish = handleFinish
+        }
+        formItem {
+            attrs.label = "Plain Text"
+            span {
+                attrs.classes = setOf("ant-form-text")
+                +"China"
+            }
+        }
+        formItem {
+            attrs {
+                name = "select"
+                label = "Select"
+                hasFeedback = true
+                rules = arrayOf(jsObject<AggregationRule> {
+                    required = true
+                    message = "Please select your country!"
+                })
+            }
+            select<String, SelectComponent<String>> {
+                attrs.placeholder = "Please select a country"
+                option {
+                    attrs.value = "china"
                     +"China"
                 }
+                option {
+                    attrs.value = "usa"
+                    +"U.S.A"
+                }
             }
+        }
+        formItem {
+            attrs {
+                name = "select-multiple"
+                label = "Select[multiple]"
+                rules = arrayOf(jsObject<AggregationRule> {
+                    required = true
+                    message = "Please select your favourite colors!"
+                    type = "array"
+                })
+            }
+            select<String, SelectComponent<String>> {
+                attrs {
+                    mode = "multiple"
+                    placeholder = "Please select favourite colors"
+                }
+                option {
+                    attrs.value = "red"
+                    +"Red"
+                }
+                option {
+                    attrs.value = "green"
+                    +"Green"
+                }
+                option {
+                    attrs.value = "blue"
+                    +"Blue"
+                }
+            }
+        }
+        formItem {
+            attrs.label = "InputNumber"
             formItem {
                 attrs {
-                    label = "Select"
-                    hasFeedback = true
+                    name = "input-number"
+                    noStyle = true
                 }
-                childList.add(props.form.getFieldDecorator("select", jsObject {
-                    rules = arrayOf(jsObject {
-                        required = true
-                        message = "Please select your country!"
-                    })
-                })(buildElement {
-                    select<String, SelectComponent<String>> {
-                        attrs.placeholder = "Please select a country"
-                        option {
-                            attrs.value = "china"
-                            +"China"
-                        }
-                        option {
-                            attrs.value = "usa"
-                            +"U.S.A"
-                        }
+                inputNumber {
+                    attrs {
+                        min = 1
+                        max = 10
                     }
-                }))
-            }
-            formItem {
-                attrs.label = "Select[multiple]"
-                childList.add(props.form.getFieldDecorator("select-multiple", jsObject {
-                    rules = arrayOf(jsObject {
-                        required = true
-                        message = "Please select your favourite colors!"
-                        type = "array"
-                    })
-                })(buildElement {
-                    select<String, SelectComponent<String>> {
-                        attrs {
-                            mode = "multiple"
-                            placeholder = "Please select favourite colors"
-                        }
-                        option {
-                            attrs.value = "red"
-                            +"Red"
-                        }
-                        option {
-                            attrs.value = "green"
-                            +"Green"
-                        }
-                        option {
-                            attrs.value = "blue"
-                            +"Blue"
-                        }
-                    }
-                }))
-            }
-            formItem {
-                attrs.label = "InputNumber"
-                childList.add(props.form.getFieldDecorator("input-number", jsObject { initialValue = 3 })
-                (buildElement {
-                    inputNumber {
-                        attrs {
-                            min = 1
-                            max = 10
-                        }
-                    }
-                }))
-                span {
-                    attrs.classes = setOf("ant-form-text")
-                    +"machines"
                 }
             }
-            formItem {
-                attrs.label = "Switch"
-                childList.add(props.form.getFieldDecorator("switch", jsObject { valuePropName = "checked" })
-                (buildElement {
-                    switch {}
-                }))
+            span {
+                attrs.classes = setOf("ant-form-text")
+                +"machines"
             }
-            formItem {
-                attrs.label = "Slider"
-                childList.add(props.form.getFieldDecorator("slider")
-                (buildElement {
-                    slider {
-                        attrs.marks = sliderMarks.unsafeCast<SliderMarks>()
-                    }
-                }))
+        }
+        formItem {
+            attrs {
+                name = "switch"
+                label = "Switch"
+                valuePropName = "checked"
             }
-            formItem {
-                attrs.label = "Radio.Group"
-                childList.add(props.form.getFieldDecorator("radio-group")
-                (buildElement {
-                    radioGroup {
-                        radio {
-                            attrs.value = "a"
-                            +"item 1"
-                        }
-                        radio {
-                            attrs.value = "b"
-                            +"item 2"
-                        }
-                        radio {
-                            attrs.value = "c"
-                            +"item 3"
-                        }
-                    }
-                }))
+            switch {}
+        }
+        formItem {
+            attrs {
+                name = "slider"
+                label = "Slider"
             }
-            formItem {
-                attrs.label = "Radio.Button"
-                childList.add(props.form.getFieldDecorator("radio-button")
-                (buildElement {
-                    radioGroup {
-                        radioButton {
-                            attrs.value = "a"
-                            +"item 1"
-                        }
-                        radioButton {
-                            attrs.value = "b"
-                            +"item 2"
-                        }
-                        radioButton {
-                            attrs.value = "c"
-                            +"item 3"
-                        }
-                    }
-                }))
+            slider {
+                attrs.marks = sliderMarks.unsafeCast<SliderMarks>()
             }
-            formItem {
-                attrs.label = "Rate"
-                childList.add(props.form.getFieldDecorator("rate", jsObject { initialValue = 3.5 })
-                (buildElement {
-                    rate {}
-                }))
+        }
+        formItem {
+            attrs {
+                name = "radio-group"
+                label = "Radio.Group"
             }
-            formItem {
-                attrs {
-                    label = "Upload"
-                    extra = "longgggggggggggggggggggggggggggggggggg"
+            radioGroup {
+                radio {
+                    attrs.value = "a"
+                    +"item 1"
                 }
-                childList.add(props.form.getFieldDecorator("upload", jsObject {
-                    valuePropName = "fileList"
-                    getValueFromEvent = normFile
-                })(buildElement {
-                    upload {
-                        attrs {
-                            name = "logo"
-                            action = "/upload.do"
-                            listType = "picture"
-                        }
-                        button {
-                            icon {
-                                attrs.type = "upload"
+                radio {
+                    attrs.value = "b"
+                    +"item 2"
+                }
+                radio {
+                    attrs.value = "c"
+                    +"item 3"
+                }
+            }
+        }
+        formItem {
+            attrs {
+                name = "radio-button"
+                label = "Radio.Button"
+                rules = arrayOf(jsObject<AggregationRule> {
+                    required = true
+                    message = "Please pick an item!"
+                })
+            }
+            radioGroup {
+                radioButton {
+                    attrs.value = "a"
+                    +"item 1"
+                }
+                radioButton {
+                    attrs.value = "b"
+                    +"item 2"
+                }
+                radioButton {
+                    attrs.value = "c"
+                    +"item 3"
+                }
+            }
+        }
+        formItem {
+            attrs {
+                name = "checkbox-group"
+                label = "Checkbox.Group"
+            }
+            checkboxGroup {
+                row {
+                    col {
+                        attrs.span = 8
+                        checkbox {
+                            attrs {
+                                value = "A"
+                                style = js { lineHeight = "32px" }
                             }
-                            +"Click to upload"
+                            +"A"
                         }
                     }
-                }))
-            }
-            formItem {
-                attrs.label = "Dragger"
-                childList.add(props.form.getFieldDecorator("dragger", jsObject {
-                    valuePropName = "fileList"
-                    getValueFromEvent = normFile
-                })(buildElement {
-                    dragger {
-                        attrs {
-                            name = "files"
-                            action = "/upload.do"
-                        }
-                        p {
-                            attrs.classes = setOf("ant-upload-drag-icon")
-                            icon {
-                                attrs.type = "inbox"
+                    col {
+                        attrs.span = 8
+                        checkbox {
+                            attrs {
+                                value = "B"
+                                style = js { lineHeight = "32px" }
                             }
-                        }
-                        p {
-                            attrs.classes = setOf("ant-upload-text")
-                            +"Click or drag file to this area to upload"
-                        }
-                        p {
-                            attrs.classes = setOf("ant-upload-hint")
-                            +"Support for a single or bulk upload."
+                            +"B"
                         }
                     }
-                }))
+                    col {
+                        attrs.span = 8
+                        checkbox {
+                            attrs {
+                                value = "C"
+                                style = js { lineHeight = "32px" }
+                            }
+                            +"C"
+                        }
+                    }
+                    col {
+                        attrs.span = 8
+                        checkbox {
+                            attrs {
+                                value = "D"
+                                style = js { lineHeight = "32px" }
+                            }
+                            +"D"
+                        }
+                    }
+                    col {
+                        attrs.span = 8
+                        checkbox {
+                            attrs {
+                                value = "F"
+                                style = js { lineHeight = "32px" }
+                            }
+                            +"F"
+                        }
+                    }
+                }
             }
-            formItem {
+        }
+        formItem {
+            attrs {
+                name = "rate"
+                label = "Rate"
+            }
+            rate {}
+        }
+        formItem {
+            attrs {
+                name = "upload"
+                label = "Upload"
+                valuePropName = "fileList"
+                getValueFromEvent = normFile
+                extra = "longgggggggggggggggggggggggggggggggggg"
+            }
+            upload {
                 attrs {
-                    wrapperCol = jsObject {
-                        span = 12
-                        offset = 6
-                    }
+                    name = "logo"
+                    action = "/upload.do"
+                    listType = "picture"
                 }
                 button {
-                    attrs {
-                        type = "primary"
-                        htmlType = "submit"
-                    }
-                    +"submit"
+                    uploadOutlined {}
+                    +"Click to upload"
                 }
+            }
+        }
+        formItem {
+            attrs.label = "Dragger"
+            formItem {
+                attrs {
+                    name = "Dragger"
+                    valuePropName = "fileList"
+                    getValueFromEvent = normFile
+                    noStyle = true
+                }
+            }
+            dragger {
+                attrs {
+                    name = "files"
+                    action = "/upload.do"
+                }
+                p {
+                    attrs.classes = setOf("ant-upload-drag-icon")
+                    inboxOutlined {}
+                }
+                p {
+                    attrs.classes = setOf("ant-upload-text")
+                    +"Click or drag file to this area to upload"
+                }
+                p {
+                    attrs.classes = setOf("ant-upload-hint")
+                    +"Support for a single or bulk upload."
+                }
+            }
+        }
+        formItem {
+            attrs {
+                wrapperCol = jsObject {
+                    span = 12
+                    offset = 6
+                }
+            }
+            button {
+                attrs {
+                    type = "primary"
+                    htmlType = "submit"
+                }
+                +"submit"
             }
         }
     }
 }
 
-private val wrappedValidateOtherDemo = FormComponent.create<FormComponentProps<Any>, RState>(
-    jsObject { name = "validate_other" })(ValidateOtherDemo::class.js)
-
-fun RBuilder.wrappedValidateOtherDemo(handler: RHandler<FormComponentProps<Any>>) = child(wrappedValidateOtherDemo, jsObject {}, handler)
+fun RBuilder.validateOtherDemo() = child(demo) {}
 
 fun RBuilder.validateOther() {
     styledDiv {
         css { +FormStyles.validateOther }
-        wrappedValidateOtherDemo {}
+        validateOtherDemo()
     }
 }

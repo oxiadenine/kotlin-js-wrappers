@@ -1,12 +1,30 @@
 package antd.form
 
 import react.*
+import kotlin.js.*
 
-typealias ComponentDecorator<P, S> = (component: Any /*JsClass<Component<P, S>> */) -> JsClass<Component<P /* RcBaseFormProps, Omit<P, FormComponentProps> */, S>>
-
-typealias FormCreateOptionMessagesCallback = (args: Array<Any>) -> String
 typealias FormLayout = String /* "horizontal" | "inline" | "vertical" */
-typealias ValidateCallback<V> = (errors: Any?, values: V?) -> Unit
-
+typealias SizeType = String /* "small" | "middle" | "large" */
 typealias FormLabelAlign = String /* "left" | "right" */
 typealias FormItemValidateStatus = String /* "success" | "warning" | "error" | "validating" | "" */
+typealias RequiredMark = Any /* Boolean | "optional" */
+
+typealias RenderChildren<Values> = (form: dynamic) -> ReactElement
+typealias ChildrenType<Values> = Any /* RenderChildren<Values> | ReactElement */
+typealias LabelTooltipType = Any /* WrapperTooltipProps | ReactElement */
+typealias ValidateStatus = String /* "success" | "warning" | "error" | "validating" | "" */
+
+typealias InternalNamePath = Any /* String | Array<String> | Number */
+typealias NamePath = Any /* String | Number | InternalNamePath */
+typealias StoreValue = Any
+typealias RuleType = String /* "string" | "number" | "boolean" | "method" | "regexp" | "integer" | "float" | "object" | "enum" | "date" | "url" | "hex" | "email" */
+typealias Validator = (rule: RuleObject, value: StoreValue?, callback: (error: String?) -> Unit) -> Any /* Promise<Any> | Unit */
+typealias RuleRender = (form: FormInstance<Any>) -> RuleObject
+typealias RuleObject = Any /* AggregationRule | ArrayRule */
+typealias Rule = Any /* RuleObject | RuleRender */
+typealias InternalValidateFields = (nameList: Array<NamePath>, options: ValidateOptions?) -> Promise<Store>
+typealias ValidateMessage = Any /* String | () -> String */
+typealias Updater<ValueType> = (prev: ValueType?) -> ValueType
+typealias ShouldUpdate<Values> = Any /* Boolean | (prevValues: Values, nextValues: Values, info: ShouldUpdateInfo) -> Boolean */
+typealias EventArgs = Array<Any>
+typealias ReducerAction = Any /* UpdateAction | ValidateAction */

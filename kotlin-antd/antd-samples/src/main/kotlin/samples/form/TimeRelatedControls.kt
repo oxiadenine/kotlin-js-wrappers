@@ -1,162 +1,156 @@
 package samples.form
 
-import antd.*
 import antd.button.*
 import antd.datepicker.*
 import antd.form.*
 import antd.timepicker.*
 import kotlinext.js.*
-import org.w3c.dom.*
 import react.*
 import styled.*
 
-class TimeRelatedForm : RComponent<FormComponentProps<Any>, RState>() {
-    private val handleSubmit: FormEventHandler<HTMLElement> = { e ->
-        e.preventDefault()
+private val formItemLayout = jsObject<FormItemProps<Any>> {
+    labelCol = jsObject {
+        xs = jsObject { span = 24 }
+        sm = jsObject { span = 8 }
+    }
+    wrapperCol = jsObject {
+        xs = jsObject { span = 24 }
+        sm = jsObject { span = 16 }
+    }
+}
 
-        props.form.validateFields { err, fieldsValue: dynamic ->
-            if (err != null) {
-                return@validateFields
-            }
+private val config = jsObject<FormItemProps<Any>> {
+    rules = arrayOf(jsObject<AggregationRule> {
+        type = "object"
+        required = true
+        message = "Please select time!"
+    })
+}
 
-            // Should format date value before submit.
-            val rangeValue = fieldsValue["range-picker"]
-            val rangeTimeValue = fieldsValue["range-time-picker"]
+private val rangeConfig = jsObject<FormItemProps<Any>> {
+    rules = arrayOf(jsObject<AggregationRule> {
+        type = "array"
+        required = true
+        message = "Please select time!"
+    })
+}
 
-            val obj = js {}
+private val timeRelatedForm = functionalComponent<RProps> {
+    val handleFinish = { fieldsValue: dynamic ->
+        val rangeValue = fieldsValue["range-picker"]
+        val rangeTimeValue = fieldsValue["range-time-picker"]
 
-            val values: dynamic = Object.assign(obj, fieldsValue)
+        val obj = js {}
 
-            values["date-picker"] = fieldsValue["date-picker"].format("YYYY-MM-DD")
-            values["date-time-picker"] = fieldsValue["date-time-picker"].format("YYYY-MM-DD HH:mm:ss")
-            values["month-picker"] = fieldsValue["month-picker"].format("YYYY-MM")
-            values["range-picker"] = arrayOf(rangeValue[0].format("YYYY-MM-DD"), rangeValue[1].format("YYYY-MM-DD"))
-            values["range-time-picker"] = arrayOf(
-                rangeTimeValue[0].format("YYYY-MM-DD HH:mm:ss"),
-                rangeTimeValue[1].format("YYYY-MM-DD HH:mm:ss")
-            )
-            values["time-picker"] = fieldsValue["time-picker"].format("HH:mm:ss")
+        val values: dynamic = Object.assign(obj, fieldsValue)
 
-            console.log("Received values of form: ", values.unsafeCast < Any())
-        }
+        values["date-picker"] = fieldsValue["date-picker"].format("YYYY-MM-DD")
+        values["date-time-picker"] = fieldsValue["date-time-picker"].format("YYYY-MM-DD HH:mm:ss")
+        values["month-picker"] = fieldsValue["month-picker"].format("YYYY-MM")
+        values["range-picker"] = arrayOf(rangeValue[0].format("YYYY-MM-DD"), rangeValue[1].format("YYYY-MM-DD"))
+        values["range-time-picker"] = arrayOf(
+            rangeTimeValue[0].format("YYYY-MM-DD HH:mm:ss"),
+            rangeTimeValue[1].format("YYYY-MM-DD HH:mm:ss")
+        )
+        values["time-picker"] = fieldsValue["time-picker"].format("HH:mm:ss")
+
+        console.log("Received values of form: ", values.unsafeCast < Any())
     }
 
-    override fun RBuilder.render() {
-        val formItemLayout = jsObject<FormItemProps> {
-            labelCol = jsObject {
-                xs = jsObject { span = 24 }
-                sm = jsObject { span = 8 }
-            }
-            wrapperCol = jsObject {
-                xs = jsObject { span = 24 }
-                sm = jsObject { span = 16 }
-            }
+    form {
+        attrs {
+            name = "time_related_controls"
+            labelCol = formItemLayout.labelCol
+            wrapperCol = formItemLayout.wrapperCol
+            onFinish = handleFinish
         }
-
-        val config = jsObject<GetFieldDecoratorOptions> {
-            rules = arrayOf(jsObject {
-                type = "object"
-                required = true
-                message = "Please select time!"
-            })
+        formItem {
+            attrs {
+                name = "date-picker"
+                label = "DatePicker"
+                rules = config.rules
+            }
+            datePicker {}
         }
-
-        val rangeConfig = jsObject<GetFieldDecoratorOptions> {
-            rules = arrayOf(jsObject {
-                type = "array"
-                required = true
-                message = "Please select time!"
-            })
-        }
-
-        form {
-            Object.assign(attrs, formItemLayout)
-            attrs.onSubmit = handleSubmit
-            formItem {
-                attrs.label = "DatePicker"
-                childList.add(props.form.getFieldDecorator("date-picker", config)
-                (buildElement {
-                    datePicker {}
-                }))
+        formItem {
+            attrs {
+                name = "date-time-picker"
+                label = "DatePicker[showTime]"
+                rules = config.rules
             }
-            formItem {
-                attrs.label = "DatePicker[showTime]"
-                childList.add(props.form.getFieldDecorator("date-time-picker", config)
-                (buildElement {
-                    datePicker {
-                        attrs {
-                            showTime = true
-                            format = "YYYY-MM-DD HH:mm:ss"
-                        }
-                    }
-                }))
-            }
-            formItem {
-                attrs.label = "MonthPicker"
-                childList.add(props.form.getFieldDecorator("month-picker", config)
-                (buildElement {
-                    monthPicker {}
-                }))
-            }
-            formItem {
-                attrs.label = "RangePicker"
-                childList.add(props.form.getFieldDecorator("range-time-picker", rangeConfig)
-                (buildElement {
-                    rangePicker {}
-                }))
-            }
-            formItem {
-                attrs.label = "RangePicker[showTime]"
-                childList.add(props.form.getFieldDecorator("range-picker", rangeConfig)
-                (buildElement {
-                    rangePicker {
-                        attrs {
-                            showTime = true
-                            format = "YYYY-MM-DD HH:mm:ss"
-                        }
-                    }
-                }))
-            }
-            formItem {
-                attrs.label = "TimePicker"
-                childList.add(props.form.getFieldDecorator("time-picker", config)
-                (buildElement {
-                    timePicker {}
-                }))
-            }
-            formItem {
+            datePicker {
                 attrs {
-                    wrapperCol = jsObject {
-                        xs = jsObject {
-                            span = 24
-                            offset = 0
-                        }
-                        sm = jsObject {
-                            span = 16
-                            offset = 8
-                        }
+                    showTime = true
+                    format = "YYYY-MM-DD HH:mm:ss"
+                }
+            }
+        }
+        formItem {
+            attrs {
+                name = "month-picker"
+                label = "MonthPicker"
+                rules = config.rules
+            }
+            monthPicker {}
+        }
+        formItem {
+            attrs {
+                name = "range-picker"
+                label = "RangePicker"
+                rules = rangeConfig.rules
+            }
+            rangePicker {}
+        }
+        formItem {
+            attrs {
+                name = "range-time-picker"
+                label = "RangePicker[showTime]"
+                rules = rangeConfig.rules
+            }
+            rangePicker {
+                attrs {
+                    showTime = true
+                    format = "YYYY-MM-DD HH:mm:ss"
+                }
+            }
+        }
+        formItem {
+            attrs {
+                name = "time-picker"
+                label = "TimePicker"
+                rules = config.rules
+            }
+            timePicker {}
+        }
+        formItem {
+            attrs {
+                wrapperCol = jsObject {
+                    xs = jsObject {
+                        span = 24
+                        offset = 0
+                    }
+                    sm = jsObject {
+                        span = 16
+                        offset = 8
                     }
                 }
-                button {
-                    attrs {
-                        type = "primary"
-                        htmlType = "submit"
-                    }
-                    +"Submit"
+            }
+            button {
+                attrs {
+                    type = "primary"
+                    htmlType = "submit"
                 }
+                +"Submit"
             }
         }
     }
 }
 
-private val wrappedTimeRelatedForm = FormComponent.create<FormComponentProps<Any>, RState>(
-    jsObject { name = "time_related_controls" })(TimeRelatedForm::class.js)
-
-fun RBuilder.wrappedTimeRelatedForm(handler: RHandler<FormComponentProps<Any>>) = child(wrappedTimeRelatedForm, jsObject {}, handler)
+fun RBuilder.timeRelatedForm() = child(timeRelatedForm) {}
 
 fun RBuilder.timeRelatedControls() {
     styledDiv {
         css { +FormStyles.timeRelatedControls }
-        wrappedTimeRelatedForm {}
+        timeRelatedForm()
     }
 }

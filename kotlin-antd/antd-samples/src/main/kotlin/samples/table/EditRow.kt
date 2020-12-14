@@ -1,4 +1,4 @@
-package samples.table
+/*package samples.table
 
 import antd.form.*
 import antd.input.input
@@ -61,14 +61,15 @@ class EditRowEditableCell : RComponent<EditRowEditableCellProps, EditRowEditable
                 Object.assign(attrs, props)
                 if (props.editing) {
                     formItem {
-                        attrs.style = js { margin = 0 }
-                        childList.add(form.getFieldDecorator(props.dataIndex, jsObject {
-                            rules = arrayOf(jsObject {
+                        attrs {
+                            style = js { margin = 0 }
+                            rules = arrayOf(jsObject<AggregationRule> {
                                 required = true
                                 message = "Please Input ${props.title}"
                             })
                             initialValue = props.record.asDynamic()[props.dataIndex].unsafeCast<Any>()
-                        })(getInput()))
+                        }
+                        getInput()
                     }
                 } else childList.add(props.children)
             }
@@ -86,7 +87,7 @@ class EditRowEditableCell : RComponent<EditRowEditableCellProps, EditRowEditable
     }
 }
 
-interface EditRowEditableTableProps : FormComponentProps<Any>
+interface EditRowEditableTableProps : FormProps<Any>
 
 interface EditRowEditableTableState : RState {
     var data: Array<EditRowTableDataItem>
@@ -243,14 +244,11 @@ class EditRowEditableTable : RComponent<EditRowEditableTableProps, EditRowEditab
     }
 }
 
-private val editRowEditableForm = FormComponent.create<EditRowEditableTableProps, EditRowEditableTableState>()(
-    EditRowEditableTable::class.js.unsafeCast<JsClass<Component<EditRowEditableTableProps, EditRowEditableTableState>>>())
-
-fun RBuilder.editRowEditableTable(handler: RHandler<EditRowEditableTableProps>) = child(editRowEditableForm, jsObject {}, handler)
+fun RBuilder.editRowEditableTable() = child(EditRowEditableTable::class) {}
 
 fun RBuilder.editRow() {
     styledDiv {
         css { +TableStyles.editRow }
-        editRowEditableTable {}
+        editRowEditableTable()
     }
-}
+}*/

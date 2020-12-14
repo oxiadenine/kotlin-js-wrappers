@@ -1,120 +1,96 @@
 package samples.form
 
-import antd.*
 import antd.button.button
 import antd.checkbox.*
 import antd.form.*
 import antd.icon.*
 import antd.input.input
 import kotlinext.js.*
-import kotlinx.html.*
-import org.w3c.dom.*
 import react.*
 import react.dom.a
 import styled.*
 
-class NormalLoginForm : RComponent<FormComponentProps<Any>, RState>() {
-    private val handleSubmit: FormEventHandler<HTMLElement> = { e ->
-        e.preventDefault()
-
-        props.form.validateFields { err, values ->
-            if (err != null) {
-                console.log("Received values of form: ", values)
-            }
-        }
+private val normalLoginForm = functionalComponent<RProps> {
+    val handleFinish = { values: Any ->
+        console.log("Received values of form: ", values)
     }
 
-    override fun RBuilder.render() {
-        form {
+    form {
+        attrs {
+            name = "normal_login"
+            className = "login-form"
+            initialValues = js { remember = true }.unsafeCast<Store>()
+            onFinish = handleFinish
+        }
+        formItem {
             attrs {
-                onSubmit = handleSubmit
-                className = "login-form"
+                name = "username"
+                rules = arrayOf(jsObject<AggregationRule> {
+                    required = true
+                    message = "Please input your username!"
+                })
             }
-            formItem {
-                childList.add(props.form.getFieldDecorator("username", jsObject {
-                    rules = arrayOf(jsObject {
-                        required = true
-                        message = "Please input your username!"
-                    })
-                })(buildElement {
-                    input {
-                        attrs {
-                            prefix = buildElement {
-                                icon {
-                                    attrs {
-                                        type = "user"
-                                        style = js { color = "rgba(0,0,0,.25)" }
-                                    }
-                                }
-                            }
-                            placeholder = "Username"
+            input {
+                attrs {
+                    prefix = buildElement {
+                        userOutlined {
+                            attrs.className = "site-form-item-icon"
                         }
+                        placeholder = "Username"
                     }
-                }))
+                }
             }
-            formItem {
-                childList.add(props.form.getFieldDecorator("password", jsObject {
-                    rules = arrayOf(jsObject {
-                        required = true
-                        message = "Please input your Password!"
-                    })
-                })(buildElement {
-                    input {
-                        attrs {
-                            prefix = buildElement {
-                                icon {
-                                    attrs {
-                                        type = "lock"
-                                        style = js { color = "rgba(0,0,0,.25)" }
-                                    }
-                                }
-                            }
-                            type = "password"
-                            placeholder = "Password"
+        }
+        formItem {
+            attrs {
+                name = "password"
+                rules = arrayOf(jsObject<AggregationRule> {
+                    required = true
+                    message = "Please input your password!"
+                })
+            }
+            input {
+                attrs {
+                    prefix = buildElement {
+                        lockOutlined {
+                            attrs.className = "site-form-item-icon"
                         }
+                        placeholder = "Password"
                     }
-                }))
+                }
             }
+        }
+        formItem {
             formItem {
-                childList.add(props.form.getFieldDecorator("remember", jsObject {
+                attrs {
+                    name = "remember"
                     valuePropName = "checked"
-                    initialValue = true
-                })(buildElement {
-                    checkbox { +"Remember me" }
-                }))
-                a {
-                    attrs {
-                        classes = setOf("login-form-forgot")
-                        href = ""
-                    }
-                    +"Forgot password"
+                    noStyle = true
                 }
-                button {
-                    attrs {
-                        type = "primary"
-                        htmlType = "submit"
-                        className = "login-form-button"
-                    }
-                    +"Log in"
-                }
-                +"Or "
-                a {
-                    attrs.href = ""
-                    +"register now!"
-                }
+                checkbox { +"Remember me" }
             }
+            a(classes = "login-form-forgot", href = "") { +"Forgot password" }
+        }
+        formItem {
+            button {
+                attrs {
+                    type = "primary"
+                    htmlType = "submit"
+                    className = "login-form-button"
+                }
+                +"Login"
+            }
+            +"Or "
+            a(href = "") { +"register now" }
         }
     }
 }
 
-private val wrappedNormalLoginForm = FormComponent.create<FormComponentProps<Any>, RState>(
-    jsObject { name = "normal_login" })(NormalLoginForm::class.js)
-
-fun RBuilder.wrappedNormalLoginForm(handler: RHandler<FormComponentProps<Any>>) = child(wrappedNormalLoginForm, jsObject {}, handler)
+fun RBuilder.normalLoginForm() = child(normalLoginForm) {}
 
 fun RBuilder.normalLogin() {
     styledDiv {
         css { +FormStyles.normalLogin }
-        wrappedNormalLoginForm {}
+        normalLoginForm()
     }
 }

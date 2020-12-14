@@ -9,11 +9,11 @@ import react.*
 import react.dom.div
 import styled.*
 
-interface FormLayoutDemoState : RState {
+private interface FormLayoutDemoState : RState {
     var formLayout: String
 }
 
-class FormLayoutDemo : RComponent<FormComponentProps<Any>, FormLayoutDemoState>() {
+private class FormLayoutDemo : RComponent<FormProps<Any>, FormLayoutDemoState>() {
     private val handleFormLayoutChange = fun(event: RadioChangeEvent) {
         setState {
             formLayout = event.target.value.unsafeCast<String>()
@@ -26,14 +26,14 @@ class FormLayoutDemo : RComponent<FormComponentProps<Any>, FormLayoutDemoState>(
 
     override fun RBuilder.render() {
         val formItemLayout = if (state.formLayout == "horizontal") {
-            jsObject<FormItemProps> {
+            jsObject<FormItemProps<Any>> {
                 labelCol = jsObject { span = 4 }
                 wrapperCol = jsObject { span = 14 }
             }
         } else null
 
         val buttonItemLayout = if (state.formLayout == "horizontal") {
-            jsObject<FormItemProps> {
+            jsObject<FormItemProps<Any>> {
                 wrapperCol = jsObject {
                     span = 14
                     offset = 4
