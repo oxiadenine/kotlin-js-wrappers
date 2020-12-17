@@ -9,11 +9,13 @@ import react.*
 
 @JsName("default")
 external object AlertComponent : Component<AlertProps, AlertState> {
+    val ErrorBoundary: ErrorBoundaryComponent
+
     override fun render(): ReactElement?
 }
 
 external interface AlertProps : RProps {
-    var type: AlertType?
+    var type: String? /* "success" | "info" | "warning" | "error" */
     var closable: Boolean?
     var closeText: Any? /* String | ReactElement */
     var message: Any /* String | ReactElement */
@@ -21,12 +23,15 @@ external interface AlertProps : RProps {
     var onClose: MouseEventHandler<HTMLAnchorElement>?
     var afterClose: (() -> Unit)?
     var showIcon: Boolean?
-    var iconType: String?
+    var role: String?
     var style: dynamic
     var prefixCls: String?
     var className: String?
     var banner: Boolean?
     var icon: ReactElement?
+    var onMouseEnter: MouseEventHandler<HTMLDivElement>?
+    var onMouseLeave: MouseEventHandler<HTMLDivElement>?
+    var onClick: MouseEventHandler<HTMLDivElement>?
 }
 
 external interface AlertState : RState {

@@ -20,6 +20,7 @@ object AlertStyles : StyleSheet("alert", isStatic = true) {
     val closeText by css {}
     val smoothClosed by css {}
     val customIcon by css {}
+    val errorBoundary by css {}
 }
 
 class AlertApp : RComponent<RProps, RState>() {
@@ -36,6 +37,7 @@ class AlertApp : RComponent<RProps, RState>() {
             closeText()
             smoothClosed()
             customIcon()
+            errorBoundary()
         }
     }
 }
