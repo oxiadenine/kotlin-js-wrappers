@@ -24,7 +24,10 @@ external interface AnchorProps : RProps {
     var affix: Boolean?
     var showInkInFixed: Boolean?
     var getContainer: (() -> AnchorContainer)?
+    var getCurrentAnchor: (() -> String)?
     var onClick: ((e: MouseEvent<HTMLElement>, link: AnchorLink) -> Unit)?
+    var targetOffset: Number?
+    var onChange: ((currentActiveLink: String) -> Unit)?
 }
 
 external interface AnchorState : RState {
@@ -37,6 +40,13 @@ external interface AntAnchor {
     var activeLink: String?
     var scrollTo: (link: String) -> Unit
     var onClick: ((e: MouseEvent<HTMLElement>, link: AnchorLink) -> Unit)?
+}
+
+external interface AnchorDefaultProps : AnchorProps {
+    override var prefixCls: String?
+    override var affix: Boolean?
+    override var showInkInFixed: Boolean?
+    override var getContainer: (() -> AnchorContainer)?
 }
 
 external interface AnchorLink {

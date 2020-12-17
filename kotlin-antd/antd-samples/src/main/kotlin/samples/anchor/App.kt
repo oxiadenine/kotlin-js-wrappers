@@ -15,7 +15,10 @@ object AnchorStyles : StyleSheet("anchor", isStatic = true) {
         }
     }
     val onClick by css {}
+    val targetOffset by css {}
     val static by css {}
+    val onChange by css {}
+
 }
 
 class AnchorApp : RComponent<RProps, RState>() {
@@ -25,7 +28,9 @@ class AnchorApp : RComponent<RProps, RState>() {
             css { +AnchorStyles.container }
             basic()
             onClick()
+            targetOffset()
             static()
+            onChange()
         }
     }
 }
