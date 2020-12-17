@@ -12,13 +12,13 @@ external object AffixComponent : Component<AffixProps, AffixState> {
 
 external interface AffixProps : RProps {
     var offsetTop: Number?
-    var offset: Number?
     var offsetBottom: Number?
     var style: dynamic
     var onChange: ((affixed: Boolean?) -> Unit)?
-    var target: (() -> dynamic /* Window | HTMLElement */)?
+    var target: (() -> Any /* Window | HTMLElement */)?
     var prefixCls: String?
     var className: String?
+    var children: ReactElement
 }
 
 external interface AffixState : RState {
