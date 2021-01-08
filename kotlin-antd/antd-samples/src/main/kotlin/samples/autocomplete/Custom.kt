@@ -3,13 +3,12 @@ package samples.autocomplete
 import antd.*
 import antd.autocomplete.*
 import antd.input.*
-import antd.select.*
 import kotlinext.js.*
 import org.w3c.dom.*
 import react.*
 import styled.*
 
-private fun handleSelect(value: SelectValue, option: Object) {
+private val handleSelect = { value: Any, _: Any ->
     console.log("onSelect", value)
 }
 
@@ -41,7 +40,7 @@ class CustomComplete : RComponent<RProps, CustomCompleteState>() {
             attrs {
                 dataSource = state.dataSource
                 style = js { width = 200 }
-                onSelect = ::handleSelect
+                onSelect = handleSelect
                 onSearch = handleSearch
             }
             textArea {

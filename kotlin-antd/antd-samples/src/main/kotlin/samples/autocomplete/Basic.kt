@@ -1,12 +1,11 @@
 package samples.autocomplete
 
 import antd.autocomplete.*
-import antd.select.*
 import kotlinext.js.*
 import react.*
 import styled.*
 
-private fun handleSelect(value: SelectValue, option: Object) {
+private val handleSelect = { value: Any, _: Any ->
     console.log("onSelect", value)
 }
 
@@ -34,7 +33,7 @@ class BasicComplete : RComponent<RProps, BasicCompleteState>() {
             attrs {
                 dataSource = state.dataSource
                 style = js { width = 200 }
-                onSelect = ::handleSelect
+                onSelect = handleSelect
                 onSearch = handleSearch
                 placeholder = "input here"
             }

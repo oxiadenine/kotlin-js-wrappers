@@ -8,7 +8,7 @@ import styled.*
 
 private val datasource = arrayOf("Burns Bay Road", "Downing Street", "Wall Street")
 
-private val filter: SelectFilterOption = { inputValue, option ->
+private val filter: FilterFunc<Any> = { inputValue, option ->
     option.asDynamic().props.children.unsafeCast<String>().toLowerCase().contains(inputValue.toLowerCase())
 }
 
