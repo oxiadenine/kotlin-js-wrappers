@@ -27,6 +27,7 @@ class MenuApp : RComponent<RProps, RState>() {
             vertical()
             theme()
             switchMode()
+            styleDebug()
         }
     }
 }
