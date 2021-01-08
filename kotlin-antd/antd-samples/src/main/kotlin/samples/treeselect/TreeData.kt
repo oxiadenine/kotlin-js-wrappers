@@ -5,12 +5,12 @@ import kotlinext.js.*
 import react.*
 import styled.*
 
-private val data: Array<TreeNodeNormal> = arrayOf(
+private val data: Array<DataNode> = arrayOf(
     jsObject {
         title = "Node1"
         value = "0-0"
         key = "0-0"
-        children = arrayOf(
+        children = arrayOf<DataNode>(
             jsObject {
                 title = "Child Node1"
                 value = "0-0-1"
@@ -56,7 +56,7 @@ class TreeDataDemo : RComponent<RProps, TreeDataDemoState>() {
                     maxHeight = 400
                     overflow = "auto"
                 }
-                treeData = data.unsafeCast<Array<TreeNode>>()
+                treeData = data
                 placeholder = "Please select"
                 treeDefaultExpandAll = true
                 onChange = handleChange

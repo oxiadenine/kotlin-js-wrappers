@@ -67,16 +67,16 @@ private val demo = functionalComponent<RProps> {
             attrs.label = "TreeSelect"
             treeSelect<String, TreeSelectComponent<String>> {
                 attrs.treeData = arrayOf(
-                    js {
+                    jsObject {
                         title = "Light"
                         value = "light"
-                        children = arrayOf(
-                            js {
+                        children = arrayOf<DataNode>(
+                            jsObject {
                                 title = "Bamboo"
                                 value = "bamboo"
                             }
                         )
-                    }.unsafeCast<TreeNode>()
+                    }
                 )
             }
         }

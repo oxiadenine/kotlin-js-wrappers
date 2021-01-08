@@ -5,12 +5,12 @@ import kotlinext.js.*
 import react.*
 import styled.*
 
-private val data: Array<TreeNodeNormal> = arrayOf(
+private val data: Array<DataNode> = arrayOf(
     jsObject {
         title = "Node1"
         value = "0-0"
         key = "0-0"
-        children = arrayOf(
+        children = arrayOf<DataNode>(
             jsObject {
                 title = "Child Node1"
                 value = "0-0-0"
@@ -22,7 +22,7 @@ private val data: Array<TreeNodeNormal> = arrayOf(
         title = "Node2"
         value = "0-1"
         key = "0-1"
-        children = arrayOf(
+        children = arrayOf<DataNode>(
             jsObject {
                 title = "Child Node3"
                 value = "0-1-0"
@@ -62,7 +62,7 @@ class CheckableDemo : RComponent<RProps, CheckableDemoState>() {
     override fun RBuilder.render() {
         treeSelect<Array<String>, TreeSelectComponent<Array<String>>> {
             attrs {
-                treeData = data.unsafeCast<Array<TreeNode>>()
+                treeData = data
                 value = state.value
                 onChange = handleChange
                 treeCheckable = true
