@@ -3,6 +3,8 @@
 
 package antd.configprovider
 
+import antd.form.*
+import antd.localeprovider.*
 import org.w3c.dom.*
 import react.*
 
@@ -12,33 +14,41 @@ external object ConfigProviderComponent : Component<ConfigProviderProps, RState>
 }
 
 external interface ConfigProviderProps : RProps {
+    var getTargetContainer: (() -> HTMLElement)?
     var getPopupContainer: ((triggerNode: HTMLElement) -> HTMLElement)?
     var prefixCls: String?
-    var children: ReactElement?
+    var children: Any? /* String | ReactElement */
     var renderEmpty: RenderEmptyHandler?
     var csp: CSPConfig?
     var autoInsertSpaceInButton: Boolean?
+    var form: ConfigProviderFormProps?
+    var input: ConfigProviderInputProps?
+    var locale: Locale?
+    var pageHeader: ConfigProviderPageHeaderProps?
+    var componentSize: SizeType?
+    var direction: DirectionType?
+    var space: ConfigProviderSpaceProps?
+    var virtual: Boolean?
+    var dropdownMatchSelectWidth: Boolean?
+}
+
+external interface ConfigProviderFormProps {
+    var validateMessages: ValidateMessages?
+    var requiredMark: RequiredMark?
+}
+
+external interface ConfigProviderInputProps {
+    var ghost: Boolean
+}
+
+external interface ConfigProviderPageHeaderProps {
+    var size: Any? /* SizeType | Number */
+}
+
+external interface ConfigProviderSpaceProps {
+    var autopComplete: String?
 }
 
 external interface CSPConfig {
     var nonce: String
 }
-
-external interface BasicExportProps : RProps {
-    var prefixCls: String?
-}
-
-external interface ConfigConsumerProps {
-    var getPopupContainer: ((triggerNode: HTMLElement) -> HTMLElement)?
-    var rootPrefixCls: String?
-    var getPrefixCls: (suffixCls: String, customizePrefixCls: String?) -> String
-    var renderEmpty: RenderEmptyHandler
-    var csp: CSPConfig?
-    var autoInsertSpaceInButton: Boolean?
-}
-
-external interface ConsumerConfig {
-    var prefixCls: String
-}
-
-external fun <ExportProps : BasicExportProps> withConfigConsumer(config: ConsumerConfig): (component: IReactComponent<RProps>) -> Component<ExportProps, RState>
