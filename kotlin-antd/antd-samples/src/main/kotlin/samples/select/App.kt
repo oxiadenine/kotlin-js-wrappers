@@ -25,6 +25,8 @@ object SelectStyles : StyleSheet("select", isStatic = true) {
     val selectUsers by css {}
     val hideSelected by css {}
     val suffix by css {}
+    val bordered by css {}
+    val customTagRender by css {}
 }
 
 class SelectApp : RComponent<RProps, RState>() {
@@ -46,6 +48,8 @@ class SelectApp : RComponent<RProps, RState>() {
             selectUsers()
             hideSelected()
             suffix()
+            bordered()
+            customTagRender()
         }
     }
 }

@@ -1,8 +1,18 @@
 package antd.select
 
-typealias SelectValue = Any /* String | Array<String> | Number | Array<Number> | LabeledValue | Array<LabeledValue> */
-typealias SelectSize = String /* "default" | "large" | "small" */
-typealias SelectMode = String /* "default" | "multiple" | "tags" | "combobox" */
+import org.w3c.dom.*
 
-typealias SelectFilterOption = (inputValue: String, option: Any /* String | ReactElement */) -> Any
-typealias SelectMaxTagPlaceholder = (omittedValues: Array<SelectValue>) -> Any /* String | ReactElement */
+typealias SelectValue = Any /* RawValue | Array<RawValue> | LabeledValue | Array<LabeledValue> */
+
+typealias RenderDOMFunc = (props: Any) -> HTMLElement
+typealias RenderNode = Any /* String | ReactElement | (props: Any) -> ReactElement */
+typealias Mode = String /* "multiple" | "tags" | "combobox" */
+typealias OptionsType = Array<Any /* OptionData | OptionGroupData */>
+
+typealias SelectSource = String /* "option" | "selection" | "input" */
+typealias Key = Any /* String | Number */
+typealias RawValueType = Any /* String | Number */
+typealias DefaultValueType = Any /* RawValueType | Array<RawValueType> | LabelValueType | Array<LabelValueType> */
+typealias OnClear = () -> Unit
+typealias OnActiveValue = (active: RawValueType, index: Number, info: dynamic) -> Unit
+typealias FilterFunc<OptionsType> = (inputValue: String, option: OptionsType) -> Boolean

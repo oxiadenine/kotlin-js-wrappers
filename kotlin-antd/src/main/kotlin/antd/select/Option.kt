@@ -6,13 +6,17 @@ external object OptionComponent : Component<OptionProps, RState> {
     override fun render(): ReactElement?
 }
 
-external interface OptionProps : RProps {
+external interface OptionProps : OptionCoreData, RProps {
+    override var children: Any? /* String | ReactElement */
+}
+
+external interface OptionCoreData {
+    var key: Key?
     var disabled: Boolean?
-    var value: Any? /* String | Number */
+    var value: Key
     var title: String?
-    var children: ReactElement?
     var className: String?
     var style: dynamic
-    var text: String?
     var label: Any? /* String | ReactElement */
+    var children: Any? /* String | ReactElement */
 }

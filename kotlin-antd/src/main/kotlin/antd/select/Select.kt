@@ -4,6 +4,7 @@
 package antd.select
 
 import antd.*
+import antd.configprovider.*
 import org.w3c.dom.*
 import react.*
 
@@ -17,65 +18,112 @@ external class SelectComponent<T : SelectValue> : Component<SelectProps<T>, RSta
     override fun render(): ReactElement?
 }
 
-external interface SelectProps<T : SelectValue> : AbstractSelectProps, RProps {
-    var value: T?
-    var defaultValue: T?
-    var mode: SelectMode?
-    var optionLabelProp: String?
-    var firstActiveValue: Any? /* String | Array<String> */
-    var onChange: ((value: T, option: Any /* ReactElement | Array<ReactElement> */) -> Unit)?
-    var onSelect: ((value: T, option: Any /* String | ReactElement */) -> Unit)?
-    var onDeselect: ((value: T) -> Unit)?
-    var onBlur: ((value: T) -> Unit)?
-    var onFocus: (() -> Unit)?
-    var onPopupScroll: UIEventHandler<HTMLDivElement>?
-    var onInputKeyDown: ((e: KeyboardEventHandler<HTMLInputElement>) -> Unit)?
-    var onMouseEnter: ((e: MouseEventHandler<HTMLInputElement>) -> Unit)?
-    var onMouseLeave: ((e: MouseEventHandler<HTMLInputElement>) -> Unit)?
-    var maxTagCount: Number?
-    var maxTagTextLength: Number?
-    var maxTagPlaceholder: Any? /*  ReactElement | SelectMaxTagPlaceholder */
-    var optionFilterProp: String?
-    var labelInValue: Boolean?
-    var tokenSeparators: Array<String>?
-    var getInputElement: () -> ReactElement?
-    var autoFocus: Boolean?
-    var suffixIcon: Any? /* String | ReactElement */
-    var removeIcon: Any? /* String | ReactElement */
-    var clvearIcon: Any? /* String | ReactElement */
-    var menuItemSelectedIcon: Any? /* String | ReactElement */
+external interface SelectProps<ValueType : SelectValue> : InternalSelectProps<ValueType>, RProps {
+    override var mode: String? /* "multiple" | "tags" */
 }
 
-external interface AbstractSelectProps {
+external interface InternalSelectProps<ValueType> : RcSelectProps<Any, ValueType> {
+    var suffixIcon: Any? /* String | ReactElement */
+    var size: SizeType
+    override var mode: String? /* "multiple" | "tags" */
+    var bordered: Boolean?
+}
+
+external interface RcSelectProps<OptionsType, ValueType> {
     var prefixCls: String?
-    var className: String?
-    var showAction: Any? /* String | Array<String> */
-    var size: SelectSize?
-    var notFoundContent: Any? /* String | ReactElement */
-    var transitionName: String?
-    var choiceTransitionName: String?
-    var showSearch: Boolean?
-    var allowClear: Boolean?
-    var disabled: Boolean?
-    var showArrow: Boolean?
-    var style: dynamic
-    var tabIndex: Number?
-    var placeholder: Any? /* String | ReactElement */
-    var defaultActiveFirstOption: Boolean?
-    var dropdownClassName: String?
-    var dropdownStyle: dynamic
-    var dropdownMenuStyle: dynamic
-    var dropdownMatchSelectWidth: Boolean?
-    var onSearch: ((value: String) -> Unit)?
-    var getPopupContainer: ((triggerNode: HTMLElement) -> HTMLElement)?
-    var filterOption: Any? /* Boolean | SelectFilterOption */
     var id: String?
-    var defaultOpen: Boolean?
-    var open: Boolean?
-    var onDropdownVisibleChange: ((open: Boolean) -> Unit)?
+    var className: String?
+    var style: dynamic
+    var options: OptionsType?
+    var children: Any? /* String | ReactElement */
+    var mode: Mode?
+    var value: ValueType?
+    var defaultValue: ValueType?
+    var labelInValue: Boolean?
+    var inputValue: String?
+    var searchValue: String?
+    var optionFilterProp: String?
+    var filterOption: Any? /* Boolean | FilterFunc<OptionsType> */
+    var showSearch: Boolean?
     var autoClearSearchValue: Boolean?
-    var dropdownRender: ((menu: ReactElement?, props: SelectProps<Any>?) -> Any /* String | ReactElement */)?
+    var onSearch: ((value: String) -> Unit)?
+    var onClear: OnClear?
+    var allowClear: Boolean?
+    var clearIcon: Any? /* String | ReactElement */
+    var showArrow: Boolean?
+    var inputIcon: RenderNode?
+    var removeIcon: Any? /* String | ReactElement */
+    var menuItemSelectedIcon: RenderNode?
+    var open: Boolean?
+    var defaultOpen: Boolean?
+    var listHeight: Number?
+    var listItemHeight: Number?
+    var dropdownStyle: dynamic
+    var dropdownClassName: String?
+    var dropdownMatchSelectWidth: Any? /* Boolean | Number */
+    var virtual: Boolean?
+    var dropdownRender: ((menu: ReactElement) -> ReactElement)?
+    var dropdownAlign: Any?
+    var animation: String?
+    var transitionName: String?
+    var getPopupContainer: RenderDOMFunc?
+    var direction: String?
+    var disabled: Boolean?
     var loading: Boolean?
+    var autoFocus: Boolean?
+    var defaultActiveFirstOption: Boolean?
+    var notFoundContent: Any? /* String | ReactElement */
+    var placeholder: Any? /* String | ReactElement */
+    var backfill: Boolean?
+    var getInputElement: (() -> Any /* String | ReactElement */)?
+    var optionLabelProp: String?
+    var maxTagTextLength: Number?
+    var maxTagCount: Number?
+    var maxTagPlaceholder: Any? /* String | ReactElement | (omittedValues: Array<LabelValueType>) -> ReactElement */
+    var tokenSeparators: Array<String>?
+    var tagRender: ((props: CustomTagProps) -> ReactElement)?
+    var showAction: Array<String>?
+    var tabIndex: Number?
+    var onKeyUp: KeyboardEventHandler<HTMLDivElement>?
+    var onKeyDown: KeyboardEventHandler<HTMLDivElement>?
+    var onPopupScroll: UIEventHandler<HTMLDivElement>?
+    var onDropdownVisibleChange: ((open: Boolean) -> Unit)?
+    var onSelect: ((value: SingleType<ValueType>, option: OptionsType) -> Unit)?
+    var onDeselect: ((value: SingleType<ValueType>, option: OptionsType) -> Unit)?
+    var onInputKeyDown: KeyboardEventHandler<HTMLInputElement>?
+    var onClick: MouseEventHandler<Any>?
+    var onChange: ((value: ValueType, option: Any /* OptionsType | OptionsType */) -> Unit)?
+    var onBlur: FocusEventHandler<HTMLElement>?
+    var onFocus: FocusEventHandler<HTMLElement>?
+    var onMouseDown: MouseEventHandler<HTMLDivElement>?
+    var onMouseEnter: MouseEventHandler<HTMLDivElement>?
+    var onMouseLeave: MouseEventHandler<HTMLDivElement>?
+    var choiceTransitionName: String?
+}
+
+external interface SingleType<MT>
+
+external interface OptionData : OptionCoreData
+
+external interface FlattenOptionData {
+    var group: Boolean?
+    var groupOption: Boolean?
+    var key: Any /* String | Number */
+    var data: Any /* OptionData | OptionGroupData */
+}
+
+external interface CustomTagProps {
+    var label: DefaultValueType
+    var value: DefaultValueType
+    var disabled: Boolean
+    var onClose: (event: MouseEvent<HTMLElement>) -> Unit
+    var closable: Boolean
+}
+
+external interface LabelValueType {
+    var key: Key?
+    var value: RawValueType?
+    var label: Any? /* String | ReactElement */
 }
 
 external interface LabeledValue {

@@ -104,7 +104,7 @@ private val registrationForm = functionalComponent<RProps> {
 
     val (autoCompleteResult, setAutoCompleteResult) = useState(emptyArray<String>())
 
-    val onWebsiteChange = { value: Any? ->
+    val onWebsiteChange = { value: String?, _: Any ->
         if (value !== null) {
             setAutoCompleteResult(emptyArray())
         } else {

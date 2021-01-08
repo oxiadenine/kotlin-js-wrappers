@@ -54,7 +54,7 @@ interface GroupCompactDemoState : RState {
 }
 
 class GroupCompactDemo : RComponent<RProps, GroupCompactDemoState>() {
-    private fun handleChange(value: SelectValue) {
+    private fun handleChange(value: SelectValue, options: Any) {
         setState {
             dataSource = if (value.unsafeCast<String>().isEmpty() || value.unsafeCast<String>().contains("@")) {
                 emptyArray<Any>()

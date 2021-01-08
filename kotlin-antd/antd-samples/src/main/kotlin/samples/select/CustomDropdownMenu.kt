@@ -16,10 +16,10 @@ fun RBuilder.customDropdownMenu() {
             attrs {
                 defaultValue = "lucy"
                 style = js { width = 120 }
-                dropdownRender = { menu, _ ->
+                dropdownRender = { menu ->
                     buildElement {
                         div {
-                            childList.add(menu!!)
+                            childList.add(menu)
                             divider {
                                 attrs.style = js { margin = "4px 0" }
                             }
