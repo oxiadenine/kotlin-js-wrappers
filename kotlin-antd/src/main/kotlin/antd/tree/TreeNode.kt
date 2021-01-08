@@ -4,7 +4,7 @@ import antd.*
 import org.w3c.dom.*
 import react.*
 
-external object TreeNodeComponent : Component<TreeNodeProps, RState> {
+external object TreeNodeComponent : Component<TreeNodeProps, TreeNodeState> {
     override fun render(): ReactElement?
 }
 
@@ -22,9 +22,12 @@ external interface TreeNodeProps : RProps {
     var loading: Boolean?
     var selected: Boolean?
     var selectable: Boolean?
-    var icon: Any /* TreeNodeIconFn | ReactElement */
-    var children: ReactElement?
-    /* [customProp: String]: Any */
+    var icon: Any /* (treeNode: TreeNodeAttribute) -> ReactElement | ReactElement */
+    var children: Any? /* String | ReactElement */
+}
+
+external interface TreeNodeState : RState {
+    var dragNodeHighlight: Boolean
 }
 
 external interface TreeNodeAttribute {
@@ -35,7 +38,7 @@ external interface TreeNodeAttribute {
     var selected: Boolean
     var checked: Boolean
     var halfChecked: Boolean
-    var children: ReactElement
+    var children: Any /* String | ReactElement */
     var title: Any /* String | ReactElement */
     var pos: String
     var dragOver: Boolean
@@ -47,18 +50,8 @@ external interface TreeNodeAttribute {
     var disableCheckbox: Boolean
 }
 
-external interface TreeNodeNormal {
-    var title: Any? /* String | ReactElement */
-    var key: String
-    var isLeaf: Boolean?
-    var disabled: Boolean?
-    var disableCheckbox: Boolean?
-    var selectable: Boolean?
-    var children: Array<TreeNodeNormal>?
-}
-
 external interface TreeNodeDragEnterEvent : TreeNodeMouseEvent {
-    var expandedKeys: Array<String>
+    var expandedKeys: Array<Key>
 }
 
 external interface TreeNodeMouseEvent {
@@ -69,22 +62,22 @@ external interface TreeNodeMouseEvent {
 external interface TreeNodeDropEvent {
     var node: TreeNodeComponent
     var dragNode: TreeNodeComponent
-    var dragNodesKeys: Array<String>
+    var dragNodesKeys: Array<Key>
     var dropPosition: Number
     var dropToGap: Boolean?
     var event: MouseEvent<HTMLElement>
 }
 
 external interface TreeNodeCheckedEvent : TreeNodeBaseEvent {
-    var event: String /* "check" */
+    var event: String
     var checked: Boolean?
     var checkedNodes: Array<TreeNodeComponent>?
 }
 
 external interface TreeNodeSelectedEvent : TreeNodeBaseEvent {
-    var event: String /* "select" */
+    var event: String
     var selected: Boolean?
-    var selectedNodes: Array<TreeNodeComponent>?
+    var selectedNodes: Array<DataNode>?
 }
 
 external interface TreeNodeExpandedEvent : TreeNodeBaseEvent {
@@ -93,5 +86,5 @@ external interface TreeNodeExpandedEvent : TreeNodeBaseEvent {
 
 external interface TreeNodeBaseEvent {
     var node: TreeNodeComponent
-    var nativeEvent: org.w3c.dom.events.MouseEvent
+    var nativeEvent: MouseEvent<Any>
 }

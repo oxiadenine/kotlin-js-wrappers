@@ -7,11 +7,11 @@ import react.dom.*
 import styled.*
 
 class BasicDemo : RComponent<RProps, RState>() {
-    private val handleSelect = fun(selectedKeys: Array<String>, info: TreeNodeSelectedEvent) {
+    private val handleSelect = fun(selectedKeys: Array<Key>, info: OnSelectInfo) {
         console.log("selected", selectedKeys, info)
     }
 
-    private val handleCheck = fun(checkedKeys: Any, info: TreeNodeCheckedEvent) {
+    private val handleCheck = fun(checkedKeys: Any, info: CheckInfo) {
         console.log("onCheck", checkedKeys, info)
     }
 

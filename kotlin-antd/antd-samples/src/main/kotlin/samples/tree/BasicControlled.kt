@@ -77,14 +77,14 @@ private val treeData = arrayOf<TreeNodeNormal>(
 )
 
 interface BasicControlledDemoState : RState {
-    var expandedKeys: Array<String>
+    var expandedKeys: Array<Key>
     var autoExpandParent: Boolean
-    var checkedKeys: Array<String>
-    var selectedKeys: Array<String>
+    var checkedKeys: Array<Key>
+    var selectedKeys: Array<Key>
 }
 
 class BasicControlledDemo : RComponent<RProps, BasicControlledDemoState>() {
-    private val handleExpand = fun(expandKeys: Array<String>, _: TreeNodeExpandedEvent) {
+    private val handleExpand = fun(expandKeys: Array<Key>, _: OnExpandInfo) {
         console.log("onExpand", expandKeys)
 
         // if not set autoExpandParent to false, if children expanded, parent can not collapse.
@@ -95,15 +95,15 @@ class BasicControlledDemo : RComponent<RProps, BasicControlledDemoState>() {
         }
     }
 
-    private val handleCheck = fun(checkKeys: Any, _: TreeNodeCheckedEvent) {
+    private val handleCheck = fun(checkKeys: Any, _: CheckInfo) {
         console.log("onCheck", checkKeys)
 
         setState {
-            checkedKeys = checkKeys.unsafeCast<Array<String>>()
+            checkedKeys = checkKeys.unsafeCast<Array<Key>>()
         }
     }
 
-    private val handleSelect = fun(selectKeys: Array<String>, _: TreeNodeSelectedEvent) {
+    private val handleSelect = fun(selectKeys: Array<Key>, _: OnSelectInfo) {
         console.log("selected", selectKeys)
 
         setState {
@@ -118,7 +118,7 @@ class BasicControlledDemo : RComponent<RProps, BasicControlledDemoState>() {
                     treeNode {
                         attrs {
                             title = item.title
-                            key = item.key
+                            key = item.key as String
                         }
                         attrs.asDynamic()["dataRef"] = item
                         childList.add(renderTreeNodes(item.children!!))

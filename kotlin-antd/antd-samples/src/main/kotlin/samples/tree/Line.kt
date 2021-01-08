@@ -5,7 +5,7 @@ import react.*
 import styled.*
 
 class LineDemo : RComponent<RProps, RState>() {
-    private val handleSelect = fun(selectedKeys: Array<String>, info: TreeNodeSelectedEvent) {
+    private val handleSelect = fun(selectedKeys: Array<Key>, info: OnSelectInfo) {
         console.log("selected", selectedKeys, info)
     }
 

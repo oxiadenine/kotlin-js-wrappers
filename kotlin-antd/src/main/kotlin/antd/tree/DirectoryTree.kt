@@ -7,10 +7,10 @@ external object DirectoryTreeComponent : Component<DirectoryTreeProps, Directory
 }
 
 external interface DirectoryTreeProps : TreeProps {
-    var expandAction: DirectoryTreeExpandAction
+    var expandAction: ExpandAction
 }
 
 external interface DirectoryTreeState : RState {
-    var expandedKeys: Array<String>?
-    var selectedKeys: Array<String>?
+    var expandedKeys: Array<Key>?
+    var selectedKeys: Array<Key>?
 }

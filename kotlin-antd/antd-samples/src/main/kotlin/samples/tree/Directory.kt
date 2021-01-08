@@ -5,11 +5,11 @@ import react.*
 import styled.*
 
 class DirectoryDemo : RComponent<RProps, RState>() {
-    private val handleSelect = fun(selectedKeys: Array<String>, info: TreeNodeSelectedEvent) {
+    private val handleSelect = fun(selectedKeys: Array<Key>, info: OnSelectInfo) {
         console.log("selected", selectedKeys, info)
     }
 
-    private val handleExpand: () -> Unit = {
+    private val handleExpand: (expandedKey: Array<Key>, info: OnExpandInfo) -> Unit = { _, _ ->
         console.log("Trigger Expand")
     }
 

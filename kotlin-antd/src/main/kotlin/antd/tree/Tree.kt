@@ -16,49 +16,213 @@ external object TreeComponent : Component<TreeProps, RState> {
     override fun render(): ReactElement?
 }
 
-external interface TreeProps : RProps {
-    var showLine: Boolean?
-    var className: String?
-    var multiple: Boolean?
-    var autoExpandParent: Boolean?
-    var checkStrictly: Boolean?
-    var checkable: Boolean?
-    var disabled: Boolean?
-    var defaultExpandAll: Boolean?
-    var defaultExpandParent: Boolean?
-    var defaultExpandedKeys: Array<String>?
-    var expandedKeys: Array<String>?
-    var checkedKeys: Any? /* Array<String> | TreeCheckedKeys */
-    var defaultCheckedKeys: Array<String>?
-    var selectedKeys: Array<String>?
-    var defaultSelectedKeys: Array<String>?
-    var selectable: Boolean?
-    var onExpand: Any? /* TreeExpandFn | Promise<Unit> */
-    var onCheck: ((checkedKeys: Any /* Array<String> | TreeCheckedKeys */, e: TreeNodeCheckedEvent) -> Unit)?
-    var onSelect: ((selectedKeys: Array<String>, e: TreeNodeSelectedEvent) -> Unit)?
-    var onClick: ((e: MouseEvent<HTMLElement>, node: TreeNodeComponent) -> Unit)?
-    var onDoubleClick: ((e: MouseEvent<HTMLElement>, node: TreeNodeComponent) -> Unit)?
+external interface TreeProps : RcTreeProps, RProps {
+    override var showLine: Any?
+    override var className: String?
+    override var multiple: Boolean?
+    override var autoExpandParent: Boolean?
+    override var checkStrictly: Boolean?
+    override var checkable: Any?
+    override var disabled: Boolean?
+    override var defaultExpandAll: Boolean?
+    override var defaultExpandParent: Boolean?
+    override var defaultExpandedKeys: Array<Key>?
+    override var expandedKeys: Array<Key>?
+    override var checkedKeys: Any?
+    override var defaultCheckedKeys: Array<Key>?
+    override var selectedKeys: Array<Key>?
+    override var defaultSelectedKeys: Array<Key>?
+    override var selectable: Boolean?
     var filterAntTreeNode: ((node: TreeNodeComponent) -> Boolean)?
-    var loadData: ((node: TreeNodeComponent) -> Promise<Unit>)?
-    var loadedKeys: Array<String>
-    var onLoad: ((loadedKeys: Array<String>, info: TreeLoadInfo) -> Unit)?
-    var onRightClick: ((options: TreeNodeMouseEvent) -> Unit)?
-    var draggable: Boolean?
-    var onDragStart: ((options: TreeNodeMouseEvent) -> Unit)?
-    var onDragEnter: ((options: TreeNodeDragEnterEvent) -> Unit)?
-    var onDragOver: ((options: TreeNodeMouseEvent) -> Unit)?
-    var onDragLeave: ((options: TreeNodeMouseEvent) -> Unit)?
-    var onDragEnd: ((options: TreeNodeMouseEvent) -> Unit)?
-    var onDrop: ((options: TreeNodeDropEvent) -> Unit)?
-    var style: dynamic
-    var showIcon: Boolean?
-    var icon: Any? /* TreeNodeIconFn | ReactElement */
-    var switcherIcon: ReactElement?
-    var prefixCls: String?
-    var filterTreeNode: ((node: TreeNodeComponent) -> Boolean)?
-    var children: ReactElement?
+    override var loadedKeys: Array<Key>?
+    override var draggable: Boolean?
+    override var style: dynamic
+    override var showIcon: Boolean?
+    override var icon: Any? /* (nodeProps: TreeNodeAttribute) => ReactElement | String | ReactElement */
+    override var switcherIcon: Any?
+    override var prefixCls: String?
+    override var children: Any? /* String | ReactElement */
     var blockNode: Boolean?
-    var treeData: Array<TreeNodeNormal>?
+}
+
+external interface RcTreeProps {
+    var prefixCls: String?
+    var className: String?
+    var style: dynamic
+    var focusable: Boolean?
+    var tabIndex: Number?
+    var children: Any? /* String | ReactElement */
+    var treeData: Array<DataNode>?
+    var showLine: Any?
+    var showIcon: Boolean?
+    var icon: IconType?
+    var selectable: Boolean?
+    var disabled: Boolean?
+    var multiple: Boolean?
+    var checkable: Any? /* Boolean | String | ReactElement */
+    var checkStrictly: Boolean?
+    var draggable: Boolean?
+    var defaultExpandParent: Boolean?
+    var autoExpandParent: Boolean?
+    var defaultExpandAll: Boolean?
+    var defaultExpandedKeys: Array<Key>?
+    var expandedKeys: Array<Key>?
+    var defaultCheckedKeys: Array<Key>?
+    var checkedKeys: Any? /* Array<Key> | CheckedKeysInfo */
+    var defaultSelectedKeys: Array<Key>?
+    var selectedKeys: Array<Key>?
+    var titleRender: ((node: DataNode) -> Any /* String | ReactElement */)?
+    var onFocus: FocusEventHandler<HTMLDivElement>?
+    var onBlur: FocusEventHandler<HTMLDivElement>?
+    var onKeyDown: KeyboardEventHandler<HTMLDivElement>?
+    var onContextMenu: MouseEventHandler<HTMLDivElement>?
+    var onClick: NodeMouseEventHandler?
+    var onDoubleClick: NodeMouseEventHandler?
+    var onExpand: ((expandedKeys: Array<Key>, info: OnExpandInfo) -> Unit)?
+    var onCheck: ((checked: Any /* OnCheckInfo | Array<Key> */, info: CheckInfo) -> Unit)?
+    var onSelect: ((selectedKeys: Array<Key>, info: OnSelectInfo) -> Unit)?
+    var onLoad: ((loadedKeys: Array<Key>, info: OnLoadInfo) -> Unit)?
+    var loadData: ((treeNode: EventDataNode) -> Promise<Unit>)?
+    var loadedKeys: Array<Key>?
+    var onMouseEnter: ((info: NodeMouseEventParams<HTMLSpanElement>) -> Unit)?
+    var onMouseLeave: ((info: NodeMouseEventParams<HTMLSpanElement>) -> Unit)?
+    var onRightClick: ((info: OnRightClickInfo) -> Unit)?
+    var onDragStart: ((info: NodeDragEventParams<HTMLDivElement>) -> Unit)?
+    var onDragEnter: ((info: OnDragEnterInfo) -> Unit)?
+    var onDragOver: ((info: NodeDragEventParams<HTMLDivElement>) -> Unit)?
+    var onDragLeave: ((info: NodeDragEventParams<HTMLDivElement>) -> Unit)?
+    var onDragEnd: ((info: NodeDragEventParams<HTMLDivElement>) -> Unit)?
+    var onDrop: ((info: OnDropInfo) -> Unit)?
+    var onActiveChange: ((key: Key) -> Unit)?
+    var filterTreeNode: ((treeNode: EventDataNode) -> Boolean)?
+    var motion: Any?
+    var switcherIcon: Any? /* IconType | ReactElement */
+    var height: Number?
+    var itemHeight: Number?
+    var virtual: Boolean?
+}
+
+external interface CheckedKeysInfo {
+    var checked: Array<Key>
+    var halfChecked: Array<Key>
+}
+
+external interface OnExpandInfo {
+    var node: EventDataNode
+    var expanded: Boolean
+    var nativeEvent: MouseEvent<Any>
+}
+
+external interface OnCheckInfo {
+    var checked: Array<Key>
+    var halfChecked: Array<Key>
+}
+
+external interface OnSelectInfo {
+    var event: String
+    var selected: Boolean
+    var node: EventDataNode
+    var selectedNodes: Array<DataNode>
+    var nativeEvent: MouseEvent<Any>
+}
+
+external interface OnLoadInfo {
+    var event: String
+    var node: EventDataNode
+}
+
+external interface OnRightClickInfo {
+    var event: MouseEvent<Any>
+    var node: EventDataNode
+}
+
+external interface OnDragEnterInfo : NodeDragEventParams<HTMLDivElement> {
+    var expandedKeys: Array<Key>
+}
+
+external interface OnDropInfo : NodeDragEventParams<HTMLDivElement> {
+    var dragNode: EventDataNode
+    var dragNodesKeys: Array<Key>
+    var dropPosition: Number
+    var dropToGap: Boolean
+}
+
+external interface CheckInfo {
+    var event: String
+    var node: EventDataNode
+    var checked: Boolean
+    var nativeEvent: MouseEvent<Any>
+    var checkedNodes: Array<DataNode>
+    var checkedNodesPositions: Array<CheckedNodesPosition>?
+    var halfCheckedKeys: Array<Key>?
+}
+
+external interface CheckedNodesPosition {
+    var node: DataNode
+    var pos: String
+}
+
+external interface DataNode {
+    var checkable: Boolean?
+    var children: Array<DataNode>?
+    var disabled: Boolean?
+    var disableCheckbox: Boolean?
+    var icon: IconType?
+    var isLeaf: Boolean?
+    var key: Any /* String | Number */
+    var title: Any? /* String | ReactElement */
+    var selectable: Boolean?
+    var switcherIcon: IconType?
+    var className: String?
+    var style: dynamic
+}
+
+external interface EventDataNode : DataNode {
+    var expanded: Boolean
+    var selected: Boolean
+    var checked: Boolean
+    var loaded: Boolean
+    var loading: Boolean
+    var halfChecked: Boolean
+    var dragOver: Boolean
+    var dragOverGapTop: Boolean
+    var dragOverGapBottom: Boolean
+    var pos: String
+    var active: Boolean
+}
+
+external interface Entity {
+    var node: Any /* NodeElement | DataNode */
+    var index: Number
+    var key: Key
+    var pos: String
+    var parent: Any? /* Entity | DataEntity */
+    var children: Array<Any /* Entity> | DataEntity */>?
+}
+
+external interface DataEntity : Entity {
+    override var node: Any
+    override var parent: Any?
+    override var children: Array<Any>?
+    var level: Number
+}
+
+external interface NodeElementSelect {
+    var selectHandle: HTMLSpanElement?
+    var type: NodeElementSelectType
+}
+
+external interface NodeElementSelectType {
+    var isTreeNode: Boolean
+}
+
+external interface FlattenNode {
+    var parent: FlattenNode?
+    var children: Array<FlattenNode>
+    var pos: String
+    var data: DataNode
+    var isStart: Array<Boolean>
+    var isEnd: Array<Boolean>
 }
 
 external interface TreeCheckedKeys {
