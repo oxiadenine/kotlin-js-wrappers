@@ -7,16 +7,20 @@ import react.dom.h3
 import samples.AppStyles
 import styled.*
 
-fun RBuilder.disabled() {
+
+fun RBuilder.centered() {
     divider {  }
-    h3 { +"Disabled Demo" }
+    h3 { +"Centered Demo" }
     styledDiv {
         css {
             +TabsStyles.card
             +AppStyles.contentSection
         }
         tabs {
-            attrs.defaultActiveKey = "1"
+            attrs {
+                defaultActiveKey = "1"
+                centered = true
+            }
             tabPane {
                 attrs {
                     tab = "Tab 1"
@@ -27,7 +31,6 @@ fun RBuilder.disabled() {
             tabPane {
                 attrs {
                     tab = "Tab 2"
-                    disabled = true
                     key = "2"
                 }
                 +"Content of Tab Pane 2"

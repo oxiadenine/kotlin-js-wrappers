@@ -1,11 +1,14 @@
 package samples.tabs
 
+import antd.divider.divider
 import antd.select.*
 import antd.select.option
 import antd.tabs.*
 import kotlinext.js.*
 import react.*
 import react.dom.div
+import react.dom.h3
+import samples.AppStyles
 import styled.*
 
 private val positionList = arrayOf("left", "right", "top", "bottom")
@@ -84,6 +87,10 @@ class NestDemo : RComponent<RProps, NestDemoState>() {
                     attrs.value = "card"
                     +"Parent - card"
                 }
+                option {
+                    attrs.value = "editable-card"
+                    +"Parent - card edit"
+                }
             }
             select<String, SelectComponent<String>> {
                 attrs {
@@ -101,6 +108,10 @@ class NestDemo : RComponent<RProps, NestDemoState>() {
                 option {
                     attrs.value = "card"
                     +"Child - card"
+                }
+                option {
+                    attrs.value = "editable-card"
+                    +"Parent - card edit"
                 }
             }
             tabs {
@@ -147,8 +158,13 @@ class NestDemo : RComponent<RProps, NestDemoState>() {
 fun RBuilder.nestDemo() = child(NestDemo::class) {}
 
 fun RBuilder.nest() {
+    divider {  }
+    h3 { +"Nested Demo" }
     styledDiv {
-        css { +TabsStyles.nest }
+        css {
+            +TabsStyles.card
+            +AppStyles.contentSection
+        }
         nestDemo()
     }
 }

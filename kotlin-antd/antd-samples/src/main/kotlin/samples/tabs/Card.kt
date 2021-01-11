@@ -1,7 +1,10 @@
 package samples.tabs
 
+import antd.divider.divider
 import antd.tabs.*
 import react.*
+import react.dom.h3
+import samples.AppStyles
 import styled.*
 
 private fun callback(key: String) {
@@ -9,8 +12,13 @@ private fun callback(key: String) {
 }
 
 fun RBuilder.card() {
+    divider {  }
+    h3 { +"Card Demo" }
     styledDiv {
-        css { +TabsStyles.card }
+        css {
+            +TabsStyles.card
+            +AppStyles.contentSection
+        }
         tabs {
             attrs {
                 onChange = ::callback

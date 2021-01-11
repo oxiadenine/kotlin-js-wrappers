@@ -16,6 +16,7 @@ external object TabsComponent : Component<TabsProps, RState> {
 
 external interface TabsProps : RProps {
     var activeKey: String?
+    var centered: Boolean?
     var defaultActiveKey: String?
     var hideAdd: Boolean?
     var onChange: ((activeKey: String) -> Unit)?

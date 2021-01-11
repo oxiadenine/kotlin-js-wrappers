@@ -34,7 +34,6 @@ import samples.inputnumber.*
 import samples.layout.*
 import samples.list.listApp
 import samples.localeprovider.*
-import samples.mention.*
 import samples.mentions.*
 import samples.menu.*
 import samples.message.*
@@ -87,6 +86,11 @@ object AppStyles : StyleSheet("app", isStatic = true) {
             }
         }
     }
+    val contentSection by css {
+        border = "1px solid lightgrey"
+        borderRadius = 1.px
+        padding = "10px"
+    }
 }
 
 class App : RComponent<RProps, RState>() {
@@ -128,7 +132,6 @@ class App : RComponent<RProps, RState>() {
             layoutApp()
             listApp()
             localeProviderApp()
-            mentionApp()
             mentionsApp()
             menuApp()
             messageApp()

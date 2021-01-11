@@ -58,6 +58,7 @@ class TabsApp : RComponent<RProps, RState>() {
             icon()
             slide()
             extra()
+            centered()
             size()
             position()
             card()

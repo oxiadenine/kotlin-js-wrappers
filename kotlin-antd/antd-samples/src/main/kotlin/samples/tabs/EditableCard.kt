@@ -1,8 +1,11 @@
 package samples.tabs
 
+import antd.divider.divider
 import antd.tabs.*
 import kotlinext.js.*
 import react.*
+import react.dom.h3
+import samples.AppStyles
 import styled.*
 
 interface EditableCardDemoState : RState {
@@ -116,8 +119,13 @@ class EditableCardDemo : RComponent<RProps, EditableCardDemoState>() {
 fun RBuilder.editableCardDemo() = child(EditableCardDemo::class) {}
 
 fun RBuilder.editableCard() {
+    divider {  }
+    h3 { +"Editable Card Demo" }
     styledDiv {
-        css { +TabsStyles.editableCard }
+        css {
+            +TabsStyles.card
+            +AppStyles.contentSection
+        }
         editableCardDemo()
     }
 }

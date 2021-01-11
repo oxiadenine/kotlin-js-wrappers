@@ -1,10 +1,12 @@
 package samples.tabs
 
+import antd.divider.divider
 import antd.radio.*
 import antd.tabs.*
 import kotlinext.js.*
 import react.*
 import react.dom.*
+import samples.AppStyles
 import styled.*
 
 interface SizeDemoState : RState {
@@ -77,8 +79,13 @@ class SizeDemo : RComponent<RProps, SizeDemoState>() {
 fun RBuilder.sizeDemo() = child(SizeDemo::class) {}
 
 fun RBuilder.size() {
+    divider {  }
+    h3 { +"Size Demo" }
     styledDiv {
-        css { +TabsStyles.size }
+        css {
+            +TabsStyles.card
+            +AppStyles.contentSection
+        }
         sizeDemo()
     }
 }

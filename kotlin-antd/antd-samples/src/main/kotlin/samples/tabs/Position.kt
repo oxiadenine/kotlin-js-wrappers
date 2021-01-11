@@ -1,11 +1,20 @@
 package samples.tabs
 
+import antd.divider.divider
+import antd.radio.RadioChangeEvent
+import antd.radio.radioButton
+import antd.radio.radioGroup
 import antd.select.*
 import antd.select.option
 import antd.tabs.*
 import kotlinext.js.*
+import kotlinx.css.border
+import kotlinx.css.borderRadius
+import kotlinx.css.padding
+import kotlinx.css.px
 import react.*
 import react.dom.div
+import react.dom.h3
 import react.dom.jsStyle
 import styled.*
 
@@ -14,9 +23,9 @@ interface PositionDemoState : RState {
 }
 
 class PositionDemo : RComponent<RProps, PositionDemoState>() {
-    private val changeTabPosition = fun(value: SelectValue, _: Any) {
+    private val changeTabPosition = fun(event: RadioChangeEvent) {
         setState {
-            tabPosition = value.unsafeCast<String>()
+            tabPosition = event.target.value.unsafeCast<String>()
         }
     }
 
@@ -25,30 +34,44 @@ class PositionDemo : RComponent<RProps, PositionDemoState>() {
     }
 
     override fun RBuilder.render() {
-        div {
+        divider {  }
+        h3 { +"Position Demo" }
+        styledDiv {
+            css {
+                border = "1px solid lightgrey"
+                borderRadius = 1.px
+                padding = "10px"
+            }
             div {
-                attrs.jsStyle = js { marginBottom = 16 }
+                attrs.jsStyle = js { marginBottom = 24 }
                 +"Tab position："
-                select<String, SelectComponent<String>> {
+                radioGroup {
                     attrs {
                         value = state.tabPosition
                         onChange = changeTabPosition
-                        dropdownMatchSelectWidth = false
                     }
-                    option {
-                        attrs.value = "top"
+                    radioButton {
+                        attrs {
+                            value = "top"
+                        }
                         +"top"
                     }
-                    option {
-                        attrs.value = "bottom"
+                    radioButton {
+                        attrs {
+                            value = "bottom"
+                        }
                         +"bottom"
                     }
-                    option {
-                        attrs.value = "left"
+                    radioButton {
+                        attrs {
+                            value = "left"
+                        }
                         +"left"
                     }
-                    option {
-                        attrs.value = "right"
+                    radioButton {
+                        attrs {
+                            value = "right"
+                        }
                         +"right"
                     }
                 }

@@ -1,11 +1,14 @@
 package samples.tabs
 
 import antd.button.button
+import antd.divider.divider
 import antd.tabs.*
 import kotlinext.js.*
 import react.*
 import react.dom.div
+import react.dom.h3
 import react.dom.jsStyle
+import samples.AppStyles
 import styled.*
 
 interface CustomAddTriggerDemoState : RState {
@@ -89,7 +92,13 @@ class CustomAddTriggerDemo : RComponent<RProps, CustomAddTriggerDemoState>() {
     }
 
     override fun RBuilder.render() {
-        div {
+        divider {  }
+        h3 { +"Custom Add Trigger Demo" }
+        styledDiv {
+            css {
+                +TabsStyles.card
+                +AppStyles.contentSection
+            }
             div {
                 attrs.jsStyle = js { marginBottom = 16 }
                 button {

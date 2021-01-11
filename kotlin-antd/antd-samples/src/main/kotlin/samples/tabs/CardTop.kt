@@ -1,14 +1,21 @@
 package samples.tabs
 
+import antd.divider.divider
 import antd.tabs.*
 import kotlinx.html.*
 import react.*
 import react.dom.*
+import samples.AppStyles
 import styled.*
 
 fun RBuilder.cardTop() {
+    divider {  }
+    h3 { +"Card Top Demo" }
     styledDiv {
-        css { +TabsStyles.cardTop }
+        css {
+            +TabsStyles.card
+            +AppStyles.contentSection
+        }
         div {
             attrs.classes = setOf("card-container")
             tabs {

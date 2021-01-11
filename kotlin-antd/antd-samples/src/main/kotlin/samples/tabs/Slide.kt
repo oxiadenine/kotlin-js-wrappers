@@ -1,10 +1,12 @@
 package samples.tabs
 
+import antd.divider.divider
 import antd.radio.*
 import antd.tabs.*
 import kotlinext.js.*
 import react.*
 import react.dom.*
+import samples.AppStyles
 import styled.*
 
 interface SlidingTabsDemoState : RState {
@@ -62,8 +64,13 @@ class SlidingTabsDemo : RComponent<RProps, SlidingTabsDemoState>() {
 fun RBuilder.slidingTabsDemo() = child(SlidingTabsDemo::class) {}
 
 fun RBuilder.slide() {
+    divider {  }
+    h3 { +"Slide Demo" }
     styledDiv {
-        css { +TabsStyles.slide }
+        css {
+            +TabsStyles.card
+            +AppStyles.contentSection
+        }
         slidingTabsDemo()
     }
 }
