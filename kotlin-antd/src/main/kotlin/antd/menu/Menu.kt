@@ -19,6 +19,8 @@ external object MenuComponent : Component<MenuProps, MenuState> {
 }
 
 external interface MenuProps : RProps {
+    var defaultActiveFirst: Boolean?
+    var activeKey: String?
     var id: String?
     var theme: MenuTheme?
     var mode: MenuMode?
@@ -46,6 +48,7 @@ external interface MenuProps : RProps {
     var getPopupContainer: ((triggerNode: HTMLElement) -> HTMLElement)?
     var overflowedIndicator: ReactElement?
     var forceSubMenuRender: Boolean?
+    var triggerSubMenuAction: Any /*  */
 }
 
 external interface MenuState : RState {

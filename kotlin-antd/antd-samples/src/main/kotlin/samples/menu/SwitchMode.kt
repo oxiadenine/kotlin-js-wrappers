@@ -129,6 +129,20 @@ class SwitchModeSider : RComponent<RProps, SwitchModeSiderState>() {
                         +"Option 10"
                     }
                 }
+                menuItem {
+                    attrs.key = "link"
+                    span {
+                        linkOutlined {}
+                        a {
+                            attrs {
+                                href = "https://ant.design"
+                                target = "_blank"
+                                rel = "noopener noreferrer"
+                            }
+                            +"Ant Design"
+                        }
+                    }
+                }
             }
         }
     }
