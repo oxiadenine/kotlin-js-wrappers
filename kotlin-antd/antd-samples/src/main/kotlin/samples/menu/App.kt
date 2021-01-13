@@ -13,6 +13,7 @@ object MenuStyles : StyleSheet("menu", isStatic = true) {
     val vertical by css {}
     val theme by css {}
     val switchMode by css {}
+    val styleDebug by css {}
 }
 
 class MenuApp : RComponent<RProps, RState>() {

@@ -13,7 +13,7 @@ external interface SubMenuProps : RProps {
     var disabled: Boolean?
     var level: Number?
     var title: Any? /* String | ReactElement */
-    var icon: Any? /* ReactElement */
+    var icon: ReactElement?
     var style: dynamic
     var onTitleClick: ((e: TitleEventEntity) -> Unit)?
     var onTitleMouseEnter: ((e: TitleEventEntity) -> Unit)?
