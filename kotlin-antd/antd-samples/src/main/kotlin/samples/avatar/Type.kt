@@ -1,6 +1,7 @@
 package samples.avatar
 
 import antd.avatar.*
+import antd.icon.userOutlined
 import kotlinext.js.*
 import react.*
 import react.dom.*
@@ -11,7 +12,9 @@ fun RBuilder.type() {
         css { +AvatarStyles.type }
         div {
             avatar {
-                attrs.icon = "user"
+                attrs.icon = buildElement {
+                    userOutlined {}
+                }
             }
             avatar { +"U" }
             avatar { +"USER" }
@@ -27,7 +30,9 @@ fun RBuilder.type() {
             avatar {
                 attrs {
                     style = js { backgroundColor = "#87d068" }
-                    icon = "user"
+                    icon = buildElement {
+                        userOutlined {}
+                    }
                 }
             }
         }

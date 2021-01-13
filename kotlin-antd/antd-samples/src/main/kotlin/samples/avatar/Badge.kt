@@ -2,6 +2,7 @@ package samples.avatar
 
 import antd.avatar.*
 import antd.badge.*
+import antd.icon.userOutlined
 import kotlinext.js.*
 import react.*
 import react.dom.*
@@ -18,7 +19,9 @@ fun RBuilder.badge() {
                     avatar {
                         attrs {
                             shape = "square"
-                            icon = "user"
+                            icon = buildElement {
+                                userOutlined {}
+                            }
                         }
                     }
                 }
@@ -29,7 +32,9 @@ fun RBuilder.badge() {
                     avatar {
                         attrs {
                             shape = "square"
-                            icon = "user"
+                            icon = buildElement {
+                                userOutlined {}
+                            }
                         }
                     }
                 }

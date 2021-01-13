@@ -7,19 +7,23 @@ import react.*
 
 @JsName("default")
 external object AvatarComponent : Component<AvatarProps, AvatarState> {
+    val Group: GroupComponent
+
     override fun render(): ReactElement
 }
 
 external interface AvatarProps : RProps {
-    var shape: AvatarShape?
+    var shape: String? /* "circle" | "square" */
     var size: Any? /* AvatarSize | Number */
-    var src: String?
+    var gap: Number?
+    var src: Any? /* String | ReactElement */
     var srcSet: String?
-    var icon: String?
+    var draggable: Boolean?
+    var icon: Any? /* String | ReactElement */
     var style: dynamic
     var prefixCls: String?
     var className: String?
-    var children: ReactElement?
+    var children: Any? /* String | ReactElement */
     var alt: String?
     var onError: (() -> Boolean)?
 }

@@ -22,6 +22,9 @@ object AvatarStyles : StyleSheet("avatar", isStatic = true) {
     }
     val badge by css {}
     val toggleDebug by css {}
+    val fallback by css {}
+    val group by css {}
+    val responsive by css {}
 }
 
 class AvatarApp : RComponent<RProps, RState>() {
@@ -34,6 +37,9 @@ class AvatarApp : RComponent<RProps, RState>() {
             type()
             badge()
             toggleDebug()
+            fallback()
+            group()
+            responsive()
         }
     }
 }
