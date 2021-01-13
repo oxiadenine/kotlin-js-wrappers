@@ -19,7 +19,7 @@ external interface MenuItemProps : RProps {
     var onMouseEnter: ((e: ItemClickParam) -> Unit)?
     var onMouseLeave: ((e: ItemClickParam) -> Unit)?
     var key: Any? /* Object */
-    var itemIcon: Any? /* ReactElement | ((p: MenuItemProps) -> ReactElement */
+    var itemIcon: ReactElement? /* ReactElement | ((p: MenuItemProps) -> ReactElement */
     var icon: Any? /* ReactElement */
     var danger: Boolean?
 }

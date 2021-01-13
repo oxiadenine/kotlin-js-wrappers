@@ -8,17 +8,16 @@ import org.w3c.dom.events.MouseEvent
 import react.*
 import react.dom.br
 import react.dom.span
-import samples.badge.change
 import styled.css
 import styled.styledDiv
 
 
-interface StyleDebugState: RState {
+interface StyleDebugState : RState {
     var theme: MenuTheme
     var current: String
 }
 
-class StyleDebug: RComponent<RProps, StyleDebugState>() {
+class StyleDebug : RComponent<RProps, StyleDebugState>() {
     private val changeTheme = fun(checked: Boolean, _: MouseEvent) {
         setState {
             theme = if (checked) "dark" else "light"
@@ -136,7 +135,7 @@ fun RBuilder.styleDebugChild() = child(StyleDebug::class) {}
 
 fun RBuilder.styleDebug() {
     styledDiv {
-//        css { +MenuStyles.}
+        css { +MenuStyles.styleDebug }
         styleDebugChild()
     }
 }
