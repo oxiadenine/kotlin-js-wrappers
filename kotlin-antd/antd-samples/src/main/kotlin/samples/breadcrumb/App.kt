@@ -10,6 +10,7 @@ object BreadcrumbStyles : StyleSheet("breadcrumb", isStatic = true) {
     val overlay by css {}
     val separator by css {}
     val withIcon by css {}
+    val separatorIndepent by css {}
 }
 
 class BreadcrumbApp : RComponent<RProps, RState>() {
@@ -20,6 +21,7 @@ class BreadcrumbApp : RComponent<RProps, RState>() {
             basic()
             separator()
             withIcon()
+            separatorIndepent()
         }
     }
 }

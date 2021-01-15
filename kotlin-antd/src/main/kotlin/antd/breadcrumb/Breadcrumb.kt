@@ -8,6 +8,7 @@ import react.*
 @JsName("default")
 external object BreadcrumbComponent : Component<BreadcrumbProps, RState> {
     val Item: BreadcrumbItemComponent
+    val Separator: BreadcrumbSeparatorComponent
 
     override fun render(): ReactElement?
 }
@@ -25,5 +26,5 @@ external interface BreadcrumbProps : RProps {
 external interface Route {
     var path: String
     var breadcrumbName: String
-    var children: dynamic
+    var children: Array<Route>
 }

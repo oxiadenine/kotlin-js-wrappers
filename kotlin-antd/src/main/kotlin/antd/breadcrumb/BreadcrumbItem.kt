@@ -1,6 +1,7 @@
 package antd.breadcrumb
 
 import antd.*
+import antd.dropdown.DropdownProps
 import react.*
 
 external object BreadcrumbItemComponent : Component<BreadcrumbItemProps, RState> {
@@ -12,5 +13,6 @@ external interface BreadcrumbItemProps : RProps {
     var separator: Any? /* String | ReactElement */
     var href: String?
     var overlay: Any? /* String | ReactElement */
+    var dropdownProps: DropdownProps?
     var onClick: MouseEventHandler<Any /* HTMLAnchorElement | HTMLSpanElement */>?
 }
