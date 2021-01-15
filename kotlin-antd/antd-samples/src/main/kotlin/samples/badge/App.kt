@@ -41,6 +41,8 @@ object BadgeStyles : StyleSheet("badge", isStatic = true) {
             marginBottom = 8.px
         }
     }
+    val offset by css {}
+    val ribbon by css {}
 }
 
 class BadgeApp : RComponent<RProps, RState>() {
@@ -57,6 +59,8 @@ class BadgeApp : RComponent<RProps, RState>() {
             change()
             title()
             colorful()
+            offset()
+            ribbon()
         }
     }
 }

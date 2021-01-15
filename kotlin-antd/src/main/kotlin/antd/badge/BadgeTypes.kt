@@ -1,3 +1,6 @@
 package antd.badge
 
-typealias BadgeStatus = String /* "success" | "processing" | "default" | "error" | "warning" */
+typealias PresetStatusColorType = String /* "success" | "processing" | "error" | "default" | "warning */
+typealias PresetColorType = String /* "pink" | "red" | "yellow" | "orange" | "cyan" | "green" | "blue" | "purple" | "geekblue" | "magenta" | "volcano" | "gold" | "lime" */
+
+typealias RibbonPlacement = String /* "start" | "end" */
