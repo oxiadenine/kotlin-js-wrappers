@@ -15,9 +15,11 @@ external object BackTopComponent : Component<BackTopProps, RState> {
 external interface BackTopProps : RProps {
     var visibilityHeight: Number?
     var onClick: MouseEventHandler<HTMLElement>?
-    var target: (() -> Any /* HTMLElement | Window */)?
+    var target: (() -> Any /* HTMLElement | Window | Document */)?
     var prefixCls: String?
+    var children: Any? /* String | ReactElement */
     var className: String?
     var style: dynamic
+    var duration: Number?
     var visible: Boolean?
 }
