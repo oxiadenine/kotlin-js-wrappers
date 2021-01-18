@@ -26,7 +26,7 @@ external interface CardProps : HTMLAttributes<HTMLDivElement>, RProps {
     var loading: Boolean?
     var noHovering: Boolean?
     var hoverable: Boolean?
-    override var children: ReactElement?
+    override var children: Any? /* String | ReactElement */
     override var id: String?
     override var className: String?
     var size: CardSize?

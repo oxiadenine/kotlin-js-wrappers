@@ -12,7 +12,7 @@ external object ListItemComponent : Component<ListItemProps, RState> {
 
 external interface ListItemProps : HTMLAttributes<HTMLDivElement>, RProps {
     override var className: String?
-    override var children: ReactElement?
+    override var children: Any? /* String | ReactElement */
     var prefixCls: String?
     override var style: dynamic
     var extra: Any? /* String | ReactElement */

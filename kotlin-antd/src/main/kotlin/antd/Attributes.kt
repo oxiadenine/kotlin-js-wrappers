@@ -3,7 +3,7 @@ package antd
 import react.*
 
 external interface DOMAttributes<T> {
-    var children: ReactElement?
+    var children: Any? /* String | ReactElement */
 
     // Clipboard Events
     var onCopy: ClipboardEventHandler<T>?
