@@ -4,6 +4,7 @@
 package antd.button
 
 import antd.*
+import antd.configprovider.SizeType
 import react.*
 
 @JsName("default")
@@ -33,18 +34,19 @@ external interface NativeButtonProps : BaseButtonProps, ButtonHTMLAttributes<Any
 
 external interface BaseButtonProps {
     var type: ButtonType?
-    var icon: ReactElement?
+    var icon: Any? /* String | ReactElement */
     var shape: ButtonShape?
-    var size: ButtonSize?
-    var loading: Any? /* Boolean | ButtonLoading */
+    var size: SizeType?
+    var loading: Any? /* Boolean | ButtonLoadingProps */
     var prefixCls: String?
     var style: dynamic
     var className: String?
     var ghost: Boolean?
+    var danger: Boolean?
     var block: Boolean?
-    var children: ReactElement?
+    var children: Any? /* String | ReactElement */
 }
 
-external interface ButtonLoading {
+external interface ButtonLoadingProps {
     var delay: Number?
 }
