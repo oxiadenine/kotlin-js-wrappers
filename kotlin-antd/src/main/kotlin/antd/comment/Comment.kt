@@ -16,7 +16,7 @@ external interface CommentProps : RProps {
     var avatar: Any? /* String | ReactElement */
     var className: String?
     var content: Any /* String | ReactElement */
-    var children: ReactElement?
+    var children: Any /* String | ReactElement */
     var prefixCls: String?
     var style: dynamic
     var datetime: Any? /* String | ReactElement */
