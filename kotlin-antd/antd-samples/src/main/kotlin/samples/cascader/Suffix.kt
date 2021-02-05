@@ -42,7 +42,7 @@ private val cascaderOptions = arrayOf<CascaderOptionType>(
     }
 )
 
-private fun handleChange(value: Array<String>, selectedOptions: Array<CascaderOptionType>?) {
+private fun handleChange(value: CascaderValueType, selectedOptions: Array<CascaderOptionType>?) {
     console.log(value)
 }
 

@@ -72,7 +72,7 @@ private val cascaderOptions = arrayOf<CascaderOptionType>(
 
 interface DirectionPageProps : RProps {
     var className: String
-    var popupPlacement: CascaderPopupPlacement
+    var popupPlacement: String
 }
 
 interface DirectionPageState : RState {
@@ -131,7 +131,7 @@ class DirectionPage : RComponent<DirectionPageProps, DirectionPageState>() {
         }
     }
 
-    private val onCascaderChange = { value: Array<String>, _: Array<CascaderOptionType>? ->
+    private val onCascaderChange = { value: CascaderValueType, _: Array<CascaderOptionType>? ->
         console.log(value)
     }
 

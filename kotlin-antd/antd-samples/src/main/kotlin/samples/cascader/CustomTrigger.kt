@@ -34,7 +34,7 @@ interface CustomTriggerCitySwitcherState : RState {
 }
 
 class CustomTriggerCitySwitcher : RComponent<RProps, CustomTriggerCitySwitcherState>() {
-    private val handleChange = fun(_: Array<String>, selectedOptions: Array<CascaderOptionType>?) {
+    private val handleChange = fun(_: CascaderValueType, selectedOptions: Array<CascaderOptionType>?) {
         setState {
             text = selectedOptions!!.joinToString(", ") { selectedOption ->
                 selectedOption.label!!.unsafeCast<String>()

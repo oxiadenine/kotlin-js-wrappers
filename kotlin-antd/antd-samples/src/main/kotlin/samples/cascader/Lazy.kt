@@ -6,12 +6,7 @@ import kotlinx.browser.*
 import react.*
 import styled.*
 
-interface LazyCascaderOptionType : CascaderOptionType {
-    var isLeaf: Boolean?
-    var loading: Boolean?
-}
-
-private val cascaderOptions = arrayOf<LazyCascaderOptionType>(
+private val cascaderOptions = arrayOf<CascaderOptionType>(
     jsObject {
         value = "zhejiang"
         label = "Zhejiang"
@@ -25,16 +20,16 @@ private val cascaderOptions = arrayOf<LazyCascaderOptionType>(
 )
 
 interface LazyOptionsState : RState {
-    var options: Array<LazyCascaderOptionType>
+    var options: Array<CascaderOptionType>
 }
 
 class LazyOptions : RComponent<RProps, LazyOptionsState>() {
-    private val handleChange = fun(value: Array<String>, selectedOptions: Array<CascaderOptionType>?) {
+    private val handleChange = fun(value: CascaderValueType, selectedOptions: Array<CascaderOptionType>?) {
         console.log(value, selectedOptions!!)
     }
 
     private val handleLoadData = fun(selectedOptions: Array<CascaderOptionType>?) {
-        val targetOption = selectedOptions!![selectedOptions.size - 1].unsafeCast<LazyCascaderOptionType>()
+        val targetOption = selectedOptions!![selectedOptions.size - 1].unsafeCast<CascaderOptionType>()
         targetOption.loading = true
 
         // load options lazily

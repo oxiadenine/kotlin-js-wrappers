@@ -62,7 +62,7 @@ private val handleDisplayRender = fun(labels: Array<String>, selectedOptions: Ar
 
             if (index == labels.size - 1) {
                 span {
-                    attrs.key = option.value!!
+                    attrs.key = option.value!! as String
                     +"$label ("
                     a {
                         attrs.onClickFunction = { event ->
@@ -74,7 +74,7 @@ private val handleDisplayRender = fun(labels: Array<String>, selectedOptions: Ar
                 }
             } else {
                 span {
-                    attrs.key = option.value!!
+                    attrs.key = option.value!! as String
                     +"$label / "
                 }
             }
