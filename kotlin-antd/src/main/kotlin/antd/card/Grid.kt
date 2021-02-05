@@ -8,6 +8,7 @@ external object CardGridComponent : Component<CardGridProps, RState> {
 
 external interface CardGridProps : RProps {
     var prefixCls: String?
-    var style: dynamic
     var className: String?
+    var hoverable: Boolean?
+    var style: dynamic
 }

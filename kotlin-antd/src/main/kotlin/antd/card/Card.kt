@@ -4,6 +4,7 @@
 package antd.card
 
 import antd.*
+import antd.tabs.TabsProps
 import org.w3c.dom.*
 import react.*
 
@@ -24,7 +25,6 @@ external interface CardProps : HTMLAttributes<HTMLDivElement>, RProps {
     var bodyStyle: dynamic
     override var style: dynamic
     var loading: Boolean?
-    var noHovering: Boolean?
     var hoverable: Boolean?
     override var children: Any? /* String | ReactElement */
     override var id: String?
@@ -34,13 +34,15 @@ external interface CardProps : HTMLAttributes<HTMLDivElement>, RProps {
     var cover: Any? /* String | ReactElement */
     var actions: Array<Any /* String | ReactElement */>?
     var tabList: Array<CardTabListType>?
+    var tabBarExtraContent: Any? /* String | ReactElement */
     var onTabChange: ((key: String) -> Unit)?
     var activeTabKey: String?
     var defaultActiveTabKey: String?
+    var tabProps: TabsProps?
 }
 
 external interface CardTabListType {
     var key: String
-    var tab: ReactElement
+    var tab: Any /* String | ReactElement */
     var disabled: Boolean?
 }
