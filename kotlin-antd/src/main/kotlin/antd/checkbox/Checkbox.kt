@@ -35,13 +35,10 @@ external interface AbstractCheckboxProps<T> {
     var value: Any?
     var tabIndex: Number?
     var name: String?
-    var children: ReactElement?
+    var children: Any? /* String | ReactElement */
     var id: String?
     var autoFocus: Boolean?
-}
-
-external interface CheckboxChangeEventTarget : CheckboxProps {
-    override var checked: Boolean?
+    var type: String?
 }
 
 external interface CheckboxChangeEvent {
@@ -49,4 +46,8 @@ external interface CheckboxChangeEvent {
     val stopPropagation: () -> Unit
     val preventDefault: () -> Unit
     val nativeEvent: MouseEvent
+}
+
+external interface CheckboxChangeEventTarget : CheckboxProps {
+    override var checked: Boolean?
 }

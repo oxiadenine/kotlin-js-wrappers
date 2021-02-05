@@ -2,7 +2,18 @@ package antd.checkbox
 
 import react.*
 
-external object CheckboxGroupComponent : Component<CheckboxGroupProps, CheckboxGroupState> {
+external val groupContext: RContext<CheckboxGroupContext?>
+
+external interface CheckboxGroupContext {
+    var name: String?
+    var toggleOption: ((option: CheckboxOptionType) -> Unit)?
+    var value: Any?
+    var disabled: Boolean?
+    var registerValue: (value: String) -> Unit
+    var cancelValue: (value: String) -> Unit
+}
+
+external object CheckboxGroupComponent : Component<CheckboxGroupProps, RState> {
     override fun render(): ReactElement?
 }
 
@@ -11,11 +22,7 @@ external interface CheckboxGroupProps : AbstractCheckboxGroupProps, RProps {
     var defaultValue: Array<CheckboxValueType>?
     var value: Array<CheckboxValueType>?
     var onChange: ((checkedValue: Array<CheckboxValueType>) -> Unit)?
-}
-
-external interface CheckboxGroupState : RState {
-    var value: Array<CheckboxValueType>
-    var registeredValues: Array<CheckboxValueType>
+    var children: Any? /* String | ReactElement */
 }
 
 external interface AbstractCheckboxGroupProps {
