@@ -7,7 +7,7 @@ external object CollapsePanelComponent : Component<CollapsePanelProps, RState> {
 }
 
 external interface CollapsePanelProps : RProps {
-    var key: String
+    var key: Any /* String | Number */
     var header: Any /* String | ReactElement */
     var disabled: Boolean?
     var className: String?
