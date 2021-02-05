@@ -17,4 +17,13 @@ external interface CarouselProps : Settings, RProps {
     var slickGoTo: Number?
     var dotPosition: DotPosition?
     var children: ReactElement?
+    override var dots: Any? /* Boolean | SettingsDots */
+}
+
+external interface CarouselRef {
+    var goTo: (slide: Number, dontAnimate: Boolean) -> Unit
+    var next: () -> Unit
+    var prev: () -> Unit
+    var autoPlay: Boolean
+    var innerSlider: Any
 }
