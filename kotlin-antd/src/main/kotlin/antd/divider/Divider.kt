@@ -12,10 +12,11 @@ external object DividerComponent : Component<DividerProps, RState> {
 
 external interface DividerProps : RProps {
     var prefixCls: String?
-    var type: DividerType?
-    var orientation: DividerOrientation?
+    var type: String? /* "horizontal" | "vertical" */
+    var orientation: String? /* "left" | "right" | "center" */
     var className: String?
-    var children: ReactElement?
+    var children: Any? /* String | ReactElement */
     var dashed: Boolean?
     var style: dynamic
+    var plain: Boolean?
 }

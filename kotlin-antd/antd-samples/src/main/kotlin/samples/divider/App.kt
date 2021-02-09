@@ -10,6 +10,7 @@ object DividerStyles : StyleSheet("divider", isStatic = true) {
     val withText by css {}
     val vertical by css {}
     val customizeStyle by css {}
+    val plain by css {}
 }
 
 class DividerApp : RComponent<RProps, RState>() {
@@ -21,6 +22,7 @@ class DividerApp : RComponent<RProps, RState>() {
             withText()
             vertical()
             customizeStyle()
+            plain()
         }
     }
 }
