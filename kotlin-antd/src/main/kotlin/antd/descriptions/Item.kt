@@ -10,6 +10,6 @@ external interface DescriptionsItemProps : RProps {
     var prefixCls: String?
     var className: String?
     var label: Any? /* String | ReactElement */
-    var children: ReactElement
+    var children: Any? /* String | ReactElement */
     var span: Number?
 }

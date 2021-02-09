@@ -17,11 +17,13 @@ external interface DescriptionsProps : RProps {
     var className: String?
     var style: dynamic
     var bordered: Boolean?
-    var size: DescriptionsSize?
-    var children: ReactElement?
-    var title: String?
+    var size: String? /* "middle" | "small" | "default" */
+    var children: Any? /* String | ReactElement */
+    var title: Any? /* String | ReactElement */
+    var extra: Any? /* String | ReactElement */
     var column: Any? /* Number | ColumnBreakpoint */
-    var layout: DescriptionsLayout?
+    var layout: String? /* "horizontal" | "vertical" */
+    var colon: Boolean?
 }
 
 external interface ColumnBreakpoint {
