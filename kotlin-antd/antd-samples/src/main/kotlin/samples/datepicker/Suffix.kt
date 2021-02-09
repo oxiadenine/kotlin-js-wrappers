@@ -15,7 +15,7 @@ private fun handleChange(date: Moment, dateString: String) {
     console.log(date, dateString)
 }
 
-private fun handleRangeChange(dates: RangePickerValue, dateStrings: Array<String>) {
+private fun handleRangeChange(dates: RangeValue<Moment>, dateStrings: Array<String>) {
     console.log(dates, dateStrings)
 }
 

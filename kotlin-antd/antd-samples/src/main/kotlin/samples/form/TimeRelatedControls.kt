@@ -2,8 +2,9 @@ package samples.form
 
 import antd.button.*
 import antd.datepicker.*
+import antd.datepicker.rangePicker
 import antd.form.*
-import antd.timepicker.*
+import antd.timepicker.timePicker
 import kotlinext.js.*
 import react.*
 import styled.*

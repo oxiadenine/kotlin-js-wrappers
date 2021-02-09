@@ -1,40 +1,63 @@
 package antd.datepicker
 
-import moment.*
+import antd.FocusEventHandler
+import antd.configprovider.SizeType
+import moment.Moment
 import org.w3c.dom.*
 import react.*
 
-external object RangePickerComponent : Component<RangePickerProps, RangePickerState> {
+external object RangePickerComponent : Component<RangePickerProps, RState> {
     override fun render(): ReactElement?
 }
 
-external interface RangePickerProps : PickerProps, RProps {
-    override var className: String?
-    var value: RangePickerValue?
-    var defaultValue: RangePickerValue?
-    var defaultPickerValue: RangePickerValue?
-    var onChange: ((dates: RangePickerValue, dateStrings: Array<String>) -> Unit)?
-    var onCalendarChange: ((dates: RangePickerValue, dateStrings: Array<String>) -> Unit)?
-    var onOk: ((selectedTime: RangePickerPresetRange) -> Unit)?
-    var showTime: Any? /* TimePickerProps | Boolean */
-    var showToday: Boolean?
-    var ranges: RangePickerRanges?
-    var placeholder: Array<String>?
-    var mode: Any? /* String | Array<String> */
+external interface RangePickerProps : RangePickerBaseProps<Moment>, RangePickerDateProps<Moment>, RangePickerTimeProps<Moment>, RProps
+
+external interface RangePickerBaseProps<DateType> : RcRangePickerBaseProps<DateType> {
+    var locale: PickerLocale?
+    var size: SizeType?
+    var bordered: Boolean?
+}
+
+external interface RangePickerDateProps<DateType> : RcRangePickerDateProps<DateType> {
+    var locale: PickerLocale?
+    var size: SizeType?
+    var bordered: Boolean?
+}
+
+external interface RangePickerTimeProps<DateType> : RcRangePickerTimeProps<DateType> {
+    var locale: PickerLocale?
+    var size: SizeType?
+    var bordered: Boolean?
+}
+
+external interface RcRangePickerBaseProps<DateType> : RcRangePickerSharedProps<DateType>, RcPickerBaseProps<DateType>
+
+external interface RcRangePickerDateProps<DateType> : RcRangePickerSharedProps<DateType>, RcPickerDateProps<DateType> {
+    override var showTime: Any? /* Boolean | RangeShowTimeObject<DateType> */
+}
+
+external interface RcRangePickerTimeProps<DateType> : RcRangePickerSharedProps<DateType>, RcPickerTimeProps<DateType> {
+    var order: Boolean?
+}
+
+external interface RcRangePickerSharedProps<DateType> {
+    var id: String?
+    var ranges: Map<String, Any? /* RangeValue<DateType>> | () -> RangeValue<DateType>> */>
     var separator: Any? /* String | ReactElement */
-    var disabledTime: ((current: Moment?, type: String) -> DatePickerDisabledTime)?
-    var onPanelChange: ((value: RangePickerValue?, mode: Any? /* String | Array<String> */) -> Unit)?
-    var renderExtraFooter: (() -> Any /* String | ReactElement */)?
-    var getPopupContainer: ((triggerNode: Element) -> HTMLElement)?
+    var allowEmpty: Array<Boolean>?
+    var onCalendarChange: ((values: RangeValue<DateType>, formatString: Array<String>, info: RangeInfo) -> Unit)?
+    var onFocus: FocusEventHandler<HTMLInputElement>?
+    var onBlur: FocusEventHandler<HTMLInputElement>?
+    var direction: String? /* "ltr" | "rtl" */
+    var autoComplete: String?
+    var activePickerIndex: Number? /* 0 | 1 */
+    var panelRender: ((originPanel: Any /* String | ReactElement */) -> Any? /* String | ReactElement */)?
 }
 
-external interface RangePickerState : RState {
-    var value: RangePickerValue
-    var showDate: RangePickerValue
-    var open: Boolean?
-    var hoverValue: RangePickerValue?
+external interface RangeInfo {
+    var range: RangeType
 }
 
-external interface RangePickerRanges {
-    /* [range: String]: RangePickerPresetRange */
+external interface RangeShowTimeObject<DateType> : SharedTimeProps<DateType> {
+    var defaultValue: Any?
 }

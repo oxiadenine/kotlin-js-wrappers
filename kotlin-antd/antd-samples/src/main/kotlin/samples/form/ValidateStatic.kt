@@ -7,7 +7,7 @@ import antd.input.input
 import antd.inputnumber.*
 import antd.select.*
 import antd.select.option
-import antd.timepicker.*
+import antd.timepicker.timePicker
 import kotlinext.js.*
 import react.*
 import react.dom.jsStyle

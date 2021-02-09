@@ -4,6 +4,7 @@ import antd.*
 import antd.button.button
 import antd.calendar.*
 import antd.datepicker.*
+import antd.datepicker.rangePicker
 import antd.localeprovider.*
 import antd.localeprovider.Locale
 import antd.modal.*
@@ -14,6 +15,7 @@ import antd.select.SelectComponent
 import antd.select.select
 import antd.table.*
 import antd.timepicker.*
+import antd.timepicker.timePicker
 import antd.transfer.*
 import kotlinext.js.*
 import kotlinx.html.*

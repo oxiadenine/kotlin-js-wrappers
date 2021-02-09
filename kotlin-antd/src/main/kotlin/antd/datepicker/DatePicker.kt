@@ -3,64 +3,63 @@
 
 package antd.datepicker
 
+import antd.configprovider.SizeType
+import antd.timepicker.TimePickerLocale
 import moment.*
-import org.w3c.dom.*
 import react.*
 
 @JsName("default")
 external object DatePickerComponent : Component<DatePickerProps, RState> {
-    val RangePicker: RangePickerComponent
-    val MonthPicker: MonthPickerComponent
     val WeekPicker: WeekPickerComponent
+    val MonthPicker: MonthPickerComponent
+    val YearPicker: YearPickerComponent
+    val RangePicker: RangePickerComponent
+    val TimePicker: TimePickerComponent
+    val QuarterPicker: QuarterPickerComponent
 
     override fun render(): ReactElement?
 }
 
-external interface DatePickerProps : PickerProps, SinglePickerProps, RProps {
-    var showTime: Any? /* TimePickerProps | Boolean */
-    var showToday: Boolean?
-    override var open: Boolean?
-    var disabledTime: ((current: Moment) -> DatePickerDisabledTime)?
-    override var onOpenChange: ((status: Boolean) -> Unit)?
-    var onPanelChange: ((value: Moment?, mode: DatePickerMode) -> Unit)?
-    var onOk: ((selectedTime: Moment) -> Unit)?
-    var mode: DatePickerMode?
+external interface DatePickerProps : PickerProps<Moment>, RProps
+
+external interface PickerProps<DateType> : PickerBaseProps<DateType>, PickerDateProps<DateType>, PickerTimeProps<DateType>
+
+external interface PickerBaseProps<DateType> : RcPickerBaseProps<DateType>
+
+external interface PickerDateProps<DateType> : RcPickerDateProps<DateType> {
+    var locale: PickerLocale?
+    var size: SizeType?
+    var bordered: Boolean?
 }
 
-external interface DatePickerDisabledTime {
-    var disabledHours: (() -> Array<Number>)?
-    var disabledMinutes: (() -> Array<Number>)?
-    var disabledSeconds: (() -> Array<Number>)?
+external interface PickerTimeProps<DateType> : RcPickerTimeProps<DateType> {
+    var locale: PickerLocale?
+    var size: SizeType?
+    var bordered: Boolean?
 }
 
-external interface PickerProps {
-    var id: Any? /* Number | String */
-    var name: String?
-    var prefixCls: String?
-    var inputPrefixCls: String?
-    var format: String?
-    var disabled: Boolean?
-    var allowClear: Boolean?
-    var className: String?
-    var suffixIcon: Any? /* String | ReactElement */
-    var style: dynamic
-    var popupStyle: dynamic
-    var dropdownClassName: String?
-    var locale: Any?
-    var size: DatePickerSize?
-    var getCalendarContainer: ((triggerNode: Element) -> HTMLElement)?
-    var open: Boolean?
-    var onOpenChange: ((status: Boolean) -> Unit)?
-    var disabledDate: ((current: Moment) -> Boolean)?
-    var dateRender: ((current: Moment, today: Moment) -> Any /* String | ReactElement */)?
-    var autoFocus: Boolean?
+external interface PickerLocale : AdditionalPickerLocaleProps {
+    var lang: PickerLocaleLang
+    var timePickerLocale: TimePickerLocale
 }
 
-external interface SinglePickerProps {
-    var value: Moment?
-    var defaultValue: Moment?
-    var defaultPickerValue: Moment?
-    var placeholder: String?
-    var renderExtraFooter: ((mode: DatePickerMode) -> Any /* String | ReactElement */)?
-    var onChange: ((date: Moment, dateString: String) -> Unit)?
+external interface PickerLocaleLang : Locale, AdditionalPickerLocaleLangProps
+
+external interface AdditionalPickerLocaleProps {
+    var dateFormat: String?
+    var dateTimeFormat: String?
+    var weekFormat: String?
+    var monthFormat: String?
+}
+
+external interface AdditionalPickerLocaleLangProps {
+    var placeholder: String
+    var yearPlaceholder: String?
+    var quarterPlaceholder: String?
+    var monthPlaceholder: String?
+    var weekPlaceholder: String?
+    var rangeYearPlaceholder: Array<String>?
+    var rangeMonthPlaceholder: Array<String>?
+    var rangeWeekPlaceholder: Array<String>?
+    var rangePlaceholder: Array<String>?
 }

@@ -1,7 +1,6 @@
 package samples.datepicker
 
 import antd.datepicker.*
-import antd.timepicker.*
 import kotlinext.js.*
 import moment.*
 import react.*
@@ -13,11 +12,11 @@ private fun handleChange(date: Moment, dateString: String) {
     console.log("Formatted Selected Time: ", dateString)
 }
 
-private fun handleRangeChange(dates: RangePickerValue, dateStrings: Array<String>) {
+private fun handleRangeChange(dates: RangeValue<Moment>, dateStrings: Array<String>) {
     console.log(dates, dateStrings)
 }
 
-private fun handleOk(selectedTime: RangePickerPresetRange) {
+private fun handleOk(selectedTime: RangeValue<Moment>) {
     console.log("onOk: ", selectedTime)
 }
 
@@ -36,7 +35,7 @@ fun RBuilder.time() {
             br {}
             rangePicker {
                 attrs {
-                    showTime = jsObject<TimePickerProps> {
+                    showTime = jsObject<RangeShowTimeObject<Moment>> {
                         defaultValue = "HH:mm"
                     }
                     format = "YYYY-MM-DD HH:mm"
