@@ -21,16 +21,7 @@ external interface DescriptionsProps : RProps {
     var children: Any? /* String | ReactElement */
     var title: Any? /* String | ReactElement */
     var extra: Any? /* String | ReactElement */
-    var column: Any? /* Number | ColumnBreakpoint */
+    var column: Any? /* Number | ScreenSizeMap */
     var layout: String? /* "horizontal" | "vertical" */
     var colon: Boolean?
-}
-
-external interface ColumnBreakpoint {
-    var xxl: Number?
-    var xl: Number?
-    var lg: Number?
-    var md: Number?
-    var sm: Number?
-    var xs: Number?
 }
