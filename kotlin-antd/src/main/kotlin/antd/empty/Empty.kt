@@ -7,8 +7,8 @@ import react.*
 
 @JsName("default")
 external object EmptyComponent : Component<EmptyProps, RState> {
-    val PRESENTED_IMAGE_DEFAULT: String
-    val PRESENTED_IMAGE_SIMPLE: String
+    val PRESENTED_IMAGE_DEFAULT: Any /* String | ReactElement */
+    val PRESENTED_IMAGE_SIMPLE: Any /* String | ReactElement */
 
     override fun render(): ReactElement?
 }
@@ -20,7 +20,7 @@ external interface EmptyProps : RProps {
     var imageStyle: dynamic
     var image: Any? /* String | ReactElement */
     var description: Any? /* String | ReactElement */
-    var children: ReactElement?
+    var children: Any? /* String | ReactElement */
 }
 
 external interface TransferLocale {
