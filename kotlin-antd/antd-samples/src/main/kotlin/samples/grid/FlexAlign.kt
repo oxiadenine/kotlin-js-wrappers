@@ -29,7 +29,6 @@ fun RBuilder.flexAlign() {
             p { +"Align Top" }
             row {
                 attrs {
-                    type = "flex"
                     justify = "center"
                     align = "top"
                 }
@@ -65,7 +64,6 @@ fun RBuilder.flexAlign() {
             p { +"Align Center" }
             row {
                 attrs {
-                    type = "flex"
                     justify = "space-around"
                     align = "middle"
                 }
@@ -101,7 +99,6 @@ fun RBuilder.flexAlign() {
             p { +"Align Bottom" }
             row {
                 attrs {
-                    type = "flex"
                     justify = "space-between"
                     align = "bottom"
                 }

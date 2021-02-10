@@ -13,6 +13,7 @@ external object ColComponent : Component<ColProps, RState> {
 }
 
 external interface ColProps : HTMLAttributes<HTMLDivElement>, RProps {
+    var flex: FlexType?
     var span: ColSpanType?
     var order: ColSpanType?
     var offset: ColSpanType?
@@ -28,6 +29,7 @@ external interface ColProps : HTMLAttributes<HTMLDivElement>, RProps {
 }
 
 external interface ColSize {
+    var flex: FlexType?
     var span: ColSpanType?
     var order: ColSpanType?
     var offset: ColSpanType?

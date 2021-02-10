@@ -11,7 +11,6 @@ fun RBuilder.flexOrder() {
         css { +GridStyles.flexOrder }
         div {
             row {
-                attrs { type = "flex" }
                 col {
                     attrs {
                         span = 6

@@ -8,18 +8,14 @@ import org.w3c.dom.*
 import react.*
 
 @JsName("default")
-external object RowComponent : Component<RowProps, RowState> {
+external object RowComponent : Component<RowProps, RState> {
     override fun render(): ReactElement?
 }
 
 external interface RowProps : HTMLAttributes<HTMLDivElement>, RProps {
-    var gutter: Any? /* Number | Map<RowBreakpoint, Number> */
-    var type: RowType?
-    var align: RowAlign?
+    var gutter: Any? /* Gutter | Array<Gutter> */
+    var align: RowAligns?
     var justify: RowJustify?
     var prefixCls: String?
-}
-
-external interface RowState : RState {
-    var screens: BreakpointMap
+    var wrap: Boolean?
 }

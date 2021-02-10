@@ -97,6 +97,7 @@ object GridStyles : StyleSheet("grid", isStatic = true) {
             fontSize = 13.px
         }
     }
+    val useBreakpoint by css {}
 }
 
 class GridApp : RComponent<RProps, RState>() {
@@ -114,6 +115,7 @@ class GridApp : RComponent<RProps, RState>() {
             responsive()
             responsiveMore()
             playground()
+            useBreakpoint()
         }
     }
 }

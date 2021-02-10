@@ -12,10 +12,7 @@ fun RBuilder.flex() {
         div {
             p { +"sub-element align left" }
             row {
-                attrs {
-                    type = "flex"
-                    justify = "start"
-                }
+                attrs.justify = "start"
                 col {
                     attrs.span = 4
                     +"col-4"
@@ -35,10 +32,7 @@ fun RBuilder.flex() {
             }
             p { +"sub-element align center" }
             row {
-                attrs {
-                    type = "flex"
-                    justify = "center"
-                }
+                attrs.justify = "center"
                 col {
                     attrs.span = 4
                     +"col-4"
@@ -58,10 +52,7 @@ fun RBuilder.flex() {
             }
             p { +"sub-element align right" }
             row {
-                attrs {
-                    type = "flex"
-                    justify = "end"
-                }
+                attrs.justify = "end"
                 col {
                     attrs.span = 4
                     +"col-4"
@@ -81,10 +72,7 @@ fun RBuilder.flex() {
             }
             p { +"sub-element monospaced arrangement" }
             row {
-                attrs {
-                    type = "flex"
-                    justify = "space-between"
-                }
+                attrs.justify = "space-between"
                 col {
                     attrs.span = 4
                     +"col-4"
@@ -104,10 +92,7 @@ fun RBuilder.flex() {
             }
             p { +"sub-element align full" }
             row {
-                attrs {
-                    type = "flex"
-                    justify = "space-around"
-                }
+                attrs.justify = "space-around"
                 col {
                     attrs.span = 4
                     +"col-4"

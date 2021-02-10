@@ -77,10 +77,7 @@ fun RBuilder.customizeHeader() {
                                 +"Custom header "
                             }
                             row {
-                                attrs {
-                                    type = "flex"
-                                    justify = "space-between"
-                                }
+                                attrs.justify = "space-between"
                                 col {
                                     radioGroup {
                                         attrs {
