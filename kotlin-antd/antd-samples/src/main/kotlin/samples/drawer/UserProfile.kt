@@ -35,7 +35,7 @@ interface DescriptionItemProps : RProps {
     var content: Any
 }
 
-class DescriptionItem : RComponent<DescriptionItemProps, RowState>() {
+class DescriptionItem : RComponent<DescriptionItemProps, RState>() {
     override fun RBuilder.render() {
         div {
             attrs.jsStyle = js {
