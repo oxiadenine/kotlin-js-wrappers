@@ -7,15 +7,15 @@ external object OptionComponent : Component<OptionProps, RState> {
 }
 
 external interface OptionProps : RcOptionProps, RProps {
-    override var value: String
-    override var children: ReactElement
-    /* [key: String]: Any */
+    override var value: String?
+    override var children: Any? /* String | ReactElement */
 }
 
 external interface RcOptionProps {
-    var value: String
+    var value: String?
+    var key: String?
     var disabled: Boolean?
-    var children: ReactElement
+    var children: Any? /* String | ReactElement */
     var className: String?
     var style: dynamic
 }

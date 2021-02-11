@@ -1,6 +1,7 @@
 package antd.mentions
 
-typealias MentionPlacement = String /* "top" | "bottom" */
+typealias Placement = String /* "top" | "bottom" */
+typealias Direction = String /* "ltr" | "rtl" */
 
 typealias FilterOption = (input: String, value: OptionProps) -> Boolean
-typealias ValidateSearch = (text: String, props: RcMentionProps) -> Boolean
+typealias ValidateSearch = (text: String, props: RcMentionsProps) -> Boolean

@@ -4,6 +4,7 @@
 package antd.mentions
 
 import antd.*
+import antd.input.TextAreaProps
 import org.w3c.dom.*
 import react.*
 
@@ -16,7 +17,7 @@ external object MentionsComponent : Component<MentionsProps, MentionState> {
     override fun render(): ReactElement?
 }
 
-external interface MentionsProps : RcMentionProps, RProps {
+external interface MentionsProps : RcMentionsProps, RProps {
     var loading: Boolean?
 }
 
@@ -24,7 +25,7 @@ external interface MentionState : RState {
     var focused: Boolean
 }
 
-external interface RcMentionProps : TextareaHTMLAttributes<HTMLTextAreaElement> {
+external interface RcMentionsProps : TextAreaProps {
     override var autoFocus: Boolean?
     override var className: String?
     var defvaultValue: String?
@@ -32,17 +33,19 @@ external interface RcMentionProps : TextareaHTMLAttributes<HTMLTextAreaElement> 
     var split: String?
     override var style: dynamic
     var transitionName: String?
-    var placement: MentionPlacement?
+    var placement: Placement?
+    var direction: Direction?
     override var prefix: dynamic /* String | Array<String> */
-    var prefixCls: String?
+    override var prefixCls: String?
     override var value: Any?
     var filterOption: Any? /* Boolean | FilterOption */
     var validateSearch: ValidateSearch?
-    override var onChange: dynamic /* ChangeEventHandler<HTMLTextAreaElement>? */
-    override var onSelect: dynamic /* ((option: OptionProps, prefix: String) -> Unit)? */
+    override var onChange: dynamic /* (text: String) -> Unit */
+    override var onSelect: dynamic /* (option: OptionProps, prefix: String) -> Unit */
     var onSearch: ((text: String, prefix: String) -> Unit)?
     override var onFocus: FocusEventHandler<HTMLTextAreaElement>?
     override var onBlur: FocusEventHandler<HTMLTextAreaElement>?
+    var getPopupContainer: (() -> HTMLElement)?
 }
 
 external interface MentionsConfig {
