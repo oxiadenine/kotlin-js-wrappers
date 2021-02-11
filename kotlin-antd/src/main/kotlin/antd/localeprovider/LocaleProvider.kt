@@ -3,7 +3,15 @@
 
 package antd.localeprovider
 
+import antd.datepicker.PickerLocale
+import antd.form.ValidateMessages
+import antd.empty.TransferLocale as TransferLocaleForEmpty
 import antd.modal.*
+import antd.pagination.PaginationLocale
+import antd.popconfirm.PopconfirmLocale
+import antd.table.TableLocale
+import antd.transfer.TransferLocale
+import antd.upload.UploadLocale
 import kotlinext.js.*
 import react.*
 
@@ -14,19 +22,30 @@ external object LocaleProviderComponent : Component<LocaleProviderProps, RState>
 
 external interface LocaleProviderProps : RProps {
     var locale: Locale
-    var children: ReactElement?
+    var children: Any? /* String | ReactElement */
 }
 
 external interface Locale {
     var locale: String
-    var Pagination: Object?
-    var DatePicker: Object?
+    var Pagination: PaginationLocale?
+    var DatePicker: PickerLocale?
     var TimePicker: Object?
     var Calendar: Object?
-    var Table: Object?
+    var Table: TableLocale?
     var Modal: ModalLocale?
-    var Popconfirm: Object?
-    var Transfer: Object?
+    var Popconfirm: PopconfirmLocale?
+    var Transfer: TransferLocale?
     var Select: Object?
-    var Upload: Object?
+    var Upload: UploadLocale?
+    var Empty: TransferLocaleForEmpty?
+    var global: Object?
+    var PageHeader: Object?
+    var Icon: Object?
+    var Text: Object?
+    var Form: LocaleForm?
+}
+
+external interface LocaleForm {
+    var optional: String?
+    var defaultValidateMessages: ValidateMessages
 }

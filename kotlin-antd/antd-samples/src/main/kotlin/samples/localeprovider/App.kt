@@ -28,7 +28,7 @@ object LocaleProviderStyles : StyleSheet("locale-provider", isStatic = true) {
 
 class LocaleProviderApp : RComponent<RProps, RState>() {
     override fun RBuilder.render() {
-        h2 { +"LocaleProvider (Deprecated)" }
+        h2 { +"LocaleProvider" }
         styledDiv {
             css { LocaleProviderStyles.container }
             basic()
