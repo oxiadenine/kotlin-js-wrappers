@@ -16,7 +16,7 @@ interface SiderDemoState : RState {
 }
 
 class SiderDemo : RComponent<RProps, SiderDemoState>() {
-    private val handleCollapse = fun(collapsedFlag: Boolean, _: SiderCollapseType) {
+    private val handleCollapse = fun(collapsedFlag: Boolean, _: CollapseType) {
         console.log(collapsedFlag)
 
         setState {
