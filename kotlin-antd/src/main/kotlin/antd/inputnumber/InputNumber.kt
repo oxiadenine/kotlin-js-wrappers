@@ -4,6 +4,7 @@
 package antd.inputnumber
 
 import antd.*
+import antd.configprovider.SizeType
 import org.w3c.dom.*
 import react.*
 
@@ -22,7 +23,8 @@ external interface InputNumberProps : InputHTMLAttributes<HTMLInputElement>, RPr
     override var tabIndex: Number?
     override var onChange: dynamic /* (value: Number?) -> Unit */
     override var disabled: Boolean?
-    override var size: InputNumberSize?
+    override var readOnly: Boolean?
+    override var size: SizeType?
     var formatter: ((value: Any? /* Number | String */) -> String)?
     var parser: ((displayValue: String?) -> Any /* Number | String */)?
     var decimalSeparator: String?
@@ -32,4 +34,11 @@ external interface InputNumberProps : InputHTMLAttributes<HTMLInputElement>, RPr
     override var name: String?
     override var id: String?
     var precision: Number?
+    var onPressEnter: KeyboardEventHandler<HTMLInputElement>?
+    var onStep: ((value: Number, info: OnStepInfo) -> Unit)?
+}
+
+external interface OnStepInfo {
+    var offset: Number
+    var type: String /* "up" | "down" */
 }
