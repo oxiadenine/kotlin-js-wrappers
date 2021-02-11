@@ -8,6 +8,7 @@ external object SearchComponent : Component<SearchProps, RState> {
 
 external interface SearchProps : InputProps {
     var inputPrefixCls: String?
-    var onSearch: ((value: String, event: Any? /* MouseEvent<HTMLElement> | KeyboardEvent<HTMLInputElement> */) -> Unit)?
+    var onSearch: ((value: String, event: Any? /* ChangeEvent<HTMLInputElement> | MouseEvent<HTMLElement> | KeyboardEvent<HTMLInputElement> */) -> Unit)?
     var enterButton: Any? /* Boolean | ReactElement */
+    var loading: Boolean?
 }

@@ -14,7 +14,7 @@ fun RBuilder.autosizeTextarea() {
             textArea {
                 attrs {
                     placeholder = "Autosize height based on content lines"
-                    autosize = true
+                    autoSize = true
                 }
             }
             div {
@@ -23,7 +23,7 @@ fun RBuilder.autosizeTextarea() {
             textArea {
                 attrs {
                     placeholder = "Autosize height with minimum and maximum number of lines"
-                    autosize = jsObject<AutoSizeType> {
+                    autoSize = jsObject<AutoSizeType> {
                         minRows = 2
                         maxRows = 6
                     }

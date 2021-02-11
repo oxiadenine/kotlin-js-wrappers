@@ -4,14 +4,14 @@ import antd.*
 import org.w3c.dom.*
 import react.*
 
-external object InputGroupComponent : Component<InputGroupProps, RState> {
+external object GroupComponent : Component<GroupProps, RState> {
     override fun render(): ReactElement?
 }
 
-external interface InputGroupProps : RProps {
+external interface GroupProps : RProps {
     var className: String?
-    var size: InputSize?
-    var children: ReactElement?
+    var size: String? /* "large" | "small" | "default" */
+    var children: Any? /* String | ReactElement */
     var style: dynamic
     var onMouseEnter: MouseEventHandler<HTMLSpanElement>?
     var onMouseLeave: MouseEventHandler<HTMLSpanElement>?

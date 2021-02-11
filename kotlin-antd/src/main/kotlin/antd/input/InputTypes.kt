@@ -1,3 +1,3 @@
 package antd.input
 
-typealias InputSize = String /* "large" | "small" | "default" */
+typealias ClearableInputType = Array<String /* "text" | "input" */>

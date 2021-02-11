@@ -30,7 +30,7 @@ class TextareaResizeDemo : RComponent<RProps, TextareaResizeDemoState>() {
             textArea {
                 attrs {
                     rows = 4
-                    autosize = state.autoResize
+                    autoSize = state.autoResize
                     defaultValue = textareaDefaultValue
                 }
             }
