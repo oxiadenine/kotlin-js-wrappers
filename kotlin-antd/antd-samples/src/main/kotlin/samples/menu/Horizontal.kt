@@ -11,11 +11,11 @@ interface HorizontalAppState : RState {
 }
 
 class HorizontalApp : RComponent<RProps, HorizontalAppState>() {
-    private val handleClick = fun(param: ClickParam) {
-        console.log("click ", param)
+    private val handleClick: MenuClickEventHandler = { info ->
+        console.log("click ", info)
 
         setState {
-            current = param.key
+            current = info.key
         }
     }
 

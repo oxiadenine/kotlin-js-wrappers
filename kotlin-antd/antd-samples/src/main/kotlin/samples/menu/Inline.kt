@@ -8,8 +8,8 @@ import react.dom.*
 import styled.*
 
 class InlineSider : RComponent<RProps, RState>() {
-    private val handleClick = fun(param: ClickParam) {
-        console.log("click ", param)
+    private val handleClick: MenuClickEventHandler = { info ->
+        console.log("click ", info)
     }
 
     override fun RBuilder.render() {

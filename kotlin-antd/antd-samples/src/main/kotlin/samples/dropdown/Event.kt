@@ -9,8 +9,8 @@ import react.*
 import react.dom.*
 import styled.*
 
-private val handleClick = fun(param: ClickParam) {
-    message.info("Click on item ${param.key}")
+private val handleClick: MenuClickEventHandler = { info ->
+    message.info("Click on item ${info.key}")
 }
 
 private val menu = buildElement {

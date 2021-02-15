@@ -13,8 +13,8 @@ interface OverlayVisibleAppState : RState {
 }
 
 class OverlayVisibleApp : RComponent<RProps, OverlayVisibleAppState>() {
-    private fun handleMenuClick(param: ClickParam) {
-        if (param.key == "3") {
+    private val handleMenuClick: MenuClickEventHandler = { info ->
+        if (info.key == "3") {
             setState {
                 visible = false
             }
@@ -34,7 +34,7 @@ class OverlayVisibleApp : RComponent<RProps, OverlayVisibleAppState>() {
     override fun RBuilder.render() {
         val menu = buildElement {
             menu {
-                attrs.onClick = ::handleMenuClick
+                attrs.onClick = handleMenuClick
                 menuItem {
                     attrs.key = "1"
                     +"Clicking me will not close the menu"

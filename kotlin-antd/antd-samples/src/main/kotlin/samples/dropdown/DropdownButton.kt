@@ -18,15 +18,15 @@ private val handleButtonClick: MouseEventHandler<HTMLButtonElement> = {
     console.log("Click on left button", it)
 }
 
-private fun handleMenuClick(param: ClickParam) {
+private val handleMenuClick: MenuClickEventHandler = { info ->
     message.info("Click on menu item.")
 
-    console.log("Click on menu item", param)
+    console.log("Click on menu item", info)
 }
 
 private val menu = buildElement {
     menu {
-        attrs.onClick = ::handleMenuClick
+        attrs.onClick = handleMenuClick
         menuItem {
             attrs.key = "1"
             userOutlined {}

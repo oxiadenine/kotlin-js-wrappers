@@ -21,11 +21,11 @@ class ThemeSider : RComponent<RProps, ThemeSiderState>() {
         }
     }
 
-    private val handleClick = fun(param: ClickParam) {
-        console.log("click ", param)
+    private val handleClick: MenuClickEventHandler = { info ->
+        console.log("click ", info)
 
         setState {
-            current = param.key
+            current = info.key
         }
     }
 

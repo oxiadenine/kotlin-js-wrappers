@@ -3,14 +3,14 @@
 
 package antd.menu
 
-import antd.layout.*
+import antd.HTMLAttributes
+import antd.MouseEvent
 import org.w3c.dom.*
-import org.w3c.dom.events.*
 import react.*
 
 @JsName("default")
-external object MenuComponent : Component<MenuProps, MenuState> {
-    val Divider: MenuDividerComponent
+external object MenuComponent : Component<MenuProps, RState> {
+    val Divider: DividerComponent
     val Item: MenuItemComponent
     val SubMenu: SubMenuComponent
     val ItemGroup: MenuItemGroupComponent
@@ -18,57 +18,78 @@ external object MenuComponent : Component<MenuProps, MenuState> {
     override fun render(): ReactElement?
 }
 
-external interface MenuProps : RProps {
-    var id: String?
+external interface MenuProps : RcMenuProps, RProps {
     var theme: MenuTheme?
-    var mode: MenuMode?
-    var selectable: Boolean?
-    var selectedKeys: Array<String>?
-    var defaultSelectedKeys: Array<String>?
-    var openKeys: Array<String>?
-    var defaultOpenKeys: Array<String>?
-    var onOpenChange: ((openKeys: Array<String>) -> Unit)?
-    var onSelect: ((param: SelectParam) -> Unit)?
-    var onDeselect: ((param: SelectParam) -> Unit)?
-    var onClick: ((param: ClickParam) -> Unit)?
-    var style: dynamic
-    var openAnimation: Any? /* String | Object */
-    var openTransitionName: Any? /* String | Object */
-    var className: String?
-    var prefixCls: String?
-    var multiple: Boolean?
     var inlineIndent: Number?
-    var inlineCollapsed: Boolean?
-    var subMenuCloseDelay: Number?
-    var subMenuOpenDelay: Number?
     var focusable: Boolean?
-    var onMouseEnter: ((e: MouseEvent) -> Unit)?
-    var getPopupContainer: ((triggerNode: HTMLElement) -> HTMLElement)?
-    var overflowedIndicator: ReactElement?
+}
+
+external interface RcMenuProps : HTMLAttributes<HTMLDivElement> {
+    var defaultSelectedKeys: Array<String>?
+    var defaultActiveFirst: Boolean?
+    var selectedKeys: Array<String>?
+    var defaultOpenKeys: Array<String>?
+    var openKeys: Array<String>?
+    var mode: MenuMode?
+    var getPopupContainer: ((node: HTMLElement) -> HTMLElement)?
+    override var onClick: dynamic /* MenuClickEventHandler */
+    override var onSelect: dynamic /* SelectEventHandler */
+    var onOpenChange: ((openKeys: Array<Key>) -> Unit)?
+    var onDeselect: SelectEventHandler?
+    var onDestroy: DestroyEventHandler?
+    var subMenuOpenDelay: Number?
+    var subMenuCloseDelay: Number?
     var forceSubMenuRender: Boolean?
+    var triggerSubMenuAction: TriggerSubMenuAction?
+    var level: Number?
+    var selectable: Boolean?
+    var multiple: Boolean?
+    var activeKey: String?
+    var prefixCls: String?
+    var builtinPlacements: BuiltinPlacements?
+    var itemIcon: RenderIconType?
+    var expandIcon: RenderIconType?
+    var overflowedIndicator: Any? /* String | ReactElement */
+    var motion: dynamic
+    var defaultMotions: dynamic
+    var openTransitionName: String?
+    var openAnimation: OpenAnimation?
+    var direction: String? /* "ltr" | "rtl" */
+    var inlineCollapsed: Boolean?
+    var siderCollapsed: Boolean?
+    var collapsedWidth: Any? /* String | Number */
 }
 
-external interface MenuState : RState {
-    var openKeys: Array<String>
-    var switchingModeFromInline: Boolean
-    var inlineOpenKeys: Array<String>
-    var prevProps: InternalMenuProps
-    var mounted: Boolean
-}
-
-external interface InternalMenuProps : MenuProps, SiderContextProps
-
-external interface SelectParam {
+external interface MenuInfo {
     var key: String
     var keyPath: Array<String>
-    var item: Any
-    var domEvent: Event
-    var selectedKeys: Array<String>
+    var item: ReactInstance
+    var domEvent: MouseEvent<HTMLElement>
 }
 
-external interface ClickParam {
+external interface SelectInfo : MenuInfo {
+    var selectedKeys: Array<String>?
+}
+
+external interface HoverEventHandlerInfo {
     var key: String
-    var keyPath: Array<String>
-    var item: Any
-    var domEvent: Event
+    var hover: Boolean
+}
+
+external interface MenuHoverEventHandlerInfo {
+    var key: String
+    var domEvent: MouseEvent<HTMLElement>
+}
+
+external interface OpenEventHandlerInfo {
+    var key: Key
+    var item: ReactInstance
+    var trigger: String
+    var open: Boolean
+}
+
+external interface MiniStore {
+    var getState: () -> Any
+    var setState: (state: Any) -> Unit
+    var subscribe: (listener: () -> Unit) -> () -> Unit
 }

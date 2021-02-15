@@ -8,13 +8,13 @@ import react.*
 import react.dom.*
 import styled.*
 
-private fun handleMenuClick(param: ClickParam) {
-    console.log("click", param)
+private val handleMenuClick: MenuClickEventHandler = { info ->
+    console.log("click", info)
 }
 
 private val menu = buildElement {
     menu {
-        attrs.onClick = ::handleMenuClick
+        attrs.onClick = handleMenuClick
         menuItem {
             attrs.key = "1"
             +"1st item"

@@ -7,8 +7,8 @@ import react.*
 import react.dom.*
 import styled.*
 
-private fun handleClick(param: ClickParam) {
-    console.log("click ", param)
+private val handleClick: MenuClickEventHandler = { info ->
+    console.log("click ", info)
 }
 
 fun RBuilder.vertical() {
@@ -16,7 +16,7 @@ fun RBuilder.vertical() {
         css { +MenuStyles.vertical }
         menu {
             attrs {
-                onClick = ::handleClick
+                onClick = handleClick
                 style = js { width = 256 }
                 mode = "vertical"
             }

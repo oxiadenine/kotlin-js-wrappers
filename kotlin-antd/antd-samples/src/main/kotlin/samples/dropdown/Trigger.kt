@@ -24,7 +24,7 @@ private val menu = buildElement {
                 +"2nd menu item"
             }
         }
-        menuDivider {}
+        divider {}
         menuItem {
             attrs.key = "3"
             +"3rd menu item"
