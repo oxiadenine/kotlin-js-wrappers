@@ -24,6 +24,7 @@ object ModalStyles : StyleSheet("modal", isStatic = true) {
     val manual by css {}
     val butonProps by css {}
     val confirmRouter by css {}
+    val hooks by css {}
 }
 
 class ModalApp : RComponent<RProps, RState>() {
@@ -41,6 +42,7 @@ class ModalApp : RComponent<RProps, RState>() {
             info()
             manual()
             buttonProps()
+            hooks()
         }
     }
 }

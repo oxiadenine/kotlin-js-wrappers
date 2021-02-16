@@ -5,18 +5,18 @@ package antd.modal
 
 import antd.*
 import antd.button.*
+import antd.configprovider.DirectionType
 import org.w3c.dom.*
 import react.*
 
 @JsName("default")
-external object ModalComponent : Component<ModalProps, RState> {
-    val info: ModalFunc
-    val success: ModalFunc
-    val error: ModalFunc
-    val warn: ModalFunc
-    val warning: ModalFunc
-    val confirm: ModalFunc
-    val destroyAll: () -> Unit
+external class ModalComponent : Component<ModalProps, RState> {
+    companion object : ModalStaticFunctions {
+        val useModal: () -> Array<Any /* ModalStaticFunctions | ReactElement */>
+
+        val destroyAll: () -> Unit
+        val config: (rootPrefixCls: RootPrefixCls) -> Unit
+    }
 
     override fun render(): ReactElement?
 }
@@ -24,7 +24,7 @@ external object ModalComponent : Component<ModalProps, RState> {
 external interface ModalProps : RProps {
     var visible: Boolean?
     var confirmLoading: Boolean?
-    var title: Any? /* ReactElement | String */
+    var title: Any? /* String | ReactElement */
     var closable: Boolean?
     var onOk: ((e: MouseEvent<HTMLElement>) -> Unit)?
     var onCancel: ((e: MouseEvent<HTMLElement>) -> Unit)?
@@ -33,19 +33,19 @@ external interface ModalProps : RProps {
     var width: Any? /* String | Number */
     var footer: Any? /* String | ReactElement */
     var okText: Any? /* String | ReactElement */
-    var okType: ButtonType?
+    var okType: LegacyButtonType?
     var cancelText: Any? /* String | ReactElement */
     var maskClosable: Boolean?
     var forceRender: Boolean?
-    var okButtonProps: NativeButtonProps?
-    var cancelButtonProps: NativeButtonProps?
+    var okButtonProps: ButtonProps?
+    var cancelButtonProps: ButtonProps?
     var destroyOnClose: Boolean?
     var style: dynamic
     var wrapClassName: String?
     var maskTransitionName: String?
     var transitionName: String?
     var className: String?
-    var getContainer: ((instance: dynamic /* ReactInstance */) -> HTMLElement)?
+    var getContainer: Any? /* String | HTMLElement | () -> HTMLElement | Boolean */
     var zIndex: Number?
     var bodyStyle: dynamic
     var maskStyle: dynamic
@@ -53,6 +53,8 @@ external interface ModalProps : RProps {
     var keyboard: Boolean?
     var wrapProps: Any?
     var prefixCls: String?
+    var closeIcon: Any? /* String | ReactElement */
+    var modalRender: ((node: Any /* String | ReactElement */) -> Any /* String | ReactElement */)?
 }
 
 external interface ModalFuncProps {
@@ -63,15 +65,14 @@ external interface ModalFuncProps {
     var content: Any? /* String | ReactElement */
     var onOk: ((args: Array<Any>) -> Any)?
     var onCancel: ((args: Array<Any>) -> Any)?
-    var okButtonProps: NativeButtonProps?
-    var cancelButtonProps: NativeButtonProps?
+    var okButtonProps: ButtonProps?
+    var cancelButtonProps: ButtonProps?
     var centered: Boolean?
     var width: Any? /* String | Number */
-    var iconClassName: String?
     var okText: Any? /* String | ReactElement */
-    var okType: ButtonType?
+    var okType: LegacyButtonType?
     var cancelText: Any? /* String | ReactElement */
-    var iconType: String?
+    var icon: Any? /* String | ReactElement */
     var mask: Boolean?
     var maskClosable: Boolean?
     var zIndex: Number?
@@ -80,24 +81,26 @@ external interface ModalFuncProps {
     var maskStyle: dynamic
     var type: String?
     var keyboard: Boolean?
-    var getContainer: ((instance: dynamic /* ReactInstance */) -> HTMLElement)?
-    var autoFocusButton: ModalAutoFocusButton?
+    var getContainer: Any? /* String | HTMLElement | () -> HTMLElement | Boolean */
+    var autoFocusButton: String? /* "ok" | "cancel" */
     var transitionName: String?
     var maskTransitionName: String?
+    var direction: DirectionType?
+    var bodyStyle: dynamic
+    var modalRender: ((node: Any /* String | ReactElement */) -> Any /* String | ReactElement */)?
 }
-
-external fun confirm(config: ModalFuncProps): ConfirmResult
-
-external interface ConfirmResult {
-    var destroy: (args: Array<Any>) -> Unit
-    var update: (newConfig: ModalFuncProps) -> Unit
-}
-
-external fun changeConfirmLocale(newLocale: ModalLocale?)
-external fun getConfirmLocale(): ModalLocale
 
 external interface ModalLocale {
     var okText: String
     var cancelText: String
     var justOkText: String
+}
+
+external interface ModalFuncResult {
+    var destroy: () -> Unit
+    var update: (config: ModalFuncProps) -> Unit
+}
+
+external interface RootPrefixCls {
+    var rootPrefixCls: String?
 }
