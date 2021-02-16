@@ -19,6 +19,7 @@ object NotificationStyles : StyleSheet("notification", isStatic = true) {
     val withBtn by css {}
     val placement by css {}
     val update by css {}
+    val hooks by css {}
 }
 
 class NotificationApp : RComponent<RProps, RState>() {
@@ -34,6 +35,7 @@ class NotificationApp : RComponent<RProps, RState>() {
             withBtn()
             placement()
             update()
+            hooks()
         }
     }
 }
