@@ -11,6 +11,7 @@ object MessageStyles : StyleSheet("message", isStatic = true) {
     val thenable by css {}
     val other by css {}
     val loading by css {}
+    val hooks by css {}
 }
 
 class MessageApp : RComponent<RProps, RState>() {
@@ -23,6 +24,7 @@ class MessageApp : RComponent<RProps, RState>() {
             thenable()
             other()
             loading()
+            hooks()
         }
     }
 }
