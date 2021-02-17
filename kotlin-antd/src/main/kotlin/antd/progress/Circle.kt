@@ -8,6 +8,6 @@ external object CircleComponent : Component<CircleProps, RState> {
 
 external interface CircleProps : ProgressProps {
     override var prefixCls: String?
-    var children: ReactElement
+    var children: Any /* String | ReactElement */
     var progressStatus: String
 }

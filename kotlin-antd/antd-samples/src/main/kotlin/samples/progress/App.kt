@@ -36,6 +36,7 @@ object ProgressStyles : StyleSheet("progress", isStatic = true) {
     val dynamic by css {}
     val dashboard by css {}
     val linecap by css {}
+    val steps by css {}
 }
 
 class ProgressApp : RComponent<RProps, RState>() {
@@ -54,6 +55,7 @@ class ProgressApp : RComponent<RProps, RState>() {
             dynamic()
             dashboard()
             linecap()
+            steps()
         }
     }
 }

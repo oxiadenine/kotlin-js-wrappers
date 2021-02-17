@@ -15,19 +15,27 @@ external interface ProgressProps : RProps {
     var className: String?
     var type: ProgressType?
     var percent: Number?
-    var successPercent: Number?
     var format: ((percent: Number?, successPercent: Number?) -> Any /* String | ReactElement */)?
     var status: ProgressStatus?
     var showInfo: Boolean?
     var strokeWidth: Number?
-    var strokeLinecap: String?
+    var strokeLinecap: String? /* "butt" | "square" | "round" */
     var strokeColor: Any? /* String | ProgressGradient */
     var trailColor: String?
     var width: Number?
+    var success: SuccessProps?
     var style: dynamic
     var gapDegree: Number?
-    var gapPosition: ProgressGapPosition?
+    var gapPosition: String? /* '"op" | "bottom" | "left" | "right" */
     var size: ProgressSize?
+    var steps: Number?
+    var successPercent: Number?
+}
+
+external interface SuccessProps {
+    var percent: Number?
+    var progress: Number?
+    var strokeColor: String?
 }
 
 external interface ProgressGradient : StringGradients, FromToGradients {
@@ -39,6 +47,4 @@ external interface FromToGradients {
     var to: String
 }
 
-external interface StringGradients {
-    /* [percentage: String]: String */
-}
+external interface StringGradients
