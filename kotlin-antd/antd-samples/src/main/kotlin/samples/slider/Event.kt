@@ -5,11 +5,11 @@ import react.*
 import react.dom.*
 import styled.*
 
-private fun handleChange(value: SliderValue) {
+private fun handleChange(value: Array<Number>) {
     console.log("onChange: ", value)
 }
 
-private fun handleAfterChange(value: SliderValue) {
+private fun handleAfterChange(value: Array<Number>) {
     console.log("onAfterChange: ", value)
 }
 

@@ -14,11 +14,11 @@ interface IconSliderDemoProps : RProps {
 }
 
 interface IconSliderDemoState : RState {
-    var value: SliderValue
+    var value: Number
 }
 
 class IconSliderDemo : RComponent<IconSliderDemoProps, IconSliderDemoState>() {
-    private val handleChange: (SliderValue) -> Unit = {
+    private val handleChange: (Number) -> Unit = {
         setState {
             value = it
         }

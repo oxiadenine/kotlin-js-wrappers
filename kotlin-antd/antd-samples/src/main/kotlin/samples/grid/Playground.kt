@@ -27,15 +27,15 @@ class PlaygroundApp : RComponent<RProps, PlaygroundAppState>() {
         }
     }
 
-    private val handleGutterChange = fun(value: SliderValue) {
+    private val handleGutterChange = fun(value: Number) {
         setState {
-            gutterKey = value as Number
+            gutterKey = value
         }
     }
 
-    private val handleColCountChange = fun(value: SliderValue) {
+    private val handleColCountChange = fun(value: Number) {
         setState {
-            colCountKey = value as Number
+            colCountKey = value
         }
     }
 

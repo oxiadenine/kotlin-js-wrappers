@@ -10,11 +10,11 @@ import react.dom.*
 import styled.*
 
 interface IntegerStepState : RState {
-    var inputValue: SliderValue
+    var inputValue: Number
 }
 
 class IntegerStep : RComponent<RProps, IntegerStepState>() {
-    private val handleChange = fun(value: SliderValue) {
+    private val handleChange = fun(value: Number) {
         setState {
             inputValue = value
         }
@@ -57,11 +57,11 @@ class IntegerStep : RComponent<RProps, IntegerStepState>() {
 fun RBuilder.integerStep() = child(IntegerStep::class) {}
 
 interface DecimalStepState : RState {
-    var inputValue: SliderValue
+    var inputValue: Number
 }
 
 class DecimalStep : RComponent<RProps, DecimalStepState>() {
-    private val handleChange = fun(value: SliderValue) {
+    private val handleChange = fun(value: Number) {
         if (value.unsafeCast<Double>().isNaN()) {
             return
         }

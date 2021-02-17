@@ -5,7 +5,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-private fun formatter(value: Number): ReactElement {
+private fun formatter(value: Number?): ReactElement {
     return buildElement { +"$value%" }
 }
 
