@@ -1,4 +1,4 @@
 package antd.result
 
-typealias ExceptionStatusType = String /* "check-circle" | "close-circle" | "exclamation-circle" | "warning" */
-typealias ResultStatusType = String /* ExceptionStatusType | "404" | "500" | "403" */
+typealias ExceptionStatusType = Any /* Number | String | 403 | 404 | 500 | "403" | "404" | "500" */
+typealias ResultStatusType = Any /* ExceptionStatusType | "success" | "error" | "info" | "warning" */
