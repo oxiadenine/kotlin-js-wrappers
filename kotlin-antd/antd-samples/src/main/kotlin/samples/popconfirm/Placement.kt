@@ -14,7 +14,7 @@ import styled.*
 
 private val text = "Are you sure to delete this task?"
 
-private val confirm: (e: MouseEvent<HTMLElement>) -> Unit = { _ ->
+private val confirm: (e: MouseEvent<HTMLElement>?) -> Unit = { _ ->
     message.info("Clicked on Yes.")
 }
 

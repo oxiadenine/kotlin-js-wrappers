@@ -21,7 +21,7 @@ class DynamicTriggerApp : RComponent<RProps, DynamicTriggerAppState>() {
         }
     }
 
-    private val confirm = fun(_: MouseEvent<HTMLElement>) {
+    private val confirm = fun(_: MouseEvent<HTMLElement>?) {
         setState {
             visible = false
         }
@@ -29,7 +29,7 @@ class DynamicTriggerApp : RComponent<RProps, DynamicTriggerAppState>() {
         message.success("Next step.")
     }
 
-    private val cancel = fun(_: MouseEvent<HTMLElement>) {
+    private val cancel = fun(_: MouseEvent<HTMLElement>?) {
         setState {
             visible = false
         }

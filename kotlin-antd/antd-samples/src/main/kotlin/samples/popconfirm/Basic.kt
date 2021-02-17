@@ -8,13 +8,13 @@ import react.*
 import react.dom.*
 import styled.*
 
-private val confirm: (e: MouseEvent<HTMLElement>) -> Unit = { e ->
+private val confirm: (e: MouseEvent<HTMLElement>?) -> Unit = { e ->
     console.log(e)
 
     message.success("Click on Yes")
 }
 
-private val cancel: (e: MouseEvent<HTMLElement>) -> Unit = { e ->
+private val cancel: (e: MouseEvent<HTMLElement>?) -> Unit = { e ->
     console.log(e)
 
     message.error("Click on No")

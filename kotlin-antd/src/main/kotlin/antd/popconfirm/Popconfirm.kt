@@ -15,16 +15,17 @@ external object PopconfirmComponent : Component<PopconfirmProps, PopconfirmState
 }
 
 external interface PopconfirmProps : AbstractTooltipProps, RProps {
-    var title: Any /* String | ReactElement */
-    var onConfirm: ((e: MouseEvent<HTMLElement>) -> Unit)?
-    var onCancel: ((e: MouseEvent<HTMLElement>) -> Unit)?
+    var title: Any /* String | ReactElement | RenderFunction */
+    var disabled: Boolean?
+    var onConfirm: ((e: MouseEvent<HTMLElement>?) -> Unit)?
+    var onCancel: ((e: MouseEvent<HTMLElement>?) -> Unit)?
     var okText: Any? /* String | ReactElement */
-    var okType: ButtonType?
+    var okType: LegacyButtonType?
     var cancelText: Any? /* String | ReactElement */
     var okButtonProps: NativeButtonProps?
     var cancelButtonProps: NativeButtonProps?
-    var icon: ReactElement?
-    override var onVisibleChange: dynamic /* PopconfirmVisibleChange */
+    var icon: Any? /* String | ReactElement */
+    override var onVisibleChange: dynamic /* (visible: Boolean, e: Any? /* MouseEvent<HTMLElement> | KeyboardEvent<HTMLDivElement> */) -> Unit */
 }
 
 external interface PopconfirmState : RState {
