@@ -34,7 +34,7 @@ external interface RcMenuProps : HTMLAttributes<HTMLDivElement> {
     var getPopupContainer: ((node: HTMLElement) -> HTMLElement)?
     override var onClick: dynamic /* MenuClickEventHandler */
     override var onSelect: dynamic /* SelectEventHandler */
-    var onOpenChange: ((openKeys: Array<Key>) -> Unit)?
+    var onOpenChange: ((openKeys: Array<dynamic>) -> Unit)?
     var onDeselect: SelectEventHandler?
     var onDestroy: DestroyEventHandler?
     var subMenuOpenDelay: Number?
@@ -63,7 +63,7 @@ external interface RcMenuProps : HTMLAttributes<HTMLDivElement> {
 external interface MenuInfo {
     var key: String
     var keyPath: Array<String>
-    var item: ReactInstance
+    var item: dynamic
     var domEvent: MouseEvent<HTMLElement>
 }
 
@@ -82,8 +82,8 @@ external interface MenuHoverEventHandlerInfo {
 }
 
 external interface OpenEventHandlerInfo {
-    var key: Key
-    var item: ReactInstance
+    var key: dynamic
+    var item: dynamic
     var trigger: String
     var open: Boolean
 }

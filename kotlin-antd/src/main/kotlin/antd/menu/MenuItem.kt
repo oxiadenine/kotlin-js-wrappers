@@ -17,7 +17,7 @@ external interface MenuItemProps : RcMenuItemProps, RProps {
 external interface RcMenuItemProps : HTMLAttributes<HTMLLIElement> {
     var attribute: dynamic
     var rootPrefixCls: String?
-    var eventKey: Key?
+    var eventKey: dynamic
     override var className: String?
     override var style: dynamic
     var active: Boolean?
@@ -29,7 +29,7 @@ external interface RcMenuItemProps : HTMLAttributes<HTMLLIElement> {
     override var onSelect: dynamic /* SelectEventHandler */
     override var onClick: dynamic /* MenuClickEventHandler */
     var onDeselect: SelectEventHandler?
-    var parentMenu: ReactInstance?
+    var parentMenu: dynamic
     var onDestroy: DestroyEventHandler?
     override var onMouseEnter: dynamic /* MenuHoverEventHandler */
     override var onMouseLeave: dynamic /* MenuHoverEventHandler */
