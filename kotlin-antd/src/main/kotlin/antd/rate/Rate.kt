@@ -25,7 +25,3 @@ external interface RateProps : RProps {
     var className: String?
     var style: dynamic
 }
-
-external interface RateNodeProps {
-    var index: Number
-}
