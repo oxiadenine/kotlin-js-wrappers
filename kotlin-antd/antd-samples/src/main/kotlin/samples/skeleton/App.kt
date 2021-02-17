@@ -28,6 +28,7 @@ object SkeletonStyles : StyleSheet("skeleton", isStatic = true) {
             border(1.px, BorderStyle.solid, Color("#f4f4f4"))
         }
     }
+    val element by css {}
 }
 
 class SkeletonApp : RComponent<RProps, RState>() {
@@ -40,6 +41,7 @@ class SkeletonApp : RComponent<RProps, RState>() {
             active()
             child()
             list()
+            element()
         }
     }
 }
