@@ -14,7 +14,7 @@ external object PageHeaderComponent : Component<PageHeaderProps, RState> {
 }
 
 external interface PageHeaderProps : RProps {
-    var backIcon: ReactElement?
+    var backIcon: Any? /* String | ReactElement */
     var prefixCls: String?
     var title: Any /* String | ReactElement */
     var subTitle: Any? /* String | ReactElement */
@@ -25,4 +25,5 @@ external interface PageHeaderProps : RProps {
     var extra: Any? /* String | ReactElement */
     var onBack: ((e: MouseEvent<HTMLDivElement>) -> Unit)?
     var className: String?
+    var ghost: Boolean?
 }

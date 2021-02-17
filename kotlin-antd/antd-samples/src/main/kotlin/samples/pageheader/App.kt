@@ -72,6 +72,12 @@ object PageHeaderStyles : StyleSheet("page-header", isStatic = true) {
         }
     }
     val breadcrumb by css {}
+    val ghost by css {
+        descendants(".site-page-header-ghost-wrapper") {
+            padding(all = 24.px)
+            backgroundColor = Color("#f5f5f5")
+        }
+    }
 }
 
 class PageHeaderApp : RComponent<RProps, RState>() {
@@ -83,6 +89,7 @@ class PageHeaderApp : RComponent<RProps, RState>() {
             content()
             actions()
             breadcrumb()
+            ghost()
         }
     }
 }
