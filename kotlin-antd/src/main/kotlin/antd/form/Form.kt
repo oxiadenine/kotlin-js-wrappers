@@ -3,7 +3,9 @@
 
 package antd.form
 
+import antd.FormHTMLAttributes
 import antd.grid.*
+import org.w3c.dom.HTMLFormElement
 import react.*
 import kotlin.js.*
 
@@ -31,7 +33,6 @@ external interface FormProps<Values> : FormBaseProps<Values>, RcFormProps<Values
     var size: SizeType?
     var scrollToFirstError: Boolean?
     var requiredMark: RequiredMark?
-    /** @deprecated Will warning in future branch. Pls use `requiredMark` instead. */
     var hideRequiredMark: Boolean?
 }
 
@@ -40,13 +41,13 @@ external interface FormBaseProps<Values> {
     var ref: Any? /* (instance: FormInstance<Values>?) -> Unit | RMutableRef<FormInstance<Values>> */
 }
 
-external interface RcFormProps<Values> {
+external interface RcFormProps<Values> : FormHTMLAttributes<HTMLFormElement> {
     var initialValues: Store?
     var form: FormInstance<Values>?
-    var children: Any? /* RenderProps | ReactElement */
+    override var children: Any? /* RenderProps | ReactElement */
     var component: Any? /* Boolean | String | FunctionalComponent<RProps> | RClass<RProps> */
     var fields: Array<FieldData>?
-    var name: String?
+    override var name: String?
     var validateMessages: ValidateMessages?
     var onValuesChange: ((changedValues: Any, values: Values) -> Unit)?
     var onFieldsChange: ((changedFields: Array<FieldData>, allFields: Array<FieldData>) -> Unit)?
@@ -54,7 +55,7 @@ external interface RcFormProps<Values> {
     var onFinishFailed: ((errorInfo: Any) -> Unit)?
     var validateTrigger: Any? /* String | Array<String> | Boolean */
     var preserve: Boolean?
-    var className: String?
+    override var className: String?
 }
 
 external interface FormInstance<Values> {
