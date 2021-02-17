@@ -12,6 +12,6 @@ external object PopoverComponent : Component<PopoverProps, RState> {
 }
 
 external interface PopoverProps : AbstractTooltipProps, RProps {
-    var title: Any? /* String | ReactElement */
-    var content: Any? /* String | ReactElement */
+    var title: Any? /* String | ReactElement | RenderFunction */
+    var content: Any? /* String | ReactElement | RenderFunction */
 }
