@@ -5,7 +5,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-private fun handleItemRender(page: Number, type: PageRenderType, element: ReactElement): ReactElement {
+private fun handleItemRender(page: Number, type: String, element: ReactElement): ReactElement {
     if (type == "prev") {
         return buildElement {
             a { +"Previous" }

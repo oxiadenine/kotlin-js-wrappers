@@ -24,21 +24,22 @@ external interface PaginationProps : RProps {
     var pageSizeOptions: Array<String>?
     var onShowSizeChange: ((current: Number, size: Number) -> Unit)?
     var showQuickJumper: Any? /* Boolean | ShowQuickJumper */
+    var showTitle: Boolean?
     var showTotal: ((total: Number, range: Array<Number>) -> Any /* String | ReactElement */)?
-    var size: PageSize?
+    var size: String? /* "default" | "small */
     var simple: Boolean?
     var style: dynamic
     var locale: Object?
     var className: String?
     var prefixCls: String?
     var selectPrefixCls: String?
-    var itemRender: ((page: Number, type: PageRenderType, originalElement: ReactElement) -> Any /* String | ReactElement */)?
+    var itemRender: ((page: Number, type: String /* "page" | "prev" | "next" | "jump-prev" | "jump-next" */, originalElement: ReactElement) -> Any /* String | ReactElement */)?
     var role: String?
     var showLessItems: Boolean?
 }
 
 external interface ShowQuickJumper {
-    var goButton: ReactElement?
+    var goButton: Any? /* String | ReactElement */
 }
 
 external interface PaginationConfig : PaginationProps {
