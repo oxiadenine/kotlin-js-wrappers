@@ -3,7 +3,6 @@
 
 package antd.switch
 
-import org.w3c.dom.events.*
 import react.*
 
 @JsName("default")
@@ -17,8 +16,8 @@ external interface SwitchProps : RProps {
     var className: String?
     var checked: Boolean?
     var defaultChecked: Boolean?
-    var onChange: ((checked: Boolean, event: MouseEvent) -> Unit)?
-    var onClick: ((checked: Boolean, event: MouseEvent) -> Unit)?
+    var onChange: SwitchChangeEventHandler?
+    var onClick: SwitchClickEventHandler?
     var checkedChildren: Any? /* String | ReactElement */
     var unCheckedChildren: Any? /* String | ReactElement */
     var disabled: Boolean?
