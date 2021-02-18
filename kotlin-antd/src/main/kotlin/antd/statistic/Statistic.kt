@@ -3,7 +3,9 @@
 
 package antd.statistic
 
+import antd.MouseEventHandler
 import antd.configprovider.*
+import org.w3c.dom.HTMLDivElement
 import react.*
 
 @JsName("default")
@@ -19,10 +21,13 @@ external interface StatisticProps : FormatConfig, ConfigConsumerProps, RProps {
     var style: dynamic
     var value: ValueType?
     var valueStyle: dynamic
-    var valueRender: ((node: ReactElement) -> Any /* String | ReactElement */)?
+    var valueRender: ((node: Any /* String | ReactElement */) -> Any /* String | ReactElement */)?
     var title: Any? /* String | ReactElement */
     var prefix: Any? /* String | ReactElement */
     var suffix: Any? /* String | ReactElement */
+    var loading: Boolean?
+    var onMouseEnter: MouseEventHandler<HTMLDivElement>?
+    var onMouseLeave: MouseEventHandler<HTMLDivElement>?
 }
 
 external interface FormatConfig {

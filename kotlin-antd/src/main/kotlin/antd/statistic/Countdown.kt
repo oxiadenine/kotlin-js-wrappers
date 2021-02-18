@@ -11,7 +11,3 @@ external interface CountdownProps : StatisticProps {
     var format: String?
     var onFinish: (() -> Unit)?
 }
-
-external interface CountdownFormatConfig : FormatConfig {
-    var format: String?
-}
