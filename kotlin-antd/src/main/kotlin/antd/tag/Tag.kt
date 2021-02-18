@@ -8,7 +8,7 @@ import org.w3c.dom.*
 import react.*
 
 @JsName("default")
-external object TagComponent : Component<TagProps, TagState> {
+external object TagComponent : Component<TagProps, RState> {
     val CheckableTag: CheckableTagComponent
 
     override fun render(): ReactElement?
@@ -17,14 +17,11 @@ external object TagComponent : Component<TagProps, TagState> {
 external interface TagProps : HTMLAttributes<HTMLDivElement>, RProps {
     var prefixCls: String?
     override var className: String?
-    override var color: String?
+    override var color: dynamic /* LiteralUnion<Any /* PresetColorType | PresetStatusColorType */, String> */
     var closable: Boolean?
+    var closeIcon: Any? /* String | ReactElement */
     var visible: Boolean?
-    var onClose: Function<Unit>?
-    var afterClose: Function<Unit>?
+    var onClose: ((e: MouseEvent<HTMLElement>) -> Unit)?
     override var style: dynamic
-}
-
-external interface TagState : RState {
-    var visible: Boolean
+    var icon: Any? /* String | ReactElement */
 }

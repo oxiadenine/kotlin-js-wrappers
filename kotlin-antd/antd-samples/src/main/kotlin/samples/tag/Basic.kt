@@ -1,16 +1,17 @@
 package samples.tag
 
+import antd.MouseEvent
 import antd.tag.*
-import org.w3c.dom.events.*
+import org.w3c.dom.HTMLElement
 import react.*
 import react.dom.*
 import styled.*
 
-private fun log(e: Event) {
+private fun log(e: MouseEvent<HTMLElement>) {
     console.log(e)
 }
 
-private fun preventDefault(e: Event) {
+private fun preventDefault(e: MouseEvent<HTMLElement>) {
     e.preventDefault()
 
     console.log("Clicked! But prevent default.")
