@@ -19,5 +19,5 @@ external interface TimelineProps : RProps {
     var pendingDot: Any? /* String | ReactElement */
     var style: dynamic
     var reverse: Boolean?
-    var mode: TimelineMode?
+    var mode: String? /* "left" | "alternate" | "right" */
 }

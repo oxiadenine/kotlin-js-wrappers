@@ -14,4 +14,5 @@ external interface TimelineItemProps : RProps {
     var pending: Boolean?
     var position: String?
     var style: dynamic
+    var label: Any? /* String | ReactElement */
 }
