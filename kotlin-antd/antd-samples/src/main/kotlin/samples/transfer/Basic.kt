@@ -21,8 +21,8 @@ private val mockData = (0..19).map { i ->
 }.toTypedArray()
 
 private val oriTargetKeys = mockData
-    .filter { item -> item.key.toInt() % 3 > 1 }
-    .map { item -> item.key }
+    .filter { item -> item.key!!.toInt() % 3 > 1 }
+    .map { item -> item.key!! }
     .toTypedArray()
 
 interface BasicAppState : RState {
@@ -51,7 +51,7 @@ class BasicApp : RComponent<RProps, BasicAppState>() {
         console.log("targetSelectedKeys: ", targetSelectedKeys)
     }
 
-    private val handleScroll = fun(direction: TransferDirection, event: SyntheticEvent<HTMLDivElement, Event>) {
+    private val handleScroll = fun(direction: TransferDirection, event: SyntheticEvent<HTMLUListElement, Event>) {
         console.log("direction:", direction)
         console.log("target:", event.target)
     }
@@ -70,7 +70,7 @@ class BasicApp : RComponent<RProps, BasicAppState>() {
 
     override fun RBuilder.render() {
         div {
-            transfer {
+            transfer<TransferItem, TransferComponent<TransferItem>> {
                 attrs {
                     dataSource = mockData
                     titles = arrayOf("Source", "Target")
@@ -79,7 +79,7 @@ class BasicApp : RComponent<RProps, BasicAppState>() {
                     onChange = handleChange
                     onSelectChange = handleSelectChange
                     onScroll = handleScroll
-                    render = { item -> item.title }
+                    render = { item -> item.title!! }
                     disabled = state.disabled
                 }
             }

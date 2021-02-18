@@ -78,7 +78,7 @@ class ConfigProviderDemo : RComponent<RProps, ConfigProviderDemoState>() {
                         }
                     }
                     h3 { +"Transfer" }
-                    transfer {}
+                    transfer<TransferItem, TransferComponent<TransferItem>> {}
                     h3 { +"Table" }
                     table<Any, TableComponent<Any>> {
                         attrs {

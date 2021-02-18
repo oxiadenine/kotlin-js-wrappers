@@ -31,7 +31,7 @@ class CustomItemApp : RComponent<RProps, CustomItemAppState>() {
             }
 
             if (item.chosen) {
-                keys.add(item.key)
+                keys.add(item.key!!)
             }
 
             data.add(item)
@@ -74,7 +74,7 @@ class CustomItemApp : RComponent<RProps, CustomItemAppState>() {
     }
 
     override fun RBuilder.render() {
-        transfer {
+        transfer<TransferItem, TransferComponent<TransferItem>> {
             attrs {
                 dataSource = state.mockData
                 listStyle = js {

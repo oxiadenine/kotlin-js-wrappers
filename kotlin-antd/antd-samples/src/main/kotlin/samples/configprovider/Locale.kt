@@ -23,6 +23,8 @@ import antd.select.select
 import antd.table.ColumnProps
 import antd.table.TableComponent
 import antd.table.table
+import antd.transfer.TransferComponent
+import antd.transfer.TransferItem
 import antd.transfer.transfer
 import kotlinext.js.js
 import kotlinext.js.jsObject
@@ -148,12 +150,12 @@ class LocalePage : RComponent<LocalePageProps, LocalePageState>() {
                 }
             }
             div(classes = "example") {
-                transfer {
+                transfer<TransferItem, TransferComponent<TransferItem>> {
                     attrs {
                         dataSource = emptyArray()
                         showSearch = true
                         targetKeys = emptyArray()
-                        render = { item -> item.title }
+                        render = { item -> item.title!! }
                     }
                 }
             }

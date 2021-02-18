@@ -39,7 +39,7 @@ class SearchApp : RComponent<RProps, SearchAppState>() {
             }
 
             if (item.chosen) {
-                keys.add(item.key)
+                keys.add(item.key!!)
             }
 
             data.add(item)
@@ -66,7 +66,7 @@ class SearchApp : RComponent<RProps, SearchAppState>() {
     }
 
     override fun RBuilder.render() {
-        transfer {
+        transfer<TransferItem, TransferComponent<TransferItem>> {
             attrs {
                 dataSource = state.mockData
                 showSearch = true
@@ -74,7 +74,7 @@ class SearchApp : RComponent<RProps, SearchAppState>() {
                 targetKeys = state.targetKeys
                 onChange = handleChange
                 onSearch = handleSearch
-                render = { item -> item.title }
+                render = { item -> item.title!! }
             }
         }
     }

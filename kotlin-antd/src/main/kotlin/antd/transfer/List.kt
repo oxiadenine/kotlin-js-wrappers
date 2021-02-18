@@ -4,51 +4,44 @@ import antd.*
 import org.w3c.dom.*
 import react.*
 
-external object TransferListComponent : Component<TransferListProps, TransferListState> {
+external class TransferListComponent<RecordType : KeyWiseTransferItem> : Component<TransferListProps<RecordType>, TransferListState> {
     override fun render(): ReactElement?
 }
 
-external interface TransferListProps : RProps {
+external interface TransferListProps<RecordType> : TransferLocale, RProps {
     var prefixCls: String
     var titleText: String
-    var dataSource: Array<TransferItem>
-    var filterOption: ((filterText: String, item: TransferItem) -> Boolean)?
+    var dataSource: Array<RecordType>
+    var filterOption: ((filterText: String, item: RecordType) -> Boolean)?
     var style: dynamic
     var checkedKeys: Array<String>
     var handleFilter: (e: ChangeEvent<HTMLInputElement>) -> Unit
-    var handleSelect: (selectedItem: TransferItem, checked: Boolean) -> Unit
-    var handleSelectAll: (dataSource: Array<TransferItem>, checkAll: Boolean) -> Unit
     var onItemSelect: (key: String, check: Boolean) -> Unit
     var onItemSelectAll: (dataSource: Array<String>, checkAll: Boolean) -> Unit
+    var onItemRemove: ((keys: Array<String>) -> Unit)?
     var handleClear: () -> Unit
-    var render: ((item: TransferItem) -> RenderResult)?
+    var render: ((item: RecordType) -> RenderResult)?
     var showSearch: Boolean?
-    var searchPlaceholder: String
-    var notFoundContent: Any /* String | ReactElement */
-    var itemUnit: String
-    var itemsUnit: String
-    var body: ((props: TransferListProps) -> ReactElement)?
-    var renderList: RenderListFunction?
-    var footer: ((props: TransferListProps) -> ReactElement)?
-    var lazy: Any? /* Boolean | Object */
-    var onScroll: Function<Any>
+    override var searchPlaceholder: String
+    override var itemUnit: String
+    override var itemsUnit: String
+    var renderList: RenderListFunction<RecordType>?
+    var footer: ((props: TransferListProps<RecordType>) -> Any /* String | ReactElement */)?
+    var onScroll: ((e: UIEvent<HTMLUListElement>) -> Unit)?
     var disabled: Boolean?
     var direction: TransferDirection
     var showSelectAll: Boolean?
+    var selectAllLabel: SelectAllLabel?
+    var showRemove: Boolean?
+    var pagination: Any? /* Boolean | PaginationType */
 }
 
 external interface TransferListState : RState {
     var filterValue: String
 }
 
-external interface TransferListBodyProps : TransferListProps {
-    var filteredItems: Array<TransferItem>
-    var filteredRenderItems: Array<RenderedItem>
-    var selectedKeys: Array<String>
-}
-
-external interface RenderedItem {
+external interface RenderedItem<RecordType> {
     var renderedText: String
     var renvderedEl: Any /* String | ReactElement */
-    var item: TransferItem
+    var item: RecordType
 }

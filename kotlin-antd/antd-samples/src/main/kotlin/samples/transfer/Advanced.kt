@@ -31,7 +31,7 @@ class AdvancedApp : RComponent<RProps, AdvancedAppState>() {
             }
 
             if (item.chosen) {
-                keys.add(item.key)
+                keys.add(item.key!!)
             }
 
             data.add(item)
@@ -49,7 +49,7 @@ class AdvancedApp : RComponent<RProps, AdvancedAppState>() {
         }
     }
 
-    private val renderFooter = fun(_: TransferListProps): ReactElement {
+    private val renderFooter = fun(_: TransferListProps<TransferItem>): ReactElement {
         return buildElement {
             button {
                 attrs {
@@ -75,7 +75,7 @@ class AdvancedApp : RComponent<RProps, AdvancedAppState>() {
     }
 
     override fun RBuilder.render() {
-        transfer {
+        transfer<TransferItem, TransferComponent<TransferItem>> {
             attrs {
                 dataSource = state.mockData
                 showSearch = true

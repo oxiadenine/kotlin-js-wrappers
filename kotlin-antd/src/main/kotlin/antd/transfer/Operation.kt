@@ -1,6 +1,7 @@
 package antd.transfer
 
 import antd.*
+import antd.configprovider.DirectionType
 import org.w3c.dom.*
 import react.*
 
@@ -18,4 +19,6 @@ external interface TransferOperationProps : RProps {
     var rightActive: Boolean?
     var style: dynamic
     var disabled: Boolean?
+    var direction: DirectionType?
+    var oneWay: Boolean?
 }

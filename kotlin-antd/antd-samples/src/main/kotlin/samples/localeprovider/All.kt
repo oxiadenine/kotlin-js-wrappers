@@ -143,12 +143,12 @@ class Page : RComponent<PageProps, PageState>() {
             }
             div {
                 attrs.classes = setOf("example")
-                transfer {
+                transfer<TransferItem, TransferComponent<TransferItem>> {
                     attrs {
                         dataSource = emptyArray()
                         showSearch = true
                         targetKeys = emptyArray()
-                        render = { item -> item.title }
+                        render = { item -> item.title!! }
                     }
                 }
                 div {

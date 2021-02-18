@@ -30,7 +30,7 @@ class LargeDataApp : RComponent<RProps, LargeDataAppState>() {
             }
 
             if (item.chosen) {
-                keys.add(item.key)
+                keys.add(item.key!!)
             }
 
             data.add(item)
@@ -60,12 +60,12 @@ class LargeDataApp : RComponent<RProps, LargeDataAppState>() {
     }
 
     override fun RBuilder.render() {
-        transfer {
+        transfer<TransferItem, TransferComponent<TransferItem>> {
             attrs {
                 dataSource = state.mockData
                 targetKeys = state.targetKeys
                 onChange = handleChange
-                render = { item -> item.title }
+                render = { item -> item.title!! }
             }
         }
     }

@@ -2,4 +2,4 @@ package antd.transfer
 
 import react.*
 
-fun RBuilder.transfer(handler: RHandler<TransferProps>) = child(TransferComponent::class, handler)
+inline fun <T, reified TC : TransferComponent<T>> RBuilder.transfer(noinline handler: RHandler<TransferProps<T>>) = child(TC::class, handler)
