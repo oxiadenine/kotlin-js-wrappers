@@ -13,16 +13,18 @@ external object StepsComponent : Component<StepsProps, RState> {
 }
 
 external interface StepsProps : RProps {
+    var type: String? /* "default" | "navigation" */
     var className: String?
     var current: Number?
-    var direction: StepsDirection?
+    var direction: String? /* "horizontal" | "vertical" */
     var iconPrefix: String?
     var initial: Number?
-    var labelPlacement: StepsPlacement?
+    var labelPlacement: String? /* "horizontal" | "vertical" */
     var prefixCls: String?
     var progressDot: Any? /* Boolean | Function<Any> */
-    var size: StepsSize?
-    var status: StepsStatus?
+    var size: String? /* "default" | "small" */
+    var status: String? /* "wait" | "process" | "finish" | "error" */
     var style: dynamic
+    var percent: Number?
     var onChange: ((current: Number) -> Unit)?
 }

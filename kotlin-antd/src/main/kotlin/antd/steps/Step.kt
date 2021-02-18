@@ -11,9 +11,10 @@ external object StepComponent : Component<StepProps, RState> {
 external interface StepProps : RProps {
     var className: String?
     var description: Any? /* String | ReactElement */
-    var icon: ReactElement?
+    var icon: Any? /* String | ReactElement */
     var onClick: MouseEventHandler<HTMLElement>?
-    var status: StepStatus?
+    var status: String? /* "wait" | "process" | "finish" | "error" */
     var title: Any? /* String | ReactElement */
+    var subTitle: Any? /* String | ReactElement */
     var style: dynamic
 }
