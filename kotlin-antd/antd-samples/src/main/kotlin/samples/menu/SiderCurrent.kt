@@ -14,7 +14,7 @@ interface SiderCurrentSiderState : RState {
 class SiderCurrentSider : RComponent<RProps, SiderCurrentSiderState>() {
     private val rootSubmenuKeys = arrayOf("sub1", "sub2", "sub4")
 
-    private val handleOpenChange = fun(keys: Array<Key>) {
+    private val handleOpenChange = fun(keys: Array<dynamic>) {
         val latestOpenKey = keys.find { key -> !state.openKeys.contains(key) }
 
         if (!rootSubmenuKeys.contains(latestOpenKey)) {
