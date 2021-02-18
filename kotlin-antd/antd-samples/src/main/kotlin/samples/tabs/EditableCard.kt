@@ -19,7 +19,7 @@ class EditableCardDemo : RComponent<RProps, EditableCardDemoState>() {
         }
     }
 
-    private val handleEdit: (Any, TabsEditAction) -> Unit = { targetKey, action ->
+    private val handleEdit: (Any, String) -> Unit = { targetKey, action ->
         when (action) {
             "add" -> add()
             "remove" -> remove(targetKey.unsafeCast<String>())

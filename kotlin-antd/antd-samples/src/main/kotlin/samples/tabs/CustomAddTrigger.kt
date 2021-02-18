@@ -22,7 +22,7 @@ class CustomAddTriggerDemo : RComponent<RProps, CustomAddTriggerDemoState>() {
         }
     }
 
-    private val handleEdit: (Any, TabsEditAction) -> Unit = { targetKey, action ->
+    private val handleEdit: (Any, String) -> Unit = { targetKey, action ->
         when (action) {
             "remove" -> remove(targetKey.unsafeCast<String>())
         }
