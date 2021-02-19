@@ -13,7 +13,7 @@ private interface FixedColumnsTableDataItem {
     var address: String
 }
 
-private val tableColumns = arrayOf<ColumnProps<FixedColumnsTableDataItem>>(
+private val tableColumns = arrayOf<ColumnType<FixedColumnsTableDataItem>>(
     jsObject {
         title = "Full Name"
         width = 100
@@ -84,7 +84,7 @@ private val tableColumns = arrayOf<ColumnProps<FixedColumnsTableDataItem>>(
     }
 )
 
-private val data = arrayOf<FixedColumnsTableDataItem>(
+private val tableData = arrayOf<FixedColumnsTableDataItem>(
     jsObject {
         key = "1"
         name = "John Brown"
@@ -104,8 +104,8 @@ fun RBuilder.fixedColumns() {
         css { +TableStyles.fixedColumns }
         table<FixedColumnsTableDataItem, TableComponent<FixedColumnsTableDataItem>> {
             attrs {
-                columns = tableColumns
-                dataSource = data
+                columns = tableColumns.unsafeCast<ColumnsType<FixedColumnsTableDataItem>>()
+                dataSource = tableData
                 scroll = jsObject { x = 1300 }
             }
         }

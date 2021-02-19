@@ -12,7 +12,7 @@ private interface RowSelectionCustomTableDataItem {
     var address: String
 }
 
-private val tableColumns = arrayOf<ColumnProps<RowSelectionCustomTableDataItem>>(
+private val tableColumns = arrayOf<ColumnType<RowSelectionCustomTableDataItem>>(
     jsObject {
         title = "Name"
         dataIndex = "name"
@@ -27,7 +27,7 @@ private val tableColumns = arrayOf<ColumnProps<RowSelectionCustomTableDataItem>>
     }
 )
 
-private val data = (0..46).map { i ->
+private val tableData = (0..46).map { i ->
     jsObject<RowSelectionCustomTableDataItem> {
         key = "$i"
         name = "Edward King $i"
@@ -37,7 +37,7 @@ private val data = (0..46).map { i ->
 }.toTypedArray()
 
 interface RowSelectionCustomAppState : RState {
-    var selectedRowKeys: Array<String>
+    var selectedRowKeys: Array<Key>
 }
 
 class RowSelectionCustomApp : RComponent<RProps, RowSelectionCustomAppState>() {
@@ -45,7 +45,7 @@ class RowSelectionCustomApp : RComponent<RProps, RowSelectionCustomAppState>() {
         console.log("selectedRowKeys changed: ", rowKeys)
 
         setState {
-            selectedRowKeys = rowKeys.unsafeCast<Array<String>>()
+            selectedRowKeys = rowKeys.unsafeCast<Array<Key>>()
         }
     }
 
@@ -57,7 +57,6 @@ class RowSelectionCustomApp : RComponent<RProps, RowSelectionCustomAppState>() {
         val tableRowSelection = jsObject<TableRowSelection<RowSelectionCustomTableDataItem>> {
             selectedRowKeys = state.selectedRowKeys
             onChange = handleSelectChange
-            hideDefaultSelections = true
             selections = arrayOf<SelectionItem>(
                 jsObject {
                     key = "all-data"
@@ -108,8 +107,8 @@ class RowSelectionCustomApp : RComponent<RProps, RowSelectionCustomAppState>() {
         table<RowSelectionCustomTableDataItem, TableComponent<RowSelectionCustomTableDataItem>> {
             attrs {
                 rowSelection = tableRowSelection
-                columns = tableColumns
-                dataSource = data
+                columns = tableColumns.unsafeCast<ColumnsType<RowSelectionCustomTableDataItem>>()
+                dataSource = tableData
             }
         }
     }

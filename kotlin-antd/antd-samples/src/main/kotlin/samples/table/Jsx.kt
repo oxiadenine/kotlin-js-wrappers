@@ -49,16 +49,16 @@ fun RBuilder.jsx() {
         css { +TableStyles.jsx }
         table<JsxTableDataItem, TableComponent<JsxTableDataItem>> {
             attrs.dataSource = data
-            columnGroup {
+            tableColumnGroup<JsxTableDataItem> {
                 attrs.title = "Name"
-                column<JsxTableDataItem> {
+                tableColumn<JsxTableDataItem> {
                     attrs {
                         title = "First Name"
                         dataIndex = "firstName"
                         key = "firstName"
                     }
                 }
-                column<JsxTableDataItem> {
+                tableColumn<JsxTableDataItem> {
                     attrs {
                         title = "Last Name"
                         dataIndex = "lastName"
@@ -66,21 +66,21 @@ fun RBuilder.jsx() {
                     }
                 }
             }
-            column<JsxTableDataItem> {
+            tableColumn<JsxTableDataItem> {
                 attrs {
                     title = "Age"
                     dataIndex = "age"
                     key = "age"
                 }
             }
-            column<JsxTableDataItem> {
+            tableColumn<JsxTableDataItem> {
                 attrs {
                     title = "Address"
                     dataIndex = "address"
                     key = "address"
                 }
             }
-            column<JsxTableDataItem> {
+            tableColumn<JsxTableDataItem> {
                 attrs {
                     title = "Tags"
                     dataIndex = "tags"
@@ -100,7 +100,7 @@ fun RBuilder.jsx() {
                     }
                 }
             }
-            column<JsxTableDataItem> {
+            tableColumn<JsxTableDataItem> {
                 attrs {
                     title = "Action"
                     key = "action"

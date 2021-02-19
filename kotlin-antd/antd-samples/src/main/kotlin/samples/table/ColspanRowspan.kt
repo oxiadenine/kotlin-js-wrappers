@@ -30,7 +30,7 @@ private val renderContent: (Any, Any, Number) -> Any = { value, _, index ->
     obj.unsafeCast<Any>()
 }
 
-private val tableColumns = arrayOf<ColumnProps<ColspanRowspanTableDataItem>>(
+private val tableColumns = arrayOf<ColumnType<ColspanRowspanTableDataItem>>(
     jsObject {
         title = "Name"
         dataIndex = "name"
@@ -103,7 +103,7 @@ private val tableColumns = arrayOf<ColumnProps<ColspanRowspanTableDataItem>>(
     }
 )
 
-private val data = arrayOf<ColspanRowspanTableDataItem>(
+private val tableData = arrayOf<ColspanRowspanTableDataItem>(
     jsObject {
         key = "1"
         name = "John Brown"
@@ -151,8 +151,8 @@ fun RBuilder.colspanRowspan() {
         css { +TableStyles.colspanRowspan }
         table<ColspanRowspanTableDataItem, TableComponent<ColspanRowspanTableDataItem>> {
             attrs {
-                columns = tableColumns
-                dataSource = data
+                columns = tableColumns.unsafeCast<ColumnsType<ColspanRowspanTableDataItem>>()
+                dataSource = tableData
                 bordered = true
             }
         }

@@ -42,15 +42,6 @@ object TableStyles : StyleSheet("table", isStatic = true) {
     val fixedColumns by css {}
     val fixedColumnsHeader by css {}
     val groupingColumns by css {}
-    val editRow by css {
-        descendants(".editable-row") {
-            descendants(".ant-form-explain") {
-                position = Position.absolute
-                marginTop = (-4).px
-                fontSize = 12.px
-            }
-        }
-    }
     val nestedTable by css {}
     val dynamicSettings by css {
         descendants(".components-table-demo-control-bar") {
@@ -59,6 +50,21 @@ object TableStyles : StyleSheet("table", isStatic = true) {
                 marginRight = 16.px
                 marginBottom = 8.px
             }
+        }
+    }
+    val sticky by css {}
+    val summary by css {
+        descendants(".components-table-demo-summary tfoot th") {
+            background = "#fafafa"
+        }
+        descendants(".components-table-demo-summary tfoot td") {
+            background = "#fafafa"
+        }
+        descendants("[data-theme=\"dark\"] #components-table-demo-summary tfoot th") {
+            background = "#1d1d1d"
+        }
+        descendants("[data-theme=\"dark\"] #components-table-demo-summary tfoot td") {
+            background = "#1d1d1d"
         }
     }
 }
@@ -85,9 +91,10 @@ class TableApp : RComponent<RProps, RState>() {
             fixedColumns()
             fixedColumnsHeader()
             groupingColumns()
-            //editRow()
             nestedTable()
             dynamicSettings()
+            sticky()
+            summary()
         }
     }
 }

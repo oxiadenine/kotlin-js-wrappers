@@ -10,6 +10,8 @@ import antd.input.input
 import antd.input.textArea
 import antd.radio.*
 import antd.select.*
+import antd.table.ColumnType
+import antd.table.ColumnsType
 import antd.table.TableComponent
 import antd.table.table
 import kotlinext.js.*
@@ -84,7 +86,7 @@ val formSizeDemo = functionalComponent<RProps> {
                 }
                 table<DataItem, TableComponent<DataItem>> {
                     attrs {
-                        columns = arrayOf(
+                        columns = arrayOf<ColumnType<DataItem>>(
                             jsObject {
                                 title = "Name"
                                 dataIndex = "name"
@@ -93,8 +95,8 @@ val formSizeDemo = functionalComponent<RProps> {
                                 title = "Age"
                                 dataIndex = "name"
                             }
-                        )
-                        dataSource = arrayOf<DataItem>(
+                        ).unsafeCast<ColumnsType<Any>>()
+                        dataSource = arrayOf(
                             jsObject {
                                 key = "1"
                                 name = "John Brown"

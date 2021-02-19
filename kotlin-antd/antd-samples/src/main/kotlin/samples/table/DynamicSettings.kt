@@ -1,5 +1,6 @@
 package samples.table
 
+import antd.configprovider.SizeType
 import antd.divider.*
 import antd.form.*
 import antd.form.form
@@ -25,7 +26,7 @@ interface DynamicSettingsTableDataItem {
     var description: String
 }
 
-private val tableColumns = arrayOf<ColumnProps<DynamicSettingsTableDataItem>>(
+private val tableColumns = arrayOf<ColumnType<DynamicSettingsTableDataItem>>(
     jsObject {
         title = "Name"
         dataIndex = "name"
@@ -86,7 +87,7 @@ private val tableColumns = arrayOf<ColumnProps<DynamicSettingsTableDataItem>>(
     }
 )
 
-private val data = (0..100).map { i ->
+private val tableData = (0..100).map { i ->
     jsObject<DynamicSettingsTableDataItem> {
         key = "$i"
         name = "John Brown"
@@ -104,20 +105,20 @@ private val tableExpandedRowRender: (DynamicSettingsTableDataItem) -> ReactEleme
 private val tableTitle: () -> String = { "Here is title" }
 private const val tableShowHeader = true
 private val tableFooter: () -> String = { "Here is footer" }
-private val tableScroll = jsObject<TableScroll> { y = 240 }
+private val tableScroll = jsObject<TablePropsScroll> { y = 240 }
 private val tablePagination = jsObject<PaginationConfig> { position = "bottom" }
 
 interface DynamicSettingsDemoState : RState {
     var bordered: Boolean
     var loading: Boolean
     var pagination: Any?
-    var size: TableSize
+    var size: SizeType
     var expandedRowRender: ((DynamicSettingsTableDataItem) -> ReactElement)?
     var title: (() -> String)?
     var showHeader: Boolean
     var footer: (() -> String)?
     var rowSelection: TableRowSelection<DynamicSettingsTableDataItem>?
-    var scroll: TableScroll?
+    var scroll: TablePropsScroll?
     var hasData: Boolean
 }
 
@@ -132,7 +133,7 @@ class DynamicSettingsDemo : RComponent<RProps, DynamicSettingsDemoState>() {
 
     private val handleSizeChange = fun(e: RadioChangeEvent) {
         setState {
-            size = e.target.value.unsafeCast<TableSize>()
+            size = e.target.value.unsafeCast<SizeType>()
         }
     }
 
@@ -340,8 +341,8 @@ class DynamicSettingsDemo : RComponent<RProps, DynamicSettingsDemoState>() {
             table<DynamicSettingsTableDataItem, TableComponent<DynamicSettingsTableDataItem>> {
                 Object.assign(attrs, state)
                 attrs {
-                    columns = tableColumns
-                    dataSource = if (state.hasData) data else null
+                    columns = tableColumns.unsafeCast<ColumnsType<DynamicSettingsTableDataItem>>()
+                    dataSource = if (state.hasData) tableData else null
                 }
             }
         }

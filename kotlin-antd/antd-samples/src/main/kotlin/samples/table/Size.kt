@@ -13,7 +13,7 @@ private interface SizeTableDataItem {
     var address: String
 }
 
-private val tableColumns = arrayOf<ColumnProps<SizeTableDataItem>>(
+private val tableColumns = arrayOf<ColumnType<SizeTableDataItem>>(
     jsObject {
         title = "Name"
         dataIndex = "name"
@@ -28,7 +28,7 @@ private val tableColumns = arrayOf<ColumnProps<SizeTableDataItem>>(
     }
 )
 
-private val data = arrayOf<SizeTableDataItem>(
+private val tableData = arrayOf<SizeTableDataItem>(
     jsObject {
         key = "1"
         name = "John Brown"
@@ -56,16 +56,16 @@ fun RBuilder.size() {
             h4 { +"Middle size table" }
             table<SizeTableDataItem, TableComponent<SizeTableDataItem>> {
                 attrs {
-                    columns = tableColumns
-                    dataSource = data
+                    columns = tableColumns.unsafeCast<ColumnsType<SizeTableDataItem>>()
+                    dataSource = tableData
                     size = "middle"
                 }
             }
             h4 { +"Small size table" }
             table<SizeTableDataItem, TableComponent<SizeTableDataItem>> {
                 attrs {
-                    columns = tableColumns
-                    dataSource = data
+                    columns = tableColumns.unsafeCast<ColumnsType<SizeTableDataItem>>()
+                    dataSource = tableData
                     size = "small"
                 }
             }

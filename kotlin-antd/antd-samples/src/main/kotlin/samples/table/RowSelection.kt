@@ -13,7 +13,7 @@ private interface RowSelectionTableDataItem {
     var address: String
 }
 
-private val tableColumns = arrayOf<ColumnProps<RowSelectionTableDataItem>>(
+private val tableColumns = arrayOf<ColumnType<RowSelectionTableDataItem>>(
     jsObject {
         title = "Name"
         dataIndex = "name"
@@ -39,7 +39,7 @@ private val tableColumns = arrayOf<ColumnProps<RowSelectionTableDataItem>>(
     }
 )
 
-private val data = arrayOf<RowSelectionTableDataItem>(
+private val tableData = arrayOf<RowSelectionTableDataItem>(
     jsObject {
         key = "1"
         name = "John Brown"
@@ -72,10 +72,10 @@ private val tableRowSelection = jsObject<TableRowSelection<RowSelectionTableData
         console.log("selectedRowKeys: $selectedRowKeys", "selectedRows: ", selectedRows)
     }
     getCheckboxProps = { record ->
-        js {
+        jsObject {
             disabled = record.name == "Disabled User" // Column configuration not to be checked
             name = record.name
-        }.unsafeCast<Object>()
+        }
     }
 }
 
@@ -85,8 +85,8 @@ fun RBuilder.rowSelection() {
         table<RowSelectionTableDataItem, TableComponent<RowSelectionTableDataItem>> {
             attrs {
                 rowSelection = tableRowSelection
-                columns = tableColumns
-                dataSource = data
+                columns = tableColumns.unsafeCast<ColumnsType<RowSelectionTableDataItem>>()
+                dataSource = tableData
             }
         }
     }

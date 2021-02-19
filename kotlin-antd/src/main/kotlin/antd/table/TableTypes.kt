@@ -1,26 +1,36 @@
 package antd.table
 
-import kotlinext.js.*
-import org.w3c.dom.*
-import org.w3c.dom.events.*
-import react.*
+import antd.HTMLAttributes
+import antd.MouseEvent
+import kotlinext.js.Object
+import org.w3c.dom.HTMLElement
+import org.w3c.dom.events.Event
 
-typealias TableSize = String /* "default" | "middle" | "small" */
-typealias TableSelectWay = String /* "onSelect" | "onSelectMultiple" | "onSelectAll" | "onSelectInvert" */
+typealias Key = Any
 typealias RowSelectionType = String /* "checkbox" | "radio" */
+typealias SelectionItemSelectFn = (currentRowKeys: Array<Key>) -> Unit
+typealias ExpandType = String /* "row" | "nest" */
 typealias SortOrder = String /* "descend" | "ascend" */
-
-typealias RowKeyFn<T> = (record: T, index: Number) -> String
+typealias TableAction = String /* "paginate" | "sort" | "filter" */
 typealias CompareFn<T> = (a: T, b: T, sortOrder: SortOrder?) -> Number
-typealias GetPopupContainer = (triggerNode: HTMLElement?) -> HTMLElement
-typealias PrepareParamsArgumentsReturn<T> = Array<T /* Array<String> | Object | PrepareParamsArgumentsItem<T> */>
-
+typealias ColumnTitle<RecordType> = Any /* String | ReactElement | (props: ColumnTitleProps<RecordType>) -> Any /* String | ReactElement */ */
+typealias ColumnsType<RecordType> = Array<Any /* ColumnGroupType<RecordType> | ColumnType<RecordType> */>
 typealias SelectionSelectFn<T> = (record: T, selected: Boolean, selectedRows: Array<Object>, nativeEvent: Event) -> Unit
-typealias SelectionItemSelectFn = (key: Array<String>) -> Unit
+typealias TransformColumns<RecordType> = (columns: ColumnsType<RecordType>) -> ColumnsType<RecordType>
+typealias GetPopupContainer = (triggerNode: HTMLElement) -> HTMLElement
+typealias TablePaginationPosition = String /* "topLeft" | "topCenter" | "topRight" | "bottomLeft" | "bottomCenter" | "bottomRight" */
 
-typealias ColumnPropsAlign = String /* "left" | "right" | "center" */
-typealias ColumnPropsFixed = String /* "left" | "right" */
 
-typealias ColumnTitleFn = (options: ColumnFilterOptions) -> Any /* String | ReactElement */
-typealias ColumnFilterDropdownFn = (props: FilterDropdownProps) -> ReactElement
-typealias ColumnFilterIconFn = (filtered: Boolean) -> ReactElement
+typealias FixedType = Any /* "left" | "right" | String | Boolean */
+typealias TableLayout = String /* "auto" | "fixed" */
+typealias RowClassName<RecordType> = (record: RecordType, index: Number, indent: Number) -> String
+typealias GetRowKey<RecordType> = (record: RecordType, index: Number?) -> dynamic
+typealias DataIndex = Any /* String | Number | Array<Any /* String | Number */> */
+typealias AlignType = String /* "left" | "center" | "right" */
+typealias GetComponentProps<DataType> = (data: DataType, index: Number) -> HTMLAttributes<HTMLElement>
+typealias Component<P> = Any /* RClass<P> | FunctionalComponent<P> */
+typealias CustomizeComponent = Component<Any>
+typealias ExpandedRowRender<ValueType> = (record: ValueType, index: Number, indent: Number, expanded: Boolean) -> Any /* String | ReactElement */
+typealias RenderExpandIcon<RecordType> = (props: RenderExpandIconProps<RecordType>) -> Any /* String | ReactElement */
+typealias PanelRender<RecordType> = (data: Array<RecordType>) -> Any /* String | ReactElement */
+typealias TriggerEventHandler<RecordType> = (record: RecordType, event: MouseEvent<HTMLElement>) -> Unit

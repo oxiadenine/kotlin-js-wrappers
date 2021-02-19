@@ -1,6 +1,5 @@
 package samples.table
 
-import antd.pagination.*
 import antd.table.*
 import kotlinext.js.*
 import react.*
@@ -13,7 +12,7 @@ private interface HeadTableDataItem {
     var address: String
 }
 
-private val tableColumns = arrayOf<ColumnProps<HeadTableDataItem>>(
+private val tableColumns = arrayOf<ColumnType<HeadTableDataItem>>(
     jsObject {
         title = "Name"
         dataIndex = "name"
@@ -84,7 +83,7 @@ private val tableColumns = arrayOf<ColumnProps<HeadTableDataItem>>(
     }
 )
 
-private val data = arrayOf<HeadTableDataItem>(
+private val tableData = arrayOf<HeadTableDataItem>(
     jsObject {
         key = "1"
         name = "John Brown"
@@ -111,7 +110,7 @@ private val data = arrayOf<HeadTableDataItem>(
     }
 )
 
-private fun onChange(pagination: PaginationConfig, filters: Any, sorter: SorterResult<HeadTableDataItem>, extra: TableCurrentDataSource<HeadTableDataItem>) {
+private fun onChange(pagination: TablePaginationConfig, filters: Map<String, Array<String?>>, sorter: Any, extra: TableCurrentDataSource<HeadTableDataItem>)  {
     console.log("params", pagination, filters, sorter)
 }
 
@@ -120,8 +119,8 @@ fun RBuilder.head() {
         css { +TableStyles.head }
         table<HeadTableDataItem, TableComponent<HeadTableDataItem>> {
             attrs {
-                columns = tableColumns
-                dataSource = data
+                columns = tableColumns.unsafeCast<ColumnsType<HeadTableDataItem>>()
+                dataSource = tableData
                 onChange = ::onChange
             }
         }

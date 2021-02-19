@@ -37,7 +37,7 @@ private val menu = buildElement {
 
 class NestedTableApp : RComponent<RProps, RState>() {
     private val expandRowRender: (Any, Number, Number, Boolean) -> ReactElement = { _, _, _, _ ->
-        val tableColumns = arrayOf<ColumnProps<NestedTableNestedTableDataItem>>(
+        val tableColumns = arrayOf<ColumnType<NestedTableNestedTableDataItem>>(
             jsObject {
                 title = "Date"
                 dataIndex = "date"
@@ -109,7 +109,7 @@ class NestedTableApp : RComponent<RProps, RState>() {
         buildElement {
             table<NestedTableNestedTableDataItem, TableComponent<NestedTableNestedTableDataItem>> {
                 attrs {
-                    columns = tableColumns
+                    columns = tableColumns.unsafeCast<ColumnsType<NestedTableNestedTableDataItem>>()
                     dataSource = data
                     pagination = false
                 }
@@ -118,7 +118,7 @@ class NestedTableApp : RComponent<RProps, RState>() {
     }
 
     override fun RBuilder.render() {
-        val tableColumns = arrayOf<ColumnProps<NestedTableTableDataItem>>(
+        val tableColumns = arrayOf<ColumnType<NestedTableTableDataItem>>(
             jsObject {
                 title = "Name"
                 dataIndex = "name"
@@ -178,7 +178,7 @@ class NestedTableApp : RComponent<RProps, RState>() {
         table<NestedTableTableDataItem, TableComponent<NestedTableTableDataItem>> {
             attrs {
                 className = "components-table-demo-nested"
-                columns = tableColumns
+                columns = tableColumns.unsafeCast<ColumnsType<NestedTableTableDataItem>>()
                 expandedRowRender = expandRowRender
                 dataSource = data
             }

@@ -14,7 +14,7 @@ private interface ExpandTableDataItem {
     var description: String
 }
 
-private val tableColumns = arrayOf<ColumnProps<ExpandTableDataItem>>(
+private val tableColumns = arrayOf<ColumnType<ExpandTableDataItem>>(
     jsObject {
         title = "Name"
         dataIndex = "name"
@@ -45,7 +45,7 @@ private val tableColumns = arrayOf<ColumnProps<ExpandTableDataItem>>(
     }
 )
 
-private val data = arrayOf<ExpandTableDataItem>(
+private val tableData = arrayOf<ExpandTableDataItem>(
     jsObject {
         key = "1"
         name = "John Brown"
@@ -74,14 +74,14 @@ fun RBuilder.expand() {
         css { +TableStyles.expand }
         table<ExpandTableDataItem, TableComponent<ExpandTableDataItem>> {
             attrs {
-                columns = tableColumns
+                columns = tableColumns.unsafeCast<ColumnsType<ExpandTableDataItem>>()
                 expandedRowRender = { record, _, _, _ ->
                     p {
                         attrs.jsStyle = js { margin = 0 }
                         +record.description
                     }
                 }
-                dataSource = data
+                dataSource = tableData
             }
         }
     }

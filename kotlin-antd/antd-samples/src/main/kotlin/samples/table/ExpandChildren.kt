@@ -13,7 +13,7 @@ private interface ExpandChildrenTableDataItem {
     var children: Array<ExpandChildrenTableDataItem>
 }
 
-private val tableColumns = arrayOf<ColumnProps<ExpandChildrenTableDataItem>>(
+private val tableColumns = arrayOf<ColumnType<ExpandChildrenTableDataItem>>(
     jsObject {
         title = "Name"
         dataIndex = "name"
@@ -33,7 +33,7 @@ private val tableColumns = arrayOf<ColumnProps<ExpandChildrenTableDataItem>>(
     }
 )
 
-private val data = arrayOf<ExpandChildrenTableDataItem>(
+private val tableData = arrayOf<ExpandChildrenTableDataItem>(
     jsObject {
         key = "1"
         name = "John Brown sr."
@@ -115,9 +115,9 @@ fun RBuilder.expandChildren() {
         css { +TableStyles.expandChildren }
         table<ExpandChildrenTableDataItem, TableComponent<ExpandChildrenTableDataItem>> {
             attrs {
-                columns = tableColumns
+                columns = tableColumns.unsafeCast<ColumnsType<ExpandChildrenTableDataItem>>()
                 rowSelection = tableRowSelection
-                dataSource = data
+                dataSource = tableData
             }
         }
     }

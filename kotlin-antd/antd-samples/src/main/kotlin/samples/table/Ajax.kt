@@ -8,7 +8,7 @@ import react.*
 import styled.*
 import kotlin.js.json
 
-private val tableColumns = arrayOf<ColumnProps<Any>>(
+private val tableColumns = arrayOf<ColumnType<Any>>(
     jsObject {
         title = "Name"
         dataIndex = "name"
@@ -39,12 +39,12 @@ private val tableColumns = arrayOf<ColumnProps<Any>>(
 
 interface AjaxAppState : RState {
     var data: Array<Any>
-    var pagination: PaginationConfig
+    var pagination: TablePaginationConfig
     var loading: Boolean
 }
 
 class AjaxApp : RComponent<RProps, AjaxAppState>() {
-    private val handleTableChange = fun(newPagination: PaginationConfig, filters: Any, sorter: SorterResult<Any>, _: TableCurrentDataSource<Any>) {
+    private val handleTableChange = fun(newPagination: TablePaginationConfig, filters: Map<String, Array<String?>>, sorter: Any, extra: TableCurrentDataSource<Any>) {
         val pager = state.pagination
         pager.current = newPagination.current
 
@@ -57,8 +57,8 @@ class AjaxApp : RComponent<RProps, AjaxAppState>() {
         val params = Object.assign(js {
             results = newPagination.pageSize
             page = newPagination.current
-            sortField = sorter.field
-            sortOrder = sorter.order
+            sortField = sorter.unsafeCast<SorterResult<Any>>().field
+            sortOrder = sorter.unsafeCast<SorterResult<Any>>().order
         }.unsafeCast<Any>(), filters)
 
         fetch(params)
@@ -117,7 +117,7 @@ class AjaxApp : RComponent<RProps, AjaxAppState>() {
     override fun RBuilder.render() {
         table<Any, TableComponent<Any>> {
             attrs {
-                columns = tableColumns
+                columns = tableColumns.unsafeCast<ColumnsType<Any>>()
                 rowKey = fun(record: Any, _: Number): String {
                     return record.asDynamic().login.uuid.unsafeCast<String>()
                 }

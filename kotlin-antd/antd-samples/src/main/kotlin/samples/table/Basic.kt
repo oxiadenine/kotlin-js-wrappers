@@ -17,7 +17,7 @@ private interface BasicTableDataItem {
     var tags: Array<String>
 }
 
-private val tableColumns = arrayOf<ColumnProps<BasicTableDataItem>>(
+private val tableColumns = arrayOf<ColumnType<BasicTableDataItem>>(
     jsObject {
         title = "Name"
         dataIndex = "name"
@@ -90,7 +90,7 @@ private val tableColumns = arrayOf<ColumnProps<BasicTableDataItem>>(
     }
 )
 
-private val data = arrayOf<BasicTableDataItem>(
+private val tableData = arrayOf<BasicTableDataItem>(
     jsObject {
         key = "1"
         name = "John Brown"
@@ -119,8 +119,8 @@ fun RBuilder.basic() {
         css { +TableStyles.basic }
         table<BasicTableDataItem, TableComponent<BasicTableDataItem>> {
             attrs {
-                columns = tableColumns
-                dataSource = data
+                columns = tableColumns.unsafeCast<ColumnsType<BasicTableDataItem>>()
+                dataSource = tableData
             }
         }
     }

@@ -13,7 +13,7 @@ private interface FixedHeaderTableDataItem {
     var address: String
 }
 
-private val tableColumns = arrayOf<ColumnProps<FixedHeaderTableDataItem>>(
+private val tableColumns = arrayOf<ColumnType<FixedHeaderTableDataItem>>(
     jsObject {
         title = "Name"
         dataIndex = "name"
@@ -30,7 +30,7 @@ private val tableColumns = arrayOf<ColumnProps<FixedHeaderTableDataItem>>(
     }
 )
 
-private val data = (0..100).map { i ->
+private val tableData = (0..100).map { i ->
     jsObject<FixedHeaderTableDataItem> {
         key = "$i"
         name = "Edward King $i"
@@ -44,8 +44,8 @@ fun RBuilder.fixedHeader() {
         css { +TableStyles.fixedHeader }
         table<FixedHeaderTableDataItem, TableComponent<FixedHeaderTableDataItem>> {
             attrs {
-                columns = tableColumns
-                dataSource = data
+                columns = tableColumns.unsafeCast<ColumnsType<FixedHeaderTableDataItem>>()
+                dataSource = tableData
                 pagination = jsObject<PaginationConfig> { pageSize = 50 }
                 scroll = jsObject { y = 240 }
             }

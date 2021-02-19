@@ -8,6 +8,7 @@ import antd.list.*
 import antd.select.*
 import antd.switch.*
 import antd.table.*
+import antd.table.ColumnType
 import antd.transfer.*
 import antd.treeselect.*
 import kotlinext.js.*
@@ -83,7 +84,7 @@ class ConfigProviderDemo : RComponent<RProps, ConfigProviderDemoState>() {
                     table<Any, TableComponent<Any>> {
                         attrs {
                             style = js { marginTop = 8 }
-                            columns = arrayOf(
+                            columns = arrayOf<ColumnType<Any>>(
                                 jsObject {
                                     title = "Name"
                                     dataIndex = "name"
@@ -94,7 +95,7 @@ class ConfigProviderDemo : RComponent<RProps, ConfigProviderDemoState>() {
                                     dataIndex = "age"
                                     key = "age"
                                 }
-                            )
+                            ).unsafeCast<ColumnsType<Any>>()
                         }
                     }
                     h3 { +"List" }

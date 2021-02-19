@@ -20,7 +20,8 @@ import antd.radio.radioGroup
 import antd.select.SelectComponent
 import antd.select.option
 import antd.select.select
-import antd.table.ColumnProps
+import antd.table.ColumnType
+import antd.table.ColumnsType
 import antd.table.TableComponent
 import antd.table.table
 import antd.transfer.TransferComponent
@@ -44,7 +45,7 @@ import react.setState
 import styled.css
 import styled.styledDiv
 
-private val tableColumns = arrayOf<ColumnProps<Any>>(
+private val tableColumns = arrayOf<ColumnType<Any>>(
     jsObject {
         title = "Name"
         dataIndex = "name"
@@ -171,7 +172,7 @@ class LocalePage : RComponent<LocalePageProps, LocalePageState>() {
                 table<Any, TableComponent<Any>> {
                     attrs {
                         dataSource = emptyArray()
-                        columns = tableColumns
+                        columns = tableColumns.unsafeCast<ColumnsType<Any>>()
                     }
                 }
             }

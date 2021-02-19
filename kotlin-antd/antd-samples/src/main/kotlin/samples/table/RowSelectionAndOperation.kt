@@ -18,7 +18,7 @@ private interface RowSelectionAndOperationTableDataItem {
     var address: String
 }
 
-private val tableColumns = arrayOf<ColumnProps<RowSelectionAndOperationTableDataItem>>(
+private val tableColumns = arrayOf<ColumnType<RowSelectionAndOperationTableDataItem>>(
     jsObject {
         title = "Name"
         dataIndex = "name"
@@ -33,7 +33,7 @@ private val tableColumns = arrayOf<ColumnProps<RowSelectionAndOperationTableData
     }
 )
 
-private val data = (0..46).map { i ->
+private val tableData = (0..46).map { i ->
     jsObject<RowSelectionAndOperationTableDataItem> {
         key = "$i"
         name = "Edward King $i"
@@ -43,7 +43,7 @@ private val data = (0..46).map { i ->
 }.toTypedArray()
 
 interface RowSelectionAndOperationAppState : RState {
-    var selectedRowKeys: Array<String>
+    var selectedRowKeys: Array<Key>
     var loading: Boolean
 }
 
@@ -65,7 +65,7 @@ class RowSelectionAndOperationApp : RComponent<RProps, RowSelectionAndOperationA
         console.log("selectedRowKeys changed: ", rowKeys)
 
         setState {
-            selectedRowKeys = rowKeys.unsafeCast<Array<String>>()
+            selectedRowKeys = rowKeys.unsafeCast<Array<Key>>()
         }
     }
 
@@ -104,8 +104,8 @@ class RowSelectionAndOperationApp : RComponent<RProps, RowSelectionAndOperationA
             table<RowSelectionAndOperationTableDataItem, TableComponent<RowSelectionAndOperationTableDataItem>> {
                 attrs {
                     rowSelection = tableRowSelection
-                    columns = tableColumns
-                    dataSource = data
+                    columns = tableColumns.unsafeCast<ColumnsType<RowSelectionAndOperationTableDataItem>>()
+                    dataSource = tableData
                 }
             }
         }

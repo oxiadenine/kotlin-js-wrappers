@@ -13,7 +13,7 @@ private interface BorderedTableDataItem {
     var address: String
 }
 
-private val tableColumns = arrayOf<ColumnProps<BorderedTableDataItem>>(
+private val tableColumns = arrayOf<ColumnType<BorderedTableDataItem>>(
     jsObject {
         title = "Name"
         dataIndex = "name"
@@ -37,7 +37,7 @@ private val tableColumns = arrayOf<ColumnProps<BorderedTableDataItem>>(
     }
 )
 
-private val data = arrayOf<BorderedTableDataItem>(
+private val tableData = arrayOf<BorderedTableDataItem>(
     jsObject {
         key = "1"
         name = "John Brown"
@@ -63,8 +63,8 @@ fun RBuilder.bordered() {
         css { +TableStyles.bordered }
         table<BorderedTableDataItem, TableComponent<BorderedTableDataItem>> {
             attrs {
-                columns = tableColumns
-                dataSource = data
+                columns = tableColumns.unsafeCast<ColumnsType<BorderedTableDataItem>>()
+                dataSource = tableData
                 bordered = true
                 title = { _ -> "Header" }
                 footer = { _ -> "Footer" }

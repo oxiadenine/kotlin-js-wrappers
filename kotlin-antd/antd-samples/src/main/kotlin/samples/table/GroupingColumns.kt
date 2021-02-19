@@ -18,7 +18,7 @@ private interface GroupingColumnsTableDataItem {
     var gender: String
 }
 
-private val tableColumns = arrayOf<ColumnProps<GroupingColumnsTableDataItem>>(
+private val tableColumns = arrayOf<ColumnGroupType<GroupingColumnsTableDataItem>>(
     jsObject {
         title = "Name"
         dataIndex = "name"
@@ -102,7 +102,7 @@ private val tableColumns = arrayOf<ColumnProps<GroupingColumnsTableDataItem>>(
 
 )
 
-private val data = (0..100).map { i ->
+private val tableData = (0..100).map { i ->
     jsObject<GroupingColumnsTableDataItem> {
         key = "$i"
         name = "John Brown"
@@ -121,8 +121,8 @@ fun RBuilder.groupingColumns() {
         css { +TableStyles.groupingColumns }
         table<GroupingColumnsTableDataItem, TableComponent<GroupingColumnsTableDataItem>> {
             attrs {
-                columns = tableColumns
-                dataSource = data
+                columns = tableColumns.unsafeCast<ColumnsType<GroupingColumnsTableDataItem>>()
+                dataSource = tableData
                 bordered = true
                 size = "middle"
                 scroll = jsObject {

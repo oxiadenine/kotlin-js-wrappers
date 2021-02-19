@@ -14,7 +14,6 @@ import antd.radio.*
 import antd.select.SelectComponent
 import antd.select.select
 import antd.table.*
-import antd.timepicker.*
 import antd.timepicker.timePicker
 import antd.transfer.*
 import kotlinext.js.*
@@ -25,7 +24,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-private val tableColumns = arrayOf<ColumnProps<Any>>(
+private val tableColumns = arrayOf<ColumnType<Any>>(
     jsObject {
         title = "Name"
         dataIndex = "name"
@@ -169,7 +168,7 @@ class Page : RComponent<PageProps, PageState>() {
                     table<Any, TableComponent<Any>> {
                         attrs {
                             dataSource = emptyArray()
-                            columns = tableColumns
+                            columns = tableColumns.unsafeCast<ColumnsType<Any>>()
                         }
                     }
                 }

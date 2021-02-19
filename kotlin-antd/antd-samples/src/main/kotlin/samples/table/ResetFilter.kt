@@ -2,7 +2,6 @@ package samples.table
 
 import antd.*
 import antd.button.button
-import antd.pagination.*
 import antd.table.*
 import kotlinext.js.*
 import kotlinx.html.*
@@ -10,7 +9,7 @@ import react.*
 import react.dom.div
 import styled.*
 
-interface ResetFilterTableDataItem {
+private interface ResetFilterTableDataItem {
     var key: String
     var name: String
     var age: Number
@@ -18,7 +17,7 @@ interface ResetFilterTableDataItem {
     var tags: Array<String>
 }
 
-private val data = arrayOf<ResetFilterTableDataItem>(
+private val tableData = arrayOf<ResetFilterTableDataItem>(
     jsObject {
         key = "1"
         name = "John Brown"
@@ -46,18 +45,18 @@ private val data = arrayOf<ResetFilterTableDataItem>(
     }
 )
 
-interface ResetFilterAppState : RState {
+private interface ResetFilterAppState : RState {
     var filteredInfo: Any?
     var sortedInfo: SorterResult<ResetFilterTableDataItem>?
 }
 
-class ResetFilterApp : RComponent<RProps, ResetFilterAppState>() {
-    private val handleChange = fun(pagination: PaginationConfig, filters: Any, sorter: SorterResult<ResetFilterTableDataItem>, _: TableCurrentDataSource<ResetFilterTableDataItem>) {
+private class ResetFilterApp : RComponent<RProps, ResetFilterAppState>() {
+    private val handleChange = fun(pagination: TablePaginationConfig, filters: Map<String, Array<String?>>, sorter: Any, _: TableCurrentDataSource<ResetFilterTableDataItem>) {
         console.log("Various parameters", pagination, filters, sorter)
 
         setState {
             filteredInfo = filters
-            sortedInfo = sorter
+            sortedInfo = sorter.unsafeCast<SorterResult<ResetFilterTableDataItem>>()
         }
     }
 
@@ -169,8 +168,8 @@ class ResetFilterApp : RComponent<RProps, ResetFilterAppState>() {
             }
             table<ResetFilterTableDataItem, TableComponent<ResetFilterTableDataItem>> {
                 attrs {
-                    columns = tableColumns
-                    dataSource = data
+                    columns = tableColumns.unsafeCast<ColumnsType<ResetFilterTableDataItem>>()
+                    dataSource = tableData
                     onChange = handleChange
                 }
             }

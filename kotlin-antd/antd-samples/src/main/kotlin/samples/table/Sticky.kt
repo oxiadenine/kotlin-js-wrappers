@@ -1,19 +1,24 @@
 package samples.table
 
-import antd.table.*
-import kotlinext.js.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.table.ColumnType
+import antd.table.ColumnsType
+import antd.table.TableComponent
+import antd.table.table
+import kotlinext.js.jsObject
+import react.RBuilder
+import react.buildElement
+import react.dom.a
+import styled.css
+import styled.styledDiv
 
-private interface FixedColumnsHeaderTableDataItem {
-    var key: String
+private interface StickyDataItem {
+    var key: Number
     var name: String
     var age: Number
     var address: String
 }
 
-private val tableColumns = arrayOf<ColumnType<FixedColumnsHeaderTableDataItem>>(
+private val tableColumns = arrayOf<ColumnType<StickyDataItem>>(
     jsObject {
         title = "Full Name"
         width = 100
@@ -82,35 +87,30 @@ private val tableColumns = arrayOf<ColumnType<FixedColumnsHeaderTableDataItem>>(
         width = 100
         render = { _, _, _ ->
             buildElement {
-                a {
-                    attrs.href = "javascript:;"
-                    +"action"
-                }
+                a { +"action" }
             }
         }
     }
 )
 
-private val tableData = (0..100).map { i ->
-    jsObject<FixedColumnsHeaderTableDataItem> {
-        key = "$i"
-        name = "Edward $i"
+private val tableData = (1..100).map { i ->
+    jsObject<StickyDataItem> {
+        key = i
+        name = "Edrward $i"
         age = 32
         address = "London Park no. $i"
     }
 }.toTypedArray()
 
-fun RBuilder.fixedColumnsHeader() {
+fun RBuilder.sticky() {
     styledDiv {
-        css { +TableStyles.fixedColumnsHeader }
-        table<FixedColumnsHeaderTableDataItem, TableComponent<FixedColumnsHeaderTableDataItem>> {
+        css { +TableStyles.sticky }
+        table<StickyDataItem, TableComponent<StickyDataItem>> {
             attrs {
-                columns = tableColumns.unsafeCast<ColumnsType<FixedColumnsHeaderTableDataItem>>()
+                columns = tableColumns.unsafeCast<ColumnsType<StickyDataItem>>()
                 dataSource = tableData
-                scroll = jsObject {
-                    x = 1500
-                    y = 300
-                }
+                scroll = jsObject { x = 1500 }
+                sticky = true
             }
         }
     }
