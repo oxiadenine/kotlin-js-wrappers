@@ -8,7 +8,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-private val fileList = arrayOf<UploadFile>(
+private val fileList = arrayOf<UploadFile<Any>>(
     jsObject {
         uid = "-1"
         name = "xxx.png"
@@ -29,7 +29,7 @@ fun RBuilder.pictureStyle() {
     styledDiv {
         css { +UploadStyles.pictureStyle }
         div {
-            upload {
+            upload<Any, UploadComponent<Any>> {
                 attrs {
                     action = "//jsonplaceholder.typicode.com/posts/"
                     listType = "picture"
@@ -42,7 +42,7 @@ fun RBuilder.pictureStyle() {
             }
             br {}
             br {}
-            upload {
+            upload<Any, UploadComponent<Any>> {
                 attrs {
                     action = "//jsonplaceholder.typicode.com/posts/"
                     listType = "picture"

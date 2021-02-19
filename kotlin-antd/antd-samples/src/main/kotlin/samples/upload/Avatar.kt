@@ -39,7 +39,7 @@ interface AvatarAppState : RState {
 }
 
 class AvatarApp : RComponent<RProps, AvatarAppState>() {
-    private val handleChange = fun(info: UploadChangeParam<UploadFile>) {
+    private val handleChange = fun(info: UploadChangeParam<UploadFile<Any>>) {
         if (info.file.status == "uploading") {
             setState {
                 loading = true
@@ -50,7 +50,7 @@ class AvatarApp : RComponent<RProps, AvatarAppState>() {
 
         if (info.file.status == "done") {
             // Get this url from response in real world.
-            getBase64(info.file.originFileObj!!) { imgUrl ->
+            getBase64(info.file.originFileObj!!.unsafeCast<File>()) { imgUrl ->
                 setState {
                     imageUrl = imgUrl
                     loading = false
@@ -76,7 +76,7 @@ class AvatarApp : RComponent<RProps, AvatarAppState>() {
             }
         }
 
-        upload {
+        upload<Any, UploadComponent<Any>> {
             attrs {
                 name = "avatar"
                 listType = "picture-card"

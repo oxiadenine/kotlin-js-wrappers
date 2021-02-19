@@ -11,7 +11,7 @@ import styled.*
 fun RBuilder.basic() {
     styledDiv {
         css { +UploadStyles.basic }
-        upload {
+        upload<Any, UploadComponent<Any>> {
             attrs {
                 name = "file"
                 action = "//jsonplaceholder.typicode.com/posts/"

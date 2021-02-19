@@ -14,7 +14,7 @@ import styled.*
 interface PicturesWallState : RState {
     var previewVisible: Boolean
     var previewImage: String
-    var fileList: Array<UploadFile>
+    var fileList: Array<UploadFile<Any>>
 }
 
 class PicturesWall : RComponent<RProps, PicturesWallState>() {
@@ -24,14 +24,14 @@ class PicturesWall : RComponent<RProps, PicturesWallState>() {
         }
     }
 
-    private val handlePreview = fun(file: UploadFile) {
+    private val handlePreview = fun(file: UploadFile<Any>) {
         setState {
             previewImage = file.url ?: file.thumbUrl ?: ""
             previewVisible = true
         }
     }
 
-    private val handleChange = fun(info: UploadChangeParam<UploadFile>) {
+    private val handleChange = fun(info: UploadChangeParam<UploadFile<Any>>) {
         val nefFileList = info.fileList
 
         setState {
@@ -42,7 +42,7 @@ class PicturesWall : RComponent<RProps, PicturesWallState>() {
     override fun PicturesWallState.init() {
         previewVisible = false
         previewImage = ""
-        fileList = arrayOf(jsObject {
+        fileList = arrayOf(jsObject<UploadFile<Any>> {
             uid = "-1"
             name = "xxx.png"
             status = "done"
@@ -63,7 +63,7 @@ class PicturesWall : RComponent<RProps, PicturesWallState>() {
 
         div {
             attrs.classes = setOf("clearfix")
-            upload {
+            upload<Any, UploadComponent<Any>> {
                 attrs {
                     action = "//jsonplaceholder.typicode.com/posts/"
                     listType = "picture-card"

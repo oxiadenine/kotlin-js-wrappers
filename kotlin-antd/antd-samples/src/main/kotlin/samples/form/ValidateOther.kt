@@ -273,7 +273,7 @@ private val demo = functionalComponent<RProps> {
                 getValueFromEvent = normFile
                 extra = "longgggggggggggggggggggggggggggggggggg"
             }
-            upload {
+            upload<Any, UploadComponent<Any>> {
                 attrs {
                     name = "logo"
                     action = "/upload.do"
@@ -295,7 +295,7 @@ private val demo = functionalComponent<RProps> {
                     noStyle = true
                 }
             }
-            dragger {
+            uploadDragger {
                 attrs {
                     name = "files"
                     action = "/upload.do"

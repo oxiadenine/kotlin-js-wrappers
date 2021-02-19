@@ -11,7 +11,7 @@ import styled.*
 fun RBuilder.drag() {
     styledDiv {
         css { +UploadStyles.drag }
-        dragger {
+        uploadDragger {
             attrs {
                 name = "file"
                 multiple = true

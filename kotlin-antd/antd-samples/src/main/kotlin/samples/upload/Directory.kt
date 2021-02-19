@@ -9,7 +9,7 @@ import styled.*
 fun RBuilder.directory() {
     styledDiv {
         css { +UploadStyles.directory }
-        upload {
+        upload<Any, UploadComponent<Any>> {
             attrs {
                 action = "//jsonplaceholder.typicode.com/posts/"
                 directory = true

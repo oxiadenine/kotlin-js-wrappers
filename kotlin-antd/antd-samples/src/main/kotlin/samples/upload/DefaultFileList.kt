@@ -10,7 +10,7 @@ import styled.*
 fun RBuilder.defaultFileList() {
     styledDiv {
         css { +UploadStyles.defaultFileList }
-        upload {
+        upload<Any, UploadComponent<Any>> {
             attrs {
                 action = "//jsonplaceholder.typicode.com/posts/"
                 onChange = { info ->

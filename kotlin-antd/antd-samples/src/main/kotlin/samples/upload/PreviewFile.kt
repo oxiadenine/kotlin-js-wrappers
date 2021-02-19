@@ -9,7 +9,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-private val props = jsObject<UploadProps> {
+private val props = jsObject<UploadProps<Any>> {
     action = "//jsonplaceholder.typicode.com/posts/"
     listType = "picture"
     previewFile = { file ->
@@ -26,7 +26,7 @@ fun RBuilder.previewFile() {
     styledDiv {
         css { +UploadStyles.previewFile }
         div {
-            upload {
+            upload<Any, UploadComponent<Any>> {
                 attrs {
                     action = props.action
                     listType = props.listType

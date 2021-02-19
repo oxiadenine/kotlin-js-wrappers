@@ -8,11 +8,11 @@ import react.*
 import styled.*
 
 interface MyUploadState : RState {
-    var fileList: Array<UploadFile>
+    var fileList: Array<UploadFile<Any>>
 }
 
 class MyUpload : RComponent<RProps, MyUploadState>() {
-    private val handleChange = fun(info: UploadChangeParam<UploadFile>) {
+    private val handleChange = fun(info: UploadChangeParam<UploadFile<Any>>) {
         var newFileList = info.fileList
 
         // 1. Limit the number of uploaded files
@@ -53,7 +53,7 @@ class MyUpload : RComponent<RProps, MyUploadState>() {
     }
 
     override fun RBuilder.render() {
-        upload {
+        upload<Any, UploadComponent<Any>> {
             attrs {
                 action = "//jsonplaceholder.typicode.com/posts/"
                 onChange = handleChange
