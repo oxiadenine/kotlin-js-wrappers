@@ -29,10 +29,10 @@ import samples.empty.*
 import samples.form.*
 import samples.grid.*
 import samples.icon.*
+import samples.image.imageApp
 import samples.input.*
 import samples.inputnumber.*
 import samples.layout.*
-import samples.list.*
 import samples.list.listApp
 import samples.localeprovider.*
 import samples.mentions.*
@@ -125,6 +125,7 @@ class App : RComponent<RProps, RState>() {
             formApp()
             gridApp()
             iconApp()
+            imageApp()
             inputApp()
             inputNumberApp()
             layoutApp()

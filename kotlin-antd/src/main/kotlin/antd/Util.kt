@@ -4,6 +4,7 @@ typealias Breakpoint = String /* "xxl" | "xl" | "lg" | "md" | "sm" | "xs" */
 typealias RenderFunction = () -> Any /* String | ReactElement */
 typealias LiteralUnion<T, U> = Any /* T | U */
 typealias PresetColorType = String /* "pink" | "red" | "yellow" | "orange" | "cyan" | "green" | "blue" | "purple" | "geekblue" | "magenta" | "volcano" | "gold" | "lime" */
+typealias GetContainer = Any /* String | HTMLElement | () -> HTMLElement */
 
 external interface BreakpointMap {
     var xxl: String
