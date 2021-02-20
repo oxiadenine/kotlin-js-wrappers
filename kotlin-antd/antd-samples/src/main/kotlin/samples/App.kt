@@ -12,7 +12,7 @@ import samples.backtop.*
 import samples.badge.*
 import samples.breadcrumb.*
 import samples.button.*
-import samples.calendar.*
+import samples.calendar.calendarApp
 import samples.card.*
 import samples.carousel.*
 import samples.cascader.*
@@ -32,9 +32,9 @@ import samples.icon.*
 import samples.input.*
 import samples.inputnumber.*
 import samples.layout.*
+import samples.list.*
 import samples.list.listApp
 import samples.localeprovider.*
-import samples.mention.*
 import samples.mentions.*
 import samples.menu.*
 import samples.message.*
@@ -48,8 +48,10 @@ import samples.progress.*
 import samples.radio.*
 import samples.rate.*
 import samples.result.*
-import samples.skeleton.skeletonApp
+import samples.select.*
+import samples.skeleton.*
 import samples.slider.*
+import samples.space.spaceApp
 import samples.spin.*
 import samples.statistic.*
 import samples.steps.*
@@ -64,7 +66,7 @@ import samples.transfer.*
 import samples.tree.*
 import samples.treeselect.*
 import samples.typography.*
-import samples.upload.uploadApp
+import samples.upload.*
 import styled.*
 
 object AppStyles : StyleSheet("app", isStatic = true) {
@@ -128,7 +130,6 @@ class App : RComponent<RProps, RState>() {
             layoutApp()
             listApp()
             localeProviderApp()
-            mentionApp()
             mentionsApp()
             menuApp()
             messageApp()
@@ -145,6 +146,7 @@ class App : RComponent<RProps, RState>() {
             selectApp()
             skeletonApp()
             sliderApp()
+            spaceApp()
             spinApp()
             statisticApp()
             stepsApp()

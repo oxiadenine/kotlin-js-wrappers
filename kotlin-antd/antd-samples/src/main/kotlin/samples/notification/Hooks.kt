@@ -9,6 +9,7 @@ import antd.icon.radiusUprightOutlined
 import antd.notification.NotificationInstance
 import antd.notification.NotificationPlacement
 import antd.notification.notification
+import antd.space.space
 import kotlinext.js.js
 import kotlinext.js.jsObject
 import react.RBuilder
@@ -45,7 +46,7 @@ private val demo = functionalComponent<RProps> {
     context.Provider {
         attrs.value = "Ant Design"
         childList += contextHolder
-        div {
+        space {
             button {
                 attrs {
                     type = "primary"
@@ -68,7 +69,7 @@ private val demo = functionalComponent<RProps> {
             }
         }
         divider {}
-        div {
+        space {
             button {
                 attrs {
                     type = "primary"

@@ -10,6 +10,7 @@ import antd.skeleton.skeletonAvatar
 import antd.skeleton.skeletonButton
 import antd.skeleton.skeletonImage
 import antd.skeleton.skeletonInput
+import antd.space.space
 import antd.switch.switch
 import kotlinext.js.js
 import org.w3c.dom.events.MouseEvent
@@ -57,7 +58,7 @@ private class Demo : RComponent<RProps, DemoState>() {
     }
 
     override fun RBuilder.render() {
-        div {
+        space {
             skeletonButton {
                 attrs {
                     active = state.active

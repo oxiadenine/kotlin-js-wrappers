@@ -4,6 +4,7 @@ import antd.button.button
 import antd.modal.ModalComponent
 import antd.modal.ModalFuncProps
 import antd.modal.ModalStaticFunctions
+import antd.space.space
 import kotlinext.js.jsObject
 import react.*
 import react.dom.div
@@ -32,7 +33,7 @@ private val app = functionalComponent<RProps> {
 
     reachableContext.Provider {
         attrs.value = "Light"
-        div {
+        space {
             button {
                 attrs.onClick = {
                     modal.confirm(config)
