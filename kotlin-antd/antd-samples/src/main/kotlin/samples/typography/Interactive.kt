@@ -25,15 +25,15 @@ class InteractiveDemo : RComponent<RProps, InteractiveDemoState>() {
 
     override fun RBuilder.render() {
         div {
-            paragraph {
+            typographyParagraph {
                 attrs.editable = jsObject<EditConfig> { onChange = handleChange }
                 +state.str
             }
-            paragraph {
+            typographyParagraph {
                 attrs.copyable = true
                 +"This is a copyable text."
             }
-            paragraph {
+            typographyParagraph {
                 attrs.copyable = jsObject<CopyConfig> { text = "Hello, Ant Design!" }
                 +"Replace copy text."
             }

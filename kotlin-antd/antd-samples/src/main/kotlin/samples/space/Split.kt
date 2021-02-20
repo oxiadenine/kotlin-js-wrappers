@@ -2,7 +2,7 @@ package samples.space
 
 import antd.divider.divider
 import antd.space.space
-import antd.typography.link
+import antd.typography.typographyLink
 import react.RBuilder
 import react.buildElement
 import styled.css
@@ -17,9 +17,9 @@ private fun RBuilder.spaceSplit() {
                 }
             }
         }
-        link { +"Link" }
-        link { +"Link" }
-        link { +"Link" }
+        typographyLink { +"Link" }
+        typographyLink { +"Link" }
+        typographyLink { +"Link" }
     }
 }
 

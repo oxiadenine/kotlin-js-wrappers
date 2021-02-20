@@ -191,8 +191,8 @@ class BasicDemo : RComponent<RProps, BasicDemoState>() {
                 if (state.status == "error") {
                     div {
                         attrs.classes = setOf("desc")
-                        paragraph {
-                            text {
+                        typographyParagraph {
+                            typographyText {
                                 attrs {
                                     strong = true
                                     style = js { fontSize = 16 }
@@ -200,14 +200,14 @@ class BasicDemo : RComponent<RProps, BasicDemoState>() {
                                 +"The content you submitted has the following error:"
                             }
                         }
-                        paragraph {
+                        typographyParagraph {
                             closeCircleOutlined {
                                 attrs.style = js { color = "red" }
                             }
                             +" Your account has been frozen "
                             a { +"Thaw immediately >" }
                         }
-                        paragraph {
+                        typographyParagraph {
                             closeCircleOutlined {
                                 attrs.style = js { color = "red" }
                             }

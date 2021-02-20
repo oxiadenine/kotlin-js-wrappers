@@ -6,7 +6,7 @@ import antd.table.TableComponent
 import antd.table.table
 import antd.table.tableSummaryCell
 import antd.table.tableSummaryRow
-import antd.typography.text
+import antd.typography.typographyText
 import kotlinext.js.jsObject
 import react.RBuilder
 import react.dom.br
@@ -110,20 +110,20 @@ fun RBuilder.summary() {
                     tableSummaryRow {
                         tableSummaryCell { +"Total" }
                         tableSummaryCell {
-                            text {
+                            typographyText {
                                 attrs.type = "danger"
                                 +"$totalBorrow"
                             }
                         }
                         tableSummaryCell {
-                            text { +"$totalRepayment" }
+                            typographyText { +"$totalRepayment" }
                         }
                     }
                     tableSummaryRow {
                         tableSummaryCell { +"Balance" }
                         tableSummaryCell {
                             attrs.colSpan = 2
-                            text {
+                            typographyText {
                                 attrs.type = "danger"
                                 +"${totalBorrow - totalRepayment}"
                             }

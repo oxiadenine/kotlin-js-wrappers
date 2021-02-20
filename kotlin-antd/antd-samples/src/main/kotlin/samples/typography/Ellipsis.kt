@@ -10,7 +10,7 @@ fun RBuilder.ellipsis() {
     styledDiv {
         css { +TypographyStyles.ellipsis }
         div {
-            paragraph {
+            typographyParagraph {
                 attrs.ellipsis = true
                 +"""
                     Ant Design, a design language for background applications, is refined by Ant UED Team. Ant
@@ -21,7 +21,7 @@ fun RBuilder.ellipsis() {
                     language for background applications, is refined by Ant UED Team.
                 """.trimIndent()
             }
-            paragraph {
+            typographyParagraph {
                 attrs.ellipsis = jsObject<EllipsisConfig> {
                     rows = 3
                     expandable = true

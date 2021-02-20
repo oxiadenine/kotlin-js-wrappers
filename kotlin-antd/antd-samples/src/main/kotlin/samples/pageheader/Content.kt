@@ -27,13 +27,13 @@ private val breadcrumbRoutes = arrayOf<Route>(
 private val content = buildElement {
     div {
         attrs.classes = setOf("content")
-        paragraph {
+        typographyParagraph {
             +"""
                 Ant Design interprets the color system into two levels: a system-level color system and a
                 product-level color system.
             """.trimIndent()
         }
-        paragraph {
+        typographyParagraph {
             +"""
                 Ant Design&#x27;s design team preferred to design with the HSB color model, which makes it
                 easier for designers to have a clear psychological expectation of color when adjusting colors,
