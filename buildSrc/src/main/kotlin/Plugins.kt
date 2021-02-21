@@ -12,22 +12,34 @@ class KotlinJsWrapperPlugin : Plugin<Project> {
             }
 
             dependencies {
-                "implementation"(kotlin("stdlib-js"))
-
                 "implementation"("org.jetbrains.kotlinx:kotlinx-html-js:$kotlinxHtmlJsVersion")
             }
 
             kotlin.apply {
                 js {
                     browser {
-                        binaries.executable()
-
                         webpackTask {
                             cssSupport.enabled = true
                         }
 
                         runTask {
                             cssSupport.enabled = true
+                        }
+                    }
+
+                    binaries.executable()
+
+                    compilations.configureEach {
+                        kotlinOptions {
+                            if (name == "compileKotlinJs") {
+                                outputFile = project.rootProject.buildDir
+                                    .resolve("js/packages/${project.name}/kotlin")
+                                    .resolve("${project.name}.js").absolutePath
+                                sourceMapEmbedSources = "always"
+                                sourceMap = true
+                            } else {
+                                sourceMap = false
+                            }
                         }
                     }
                 }
