@@ -106,11 +106,11 @@ class KotlinJsWrapperPublishPlugin : Plugin<Project> {
                     }
                 }
 
-                setPublications("Publication")
+                setPublications("kotlin-wrapper")
             }
 
             publishing.apply {
-                publications.create<MavenPublication>("Publication") {
+                publications.create<MavenPublication>("kotlin-wrapper") {
                     groupId = "com.github.samgarasx"
                     artifactId = project.name
                     version = pkgVersionName
