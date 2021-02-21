@@ -1,4 +1,4 @@
-version = "4.8.6-pre.4"
+version = "4.8.6-pre.5"
 
 apply(plugin = "kotlin-js-wrapper")
 apply(plugin = "kotlin-js-wrapper-publish")

@@ -14,7 +14,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.github.samgarasx:kotlin-moment:2.27.0-pre.3-kotlin-1.4.0")
+    implementation("com.github.samgarasx:kotlin-moment:2.27.0-pre.4-kotlin-1.4.30")
     implementation(npm("moment", "2.27.0"))
 }
 ```

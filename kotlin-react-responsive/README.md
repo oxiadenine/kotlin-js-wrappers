@@ -14,7 +14,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.github.samgarasx:kotlin-react-responsive:8.1.0-pre.3-kotlin-1.4.0")
+    implementation("com.github.samgarasx:kotlin-react-responsive:8.1.0-pre.4-kotlin-1.4.30")
     implementation(npm("react-responsive", "8.1.0"))
 }
 ```
