@@ -1,29 +1,24 @@
+import java.util.*
+
 plugins {
     `kotlin-dsl`
 }
 
-gradlePlugin {
-    plugins {
-        register("kotlinJsWrapperPlugin") {
-            id = "kotlin-js-wrapper"
-            implementationClass = "KotlinJsWrapperPlugin"
-        }
-        register("kotlinJsWrapperSamplesPlugin") {
-            id = "kotlin-js-wrapper-samples"
-            implementationClass = "KotlinJsWrapperSamplesPlugin"
-        }
-        register("kotlinJsWrapperPublishPlugin") {
-            id = "kotlin-js-wrapper-publish"
-            implementationClass = "KotlinJsWrapperPublishPlugin"
-        }
-    }
+repositories {
+    gradlePluginPortal()
 }
 
-repositories {
-    jcenter()
+kotlinDslPluginOptions {
+    experimentalWarning.set(false)
 }
+
+val props = Properties().apply {
+    file("../gradle.properties").inputStream().use { load(it) }
+}
+
+fun version(target: String) = props.getProperty("${target}.version")
 
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.30")
-    implementation("com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.5")
+    implementation(kotlin("gradle-plugin", version("kotlin")))
+    implementation("com.jfrog.bintray.gradle:gradle-bintray-plugin:${version("bintray-plugin")}")
 }

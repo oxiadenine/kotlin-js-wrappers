@@ -1,13 +1,13 @@
-version = "4.8.6-pre.5"
-
-apply(plugin = "kotlin-js-wrapper")
-apply(plugin = "kotlin-js-wrapper-publish")
+plugins {
+    kotlin("js")
+    id("wrapper-publish")
+}
 
 dependencies {
-    "implementation"(project(":kotlin-moment"))
+    implementation(project(":kotlin-moment"))
 
-    "implementation"("org.jetbrains:kotlin-react:$kotlinReactVersion-kotlin-$kotlinVersion")
-    "implementation"("org.jetbrains:kotlin-react-dom:$kotlinReactDomVersion-kotlin-$kotlinVersion")
+    implementation(wrapperDependency("react"))
+    implementation(wrapperDependency("react-dom"))
 }
 
 tasks.register("generateIconFiles") {
