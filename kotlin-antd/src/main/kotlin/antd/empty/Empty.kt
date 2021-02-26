@@ -3,12 +3,13 @@
 
 package antd.empty
 
+import antd.ReactNode
 import react.*
 
 @JsName("default")
 external object EmptyComponent : Component<EmptyProps, RState> {
-    val PRESENTED_IMAGE_DEFAULT: Any /* String | ReactElement */
-    val PRESENTED_IMAGE_SIMPLE: Any /* String | ReactElement */
+    val PRESENTED_IMAGE_DEFAULT: ReactNode
+    val PRESENTED_IMAGE_SIMPLE: ReactNode
 
     override fun render(): ReactElement?
 }
@@ -18,9 +19,9 @@ external interface EmptyProps : RProps {
     var className: String?
     var style: dynamic
     var imageStyle: dynamic
-    var image: Any? /* String | ReactElement */
-    var description: Any? /* String | ReactElement */
-    var children: Any? /* String | ReactElement */
+    var image: ReactNode?
+    var description: ReactNode?
+    var children: ReactNode?
 }
 
 external interface TransferLocale {

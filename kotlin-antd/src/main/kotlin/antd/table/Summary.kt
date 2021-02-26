@@ -1,5 +1,6 @@
 package antd.table
 
+import antd.ReactNode
 import react.Component
 import react.RProps
 import react.RState
@@ -20,7 +21,7 @@ external object SummaryRowComponent : Component<SummaryRowProps, RState> {
 
 external interface SummaryCellProps : RProps {
     var className: String?
-    var children: Any? /* String | ReactElement */
+    var children: ReactNode?
     var index: Number
     var colSpan: Number?
     var rowSpan: Number?
@@ -28,7 +29,7 @@ external interface SummaryCellProps : RProps {
 }
 
 external interface SummaryRowProps : RProps {
-    var children: Any? /* String | ReactElement */
+    var children: ReactNode?
     var className: String?
     var style: dynamic
 }

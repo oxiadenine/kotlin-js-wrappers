@@ -3,6 +3,7 @@
 
 package antd.typography
 
+import antd.ReactNode
 import react.*
 
 @JsName("default")
@@ -20,5 +21,5 @@ external interface TypographyProps : RProps {
     var prefixCls: String?
     var className: String?
     var style: dynamic
-    var children: Any? /* String | ReactElement */
+    var children: ReactNode?
 }

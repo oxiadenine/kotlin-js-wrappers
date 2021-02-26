@@ -3,6 +3,7 @@
 
 package antd.localeprovider
 
+import antd.ReactNode
 import antd.datepicker.PickerLocale
 import antd.form.ValidateMessages
 import antd.empty.TransferLocale as TransferLocaleForEmpty
@@ -22,7 +23,7 @@ external object LocaleProviderComponent : Component<LocaleProviderProps, RState>
 
 external interface LocaleProviderProps : RProps {
     var locale: Locale
-    var children: Any? /* String | ReactElement */
+    var children: ReactNode?
 }
 
 external interface Locale {

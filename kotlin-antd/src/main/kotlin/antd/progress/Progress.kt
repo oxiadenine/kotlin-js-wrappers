@@ -3,6 +3,7 @@
 
 package antd.progress
 
+import antd.ReactNode
 import react.*
 
 @JsName("default")
@@ -15,7 +16,7 @@ external interface ProgressProps : RProps {
     var className: String?
     var type: ProgressType?
     var percent: Number?
-    var format: ((percent: Number?, successPercent: Number?) -> Any /* String | ReactElement */)?
+    var format: ((percent: Number?, successPercent: Number?) -> ReactNode)?
     var status: ProgressStatus?
     var showInfo: Boolean?
     var strokeWidth: Number?

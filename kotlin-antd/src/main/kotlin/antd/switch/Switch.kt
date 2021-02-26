@@ -3,6 +3,9 @@
 
 package antd.switch
 
+import antd.ReactNode
+import antd.RefAttributes
+import org.w3c.dom.HTMLElement
 import react.*
 
 @JsName("default")
@@ -10,7 +13,7 @@ external object SwitchComponent : Component<SwitchProps, RState> {
     override fun render(): ReactElement?
 }
 
-external interface SwitchProps : RProps {
+external interface SwitchProps : RefAttributes<HTMLElement>, RProps {
     var prefixCls: String?
     var size: SwitchSize?
     var className: String?
@@ -18,8 +21,8 @@ external interface SwitchProps : RProps {
     var defaultChecked: Boolean?
     var onChange: SwitchChangeEventHandler?
     var onClick: SwitchClickEventHandler?
-    var checkedChildren: Any? /* String | ReactElement */
-    var unCheckedChildren: Any? /* String | ReactElement */
+    var checkedChildren: ReactNode?
+    var unCheckedChildren: ReactNode?
     var disabled: Boolean?
     var loading: Boolean?
     var autoFocus: Boolean?

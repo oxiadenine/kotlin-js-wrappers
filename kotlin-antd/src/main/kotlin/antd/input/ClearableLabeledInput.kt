@@ -1,6 +1,7 @@
 package antd.input
 
 import antd.MouseEvent
+import antd.ReactNode
 import antd.configprovider.DirectionType
 import antd.configprovider.SizeType
 import org.w3c.dom.HTMLElement
@@ -20,10 +21,10 @@ external object ClearableLabeledInputComponent : Component<ClearableInputProps, 
 
 external interface ClearableInputProps : BasicProps, RProps {
     var size: SizeType?
-    var suffix: Any? /* String | ReactElement */
-    var prefix: Any? /* String | ReactElement */
-    var addonBefore: Any? /* String | ReactElement */
-    var addonAfter: Any? /* String | ReactElement */
+    var suffix: ReactNode?
+    var prefix: ReactNode?
+    var addonBefore: ReactNode?
+    var addonAfter: ReactNode?
     var triggerFocus: (() -> Unit)?
 }
 

@@ -1,5 +1,6 @@
 package antd.form
 
+import kotlinext.js.Record
 import react.*
 
 external object FormItemComponent : Component<FormItemProps<Any>, RState> {
@@ -18,19 +19,13 @@ external interface FormItemProps<Values> : FormItemLabelProps, FormItemInputProp
     override var required: Boolean?
     var hidden: Boolean?
     override var initialValue: Any?
-    override var messageVariables: Map<String, String>?
+    override var messageVariables: Record<String, String>?
     override var tooltip: LabelTooltipType?
-    /** Auto passed by List render props. User should not use this. */
     var fieldKey: Any?
 }
 
 external interface RcFieldProps<Values> {
-    var children: Any /* ReactElement | (control: ChildProps, meta: Meta, form: FormInstance<Values>) -> ReactElement) */
-    /**
-     * Set up `dependencies` field.
-     * When dependencies field update and current field is touched,
-     * will trigger validate rules and render.
-     */
+    var children: Any /* ReactElement | (control: ChildProps, meta: Meta, form: FormInstance<Values>) -> ReactNode) */
     var dependencies: Array<NamePath>
     var getValueFromEvent: ((args: EventArgs) -> StoreValue)?
     var name: InternalNamePath?
@@ -42,16 +37,12 @@ external interface RcFieldProps<Values> {
     var validateFirst: Any? /* Boolean | "parallel" */
     var valuePropName: String?
     var getValueProps: ((value: StoreValue) -> dynamic)?
-    var messageVariables: Map<String, String>?
+    var messageVariables: Record<String, String>?
     var initialValue: Any?
     var onReset: (() -> Unit)?
     var preserve: Boolean?
-    /** @private Passed by Form.List props. Do not use since it will break by path check. */
     var isListField: Boolean?
-    /** @private Passed by Form.List props. Do not use since it will break by path check. */
     var isList: Boolean?
-    /** @private Pass context as prop instead of context api
-     *  since class component can not get context in constructor */
     var fieldContext: InternalFormInstance?
 }
 

@@ -67,7 +67,7 @@ val formSizeDemo = functionalComponent<RProps> {
                 select<String, SelectComponent<String>> {
                     attrs {
                         defaultValue = "demo"
-                        options = arrayOf<OptionsType>(jsObject { value = "demo" })
+                        options = arrayOf<SelectOptionsType>(jsObject { value = "demo" })
                     }
                 }
             }

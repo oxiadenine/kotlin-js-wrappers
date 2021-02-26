@@ -3,6 +3,8 @@
 
 package antd.timepicker
 
+import antd.ReactNode
+import antd.RefAttributes
 import antd.datepicker.PickerTimeProps
 import antd.datepicker.RangePickerTimeProps
 import moment.*
@@ -19,12 +21,12 @@ external object RangePickerComponent : Component<RangeTimePickerProps, RState> {
     override fun render(): ReactElement?
 }
 
-external interface TimePickerProps : PickerTimeProps<Moment>, RProps {
-    var addon: () -> Any /* String | ReactElement */
+external interface TimePickerProps : PickerTimeProps<Moment>, RefAttributes<Any>, RProps {
+    var addon: () -> ReactNode
     var popupClassName: String?
 }
 
-external interface RangeTimePickerProps : RangePickerTimeProps<Moment>, RProps
+external interface RangeTimePickerProps : RangePickerTimeProps<Moment>, RefAttributes<Any>, RProps
 
 external interface TimePickerLocale {
     var placeholder: String?

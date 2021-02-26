@@ -4,7 +4,7 @@ import antd.*
 import org.w3c.dom.*
 import react.*
 
-external class TransferListComponent<RecordType : KeyWiseTransferItem> : Component<TransferListProps<RecordType>, TransferListState> {
+external class TransferListComponent<RecordType : KeyWiseTransferItem> : PureComponent<TransferListProps<RecordType>, TransferListState> {
     override fun render(): ReactElement?
 }
 
@@ -26,7 +26,7 @@ external interface TransferListProps<RecordType> : TransferLocale, RProps {
     override var itemUnit: String
     override var itemsUnit: String
     var renderList: RenderListFunction<RecordType>?
-    var footer: ((props: TransferListProps<RecordType>) -> Any /* String | ReactElement */)?
+    var footer: ((props: TransferListProps<RecordType>) -> ReactNode)?
     var onScroll: ((e: UIEvent<HTMLUListElement>) -> Unit)?
     var disabled: Boolean?
     var direction: TransferDirection
@@ -42,6 +42,6 @@ external interface TransferListState : RState {
 
 external interface RenderedItem<RecordType> {
     var renderedText: String
-    var renvderedEl: Any /* String | ReactElement */
+    var renvderedEl: ReactNode
     var item: RecordType
 }

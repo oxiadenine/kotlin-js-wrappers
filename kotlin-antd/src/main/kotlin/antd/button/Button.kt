@@ -5,6 +5,7 @@ package antd.button
 
 import antd.*
 import antd.configprovider.SizeType
+import org.w3c.dom.HTMLElement
 import react.*
 
 @JsName("default")
@@ -14,7 +15,7 @@ external object ButtonComponent : Component<ButtonProps, ButtonState> {
     override fun render(): ReactElement?
 }
 
-external interface ButtonProps : AnchorButtonProps, NativeButtonProps, RProps
+external interface ButtonProps : AnchorButtonProps, NativeButtonProps, RefAttributes<HTMLElement>, RProps
 
 external interface ButtonState : RState {
     var loading: Any? /* Boolean | ButtonLoading */
@@ -34,7 +35,7 @@ external interface NativeButtonProps : BaseButtonProps, ButtonHTMLAttributes<Any
 
 external interface BaseButtonProps {
     var type: ButtonType?
-    var icon: Any? /* String | ReactElement */
+    var icon: ReactNode?
     var shape: ButtonShape?
     var size: SizeType?
     var loading: Any? /* Boolean | ButtonLoadingProps */
@@ -44,7 +45,7 @@ external interface BaseButtonProps {
     var ghost: Boolean?
     var danger: Boolean?
     var block: Boolean?
-    var children: Any? /* String | ReactElement */
+    var children: ReactNode?
 }
 
 external interface ButtonLoadingProps {

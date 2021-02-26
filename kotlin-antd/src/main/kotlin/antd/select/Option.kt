@@ -1,5 +1,7 @@
 package antd.select
 
+import antd.Key
+import antd.ReactNode
 import react.*
 
 external object OptionComponent : Component<OptionProps, RState> {
@@ -7,7 +9,7 @@ external object OptionComponent : Component<OptionProps, RState> {
 }
 
 external interface OptionProps : OptionCoreData, RProps {
-    override var children: Any? /* String | ReactElement */
+    override var children: ReactNode?
 }
 
 external interface OptionCoreData {
@@ -17,6 +19,6 @@ external interface OptionCoreData {
     var title: String?
     var className: String?
     var style: dynamic
-    var label: Any? /* String | ReactElement */
-    var children: Any? /* String | ReactElement */
+    var label: ReactNode?
+    var children: ReactNode?
 }

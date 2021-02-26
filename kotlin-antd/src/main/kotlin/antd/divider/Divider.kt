@@ -3,6 +3,7 @@
 
 package antd.divider
 
+import antd.ReactNode
 import react.*
 
 @JsName("default")
@@ -15,7 +16,7 @@ external interface DividerProps : RProps {
     var type: String? /* "horizontal" | "vertical" */
     var orientation: String? /* "left" | "right" | "center" */
     var className: String?
-    var children: Any? /* String | ReactElement */
+    var children: ReactNode?
     var dashed: Boolean?
     var style: dynamic
     var plain: Boolean?

@@ -1,5 +1,6 @@
 package antd.descriptions
 
+import antd.ReactNode
 import react.*
 
 external object DescriptionsItemComponent : Component<DescriptionsItemProps, RState> {
@@ -9,7 +10,7 @@ external object DescriptionsItemComponent : Component<DescriptionsItemProps, RSt
 external interface DescriptionsItemProps : RProps {
     var prefixCls: String?
     var className: String?
-    var label: Any? /* String | ReactElement */
-    var children: Any? /* String | ReactElement */
+    var label: ReactNode?
+    var children: ReactNode?
     var span: Number?
 }

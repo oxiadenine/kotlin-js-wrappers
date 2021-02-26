@@ -3,6 +3,8 @@
 
 package antd.message
 
+import antd.Key
+import antd.ReactNode
 import org.w3c.dom.*
 import kotlin.js.Promise
 
@@ -33,12 +35,12 @@ external interface MessageType {
 }
 
 external interface ArgsProps {
-    var content: Any /* String | ReactElement */
+    var content: ReactNode
     var duration: Number
     var type: NoticeType
     var prefixCls: String?
     var onClose: (() -> Unit)?
-    var icon: Any? /* String | ReactElement */
+    var icon: ReactNode?
     var key: Any? /* String | Number */
     var style: dynamic
     var className: String?

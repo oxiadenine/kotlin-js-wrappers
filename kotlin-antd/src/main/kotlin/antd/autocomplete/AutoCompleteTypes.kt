@@ -1,3 +1,3 @@
 package antd.autocomplete
 
-typealias DataSourceItemType = Any /* String | DataSourceItemObject | ReactElement */
+typealias DataSourceItemType = Any /* DataSourceItemObject | ReactNode */

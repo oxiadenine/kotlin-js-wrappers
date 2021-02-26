@@ -1,5 +1,6 @@
 package samples.table
 
+import antd.Key
 import antd.table.*
 import kotlinext.js.*
 import react.*

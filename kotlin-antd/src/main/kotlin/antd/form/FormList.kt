@@ -1,5 +1,6 @@
 package antd.form
 
+import antd.ReactNode
 import react.*
 
 external object FormListComponent : Component<FormListProps, RState> {
@@ -10,7 +11,7 @@ external interface FormListProps : RProps {
     var prefixCls: String?
     var name: Any /* String | Number | Array<Any /* String | Number */> */
     var rules: Array<ValidatorRule>?
-    var children: (fields: Array<FormListFieldData>, operation: FormListOperation, meta: FormListMeta) -> ReactElement
+    var children: (fields: Array<FormListFieldData>, operation: FormListOperation, meta: FormListMeta) -> ReactNode
 }
 
 external interface FormListFieldData {
@@ -26,5 +27,5 @@ external interface FormListOperation {
 }
 
 external interface FormListMeta {
-    var errors: Array<ReactElement>
+    var errors: Array<ReactNode>
 }

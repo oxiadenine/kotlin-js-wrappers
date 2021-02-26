@@ -5,6 +5,8 @@ package antd.tooltip
 
 import antd.LiteralUnion
 import antd.PresetColorType
+import antd.ReactNode
+import antd.RefAttributes
 import org.w3c.dom.*
 import react.*
 
@@ -13,16 +15,16 @@ external object TooltipComponent : Component<TooltipProps, RState> {
     override fun render(): ReactElement?
 }
 
-external interface TooltipProps : TooltipPropsWithTitle, TooltipPropsWithOverlay, RProps
+external interface TooltipProps : TooltipPropsWithTitle, TooltipPropsWithOverlay, RefAttributes<dynamic>, RProps
 
 external interface TooltipPropsWithOverlay : AbstractTooltipProps {
-    var title: Any? /* String | ReactElement | RenderFunction */
-    override var overlay: dynamic /* String | ReactElement | RenderFunction */
+    var title: Any? /* ReactNode | RenderFunction */
+    override var overlay: dynamic /* ReactNode | RenderFunction */
 }
 
 external interface TooltipPropsWithTitle : AbstractTooltipProps {
-    var title: Any? /* String | ReactElement | RenderFunction */
-    override var overlay: dynamic /* String | ReactElement | RenderFunction */
+    var title: Any? /* ReactNode | RenderFunction */
+    override var overlay: dynamic /* ReactNode | RenderFunction */
 }
 
 external interface AbstractTooltipProps : RcTooltipProps {
@@ -35,7 +37,7 @@ external interface AbstractTooltipProps : RcTooltipProps {
     var arrowPointAtCenter: Boolean?
     var autoAdjustOverflow: Any? /* Boolean | AdjustOverflow */
     override var getPopupContainer: ((triggerNode: HTMLElement) -> HTMLElement)?
-    override var children: dynamic /* String | ReactElement */
+    override var children: ReactNode
 }
 
 external interface RcTooltipProps : TriggerProps {
@@ -47,7 +49,7 @@ external interface RcTooltipProps : TriggerProps {
     var animation: AnimationType?
     var onVisibleChange: ((visible: Boolean) -> Unit)?
     var afterVisibleChange: (() -> Unit)?
-    var overlay: Any /* () => Any /* String | ReactElement */ | String | ReactElement */
+    var overlay: Any /* () -> ReactNode | ReactNode */
     var overlayStyle: dynamic
     var overlayClassName: String?
     override var prefixCls: String?
@@ -56,9 +58,9 @@ external interface RcTooltipProps : TriggerProps {
     var getTooltipContainer: ((node: HTMLElement) -> HTMLElement)?
     var destroyTooltipOnHide: Any? /* Boolean | DestroyTooltipOnHide */
     var align: AlignType?
-    var arrowContent: Any? /* String | ReactElement */
+    var arrowContent: ReactNode?
     var id: String?
-    override var children: dynamic /* String | ReactElement */
+    override var children: dynamic /* ReactNode */
     override var popupVisible: Boolean?
     var overlayInnerStyle: dynamic
 }

@@ -12,7 +12,7 @@ external object ColComponent : Component<ColProps, RState> {
     override fun render(): ReactElement?
 }
 
-external interface ColProps : HTMLAttributes<HTMLDivElement>, RProps {
+external interface ColProps : HTMLAttributes<HTMLDivElement>, RefAttributes<HTMLDivElement>, RProps {
     var flex: FlexType?
     var span: ColSpanType?
     var order: ColSpanType?

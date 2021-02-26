@@ -1,6 +1,6 @@
 package antd.form
 
-import react.*
+import antd.ReactNode
 import kotlin.js.*
 
 typealias FormLayout = String /* "horizontal" | "inline" | "vertical" */
@@ -9,9 +9,9 @@ typealias FormLabelAlign = String /* "left" | "right" */
 typealias FormItemValidateStatus = String /* "success" | "warning" | "error" | "validating" | "" */
 typealias RequiredMark = Any /* Boolean | "optional" */
 
-typealias RenderChildren<Values> = (form: dynamic) -> ReactElement
-typealias ChildrenType<Values> = Any /* RenderChildren<Values> | ReactElement */
-typealias LabelTooltipType = Any /* WrapperTooltipProps | ReactElement */
+typealias RenderChildren<Values> = (form: FormInstance<Values>) -> ReactNode
+typealias ChildrenType<Values> = Any /* RenderChildren<Values> | ReactNode */
+typealias LabelTooltipType = Any /* WrapperTooltipProps | ReactNode */
 typealias ValidateStatus = String /* "success" | "warning" | "error" | "validating" | "" */
 
 typealias InternalNamePath = Any /* String | Array<String> | Number */

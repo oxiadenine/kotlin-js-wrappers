@@ -13,7 +13,7 @@ external object InputNumberComponent : Component<InputNumberProps, RState> {
     override fun render(): ReactElement?
 }
 
-external interface InputNumberProps : InputHTMLAttributes<HTMLInputElement>, RProps {
+external interface InputNumberProps : InputHTMLAttributes<HTMLInputElement>, RefAttributes<dynamic>, RProps {
     var prefixCls: String?
     override var min: Any?
     override var max: Any?

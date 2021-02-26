@@ -30,18 +30,18 @@ external interface TransferProps<RecordType> : RProps {
     var onChange: ((targetKeys: Array<String>, direction: TransferDirection, moveKeys: Array<String>) -> Unit)?
     var onSelectChange: ((sourceSelectedKeys: Array<String>, targetSelectedKeys: Array<String>) -> Unit)?
     var style: dynamic
-    var listStyle: Any /* (style: ListStyle) -> dynamic | dynamic */
+    var listStyle: Any /* (style: ListStyle) -> dynamic | Object */
     var operationStyle: dynamic
     var titles: Array<String>?
     var operations: Array<String>?
     var showSearch: Boolean?
     var filterOption: ((inputValue: String, item: RecordType) -> Boolean)?
     var locale: TransferLocale?
-    var footer: ((props: TransferListProps<RecordType>) -> Any /* String | ReactElement */)?
+    var footer: ((props: TransferListProps<RecordType>) -> ReactNode)?
     var rowKey: ((record: RecordType) -> String)?
     var onSearch: ((direction: TransferDirection, value: String) -> Unit)?
     var onScroll: ((direction: TransferDirection, e: SyntheticEvent<HTMLUListElement, Event>) -> Unit)?
-    var children: ((props: TransferListBodyProps<RecordType>) -> Any /* String | ReactElement */)?
+    var children: ((props: TransferListBodyProps<RecordType>) -> ReactNode)?
     var showSelectAll: Boolean?
     var selectAllLabels: Array<SelectAllLabel>?
     var oneWay: Boolean?
@@ -61,7 +61,7 @@ external interface TransferItem {
 }
 
 external interface RenderResultObject {
-    var label: Any /* String | ReactElement */
+    var label: ReactNode
     var value: String
 }
 
@@ -75,7 +75,7 @@ external interface ListStyle {
 
 external interface TransferLocale {
     var titles: Array<String>
-    var notFoundContent: Any /* String | ReactElement */
+    var notFoundContent: ReactNode
     var searchPlaceholder: String
     var itemUnit: String
     var itemsUnit: String

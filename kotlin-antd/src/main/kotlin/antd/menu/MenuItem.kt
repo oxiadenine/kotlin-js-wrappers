@@ -1,6 +1,7 @@
 package antd.menu
 
 import antd.HTMLAttributes
+import antd.ReactNode
 import org.w3c.dom.HTMLLIElement
 import react.*
 
@@ -11,7 +12,7 @@ external object MenuItemComponent : Component<MenuItemProps, RState> {
 external interface MenuItemProps : RcMenuItemProps, RProps {
     var icon: Any? /* ReactElement | String */
     var danger: Boolean?
-    override var title: dynamic /* ReactElement | String */
+    override var title: dynamic /* ReactNode */
 }
 
 external interface RcMenuItemProps : HTMLAttributes<HTMLLIElement> {
@@ -21,7 +22,7 @@ external interface RcMenuItemProps : HTMLAttributes<HTMLLIElement> {
     override var className: String?
     override var style: dynamic
     var active: Boolean?
-    override var children: Any? /* String | ReactElement */
+    override var children: ReactNode?
     var selectedKeys: Array<String>?
     var disabled: Boolean?
     override var title: String?

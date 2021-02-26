@@ -3,6 +3,7 @@
 
 package antd.cascader
 
+import antd.ReactNode
 import antd.configprovider.SizeType
 import org.w3c.dom.*
 import react.*
@@ -17,7 +18,7 @@ external interface CascaderProps : RProps {
     var defaultValue: CascaderValueType?
     var value: CascaderValueType?
     var onChange: ((value: CascaderValueType, selectedOptions: Array<CascaderOptionType>?) -> Unit)?
-    var displayRender: ((label: Array<String>, selectedOptions: Array<CascaderOptionType>?) -> Any /* String | ReactElement */)?
+    var displayRender: ((label: Array<String>, selectedOptions: Array<CascaderOptionType>?) -> ReactNode)?
     var style: dynamic
     var className: String?
     var popupClassName: String?
@@ -31,10 +32,10 @@ external interface CascaderProps : RProps {
     var allowClear: Boolean?
     var autoFocus: Boolean?
     var showSearch: Any? /* Boolean | ShowSearchType */
-    var notFoundContent: Any? /* String | ReactElement */
+    var notFoundContent: ReactNode?
     var loadData: ((selectedOptions: Array<CascaderOptionType>?) -> Unit)?
     var expandTrigger: CascaderExpandTrigger?
-    var expandIcon: Any? /* String | ReactElement */
+    var expandIcon: ReactNode?
     var changeOnSelect: Boolean?
     var onPopupVisibleChange: ((popupVisible: Boolean) -> Unit)?
     var prefixCls: String?
@@ -42,8 +43,8 @@ external interface CascaderProps : RProps {
     var getPopupContainer: ((triggerNode: HTMLElement?) -> HTMLElement)?
     var popupVisible: Boolean?
     var fieldNames: FieldNamesType?
-    var suffixIcon: Any? /* String | ReactElement */
-    var dropdownRender: ((menus: Any /* String | ReactElement */) -> Any? /* String | ReactElement */)?
+    var suffixIcon: ReactNode?
+    var dropdownRender: ((menus: ReactNode) -> ReactNode)?
 }
 
 external interface CascaderState : RState {
@@ -61,7 +62,7 @@ external interface CascaderLocale {
 
 external interface CascaderOptionType {
     var value: Any? /* String | Number */
-    var label: Any? /* String | ReactElement */
+    var label: ReactNode?
     var disabled: Boolean?
     var isLeaf: Boolean?
     var loading: Boolean?

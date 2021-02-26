@@ -1,5 +1,6 @@
 package antd.localeprovider
 
+import antd.ReactNode
 import react.*
 
 external object LocaleReceiverComponent : Component<LocaleReceiverProps, RState> {
@@ -9,7 +10,7 @@ external object LocaleReceiverComponent : Component<LocaleReceiverProps, RState>
 external interface LocaleReceiverProps : RProps {
     var componentName: String?
     var defaultLocale: Any? /* Object | Function<Any> */
-    var children: (locale: dynamic, localeCode: String?, fullLocale: dynamic) -> Any /* String | ReactElement */
+    var children: (locale: dynamic, localeCode: String?, fullLocale: dynamic) -> ReactNode
 }
 
 external interface LocaleInterface

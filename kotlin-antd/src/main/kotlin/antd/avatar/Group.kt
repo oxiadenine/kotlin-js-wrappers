@@ -1,5 +1,6 @@
 package antd.avatar
 
+import antd.ReactNode
 import react.Component
 import react.RProps
 import react.RState
@@ -11,7 +12,7 @@ external object GroupComponent : Component<GroupProps, RState> {
 
 external interface GroupProps : RProps {
     var className: String?
-    var children: Any? /* String | ReactElement */
+    var children: ReactNode?
     var style: dynamic
     var prefixCls: String?
     var maxCount: Number?

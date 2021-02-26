@@ -4,6 +4,7 @@
 package antd.form
 
 import antd.FormHTMLAttributes
+import antd.ReactNode
 import antd.grid.*
 import org.w3c.dom.HTMLFormElement
 import react.*
@@ -37,14 +38,14 @@ external interface FormProps<Values> : FormBaseProps<Values>, RcFormProps<Values
 }
 
 external interface FormBaseProps<Values> {
-    var children: Any? /* RenderProps | ReactElement */
-    var ref: Any? /* (instance: FormInstance<Values>?) -> Unit | RMutableRef<FormInstance<Values>> */
+    var children: Any? /* RenderProps | ReactNode */
+    var ref: Any? /* (instance: FormInstance<Values>?) -> Unit | RefObject<FormInstance<Values>> */
 }
 
 external interface RcFormProps<Values> : FormHTMLAttributes<HTMLFormElement> {
     var initialValues: Store?
     var form: FormInstance<Values>?
-    override var children: Any? /* RenderProps | ReactElement */
+    override var children: Any? /* RenderProps | ReactNode */
     var component: Any? /* Boolean | String | FunctionalComponent<RProps> | RClass<RProps> */
     var fields: Array<FieldData>?
     override var name: String?
@@ -77,17 +78,10 @@ external interface FormInstance<Values> {
 }
 
 external interface InternalFormInstance {
-    /**
-     * Passed by field context props
-     */
     var prefixName: InternalNamePath?
     var validateTrigger: Any? /* String | Array<String> | Boolean */
-    /**
-     * Form component should register some content into store.
-     * We pass the `HOOK_MARK` as key to avoid user call the function.
-     */
     var getInternalHooks: (secret: String) -> InternalHooks?
-};
+}
 
 external interface Store
 
@@ -95,19 +89,18 @@ external interface BaseRule {
     var enum: Array<StoreValue>
     var len: Number?
     var max: Number?
-    var message: Any? /* String | ReactElement */
+    var message: ReactNode?
     var min: Number?
     var pattern: RegExp?
     var required: Boolean?
     var transform: ((value: StoreValue) -> StoreValue)?
     var type: RuleType?
     var whitespace: Boolean?
-    /** Customize rule level `validateTrigger`. Must be subset of Field `validateTrigger` */
     var validateTrigger: Any? /* String | Array<String> */
 }
 
 external interface ValidatorRule {
-    var message: Any? /* String | ReactElement */
+    var message: ReactNode?
     var validator: Validator
 }
 
@@ -134,7 +127,7 @@ external interface FieldData {
 }
 
 external interface FieldError {
-    var name: InternalNamePath;
+    var name: InternalNamePath
     var errors: Array<String>
 }
 
@@ -158,7 +151,7 @@ external interface FieldEntity {
     var isList: () -> Boolean
     var validateRules: (options: ValidateOptions?) -> Promise<Array<String>>
     var getMeta: () -> Meta
-    var getNamePath: () -> InternalNamePath;
+    var getNamePath: () -> InternalNamePath
     var getErrors: () -> Array<String>
     var props: FieldEntityProps
 }
@@ -184,10 +177,6 @@ external interface ValuedNotifyInfo {
 external interface ValidateOptions {
     var triggerName: String?
     var validateMessages: ValidateMessages?
-    /**
-     * Recursive validate. It will validate all the name path that contains the provided one.
-     * e.g. ['a'] will validate ['a'] , ['a', 'b'] and ['a', 1].
-     */
     var recursive: Boolean?
 }
 

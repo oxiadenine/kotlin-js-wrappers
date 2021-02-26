@@ -11,7 +11,7 @@ external object GroupComponent : Component<GroupProps, RState> {
 external interface GroupProps : RProps {
     var className: String?
     var size: String? /* "large" | "small" | "default" */
-    var children: Any? /* String | ReactElement */
+    var children: ReactNode?
     var style: dynamic
     var onMouseEnter: MouseEventHandler<HTMLSpanElement>?
     var onMouseLeave: MouseEventHandler<HTMLSpanElement>?

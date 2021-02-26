@@ -1,5 +1,6 @@
 package antd.progress
 
+import antd.ReactNode
 import react.*
 
 external object CircleComponent : Component<CircleProps, RState> {
@@ -8,6 +9,6 @@ external object CircleComponent : Component<CircleProps, RState> {
 
 external interface CircleProps : ProgressProps {
     override var prefixCls: String?
-    var children: Any /* String | ReactElement */
+    var children: ReactNode
     var progressStatus: String
 }

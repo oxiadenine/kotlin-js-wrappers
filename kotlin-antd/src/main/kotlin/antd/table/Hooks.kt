@@ -1,5 +1,7 @@
 package antd.table
 
+import antd.Key
+
 @JsModule("antd/lib/table/hooks/useSorter")
 @JsNonModule
 @JsName("getSortData")

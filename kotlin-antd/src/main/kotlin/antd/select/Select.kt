@@ -9,7 +9,7 @@ import org.w3c.dom.*
 import react.*
 
 @JsName("default")
-external class SelectComponent<T : SelectValue> : Component<SelectProps<T>, RState> {
+external class SelectComponent<VT : SelectValue> : Component<SelectProps<VT>, RState> {
     companion object {
         val Option: OptionComponent
         val OptGroup: OptionGroupComponent
@@ -18,24 +18,30 @@ external class SelectComponent<T : SelectValue> : Component<SelectProps<T>, RSta
     override fun render(): ReactElement?
 }
 
-external interface SelectProps<ValueType : SelectValue> : InternalSelectProps<ValueType>, RProps {
+external interface SelectProps<VT : SelectValue> : InternalSelectProps<VT>, RProps {
     override var mode: String? /* "multiple" | "tags" */
+    var ref: Any? /* (instance: RefSelectProps?) -> Unit | RefObject<RefSelectProps> */
 }
 
-external interface InternalSelectProps<ValueType> : RcSelectProps<Any, ValueType> {
-    var suffixIcon: Any? /* String | ReactElement */
+external interface RefSelectProps {
+    var focus: () -> Unit
+    var blur: () -> Unit
+}
+
+external interface InternalSelectProps<VT> : RcSelectProps<Any, VT> {
+    var suffixIcon: ReactNode?
     var size: SizeType
     override var mode: String? /* "multiple" | "tags" */
     var bordered: Boolean?
 }
 
-external interface RcSelectProps<OptionsType, ValueType> {
+external interface RcSelectProps<OptionsType, ValueType> : AriaAttributes {
     var prefixCls: String?
     var id: String?
     var className: String?
     var style: dynamic
     var options: OptionsType?
-    var children: Any? /* String | ReactElement */
+    var children: ReactNode?
     var mode: Mode?
     var value: ValueType?
     var defaultValue: ValueType?
@@ -49,10 +55,10 @@ external interface RcSelectProps<OptionsType, ValueType> {
     var onSearch: ((value: String) -> Unit)?
     var onClear: OnClear?
     var allowClear: Boolean?
-    var clearIcon: Any? /* String | ReactElement */
+    var clearIcon: ReactNode?
     var showArrow: Boolean?
     var inputIcon: RenderNode?
-    var removeIcon: Any? /* String | ReactElement */
+    var removeIcon: ReactNode?
     var menuItemSelectedIcon: RenderNode?
     var open: Boolean?
     var defaultOpen: Boolean?
@@ -72,14 +78,14 @@ external interface RcSelectProps<OptionsType, ValueType> {
     var loading: Boolean?
     var autoFocus: Boolean?
     var defaultActiveFirstOption: Boolean?
-    var notFoundContent: Any? /* String | ReactElement */
-    var placeholder: Any? /* String | ReactElement */
+    var notFoundContent: ReactNode?
+    var placeholder: ReactNode?
     var backfill: Boolean?
-    var getInputElement: (() -> Any /* String | ReactElement */)?
+    var getInputElement: (() -> ReactNode)?
     var optionLabelProp: String?
     var maxTagTextLength: Number?
     var maxTagCount: Number?
-    var maxTagPlaceholder: Any? /* String | ReactElement | (omittedValues: Array<LabelValueType>) -> ReactElement */
+    var maxTagPlaceholder: Any? /*ReactNode | (omittedValues: Array<LabelValueType>) -> ReactNode */
     var tokenSeparators: Array<String>?
     var tagRender: ((props: CustomTagProps) -> ReactElement)?
     var showAction: Array<String>?
@@ -123,14 +129,18 @@ external interface CustomTagProps {
 external interface LabelValueType {
     var key: Key?
     var value: RawValueType?
-    var label: Any? /* String | ReactElement */
+    var label: ReactNode?
 }
 
 external interface LabeledValue {
     var key: String
-    var label: Any /* String | ReactElement */
+    var label: ReactNode
 }
 
 external interface SelectLocale {
     var notFoundContent: String?
+}
+
+external interface OnActiveValueInfo {
+    var source: String? /* "keyboard" | "mouse" */
 }

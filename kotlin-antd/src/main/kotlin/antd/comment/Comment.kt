@@ -3,6 +3,7 @@
 
 package antd.comment
 
+import antd.ReactNode
 import react.*
 
 @JsName("default")
@@ -11,13 +12,13 @@ external object CommentComponent : Component<CommentProps, RState> {
 }
 
 external interface CommentProps : RProps {
-    var actions: Array<Any /* String | ReactElement */>?
-    var author: Any? /* String | ReactElement */
-    var avatar: Any? /* String | ReactElement */
+    var actions: Array<ReactNode>?
+    var author: ReactNode?
+    var avatar: ReactNode?
     var className: String?
-    var content: Any /* String | ReactElement */
-    var children: Any /* String | ReactElement */
+    var content: ReactNode
+    var children: ReactNode
     var prefixCls: String?
     var style: dynamic
-    var datetime: Any? /* String | ReactElement */
+    var datetime: ReactNode?
 }

@@ -9,12 +9,16 @@ external object TextAreaComponent : Component<TextAreaProps, RState> {
     override fun render(): ReactElement?
 }
 
-external interface TextAreaProps : RcTextAreaProps, RProps {
+external interface TextAreaProps : RcTextAreaProps, RefAttributes<TextAreaRef>, RProps {
     var allowClear: Boolean?
     var bordered: Boolean?
     var showCount: Boolean?
     override var maxLength: Number?
     var size: SizeType?
+}
+
+abstract external class TextAreaRef : HTMLTextAreaElement {
+    var resizableTextArea: Any
 }
 
 external interface RcTextAreaProps : TextareaHTMLAttributes<HTMLTextAreaElement> {

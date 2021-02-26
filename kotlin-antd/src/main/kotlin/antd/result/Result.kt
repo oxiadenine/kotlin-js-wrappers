@@ -3,6 +3,7 @@
 
 package antd.result
 
+import antd.ReactNode
 import react.*
 
 @JsName("default")
@@ -15,11 +16,11 @@ external object ResultComponent : Component<ResultProps, RState> {
 }
 
 external interface ResultProps : RProps {
-    var icon: Any /* String | ReactElement */
+    var icon: ReactNode
     var status: ResultStatusType?
-    var title: Any? /* String | ReactElement */
-    var subTitle: Any? /* String | ReactElement */
-    var extra: Any? /* String | ReactElement | Array<ReactElement> */
+    var title: ReactNode?
+    var subTitle: ReactNode?
+    var extra: Any? /* ReactNode | Array<ReactNode> */
     var prefixCls: String?
     var className: String?
     var style: dynamic

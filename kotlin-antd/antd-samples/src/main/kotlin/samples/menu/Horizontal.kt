@@ -15,7 +15,7 @@ class HorizontalApp : RComponent<RProps, HorizontalAppState>() {
         console.log("click ", info)
 
         setState {
-            current = info.key
+            current = info.key as String
         }
     }
 

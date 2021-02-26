@@ -3,12 +3,13 @@
 
 package antd.calendar
 
+import antd.ReactNode
 import antd.localeprovider.Locale
 import moment.*
 import react.*
 
 @JsName("default")
-external object CalendarComponent : Component<CalendarProps<Moment>, CalendarState> {
+external object CalendarComponent : Component<CalendarProps<Moment>, RState> {
     override fun render(): ReactElement?
 }
 
@@ -19,10 +20,10 @@ external interface CalendarProps<DateType> : RProps {
     var locale: Locale?
     var validRange: Array<DateType>?
     var disabledDate: ((date: DateType) -> Boolean)?
-    var dateFullCellRender: ((date: DateType) -> Any /* String | ReactElement */)?
-    var dateCellRender: ((date: DateType) -> Any /* String | ReactElement */)?
-    var monthFullCellRender: ((date: DateType) -> Any /* String | ReactElement */)?
-    var monthCellRender: ((date: DateType) -> Any /* String | ReactElement */)?
+    var dateFullCellRender: ((date: DateType) -> ReactNode)?
+    var dateCellRender: ((date: DateType) -> ReactNode)?
+    var monthFullCellRender: ((date: DateType) -> ReactNode)?
+    var monthCellRender: ((date: DateType) -> ReactNode)?
     var headerRender: HeaderRender<DateType>?
     var value: DateType?
     var defaultValue: DateType?
@@ -33,9 +34,9 @@ external interface CalendarProps<DateType> : RProps {
     var onSelect: ((date: DateType) -> Unit)?
 }
 
-external interface CalendarState : RState {
-    var value: Moment
-    var mode: CalendarMode?
+external interface InjectDefaultProps<Props> {
+    var locale: Locale
+    var size: String? /* "large" | "default" | "small" */
 }
 
 external interface GenerateConfig<DateType> {

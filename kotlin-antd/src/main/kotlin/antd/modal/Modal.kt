@@ -24,17 +24,17 @@ external class ModalComponent : Component<ModalProps, RState> {
 external interface ModalProps : RProps {
     var visible: Boolean?
     var confirmLoading: Boolean?
-    var title: Any? /* String | ReactElement */
+    var title: ReactNode?
     var closable: Boolean?
     var onOk: ((e: MouseEvent<HTMLElement>) -> Unit)?
     var onCancel: ((e: MouseEvent<HTMLElement>) -> Unit)?
     var afterClose: (() -> Unit)?
     var centered: Boolean?
     var width: Any? /* String | Number */
-    var footer: Any? /* String | ReactElement */
-    var okText: Any? /* String | ReactElement */
+    var footer: ReactNode?
+    var okText: ReactNode?
     var okType: LegacyButtonType?
-    var cancelText: Any? /* String | ReactElement */
+    var cancelText: ReactNode?
     var maskClosable: Boolean?
     var forceRender: Boolean?
     var okButtonProps: ButtonProps?
@@ -45,7 +45,7 @@ external interface ModalProps : RProps {
     var maskTransitionName: String?
     var transitionName: String?
     var className: String?
-    var getContainer: Any? /* String | HTMLElement | () -> HTMLElement | Boolean */
+    var getContainer: Any? /* ReactNode | () -> HTMLElement | Boolean */
     var zIndex: Number?
     var bodyStyle: dynamic
     var maskStyle: dynamic
@@ -53,26 +53,26 @@ external interface ModalProps : RProps {
     var keyboard: Boolean?
     var wrapProps: Any?
     var prefixCls: String?
-    var closeIcon: Any? /* String | ReactElement */
-    var modalRender: ((node: Any /* String | ReactElement */) -> Any /* String | ReactElement */)?
+    var closeIcon: ReactNode?
+    var modalRender: ((node: ReactNode) -> ReactNode)?
 }
 
 external interface ModalFuncProps {
     var prefixCls: String?
     var className: String?
     var visible: Boolean?
-    var title: Any? /* String | ReactElement */
-    var content: Any? /* String | ReactElement */
+    var title: ReactNode?
+    var content: ReactNode?
     var onOk: ((args: Array<Any>) -> Any)?
     var onCancel: ((args: Array<Any>) -> Any)?
     var okButtonProps: ButtonProps?
     var cancelButtonProps: ButtonProps?
     var centered: Boolean?
     var width: Any? /* String | Number */
-    var okText: Any? /* String | ReactElement */
+    var okText: ReactNode?
     var okType: LegacyButtonType?
-    var cancelText: Any? /* String | ReactElement */
-    var icon: Any? /* String | ReactElement */
+    var cancelText: ReactNode?
+    var icon: ReactNode?
     var mask: Boolean?
     var maskClosable: Boolean?
     var zIndex: Number?
@@ -81,13 +81,13 @@ external interface ModalFuncProps {
     var maskStyle: dynamic
     var type: String?
     var keyboard: Boolean?
-    var getContainer: Any? /* String | HTMLElement | () -> HTMLElement | Boolean */
+    var getContainer: Any? /* ReactNode | () -> HTMLElement | Boolean */
     var autoFocusButton: String? /* "ok" | "cancel" */
     var transitionName: String?
     var maskTransitionName: String?
     var direction: DirectionType?
     var bodyStyle: dynamic
-    var modalRender: ((node: Any /* String | ReactElement */) -> Any /* String | ReactElement */)?
+    var modalRender: ((node: ReactNode) -> Any /* String | ReactElement */)?
 }
 
 external interface ModalLocale {

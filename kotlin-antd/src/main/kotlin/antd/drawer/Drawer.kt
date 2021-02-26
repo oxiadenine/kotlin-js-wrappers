@@ -3,6 +3,7 @@
 
 package antd.drawer
 
+import antd.ReactNode
 import react.*
 
 @JsName("default")
@@ -12,7 +13,7 @@ external object DrawerComponent : Component<DrawerProps, RState> {
 
 external interface DrawerProps : RProps {
     var closable: Boolean?
-    var closeIcon: Any? /* String | ReactElement */
+    var closeIcon: ReactNode?
     var destroyOnClose: Boolean?
     var forceRender: Boolean?
     var getContainer: Any? /* String | HTMLElement | GetContainerFunc | Boolean */
@@ -23,7 +24,7 @@ external interface DrawerProps : RProps {
     var drawerStyle: dynamic
     var headerStyle: dynamic
     var bodyStyle: dynamic
-    var title: Any? /* SString | ReactElement */
+    var title: ReactNode?
     var visible: Boolean?
     var width: Any? /* Number | String */
     var height: Any? /* Number | String */

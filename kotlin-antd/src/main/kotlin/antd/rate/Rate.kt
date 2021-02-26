@@ -3,6 +3,8 @@
 
 package antd.rate
 
+import antd.ReactNode
+import antd.RefAttributes
 import react.*
 
 @JsName("default")
@@ -10,7 +12,7 @@ external object RateComponent : Component<RateProps, RState> {
     override fun render(): ReactElement?
 }
 
-external interface RateProps : RProps {
+external interface RateProps : RefAttributes<dynamic>, RProps {
     var prefixCls: String?
     var count: Number?
     var value: Number?
@@ -21,7 +23,7 @@ external interface RateProps : RProps {
     var tooltips: Array<String>?
     var onChange: ((value: Number) -> Unit)?
     var onHoverChange: ((value: Number) -> Unit)?
-    var character: Any? /* String | ReactElement */
+    var character: ReactNode?
     var className: String?
     var style: dynamic
 }

@@ -14,15 +14,15 @@ external object PageHeaderComponent : Component<PageHeaderProps, RState> {
 }
 
 external interface PageHeaderProps : RProps {
-    var backIcon: Any? /* String | ReactElement */
+    var backIcon: ReactNode?
     var prefixCls: String?
-    var title: Any /* String | ReactElement */
-    var subTitle: Any? /* String | ReactElement */
+    var title: ReactNode
+    var subTitle: ReactNode?
     var style: dynamic
     var breadcrumb: BreadcrumbProps?
     var tags: Any? /* ReactElement | Array<ReactElement> */
-    var footer: Any? /* String | ReactElement */
-    var extra: Any? /* String | ReactElement */
+    var footer: ReactNode?
+    var extra: ReactNode?
     var onBack: ((e: MouseEvent<HTMLDivElement>) -> Unit)?
     var className: String?
     var ghost: Boolean?

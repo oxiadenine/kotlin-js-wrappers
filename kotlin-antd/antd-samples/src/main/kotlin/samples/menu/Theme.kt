@@ -25,7 +25,7 @@ class ThemeSider : RComponent<RProps, ThemeSiderState>() {
         console.log("click ", info)
 
         setState {
-            current = info.key
+            current = info.key as String
         }
     }
 

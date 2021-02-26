@@ -51,7 +51,7 @@ private interface ResetFilterAppState : RState {
 }
 
 private class ResetFilterApp : RComponent<RProps, ResetFilterAppState>() {
-    private val handleChange = fun(pagination: TablePaginationConfig, filters: Map<String, Array<String?>>, sorter: Any, _: TableCurrentDataSource<ResetFilterTableDataItem>) {
+    private val handleChange = fun(pagination: TablePaginationConfig, filters: Record<String, Array<String?>>, sorter: Any, _: TableCurrentDataSource<ResetFilterTableDataItem>) {
         console.log("Various parameters", pagination, filters, sorter)
 
         setState {

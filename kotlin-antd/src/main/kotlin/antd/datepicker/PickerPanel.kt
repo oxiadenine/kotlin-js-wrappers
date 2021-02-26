@@ -1,6 +1,7 @@
 package antd.datepicker
 
 import antd.MouseEventHandler
+import antd.ReactNode
 import org.w3c.dom.HTMLDivElement
 
 external interface RcPickerPanelBaseProps<DateType> : RcPickerPanelSharedProps<DateType> {
@@ -33,7 +34,7 @@ external interface RcPickerPanelSharedProps<DateType> {
     var disabledDate: ((date: DateType) -> Boolean)?
     var dateRender: Any? /* DateRender<DateType> | RangeDateRender<DateType> */
     var monthCellRender: MonthCellRender<DateType>?
-    var renderExtraFooter: ((mode: PanelMode) -> Any /* String | ReactElement */)?
+    var renderExtraFooter: ((mode: PanelMode) -> ReactNode)?
     var onSelect: ((value: DateType) -> Unit)?
     var onChange: Any? /* (value: DateType, dateString: String) -> Unit | (values: RangeValue<DateType>, formatString: Array<String>) -> Unit */
     var onPanelChange: Any? /* OnPanelChange<DateType> | (values: RangeValue<DateType>, modes: Array<PanelMode>) -> Unit */

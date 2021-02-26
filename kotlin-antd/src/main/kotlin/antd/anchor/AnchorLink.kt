@@ -1,5 +1,6 @@
 package antd.anchor
 
+import antd.ReactNode
 import react.*
 
 external object AnchorLinkComponent : Component<AnchorLinkProps, RState> {
@@ -9,7 +10,7 @@ external object AnchorLinkComponent : Component<AnchorLinkProps, RState> {
 external interface AnchorLinkProps : RProps {
     var prefixCls: String?
     var href: String
-    var title: Any /* String | ReactElement */
-    var children: ReactElement?
+    var title: ReactNode
+    var children: ReactNode?
     var className: String?
 }

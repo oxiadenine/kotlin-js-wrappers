@@ -3,6 +3,7 @@
 
 package antd.descriptions
 
+import antd.ReactNode
 import react.*
 
 @JsName("default")
@@ -18,9 +19,9 @@ external interface DescriptionsProps : RProps {
     var style: dynamic
     var bordered: Boolean?
     var size: String? /* "middle" | "small" | "default" */
-    var children: Any? /* String | ReactElement */
-    var title: Any? /* String | ReactElement */
-    var extra: Any? /* String | ReactElement */
+    var children: ReactNode?
+    var title: ReactNode?
+    var extra: ReactNode?
     var column: Any? /* Number | ScreenSizeMap */
     var layout: String? /* "horizontal" | "vertical" */
     var colon: Boolean?

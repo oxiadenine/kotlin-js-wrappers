@@ -7,6 +7,7 @@ import antd.*
 import antd.checkbox.CheckboxProps
 import antd.configprovider.SizeType
 import antd.pagination.*
+import kotlinext.js.Record
 import org.w3c.dom.*
 import react.*
 import react.Component
@@ -31,7 +32,7 @@ external interface TableProps<RecordType> : RcTableProps<RecordType>, RProps {
     var size: SizeType?
     var bordered: Boolean?
     var locale: TableLocale?
-    var onChange: ((pagination: TablePaginationConfig, filters: Map<String, Array<String?>>, sorter: Any /* SorterResult<RecordType> | Array<SorterResult<RecordType>> */, extra: TableCurrentDataSource<RecordType>) -> Unit)?
+    var onChange: ((pagination: TablePaginationConfig, filters: Record<String, Array<String?>>, sorter: Any /* SorterResult<RecordType> | Array<SorterResult<RecordType>> */, extra: TableCurrentDataSource<RecordType>) -> Unit)?
     var rowSelection: TableRowSelection<RecordType>?
     var getPopupContainer: GetPopupContainer?
     override var scroll: TablePropsScroll?
@@ -105,7 +106,7 @@ external interface ColumnTitleProps<RecordType> {
     var sortOrder: SortOrder?
     var sortColumn: ColumnType<RecordType>?
     var sortColumns: Array<ColumnTitlePropsSortColumn<RecordType>>?
-    var filters: Map<String, Array<String>>?
+    var filters: Record<String, Array<String>>?
 }
 
 external interface ColumnTitlePropsSortColumn<RecordType> {

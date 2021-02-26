@@ -1,5 +1,6 @@
 package antd.menu
 
+import antd.ReactNode
 import react.*
 
 external object MenuItemGroupComponent : Component<MenuItemGroupProps, RState> {
@@ -12,7 +13,7 @@ external interface MenuItemGroupProps : RProps {
     var className: String?
     var subMenuKey: String?
     var rootPrefixCls: String?
-    var title: Any? /* String | ReactElement */
+    var title: ReactNode?
     var onClick: MenuClickEventHandler?
     var direction: String? /* "ltr" | "rtl" */
 }

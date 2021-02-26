@@ -3,6 +3,8 @@
 
 package antd.carousel
 
+import antd.ReactNode
+import antd.RefAttributes
 import react.*
 
 @JsName("default")
@@ -10,13 +12,13 @@ external object CarouselComponent : Component<CarouselProps, RState> {
     override fun render(): ReactElement?
 }
 
-external interface CarouselProps : Settings, RProps {
+external interface CarouselProps : Settings, RefAttributes<CarouselRef>, RProps {
     var effect: CarouselEffect?
     var style: dynamic
     var prefixCls: String?
     var slickGoTo: Number?
     var dotPosition: DotPosition?
-    var children: ReactElement?
+    var children: ReactNode?
     override var dots: Any? /* Boolean | SettingsDots */
 }
 

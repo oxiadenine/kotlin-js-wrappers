@@ -20,7 +20,7 @@ external interface TabsProps : RcTabProps, RProps {
     var size: SizeType?
     var hideAdd: Boolean?
     var centered: Boolean?
-    var addIcon: Any? /* String | ReactElement */
+    var addIcon: ReactNode?
     var onEdit: ((e: Any /* MouseEvent<Any> | KeyboardEvent<Any> | String */, action: String /* "add" | "remove" */) -> Unit)?
 }
 
@@ -28,7 +28,7 @@ external interface RcTabProps : HTMLAttributes<HTMLDivElement> {
     var prefixCls: String?
     override var className: String?
     override var style: dynamic
-    override var children: Any? /* String | ReactElement */
+    override var children: ReactNode?
     override var id: String?
     var activeKey: String?
     var defaultActiveKey: String?
@@ -45,7 +45,7 @@ external interface RcTabProps : HTMLAttributes<HTMLDivElement> {
     var onTabScroll: OnTabScroll?
     var editable: EditableConfig?
     var locale: TabsLocale?
-    var moreIcon: Any? /* String | ReactElement */
+    var moreIcon: ReactNode?
     var moreTransitionName: String?
 }
 
@@ -66,8 +66,8 @@ external interface TabsLocale {
 external interface EditableConfig {
     var onEdit: (type: String /* "add" | "remove" */, info: EditableConfigOnEditInfo) -> Unit
     var showAdd: Boolean?
-    var removeIcon: Any? /* String | ReactElement */
-    var addIcon: Any? /* String | ReactElement */
+    var removeIcon: ReactNode?
+    var addIcon: ReactNode?
 }
 
 external interface EditableConfigOnEditInfo {

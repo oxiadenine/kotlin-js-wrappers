@@ -4,22 +4,22 @@ import antd.*
 import org.w3c.dom.*
 import react.*
 
-external object OptionListComponent : Component<OptionListProps<OptionsType>, RState> {
+external object OptionListComponent : Component<OptionListProps<SelectOptionsType>, RState> {
     override fun render(): ReactElement?
 }
 
-external interface OptionListProps<OT> : RProps {
+external interface OptionListProps<OptionsType> : RefAttributes<RefOptionListProps>, RProps {
     var prefixCls: String
     var id: String
-    var options: OT
-    var flattenOptions: Array<FlattenOptionsType<OT>>
+    var options: OptionsType
+    var flattenOptions: Array<FlattenOptionsType<OptionsType>>
     var height: Number
     var itemHeight: Number
     var values: Set<RawValueType>
     var multiple: Boolean
     var open: Boolean
     var defaultActiveFirstOption: Boolean?
-    var notFoundContent: Any? /* String | ReactElement */
+    var notFoundContent: ReactNode?
     var menuItemSelectedIcon: RenderNode?
     var childrenAsData: Boolean
     var searchValue: String

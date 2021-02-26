@@ -1,5 +1,6 @@
 package antd.treeselect
 
+import antd.Key
 import react.*
 
 external object TreeNodeComponent : Component<TreeNodeProps, RState> {

@@ -1,5 +1,6 @@
 package antd.alert
 
+import antd.ReactNode
 import react.*
 
 external class ErrorBoundaryComponent : Component<ErrorBoundaryProps, ErrorBoundaryState> {
@@ -7,8 +8,8 @@ external class ErrorBoundaryComponent : Component<ErrorBoundaryProps, ErrorBound
 }
 
 external interface ErrorBoundaryProps : RProps {
-    var message: Any? /* String | ReactElement */
-    var description: Any? /* String | ReactElement */
+    var message: ReactNode?
+    var description: ReactNode?
 }
 
 external interface ErrorBoundaryState : RState {

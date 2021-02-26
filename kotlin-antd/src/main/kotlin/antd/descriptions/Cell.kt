@@ -1,5 +1,6 @@
 package antd.descriptions
 
+import antd.ReactNode
 import react.Component
 import react.RProps
 import react.RState
@@ -16,7 +17,7 @@ external interface CellProps : RProps {
     var component: String
     var style: dynamic
     var bordered: Boolean?
-    var label: Any? /* String | ReactElement */
-    var content: Any? /* String | ReactElement */
+    var label: ReactNode?
+    var content: ReactNode?
     var colon: Boolean?
 }

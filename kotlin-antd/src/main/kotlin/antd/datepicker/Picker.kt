@@ -3,6 +3,7 @@ package antd.datepicker
 import antd.AriaAttributes
 import antd.FocusEventHandler
 import antd.MouseEventHandler
+import antd.ReactNode
 import antd.button.ButtonProps
 import antd.tag.TagProps
 import org.w3c.dom.HTMLDivElement
@@ -38,21 +39,21 @@ external interface RcPickerSharedProps<DateType> : AriaAttributes {
     var placeholder: Any? /* String | Array<String> */
     var allowClear: Boolean?
     var autoFocus: Boolean?
-    var disabled: Any? /* Boolean | Array<Boolean>? */
+    var disabled: Any? /* Boolean | Array<Boolean> */
     var tabIndex: Number?
     var open: Boolean?
     var defaultOpen: Boolean?
     var inputReadOnly: Boolean?
     var id: String?
     var format: Any? /* String | CustomFormat<DateType> | Array<Any /* String | CustomFormat<DateType> */> */
-    var suffixIcon: Any? /* String | ReactElement */
-    var clearIcon: Any? /* String | ReactElement */
-    var prevIcon: Any? /* String | ReactElement */
-    var nextIcon: Any? /* String | ReactElement */
-    var superPrevIcon: Any? /* String | ReactElement */
-    var superNextIcon: Any? /* String | ReactElement */
+    var suffixIcon: ReactNode?
+    var clearIcon: ReactNode?
+    var prevIcon: ReactNode?
+    var nextIcon: ReactNode?
+    var superPrevIcon: ReactNode?
+    var superNextIcon: ReactNode?
     var getPopupContainer: ((node: HTMLElement) -> HTMLElement)?
-    var panelRender: ((originPanel: Any /* String | ReactElement */) -> Any? /* String | ReactElement */)?
+    var panelRender: ((originPanel: ReactNode) -> ReactNode)?
     var onOpenChange: ((open: Boolean) -> Unit)?
     var onFocus: FocusEventHandler<HTMLInputElement>?
     var onBlur: FocusEventHandler<HTMLInputElement>?
@@ -164,7 +165,7 @@ external interface GenerateConfig<DateType> {
 external interface GenerateConfigLocale<DateType> {
     var getWeekFirstDay: (locale: String) -> Number
     var getWeekFirstDate: (locale: String, value: DateType) -> DateType
-    var getWeek: (locale: String, value: DateType) -> Number;
+    var getWeek: (locale: String, value: DateType) -> Number
     var format: (locale: String, date: DateType, format: String) -> String
     var parse: (locale: String, text: String, formats: Array<String>) -> DateType?
     var getShortWeekDays: ((locale: String) -> Array<String>)?

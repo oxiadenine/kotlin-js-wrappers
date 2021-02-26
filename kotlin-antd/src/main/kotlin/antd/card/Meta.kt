@@ -1,5 +1,6 @@
 package antd.card
 
+import antd.ReactNode
 import react.*
 
 external object CardMetaComponent : Component<CardMetaProps, RState> {
@@ -10,7 +11,7 @@ external interface CardMetaProps : RProps {
     var prefixCls: String?
     var style: dynamic
     var className: String?
-    var avatar: Any? /* String | ReactElement */
-    var title: Any? /* String | ReactElement */
-    var description: Any? /* String | ReactElement */
+    var avatar: ReactNode?
+    var title: ReactNode?
+    var description: ReactNode?
 }

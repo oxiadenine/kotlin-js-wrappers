@@ -3,6 +3,7 @@
 
 package antd.space
 
+import antd.ReactNode
 import react.Component
 import react.RContext
 import react.RProps
@@ -21,7 +22,7 @@ external interface SpaceProps : RProps {
     var size: Any? /* SizeType | Number */
     var direction: String? /* "horizontal" | "vertical" */
     var align: String? /*"start" | "end" | "center" | "baseline" */
-    var split: Any? /* String | ReactElement */
+    var split: ReactNode?
 }
 
 external val lastIndexContext: RContext<Number>

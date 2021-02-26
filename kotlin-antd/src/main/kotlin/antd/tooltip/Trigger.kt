@@ -1,5 +1,6 @@
 package antd.tooltip
 
+import antd.ReactNode
 import org.w3c.dom.Document
 import org.w3c.dom.HTMLElement
 import react.ReactElement
@@ -12,7 +13,7 @@ external interface TriggerProps {
     var getPopupClassNameFromAlign: ((align: AlignType) -> String)?
     var onPopupVisibleChange: ((visible: Boolean) -> Unit)?
     var afterPopupVisibleChange: ((visible: Boolean) -> Unit)?
-    var popup: Any /* String | ReactElement | () -> Any /* String | ReactElement */ */
+    var popup: Any /* ReactNode | () -> ReactNode */
     var popupStyle: dynamic
     var prefixCls: String?
     var popupClassName: String?
@@ -69,5 +70,5 @@ external interface MobileConfig {
     var popupMotion: dynamic
     var popupClassName: String
     var popupStyle: dynamic
-    var popupRender: ((originNode: Any /* String | ReactElement */) -> Any /* String | ReactElement */)?
+    var popupRender: ((originNode: ReactNode) -> ReactNode)?
 }

@@ -8,7 +8,7 @@ import org.w3c.dom.*
 import react.*
 
 @JsName("default")
-external object AlertComponent : Component<AlertProps, AlertState> {
+external object AlertComponent : Component<AlertProps, RState> {
     val ErrorBoundary: ErrorBoundaryComponent
 
     override fun render(): ReactElement?
@@ -17,9 +17,9 @@ external object AlertComponent : Component<AlertProps, AlertState> {
 external interface AlertProps : RProps {
     var type: String? /* "success" | "info" | "warning" | "error" */
     var closable: Boolean?
-    var closeText: Any? /* String | ReactElement */
-    var message: Any /* String | ReactElement */
-    var description: Any? /* String | ReactElement */
+    var closeText: ReactNode?
+    var message: ReactNode
+    var description: ReactNode?
     var onClose: MouseEventHandler<HTMLAnchorElement>?
     var afterClose: (() -> Unit)?
     var showIcon: Boolean?
@@ -28,13 +28,8 @@ external interface AlertProps : RProps {
     var prefixCls: String?
     var className: String?
     var banner: Boolean?
-    var icon: ReactElement?
+    var icon: ReactNode?
     var onMouseEnter: MouseEventHandler<HTMLDivElement>?
     var onMouseLeave: MouseEventHandler<HTMLDivElement>?
     var onClick: MouseEventHandler<HTMLDivElement>?
-}
-
-external interface AlertState : RState {
-    var closing: Boolean
-    var closed: Boolean
 }

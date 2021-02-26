@@ -16,21 +16,21 @@ external object MetaComponent : Component<ListItemMetaProps, RState> {
 
 external interface ListItemProps : HTMLAttributes<HTMLDivElement>, RProps {
     override var className: String?
-    override var children: Any? /* String | ReactElement */
+    override var children: ReactNode?
     var prefixCls: String?
     override var style: dynamic
-    var extra: Any? /* String | ReactElement */
-    var actions: Array<Any /* String | ReactElement */>?
+    var extra: ReactNode?
+    var actions: Array<ReactNode>?
     var grid: ListGridType?
     var colStyle: dynamic
 }
 
 external interface ListItemMetaProps : RProps {
-    var avatar: Any? /* String | ReactElement */
+    var avatar: ReactNode?
     var className: String?
-    var children: Any? /* String | ReactElement */
-    var description: Any? /* String | ReactElement */
+    var children: ReactNode?
+    var description: ReactNode?
     var prefixCls: String?
     var style: dynamic
-    var title: Any? /* String | ReactElement */
+    var title: ReactNode?
 }

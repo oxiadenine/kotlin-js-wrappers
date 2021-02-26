@@ -17,7 +17,7 @@ external interface BackTopProps : RProps {
     var onClick: MouseEventHandler<HTMLElement>?
     var target: (() -> Any /* HTMLElement | Window | Document */)?
     var prefixCls: String?
-    var children: Any? /* String | ReactElement */
+    var children: ReactNode?
     var className: String?
     var style: dynamic
     var duration: Number?

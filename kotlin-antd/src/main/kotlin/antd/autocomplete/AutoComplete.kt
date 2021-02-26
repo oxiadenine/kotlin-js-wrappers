@@ -3,6 +3,7 @@
 
 package antd.autocomplete
 
+import antd.RefAttributes
 import antd.select.*
 import react.*
 
@@ -13,7 +14,7 @@ external object AutoCompleteComponent : Component<AutoCompleteProps, RState> {
     override fun render(): ReactElement?
 }
 
-external interface AutoCompleteProps : InternalSelectProps<String>, RProps {
+external interface AutoCompleteProps : InternalSelectProps<String>, RefAttributes<RefSelectProps>, RProps {
     var dataSource: Array<DataSourceItemType>?
 }
 

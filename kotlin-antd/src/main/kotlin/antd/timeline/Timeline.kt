@@ -3,6 +3,7 @@
 
 package antd.timeline
 
+import antd.ReactNode
 import react.*
 
 @JsName("default")
@@ -15,8 +16,8 @@ external object TimelineComponent : Component<TimelineProps, RState> {
 external interface TimelineProps : RProps {
     var prefixCls: String?
     var className: String?
-    var pending: Any? /* String | ReactElement */
-    var pendingDot: Any? /* String | ReactElement */
+    var pending: ReactNode?
+    var pendingDot: ReactNode?
     var style: dynamic
     var reverse: Boolean?
     var mode: String? /* "left" | "alternate" | "right" */

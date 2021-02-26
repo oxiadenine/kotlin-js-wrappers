@@ -3,6 +3,7 @@
 
 package antd.badge
 
+import antd.ReactNode
 import react.*
 
 @JsName("default")
@@ -13,7 +14,7 @@ external object BadgeComponent : Component<BadgeProps, RState> {
 }
 
 external interface BadgeProps : RProps {
-    var count: Any? /* String | ReactElement */
+    var count: ReactNode?
     var showZero: Boolean?
     var overflowCount: Number?
     var dot: Boolean?
@@ -23,7 +24,7 @@ external interface BadgeProps : RProps {
     var className: String?
     var status: PresetStatusColorType?
     var color: PresetColorType?
-    var text: Any? /* String | ReactElement */
+    var text: ReactNode?
     var size: String? /* "default" | "small" */
     var offset: Array<Any /* Number | String */>?
     var title: String?

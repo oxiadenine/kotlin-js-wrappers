@@ -23,10 +23,10 @@ external interface InputProps : InputHTMLAttributes<HTMLInputElement>, RProps {
     override var size: SizeType?
     override var type: String? /* "button" | "checkbox" | "color" | "date" | "datetime-local" | "email" | "file" | "hidden" | "image" | "month" | "number" | "password" | "radio" | "range" | "reset" | "search" | "submit" | "tel" | "text" | "time" | "url" | "week" */
     var onPressEnter: KeyboardEventHandler<HTMLInputElement>?
-    var addonBefore: Any? /* String | ReactElement */
-    var addonAfter: Any? /* String | ReactElement */
-    override var prefix: dynamic /* String | ReactElement */
-    var suffix: Any? /* String | ReactElement */
+    var addonBefore: ReactNode?
+    var addonAfter: ReactNode?
+    override var prefix: dynamic /* ReactNode */
+    var suffix: ReactNode?
     var allowClear: Boolean?
     var bordered: Boolean?
 }

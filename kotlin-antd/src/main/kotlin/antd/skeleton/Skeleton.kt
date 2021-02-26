@@ -3,6 +3,7 @@
 
 package antd.skeleton
 
+import antd.ReactNode
 import react.*
 
 @JsName("default")
@@ -20,7 +21,7 @@ external interface SkeletonProps : RProps {
     var loading: Boolean?
     var prefixCls: String?
     var className: String?
-    var children: Any? /* String | ReactElement */
+    var children: ReactNode?
     var avatar: Any? /* SkeletonAvatarProps | Boolean */
     var title: Any? /* SkeletonTitleProps | Boolean */
     var paragraph: Any? /* SkeletonParagraphProps | Boolean */

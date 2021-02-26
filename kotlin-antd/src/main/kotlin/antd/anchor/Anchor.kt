@@ -18,7 +18,7 @@ external interface AnchorProps : RProps {
     var prefixCls: String?
     var className: String?
     var style: dynamic
-    var children: ReactElement?
+    var children: ReactNode?
     var offsetTop: Number?
     var bounds: Number?
     var affix: Boolean?
@@ -50,6 +50,6 @@ external interface AnchorDefaultProps : AnchorProps {
 }
 
 external interface AnchorLink {
-    var title: Any /* String | ReactElement */
+    var title: ReactNode
     var href: String
 }

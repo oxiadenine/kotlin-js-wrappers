@@ -3,6 +3,7 @@
 
 package antd.configprovider
 
+import antd.ReactNode
 import antd.form.*
 import antd.localeprovider.*
 import org.w3c.dom.*
@@ -17,7 +18,7 @@ external interface ConfigProviderProps : RProps {
     var getTargetContainer: (() -> HTMLElement)?
     var getPopupContainer: ((triggerNode: HTMLElement) -> HTMLElement)?
     var prefixCls: String?
-    var children: Any? /* String | ReactElement */
+    var children: ReactNode?
     var renderEmpty: RenderEmptyHandler?
     var csp: CSPConfig?
     var autoInsertSpaceInButton: Boolean?

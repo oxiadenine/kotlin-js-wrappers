@@ -3,10 +3,11 @@
 
 package antd.list
 
+import antd.ReactNode
 import react.*
 
 @JsName("default")
-external class ListComponent<T> : Component<ListProps<T>, ListState> {
+external class ListComponent<T> : Component<ListProps<T>, RState> {
     companion object {
         val Item: ItemComponent
     }
@@ -21,28 +22,23 @@ external interface ListProps<T> : RProps {
     var bordered: Boolean?
     var className: String?
     var style: dynamic
-    var children: Any? /* String | ReactElement */
+    var children: ReactNode?
     var dataSource: Array<T>?
-    var extra: Any? /* String | ReactElement */
+    var extra: ReactNode?
     var grid: ListGridType?
     var id: String?
     var itemLayout: ListItemLayout?
     var loading: Any? /* Boolean | SpinProps */
-    var loadMore: Any? /* String | ReactElement */
+    var loadMore: ReactNode?
     var pagination: Any? /* PaginationConfig | Boolean */
     var prefixCls: String?
     var rowKey: Any? /* (item: T) -> String | String */
-    var renderItem: ((item: T, index: Number) -> Any? /* String | ReactElement */)?
+    var renderItem: ((item: T, index: Number) -> ReactNode)?
     var size: ListSize?
     var split: Boolean?
-    var header: Any? /* String | ReactElement */
-    var footer: Any? /* String | ReactElement */
+    var header: ReactNode?
+    var footer: ReactNode?
     var locale: ListLocale?
-}
-
-external interface ListState : RState {
-    var paginationCurrent: Number
-    var paginationSize: Number
 }
 
 external interface ListGridType {
@@ -57,7 +53,7 @@ external interface ListGridType {
 }
 
 external interface ListLocale {
-    var emptyText: Any /* String | ReactElement | () -> String | ReactElement */
+    var emptyText: Any /* ReactNode | () -> ReactNode */
 }
 
 external interface ListConsumerProps {

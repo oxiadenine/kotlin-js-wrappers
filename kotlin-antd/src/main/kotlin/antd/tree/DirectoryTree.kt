@@ -1,12 +1,14 @@
 package antd.tree
 
+import antd.Key
+import antd.RefAttributes
 import react.*
 
 external object DirectoryTreeComponent : Component<DirectoryTreeProps, DirectoryTreeState> {
     override fun render(): ReactElement?
 }
 
-external interface DirectoryTreeProps : TreeProps {
+external interface DirectoryTreeProps : TreeProps, RefAttributes<RcTreeComponent> {
     var expandAction: ExpandAction
 }
 

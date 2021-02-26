@@ -3,6 +3,7 @@
 
 package antd.pagination
 
+import antd.ReactNode
 import kotlinext.js.*
 import react.*
 
@@ -39,7 +40,7 @@ external interface PaginationProps : RProps {
 }
 
 external interface ShowQuickJumper {
-    var goButton: Any? /* String | ReactElement */
+    var goButton: ReactNode?
 }
 
 external interface PaginationConfig : PaginationProps {

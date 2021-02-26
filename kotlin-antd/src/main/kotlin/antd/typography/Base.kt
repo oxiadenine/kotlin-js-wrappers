@@ -1,6 +1,7 @@
 package antd.typography
 
 import antd.MouseEventHandler
+import antd.ReactNode
 import org.w3c.dom.HTMLElement
 import react.*
 
@@ -14,7 +15,7 @@ external interface BaseState : RState {
     var edit: Boolean
     var copied: Boolean
     var ellipsisText: String
-    var ellipsisContent: Any /* String | ReactElement */
+    var ellipsisContent: ReactNode
     var isEllipsis: Boolean
     var expanded: Boolean
     var clientRendered: Boolean
@@ -42,14 +43,14 @@ external interface BlockProps : TypographyProps {
 external interface CopyConfig {
     var text: String?
     var onCopy: (() -> Unit)?
-    var icon: Any? /* String | ReactElement */
-    var tooltips: Any? /* Boolean | String | ReactElement */
+    var icon: ReactNode?
+    var tooltips: Any? /* Boolean | ReactNode */
 }
 
 external interface EditConfig {
     var editing: Boolean?
-    var icon: Any? /* String | ReactElement */
-    var tooltip: Any? /* Boolean | String | ReactElement */
+    var icon: ReactNode?
+    var tooltip: Any? /* Boolean | ReactNode */
     var onStart: (() -> Unit)?
     var onChange: ((value: String) -> Unit)?
     var maxLength: Number?
@@ -60,7 +61,7 @@ external interface EllipsisConfig {
     var rows: Number?
     var expandable: Boolean?
     var suffix: String?
-    var symbol: Any? /* String | ReactElement */
+    var symbol: ReactNode?
     var onExpand: MouseEventHandler<HTMLElement>?
     var onEllipsis: ((ellipsis: Boolean) -> Unit)?
 }

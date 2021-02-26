@@ -1,6 +1,7 @@
 package antd.tree
 
 import antd.*
+import kotlinext.js.Record
 import org.w3c.dom.*
 import react.*
 import kotlin.js.*
@@ -14,13 +15,13 @@ external interface TreeContextProps {
     var icon: IconType
     var switcherIcon: IconType
     var draggable: Boolean
-    var checkable: Any /* Boolean | String | ReactElement */
+    var checkable: Any /* Boolean | ReactNode */
     var checkStrictly: Boolean
     var disabled: Boolean
-    var keyEntities: Map<Key, DataEntity>
+    var keyEntities: Record<Key, DataEntity>
     var loadData: (treeNode: EventDataNode) -> Promise<Unit>
     var filterTreeNode: (treeNode: EventDataNode) -> Boolean
-    var titleRender: ((node: DataNode) -> Any /* String | ReactElement */)?
+    var titleRender: ((node: DataNode) -> ReactNode)?
     var onNodeClick: NodeMouseEventHandler
     var onNodeDoubleClick: NodeMouseEventHandler
     var onNodeExpand: NodeMouseEventHandler

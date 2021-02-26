@@ -3,6 +3,7 @@
 
 package antd.collapse
 
+import antd.ReactNode
 import react.*
 
 @JsName("default")
@@ -29,11 +30,11 @@ external interface CollapseProps : RProps {
 
 external interface PanelProps {
     var isActive: Boolean?
-    var header: Any? /* String | ReactElement */
+    var header: ReactNode?
     var className: String?
     var style: dynamic
     var showArrow: Boolean?
     var forceRender: Boolean?
     var disabled: Boolean?
-    var extra: Any? /* String | ReactElement */
+    var extra: ReactNode?
 }

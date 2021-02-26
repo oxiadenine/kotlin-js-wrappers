@@ -1,5 +1,6 @@
 package antd.form
 
+import antd.ReactNode
 import antd.grid.*
 import antd.tooltip.*
 import react.*
@@ -14,7 +15,7 @@ external interface FormItemLabelBaseProps {
     var wrapperCol: ColProps?
     var colon: Boolean?
     var htmlFor: String?
-    var label: Any? /* String | ReactElement */
+    var label: ReactNode?
     var labelAlign: FormLabelAlign?
     var labelCol: ColProps?
     var requiredMark: RequiredMark?

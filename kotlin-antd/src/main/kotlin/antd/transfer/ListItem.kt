@@ -1,5 +1,6 @@
 package antd.transfer
 
+import antd.ReactNode
 import react.*
 
 external class TransferListItemComponent<RecordType> : Component<ListItemProps<RecordType>, RState> {
@@ -8,7 +9,7 @@ external class TransferListItemComponent<RecordType> : Component<ListItemProps<R
 
 external interface ListItemProps<RecordType> : RProps {
     var renderedText: Any? /* String | Number */
-    var renderedEl: Any /* String | ReactElement */
+    var renderedEl: ReactNode
     var disabled: Boolean?
     var checked: Boolean?
     var prefixCls: String

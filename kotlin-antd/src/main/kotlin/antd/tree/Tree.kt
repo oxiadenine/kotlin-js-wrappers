@@ -4,6 +4,7 @@
 package antd.tree
 
 import antd.*
+import kotlinext.js.Record
 import org.w3c.dom.*
 import react.*
 import kotlin.js.Promise
@@ -16,7 +17,7 @@ external object TreeComponent : Component<TreeProps, RState> {
     override fun render(): ReactElement?
 }
 
-external interface TreeProps : RcTreeProps, RProps {
+external interface TreeProps : RcTreeProps, RefAttributes<RcTreeComponent>, RProps {
     override var showLine: Any?
     override var className: String?
     override var multiple: Boolean?
@@ -38,20 +39,24 @@ external interface TreeProps : RcTreeProps, RProps {
     override var draggable: Boolean?
     override var style: dynamic
     override var showIcon: Boolean?
-    override var icon: Any? /* (nodeProps: TreeNodeAttribute) => ReactElement | String | ReactElement */
+    override var icon: Any? /* (nodeProps: TreeNodeAttribute) -> ReactNode | ReactNode */
     override var switcherIcon: Any?
     override var prefixCls: String?
-    override var children: Any? /* String | ReactElement */
+    override var children: ReactNode?
     var blockNode: Boolean?
 }
 
-external interface RcTreeProps {
+external object RcTreeComponent : Component<RcTreeProps, RcTreeState> {
+    override fun render(): ReactElement?
+}
+
+external interface RcTreeProps : RProps {
     var prefixCls: String?
     var className: String?
     var style: dynamic
     var focusable: Boolean?
     var tabIndex: Number?
-    var children: Any? /* String | ReactElement */
+    var children: ReactNode?
     var treeData: Array<DataNode>?
     var showLine: Any?
     var showIcon: Boolean?
@@ -59,7 +64,7 @@ external interface RcTreeProps {
     var selectable: Boolean?
     var disabled: Boolean?
     var multiple: Boolean?
-    var checkable: Any? /* Boolean | String | ReactElement */
+    var checkable: Any? /* Boolean | ReactNode */
     var checkStrictly: Boolean?
     var draggable: Boolean?
     var defaultExpandParent: Boolean?
@@ -71,7 +76,7 @@ external interface RcTreeProps {
     var checkedKeys: Any? /* Array<Key> | CheckedKeysInfo */
     var defaultSelectedKeys: Array<Key>?
     var selectedKeys: Array<Key>?
-    var titleRender: ((node: DataNode) -> Any /* String | ReactElement */)?
+    var titleRender: ((node: DataNode) -> ReactNode)?
     var onFocus: FocusEventHandler<HTMLDivElement>?
     var onBlur: FocusEventHandler<HTMLDivElement>?
     var onKeyDown: KeyboardEventHandler<HTMLDivElement>?
@@ -96,10 +101,30 @@ external interface RcTreeProps {
     var onActiveChange: ((key: Key) -> Unit)?
     var filterTreeNode: ((treeNode: EventDataNode) -> Boolean)?
     var motion: Any?
-    var switcherIcon: Any? /* IconType | ReactElement */
+    var switcherIcon: IconType?
     var height: Number?
     var itemHeight: Number?
     var virtual: Boolean?
+}
+
+external interface RcTreeState : RState {
+    var keyEntities: Record<Key, DataEntity>
+    var selectedKeys: Array<Key>
+    var checkedKeys: Array<Key>
+    var halfCheckedKeys: Array<Key>
+    var loadedKeys: Array<Key>
+    var loadingKeys: Array<Key>
+    var expandedKeys: Array<Key>
+    var dragging: Boolean
+    var dragNodesKeys: Array<Key>
+    var dragOverNodeKey: Key
+    var dropPosition: Number
+    var treeData: Array<DataNode>
+    var flattenNodes: Array<FlattenNode>
+    var focused: Boolean
+    var activeKey: Key
+    var listChanging: Boolean
+    var prevProps: RcTreeProps
 }
 
 external interface CheckedKeysInfo {
@@ -170,7 +195,7 @@ external interface DataNode {
     var icon: IconType?
     var isLeaf: Boolean?
     var key: Any /* String | Number */
-    var title: Any? /* String | ReactElement */
+    var title: ReactNode?
     var selectable: Boolean?
     var switcherIcon: IconType?
     var className: String?

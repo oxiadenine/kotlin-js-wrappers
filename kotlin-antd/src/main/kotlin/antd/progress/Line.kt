@@ -1,5 +1,6 @@
 package antd.progress
 
+import antd.ReactNode
 import antd.configprovider.DirectionType
 import react.*
 
@@ -10,7 +11,7 @@ external object LineComponent : Component<LineProps, RState> {
 external interface LineProps : ProgressProps {
     override var prefixCls: String?
     var direction: DirectionType?
-    var children: Any /* String | ReactElement */
+    var children: ReactNode
 }
 
 external val sortGradient: (gradients: ProgressGradient) -> Any

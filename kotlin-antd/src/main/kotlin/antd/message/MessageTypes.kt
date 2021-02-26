@@ -1,7 +1,5 @@
 package antd.message
 
-typealias Key = String
-
 typealias NoticeType = String /* "info" | "success" | "error" | "warning" | "loading" */
 
 typealias ConfigContent = Any /* ReactElement | String */

@@ -71,7 +71,7 @@ external interface InvalidEvent<T> : SyntheticEvent<T, Event> {
 }
 
 external interface ChangeEvent<T> : SyntheticEvent<T, Event> {
-    override var target: EventTarget;
+    override var target: EventTarget
 }
 
 external interface KeyboardEvent<T> : SyntheticEvent<T, NativeKeyboardEvent> {
@@ -110,19 +110,17 @@ external interface MouseEvent<T> : SyntheticEvent<T, NativeMouseEvent> {
 
 external interface TouchEvent<T> : SyntheticEvent<T, NativeTouchEvent> {
     var altKey: Boolean
-
-    /* var changedTouches: TouchList */
+    var changedTouches: TouchList
     var ctrlKey: Boolean
     fun getModifierState(key: String): Boolean
     var metaKey: Boolean
     var shivftKey: Boolean
-    /* var targetTouches: TouchList */
-    /* var touches: TouchList */
+    var targetTouches: TouchList
+    var touches: TouchList
 }
 
 external interface UIEvent<T> : SyntheticEvent<T, NativeUIEvent> {
     var detail: Number
-    /* var view: AbstractView */
 }
 
 external interface WheelEvent<T> : MouseEvent<T> {

@@ -9,7 +9,7 @@ import org.w3c.dom.*
 import react.*
 
 @JsName("default")
-external object MentionsComponent : Component<MentionsProps, MentionState> {
+external object MentionsComponent : Component<MentionsProps, RState> {
     val Option: OptionComponent
 
     fun getMentions(value: String = definedExternally, config: MentionsConfig? = definedExternally): Array<MentionsEntity>
@@ -17,19 +17,15 @@ external object MentionsComponent : Component<MentionsProps, MentionState> {
     override fun render(): ReactElement?
 }
 
-external interface MentionsProps : RcMentionsProps, RProps {
+external interface MentionsProps : RcMentionsProps, RefAttributes<dynamic>, RProps {
     var loading: Boolean?
-}
-
-external interface MentionState : RState {
-    var focused: Boolean
 }
 
 external interface RcMentionsProps : TextAreaProps {
     override var autoFocus: Boolean?
     override var className: String?
     var defvaultValue: String?
-    var notFoundContent: Any? /* String | ReactElement */
+    var notFoundContent: ReactNode?
     var split: String?
     override var style: dynamic
     var transitionName: String?

@@ -4,7 +4,10 @@
 package antd.menu
 
 import antd.HTMLAttributes
+import antd.Key
 import antd.MouseEvent
+import antd.ReactInstance
+import antd.ReactNode
 import org.w3c.dom.*
 import react.*
 
@@ -49,7 +52,7 @@ external interface RcMenuProps : HTMLAttributes<HTMLDivElement> {
     var builtinPlacements: BuiltinPlacements?
     var itemIcon: RenderIconType?
     var expandIcon: RenderIconType?
-    var overflowedIndicator: Any? /* String | ReactElement */
+    var overflowedIndicator: ReactNode?
     var motion: dynamic
     var defaultMotions: dynamic
     var openTransitionName: String?
@@ -61,8 +64,8 @@ external interface RcMenuProps : HTMLAttributes<HTMLDivElement> {
 }
 
 external interface MenuInfo {
-    var key: String
-    var keyPath: Array<String>
+    var key: Key
+    var keyPath: Array<Key>
     var item: dynamic
     var domEvent: MouseEvent<HTMLElement>
 }
@@ -72,18 +75,18 @@ external interface SelectInfo : MenuInfo {
 }
 
 external interface HoverEventHandlerInfo {
-    var key: String
+    var key: Key
     var hover: Boolean
 }
 
 external interface MenuHoverEventHandlerInfo {
-    var key: String
+    var key: Key
     var domEvent: MouseEvent<HTMLElement>
 }
 
 external interface OpenEventHandlerInfo {
-    var key: dynamic
-    var item: dynamic
+    var key: Key
+    var item: ReactInstance
     var trigger: String
     var open: Boolean
 }

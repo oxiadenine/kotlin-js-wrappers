@@ -3,6 +3,7 @@
 
 package antd.slider
 
+import antd.RefAttributes
 import antd.tooltip.*
 import org.w3c.dom.*
 import react.*
@@ -12,7 +13,7 @@ external object SliderComponent : Component<SliderProps, RState> {
     override fun render(): ReactElement?
 }
 
-external interface SliderProps : SliderSingleProps, SliderRangeProps, RProps
+external interface SliderProps : SliderSingleProps, SliderRangeProps, RefAttributes<dynamic>, RProps
 
 external interface SliderSingleProps : SliderBaseProps {
     var range: Boolean?

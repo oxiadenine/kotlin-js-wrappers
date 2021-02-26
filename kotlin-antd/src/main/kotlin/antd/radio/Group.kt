@@ -10,7 +10,7 @@ external object RadioGroupComponent : Component<RadioGroupProps, RState> {
     override fun render(): ReactElement?
 }
 
-external interface RadioGroupProps : AbstractCheckboxGroupProps, RProps {
+external interface RadioGroupProps : AbstractCheckboxGroupProps, RefAttributes<HTMLDivElement>, RProps {
     var defaultValue: Any?
     var value: Any?
     var onChange: ((e: RadioChangeEvent) -> Unit)?
@@ -18,7 +18,7 @@ external interface RadioGroupProps : AbstractCheckboxGroupProps, RProps {
     var onMouseEnter: MouseEventHandler<HTMLDivElement>?
     var onMouseLeave: MouseEventHandler<HTMLDivElement>?
     var name: String?
-    var children: Any? /* String | ReactElement */
+    var children: ReactNode?
     var id: String?
     var optionType: RadioGroupOptionType?
     var buttonStyle: RadioGroupButtonStyle?

@@ -1,6 +1,7 @@
 package antd.treeselect
 
 import antd.*
+import antd.select.RefOptionListProps
 import org.w3c.dom.*
 import react.*
 
@@ -8,7 +9,7 @@ external object OptionListComponent : Component<OptionListProps<Array<DataNode>>
     override fun render(): ReactElement?
 }
 
-external interface OptionListProps<OptionsType> : RProps {
+external interface OptionListProps<OptionsType> : RefAttributes<RefOptionListProps>, RProps {
     var prefixCls: String
     var id: String
     var options: OptionsType
@@ -20,7 +21,7 @@ external interface OptionListProps<OptionsType> : RProps {
     var multiple: Boolean
     var open: Boolean
     var defaultActiveFirstOption: Boolean?
-    var notFoundContent: Any? /* String | ReactElement */
+    var notFoundContent: ReactNode?
     var menuItemSelectedIcon: Any?
     var childrenAsData: Boolean
     var searchValue: String

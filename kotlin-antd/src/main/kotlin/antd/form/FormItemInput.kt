@@ -1,5 +1,6 @@
 package antd.form
 
+import antd.ReactNode
 import antd.grid.*
 import react.*
 
@@ -11,15 +12,15 @@ external interface FormItemInputProps : FormItemInputBaseProps, FormItemInputMis
 
 external interface FormItemInputBaseProps {
     var wrapperCol: ColProps?
-    var help: Any? /* String | ReactElement */
-    var extra: Any? /* String | ReactElement */
+    var help: ReactNode?
+    var extra: ReactNode?
     var status: ValidateStatus?
 }
 
 external interface FormItemInputMiscProps {
     var prefixCls: String?
-    var children: Any
-    var errors: Array<ReactElement>
+    var children: ReactNode
+    var errors: Array<ReactNode>
     var hasFeedback: Boolean?
     var validateStatus: ValidateStatus?
     var onDomErrorVisibleChange: (visible: Boolean) -> Unit

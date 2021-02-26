@@ -10,7 +10,7 @@ external object BreadcrumbItemComponent : Component<BreadcrumbItemProps, RState>
 
 external interface BreadcrumbItemProps : RProps {
     var prefixCls: String?
-    var separator: Any? /* String | ReactElement */
+    var separator: ReactNode?
     var href: String?
     var overlay: Any? /* String | ReactElement */
     var dropdownProps: DropdownProps?

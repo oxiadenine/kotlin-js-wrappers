@@ -1,5 +1,6 @@
 package antd.tabs
 
+import antd.ReactNode
 import react.*
 
 external object TabPaneComponent : Component<TabPaneProps, RState> {
@@ -7,14 +8,14 @@ external object TabPaneComponent : Component<TabPaneProps, RState> {
 }
 
 external interface TabPaneProps : RProps {
-    var tab: Any? /* String | ReactElement */
+    var tab: ReactNode?
     var className: String?
     var style: dynamic
     var disabled: Boolean?
-    var children: Any? /* String | ReactElement */
+    var children: ReactNode?
     var forceRender: Boolean?
     var closable: Boolean?
-    var closeIcon: Any? /* String | ReactElement */
+    var closeIcon: ReactNode?
     var prefixCls: String?
     var tabKey: String?
     var id: String?

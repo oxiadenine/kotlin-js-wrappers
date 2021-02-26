@@ -110,7 +110,7 @@ private val tableData = arrayOf<HeadTableDataItem>(
     }
 )
 
-private fun onChange(pagination: TablePaginationConfig, filters: Map<String, Array<String?>>, sorter: Any, extra: TableCurrentDataSource<HeadTableDataItem>)  {
+private val onChange = { pagination: TablePaginationConfig, filters: Record<String, Array<String?>>, sorter: Any, _: TableCurrentDataSource<HeadTableDataItem> ->
     console.log("params", pagination, filters, sorter)
 }
 
@@ -121,7 +121,7 @@ fun RBuilder.head() {
             attrs {
                 columns = tableColumns.unsafeCast<ColumnsType<HeadTableDataItem>>()
                 dataSource = tableData
-                onChange = ::onChange
+                onChange = onChange
             }
         }
     }

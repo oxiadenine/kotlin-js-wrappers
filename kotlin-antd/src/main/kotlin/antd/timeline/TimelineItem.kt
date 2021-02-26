@@ -1,5 +1,6 @@
 package antd.timeline
 
+import antd.ReactNode
 import react.*
 
 external object TimelineItemComponent : Component<TimelineItemProps, RState> {
@@ -10,9 +11,9 @@ external interface TimelineItemProps : RProps {
     var prefixCls: String?
     var className: String?
     var color: String?
-    var dot: Any? /* String | ReactElement */
+    var dot: ReactNode?
     var pending: Boolean?
     var position: String?
     var style: dynamic
-    var label: Any? /* String | ReactElement */
+    var label: ReactNode?
 }

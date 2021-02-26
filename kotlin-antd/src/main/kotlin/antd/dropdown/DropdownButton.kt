@@ -14,9 +14,9 @@ external interface DropdownButtonProps : ButtonGroupProps, DropdownProps {
     var htmlType: ButtonHTMLType?
     override var disabled: Boolean?
     var onClick: MouseEventHandler<HTMLButtonElement>?
-    var icon: Any? /* String | ReactElement */
+    var icon: ReactNode?
     var href: String?
-    var children: Any? /* String | ReactElement */
+    var children: ReactNode?
     var title: String?
-    var buttonsRender: ((buttons: Array<Any /* String | ReactElement */>) -> Array<Any /* String | ReactElement */>)?
+    var buttonsRender: ((buttons: Array<ReactNode>) -> Array<ReactNode>)?
 }

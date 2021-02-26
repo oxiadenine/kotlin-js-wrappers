@@ -21,7 +21,7 @@ external interface RcImageProps : ImgHTMLAttributes<HTMLImageElement> {
     override var src: String?
     var prefixCls: String?
     var previewPrefixCls: String?
-    override var placeholder: dynamic /* String | ReactElement */
+    override var placeholder: dynamic /* ReactNode */
     var fallback: String?
     var preview: Any? /* Boolean | ImagePreviewType */
     var onPreviewClose: ((value: Boolean, prevValue: Boolean) -> Unit)?

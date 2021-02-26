@@ -14,14 +14,14 @@ external object TagComponent : Component<TagProps, RState> {
     override fun render(): ReactElement?
 }
 
-external interface TagProps : HTMLAttributes<HTMLDivElement>, RProps {
+external interface TagProps : HTMLAttributes<HTMLDivElement>, RefAttributes<HTMLElement>, RProps {
     var prefixCls: String?
     override var className: String?
     override var color: dynamic /* LiteralUnion<Any /* PresetColorType | PresetStatusColorType */, String> */
     var closable: Boolean?
-    var closeIcon: Any? /* String | ReactElement */
+    var closeIcon: ReactNode?
     var visible: Boolean?
     var onClose: ((e: MouseEvent<HTMLElement>) -> Unit)?
     override var style: dynamic
-    var icon: Any? /* String | ReactElement */
+    var icon: ReactNode?
 }

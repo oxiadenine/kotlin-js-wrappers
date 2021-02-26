@@ -3,6 +3,8 @@
 
 package antd.upload
 
+import antd.ReactNode
+import antd.RefAttributes
 import org.w3c.files.*
 import react.*
 import kotlin.js.Date
@@ -16,7 +18,7 @@ external class UploadComponent<T> : Component<UploadProps<T>, UploadState<T>> {
     override fun render(): ReactElement?
 }
 
-external interface UploadProps<T> : RProps {
+external interface UploadProps<T> : RefAttributes<Any>, RProps {
     var type: UploadType?
     var name: String?
     var defaultFileList: Array<UploadFile<T>>?
@@ -47,7 +49,7 @@ external interface UploadProps<T> : RProps {
     var id: String?
     var previewFile: PreviewFileHandler?
     var transformFile: TransformFileHandler?
-    var iconRender: ((file: UploadFile<T>, listType: UploadListType?) -> Any /* String | ReactElement */)?
+    var iconRender: ((file: UploadFile<T>, listType: UploadListType?) -> ReactNode)?
     var isImageUrl: ((file: UploadFile<T>) -> Boolean)?
     var progress: UploadListProgressProps?
     var itemRender: ItemRender<T>?
@@ -116,8 +118,8 @@ external interface ShowUploadListInterface {
     var showRemoveIcon: Boolean?
     var showPreviewIcon: Boolean?
     var showDownloadIcon: Boolean?
-    var removeIcon: Any /* String | ReactElement | (file: UploadFile) -> Any /* String | ReactElement */ */
-    var downloadIcon: Any /* String | ReactElement | (file: UploadFile) -> Any /* String | ReactElement */ */
+    var removeIcon: Any /* ReactNode | (file: UploadFile) -> ReactNode */
+    var downloadIcon: Any /* ReactNode | (file: UploadFile) -> ReactNode */
 }
 
 external interface UploadLocale {

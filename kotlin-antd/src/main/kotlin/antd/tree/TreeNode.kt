@@ -4,26 +4,44 @@ import antd.*
 import org.w3c.dom.*
 import react.*
 
-external object TreeNodeComponent : Component<TreeNodeProps, TreeNodeState> {
+external object TreeNodeComponent : Component<InternalTreeNodeProps, TreeNodeState> {
     override fun render(): ReactElement?
 }
 
-external interface TreeNodeProps : RProps {
+external interface InternalTreeNodeProps : TreeNodeProps, RProps {
+    var context: TreeContextProps?
+}
+
+external interface TreeNodeProps {
+    var eventKey: Key?
+    var prefixCls: String?
     var className: String?
+    var style: dynamic
+    var expanded: Boolean?
+    var selected: Boolean?
+    var checked: Boolean?
+    var loaded: Boolean?
+    var loading: Boolean?
+    var halfChecked: Boolean?
+    var title: Any /* ReactNode | (data: DataNode) -> ReactNode */
+    var dragOver: Boolean?
+    var dragOverGapTop: Boolean?
+    var dragOverGapBottom: Boolean?
+    var pos: String?
+    var domRef: Ref<HTMLDivElement>?
+    var data: DataNode?
+    var isStart: Array<Boolean>?
+    var isEnd: Array<Boolean>?
+    var active: Boolean?
+    var onMouseMove: MouseEventHandler<HTMLDivElement>?
+    var isLeaf: Boolean?
     var checkable: Boolean?
+    var selectable: Boolean?
     var disabled: Boolean?
     var disableCheckbox: Boolean?
-    var title: Any? /* String | ReactElement */
-    var key: String?
-    var eventKey: String?
-    var isLeaf: Boolean?
-    var checked: Boolean?
-    var expanded: Boolean?
-    var loading: Boolean?
-    var selected: Boolean?
-    var selectable: Boolean?
-    var icon: Any /* (treeNode: TreeNodeAttribute) -> ReactElement | ReactElement */
-    var children: Any? /* String | ReactElement */
+    var icon: IconType?
+    var switcherIcon: IconType?
+    var children: ReactNode?
 }
 
 external interface TreeNodeState : RState {

@@ -1,5 +1,6 @@
 package antd.form
 
+import antd.ReactNode
 import react.*
 
 external object FormErrorListComponent : Component<FormErrorListProps, RState> {
@@ -7,9 +8,7 @@ external object FormErrorListComponent : Component<FormErrorListProps, RState> {
 }
 
 external interface FormErrorListProps : RProps {
-    var errors: Array<ReactElement>?
-    /** @private Internal usage. Do not use in your production */
-    var help: ReactElement?
-    /** @private Internal usage. Do not use in your production */
+    var errors: Array<ReactNode>?
+    var help: ReactNode?
     var onDomErrorVisibleChange: ((visible: Boolean) -> Unit)?
 }

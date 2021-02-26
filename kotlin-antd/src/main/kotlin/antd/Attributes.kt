@@ -1,9 +1,19 @@
 package antd
 
-import react.*
+external interface Attributes {
+    var key: Key?
+}
+
+external interface RefAttributes<T> : Attributes {
+    var ref: Ref<T>?
+}
+
+external interface ClassAttributes<T> : Attributes {
+    var ref: LegacyRef<T>?
+}
 
 external interface DOMAttributes<T> {
-    var children: Any? /* String | ReactElement */
+    var children: ReactNode?
 
     // Clipboard Events
     var onCopy: ClipboardEventHandler<T>?

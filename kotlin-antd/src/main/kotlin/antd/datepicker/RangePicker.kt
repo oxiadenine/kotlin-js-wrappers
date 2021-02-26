@@ -1,7 +1,9 @@
 package antd.datepicker
 
 import antd.FocusEventHandler
+import antd.ReactNode
 import antd.configprovider.SizeType
+import kotlinext.js.Record
 import moment.Moment
 import org.w3c.dom.*
 import react.*
@@ -42,8 +44,8 @@ external interface RcRangePickerTimeProps<DateType> : RcRangePickerSharedProps<D
 
 external interface RcRangePickerSharedProps<DateType> {
     var id: String?
-    var ranges: Map<String, Any? /* RangeValue<DateType>> | () -> RangeValue<DateType>> */>
-    var separator: Any? /* String | ReactElement */
+    var ranges: Record<String, Any /* RangeValue<DateType>> | () -> RangeValue<DateType>> */>
+    var separator: ReactNode?
     var allowEmpty: Array<Boolean>?
     var onCalendarChange: ((values: RangeValue<DateType>, formatString: Array<String>, info: RangeInfo) -> Unit)?
     var onFocus: FocusEventHandler<HTMLInputElement>?
@@ -51,7 +53,7 @@ external interface RcRangePickerSharedProps<DateType> {
     var direction: String? /* "ltr" | "rtl" */
     var autoComplete: String?
     var activePickerIndex: Number? /* 0 | 1 */
-    var panelRender: ((originPanel: Any /* String | ReactElement */) -> Any? /* String | ReactElement */)?
+    var panelRender: ((originPanel: ReactNode) -> ReactNode)?
 }
 
 external interface RangeInfo {

@@ -3,6 +3,8 @@
 
 package antd.avatar
 
+import antd.ReactNode
+import antd.RefAttributes
 import react.*
 
 @JsName("default")
@@ -12,18 +14,18 @@ external object AvatarComponent : Component<AvatarProps, AvatarState> {
     override fun render(): ReactElement
 }
 
-external interface AvatarProps : RProps {
+external interface AvatarProps : RefAttributes<dynamic>, RProps {
     var shape: String? /* "circle" | "square" */
     var size: Any? /* AvatarSize | Number */
     var gap: Number?
-    var src: Any? /* String | ReactElement */
+    var src: ReactNode?
     var srcSet: String?
     var draggable: Boolean?
-    var icon: Any? /* String | ReactElement */
+    var icon: ReactNode?
     var style: dynamic
     var prefixCls: String?
     var className: String?
-    var children: Any? /* String | ReactElement */
+    var children: ReactNode?
     var alt: String?
     var onError: (() -> Boolean)?
 }

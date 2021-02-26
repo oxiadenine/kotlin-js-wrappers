@@ -1,5 +1,6 @@
 package antd.treeselect
 
+import antd.Key
 import antd.tree.*
 import react.*
 import kotlin.js.*
@@ -7,7 +8,7 @@ import kotlin.js.*
 external val selectContext: RContext<ContextProps>
 
 external interface ContextProps {
-    var checkable: Any /* Boolean | String | ReactElement */
+    var checkable: Any /* Boolean | ReactNode */
     var checkedKeys: Array<Key>
     var halfCheckedKeys: Array<Key>
     var treeExpandedKeys: Array<Key>

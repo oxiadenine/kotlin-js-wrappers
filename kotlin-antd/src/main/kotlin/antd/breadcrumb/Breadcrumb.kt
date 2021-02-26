@@ -3,6 +3,7 @@
 
 package antd.breadcrumb
 
+import antd.ReactNode
 import react.*
 
 @JsName("default")
@@ -17,8 +18,8 @@ external interface BreadcrumbProps : RProps {
     var prefixCls: String?
     var routes: Array<Route>?
     var params: Any?
-    var separator: Any? /* String | ReactElement */
-    var itemRender: ((route: Route, params: Any, routes: Array<Route>, paths: Array<String>) -> Any /* String | ReactElement */)?
+    var separator: ReactNode?
+    var itemRender: ((route: Route, params: Any, routes: Array<Route>, paths: Array<String>) -> ReactNode)?
     var style: dynamic
     var className: String?
 }

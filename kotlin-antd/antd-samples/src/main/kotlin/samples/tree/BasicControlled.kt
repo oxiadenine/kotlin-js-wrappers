@@ -1,5 +1,6 @@
 package samples.tree
 
+import antd.Key
 import antd.tree.*
 import kotlinext.js.*
 import react.*
@@ -117,7 +118,7 @@ class BasicControlledDemo : RComponent<RProps, BasicControlledDemoState>() {
                 return@map buildElement {
                     treeNode {
                         attrs {
-                            title = item.title
+                            title = item.title as Any
                             key = item.key as String
                         }
                         attrs.asDynamic()["dataRef"] = item

@@ -1,7 +1,6 @@
 package antd.tree
 
-typealias IconType = Any /* String | ReactElement | (props: TreeNodeProps) -> ReactElement */
-typealias Key = Any /* String | Number */
+typealias IconType = Any /* ReactNode | (props: TreeNodeProps) -> ReactNode */
 typealias NodeElement = Any /* ReactElement | NodeElementSelect */
 typealias NodeInstance = Any /* RClass<TreeNodeProps> | NodeElementSelect */
 

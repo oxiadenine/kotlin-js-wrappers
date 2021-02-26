@@ -1,5 +1,6 @@
 package antd.badge
 
+import antd.ReactNode
 import react.Component
 import react.RProps
 import react.RState
@@ -13,8 +14,8 @@ external interface RibbonProps : RProps {
     var className: String?
     var prefixCls: String?
     var style: dynamic
-    var text: Any? /* String | ReactElement */
+    var text: ReactNode?
     var color: PresetColorType?
-    var children: Any? /* String | ReactElement */
+    var children: ReactNode?
     var placement: RibbonPlacement?
 }

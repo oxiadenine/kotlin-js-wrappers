@@ -3,6 +3,7 @@
 
 package antd.radio
 
+import antd.RefAttributes
 import antd.checkbox.*
 import org.w3c.dom.events.*
 import react.*
@@ -15,7 +16,7 @@ external object RadioComponent : Component<RadioProps, RState> {
     override fun render(): ReactElement?
 }
 
-external interface RadioProps : AbstractCheckboxProps<RadioChangeEvent>, RProps
+external interface RadioProps : AbstractCheckboxProps<RadioChangeEvent>, RefAttributes<dynamic>, RProps
 
 external interface RadioChangeEventTarget : RadioProps {
     override var checked: Boolean?

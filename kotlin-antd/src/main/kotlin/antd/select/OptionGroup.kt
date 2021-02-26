@@ -1,5 +1,7 @@
 package antd.select
 
+import antd.Key
+import antd.ReactNode
 import react.*
 
 external object OptionGroupComponent : Component<OptionGroupProps, RState> {
@@ -7,12 +9,12 @@ external object OptionGroupComponent : Component<OptionGroupProps, RState> {
 }
 
 external interface OptionGroupProps : OptionGroupData, RProps {
-    var children: Any? /* String | ReactElement */
+    var children: ReactNode?
 }
 
 external interface OptionGroupData {
     var key: Key?
-    var label: Any? /* String | ReactElement */
+    var label: ReactNode?
     var options: Array<OptionData>
     var className: String?
     var style: dynamic
