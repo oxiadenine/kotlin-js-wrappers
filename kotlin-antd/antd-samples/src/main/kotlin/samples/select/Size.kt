@@ -17,7 +17,7 @@ private val children = (10..36).map { i ->
     }
 }.toTypedArray()
 
-private fun handleChange(value: SelectValue, option: Any) {
+private val handleChange = { value: SelectValue, _: Any ->
     console.log("selected $value")
 }
 
@@ -62,7 +62,7 @@ class SelectSizesDemo : RComponent<RProps, SelectSizesDemoState>() {
                 attrs {
                     size = state.size
                     defaultValue = "1010"
-                    onChange = ::handleChange
+                    onChange = handleChange
                     style = js { width = 200 }
                 }
                 childList.add(children)
@@ -74,7 +74,7 @@ class SelectSizesDemo : RComponent<RProps, SelectSizesDemoState>() {
                     size = state.size
                     placeholder = "Please select"
                     defaultValue = arrayOf("a10", "c12")
-                    onChange = ::handleChange
+                    onChange = handleChange
                     style = js { width = "100%" }
                 }
                 childList.add(children)
@@ -86,7 +86,7 @@ class SelectSizesDemo : RComponent<RProps, SelectSizesDemoState>() {
                     size = state.size
                     placeholder = "Please select"
                     defaultValue = arrayOf("a10", "c12")
-                    onChange = ::handleChange
+                    onChange = handleChange
                     style = js { width = "100%" }
                 }
                 childList.add(children)

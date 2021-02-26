@@ -41,7 +41,7 @@ private val cascaderOptions = arrayOf<CascaderOptionType>(
     }
 )
 
-private fun handleChange(value: CascaderValueType, selectedOptions: Array<CascaderOptionType>?) {
+private val handleChange = { value: CascaderValueType, _: Array<CascaderOptionType>? ->
     console.log(value)
 }
 
@@ -53,14 +53,14 @@ fun RBuilder.size() {
                 attrs {
                     size = "large"
                     options = cascaderOptions
-                    onChange = ::handleChange
+                    onChange = handleChange
                 }
             }
             br {}
             cascader {
                 attrs {
                     options = cascaderOptions
-                    onChange = ::handleChange
+                    onChange = handleChange
                 }
             }
             br {}
@@ -68,7 +68,7 @@ fun RBuilder.size() {
                 attrs {
                     size = "small"
                     options = cascaderOptions
-                    onChange = ::handleChange
+                    onChange = handleChange
                 }
             }
         }

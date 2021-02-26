@@ -5,7 +5,7 @@ import kotlinext.js.*
 import react.*
 import styled.*
 
-private fun handleChange(value: String, option: Any?) {
+private val handleChange = { value: String, _: Any? ->
     console.log("selected $value")
 }
 
@@ -25,7 +25,7 @@ fun RBuilder.automaticTokenization() {
             attrs {
                 mode = "tags"
                 style = js { width = "100%" }
-                onChange = ::handleChange
+                onChange = handleChange
                 tokenSeparators = arrayOf(",")
             }
             childList.add(children)

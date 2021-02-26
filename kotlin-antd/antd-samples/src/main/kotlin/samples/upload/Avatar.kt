@@ -16,7 +16,7 @@ private fun getBase64(img: File, callback: (imgUrl: String) -> Unit) {
     reader.readAsDataURL(img)
 }
 
-private fun beforeUpload(file: RcFile, FileList: Array<RcFile>): Boolean {
+private val beforeUpload = { file: RcFile, _: Array<RcFile> ->
     val isJPG = file.type == "image/jpeg"
 
     if (!isJPG) {
@@ -29,7 +29,7 @@ private fun beforeUpload(file: RcFile, FileList: Array<RcFile>): Boolean {
         message.error("Image must smaller than 2MB!")
     }
 
-    return isJPG && isLt2M
+    isJPG && isLt2M
 }
 
 
@@ -83,7 +83,7 @@ class AvatarApp : RComponent<RProps, AvatarAppState>() {
                 className = "avatar-uploader"
                 showUploadList = false
                 action = "//jsonplaceholder.typicode.com/posts/"
-                beforeUpload = ::beforeUpload
+                beforeUpload = beforeUpload
                 onChange = handleChange
             }
             if (!state.imageUrl.isNullOrEmpty()) {

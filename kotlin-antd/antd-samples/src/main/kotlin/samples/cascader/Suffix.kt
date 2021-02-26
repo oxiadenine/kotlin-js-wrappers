@@ -42,7 +42,7 @@ private val cascaderOptions = arrayOf<CascaderOptionType>(
     }
 )
 
-private fun handleChange(value: CascaderValueType, selectedOptions: Array<CascaderOptionType>?) {
+private val handleChange = { value: CascaderValueType, _: Array<CascaderOptionType>? ->
     console.log(value)
 }
 
@@ -56,7 +56,7 @@ fun RBuilder.suffix() {
                         smileOutlined {}
                     }
                     options = cascaderOptions
-                    onChange = ::handleChange
+                    onChange = handleChange
                     placeholder = "Please select"
                 }
             }
@@ -65,7 +65,7 @@ fun RBuilder.suffix() {
                     suffixIcon = "ab"
                     style = js { marginTop = "1rem" }
                     options = cascaderOptions
-                    onChange = ::handleChange
+                    onChange = handleChange
                     placeholder = "Please select"
                 }
             }

@@ -5,7 +5,7 @@ import kotlinext.js.*
 import react.*
 import styled.*
 
-private fun handleChange(value: String, option: Any) {
+private val handleChange = { value: String, _: Any ->
     console.log("selected $value")
 }
 
@@ -16,7 +16,7 @@ fun RBuilder.optGroup() {
             attrs {
                 defaultValue = "lucy"
                 style = js { width = 200 }
-                onChange = ::handleChange
+                onChange = handleChange
             }
             optGroup {
                 attrs.label = "Manager"

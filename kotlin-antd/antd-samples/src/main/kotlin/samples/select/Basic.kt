@@ -7,7 +7,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-private fun handleChange(value: String, option: Any) {
+private val handleChange = { value: String, _: Any ->
     console.log("selected $value")
 }
 
@@ -18,7 +18,7 @@ fun RBuilder.basic() {
             select<String, SelectComponent<String>> {
                 attrs {
                     defaultValue = "lucy"
-                    onChange = ::handleChange
+                    onChange = handleChange
                     style = js { width = 120 }
                 }
                 option {

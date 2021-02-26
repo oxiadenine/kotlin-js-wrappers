@@ -59,7 +59,7 @@ class PicturesWall : RComponent<RProps, PicturesWallState>() {
                     +"Upload"
                 }
             }
-        }!!
+        }
 
         div {
             attrs.classes = setOf("clearfix")

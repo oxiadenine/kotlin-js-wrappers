@@ -8,7 +8,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-private fun handleChange(value: Array<String>, option: Any) {
+private val handleChange = { value: Array<String>, _: Any ->
     console.log("selected $value")
 }
 
@@ -21,7 +21,7 @@ fun RBuilder.optionLabelProp() {
                 style = js { width = "100%" }
                 placeholder = "select one country"
                 defaultValue = arrayOf("china")
-                onChange = ::handleChange
+                onChange = handleChange
                 optionLabelProp = "label"
 
             }

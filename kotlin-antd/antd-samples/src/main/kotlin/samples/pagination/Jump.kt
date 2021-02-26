@@ -5,7 +5,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-private fun handleChange(page: Number, pageSize: Number?) {
+private val handleChange = { page: Number, _: Number? ->
     console.log("Page: ", page)
 }
 
@@ -17,7 +17,7 @@ fun RBuilder.jump() {
                 showQuickJumper = true
                 defaultCurrent = 2
                 total = 500
-                onChange = ::handleChange
+                onChange = handleChange
             }
         }
         br {}
@@ -26,7 +26,7 @@ fun RBuilder.jump() {
                 showQuickJumper = true
                 defaultCurrent = 2
                 total = 500
-                onChange = ::handleChange
+                onChange = handleChange
                 disabled = true
             }
         }

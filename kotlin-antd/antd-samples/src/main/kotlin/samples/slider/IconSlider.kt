@@ -34,7 +34,7 @@ class IconSliderDemo : RComponent<IconSliderDemoProps, IconSliderDemoState>() {
 
         val sliderMid = ((sliderMax - sliderMin) / 2)
 
-        val sliderValue = (state.value as Number).toInt()
+        val sliderValue = state.value.toInt()
 
         val preColor = if (sliderValue >= sliderMid) "" else "rgba(0, 0, 0, .45)"
         val nextColor = if (sliderValue >= sliderMid) "rgba(0, 0, 0, .45)" else ""

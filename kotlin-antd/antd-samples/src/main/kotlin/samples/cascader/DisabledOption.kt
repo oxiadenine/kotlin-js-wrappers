@@ -41,7 +41,7 @@ private val cascaderOptions = arrayOf<CascaderOptionType>(
     }
 )
 
-private fun handleChange(value: CascaderValueType, selectedOptions: Array<CascaderOptionType>?) {
+private val handleChange = { value: CascaderValueType, _: Array<CascaderOptionType>? ->
     console.log(value)
 }
 
@@ -51,7 +51,7 @@ fun RBuilder.disabledOption() {
         cascader {
             attrs {
                 options = cascaderOptions
-                onChange = ::handleChange
+                onChange = handleChange
             }
         }
     }

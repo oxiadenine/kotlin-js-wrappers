@@ -9,7 +9,7 @@ private fun handleChange(value: Any) {
     console.log("Change: ", value)
 }
 
-private fun handleSelect(option: OptionProps, prefix: String) {
+private val handleSelect = { option: OptionProps, _: String ->
     console.log("select", option)
 }
 
@@ -20,7 +20,7 @@ fun RBuilder.basic() {
             attrs {
                 style = js { width = "100%" }
                 onChange = ::handleChange
-                onSelect = ::handleSelect
+                onSelect = handleSelect
             }
             option {
                 attrs.value = "afc163"

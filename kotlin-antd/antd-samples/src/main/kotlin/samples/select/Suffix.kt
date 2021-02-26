@@ -18,7 +18,7 @@ private val mehIcon = buildElement {
     mehOutlined {}
 }
 
-private fun handleChange(value: String, option: Any) {
+private val handleChange = { value: String, _: Any ->
     console.log("selected $value")
 }
 
@@ -31,7 +31,7 @@ fun RBuilder.suffix() {
                     suffixIcon = smileIcon
                     defaultValue = "lucy"
                     style = js { width = 120 }
-                    onChange = ::handleChange
+                    onChange = handleChange
                 }
                 option {
                     attrs.value = "jack"

@@ -5,18 +5,18 @@ import react.*
 import react.dom.*
 import styled.*
 
-private fun handleItemRender(page: Number, type: String, element: ReactElement): ReactElement {
+private val handleItemRender = { _: Number, type: String, element: ReactElement ->
     if (type == "prev") {
-        return buildElement {
+        buildElement {
             a { +"Previous" }
         }
     } else if (type == "next") {
-        return buildElement {
+        buildElement {
             a { +"Next" }
         }
     }
 
-    return element
+    element
 }
 
 fun RBuilder.itemRender() {
@@ -25,7 +25,7 @@ fun RBuilder.itemRender() {
         pagination {
             attrs {
                 total = 500
-                itemRender = ::handleItemRender
+                itemRender = handleItemRender
             }
         }
     }

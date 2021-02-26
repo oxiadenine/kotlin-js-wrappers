@@ -106,7 +106,7 @@ fun RBuilder.customizeHeader() {
                                             onChange = { newYear, _ ->
                                                 val now = headerRender.value.clone().year(newYear)
 
-                                                headerRender.onChange?.invoke(now)
+                                                headerRender.onChange.invoke(now)
                                             }
                                             value = year
                                         }
@@ -123,7 +123,7 @@ fun RBuilder.customizeHeader() {
                                                 val newValue = headerRender.value.clone()
                                                 newValue.month(selectedMonth.toInt(10))
 
-                                                headerRender.onChange?.invoke(newValue)
+                                                headerRender.onChange.invoke(newValue)
                                             }
                                         }
                                         childList.add(monthOptions.toTypedArray())

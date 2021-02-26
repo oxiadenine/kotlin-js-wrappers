@@ -40,12 +40,12 @@ private val cascaderOptions = arrayOf<CascaderOptionType>(
     }
 )
 
-private fun handleChange(value: CascaderValueType, selectedOptions: Array<CascaderOptionType>?) {
+private val handleChange = { value: CascaderValueType, _: Array<CascaderOptionType>? ->
     console.log(value)
 }
 
-private fun handleDisplayRender(label: Array<String>, selectedOptions: Array<CascaderOptionType>?): ReactElement {
-    return buildElements { +label[label.size - 1] }.unsafeCast<ReactElement>()
+private val handleDisplayRender = { label: Array<String>, _: Array<CascaderOptionType>? ->
+    buildElements { +label[label.size - 1] }.unsafeCast<ReactElement>()
 }
 
 fun RBuilder.hover() {
@@ -55,8 +55,8 @@ fun RBuilder.hover() {
             attrs {
                 options = cascaderOptions
                 expandTrigger = "hover"
-                displayRender = ::handleDisplayRender
-                onChange = ::handleChange
+                displayRender = handleDisplayRender
+                onChange = handleChange
             }
         }
     }

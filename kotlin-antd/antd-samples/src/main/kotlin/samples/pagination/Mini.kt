@@ -5,8 +5,8 @@ import react.*
 import react.dom.*
 import styled.*
 
-private fun showTotal(total: Number, range: Array<Number>): ReactElement {
-    return buildElement { +"Total $total items" }
+private val showTotal = { total: Number, _: Array<Number> ->
+    buildElement { +"Total $total items" }
 }
 
 fun RBuilder.mini() {
@@ -31,7 +31,7 @@ fun RBuilder.mini() {
                 attrs {
                     size = "small"
                     total = 50
-                    showTotal = ::showTotal
+                    showTotal = showTotal
                 }
             }
         }

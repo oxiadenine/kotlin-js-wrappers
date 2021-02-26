@@ -46,7 +46,7 @@ private val cascaderOptions = arrayOf<FieldNamesCascaderOptionType>(
     }
 )
 
-private fun handleChange(value: CascaderValueType, selectedOptions: Array<CascaderOptionType>?) {
+private val handleChange = { value: CascaderValueType, _: Array<CascaderOptionType>? ->
     console.log(value)
 }
 
@@ -61,7 +61,7 @@ fun RBuilder.fieldNames() {
                     children = "items"
                 }
                 options = cascaderOptions.unsafeCast<Array<CascaderOptionType>>()
-                onChange = ::handleChange
+                onChange = handleChange
                 placeholder = "Please select"
             }
         }

@@ -8,7 +8,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-private fun handleChange(value: LabeledValue, option: Any) {
+private val handleChange = { value: LabeledValue, _: Any ->
     console.log(value)  // { key: "lucy", label: "Lucy (101)" }
 }
 
@@ -20,7 +20,7 @@ fun RBuilder.labelInValue() {
                 labelInValue = true
                 defaultValue = jsObject { key = "lucy" }
                 style = js { width = 120 }
-                onChange = ::handleChange
+                onChange = handleChange
             }
             option {
                 attrs.value = "jack"

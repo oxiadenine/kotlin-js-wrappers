@@ -14,7 +14,7 @@ private val children = (10..36).map { i ->
     }
 }.toTypedArray()
 
-private fun handleChange(value: Array<String>, option: Any) {
+private val handleChange = { value: Array<String>, _: Any ->
     console.log("selected $value")
 }
 
@@ -27,7 +27,7 @@ fun RBuilder.multiple() {
                 style = js { width = "100%" }
                 placeholder = "Please select"
                 defaultValue = arrayOf("a10", "a12")
-                onChange = ::handleChange
+                onChange = handleChange
             }
             childList.add(children)
         }

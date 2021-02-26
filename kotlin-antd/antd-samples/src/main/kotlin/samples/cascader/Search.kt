@@ -49,8 +49,8 @@ private fun handleChange(value: CascaderValueType, selectedOptions: Array<Cascad
     console.log(value, selectedOptions)
 }
 
-private fun searchFilter(inputValue: String, path: Array<CascaderOptionType>, names: FilledFieldNamesType): Boolean {
-    return path.any { option ->
+private val searchFilter = { inputValue: String, path: Array<CascaderOptionType>, _: FilledFieldNamesType ->
+    path.any { option ->
         option.label!!.unsafeCast<String>().toLowerCase().contains(inputValue.toLowerCase())
     }
 }
@@ -64,7 +64,7 @@ fun RBuilder.search() {
                 onChange = ::handleChange
                 placeholder = "Please select"
                 showSearch = jsObject<ShowSearchType> {
-                    filter = ::searchFilter
+                    filter = searchFilter
                 }
             }
         }

@@ -14,7 +14,7 @@ private val children = (10..36).map { i ->
     }
 }.toTypedArray()
 
-private fun handleChange(value: Array<String>, option: Any) {
+private val handleChange = { value: Array<String>, _: Any ->
     console.log("selected $value")
 }
 
@@ -26,7 +26,7 @@ fun RBuilder.tags() {
                 mode = "tags"
                 style = js { width = "100%" }
                 placeholder = "Tags Mode"
-                onChange = ::handleChange
+                onChange = handleChange
             }
             childList.add(children)
         }

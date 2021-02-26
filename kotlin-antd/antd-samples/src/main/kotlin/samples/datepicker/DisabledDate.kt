@@ -19,24 +19,24 @@ private fun handleDisabledDate(current: Moment?): Boolean {
     return current.asDynamic() < moment().endOf("day").asDynamic()
 }
 
-private fun handleDisabledDateTime(current: Moment): DisabledTimes {
-    return jsObject {
+private val handleDisabledDateTime = { _: Moment ->
+    jsObject<DisabledTimes> {
         disabledHours = { range(0, 24).sliceArray(4..24) }
         disabledMinutes = { range(30, 60) }
         disabledSeconds = { _, _ -> arrayOf(55, 56) }
     }
 }
 
-private fun handleDisabledRangeTime(current: Moment?, type: String): DisabledTimes {
+private val handleDisabledRangeTime = { _: Moment?, type: String ->
     if (type == "start") {
-        return jsObject {
+        jsObject<DisabledTimes> {
             disabledHours = { range(0, 60).sliceArray(4..24) }
             disabledMinutes = { range(30, 60) }
             disabledSeconds = { _, _ -> arrayOf(55, 56) }
         }
     }
 
-    return jsObject {
+    jsObject<DisabledTimes> {
         disabledHours = { range(0, 60).sliceArray(20..24) }
         disabledMinutes = { range(0, 30) }
         disabledSeconds = { _, _ -> arrayOf(55, 56) }
@@ -51,7 +51,7 @@ fun RBuilder.disabledDate() {
                 attrs {
                     format = "YYYY-MM-DD HH:mm:ss"
                     disabledDate = ::handleDisabledDate
-                    disabledTime = ::handleDisabledDateTime
+                    disabledTime = handleDisabledDateTime
                     showTime = jsObject<SharedTimeProps<Moment>> {
                         defaultValue = moment("00:00:00", "HH:mm:ss")
                     }
@@ -68,7 +68,7 @@ fun RBuilder.disabledDate() {
             rangePicker {
                 attrs {
                     disabledDate = ::handleDisabledDate
-                    disabledTime = ::handleDisabledRangeTime
+                    disabledTime = handleDisabledRangeTime
                     showTime = jsObject<RangeShowTimeObject<Moment>> {
                         hideDisabledOptions = true
                         defaultValue = arrayOf(
