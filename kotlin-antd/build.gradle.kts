@@ -4,10 +4,12 @@ plugins {
 }
 
 dependencies {
-    implementation(project(":kotlin-moment"))
+    api(project(":kotlin-moment"))
 
-    implementation(wrapperDependency("react"))
-    implementation(wrapperDependency("react-dom"))
+    api(kotlinWrapperDependency("react"))
+    api(kotlinWrapperDependency("react-dom"))
+
+    api(npmPackage("antd"))
 }
 
 tasks.register("generateIconFiles") {

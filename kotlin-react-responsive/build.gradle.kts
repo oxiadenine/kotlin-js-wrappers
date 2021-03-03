@@ -4,5 +4,7 @@ plugins {
 }
 
 dependencies {
-    implementation(wrapperDependency("react"))
+    api(kotlinWrapperDependency("react"))
+
+    api(npmPackage("react-responsive"))
 }
