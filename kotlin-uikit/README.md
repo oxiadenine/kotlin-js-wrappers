@@ -14,7 +14,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.github.samgarasx:kotlin-uikit:3.5.7-pre.3-kotlin-1.4.30")
+    implementation("com.github.samgarasx:kotlin-uikit:3.5.7-pre.4-kotlin-1.4.30")
     implementation(npm("uikit", "3.5.7"))
 }
 ```
