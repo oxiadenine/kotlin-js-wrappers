@@ -9,12 +9,8 @@ fun Project.configureKotlinJs() {
     plugins.withType<KotlinJsPluginWrapper> {
         extensions.configure<KotlinJsProjectExtension> {
             js {
-                if (!project.name.contains("samples")) {
-                    browser()
-                } else {
-                    browser {
-                        binaries.executable()
-
+                browser {
+                    if (project.name.contains("samples")) {
                         webpackTask {
                             cssSupport.enabled = true
                         }
