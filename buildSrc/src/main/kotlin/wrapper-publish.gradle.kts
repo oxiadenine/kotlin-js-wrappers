@@ -1,58 +1,60 @@
-import org.gradle.api.Project
-import org.gradle.api.publish.PublicationArtifact
-import org.gradle.api.publish.maven.MavenPublication
-import org.gradle.api.publish.maven.internal.artifact.FileBasedMavenArtifact
-import org.gradle.kotlin.dsl.get
-import java.io.File
-
 plugins {
-    id("com.jfrog.bintray")
     `maven-publish`
+    signing
 }
 
-val pkgVersionName = "${version(project.name)}-kotlin-${kotlinVersion()}"
+signing {
+    setRequired({
+        gradle.taskGraph.hasTask("publish")
+    })
 
-bintray {
-    user = System.getenv("BINTRAY_USER")
-    key = System.getenv("BINTRAY_KEY")
-    publish = true
-    override = true
-
-    pkg = PackageConfig().apply {
-        repo = "kotlin-js-wrappers"
-        name = project.name
-        vcsUrl = "https://github.com/samgarasx/kotlin-js-wrappers.git"
-        setLicenses("Apache-2.0")
-        version = VersionConfig().apply {
-            name = pkgVersionName
-        }
-    }
-
-    setPublications("kotlinJsWrapper")
+    sign(configurations.archives.get())
 }
 
-publishing {
+configure<PublishingExtension> {
     publications.create<MavenPublication>("kotlinJsWrapper") {
         groupId = project.group.toString()
         artifactId = project.name
-        version = pkgVersionName
+        version = "${version(project.name)}-kotlin-${kotlinVersion()}"
 
         from(components["kotlin"])
+
+        pom {
+            name.set(project.name)
+            description.set(project.description)
+            url.set("https://github.com/samgarasx/kotlin-js-wrappers")
+
+            licenses {
+                license {
+                    name.set("Apache License, Version 2.0")
+                    url.set("https://github.com/samgarasx/kotlin-js-wrappers/blob/master/LICENSE")
+                }
+            }
+
+            developers {
+                developer {
+                    id.set("samgarasx")
+                    name.set("Samuel Garcia")
+                    email.set("samgarasx@gmail.com")
+                }
+            }
+
+            scm {
+                connection.set("scm:git:git://github.com/samgarasx/kotlin-js-wrappers.git")
+                developerConnection.set("scm:git:git@github.com:samgarasx/kotlin-js-wrappers.git")
+                url.set("https://github.com/samgarasx/kotlin-js-wrappers")
+            }
+        }
     }
-}
 
-tasks.named("bintrayUpload") {
-    doFirst {
-        project.extensions
-            .getByName<PublishingExtension>("publishing")
-            .publications.withType<MavenPublication>()
-            .all { artifact(project.moduleArtifact(name)) }
+    repositories {
+        maven {
+            name = "MavenCentral"
+            url = uri("https://s01.oss.sonatype.org/content/repositories/releases")
+            credentials {
+                username = System.getenv("SONATYPE_USERNAME")
+                password = System.getenv("SONATYPE_PASSWORD")
+            }
+        }
     }
-}
-
-fun Project.moduleArtifact(publicationName: String): PublicationArtifact =
-    ModuleArtifact(buildDir.resolve("publications/$publicationName/module.json"))
-
-class ModuleArtifact(moduleFile: File) : FileBasedMavenArtifact(moduleFile) {
-    override fun getDefaultExtension() = "module"
 }

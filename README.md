@@ -9,7 +9,7 @@ To learn more please refer to the README's of individual modules:
 * [kotlin-react-responsive](kotlin-react-responsive/README.md)
 * [kotlin-uikit](kotlin-uikit/README.md)
 
-Artifacts installable using Maven and Gradle are published to [Bintray](https://bintray.com/samgarasx/kotlin-js-wrappers).
+Artifacts using Maven and Gradle are published to Maven Central.
 
 **All packages require JDK 8 to be installed.**
 

@@ -5,22 +5,19 @@ built with [Kotlin/JS](https://kotlinlang.org/docs/reference/js-overview.html).
 
 ### Installation
 
-To start using `kotlin-antd` make sure you have the Bintray repository, and the following dependencies added to 
+To start using `kotlin-antd` make sure you have the Maven Central repository, and the following dependencies added to 
 the Gradle build file:
 
 ```kotlin
 repositories {
-    maven("https://dl.bintray.com/samgarasx/kotlin-js-wrappers")
+    mavenCentral()
 }
 
 dependencies {
-    implementation("com.github.samgarasx:kotlin-antd:4.8.6-pre.7-kotlin-1.4.30")
+    implementation("io.github.samgarasx:kotlin-antd:4.8.6-pre.7-kotlin-1.4.30")
     implementation(npm("antd", "4.8.6"))
 }
 ```
-
-See the [Bintray page](https://bintray.com/samgarasx/kotlin-js-wrappers/kotlin-antd) for Maven and Gradle 
-installation instructions.
 
 ### Getting Started
 

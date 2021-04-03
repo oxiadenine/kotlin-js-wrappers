@@ -5,22 +5,19 @@ built with [Kotlin/JS](https://kotlinlang.org/docs/reference/js-overview.html).
 
 ### Installation
 
-To start using `kotlin-uikit` make sure you have the Bintray repository, and the following dependencies added to 
+To start using `kotlin-uikit` make sure you have the Maven Central repository, and the following dependencies added to 
 the Gradle build file:
 
 ```kotlin
 repositories {
-    maven("https://dl.bintray.com/samgarasx/kotlin-js-wrappers")
+    mavenCentral()
 }
 
 dependencies {
-    implementation("com.github.samgarasx:kotlin-uikit:3.5.7-pre.4-kotlin-1.4.30")
+    implementation("io.github.samgarasx:kotlin-uikit:3.5.7-pre.4-kotlin-1.4.30")
     implementation(npm("uikit", "3.5.7"))
 }
 ```
-
-See the [Bintray page](https://bintray.com/samgarasx/kotlin-js-wrappers/kotlin-uikit) for Maven and Gradle 
-installation instructions.
 
 ### Getting Started
 
