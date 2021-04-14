@@ -11,12 +11,11 @@ fun Project.configureKotlinJs() {
             js {
                 browser {
                     if (project.name.contains("samples")) {
-                        webpackTask {
+                        commonWebpackConfig {
                             cssSupport.enabled = true
                         }
-                        runTask {
-                            cssSupport.enabled = true
-                        }
+
+                        binaries.executable()
                     }
                 }
             }
