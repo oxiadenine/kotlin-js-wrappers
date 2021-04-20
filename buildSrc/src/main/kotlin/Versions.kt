@@ -7,4 +7,4 @@ fun Project.npmVersion(name: String) = version("kotlin-$name")
     .replaceAfter("-", "")
     .removeSuffix("-")
 
-internal fun Project.version(target: String) = property("${target}.version") as String
+fun Project.version(target: String) = property("${target}.version") as String

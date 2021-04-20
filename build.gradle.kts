@@ -1,15 +1,49 @@
+import org.jetbrains.kotlin.gradle.dsl.KotlinJsCompile
+import org.jetbrains.kotlin.gradle.dsl.KotlinJsProjectExtension
+import org.jetbrains.kotlin.gradle.plugin.KotlinJsPluginWrapper
+
 plugins {
     kotlin("js") apply false
 }
 
 subprojects {
+    group = "io.github.samgarasx"
+    version = if (!project.name.contains("samples")) {
+        version(project.name)
+    } else "1.0-SNAPSHOT"
+
     repositories {
         mavenCentral()
         maven("https://maven.pkg.jetbrains.space/public/p/kotlinx-html/maven")
         maven("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/kotlin-js-wrappers")
     }
 
-    configureKotlinJs()
+    plugins.withType<KotlinJsPluginWrapper> {
+        extensions.configure<KotlinJsProjectExtension> {
+            js {
+                if (project.name.contains("samples")) {
+                    browser {
+                        commonWebpackConfig {
+                            cssSupport.enabled = true
+                        }
+                    }
+
+                    binaries.executable()
+                } else browser()
+            }
+        }
+
+        tasks.withType<KotlinJsCompile>().configureEach {
+            kotlinOptions {
+                if (name == "compileKotlinJs") {
+                    sourceMapEmbedSources = "always"
+                    sourceMap = true
+                } else {
+                    sourceMap = false
+                }
+            }
+        }
+    }
 }
 
 tasks.wrapper {
