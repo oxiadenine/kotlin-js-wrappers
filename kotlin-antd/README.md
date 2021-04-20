@@ -14,8 +14,7 @@ repositories {
 }
 
 dependencies {
-    implementation("io.github.samgarasx:kotlin-antd:4.8.6-pre.9-kotlin-1.4.32")
-    implementation(npm("antd", "4.8.6"))
+    implementation("io.github.samgarasx:kotlin-antd:VERSION")
 }
 ```
 

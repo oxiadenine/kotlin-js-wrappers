@@ -14,8 +14,7 @@ repositories {
 }
 
 dependencies {
-    implementation("io.github.samgarasx:kotlin-react-intl:5.8.1-pre.7-kotlin-1.4.32")
-    implementation(npm("react-intl", "5.8.1"))
+    implementation("io.github.samgarasx:kotlin-react-intl:VERSION")
 }
 ```
 
