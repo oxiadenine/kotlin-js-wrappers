@@ -1,6 +1,6 @@
 plugins {
     kotlin("js")
-    id("wrapper-publish")
+    `wrapper-publish`
 }
 
 dependencies {

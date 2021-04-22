@@ -17,6 +17,8 @@ configure<PublishingExtension> {
         artifactId = project.name
         version = "${version(project.name)}-kotlin-${kotlinVersion()}"
 
+        artifact(tasks.getByName<Zip>("jsSourcesJar"))
+
         from(components["kotlin"])
 
         pom {
