@@ -5,11 +5,13 @@ import antd.button.button
 import antd.icon.*
 import antd.menu.*
 import kotlinext.js.*
+import kotlinx.css.px
+import kotlinx.css.width
 import react.*
 import react.dom.*
 import styled.*
 
-interface InlineCollapsedAppState : RState {
+external interface InlineCollapsedAppState : RState {
     var collapsed: Boolean
 }
 
@@ -25,8 +27,8 @@ class InlineCollapsedApp : RComponent<RProps, InlineCollapsedAppState>() {
     }
 
     override fun RBuilder.render() {
-        div {
-            attrs.jsStyle = js { width = 256 }
+        styledDiv {
+            css { width = 256.px }
             button {
                 attrs {
                     type = "primary"

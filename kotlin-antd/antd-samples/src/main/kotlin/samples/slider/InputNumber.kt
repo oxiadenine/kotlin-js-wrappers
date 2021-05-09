@@ -9,7 +9,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-interface IntegerStepState : RState {
+external interface IntegerStepState : RState {
     var inputValue: Number
 }
 
@@ -56,7 +56,7 @@ class IntegerStep : RComponent<RProps, IntegerStepState>() {
 
 fun RBuilder.integerStep() = child(IntegerStep::class) {}
 
-interface DecimalStepState : RState {
+external interface DecimalStepState : RState {
     var inputValue: Number
 }
 

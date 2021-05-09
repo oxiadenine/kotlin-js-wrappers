@@ -19,7 +19,7 @@ private val cascaderOptions = arrayOf<CascaderOptionType>(
     }
 )
 
-interface LazyOptionsState : RState {
+external interface LazyOptionsState : RState {
     var options: Array<CascaderOptionType>
 }
 

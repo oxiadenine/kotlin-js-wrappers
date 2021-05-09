@@ -30,7 +30,7 @@ private val data: Array<DataNode> = arrayOf(
     }
 )
 
-interface TreeDataDemoState : RState {
+external interface TreeDataDemoState : RState {
     var value: String?
 }
 

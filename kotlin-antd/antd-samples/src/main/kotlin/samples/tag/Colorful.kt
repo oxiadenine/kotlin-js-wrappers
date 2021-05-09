@@ -1,7 +1,8 @@
 package samples.tag
 
 import antd.tag.*
-import kotlinext.js.*
+import kotlinx.css.marginBottom
+import kotlinx.css.px
 import react.*
 import react.dom.*
 import styled.*
@@ -10,8 +11,8 @@ fun RBuilder.colorful() {
     styledDiv {
         css { +TagStyles.colorful }
         div {
-            h4 {
-                attrs.jsStyle = js { marginBttom = 16 }
+            styledH4 {
+                css { marginBottom = 16.px }
                 +"Presets:"
             }
             div {
@@ -60,8 +61,8 @@ fun RBuilder.colorful() {
                     +"purple"
                 }
             }
-            h4 {
-                attrs.jsStyle = js { marginBttom = 16 }
+            styledH4 {
+                css { marginBottom = 16.px }
                 +"Custom:"
             }
             div {

@@ -8,7 +8,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-interface ButtonSizeState : RState {
+external interface ButtonSizeState : RState {
     var size: String
 }
 

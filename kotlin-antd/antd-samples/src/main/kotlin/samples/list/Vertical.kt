@@ -9,7 +9,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-private interface VerticalListDataItem {
+private external interface VerticalListDataItem {
     var href: String
     var title: String
     var avatar: String
@@ -27,7 +27,7 @@ private val listData = (0..23).mapIndexed { i, _ ->
     }
 }.toTypedArray()
 
-interface IconTextProps : RProps {
+external interface IconTextProps : RProps {
     var icon: ReactElement
     var text: String
 }

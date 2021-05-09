@@ -33,7 +33,7 @@ private val beforeUpload = { file: RcFile, _: Array<RcFile> ->
 }
 
 
-interface AvatarAppState : RState {
+external interface AvatarAppState : RState {
     var imageUrl: String?
     var loading: Boolean
 }

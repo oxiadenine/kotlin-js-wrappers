@@ -20,8 +20,8 @@ subprojects {
 
     plugins.withType<KotlinJsPluginWrapper> {
         extensions.configure<KotlinJsProjectExtension> {
-            js {
-                if (project.name.contains("samples")) {
+            if (project.name.contains("samples")) {
+                js(IR) {
                     browser {
                         commonWebpackConfig {
                             cssSupport.enabled = true
@@ -29,7 +29,11 @@ subprojects {
                     }
 
                     binaries.executable()
-                } else browser()
+                }
+            } else  {
+                js(BOTH) {
+                    browser()
+                }
             }
         }
 

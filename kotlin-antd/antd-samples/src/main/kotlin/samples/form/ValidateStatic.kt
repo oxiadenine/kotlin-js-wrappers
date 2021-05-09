@@ -9,9 +9,8 @@ import antd.select.*
 import antd.select.option
 import antd.timepicker.timePicker
 import kotlinext.js.*
+import kotlinx.css.*
 import react.*
-import react.dom.jsStyle
-import react.dom.span
 import styled.*
 
 private val formItemLayout = jsObject<FormItemProps<Any>> {
@@ -184,11 +183,11 @@ fun RBuilder.validateStatic() {
                         datePicker {}
                     }
                 }
-                span {
-                    attrs.jsStyle = js {
-                        display = "inline-block"
-                        width = "24px"
-                        textAlign = "center"
+                styledSpan {
+                    css {
+                        display = Display.inlineBlock
+                        width = 24.px
+                        textAlign = TextAlign.center
                     }
                 }
                 formItem {

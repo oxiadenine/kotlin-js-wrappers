@@ -6,7 +6,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-interface BasicDemoState : RState {
+external interface BasicDemoState : RState {
     var top: Number
     var bottom: Number
 }

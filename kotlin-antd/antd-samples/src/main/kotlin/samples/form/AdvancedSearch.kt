@@ -7,12 +7,12 @@ import antd.grid.col
 import antd.icon.*
 import antd.input.input
 import kotlinext.js.*
+import kotlinx.css.fontSize
+import kotlinx.css.px
 import kotlinx.html.*
 import kotlinx.html.js.*
 import react.*
-import react.dom.a
 import react.dom.div
-import react.dom.jsStyle
 import styled.*
 
 private val advancedSearchForm = functionalComponent<RProps> {
@@ -82,9 +82,9 @@ private val advancedSearchForm = functionalComponent<RProps> {
                     }
                     +"Clear"
                 }
-                a {
+                styledA {
                     attrs {
-                        jsStyle = js { fontSize = 12 }
+                        css { fontSize = 12.px }
                         onClickFunction = {
                             setExpand(!expand)
                         }

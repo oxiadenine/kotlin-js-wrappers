@@ -6,7 +6,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-interface InteractiveDemoState : RState {
+external interface InteractiveDemoState : RState {
     var str: String
 }
 

@@ -7,7 +7,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-interface DisabledAppState : RState {
+external interface DisabledAppState : RState {
     var disabled: Boolean
 }
 

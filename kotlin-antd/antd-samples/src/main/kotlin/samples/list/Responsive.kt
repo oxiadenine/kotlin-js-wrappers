@@ -6,7 +6,7 @@ import kotlinext.js.*
 import react.*
 import styled.*
 
-private interface ResponsiveListDataItem {
+private external interface ResponsiveListDataItem {
     var title: String
 }
 

@@ -5,7 +5,7 @@ import kotlinext.js.*
 import react.*
 import styled.*
 
-interface FieldNamesCascaderOptionType : CascaderOptionType {
+external interface FieldNamesCascaderOptionType : CascaderOptionType {
     var code: String?
     var name: Any?
     var items: Array<FieldNamesCascaderOptionType>?

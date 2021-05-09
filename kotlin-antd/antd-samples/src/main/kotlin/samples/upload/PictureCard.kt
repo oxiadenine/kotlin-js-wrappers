@@ -5,13 +5,15 @@ import antd.icon.*
 import antd.modal.*
 import antd.upload.*
 import kotlinext.js.*
+import kotlinx.css.LinearDimension
+import kotlinx.css.width
 import kotlinx.html.*
 import org.w3c.dom.*
 import react.*
 import react.dom.*
 import styled.*
 
-interface PicturesWallState : RState {
+external interface PicturesWallState : RState {
     var previewVisible: Boolean
     var previewImage: String
     var fileList: Array<UploadFile<Any>>
@@ -81,10 +83,10 @@ class PicturesWall : RComponent<RProps, PicturesWallState>() {
                     footer = null
                     onCancel = handleCancel
                 }
-                img {
+                styledImg {
+                    css { width = LinearDimension("100%") }
                     attrs {
                         alt = "example"
-                        jsStyle = js { width = "100%" }
                         src = state.previewImage
                     }
                 }

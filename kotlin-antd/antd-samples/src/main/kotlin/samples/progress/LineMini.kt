@@ -1,17 +1,16 @@
 package samples.progress
 
 import antd.progress.progress
-import kotlinext.js.*
+import kotlinx.css.px
+import kotlinx.css.width
 import react.*
-import react.dom.div
-import react.dom.jsStyle
 import styled.*
 
 fun RBuilder.lineMini() {
     styledDiv {
         css { +ProgressStyles.lineMini }
-        div {
-            attrs.jsStyle = js { width = 170 }
+        styledDiv {
+            css { width = 170.px }
             progress {
                 attrs {
                     percent = 30

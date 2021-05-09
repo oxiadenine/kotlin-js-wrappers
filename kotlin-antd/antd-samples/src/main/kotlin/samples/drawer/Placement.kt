@@ -10,7 +10,7 @@ import react.dom.div
 import react.dom.p
 import styled.*
 
-interface PlacementAppState : RState {
+external interface PlacementAppState : RState {
     var visible: Boolean
     var placement: String
 }

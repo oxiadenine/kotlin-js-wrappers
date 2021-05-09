@@ -4,11 +4,15 @@ import antd.mentions.*
 import antd.mentions.option
 import kotlinext.js.*
 import kotlinx.browser.*
+import kotlinx.css.height
+import kotlinx.css.marginRight
+import kotlinx.css.px
+import kotlinx.css.width
 import react.*
 import react.dom.*
 import styled.*
 
-interface AsyncMentionState : RState {
+external interface AsyncMentionState : RState {
     var search: String
     var loading: Boolean
     var users: Array<dynamic>
@@ -73,13 +77,13 @@ class AsyncMention : RComponent<RProps, AsyncMentionState>() {
                         value = it["login"] as String
                         className = "antd-demo-dynamic-option"
                     }
-                    img {
+                    styledImg {
+                        css {
+                            width = 20.px
+                            height = 20.px
+                            marginRight = 8.px
+                        }
                         attrs {
-                            jsStyle = js {
-                                width = "20px"
-                                height = "20px"
-                                marginRight = "8px"
-                            }
                             src = it["avatar_url"] as String
                             alt = it["login"] as String
                         }

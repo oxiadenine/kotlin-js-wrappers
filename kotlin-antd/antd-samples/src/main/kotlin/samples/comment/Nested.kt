@@ -6,7 +6,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-interface ExampleCommentProps : RProps {
+external interface ExampleCommentProps : RProps {
     var children: ReactElement
 }
 

@@ -71,7 +71,7 @@ private val tailFormItemLayout = jsObject<FormProps<Any>> {
     }
 }
 
-interface RegistrationFormState : RState {
+external interface RegistrationFormState : RState {
     var confirmDirty: Boolean
     var autoCompleteResult: Array<DataSourceItemType>
 }

@@ -6,7 +6,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-private interface RowSelectionTableDataItem {
+private external interface RowSelectionTableDataItem {
     var key: String
     var name: String
     var age: Number

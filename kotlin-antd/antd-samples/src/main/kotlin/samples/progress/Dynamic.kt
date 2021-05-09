@@ -9,7 +9,7 @@ import react.*
 import react.dom.div
 import styled.*
 
-interface DynamicAppState : RState {
+external interface DynamicAppState : RState {
     var percent: Number
 }
 

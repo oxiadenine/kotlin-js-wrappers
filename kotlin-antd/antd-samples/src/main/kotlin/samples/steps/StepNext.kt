@@ -16,7 +16,7 @@ private val steps = arrayOf(
     Step("Last", "Last-content")
 )
 
-interface StepNextAppState : RState {
+external interface StepNextAppState : RState {
     var current: Number
 }
 

@@ -11,7 +11,7 @@ import react.*
 import react.dom.div
 import styled.*
 
-interface ControlEditableTagGroupState : RState {
+external interface ControlEditableTagGroupState : RState {
     var tags: Array<String>
     var inputVisible: Boolean
     var inputValue: String

@@ -5,7 +5,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-private val showTotal = { total: Number, _: Array<Number> ->
+private val showTotalPag = { total: Number, _: Array<Number> ->
     buildElement { +"Total $total items" }
 }
 
@@ -31,7 +31,7 @@ fun RBuilder.mini() {
                 attrs {
                     size = "small"
                     total = 50
-                    showTotal = showTotal
+                    showTotal = showTotalPag
                 }
             }
         }

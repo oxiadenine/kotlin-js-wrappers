@@ -77,7 +77,7 @@ private val treeData = arrayOf<TreeNodeNormal>(
     }
 )
 
-interface BasicControlledDemoState : RState {
+external interface BasicControlledDemoState : RState {
     var expandedKeys: Array<Key>
     var autoExpandParent: Boolean
     var checkedKeys: Array<Key>

@@ -7,7 +7,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-private interface BasicListDataItem {
+private external interface BasicListDataItem {
     var title: String
 }
 

@@ -2,11 +2,12 @@ package samples.treeselect
 
 import antd.treeselect.*
 import kotlinext.js.*
+import kotlinx.css.Color
+import kotlinx.css.color
 import react.*
-import react.dom.*
 import styled.*
 
-interface MultipleDemoState : RState {
+external interface MultipleDemoState : RState {
     var value: String?
 }
 
@@ -76,8 +77,8 @@ class MultipleDemo : RComponent<RProps, MultipleDemoState>() {
                         attrs {
                             value = "sss"
                             title = buildElement {
-                                b {
-                                    attrs.jsStyle = js { color = "#08c" }
+                                styledB {
+                                    css { color = Color("#08c") }
                                     +"sss"
                                 }
                             }

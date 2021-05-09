@@ -7,7 +7,7 @@ import kotlinx.browser.*
 import react.*
 import styled.*
 
-interface UserRemoteSelectState : RState {
+external interface UserRemoteSelectState : RState {
     var data: Array<Any>
     var value: Array<Any>
     var fetching: Boolean

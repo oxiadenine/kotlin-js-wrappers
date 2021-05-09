@@ -6,7 +6,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-interface HorizontalAppState : RState {
+external interface HorizontalAppState : RState {
     var current: String
 }
 

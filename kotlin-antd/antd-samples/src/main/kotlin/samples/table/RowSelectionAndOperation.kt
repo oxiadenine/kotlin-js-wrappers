@@ -5,13 +5,14 @@ import antd.button.button
 import antd.table.*
 import kotlinext.js.*
 import kotlinx.browser.*
+import kotlinx.css.marginBottom
+import kotlinx.css.marginLeft
+import kotlinx.css.px
 import react.*
 import react.dom.div
-import react.dom.jsStyle
-import react.dom.span
 import styled.*
 
-private interface RowSelectionAndOperationTableDataItem {
+private external interface RowSelectionAndOperationTableDataItem {
     var key: String
     var name: String
     var age: Number
@@ -42,7 +43,7 @@ private val tableData = (0..46).map { i ->
     }
 }.toTypedArray()
 
-interface RowSelectionAndOperationAppState : RState {
+external interface RowSelectionAndOperationAppState : RState {
     var selectedRowKeys: Array<Key>
     var loading: Boolean
 }
@@ -83,8 +84,8 @@ class RowSelectionAndOperationApp : RComponent<RProps, RowSelectionAndOperationA
         val hasSelected = state.selectedRowKeys.isNotEmpty()
 
         div {
-            div {
-                attrs.jsStyle = js { marginBottom = 16 }
+            styledDiv {
+                css { marginBottom = 16.px }
                 button {
                     attrs {
                         type = "primary"
@@ -94,8 +95,8 @@ class RowSelectionAndOperationApp : RComponent<RProps, RowSelectionAndOperationA
                     }
                     +"Reload"
                 }
-                span {
-                    attrs.jsStyle = js { marginLeft = 8 }
+                styledSpan {
+                    css { marginLeft = 8.px }
                     if (hasSelected) {
                         +"Selected ${state.selectedRowKeys.size} items"
                     } else +""

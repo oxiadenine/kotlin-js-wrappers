@@ -5,7 +5,7 @@ import kotlinext.js.*
 import react.*
 import styled.*
 
-private interface GroupingColumnsTableDataItem {
+private external interface GroupingColumnsTableDataItem {
     var key: String
     var name: String
     var age: Number

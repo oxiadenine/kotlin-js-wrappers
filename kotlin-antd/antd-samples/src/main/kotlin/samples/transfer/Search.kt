@@ -7,11 +7,11 @@ import react.*
 import styled.*
 import kotlin.random.*
 
-interface SearchTransferItem : TransferItem {
+external interface SearchTransferItem : TransferItem {
     var chosen: Boolean
 }
 
-interface SearchAppState : RState {
+external interface SearchAppState : RState {
     var mockData: Array<TransferItem>
     var targetKeys: Array<String>
 }

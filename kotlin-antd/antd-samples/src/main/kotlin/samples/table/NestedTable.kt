@@ -11,14 +11,14 @@ import react.*
 import react.dom.*
 import styled.*
 
-private interface NestedTableNestedTableDataItem {
+private external interface NestedTableNestedTableDataItem {
     var key: String
     var date: String
     var name: String
     var upgradeNum: String
 }
 
-private interface NestedTableTableDataItem {
+private external interface NestedTableTableDataItem {
     var key: String
     var name: String
     var platform: String

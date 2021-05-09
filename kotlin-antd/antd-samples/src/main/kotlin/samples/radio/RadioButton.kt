@@ -1,7 +1,8 @@
 package samples.radio
 
 import antd.radio.*
-import kotlinext.js.*
+import kotlinx.css.marginTop
+import kotlinx.css.px
 import react.*
 import react.dom.*
 import styled.*
@@ -38,8 +39,8 @@ fun RBuilder.radioButton() {
                     }
                 }
             }
-            div {
-                attrs.jsStyle = js { marginTop = 16 }
+            styledDiv {
+                css { marginTop = 16.px }
                 radioGroup {
                     attrs {
                         onChange = ::handleChange
@@ -66,8 +67,8 @@ fun RBuilder.radioButton() {
                     }
                 }
             }
-            div {
-                attrs.jsStyle = js { marginTop = 16 }
+            styledDiv {
+                css { marginTop = 16.px }
                 radioGroup {
                     attrs {
                         disabled = true

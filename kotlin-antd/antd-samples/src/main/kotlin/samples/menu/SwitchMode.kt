@@ -4,13 +4,16 @@ import antd.icon.*
 import antd.menu.*
 import antd.switch.*
 import kotlinext.js.*
+import kotlinx.css.em
+import kotlinx.css.margin
+import kotlinx.css.px
 import kotlinx.html.*
 import org.w3c.dom.events.*
 import react.*
 import react.dom.*
 import styled.*
 
-interface SwitchModeSiderState : RState {
+external interface SwitchModeSiderState : RState {
     var mode: MenuMode
     var theme: MenuTheme
 }
@@ -39,11 +42,9 @@ class SwitchModeSider : RComponent<RProps, SwitchModeSiderState>() {
                 attrs.onChange = changeMode
             }
             +" Change Mode"
-            span {
-                attrs {
-                    classes = setOf("ant-divider")
-                    jsStyle = js { margin = "0 1em" }
-                }
+            styledSpan {
+                attrs.classes = setOf("ant-divider")
+                css { margin(0.px, 1.em) }
             }
             switch {
                 attrs.onChange = changeTheme

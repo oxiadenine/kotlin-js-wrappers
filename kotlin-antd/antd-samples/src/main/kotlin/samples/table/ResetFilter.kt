@@ -9,7 +9,7 @@ import react.*
 import react.dom.div
 import styled.*
 
-private interface ResetFilterTableDataItem {
+external interface ResetFilterTableDataItem {
     var key: String
     var name: String
     var age: Number
@@ -45,12 +45,12 @@ private val tableData = arrayOf<ResetFilterTableDataItem>(
     }
 )
 
-private interface ResetFilterAppState : RState {
+external interface ResetFilterAppState : RState {
     var filteredInfo: Any?
     var sortedInfo: SorterResult<ResetFilterTableDataItem>?
 }
 
-private class ResetFilterApp : RComponent<RProps, ResetFilterAppState>() {
+class ResetFilterApp : RComponent<RProps, ResetFilterAppState>() {
     private val handleChange = fun(pagination: TablePaginationConfig, filters: Record<String, Array<String?>>, sorter: Any, _: TableCurrentDataSource<ResetFilterTableDataItem>) {
         console.log("Various parameters", pagination, filters, sorter)
 

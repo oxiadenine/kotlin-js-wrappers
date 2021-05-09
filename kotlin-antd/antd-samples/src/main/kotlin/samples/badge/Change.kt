@@ -6,14 +6,15 @@ import antd.button.*
 import antd.button.button
 import antd.icon.*
 import antd.switch.*
-import kotlinext.js.*
+import kotlinx.css.marginTop
+import kotlinx.css.px
 import kotlinx.html.*
 import org.w3c.dom.events.MouseEvent
 import react.*
 import react.dom.*
 import styled.*
 
-interface ChangeDemoState : RState {
+external interface ChangeDemoState : RState {
     var count: Any
     var show: Boolean
 }
@@ -73,8 +74,8 @@ class ChangeDemo : RComponent<RProps, ChangeDemoState>() {
                     }
                 }
             }
-            div {
-                attrs.jsStyle = js { marginTop = 10 }
+            styledDiv {
+                css { marginTop = 10.px }
                 badge {
                     attrs.dot = state.show
                     a {

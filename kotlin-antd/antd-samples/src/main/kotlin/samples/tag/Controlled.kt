@@ -7,7 +7,7 @@ import react.dom.br
 import react.dom.div
 import styled.*
 
-interface ControlledDemoState : RState {
+external interface ControlledDemoState : RState {
     var visible: Boolean
 }
 

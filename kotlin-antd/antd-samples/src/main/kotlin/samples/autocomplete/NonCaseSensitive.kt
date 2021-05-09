@@ -9,7 +9,7 @@ import styled.*
 private val datasource = arrayOf("Burns Bay Road", "Downing Street", "Wall Street")
 
 private val filter: FilterFunc<Any> = { inputValue, option ->
-    option.asDynamic().props.children.unsafeCast<String>().toLowerCase().contains(inputValue.toLowerCase())
+    option.asDynamic().props.children.unsafeCast<String>().lowercase().contains(inputValue.lowercase())
 }
 
 fun RBuilder.nonCaseSensitiveComplete() {

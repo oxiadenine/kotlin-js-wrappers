@@ -10,7 +10,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-interface CustomTriggerDemoState : RState {
+external interface CustomTriggerDemoState : RState {
     var collapsed: Boolean
 }
 

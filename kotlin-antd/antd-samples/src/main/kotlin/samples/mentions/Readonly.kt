@@ -3,6 +3,8 @@ package samples.mentions
 import antd.mentions.*
 import antd.mentions.option
 import kotlinext.js.*
+import kotlinx.css.marginBottom
+import kotlinx.css.px
 import react.*
 import react.dom.*
 import styled.*
@@ -25,8 +27,8 @@ fun RBuilder.readonly() {
     styledDiv {
         css { MentionsStyles.readonly }
         div {
-            div {
-                attrs.jsStyle = js { marginBottom = 10 }
+            styledDiv {
+                css { marginBottom = 10.px }
                 mentions {
                     attrs {
                         style = js { width = "100%" }

@@ -3,13 +3,13 @@ package samples.tabs
 import antd.select.*
 import antd.select.option
 import antd.tabs.*
-import kotlinext.js.*
+import kotlinx.css.marginBottom
+import kotlinx.css.px
 import react.*
 import react.dom.div
-import react.dom.jsStyle
 import styled.*
 
-interface PositionDemoState : RState {
+external interface PositionDemoState : RState {
     var tabPosition: String
 }
 
@@ -26,8 +26,8 @@ class PositionDemo : RComponent<RProps, PositionDemoState>() {
 
     override fun RBuilder.render() {
         div {
-            div {
-                attrs.jsStyle = js { marginBottom = 16 }
+            styledDiv {
+                css { marginBottom = 16.px }
                 +"Tab position："
                 select<String, SelectComponent<String>> {
                     attrs {

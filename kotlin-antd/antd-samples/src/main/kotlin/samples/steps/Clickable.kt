@@ -6,7 +6,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-interface ClickableDemoState : RState {
+external interface ClickableDemoState : RState {
     var current: Number
 }
 

@@ -7,11 +7,11 @@ import react.*
 import styled.*
 import kotlin.random.*
 
-interface LargeDataTransferItem : TransferItem {
+external interface LargeDataTransferItem : TransferItem {
     var chosen: Boolean
 }
 
-interface LargeDataAppState : RState {
+external interface LargeDataAppState : RState {
     var mockData: Array<TransferItem>
     var targetKeys: Array<String>
 }

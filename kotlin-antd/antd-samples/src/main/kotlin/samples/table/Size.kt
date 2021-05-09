@@ -6,7 +6,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-private interface SizeTableDataItem {
+private external interface SizeTableDataItem {
     var key: String
     var name: String
     var age: Number

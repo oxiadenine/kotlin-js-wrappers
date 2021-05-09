@@ -1,10 +1,10 @@
 package samples.calendar
 
 import antd.calendar.*
-import kotlinext.js.*
+import kotlinx.css.*
+import kotlinx.css.properties.border
 import moment.*
 import react.*
-import react.dom.*
 import styled.*
 
 private fun handlePanelChange(value: Moment?, mode: CalendarMode?) {
@@ -14,11 +14,11 @@ private fun handlePanelChange(value: Moment?, mode: CalendarMode?) {
 fun RBuilder.card() {
     styledDiv {
         css { +CalendarStyles.card }
-        div {
-            attrs.jsStyle = js {
-                width = 300
-                border = "1px solid #d9d9d9"
-                borderRadius = 4
+        styledDiv {
+            css {
+                width = 300.px
+                border(1.px, BorderStyle.solid, Color("#d9d9d9"))
+                borderRadius = 4.px
             }
             calendar {
                 attrs {

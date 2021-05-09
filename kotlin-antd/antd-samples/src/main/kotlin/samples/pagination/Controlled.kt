@@ -4,7 +4,7 @@ import antd.pagination.*
 import react.*
 import styled.*
 
-interface ControlledAppState : RState {
+external interface ControlledAppState : RState {
     var current: Number
 }
 

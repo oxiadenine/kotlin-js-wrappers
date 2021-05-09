@@ -29,7 +29,7 @@ private val cascaderOptions = arrayOf<CascaderOptionType>(
     }
 )
 
-interface CustomTriggerCitySwitcherState : RState {
+external interface CustomTriggerCitySwitcherState : RState {
     var text: String
 }
 

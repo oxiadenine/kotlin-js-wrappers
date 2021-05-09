@@ -4,7 +4,7 @@ import antd.radio.*
 import react.*
 import styled.*
 
-interface RadioGroupAppState : RState {
+external interface RadioGroupAppState : RState {
     var value: Any
 }
 

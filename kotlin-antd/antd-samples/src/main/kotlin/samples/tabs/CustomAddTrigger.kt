@@ -3,12 +3,13 @@ package samples.tabs
 import antd.button.button
 import antd.tabs.*
 import kotlinext.js.*
+import kotlinx.css.marginBottom
+import kotlinx.css.px
 import react.*
 import react.dom.div
-import react.dom.jsStyle
 import styled.*
 
-interface CustomAddTriggerDemoState : RState {
+external interface CustomAddTriggerDemoState : RState {
     var activeKey: String
     var panes: Array<Any>
 }
@@ -90,8 +91,8 @@ class CustomAddTriggerDemo : RComponent<RProps, CustomAddTriggerDemoState>() {
 
     override fun RBuilder.render() {
         div {
-            div {
-                attrs.jsStyle = js { marginBottom = 16 }
+            styledDiv {
+                css { marginBottom = 16.px }
                 button {
                     attrs.onClick = { add() }
                     +"ADD"

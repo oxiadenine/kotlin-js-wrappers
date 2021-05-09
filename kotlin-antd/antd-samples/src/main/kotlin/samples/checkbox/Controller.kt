@@ -4,11 +4,13 @@ import antd.*
 import antd.button.button
 import antd.checkbox.*
 import kotlinext.js.*
+import kotlinx.css.marginBottom
+import kotlinx.css.px
 import react.*
 import react.dom.*
 import styled.*
 
-interface ControllerAppState : RState {
+external interface ControllerAppState : RState {
     var checked: Boolean
     var disabled: Boolean
 }
@@ -43,8 +45,8 @@ class ControllerApp : RComponent<RProps, ControllerAppState>() {
         val label = "${if (state.checked) "Checked" else "Unchecked"} - ${if (state.disabled) "Disabled" else "Enabled"}"
 
         div {
-            p {
-                attrs.jsStyle = js { marginBottom = "20px" }
+            styledP {
+                css { marginBottom = 20.px }
                 checkbox {
                     attrs {
                         checked = state.checked

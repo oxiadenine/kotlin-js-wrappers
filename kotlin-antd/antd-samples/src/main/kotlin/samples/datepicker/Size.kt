@@ -6,7 +6,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-interface PickerSizesDemoState : RState {
+external interface PickerSizesDemoState : RState {
     var size: String
 }
 

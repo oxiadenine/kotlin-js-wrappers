@@ -38,7 +38,7 @@ private val optionsWithDisabled = arrayOf<CheckboxOptionType>(
     }
 )
 
-interface RadioGroupOptionsAppState : RState {
+external interface RadioGroupOptionsAppState : RState {
     var value1: CheckboxValueType
     var value2: CheckboxValueType
     var value3: CheckboxValueType

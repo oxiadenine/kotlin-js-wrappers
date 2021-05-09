@@ -6,7 +6,7 @@ import kotlinext.js.*
 import react.*
 import styled.*
 
-interface OptionsCompleteState : RState {
+external interface OptionsCompleteState : RState {
     var result: Array<String>
 }
 

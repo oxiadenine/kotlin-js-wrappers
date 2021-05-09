@@ -3,13 +3,14 @@ package samples.spin
 import antd.alert.*
 import antd.spin.*
 import antd.switch.*
-import kotlinext.js.*
+import kotlinx.css.marginTop
+import kotlinx.css.px
 import org.w3c.dom.events.*
 import react.*
 import react.dom.*
 import styled.*
 
-interface NestedCardState : RState {
+external interface NestedCardState : RState {
     var loading: Boolean
 }
 
@@ -36,8 +37,8 @@ class NestedCard : RComponent<RProps, NestedCardState>() {
                     }
                 }
             }
-            div {
-                attrs.jsStyle = js { marginTop = 16 }
+            styledDiv {
+                css { marginTop = 16.px }
                 +"Loading state："
                 switch {
                     attrs {

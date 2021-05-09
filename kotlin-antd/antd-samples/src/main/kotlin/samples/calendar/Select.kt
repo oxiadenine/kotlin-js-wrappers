@@ -7,7 +7,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-interface SelectAppState : RState {
+external interface SelectAppState : RState {
     var value: Moment
     var selectedValue: Moment
 }

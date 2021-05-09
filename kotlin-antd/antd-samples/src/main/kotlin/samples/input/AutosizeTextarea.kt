@@ -3,6 +3,8 @@ package samples.input
 import antd.input.*
 import antd.input.textArea
 import kotlinext.js.*
+import kotlinx.css.margin
+import kotlinx.css.px
 import react.*
 import react.dom.*
 import styled.*
@@ -17,8 +19,8 @@ fun RBuilder.autosizeTextarea() {
                     autoSize = true
                 }
             }
-            div {
-                attrs.jsStyle = js { margin = "24px 0" }
+            styledDiv {
+                css { margin(24.px,  0.px) }
             }
             textArea {
                 attrs {

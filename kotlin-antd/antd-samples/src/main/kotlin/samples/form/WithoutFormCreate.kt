@@ -8,7 +8,7 @@ import org.w3c.dom.*
 import react.*
 import styled.*
 
-private interface PrimeNumber {
+private external interface PrimeNumber {
     var validateStatus: FormItemValidateStatus?
     var errorMsg: String?
     var value: Number?

@@ -2,9 +2,9 @@ package samples.dropdown
 
 import antd.dropdown.*
 import antd.menu.*
-import kotlinext.js.*
+import kotlinx.css.UserSelect
+import kotlinx.css.userSelect
 import react.*
-import react.dom.*
 import styled.*
 
 private val menu = buildElement {
@@ -32,8 +32,8 @@ fun RBuilder.contextMenu() {
                 overlay = menu
                 trigger = arrayOf("contextMenu")
             }
-            span {
-                attrs.jsStyle = js { userSelect = "none" }
+            styledSpan {
+                css { userSelect = UserSelect.none }
                 +"Right Click on Me"
             }
         }

@@ -1,7 +1,8 @@
 package samples.backtop
 
 import antd.backtop.*
-import kotlinext.js.*
+import kotlinx.css.Color
+import kotlinx.css.color
 import react.*
 import react.dom.*
 import styled.*
@@ -14,8 +15,8 @@ fun RBuilder.custom() {
                 div(classes = "ant-back-top-inner") { +"UP" }
             }
             +"Scroll down to see the bottom-right"
-            strong {
-                attrs.jsStyle = js { color = "#1088e9" }
+            styledStrong {
+                css { color = Color("#1088e9") }
                 +" blue "
             }
             +"button."

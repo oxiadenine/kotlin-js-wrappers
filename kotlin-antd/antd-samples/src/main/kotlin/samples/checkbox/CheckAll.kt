@@ -1,7 +1,10 @@
 package samples.checkbox
 
 import antd.checkbox.*
-import kotlinext.js.*
+import kotlinx.css.BorderStyle
+import kotlinx.css.Color
+import kotlinx.css.properties.borderBottom
+import kotlinx.css.px
 import react.*
 import react.dom.*
 import styled.*
@@ -9,7 +12,7 @@ import styled.*
 private val plainOptions: Array<CheckboxValueType> = arrayOf("Apple", "Pear", "Orange")
 private val defaultCheckedList: Array<CheckboxValueType> = arrayOf("Apple", "Orange")
 
-interface CheckAllAppState : RState {
+external interface CheckAllAppState : RState {
     var checkedList: Array<CheckboxValueType>
     var indeterminate: Boolean
     var checkAll: Boolean
@@ -40,8 +43,8 @@ class CheckAllApp : RComponent<RProps, CheckAllAppState>() {
 
     override fun RBuilder.render() {
         div {
-            div {
-                attrs.jsStyle = js { borderBottom = "1px solid #E9E9E9" }
+            styledDiv {
+                css { borderBottom(1.px, BorderStyle.solid, Color("#E9E9E9")) }
                 checkbox {
                     attrs {
                         indeterminate = state.indeterminate

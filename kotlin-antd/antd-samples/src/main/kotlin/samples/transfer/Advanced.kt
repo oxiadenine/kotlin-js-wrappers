@@ -8,11 +8,11 @@ import react.*
 import styled.*
 import kotlin.random.*
 
-interface AdvancedTransferItem : TransferItem {
+external interface AdvancedTransferItem : TransferItem {
     var chosen: Boolean
 }
 
-interface AdvancedAppState : RState {
+external interface AdvancedAppState : RState {
     var mockData: Array<TransferItem>
     var targetKeys: Array<String>
 }

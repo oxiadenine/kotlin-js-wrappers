@@ -2,17 +2,24 @@ package samples.slider
 
 import antd.slider.*
 import kotlinext.js.*
+import kotlinx.css.Float.left
+import kotlinx.css.float
+import kotlinx.css.marginLeft
+import kotlinx.css.height
+import kotlinx.css.px
 import react.*
 import react.dom.*
 import styled.*
 
-class VerticalDemo : RComponent<RProps, RState>() {
-    private val divStyle = js {
-        float = "left"
-        height = 300
-        marginLeft = 70
+private object VerticalStyles : StyleSheet("vertical", isStatic = true) {
+    val divStyle by css {
+        float = left
+        height = 300.px
+        marginLeft = 70.px
     }
+}
 
+class VerticalDemo : RComponent<RProps, RState>() {
     private val sliderMarks = js {}
 
     init {
@@ -30,10 +37,10 @@ class VerticalDemo : RComponent<RProps, RState>() {
     }
 
     override fun RBuilder.render() {
-        div {
-            attrs.jsStyle = js { height = 300 }
-            div {
-                attrs.jsStyle = divStyle
+        styledDiv {
+            css { height = 300.px }
+            styledDiv {
+                css { +VerticalStyles.divStyle }
                 slider {
                     attrs {
                         vertical = true
@@ -41,8 +48,8 @@ class VerticalDemo : RComponent<RProps, RState>() {
                     }
                 }
             }
-            div {
-                attrs.jsStyle = divStyle
+            styledDiv {
+                css { +VerticalStyles.divStyle }
                 slider {
                     attrs {
                         vertical = true
@@ -52,8 +59,8 @@ class VerticalDemo : RComponent<RProps, RState>() {
                     }
                 }
             }
-            div {
-                attrs.jsStyle = divStyle
+            styledDiv {
+                css { +VerticalStyles.divStyle }
                 slider {
                     attrs {
                         vertical = true

@@ -9,7 +9,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-interface ButtonPropsAppState : RState {
+external interface ButtonPropsAppState : RState {
     var visible: Boolean
 }
 

@@ -8,11 +8,11 @@ import react.dom.*
 import styled.*
 import kotlin.random.*
 
-interface CustomItemTransferItem : TransferItem {
+external interface CustomItemTransferItem : TransferItem {
     var chosen: Boolean
 }
 
-interface CustomItemAppState : RState {
+external interface CustomItemAppState : RState {
     var mockData: Array<TransferItem>
     var targetKeys: Array<String>
 }

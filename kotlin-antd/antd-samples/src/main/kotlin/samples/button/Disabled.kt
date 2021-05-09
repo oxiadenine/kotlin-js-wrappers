@@ -1,7 +1,10 @@
 package samples.button
 
 import antd.button.button
-import kotlinext.js.*
+import kotlinx.css.background
+import kotlinx.css.padding
+import kotlinx.css.px
+import kotlinx.css.rgb
 import react.*
 import react.dom.*
 import styled.*
@@ -50,10 +53,10 @@ fun RBuilder.disabled() {
                 }
                 +"Link(disabled)"
             }
-            div {
-                attrs.jsStyle = js {
-                    padding = "8px 8px 8px 8px"
-                    background = "rgb(190, 200, 200)"
+            styledDiv {
+                css {
+                    padding(8.px)
+                    background = rgb(190, 200, 200).toString()
                 }
                 button {
                     attrs.ghost = true

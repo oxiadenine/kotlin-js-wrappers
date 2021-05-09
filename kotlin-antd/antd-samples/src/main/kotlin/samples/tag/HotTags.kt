@@ -1,14 +1,17 @@
 package samples.tag
 
 import antd.tag.*
-import kotlinext.js.*
+import kotlinx.css.Display
+import kotlinx.css.display
+import kotlinx.css.marginRight
+import kotlinx.css.px
 import react.*
 import react.dom.*
 import styled.*
 
 private val tagsFromServer = arrayOf("Movies", "Books", "Music", "Sports")
 
-interface HotTagsAppState : RState {
+external interface HotTagsAppState : RState {
     var selectedTags: Array<String>
 }
 
@@ -33,10 +36,10 @@ class HotTagsApp : RComponent<RProps, HotTagsAppState>() {
 
     override fun RBuilder.render() {
         div {
-            h6 {
-                attrs.jsStyle = js {
-                    marginRight = 8
-                    display = "inline"
+            styledH6 {
+                css {
+                    marginRight = 8.px
+                    display = Display.inline
                 }
                 +"Categories"
             }

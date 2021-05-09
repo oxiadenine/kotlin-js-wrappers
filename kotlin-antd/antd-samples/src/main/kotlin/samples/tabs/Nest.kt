@@ -12,7 +12,7 @@ private val positionList = arrayOf("left", "right", "top", "bottom")
 
 private val list = (0..20).mapIndexed { index, _ -> index }.toTypedArray()
 
-interface NestDemoState : RState {
+external interface NestDemoState : RState {
     var parentPos: String?
     var childPos: String?
     var parenType: String?

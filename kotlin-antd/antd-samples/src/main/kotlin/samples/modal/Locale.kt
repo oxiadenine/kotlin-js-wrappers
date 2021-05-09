@@ -9,7 +9,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-interface LocalizedModalState : RState {
+external interface LocalizedModalState : RState {
     var visible: Boolean
 }
 

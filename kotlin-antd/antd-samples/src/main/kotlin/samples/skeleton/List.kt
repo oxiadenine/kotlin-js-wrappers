@@ -11,7 +11,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-private interface ListListDataItem {
+private external interface ListListDataItem {
     var href: String
     var title: String
     var avatar: String
@@ -29,7 +29,7 @@ private val listData = (0..2).map { i ->
     }
 }.toTypedArray()
 
-interface ListIconTextProps : RProps {
+external interface ListIconTextProps : RProps {
     var icon: ReactElement
     var text: String
 }
@@ -45,7 +45,7 @@ private val iconText = functionalComponent<ListIconTextProps> { props ->
 
 fun RBuilder.iconText(handler: RHandler<ListIconTextProps>) = child(iconText, jsObject {}, handler)
 
-interface ListAppState : RState {
+external interface ListAppState : RState {
     var loading: Boolean
 }
 

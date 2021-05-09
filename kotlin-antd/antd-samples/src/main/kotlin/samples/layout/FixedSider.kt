@@ -6,6 +6,7 @@ import antd.layout.footer
 import antd.layout.header
 import antd.menu.*
 import kotlinext.js.*
+import kotlinx.css.*
 import react.*
 import react.dom.*
 import styled.*
@@ -89,13 +90,11 @@ fun RBuilder.fixedSider() {
                             overflow = "initial"
                         }
                     }
-                    div {
-                        attrs {
-                            jsStyle = js {
-                                padding = 24
-                                background = "#fff"
-                                textAlign = "center"
-                            }
+                    styledDiv {
+                        css {
+                            padding(24.px)
+                            background = "#fff"
+                            textAlign = TextAlign.center
                         }
                         +"..."
                         br {}

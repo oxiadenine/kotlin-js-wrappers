@@ -2,6 +2,7 @@ package samples.card
 
 import antd.card.*
 import kotlinext.js.*
+import kotlinx.css.*
 import react.*
 import react.dom.*
 import styled.*
@@ -11,12 +12,12 @@ fun RBuilder.inner() {
         css { +CardStyles.inner }
         card {
             attrs.title = "Card title"
-            p {
-                attrs.jsStyle = js {
-                    fontSize = 14
-                    color = "rgba(0, 0, 0, 0.85)"
-                    marginButton = 16
-                    fontWeight = 500
+            styledP {
+                css {
+                    fontSize = 14.px
+                    color = rgba(0, 0, 0, 0.85)
+                    marginBottom = 16.px
+                    fontWeight = FontWeight.w500
                 }
                 +"Group title"
             }

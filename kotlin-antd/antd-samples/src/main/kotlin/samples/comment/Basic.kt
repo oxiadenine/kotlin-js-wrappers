@@ -4,7 +4,10 @@ import antd.avatar.*
 import antd.comment.*
 import antd.icon.*
 import antd.tooltip.*
-import kotlinext.js.*
+import kotlinx.css.Cursor
+import kotlinx.css.cursor
+import kotlinx.css.paddingLeft
+import kotlinx.css.px
 import kotlinx.html.js.*
 import moment.*
 import org.w3c.dom.events.*
@@ -12,7 +15,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-interface BasicAppState : RState {
+external interface BasicAppState : RState {
     var likes: Number
     var dislikes: Number
     var action: String?
@@ -54,10 +57,10 @@ class BasicApp : RComponent<RProps, BasicAppState>() {
                             } else likeOutlined {}
                         }
                     }
-                    span {
-                        attrs.jsStyle = js {
-                            paddingLeft = 8
-                            cursor = "auto"
+                    styledSpan {
+                        css {
+                            paddingLeft = 8.px
+                            cursor = Cursor.auto
                         }
                         +"${state.likes}"
                     }
@@ -74,10 +77,10 @@ class BasicApp : RComponent<RProps, BasicAppState>() {
                             } else dislikeOutlined {}
                         }
                     }
-                    span {
-                        attrs.jsStyle = js {
-                            paddingLeft = 8
-                            cursor = "auto"
+                    styledSpan {
+                        css {
+                            paddingLeft = 8.px
+                            cursor = Cursor.auto
                         }
                         +"${state.dislikes}"
                     }

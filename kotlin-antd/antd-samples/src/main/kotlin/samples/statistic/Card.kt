@@ -6,18 +6,19 @@ import antd.grid.col
 import antd.icon.*
 import antd.statistic.*
 import kotlinext.js.*
+import kotlinx.css.background
+import kotlinx.css.padding
+import kotlinx.css.px
 import react.*
-import react.dom.div
-import react.dom.jsStyle
 import styled.*
 
 fun RBuilder.card() {
     styledDiv {
         css { +StatisticStyles.card }
-        div {
-            attrs.jsStyle = js {
+        styledDiv {
+            css {
                 background = "#ECECEC"
-                padding = "30px"
+                padding(30.px)
             }
             row {
                 attrs.gutter = 16

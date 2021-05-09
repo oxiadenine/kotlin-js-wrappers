@@ -7,7 +7,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-interface DemoBoxProps : RProps {
+external interface DemoBoxProps : RProps {
     var value: Number
 }
 

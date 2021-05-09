@@ -7,7 +7,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-interface SiderCurrentSiderState : RState {
+external interface SiderCurrentSiderState : RState {
     var openKeys: Array<String>
 }
 

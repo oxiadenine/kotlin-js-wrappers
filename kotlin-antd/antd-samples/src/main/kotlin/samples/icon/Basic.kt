@@ -17,15 +17,10 @@ fun RBuilder.basic() {
             syncOutlined {
                 attrs.spin = true
             }
-            /*icon {
-                attrs {
-                    type = "smile"
-                    rotate = 180
-                }
+            smileOutlined {
+                attrs.rotate = 180
             }
-            icon {
-                attrs.type = "loading"
-            }*/
+            loadingOutlined {}
         }
     }
 }

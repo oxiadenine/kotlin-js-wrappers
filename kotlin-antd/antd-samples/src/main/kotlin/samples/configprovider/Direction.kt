@@ -25,6 +25,7 @@ import antd.tree.*
 import antd.treeselect.*
 import antd.treeselect.treeNode
 import kotlinext.js.*
+import kotlinx.css.*
 import kotlinx.html.*
 import org.w3c.dom.*
 import react.*
@@ -70,12 +71,12 @@ private val cascaderOptions = arrayOf<CascaderOptionType>(
         })
     })
 
-interface DirectionPageProps : RProps {
+external interface DirectionPageProps : RProps {
     var className: String
     var popupPlacement: String
 }
 
-interface DirectionPageState : RState {
+external interface DirectionPageState : RState {
     var currentStep: Number
     var modalVisible: Boolean
     var badgeCount: Number
@@ -127,7 +128,7 @@ class DirectionPage : RComponent<DirectionPageProps, DirectionPageState>() {
 
     private val cascaderFilter = { inputValue: String, path: Array<CascaderOptionType> ->
         path.any { option ->
-            option.label.unsafeCast<String>().toLowerCase().indexOf(inputValue.toLowerCase()) > -1
+            option.label.unsafeCast<String>().lowercase().indexOf(inputValue.lowercase()) > -1
         }
     }
 
@@ -419,8 +420,8 @@ class DirectionPage : RComponent<DirectionPageProps, DirectionPageState>() {
                                 treeNode {
                                     attrs {
                                         title = buildElement {
-                                            span {
-                                                attrs.jsStyle = js { color = "#1890ff" }
+                                            styledSpan {
+                                                css { color = Color("#1890ff") }
                                                 +"sss"
                                             }
                                         }
@@ -506,8 +507,8 @@ class DirectionPage : RComponent<DirectionPageProps, DirectionPageState>() {
                     }
                     br {}
                     br {}
-                    div {
-                        attrs.jsStyle = js { marginBottom = 16 }
+                    styledDiv {
+                        css { marginBottom = 16.px }
                         input {
                             attrs {
                                 addonBefore = selectBefore
@@ -581,7 +582,7 @@ class DirectionPage : RComponent<DirectionPageProps, DirectionPageState>() {
                             placeholder = "Select a person"
                             optionFilterProp = "children"
                             filterOption = { input: String, option: dynamic ->
-                                option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                                option.props.children.toLowerCase().indexOf(input.lowercase()) >= 0
                             }
                         }
                         option {
@@ -655,8 +656,8 @@ class DirectionPage : RComponent<DirectionPageProps, DirectionPageState>() {
                                     attrs {
                                         value = "sss"
                                         title = buildElement {
-                                            b {
-                                                attrs.jsStyle = js { color = "#08c" }
+                                            styledB {
+                                                css { color = Color("#08c") }
                                                 +"sss"
                                             }
                                         }
@@ -812,8 +813,8 @@ class DirectionPage : RComponent<DirectionPageProps, DirectionPageState>() {
                                 }
                             }
                         }
-                        div {
-                            attrs.jsStyle = js { marginTop = 10 }
+                        styledDiv {
+                            css { marginTop = 10.px }
                             badge {
                                 attrs.dot = state.showBadge
                                 a {
@@ -932,7 +933,7 @@ class DirectionPage : RComponent<DirectionPageProps, DirectionPageState>() {
 
 fun RBuilder.directionPage(handler: RHandler<DirectionPageProps>) = child(DirectionPage::class, handler)
 
-interface DirectionAppState : RState {
+external interface DirectionAppState : RState {
     var direction: String
     var popupPlacement: String
 }
@@ -956,10 +957,10 @@ class DirectionApp : RComponent<RProps, DirectionAppState>() {
     }
 
     override fun RBuilder.render() {
-        div {
-            attrs.jsStyle = js { marginBottom = 16 }
-            span {
-                attrs.jsStyle = js { marginRight = 16 }
+        styledDiv {
+            css { marginBottom = 16.px }
+            styledSpan {
+                css { marginRight = 16.px }
                 +"Change direction of components: "
             }
             radioGroup {

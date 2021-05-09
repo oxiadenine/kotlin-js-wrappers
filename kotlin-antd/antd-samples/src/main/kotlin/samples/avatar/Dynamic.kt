@@ -10,7 +10,7 @@ import styled.*
 private val userList = arrayOf("U", "Lucy", "Tom", "Edward")
 private val colorList = arrayOf("#f56a00", "#7265e6", "#ffbf00", "#00a2ae")
 
-interface AutosetState : RState {
+external interface AutosetState : RState {
     var user: String
     var color: String
 }

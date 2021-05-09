@@ -8,7 +8,7 @@ import react.*
 import react.dom.div
 import styled.*
 
-interface PendingTimeLineState : RState {
+external interface PendingTimeLineState : RState {
     var reverse: Boolean
 }
 

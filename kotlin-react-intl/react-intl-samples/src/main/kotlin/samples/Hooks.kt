@@ -15,7 +15,7 @@ private val providerMessages = js {
     time = "Hello {ts, time}"
     number = "Hello {num, number}"
     plural = "I have {num, plural, one {# dog} other {# dogs}}"
-    select = "I am a {gender, select, male {boy} female {girl}}"
+    select = "I am a {gender, select, male {boy} female {girl} other {}}"
     selectordinal = """I am the {order, selectordinal,
         one {#st person}
         two {#nd person}
@@ -33,36 +33,36 @@ private val app = functionalComponent<RProps> {
     p {
         +intl.formatMessage(jsObject { id = "simple" })
         br {}
-        +intl.formatMessage(jsObject { id = "placeholder" }, js { name = "John" }.unsafeCast<Any>())
+        +intl.formatMessage(jsObject { id = "placeholder" }, js { name = "John" })
         br {}
-        +intl.formatMessage(jsObject { id = "date" }, js { ts = Date.now() }.unsafeCast<Any>())
+        +intl.formatMessage(jsObject { id = "date" }, js { ts = Date.now() })
         br {}
-        +intl.formatMessage(jsObject { id = "time" }, js { ts = Date.now() }.unsafeCast<Any>())
+        +intl.formatMessage(jsObject { id = "time" }, js { ts = Date.now() })
         br {}
-        +intl.formatMessage(jsObject { id = "number" }, js { num = Random.nextInt() * 1000 }.unsafeCast<Any>())
+        +intl.formatMessage(jsObject { id = "number" }, js { num = Random.nextInt() * 1000 })
         br {}
-        +intl.formatMessage(jsObject { id = "plural" }, js { num = 1 }.unsafeCast<Any>())
+        +intl.formatMessage(jsObject { id = "plural" }, js { num = 1 })
         br {}
-        +intl.formatMessage(jsObject { id = "plural" }, js { num = 99 }.unsafeCast<Any>())
+        +intl.formatMessage(jsObject { id = "plural" }, js { num = 99 })
         br {}
-        +intl.formatMessage(jsObject { id = "select" }, js { gender = "male" }.unsafeCast<Any>())
+        +intl.formatMessage(jsObject { id = "select" }, js { gender = "male" })
         br {}
-        +intl.formatMessage(jsObject { id = "select" }, js { gender = "female" }.unsafeCast<Any>())
+        +intl.formatMessage(jsObject { id = "select" }, js { gender = "female" })
         br {}
-        +intl.formatMessage(jsObject { id = "selectordinal" }, js { order = 1 }.unsafeCast<Any>())
+        +intl.formatMessage(jsObject { id = "selectordinal" }, js { order = 1 })
         br {}
-        +intl.formatMessage(jsObject { id = "selectordinal" }, js { order = 2 }.unsafeCast<Any>())
+        +intl.formatMessage(jsObject { id = "selectordinal" }, js { order = 2 })
         br {}
-        +intl.formatMessage(jsObject { id = "selectordinal" }, js { order = 3 }.unsafeCast<Any>())
+        +intl.formatMessage(jsObject { id = "selectordinal" }, js { order = 3 })
         br {}
-        +intl.formatMessage(jsObject { id = "selectordinal" }, js { order = 4 }.unsafeCast<Any>())
+        +intl.formatMessage(jsObject { id = "selectordinal" }, js { order = 4 })
         br {}
-        +intl.formatMessage(jsObject { id = "unicode" }, js { placeholder = "world" }.unsafeCast<Any>())
+        +intl.formatMessage(jsObject { id = "unicode" }, js { placeholder = "world" })
         br {}
         +intl.formatMessage(jsObject {
             id = "whatever"
             defaultMessage = "Hello\u0020{placeholder}"
-        }, js { placeholder = "world" }.unsafeCast<Any>())
+        }, js { placeholder = "world" })
     }
 }
 

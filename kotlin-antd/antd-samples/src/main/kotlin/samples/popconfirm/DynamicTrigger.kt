@@ -9,7 +9,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-interface DynamicTriggerAppState : RState {
+external interface DynamicTriggerAppState : RState {
     var visible: Boolean
     var condition: Boolean
 }
@@ -46,7 +46,6 @@ class DynamicTriggerApp : RComponent<RProps, DynamicTriggerAppState>() {
             return
         }
 
-        // Determining condition before show the popconfirm.
         console.log(state.condition)
 
         if (state.condition) {

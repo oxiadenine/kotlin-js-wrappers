@@ -3,7 +3,6 @@ package samples
 import kotlinx.css.*
 import react.*
 import react.dom.*
-import samples.advanced.*
 import styled.*
 
 object AppStyles : StyleSheet("app", isStatic = true) {

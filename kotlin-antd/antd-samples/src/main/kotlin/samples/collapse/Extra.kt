@@ -33,7 +33,7 @@ private val genExtra: () -> ReactElement = {
     }
 }
 
-interface ExtraDemoState : RState {
+external interface ExtraDemoState : RState {
     var expandIconPosition: String
 }
 

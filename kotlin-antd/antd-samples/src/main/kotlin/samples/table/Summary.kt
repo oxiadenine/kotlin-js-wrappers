@@ -13,14 +13,14 @@ import react.dom.br
 import styled.css
 import styled.styledDiv
 
-private interface SummaryDataItem {
+private external interface SummaryDataItem {
     var key: String
     var name: String
     var borrow: Number
     var repayment: Number
 }
 
-private interface SummaryFixedDataItem {
+private external interface SummaryFixedDataItem {
     var key: Number
     var name: String
     var description: String

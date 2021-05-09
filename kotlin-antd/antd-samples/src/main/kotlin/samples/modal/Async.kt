@@ -9,7 +9,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-interface AsyncAppState : RState {
+external interface AsyncAppState : RState {
     var modalText: String
     var visible: Boolean
     var confirmLoading: Boolean

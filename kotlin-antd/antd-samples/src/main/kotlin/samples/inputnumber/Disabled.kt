@@ -3,12 +3,13 @@ package samples.inputnumber
 import antd.*
 import antd.button.button
 import antd.inputnumber.*
-import kotlinext.js.*
+import kotlinx.css.marginTop
+import kotlinx.css.px
 import react.*
 import react.dom.*
 import styled.*
 
-interface DisabledAppState : RState {
+external interface DisabledAppState : RState {
     var disabled: Boolean
 }
 
@@ -33,8 +34,8 @@ class DisabledApp : RComponent<RProps, DisabledAppState>() {
                     defaultValue = 3
                 }
             }
-            div {
-                attrs.jsStyle = js { marginTop = 20 }
+            styledDiv {
+                css { marginTop = 20.px }
                 button {
                     attrs {
                         onClick = toggle

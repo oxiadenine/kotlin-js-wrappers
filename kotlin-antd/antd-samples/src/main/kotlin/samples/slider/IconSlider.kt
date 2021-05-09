@@ -8,12 +8,12 @@ import react.*
 import react.dom.*
 import styled.*
 
-interface IconSliderDemoProps : RProps {
+external interface IconSliderDemoProps : RProps {
     var min: Number
     var max: Number
 }
 
-interface IconSliderDemoState : RState {
+external interface IconSliderDemoState : RState {
     var value: Number
 }
 

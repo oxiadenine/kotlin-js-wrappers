@@ -11,7 +11,7 @@ import react.dom.a
 import styled.css
 import styled.styledDiv
 
-private interface StickyDataItem {
+private external interface StickyDataItem {
     var key: Number
     var name: String
     var age: Number

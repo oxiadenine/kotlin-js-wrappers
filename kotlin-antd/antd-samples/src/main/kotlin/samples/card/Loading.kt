@@ -11,7 +11,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-interface LoadingAppState : RState {
+external interface LoadingAppState : RState {
     var loading: Boolean
 }
 

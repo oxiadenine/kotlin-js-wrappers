@@ -6,6 +6,10 @@ import antd.layout.footer
 import antd.layout.header
 import antd.menu.*
 import kotlinext.js.*
+import kotlinx.css.background
+import kotlinx.css.minHeight
+import kotlinx.css.padding
+import kotlinx.css.px
 import react.*
 import react.dom.*
 import styled.*
@@ -46,11 +50,11 @@ fun RBuilder.top() {
                     breadcrumbItem { +"List" }
                     breadcrumbItem { +"App" }
                 }
-                div {
-                    attrs.jsStyle = js {
+                styledDiv {
+                    css {
                         background = "#fff"
-                        padding = 24
-                        minHeight = 280
+                        padding = "24px"
+                        minHeight = 280.px
                     }
                     +"Content"
                 }

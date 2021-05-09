@@ -8,7 +8,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-interface OverlayVisibleAppState : RState {
+external interface OverlayVisibleAppState : RState {
     var visible: Boolean
 }
 

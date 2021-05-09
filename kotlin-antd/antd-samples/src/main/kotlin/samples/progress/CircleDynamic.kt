@@ -9,7 +9,7 @@ import react.*
 import react.dom.div
 import styled.*
 
-interface CircleDynamicAppState : RState {
+external interface CircleDynamicAppState : RState {
     var percent: Number
 }
 

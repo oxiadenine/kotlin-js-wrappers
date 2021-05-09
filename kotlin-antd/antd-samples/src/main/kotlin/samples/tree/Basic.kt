@@ -2,9 +2,9 @@ package samples.tree
 
 import antd.Key
 import antd.tree.*
-import kotlinext.js.*
+import kotlinx.css.Color
+import kotlinx.css.color
 import react.*
-import react.dom.*
 import styled.*
 
 class BasicDemo : RComponent<RProps, RState>() {
@@ -59,8 +59,8 @@ class BasicDemo : RComponent<RProps, RState>() {
                     treeNode {
                         attrs {
                             title = buildElement {
-                                span {
-                                    attrs.jsStyle = js { color = "#1890f" }
+                                styledSpan {
+                                    css { color = Color("#1890f") }
                                     +"sss"
                                 }
                             }

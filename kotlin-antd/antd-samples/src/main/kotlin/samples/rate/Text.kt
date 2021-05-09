@@ -5,7 +5,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-interface RaterState : RState {
+external interface RaterState : RState {
     var value: Number?
 }
 

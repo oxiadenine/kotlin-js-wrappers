@@ -8,7 +8,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-interface CustomRenderCascaderOptionType : CascaderOptionType {
+external interface CustomRenderCascaderOptionType : CascaderOptionType {
     var code: Number?
 }
 

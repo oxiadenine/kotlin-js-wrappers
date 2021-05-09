@@ -3,12 +3,13 @@ package samples.radio
 import antd.*
 import antd.button.button
 import antd.radio.*
-import kotlinext.js.*
+import kotlinx.css.marginTop
+import kotlinx.css.px
 import react.*
 import react.dom.*
 import styled.*
 
-interface DisabledAppState : RState {
+external interface DisabledAppState : RState {
     var disabled: Boolean
 }
 
@@ -40,8 +41,8 @@ class DisabledApp : RComponent<RProps, DisabledAppState>() {
                 }
                 +"Disabled"
             }
-            div {
-                attrs.jsStyle = js { marginTop = 20 }
+            styledDiv {
+                css { marginTop = 20.px }
                 button {
                     attrs {
                         type = "primary"

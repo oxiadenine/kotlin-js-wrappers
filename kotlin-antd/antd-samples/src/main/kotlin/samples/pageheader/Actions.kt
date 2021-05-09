@@ -14,7 +14,7 @@ import react.dom.a
 import react.dom.div
 import styled.*
 
-interface ActionsDescriptionProps : RProps {
+external interface ActionsDescriptionProps : RProps {
     var term: String
     var children: Any
     var span: Number

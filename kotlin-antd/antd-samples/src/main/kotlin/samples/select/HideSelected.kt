@@ -7,7 +7,7 @@ import styled.*
 
 private val options = arrayOf("Apples", "Nails", "Bananas", "Helicopters")
 
-interface SelectWithHiddenSelectedOptionsState : RState {
+external interface SelectWithHiddenSelectedOptionsState : RState {
     var selectedItems: Array<String>
 }
 

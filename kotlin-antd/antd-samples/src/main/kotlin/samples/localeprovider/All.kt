@@ -17,6 +17,8 @@ import antd.table.*
 import antd.timepicker.timePicker
 import antd.transfer.*
 import kotlinext.js.*
+import kotlinx.css.*
+import kotlinx.css.properties.border
 import kotlinx.html.*
 import moment.*
 import org.w3c.dom.*
@@ -41,11 +43,11 @@ private val tableColumns = arrayOf<ColumnType<Any>>(
     }
 )
 
-interface PageProps : RProps {
+external interface PageProps : RProps {
     var key: String
 }
 
-interface PageState : RState {
+external interface PageState : RState {
     var visible: Boolean
 }
 
@@ -150,11 +152,11 @@ class Page : RComponent<PageProps, PageState>() {
                         render = { item -> item.title!! }
                     }
                 }
-                div {
-                    attrs.jsStyle = js {
-                        width = 319
-                        border = "1px solid #d9d9d9"
-                        borderRadius = 4
+                styledDiv {
+                    css {
+                        width = 319.px
+                        border(1.px, BorderStyle.solid, Color("#d9d9d9"))
+                        borderRadius = 4.px
                     }
                     calendar {
                         attrs {
@@ -187,7 +189,7 @@ class Page : RComponent<PageProps, PageState>() {
 
 fun RBuilder.page(handler: RHandler<PageProps>) = child(Page::class, handler)
 
-interface PageAppState : RState {
+external interface PageAppState : RState {
     var locale: Locale?
 }
 
@@ -214,8 +216,8 @@ class PageApp : RComponent<RProps, PageAppState>() {
         div {
             div {
                 attrs.classes = setOf("change-locale")
-                span {
-                    attrs.jsStyle = js { marginRight = 16 }
+                styledSpan {
+                    css { marginRight = 16.px }
                     +"Change locale of components: "
                 }
                 radioGroup {

@@ -7,23 +7,24 @@ import antd.list.*
 import antd.skeleton.*
 import kotlinext.js.*
 import kotlinx.browser.*
+import kotlinx.css.*
+import kotlinx.css.properties.LineHeight
 import org.w3c.dom.events.*
 import react.*
 import react.dom.a
 import react.dom.div
-import react.dom.jsStyle
 import styled.*
 import kotlin.js.json
 
 private val count = 3
 private val fakeDataUrl = "https://randomuser.me/api/?results=${count}&inc=name,gender,email,nat&noinfo"
 
-interface LoadMoreListDataItem {
+external interface LoadMoreListDataItem {
     var loading: Boolean
     var name: dynamic
 }
 
-interface LoadMoreListState : RState {
+external interface LoadMoreListState : RState {
     var initLoading: Boolean
     var loading: Boolean
     var data: Array<LoadMoreListDataItem>
@@ -87,12 +88,12 @@ class LoadMoreList : RComponent<RProps, LoadMoreListState>() {
     override fun RBuilder.render() {
         val listLoadMore = if (!state.initLoading && !state.loading) {
             buildElement {
-                div {
-                    attrs.jsStyle = js {
-                        textAlign = "center"
-                        marginTop = 12
-                        height = 32
-                        lineHeight = "32px"
+                styledDiv {
+                    css {
+                        textAlign = TextAlign.center
+                        marginTop = 12.px
+                        height = 32.px
+                        lineHeight = LineHeight("32px")
                     }
                     button {
                         attrs.onClick = onLoadMore

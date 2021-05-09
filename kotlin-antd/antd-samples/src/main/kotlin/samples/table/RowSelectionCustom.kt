@@ -6,7 +6,7 @@ import kotlinext.js.*
 import react.*
 import styled.*
 
-private interface RowSelectionCustomTableDataItem {
+private external interface RowSelectionCustomTableDataItem {
     var key: String
     var name: String
     var age: Number
@@ -37,7 +37,7 @@ private val tableData = (0..46).map { i ->
     }
 }.toTypedArray()
 
-interface RowSelectionCustomAppState : RState {
+external interface RowSelectionCustomAppState : RState {
     var selectedRowKeys: Array<Key>
 }
 

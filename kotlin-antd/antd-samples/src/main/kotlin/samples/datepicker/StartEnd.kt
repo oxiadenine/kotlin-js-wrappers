@@ -6,7 +6,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-interface DateRangeState : RState {
+external interface DateRangeState : RState {
     var startValue: Moment?
     var endValue: Moment?
     var endOpen: Boolean

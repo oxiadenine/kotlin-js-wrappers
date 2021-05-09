@@ -21,7 +21,7 @@ private val handleChange = { value: SelectValue, _: Any ->
     console.log("selected $value")
 }
 
-interface SelectSizesDemoState : RState {
+external interface SelectSizesDemoState : RState {
     var size: String
 }
 

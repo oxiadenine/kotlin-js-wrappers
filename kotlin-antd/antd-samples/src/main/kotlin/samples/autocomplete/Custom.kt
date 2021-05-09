@@ -12,7 +12,7 @@ private val handleSelect = { value: Any, _: Any ->
     console.log("onSelect", value)
 }
 
-interface CustomCompleteState : RState {
+external interface CustomCompleteState : RState {
     var dataSource: Array<DataSourceItemType>
 }
 

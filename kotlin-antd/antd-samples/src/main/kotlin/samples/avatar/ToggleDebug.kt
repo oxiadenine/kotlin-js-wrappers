@@ -4,11 +4,15 @@ import antd.*
 import antd.avatar.*
 import antd.button.button
 import kotlinext.js.*
+import kotlinx.css.*
+import kotlinx.css.properties.Transforms
+import kotlinx.css.properties.scale
+import kotlinx.css.properties.transform
 import react.*
 import react.dom.*
 import styled.*
 
-interface ToggleDebugAppState : RState {
+external interface ToggleDebugAppState : RState {
     var hide: Boolean
     var size: String
     var scale: Number
@@ -62,11 +66,13 @@ class ToggleDebugApp : RComponent<RProps, ToggleDebugAppState>() {
             }
             br {}
             br {}
-            div {
-                attrs.jsStyle = js {
-                    textAlign = "center"
-                    transform = "scale(${state.scale})"
-                    marginTop = 24
+            styledDiv {
+                css {
+                    textAlign = TextAlign.center
+                    transform {
+                        Transforms().scale(state.scale)
+                    }
+                    marginTop = 24.px
                 }
                 avatar {
                     attrs {
@@ -89,8 +95,8 @@ class ToggleDebugApp : RComponent<RProps, ToggleDebugAppState>() {
                     }
                     +"Invalid"
                 }
-                div {
-                    attrs.jsStyle = js { display = if (state.hide) "none" else "" }
+                styledDiv {
+                    css { display = if (state.hide) Display.none else Display.inherit }
                     avatar {
                         attrs {
                             size = state.size

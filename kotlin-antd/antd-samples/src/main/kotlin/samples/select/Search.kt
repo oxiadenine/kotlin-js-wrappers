@@ -24,7 +24,7 @@ private val handleSearch = { value: String ->
 }
 
 private val filter: FilterFunc<Any> = { inputValue, option ->
-    option.asDynamic().props.children.unsafeCast<String>().toLowerCase().contains(inputValue.toLowerCase())
+    option.asDynamic().props.children.unsafeCast<String>().lowercase().contains(inputValue.lowercase())
 }
 
 fun RBuilder.search() {

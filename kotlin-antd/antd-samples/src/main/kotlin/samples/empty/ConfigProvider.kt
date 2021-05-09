@@ -12,6 +12,8 @@ import antd.table.ColumnType
 import antd.transfer.*
 import antd.treeselect.*
 import kotlinext.js.*
+import kotlinx.css.TextAlign
+import kotlinx.css.textAlign
 import kotlinx.html.*
 import react.*
 import react.dom.*
@@ -19,8 +21,8 @@ import styled.*
 
 private val customizeRenderEmpty: RenderEmptyHandler = {
     buildElement {
-        div {
-            attrs.jsStyle = js { textAlign = "center" }
+        styledDiv {
+            css { textAlign = TextAlign.center }
             smileOutlined {
                 attrs.style = js { fontSize = 20 }
             }
@@ -31,7 +33,7 @@ private val customizeRenderEmpty: RenderEmptyHandler = {
 
 private val customStyle = js { width = 200 }
 
-interface ConfigProviderDemoState : RState {
+external interface ConfigProviderDemoState : RState {
     var customize: Boolean
 }
 

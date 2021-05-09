@@ -7,7 +7,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-interface PositionCarouselDemoState : RState {
+external interface PositionCarouselDemoState : RState {
     var dotPosition: String
 }
 

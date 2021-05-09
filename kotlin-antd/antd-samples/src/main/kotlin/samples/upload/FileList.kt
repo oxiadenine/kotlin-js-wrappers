@@ -7,7 +7,7 @@ import kotlinext.js.*
 import react.*
 import styled.*
 
-interface MyUploadState : RState {
+external interface MyUploadState : RState {
     var fileList: Array<UploadFile<Any>>
 }
 

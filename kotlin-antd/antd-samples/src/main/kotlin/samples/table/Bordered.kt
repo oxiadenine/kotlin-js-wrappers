@@ -6,7 +6,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-private interface BorderedTableDataItem {
+private external interface BorderedTableDataItem {
     var key: String
     var name: String
     var money: String

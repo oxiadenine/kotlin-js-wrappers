@@ -21,14 +21,11 @@ private val example = functionalComponent<RProps> {
         }
         mediaQuery {
             attrs.minResolution = "2dppx"
-            /* You can also use a function (render prop) as a child */
-            childList.add(
-                fun(matches: Boolean): ReactElement {
-                    return if (matches) {
-                        p { +"You are retina" }
-                    } else p { +"You are not retina" }
-                }
-            )
+            childList += fun(matches: Boolean): ReactElement {
+                return if (matches) {
+                    p { +"You are retina" }
+                } else p { +"You are not retina" }
+            }
         }
     }
 }

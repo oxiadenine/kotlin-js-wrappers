@@ -13,7 +13,7 @@ private val comp = functionalComponent<RProps> {
     h1 { +formatDate.formatDate(Date.now()) }
 }
 
-interface Comp2Props : WrappedComponentProps<Any> {
+external interface Comp2Props : WrappedComponentProps<Any> {
     var intl: IntlShape
 }
 

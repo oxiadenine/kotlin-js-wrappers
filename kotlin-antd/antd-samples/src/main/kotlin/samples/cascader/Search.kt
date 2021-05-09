@@ -51,7 +51,7 @@ private fun handleChange(value: CascaderValueType, selectedOptions: Array<Cascad
 
 private val searchFilter = { inputValue: String, path: Array<CascaderOptionType>, _: FilledFieldNamesType ->
     path.any { option ->
-        option.label!!.unsafeCast<String>().toLowerCase().contains(inputValue.toLowerCase())
+        option.label!!.unsafeCast<String>().lowercase().contains(inputValue.lowercase())
     }
 }
 

@@ -53,7 +53,7 @@ private val contentListNoTitle = js {
     }
 }
 
-interface TabsCardState : RState {
+external interface TabsCardState : RState {
     var key: String
     var noTitleKey: String
 }

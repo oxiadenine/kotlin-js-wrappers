@@ -5,7 +5,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-interface SmoothClosedState : RState {
+external interface SmoothClosedState : RState {
     var visible: Boolean
 }
 

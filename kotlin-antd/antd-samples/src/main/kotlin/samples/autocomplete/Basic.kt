@@ -9,7 +9,7 @@ private val handleSelect = { value: Any, _: Any ->
     console.log("onSelect", value)
 }
 
-interface BasicCompleteState : RState {
+external interface BasicCompleteState : RState {
     var dataSource: Array<DataSourceItemType>
 }
 

@@ -3,15 +3,16 @@ package samples.treeselect
 import antd.icon.*
 import antd.treeselect.*
 import kotlinext.js.*
+import kotlinx.css.Color
+import kotlinx.css.color
 import react.*
-import react.dom.*
 import styled.*
 
 private val icon = buildElement {
     smileOutlined {}
 }
 
-interface SuffixDemoState : RState {
+external interface SuffixDemoState : RState {
     var value: String?
 }
 
@@ -81,8 +82,8 @@ class SuffixDemo : RComponent<RProps, SuffixDemoState>() {
                         attrs {
                             value = "sss"
                             title = buildElement {
-                                b {
-                                    attrs.jsStyle = js { color = "#08c" }
+                                styledB {
+                                    css { color = Color("#08c") }
                                     +"sss"
                                 }
                             }

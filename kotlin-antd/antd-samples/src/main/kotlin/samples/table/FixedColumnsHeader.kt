@@ -6,7 +6,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-private interface FixedColumnsHeaderTableDataItem {
+private external interface FixedColumnsHeaderTableDataItem {
     var key: String
     var name: String
     var age: Number

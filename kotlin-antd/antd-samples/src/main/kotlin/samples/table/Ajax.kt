@@ -1,6 +1,5 @@
 package samples.table
 
-import antd.pagination.*
 import antd.table.*
 import kotlinext.js.*
 import kotlinx.browser.*
@@ -37,7 +36,7 @@ private val tableColumns = arrayOf<ColumnType<Any>>(
     }
 )
 
-interface AjaxAppState : RState {
+external interface AjaxAppState : RState {
     var data: Array<Any>
     var pagination: TablePaginationConfig
     var loading: Boolean

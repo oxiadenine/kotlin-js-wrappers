@@ -6,7 +6,7 @@ import antd.timepicker.*
 import react.*
 import styled.*
 
-interface AddonDemoState : RState {
+external interface AddonDemoState : RState {
     var open: Boolean
 }
 

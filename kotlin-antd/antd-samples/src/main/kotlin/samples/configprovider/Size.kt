@@ -19,7 +19,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-interface DataItem {
+external interface DataItem {
     var key: String
     var name: String
     var age: Number

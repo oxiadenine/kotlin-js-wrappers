@@ -8,7 +8,7 @@ import react.RBuilder
 import react.dom.*
 import styled.*
 
-private interface JsxTableDataItem {
+private external interface JsxTableDataItem {
     var key: String
     var firstName: String
     var lastName: String

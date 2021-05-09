@@ -1,18 +1,20 @@
 package samples.button
 
 import antd.button.button
-import kotlinext.js.*
+import kotlinx.css.background
+import kotlinx.css.padding
+import kotlinx.css.px
+import kotlinx.css.rgb
 import react.*
-import react.dom.*
 import styled.*
 
 fun RBuilder.ghost() {
     styledDiv {
         css { +ButtonStyles.ghost }
-        div {
-            attrs.jsStyle = js {
-                background = "rgb(190, 200, 200)"
-                padding = "26px 16px 16px"
+        styledDiv {
+            css {
+                background = rgb(190, 200, 200).toString()
+                padding(26.px, 16.px, 16.px)
             }
             button {
                 attrs {

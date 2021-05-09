@@ -13,7 +13,7 @@ private val cityData = mapOf(
     Pair("Jiangsu", arrayOf("Nanjing", "Suzhou", "Zhenjiang"))
 )
 
-interface CoordinateAppState : RState {
+external interface CoordinateAppState : RState {
     var cities: Array<String>
     var secondCity: String
 }

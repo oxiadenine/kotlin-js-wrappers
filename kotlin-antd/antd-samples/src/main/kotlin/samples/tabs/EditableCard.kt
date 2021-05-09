@@ -5,7 +5,7 @@ import kotlinext.js.*
 import react.*
 import styled.*
 
-interface EditableCardDemoState : RState {
+external interface EditableCardDemoState : RState {
     var activeKey: String
     var panes: Array<Any>
 }

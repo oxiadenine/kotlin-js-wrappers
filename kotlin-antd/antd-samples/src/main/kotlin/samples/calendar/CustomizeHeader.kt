@@ -6,12 +6,11 @@ import antd.grid.col
 import antd.radio.*
 import antd.select.*
 import antd.select.option
-import kotlinext.js.*
+import kotlinx.css.*
+import kotlinx.css.properties.border
 import moment.*
 import react.RBuilder
 import react.ReactElement
-import react.dom.div
-import react.dom.jsStyle
 import styled.*
 
 private fun handlePanelChange(value: Moment?, mode: CalendarMode?) {
@@ -21,11 +20,11 @@ private fun handlePanelChange(value: Moment?, mode: CalendarMode?) {
 fun RBuilder.customizeHeader() {
     styledDiv {
         css { +CalendarStyles.customizeHeader }
-        div {
-            attrs.jsStyle = js {
-                width = 300
-                border = "1px solid #d9d9d9"
-                borderRadius = 4
+        styledDiv {
+            css {
+                width = 300.px
+                border(1.px, BorderStyle.solid, Color("#d9d9d9"))
+                borderRadius = 4.px
             }
             calendar {
                 attrs {
@@ -70,10 +69,10 @@ fun RBuilder.customizeHeader() {
                             })
                         }
 
-                        div {
-                            attrs.jsStyle = js { padding = 10 }
-                            div {
-                                attrs.jsStyle = js { marginBottom = "10px" }
+                        styledDiv {
+                            css { padding(10.px) }
+                            styledDiv {
+                                css { marginBottom = 10.px }
                                 +"Custom header "
                             }
                             row {

@@ -3,17 +3,16 @@ package samples.card
 import antd.card.*
 import antd.grid.*
 import antd.grid.col
-import kotlinext.js.*
+import kotlinx.css.background
+import kotlinx.css.padding
 import react.*
-import react.dom.div
-import react.dom.jsStyle
 import styled.*
 
 fun RBuilder.inColumn() {
     styledDiv {
         css { +CardStyles.inColumn }
-        div {
-            attrs.jsStyle = js {
+        styledDiv {
+            css {
                 background = "#ECECEC"
                 padding = "30px"
             }

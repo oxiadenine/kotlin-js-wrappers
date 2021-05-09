@@ -6,7 +6,7 @@ import kotlinext.js.*
 import react.*
 import styled.*
 
-private interface FixedHeaderTableDataItem {
+private external interface FixedHeaderTableDataItem {
     var key: String
     var name: String
     var age: Number

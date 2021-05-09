@@ -2,11 +2,13 @@ package samples.table
 
 import antd.table.*
 import kotlinext.js.*
+import kotlinx.css.margin
+import kotlinx.css.px
 import react.*
 import react.dom.*
 import styled.*
 
-private interface ExpandTableDataItem {
+private external interface ExpandTableDataItem {
     var key: String
     var name: String
     var age: Number
@@ -76,8 +78,8 @@ fun RBuilder.expand() {
             attrs {
                 columns = tableColumns.unsafeCast<ColumnsType<ExpandTableDataItem>>()
                 expandedRowRender = { record, _, _, _ ->
-                    p {
-                        attrs.jsStyle = js { margin = 0 }
+                    styledP {
+                        css { margin(0.px) }
                         +record.description
                     }
                 }

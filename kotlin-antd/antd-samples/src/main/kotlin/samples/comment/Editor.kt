@@ -15,7 +15,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-interface CommentListProps : RProps {
+external interface CommentListProps : RProps {
     var comments: Array<CommentProps>
 }
 
@@ -43,7 +43,7 @@ class CommentList : RComponent<CommentListProps, RState>() {
 
 fun RBuilder.commentList(handler: RHandler<CommentListProps>) = child(CommentList::class, handler)
 
-interface EditorProps : RProps {
+external interface EditorProps : RProps {
     var onChange: ChangeEventHandler<HTMLTextAreaElement>
     var onSubmit: MouseEventHandler<Any>
     var submitting: Boolean
@@ -78,7 +78,7 @@ class Editor : RComponent<EditorProps, RState>() {
 
 fun RBuilder.editor(handler: RHandler<EditorProps>) = child(Editor::class, handler)
 
-interface EditorAppState : RState {
+external interface EditorAppState : RState {
     var comments: Array<CommentProps>
     var submitting: Boolean
     var value: String?

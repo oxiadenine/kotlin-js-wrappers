@@ -29,6 +29,8 @@ import antd.transfer.TransferItem
 import antd.transfer.transfer
 import kotlinext.js.js
 import kotlinext.js.jsObject
+import kotlinx.css.marginRight
+import kotlinx.css.px
 import moment.moment
 import org.w3c.dom.HTMLElement
 import react.RBuilder
@@ -38,12 +40,11 @@ import react.RProps
 import react.RState
 import react.dom.a
 import react.dom.div
-import react.dom.jsStyle
 import react.dom.p
-import react.dom.span
 import react.setState
 import styled.css
 import styled.styledDiv
+import styled.styledSpan
 
 private val tableColumns = arrayOf<ColumnType<Any>>(
     jsObject {
@@ -60,11 +61,11 @@ private val tableColumns = arrayOf<ColumnType<Any>>(
     }
 )
 
-interface LocalePageProps : RProps {
+external interface LocalePageProps : RProps {
     var key: String
 }
 
-interface LocalePageState : RState {
+external interface LocalePageState : RState {
     var visible: Boolean
 }
 
@@ -190,7 +191,7 @@ class LocalePage : RComponent<LocalePageProps, LocalePageState>() {
 
 fun RBuilder.localePage(handler: RHandler<LocalePageProps>) = child(LocalePage::class, handler)
 
-interface LocaleAppState : RState {
+external interface LocaleAppState : RState {
     var locale: Locale?
 }
 
@@ -218,8 +219,8 @@ class LocaleApp : RComponent<RProps, LocaleAppState>() {
     override fun RBuilder.render() {
         div {
             div(classes = "change-locale") {
-                span {
-                    attrs.jsStyle = js { marginRight = 16 }
+                styledSpan {
+                    css { marginRight = 16.px }
                     +"Change locale of components: "
                 }
                 radioGroup {

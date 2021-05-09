@@ -7,11 +7,15 @@ import antd.layout.footer
 import antd.layout.header
 import antd.menu.*
 import kotlinext.js.*
+import kotlinx.css.background
+import kotlinx.css.minHeight
+import kotlinx.css.padding
+import kotlinx.css.px
 import react.*
 import react.dom.*
 import styled.*
 
-interface SiderDemoState : RState {
+external interface SiderDemoState : RState {
     var collapsed: Boolean
 }
 
@@ -117,11 +121,11 @@ class SiderDemo : RComponent<RProps, SiderDemoState>() {
                         breadcrumbItem { +"User" }
                         breadcrumbItem { +"Bill" }
                     }
-                    div {
-                        attrs.jsStyle = js {
-                            padding = 24
+                    styledDiv {
+                        css {
+                            padding(24.px)
                             background = "#fff"
-                            minHeight = 360
+                            minHeight = 360.px
                         }
                         +"Bill is a cat."
                     }

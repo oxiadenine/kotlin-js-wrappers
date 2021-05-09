@@ -1,7 +1,8 @@
 package samples.datepicker
 
 import antd.datepicker.*
-import kotlinext.js.*
+import kotlinx.css.*
+import kotlinx.css.properties.border
 import kotlinx.html.*
 import moment.Moment
 import react.*
@@ -14,18 +15,14 @@ fun RBuilder.dateRender() {
         div {
             datePicker {
                 attrs.dateRender = { current: Moment ->
-                    val style = js {}
-
-                    if (current.date() == 1) {
-                        style.border = "1px solid #1890ff"
-                        style.borderRadius = "50%"
-                    }
-
-                    div {
-                        attrs {
-                            classes = setOf("ant-calendar-date")
-                            jsStyle = style
+                    styledDiv {
+                        if (current.date() == 1) {
+                            css {
+                                border(1.px, BorderStyle.solid, Color("#1890ff"))
+                                borderRadius = LinearDimension("50%")
+                            }
                         }
+                        attrs.classes = setOf("ant-calendar-date")
                         +"${current.date()}"
                     }
                 }
@@ -33,18 +30,14 @@ fun RBuilder.dateRender() {
             br {}
             rangePicker {
                 attrs.dateRender = { current: Moment ->
-                    val style = js {}
-
-                    if (current.date() == 1) {
-                        style.border = "1px solid #1890ff"
-                        style.borderRadius = "50%"
-                    }
-
-                    div {
-                        attrs {
-                            classes = setOf("ant-calendar-date")
-                            jsStyle = style
+                    styledDiv {
+                        if (current.date() == 1) {
+                            css {
+                                border(1.px, BorderStyle.solid, Color("#1890ff"))
+                                borderRadius = LinearDimension("50%")
+                            }
                         }
+                        attrs.classes = setOf("ant-calendar-date")
                         +"${current.date()}"
                     }
                 }

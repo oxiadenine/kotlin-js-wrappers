@@ -5,7 +5,7 @@ import moment.*
 import react.*
 import styled.*
 
-interface ValueDemoState : RState {
+external interface ValueDemoState : RState {
     var value: Moment?
 }
 

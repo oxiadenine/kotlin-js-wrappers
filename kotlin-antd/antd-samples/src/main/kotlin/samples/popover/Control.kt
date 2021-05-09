@@ -8,7 +8,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-interface ControlAppState : RState {
+external interface ControlAppState : RState {
     var visible: Boolean
 }
 

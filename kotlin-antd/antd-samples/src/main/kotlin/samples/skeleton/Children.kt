@@ -8,7 +8,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-interface ChildrenDemoState : RState {
+external interface ChildrenDemoState : RState {
     var loading: Boolean
 }
 

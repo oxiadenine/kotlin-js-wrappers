@@ -5,7 +5,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-interface MyTagState : RState {
+external interface MyTagState : RState {
     var checked: Boolean
 }
 

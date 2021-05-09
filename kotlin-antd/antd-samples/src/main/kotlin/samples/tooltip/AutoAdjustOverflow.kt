@@ -2,24 +2,26 @@ package samples.tooltip
 
 import antd.button.button
 import antd.tooltip.*
-import kotlinext.js.*
+import kotlinx.css.*
+import kotlinx.css.properties.border
 import org.w3c.dom.*
 import react.*
-import react.dom.*
 import styled.*
 
-private val wrapStyles = js {
-    overflow = "hidden"
-    position = "relative"
-    padding = "24px"
-    border = "1px solid #e9e9e9"
+private object AutoAdjustOverflowStyles : StyleSheet("auto-adjust-overflow", isStatic = true) {
+    val wrapStyle by css {
+        overflow = Overflow.hidden
+        position = Position.relative
+        padding(24.px)
+        border(1.px, BorderStyle.solid, Color("#e9e9e9"))
+    }
 }
 
 fun RBuilder.autoAdjustOverflow() {
     styledDiv {
         css { +TooltipStyles.autoAdjustOverflow }
-        div {
-            attrs.jsStyle = wrapStyles
+        styledDiv {
+            css { +AutoAdjustOverflowStyles.wrapStyle }
             tooltip {
                 attrs {
                     placement = "left"

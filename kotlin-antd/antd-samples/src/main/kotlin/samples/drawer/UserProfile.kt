@@ -9,46 +9,48 @@ import antd.grid.*
 import antd.grid.col
 import antd.list.*
 import kotlinext.js.*
+import kotlinx.css.*
+import kotlinx.css.properties.LineHeight
 import kotlinx.html.js.*
 import react.*
 import react.dom.a
 import react.dom.div
-import react.dom.jsStyle
-import react.dom.p
 import styled.*
 
-private interface UserProfileListDataItem {
+private object UserProfileStyles : StyleSheet("user-profile", isStatic = true) {
+    val pStyle by css {
+        fontSize = 16.px
+        color = rgba(0,0,0,0.85)
+        lineHeight = LineHeight("24px")
+        display = Display.block
+        marginBottom = 16.px
+    }
+}
+
+private external interface UserProfileListDataItem {
     var id: String
     var name: String
 }
 
-private val pStyle = js {
-    fontSize = 16
-    color = "rgba(0,0,0,0.85)"
-    lineHeight = "24px"
-    display = "block"
-    marginBottom = 16
-}
-
-interface DescriptionItemProps : RProps {
+external interface DescriptionItemProps : RProps {
     var title: String
     var content: Any
 }
 
 class DescriptionItem : RComponent<DescriptionItemProps, RState>() {
     override fun RBuilder.render() {
-        div {
-            attrs.jsStyle = js {
-                fontSize = 14
-                lineHeight = "22px"
-                marginBottom = 7
-                color = "rgba(0,0,0,0.65)"
+        styledDiv {
+            css {
+                fontSize = 14.px
+                lineHeight = LineHeight("22px")
+                marginBottom = 7.px
+                color = rgba(0, 0, 0, 0.65)
             }
-            p {
-                attrs.jsStyle = js {
-                    marginRight = 8
-                    display = "inline-block"
-                    color = "rgba(0,0,0,0.85)"
+            styledP {
+                css {
+                    marginRight = 8.px
+                    display = Display.inlineBlock
+                    color = rgba(0,0,0,0.85)
                 }
                 +props.title
             }
@@ -59,7 +61,7 @@ class DescriptionItem : RComponent<DescriptionItemProps, RState>() {
 
 fun RBuilder.descriptionItem(handler: RHandler<DescriptionItemProps>) = child(DescriptionItem::class, handler)
 
-interface UserProfileAppState : RState {
+external interface UserProfileAppState : RState {
     var visible: Boolean
 }
 
@@ -137,15 +139,15 @@ class UserProfileApp : RComponent<RProps, UserProfileAppState>() {
                     onClose = handleClose
                     visible = state.visible
                 }
-                p {
-                    attrs.jsStyle = js {
-                        pStyle
-                        marginBottom = 24
+                styledP {
+                    css {
+                        +UserProfileStyles.pStyle
+                        marginBottom = 24.px
                     }
                     +"User Profile"
                 }
-                p {
-                    attrs.jsStyle = pStyle
+                styledP {
+                    css { +UserProfileStyles.pStyle }
                     +"Personal"
                 }
                 row {
@@ -220,8 +222,8 @@ class UserProfileApp : RComponent<RProps, UserProfileAppState>() {
                     }
                 }
                 divider {}
-                p {
-                    attrs.jsStyle = pStyle
+                styledP {
+                    css { +UserProfileStyles.pStyle }
                     +"Company"
                 }
                 row {
@@ -278,8 +280,8 @@ class UserProfileApp : RComponent<RProps, UserProfileAppState>() {
                     }
                 }
                 divider {}
-                p {
-                    attrs.jsStyle = pStyle
+                styledP {
+                    css { +UserProfileStyles.pStyle }
                     +"Contacts"
                 }
                 row {

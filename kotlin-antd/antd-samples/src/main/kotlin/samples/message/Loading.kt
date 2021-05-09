@@ -10,7 +10,6 @@ import styled.*
 private val success: MouseEventHandler<Any> = {
     val hide = message.loading("Action in progress..", 0)
 
-    // Dismiss manually and asynchronously
     window.setTimeout(hide, 2500)
 }
 

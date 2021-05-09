@@ -6,7 +6,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-private interface ColspanRowspanTableDataItem {
+private external interface ColspanRowspanTableDataItem {
     var key: String
     var name: String
     var age: Number
@@ -15,8 +15,6 @@ private interface ColspanRowspanTableDataItem {
     var address: String
 }
 
-// In the fifth row, other columns are merged into first column
-// by setting it's colSpan to be 0
 private val renderContent: (Any, Any, Number) -> Any = { value, _, index ->
     val obj = js {
         children = value

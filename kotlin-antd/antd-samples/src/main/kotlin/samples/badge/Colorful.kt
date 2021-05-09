@@ -1,7 +1,9 @@
 package samples.badge
 
 import antd.badge.*
-import kotlinext.js.*
+import kotlinx.css.margin
+import kotlinx.css.marginBottom
+import kotlinx.css.px
 import react.*
 import react.dom.*
 import styled.*
@@ -26,8 +28,8 @@ fun RBuilder.colorful() {
     styledDiv {
         css { +BadgeStyles.colorful }
         div {
-            h4 {
-                attrs.jsStyle = js { marginBottom = 16 }
+            styledH4 {
+                css { marginBottom = 16.px }
                 +"Presets:"
             }
             div {
@@ -43,8 +45,8 @@ fun RBuilder.colorful() {
                     }
                 }.toTypedArray()
             }
-            h4 {
-                attrs.jsStyle = js { margin = "16px 0" }
+            styledH4 {
+                css { margin(16.px, 0.px) }
                 +"Custom:"
             }
             div {

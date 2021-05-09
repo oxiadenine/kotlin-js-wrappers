@@ -9,7 +9,7 @@ import react.buildElement
 import react.dom.*
 import styled.*
 
-private interface BasicTableDataItem {
+private external interface BasicTableDataItem {
     var key: String
     var name: String
     var age: Number
@@ -60,7 +60,7 @@ private val tableColumns = arrayOf<ColumnType<BasicTableDataItem>>(
                                 color = tagColor
                                 key = tag
                             }
-                            +tag.toUpperCase()
+                            +tag.uppercase()
                         }
                     }.toTypedArray()
                 }

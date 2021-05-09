@@ -6,7 +6,7 @@ import kotlinext.js.*
 import react.*
 import styled.*
 
-private interface GridListDataItem {
+private external interface GridListDataItem {
     var title: String
 }
 

@@ -6,7 +6,7 @@ import kotlinext.js.*
 import react.*
 import styled.*
 
-interface RadioGroupMoreAppState : RState {
+external interface RadioGroupMoreAppState : RState {
     var value: Any
 }
 

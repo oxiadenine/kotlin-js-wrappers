@@ -2,6 +2,8 @@ package samples.card
 
 import antd.card.*
 import kotlinext.js.*
+import kotlinx.css.background
+import kotlinx.css.padding
 import react.*
 import react.dom.*
 import styled.*
@@ -9,8 +11,8 @@ import styled.*
 fun RBuilder.borderLess() {
     styledDiv {
         css { +CardStyles.borderLess }
-        div {
-            attrs.jsStyle = js {
+        styledDiv {
+            css {
                 background = "#ECECEC"
                 padding = "30px"
             }

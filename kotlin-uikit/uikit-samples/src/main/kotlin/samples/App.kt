@@ -1,6 +1,5 @@
 package samples
 
-import kotlinext.js.*
 import kotlinx.css.*
 import kotlinx.html.*
 import kotlinx.html.js.*
@@ -54,11 +53,9 @@ class App : RComponent<RProps, RState>() {
                                 })
                             }
                         }
-                        div {
-                            attrs {
-                                classes = setOf("uk-flex-inline", "uk-flex-center", "uk-flex-middle")
-                                jsStyle = js { width = 120 }
-                            }
+                        styledDiv {
+                            attrs.classes = setOf("uk-flex-inline", "uk-flex-center", "uk-flex-middle")
+                            css { width = 120.px }
                             span { +"Powered by" }
                             span {
                                 attrs.classes = setOf("uk-margin-auto-left")

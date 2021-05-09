@@ -6,7 +6,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-interface SizeDemoState : RState {
+external interface SizeDemoState : RState {
     var size: String
 }
 

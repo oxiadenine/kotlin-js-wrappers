@@ -9,7 +9,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-interface HoverWithClickAppState : RState {
+external interface HoverWithClickAppState : RState {
     var clicked: Boolean
     var hovered: Boolean
 }

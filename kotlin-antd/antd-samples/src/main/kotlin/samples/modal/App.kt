@@ -39,6 +39,7 @@ class ModalApp : RComponent<RProps, RState>() {
             position()
             async()
             confirm()
+            confirmRouter()
             info()
             manual()
             buttonProps()

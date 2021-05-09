@@ -10,7 +10,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-interface FooterAppState : RState {
+external interface FooterAppState : RState {
     var loading: Boolean
     var visible: Boolean
 }

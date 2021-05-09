@@ -6,7 +6,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-private interface FixedColumnsTableDataItem {
+private external interface FixedColumnsTableDataItem {
     var key: String
     var name: String
     var age: Number

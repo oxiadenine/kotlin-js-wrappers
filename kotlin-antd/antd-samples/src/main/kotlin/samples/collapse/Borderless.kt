@@ -1,14 +1,15 @@
 package samples.collapse
 
 import antd.collapse.*
-import kotlinext.js.*
+import kotlinx.css.paddingLeft
+import kotlinx.css.px
 import react.*
 import react.dom.*
 import styled.*
 
 private val text = buildElement {
-    p {
-        attrs.jsStyle = js { paddingLeft = 24 }
+    styledP {
+        css { paddingLeft = 24.px }
         +"""
            A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found 
            as a welcome guest in many households across the world.

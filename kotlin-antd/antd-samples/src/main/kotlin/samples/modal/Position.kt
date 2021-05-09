@@ -7,7 +7,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-interface PositionAppState : RState {
+external interface PositionAppState : RState {
     var modal1Visible: Boolean
     var modal2Visible: Boolean
 }

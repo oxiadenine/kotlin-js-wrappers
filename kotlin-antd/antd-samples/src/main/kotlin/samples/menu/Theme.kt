@@ -9,7 +9,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-interface ThemeSiderState : RState {
+external interface ThemeSiderState : RState {
     var theme: MenuTheme
     var current: String
 }

@@ -19,12 +19,11 @@ import react.RComponent
 import react.RProps
 import react.RState
 import react.dom.br
-import react.dom.div
 import react.setState
 import styled.css
 import styled.styledDiv
 
-private interface DemoState : RState {
+private external interface DemoState : RState {
     var active: Boolean
     var size: String
     var buttonShape: String

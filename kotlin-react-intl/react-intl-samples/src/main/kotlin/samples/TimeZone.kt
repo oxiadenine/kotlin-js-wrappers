@@ -6,8 +6,8 @@ import reactintl.datetime.*
 import reactintl.provider.*
 import kotlin.js.*
 
-interface TimeZoneProps : RProps {
-    var currentTime: Any /* Date | Number */
+external interface TimeZoneProps : RProps {
+    var currentTime: Any? /* Date | Number */
 }
 
 private val app = functionalComponent<TimeZoneProps> { props ->
@@ -34,20 +34,18 @@ private val app = functionalComponent<TimeZoneProps> { props ->
                     month = "long"
                     day = "2-digit"
                 }
-                childList.add(fun(parts: Array<IntlDateTimeFormatPart>): ReactElement {
+                childList += fun(parts: Array<IntlDateTimeFormatPart>): ReactElement {
                     return span {
                         b { +parts[0].value }
                         +parts[1].value
                         small { +parts[2].value }
                     }
-                })
+                }
             }
         }
     }
 }
 
-fun RBuilder.timeZone() {
-    child(app) {
-        attrs.currentTime = Date()
-    }
+fun RBuilder.timeZone() = child(app) {
+    attrs.currentTime = Date()
 }

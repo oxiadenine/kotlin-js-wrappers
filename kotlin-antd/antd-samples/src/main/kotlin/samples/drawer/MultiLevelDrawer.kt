@@ -4,12 +4,13 @@ import antd.*
 import antd.button.button
 import antd.drawer.*
 import kotlinext.js.*
+import kotlinx.css.*
+import kotlinx.css.properties.borderTop
 import react.*
 import react.dom.div
-import react.dom.jsStyle
 import styled.*
 
-interface MultiLevelDrawerAppState : RState {
+external interface MultiLevelDrawerAppState : RState {
     var visible: Boolean
     var childrenDrawer: Boolean
 }
@@ -78,17 +79,17 @@ class MultiLevelDrawerApp : RComponent<RProps, MultiLevelDrawerAppState>() {
                     }
                     +"This is two-level drawer"
                 }
-                div {
-                    attrs.jsStyle = js {
-                        position = "absolute"
-                        bottom = 0
-                        width = "100%"
-                        borderTop = "1px solid #e8e8e8"
-                        padding = "10px 16px"
-                        textAlign = "right"
-                        left = 0
+                styledDiv {
+                    css {
+                        position = Position.absolute
+                        bottom = 0.px
+                        width = LinearDimension("100%")
+                        borderTop(1.px, BorderStyle.solid, Color("#e8e8e8"))
+                        padding(10.px, 16.px)
+                        textAlign = TextAlign.right
+                        left = 0.px
                         background = "#fff"
-                        borderRadius = "0 0 4px 4px"
+                        borderRadius = LinearDimension("0px 0px 4px 4px")
                     }
                     button {
                         attrs {

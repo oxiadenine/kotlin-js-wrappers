@@ -7,7 +7,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-interface SlidingTabsDemoState : RState {
+external interface SlidingTabsDemoState : RState {
     var mode: String
 }
 

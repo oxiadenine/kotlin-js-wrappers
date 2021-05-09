@@ -6,7 +6,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-interface ControlledDatePickerState : RState {
+external interface ControlledDatePickerState : RState {
     var mode: PanelMode
 }
 
@@ -43,7 +43,7 @@ class ControlledDatePicker : RComponent<RProps, ControlledDatePickerState>() {
 
 fun RBuilder.controlledDatePicker() = child(ControlledDatePicker::class) {}
 
-interface ControlledRangePickerState : RState {
+external interface ControlledRangePickerState : RState {
     var mode: Any
     var value: RangeValue<Moment>
 }

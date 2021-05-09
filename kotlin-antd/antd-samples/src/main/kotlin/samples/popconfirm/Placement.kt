@@ -4,12 +4,11 @@ import antd.*
 import antd.button.button
 import antd.message.*
 import antd.popconfirm.*
-import kotlinext.js.*
+import kotlinx.css.*
 import kotlinx.html.*
 import org.w3c.dom.*
 import react.*
 import react.dom.div
-import react.dom.jsStyle
 import styled.*
 
 private val text = "Are you sure to delete this task?"
@@ -23,10 +22,10 @@ fun RBuilder.placement() {
         css { +PopconfirmStyles.placement }
         div {
             attrs.classes = setOf("demo")
-            div {
-                attrs.jsStyle = js {
-                    marginLeft = 70
-                    whiteSpace = "nowrap"
+            styledDiv {
+                css {
+                    marginLeft = 70.px
+                    whiteSpace = WhiteSpace.nowrap
                 }
                 popconfirm {
                     attrs {
@@ -59,10 +58,10 @@ fun RBuilder.placement() {
                     button { +"TR" }
                 }
             }
-            div {
-                attrs.jsStyle = js {
-                    width = 70
-                    float = "left"
+            styledDiv {
+                css {
+                    width = 70.px
+                    float = Float.left
                 }
                 popconfirm {
                     attrs {
@@ -95,10 +94,10 @@ fun RBuilder.placement() {
                     button { +"LB" }
                 }
             }
-            div {
-                attrs.jsStyle = js {
-                    width = 70
-                    marginLeft = 304
+            styledDiv {
+                css {
+                    width = 70.px
+                    marginLeft = 304.px
                 }
                 popconfirm {
                     attrs {
@@ -131,11 +130,11 @@ fun RBuilder.placement() {
                     button { +"RB" }
                 }
             }
-            div {
-                attrs.jsStyle = js {
-                    marginLeft = 70
-                    clear = "both"
-                    whiteSpace = "nowrap"
+            styledDiv {
+                css{
+                    marginLeft = 70.px
+                    clear = Clear.both
+                    whiteSpace = WhiteSpace.nowrap
                 }
                 popconfirm {
                     attrs {

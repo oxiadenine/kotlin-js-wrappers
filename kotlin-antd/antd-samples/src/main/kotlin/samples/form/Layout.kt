@@ -9,7 +9,7 @@ import react.*
 import react.dom.div
 import styled.*
 
-private interface FormLayoutDemoState : RState {
+private external interface FormLayoutDemoState : RState {
     var formLayout: String
 }
 

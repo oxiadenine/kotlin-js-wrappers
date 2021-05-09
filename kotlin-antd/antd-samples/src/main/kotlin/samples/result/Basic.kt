@@ -12,7 +12,7 @@ import react.dom.a
 import react.dom.div
 import styled.*
 
-interface BasicDemoState : RState {
+external interface BasicDemoState : RState {
     var status: String
     var title: String
     var subTitle: String?

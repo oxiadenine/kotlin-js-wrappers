@@ -7,7 +7,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-interface BasicDemoState : RState {
+external interface BasicDemoState : RState {
     var disabled: Boolean
 }
 

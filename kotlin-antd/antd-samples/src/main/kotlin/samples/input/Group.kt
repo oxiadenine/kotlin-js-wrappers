@@ -49,7 +49,7 @@ private val cascaderOptions = arrayOf<CascaderOptionType>(
     }
 )
 
-interface GroupCompactDemoState : RState {
+external interface GroupCompactDemoState : RState {
     var dataSource: Any
 }
 

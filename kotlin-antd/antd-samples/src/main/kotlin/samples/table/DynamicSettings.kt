@@ -18,7 +18,7 @@ import react.dom.p
 import react.dom.span
 import styled.*
 
-interface DynamicSettingsTableDataItem {
+external interface DynamicSettingsTableDataItem {
     var key: String
     var name: String
     var age: Number
@@ -108,7 +108,7 @@ private val tableFooter: () -> String = { "Here is footer" }
 private val tableScroll = jsObject<TablePropsScroll> { y = 240 }
 private val tablePagination = jsObject<PaginationConfig> { position = "bottom" }
 
-interface DynamicSettingsDemoState : RState {
+external interface DynamicSettingsDemoState : RState {
     var bordered: Boolean
     var loading: Boolean
     var pagination: Any?

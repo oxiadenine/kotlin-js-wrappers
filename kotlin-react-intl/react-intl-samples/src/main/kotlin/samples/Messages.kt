@@ -15,7 +15,7 @@ private val providerMessages = js {
     time = "Hello {ts, time}"
     number = "Hello {num, number}"
     plural = "I have {num, plural, one {# dog} other {# dogs}}"
-    select = "I am a {gender, select, male {boy} female {girl}}"
+    select = "I am a {gender, select, male {boy} female {girl} other {}}"
     selectordinal = """I am the {order, selectordinal,
         one {#st person}
         two {#nd person}
@@ -39,84 +39,84 @@ private val app = functionalComponent<RProps> {
             formattedMessage {
                 attrs {
                     id = "placeholder"
-                    values = js { name = "John" }.unsafeCast<Any>()
+                    values = js { name = "John" }
                 }
             }
             br {}
             formattedMessage {
                 attrs {
                     id = "date"
-                    values = js { ts = Date.now() }.unsafeCast<Any>()
+                    values = js { ts = Date.now() }
                 }
             }
             br {}
             formattedMessage {
                 attrs {
                     id = "time"
-                    values = js { ts = Date.now() }.unsafeCast<Any>()
+                    values = js { ts = Date.now() }
                 }
             }
             br {}
             formattedMessage {
                 attrs {
                     id = "number"
-                    values = js { num = Random.nextInt() * 1000 }.unsafeCast<Any>()
+                    values = js { num = Random.nextInt() * 1000 }
                 }
             }
             br {}
             formattedMessage {
                 attrs {
                     id = "plural"
-                    values = js { num = 1 }.unsafeCast<Any>()
+                    values = js { num = 1 }
                 }
             }
             br {}
             formattedMessage {
                 attrs {
                     id = "plural"
-                    values = js { num = 99 }.unsafeCast<Any>()
+                    values = js { num = 99 }
                 }
             }
             br {}
             formattedMessage {
                 attrs {
                     id = "select"
-                    values = js { gender = "male" }.unsafeCast<Any>()
+                    values = js { gender = "male" }
                 }
             }
             br {}
             formattedMessage {
                 attrs {
                     id = "select"
-                    values = js { gender = "female" }.unsafeCast<Any>()
+                    values = js { gender = "female" }
                 }
             }
             br {}
             formattedMessage {
                 attrs {
                     id = "selectordinal"
-                    values = js { order = 1 }.unsafeCast<Any>()
+                    values = js { order = 1 }
                 }
             }
             br {}
             formattedMessage {
                 attrs {
                     id = "selectordinal"
-                    values = js { order = 2 }.unsafeCast<Any>()
+                    values = js { order = 2 }
                 }
             }
             br {}
             formattedMessage {
                 attrs {
                     id = "selectordinal"
-                    values = js { order = 3 }.unsafeCast<Any>()
+                    values = js { order = 3 }
                 }
             }
             br {}
             formattedMessage {
                 attrs {
                     id = "selectordinal"
-                    values = js { order = 4 }.unsafeCast<Any>()
+                    values = js { order = 4 }
                 }
             }
             br {}
@@ -147,7 +147,7 @@ private val app = functionalComponent<RProps> {
             formattedMessage {
                 attrs {
                     id = "unicode"
-                    values = js { placeholder = "world" }.unsafeCast<Any>()
+                    values = js { placeholder = "world" }
                 }
             }
             br {}
@@ -155,7 +155,7 @@ private val app = functionalComponent<RProps> {
                 attrs {
                     id = "whatever"
                     defaultMessage = "Hello\u0020{placeholder}"
-                    values = js { placeholder = "world" }.unsafeCast<Any>()
+                    values = js { placeholder = "world" }
                 }
             }
         }

@@ -5,6 +5,10 @@ import antd.icon.*
 import antd.select.*
 import antd.select.option
 import kotlinext.js.*
+import kotlinx.css.Cursor
+import kotlinx.css.cursor
+import kotlinx.css.padding
+import kotlinx.css.px
 import react.*
 import react.dom.*
 import styled.*
@@ -23,10 +27,10 @@ fun RBuilder.customDropdownMenu() {
                             divider {
                                 attrs.style = js { margin = "4px 0" }
                             }
-                            div {
-                                attrs.jsStyle = js {
-                                    padding = "8px"
-                                    cursor = "pointer"
+                            styledDiv {
+                                css {
+                                    padding(8.px)
+                                    cursor = Cursor.pointer
                                 }
                                 plusOutlined {}
                                 +"Add item"

@@ -5,7 +5,7 @@ import kotlinext.js.*
 import react.*
 import styled.*
 
-interface PrefixAppState : RState {
+external interface PrefixAppState : RState {
     var prefix: String
 }
 

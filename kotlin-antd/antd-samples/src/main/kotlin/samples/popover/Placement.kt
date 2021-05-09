@@ -2,7 +2,7 @@ package samples.popover
 
 import antd.button.button
 import antd.popover.*
-import kotlinext.js.*
+import kotlinx.css.*
 import react.*
 import react.dom.*
 import styled.*
@@ -18,16 +18,16 @@ private val contentElement = buildElement {
     }
 }
 
-private val buttonWidth = 70
+private val buttonWidth = 70.px
 
 fun RBuilder.placement() {
     styledDiv {
         css { +PopoverStyles.placement }
         div("demo") {
-            div {
-                attrs.jsStyle = js {
+            styledDiv {
+                css {
                     marginLeft = buttonWidth
-                    whiteSpace = "nowrap"
+                    whiteSpace = WhiteSpace.nowrap
                 }
                 popover {
                     attrs {
@@ -57,10 +57,10 @@ fun RBuilder.placement() {
                     button { +"TR" }
                 }
             }
-            div {
-                attrs.jsStyle = js {
+            styledDiv {
+                css {
                     width = buttonWidth
-                    float = "left"
+                    float = Float.left
                 }
                 popover {
                     attrs {
@@ -90,10 +90,10 @@ fun RBuilder.placement() {
                     button { +"LB" }
                 }
             }
-            div {
-                attrs.jsStyle = js {
+            styledDiv {
+                css {
                     width = buttonWidth
-                    marginLeft = (buttonWidth * 4) + 24
+                    marginLeft = (buttonWidth * 4) + 24.px
                 }
                 popover {
                     attrs {
@@ -123,11 +123,11 @@ fun RBuilder.placement() {
                     button { +"RB" }
                 }
             }
-            div {
-                attrs.jsStyle = js {
+            styledDiv {
+                css {
                     marginLeft = buttonWidth
-                    clear = "both"
-                    whiteSpace = "nowrap"
+                    clear = Clear.both
+                    whiteSpace = WhiteSpace.nowrap
                 }
                 popover {
                     attrs {

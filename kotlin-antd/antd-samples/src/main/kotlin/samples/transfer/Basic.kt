@@ -25,7 +25,7 @@ private val oriTargetKeys = mockData
     .map { item -> item.key!! }
     .toTypedArray()
 
-interface BasicAppState : RState {
+external interface BasicAppState : RState {
     var targetKeys: Array<String>
     var disabled: Boolean
     var selectedKeys: Array<String>

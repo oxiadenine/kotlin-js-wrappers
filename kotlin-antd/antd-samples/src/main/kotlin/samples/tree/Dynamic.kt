@@ -24,7 +24,6 @@ private val initTreeData = arrayOf<DataNode>(
     }
 )
 
-// It's just a simple demo. You can use tree map to optimize update perf.
 private fun updateTreeData(list: Array<DataNode>, nodeKey: Key, nodeChildren: Array<DataNode>): Array<DataNode> {
     return list.map { node ->
         if (node.key == nodeKey) {

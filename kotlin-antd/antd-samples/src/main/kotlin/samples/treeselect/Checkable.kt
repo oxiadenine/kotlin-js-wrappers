@@ -42,7 +42,7 @@ private val data: Array<DataNode> = arrayOf(
     }
 )
 
-interface CheckableDemoState : RState {
+external interface CheckableDemoState : RState {
     var value: Array<String>?
 }
 

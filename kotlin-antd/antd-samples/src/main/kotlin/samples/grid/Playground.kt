@@ -3,12 +3,12 @@ package samples.grid
 import antd.grid.*
 import antd.grid.col
 import antd.slider.*
-import kotlinext.js.*
+import kotlinx.css.*
 import react.*
 import react.dom.*
 import styled.*
 
-interface PlaygroundAppState : RState {
+external interface PlaygroundAppState : RState {
     var gutterKey: Number
     var colCountKey: Number
 }
@@ -65,14 +65,14 @@ class PlaygroundApp : RComponent<RProps, PlaygroundAppState>() {
         }
 
         div {
-            div {
-                attrs.jsStyle = js { marginBottom = 16 }
-                span {
-                    attrs.jsStyle = js { marginRight = 6 }
+            styledDiv {
+                css { marginBottom = 16.px }
+                styledSpan {
+                    css { marginRight = 6.px }
                     +"Gutter (px): "
                 }
-                div {
-                    attrs.jsStyle = js { width = "50%" }
+                styledDiv {
+                    css { width = LinearDimension("50%") }
                     slider {
                         attrs {
                             min = 0
@@ -84,12 +84,12 @@ class PlaygroundApp : RComponent<RProps, PlaygroundAppState>() {
                         }
                     }
                 }
-                span {
-                    attrs.jsStyle = js { marginRight = 6 }
+                styledSpan {
+                    css { marginRight = 6.px }
                     +"Column Count: "
                 }
-                div {
-                    attrs.jsStyle = js { width = "50%" }
+                styledDiv {
+                    css { width = LinearDimension("50%") }
                     slider {
                         attrs {
                             min = 0

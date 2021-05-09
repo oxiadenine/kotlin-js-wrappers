@@ -5,7 +5,7 @@ import kotlinext.js.*
 import react.*
 import styled.*
 
-private interface ExpandChildrenTableDataItem {
+private external interface ExpandChildrenTableDataItem {
     var key: String
     var name: String
     var age: Number

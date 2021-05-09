@@ -5,6 +5,8 @@ import antd.input.input
 import antd.select.*
 import antd.select.option
 import kotlinext.js.*
+import kotlinx.css.marginBottom
+import kotlinx.css.px
 import react.*
 import react.dom.*
 import styled.*
@@ -55,8 +57,8 @@ fun RBuilder.addon() {
     styledDiv {
         css { +InputStyles.addon }
         div {
-            div {
-                attrs.jsStyle = js { marginBottom = 16 }
+            styledDiv {
+                css { marginBottom = 16.px }
                 input {
                     attrs {
                         addonBefore = "Http://"
@@ -65,8 +67,8 @@ fun RBuilder.addon() {
                     }
                 }
             }
-            div {
-                attrs.jsStyle = js { marginBottom = 16 }
+            styledDiv {
+                css { marginBottom = 16.px }
                 input {
                     attrs {
                         addonBefore = selectBefore
@@ -75,8 +77,8 @@ fun RBuilder.addon() {
                     }
                 }
             }
-            div {
-                attrs.jsStyle = js { marginBottom = 16 }
+            styledDiv {
+                css { marginBottom = 16.px }
                 input {
                     attrs {
                         addonAfter = buildElement {

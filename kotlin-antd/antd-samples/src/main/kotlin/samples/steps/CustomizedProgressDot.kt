@@ -6,7 +6,7 @@ import react.*
 import react.dom.*
 import styled.*
 
-interface CustomDotStep {
+external interface CustomDotStep {
     var index: String
     var status: String
 }
