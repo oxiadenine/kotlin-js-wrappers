@@ -3,24 +3,17 @@ package antd.datepicker
 import antd.AriaAttributes
 import antd.FocusEventHandler
 import antd.MouseEventHandler
-import antd.ReactNode
 import antd.button.ButtonProps
+import antd.ReactNode
 import antd.tag.TagProps
 import org.w3c.dom.HTMLDivElement
 import org.w3c.dom.HTMLElement
 import org.w3c.dom.HTMLInputElement
-import react.Component
-import react.RMutableRef
-import react.RState
-import react.ReactElement
+import react.*
 
-external object PickerButtonComponent : Component<ButtonProps, RState> {
-    override fun render(): ReactElement?
-}
+external interface PickerButtonComponent : ComponentType<ButtonProps>
 
-external object PickerTagComponent : Component<TagProps, RState> {
-    override fun render(): ReactElement?
-}
+external interface PickerTagComponent : ComponentType<TagProps>
 
 external interface RcPickerBaseProps<DateType> : RcPickerSharedProps<DateType>, RcPickerPanelBaseProps<DateType>
 
@@ -63,7 +56,7 @@ external interface RcPickerSharedProps<DateType> : AriaAttributes {
     var onMouseLeave: MouseEventHandler<HTMLDivElement>?
     var onClick: MouseEventHandler<HTMLDivElement>?
     var onContextMenu: MouseEventHandler<HTMLDivElement>?
-    var pickerRef: RMutableRef<PickerRefConfig>?
+    var pickerRef: MutableRefObject<PickerRefConfig>?
     var role: String?
     var name: String?
     var autoComplete: String?
@@ -179,6 +172,6 @@ external interface DisabledTimes {
 }
 
 external interface Components {
-    var button: Any? /* RClass | String */
-    var rangeItem: Any? /* RClass | String */
+    var button: Any? /* ComponentClass | String */
+    var rangeItem: Any? /* ComponentClass | String */
 }

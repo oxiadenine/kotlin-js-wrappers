@@ -1,9 +1,14 @@
 package samples.tooltip
 
 import kotlinx.css.*
-import react.*
-import react.dom.*
-import styled.*
+import react.RBuilder
+import react.RComponent
+import react.RProps
+import react.State
+import react.dom.h2
+import styled.StyleSheet
+import styled.css
+import styled.styledDiv
 
 object TooltipStyles : StyleSheet("tooltip", isStatic = true) {
     val container by css {}
@@ -29,7 +34,7 @@ object TooltipStyles : StyleSheet("tooltip", isStatic = true) {
     val autoAdjustOverflow by css {}
 }
 
-class TooltipApp : RComponent<RProps, RState>() {
+class TooltipApp : RComponent<RProps, State>() {
     override fun RBuilder.render() {
         h2 { +"Tooltip" }
         styledDiv {

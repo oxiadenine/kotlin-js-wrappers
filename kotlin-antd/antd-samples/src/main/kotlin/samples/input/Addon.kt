@@ -1,15 +1,18 @@
 package samples.input
 
-import antd.icon.*
+import antd.icon.settingOutlined
 import antd.input.input
-import antd.select.*
+import antd.select.SelectComponent
 import antd.select.option
-import kotlinext.js.*
+import antd.select.select
+import kotlinext.js.js
 import kotlinx.css.marginBottom
 import kotlinx.css.px
-import react.*
-import react.dom.*
-import styled.*
+import react.RBuilder
+import react.buildElement
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 private val selectBefore = buildElement {
     select<String, SelectComponent<String>> {

@@ -2,8 +2,6 @@ package antd.typography
 
 import react.*
 
-external object ParagraphComponent : Component<ParagraphProps, RState> {
-    override fun render(): ReactElement?
-}
+external interface ParagraphComponent : ComponentType<ParagraphProps>
 
 external interface ParagraphProps : BlockProps, RProps

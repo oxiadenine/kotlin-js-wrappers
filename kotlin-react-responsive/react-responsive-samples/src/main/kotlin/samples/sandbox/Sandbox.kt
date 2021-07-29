@@ -4,7 +4,7 @@ import react.*
 import react.dom.*
 import reactresponsive.*
 
-class Sandbox : RComponent<RProps, RState>() {
+class Sandbox : RComponent<RProps, State>() {
     override fun RBuilder.render() {
         div {
             div { +"Device Test!" }

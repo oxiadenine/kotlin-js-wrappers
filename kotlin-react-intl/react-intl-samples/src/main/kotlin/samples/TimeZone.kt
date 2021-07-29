@@ -10,7 +10,7 @@ external interface TimeZoneProps : RProps {
     var currentTime: Any? /* Date | Number */
 }
 
-private val app = functionalComponent<TimeZoneProps> { props ->
+private val app = fc<TimeZoneProps> { props ->
     intlProvider {
         attrs {
             locale = "en"
@@ -35,10 +35,12 @@ private val app = functionalComponent<TimeZoneProps> { props ->
                     day = "2-digit"
                 }
                 childList += fun(parts: Array<IntlDateTimeFormatPart>): ReactElement {
-                    return span {
-                        b { +parts[0].value }
-                        +parts[1].value
-                        small { +parts[2].value }
+                    return buildElement {
+                        span {
+                            b { +parts[0].value }
+                            +parts[1].value
+                            small { +parts[2].value }
+                        }
                     }
                 }
             }

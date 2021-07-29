@@ -1,10 +1,11 @@
 package samples.timepicker
 
-import antd.timepicker.*
-import moment.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.timepicker.timePicker
+import moment.moment
+import react.RBuilder
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.size() {
     styledDiv {

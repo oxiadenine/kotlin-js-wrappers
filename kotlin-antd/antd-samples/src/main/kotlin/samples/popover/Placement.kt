@@ -1,11 +1,15 @@
 package samples.popover
 
 import antd.button.button
-import antd.popover.*
+import antd.popover.popover
 import kotlinx.css.*
-import react.*
-import react.dom.*
-import styled.*
+import react.RBuilder
+import react.buildElement
+import react.dom.div
+import react.dom.p
+import react.dom.span
+import styled.css
+import styled.styledDiv
 
 private val text = buildElement {
     span { +"Title" }

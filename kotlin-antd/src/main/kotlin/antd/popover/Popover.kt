@@ -8,7 +8,7 @@ import antd.tooltip.*
 import react.*
 
 @JsName("default")
-external object PopoverComponent : Component<PopoverProps, RState> {
+external object PopoverComponent : Component<PopoverProps, State> {
     override fun render(): ReactElement?
 }
 

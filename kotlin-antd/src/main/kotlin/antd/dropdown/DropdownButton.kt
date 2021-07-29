@@ -1,13 +1,12 @@
 package antd.dropdown
 
 import antd.*
+import antd.ReactNode
 import antd.button.*
 import org.w3c.dom.*
 import react.*
 
-external object DropdownButtonComponent : Component<DropdownButtonProps, RState> {
-    override fun render(): ReactElement?
-}
+external interface DropdownButtonComponent : ComponentType<DropdownButtonProps>
 
 external interface DropdownButtonProps : ButtonGroupProps, DropdownProps {
     var type: DropdownButtonType?

@@ -1,13 +1,16 @@
 package samples.select
 
-import antd.select.*
-import antd.spin.*
-import kotlinext.js.*
-import kotlinx.browser.*
+import antd.select.SelectComponent
+import antd.select.option
+import antd.select.select
+import antd.spin.spin
+import kotlinext.js.js
+import kotlinx.browser.window
 import react.*
-import styled.*
+import styled.css
+import styled.styledDiv
 
-external interface UserRemoteSelectState : RState {
+external interface UserRemoteSelectState : State {
     var data: Array<Any>
     var value: Array<Any>
     var fetching: Boolean

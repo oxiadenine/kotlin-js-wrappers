@@ -4,12 +4,13 @@
 package antd.checkbox
 
 import antd.*
+import antd.ReactNode
 import org.w3c.dom.*
 import org.w3c.dom.events.MouseEvent
 import react.*
 
 @JsName("default")
-external object CheckboxComponent : Component<CheckboxProps, RState> {
+external object CheckboxComponent : Component<CheckboxProps, State> {
     val Group: CheckboxGroupComponent
 
     override fun render(): ReactElement?

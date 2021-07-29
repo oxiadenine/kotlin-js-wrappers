@@ -1,13 +1,14 @@
 package samples.slider
 
-import antd.slider.*
-import antd.switch.*
-import org.w3c.dom.events.*
+import antd.slider.slider
+import antd.switch.switch
+import org.w3c.dom.events.MouseEvent
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
-external interface BasicDemoState : RState {
+external interface BasicDemoState : State {
     var disabled: Boolean
 }
 

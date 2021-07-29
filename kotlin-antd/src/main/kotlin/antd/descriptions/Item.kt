@@ -3,9 +3,7 @@ package antd.descriptions
 import antd.ReactNode
 import react.*
 
-external object DescriptionsItemComponent : Component<DescriptionsItemProps, RState> {
-    override fun render(): ReactElement?
-}
+external interface DescriptionsItemComponent : ComponentType<DescriptionsItemProps>
 
 external interface DescriptionsItemProps : RProps {
     var prefixCls: String?

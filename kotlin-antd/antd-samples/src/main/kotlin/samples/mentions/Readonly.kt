@@ -1,13 +1,16 @@
 package samples.mentions
 
-import antd.mentions.*
+import antd.mentions.mentions
 import antd.mentions.option
-import kotlinext.js.*
+import kotlinext.js.js
 import kotlinx.css.marginBottom
 import kotlinx.css.px
-import react.*
-import react.dom.*
-import styled.*
+import react.RBuilder
+import react.ReactElement
+import react.buildElement
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 private fun getOptions(): Array<ReactElement> {
     return arrayOf("afc163", "zombiej", "yesmeck").map {

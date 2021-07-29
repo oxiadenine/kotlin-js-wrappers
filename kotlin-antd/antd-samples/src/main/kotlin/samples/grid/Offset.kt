@@ -1,10 +1,11 @@
 package samples.grid
 
-import antd.grid.*
 import antd.grid.col
-import react.*
-import react.dom.*
-import styled.*
+import antd.grid.row
+import react.RBuilder
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.offset() {
     styledDiv {

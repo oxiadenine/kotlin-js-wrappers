@@ -1,15 +1,18 @@
 package samples.popconfirm
 
-import antd.*
-import antd.message.*
-import antd.popconfirm.*
-import antd.switch.*
-import org.w3c.dom.*
+import antd.MouseEvent
+import antd.message.message
+import antd.popconfirm.popconfirm
+import antd.switch.switch
+import org.w3c.dom.HTMLElement
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.a
+import react.dom.br
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
-external interface DynamicTriggerAppState : RState {
+external interface DynamicTriggerAppState : State {
     var visible: Boolean
     var condition: Boolean
 }

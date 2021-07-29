@@ -1,13 +1,8 @@
 package antd.skeleton
 
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 
-external object SkeletonElementComponent : Component<SkeletonElementProps, RState> {
-    override fun render(): ReactElement?
-}
+external interface SkeletonElementComponent : ComponentType<SkeletonElementProps>
 
 external interface SkeletonElementProps : RProps {
     var prefixCls: String?

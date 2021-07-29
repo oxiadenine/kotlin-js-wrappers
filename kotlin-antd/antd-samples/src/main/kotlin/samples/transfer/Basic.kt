@@ -1,15 +1,19 @@
 package samples.transfer
 
-import antd.*
-import antd.switch.*
-import antd.transfer.*
-import kotlinext.js.*
-import org.w3c.dom.*
-import org.w3c.dom.events.*
+import antd.SyntheticEvent
+import antd.switch.switch
+import antd.transfer.TransferComponent
+import antd.transfer.TransferDirection
+import antd.transfer.TransferItem
+import antd.transfer.transfer
+import kotlinext.js.jsObject
+import org.w3c.dom.HTMLUListElement
+import org.w3c.dom.events.Event
 import org.w3c.dom.events.MouseEvent
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 private val mockData = (0..19).map { i ->
     jsObject<TransferItem> {
@@ -25,7 +29,7 @@ private val oriTargetKeys = mockData
     .map { item -> item.key!! }
     .toTypedArray()
 
-external interface BasicAppState : RState {
+external interface BasicAppState : State {
     var targetKeys: Array<String>
     var disabled: Boolean
     var selectedKeys: Array<String>

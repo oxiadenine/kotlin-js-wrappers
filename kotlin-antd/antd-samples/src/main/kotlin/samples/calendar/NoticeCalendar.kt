@@ -1,13 +1,16 @@
 package samples.calendar
 
-import antd.badge.*
-import antd.calendar.*
-import kotlinext.js.*
-import kotlinx.html.*
-import moment.*
-import react.*
+import antd.badge.badge
+import antd.calendar.calendar
+import kotlinext.js.js
+import kotlinx.html.classes
+import moment.Moment
+import react.RBuilder
+import react.ReactElement
+import react.buildElement
 import react.dom.*
-import styled.*
+import styled.css
+import styled.styledDiv
 
 private fun getListData(value: Moment): Array<Any> {
     return when (value.date()) {

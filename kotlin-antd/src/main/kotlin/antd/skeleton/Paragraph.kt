@@ -2,9 +2,7 @@ package antd.skeleton
 
 import react.*
 
-external object SkeletonParagraphComponent : Component<SkeletonParagraphProps, RState> {
-    override fun render(): ReactElement?
-}
+external interface SkeletonParagraphComponent : ComponentType<SkeletonParagraphProps>
 
 external interface SkeletonParagraphProps : RProps {
     var prefixCls: String?

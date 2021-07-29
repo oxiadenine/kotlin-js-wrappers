@@ -1,10 +1,9 @@
 package antd.radio
 
-import react.RContext
-import react.RProvider
+import react.*
 
-external val radioGroupContext: RContext<RadioGroupContextProps?>
-external val radioGroupContextProvider: RProvider<RadioGroupContextProps?>
+external val radioGroupContext: Context<RadioGroupContextProps?>
+external val radioGroupContextProvider: Provider<RadioGroupContextProps?>
 
 external interface RadioGroupContextProps {
     var onChange: (e: RadioChangeEvent) -> Unit

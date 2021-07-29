@@ -1,20 +1,29 @@
 package samples.form
 
-import antd.button.*
-import antd.cascader.*
-import antd.datepicker.*
-import antd.form.*
-import antd.input.*
-import antd.inputnumber.*
-import antd.radio.*
-import antd.select.*
-import antd.switch.*
-import antd.treeselect.*
-import kotlinext.js.*
+import antd.button.button
+import antd.cascader.cascader
+import antd.datepicker.datePicker
+import antd.form.Store
+import antd.form.form
+import antd.form.formItem
+import antd.input.input
+import antd.inputnumber.inputNumber
+import antd.radio.radioButton
+import antd.radio.radioGroup
+import antd.select.SelectComponent
+import antd.select.option
+import antd.select.select
+import antd.switch.switch
+import antd.treeselect.DataNode
+import antd.treeselect.TreeSelectComponent
+import antd.treeselect.treeSelect
+import kotlinext.js.js
+import kotlinext.js.jsObject
 import react.*
-import styled.*
+import styled.css
+import styled.styledDiv
 
-private val demo = functionalComponent<RProps> {
+private val demo = fc<RProps> {
     val (componentSize, setComponentSize) = useState("default")
 
     val onFormLayoutChange = { size: Any, _: Any ->

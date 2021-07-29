@@ -1,12 +1,17 @@
 package samples.form
 
-import antd.button.*
+import antd.button.button
 import antd.form.*
-import antd.input.*
-import antd.inputnumber.*
-import kotlinext.js.*
-import react.*
-import styled.*
+import antd.input.input
+import antd.input.textArea
+import antd.inputnumber.inputNumber
+import kotlinext.js.jsObject
+import react.RBuilder
+import react.RProps
+import react.child
+import react.fc
+import styled.css
+import styled.styledDiv
 
 private val formLayout = jsObject<FormProps<Any>> {
     labelCol = jsObject { span = 8 }
@@ -24,7 +29,7 @@ private val formValidateMessages = jsObject<ValidateMessages> {
     }
 }
 
-private val demo = functionalComponent<RProps> {
+private val demo = fc<RProps> {
     val handleFinish = { values: Any ->
         console.log(values)
     }

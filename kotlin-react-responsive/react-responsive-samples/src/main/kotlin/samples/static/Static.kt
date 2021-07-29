@@ -5,7 +5,7 @@ import react.*
 import react.dom.*
 import reactresponsive.*
 
-class Static : RComponent<RProps, RState>() {
+class Static : RComponent<RProps, State>() {
     override fun RBuilder.render() {
         div {
             div { +"Device Test!" }

@@ -1,10 +1,13 @@
 package samples.button
 
 import antd.button.button
-import antd.icon.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.icon.searchOutlined
+import react.RBuilder
+import react.buildElement
+import react.dom.br
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.icon() {
     styledDiv {

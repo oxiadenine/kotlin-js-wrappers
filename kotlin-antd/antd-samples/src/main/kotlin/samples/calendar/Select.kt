@@ -1,13 +1,16 @@
 package samples.calendar
 
-import antd.alert.*
-import antd.calendar.*
-import moment.*
+import antd.alert.alert
+import antd.calendar.CalendarMode
+import antd.calendar.calendar
+import moment.Moment
+import moment.moment
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
-external interface SelectAppState : RState {
+external interface SelectAppState : State {
     var value: Moment
     var selectedValue: Moment
 }

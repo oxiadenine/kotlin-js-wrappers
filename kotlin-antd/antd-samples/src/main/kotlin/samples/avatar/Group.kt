@@ -1,15 +1,17 @@
 package samples.avatar
 
-import antd.avatar.*
+import antd.avatar.avatar
+import antd.avatar.avatarGroup
 import antd.divider.divider
 import antd.icon.antDesignOutlined
 import antd.icon.userOutlined
 import antd.tooltip.tooltip
 import kotlinext.js.js
 import react.*
-import styled.*
+import styled.css
+import styled.styledDiv
 
-class GroupDemo : RComponent<RProps, RState>() {
+class GroupDemo : RComponent<RProps, State>() {
     override fun RBuilder.render() {
         avatarGroup {
             avatar {

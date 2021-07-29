@@ -1,10 +1,14 @@
 package samples.card
 
-import antd.card.*
-import kotlinext.js.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.card.card
+import antd.card.cardMeta
+import kotlinext.js.js
+import react.RBuilder
+import react.buildElement
+import react.dom.attrs
+import react.dom.img
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.flexibleContent() {
     styledDiv {

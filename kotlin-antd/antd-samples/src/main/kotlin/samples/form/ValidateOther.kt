@@ -1,24 +1,38 @@
 package samples.form
 
 import antd.button.button
-import antd.checkbox.*
+import antd.checkbox.checkbox
+import antd.checkbox.checkboxGroup
 import antd.form.*
-import antd.grid.*
-import antd.icon.*
-import antd.inputnumber.*
-import antd.radio.*
-import antd.rate.*
-import antd.select.*
+import antd.grid.col
+import antd.grid.row
+import antd.icon.inboxOutlined
+import antd.icon.uploadOutlined
+import antd.inputnumber.inputNumber
+import antd.radio.radio
+import antd.radio.radioButton
+import antd.radio.radioGroup
+import antd.rate.rate
+import antd.select.SelectComponent
 import antd.select.option
-import antd.slider.*
-import antd.switch.*
-import antd.upload.*
-import kotlinext.js.*
-import kotlinx.html.*
-import react.*
+import antd.select.select
+import antd.slider.SliderMarks
+import antd.slider.slider
+import antd.switch.switch
+import antd.upload.UploadComponent
+import antd.upload.upload
+import antd.upload.uploadDragger
+import kotlinext.js.js
+import kotlinext.js.jsObject
+import kotlinx.html.classes
+import react.RBuilder
+import react.RProps
+import react.child
 import react.dom.p
 import react.dom.span
-import styled.*
+import react.fc
+import styled.css
+import styled.styledDiv
 
 private val formItemLayout = jsObject<FormProps<Any>> {
     labelCol = jsObject { span = 6 }
@@ -35,7 +49,7 @@ private val normFile = { e: EventArgs ->
     }
 }
 
-private val demo = functionalComponent<RProps> {
+private val demo = fc<RProps> {
     val handleFinish = { values: Any ->
         console.log("Received values of form: ", values)
     }

@@ -1,13 +1,8 @@
 package antd.datepicker
 
 import moment.Moment
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 
-external object QuarterPickerComponent : Component<QuarterPickerProps, RState> {
-    override fun render(): ReactElement?
-}
+external interface QuarterPickerComponent : ComponentType<QuarterPickerProps>
 
 external interface QuarterPickerProps : PickerTimeProps<Moment>, RProps

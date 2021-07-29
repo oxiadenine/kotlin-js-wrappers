@@ -3,13 +3,13 @@
 
 package antd.switch
 
-import antd.ReactNode
 import antd.RefAttributes
+import antd.ReactNode
 import org.w3c.dom.HTMLElement
 import react.*
 
 @JsName("default")
-external object SwitchComponent : Component<SwitchProps, RState> {
+external object SwitchComponent : Component<SwitchProps, State> {
     override fun render(): ReactElement?
 }
 

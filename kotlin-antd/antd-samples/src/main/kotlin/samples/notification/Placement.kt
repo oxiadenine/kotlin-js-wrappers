@@ -1,14 +1,17 @@
 package samples.notification
 
-import antd.*
+import antd.MouseEventHandler
 import antd.button.button
-import antd.notification.*
-import antd.select.*
+import antd.notification.notification
+import antd.select.SelectComponent
 import antd.select.option
-import kotlinext.js.*
+import antd.select.select
+import kotlinext.js.js
+import kotlinext.js.jsObject
 import react.RBuilder
 import react.dom.div
-import styled.*
+import styled.css
+import styled.styledDiv
 
 private val options = arrayOf("topLeft", "topRight", "bottomLeft", "bottomRight")
 

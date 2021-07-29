@@ -1,13 +1,18 @@
 package samples.menu
 
-import antd.icon.*
-import antd.menu.*
-import kotlinext.js.*
+import antd.icon.appstoreOutlined
+import antd.icon.mailOutlined
+import antd.icon.settingOutlined
+import antd.menu.menu
+import antd.menu.menuItem
+import antd.menu.subMenu
+import kotlinext.js.js
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.span
+import styled.css
+import styled.styledDiv
 
-external interface SiderCurrentSiderState : RState {
+external interface SiderCurrentSiderState : State {
     var openKeys: Array<String>
 }
 

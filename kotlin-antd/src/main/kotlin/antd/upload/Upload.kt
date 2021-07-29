@@ -3,8 +3,8 @@
 
 package antd.upload
 
-import antd.ReactNode
 import antd.RefAttributes
+import antd.ReactNode
 import org.w3c.files.*
 import react.*
 import kotlin.js.Date
@@ -55,7 +55,7 @@ external interface UploadProps<T> : RefAttributes<Any>, RProps {
     var itemRender: ItemRender<T>?
 }
 
-external interface UploadState<T> : RState {
+external interface UploadState<T> : State {
     var fileList: Array<UploadFile<T>>
     var dragState: String
 }

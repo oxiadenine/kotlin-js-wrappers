@@ -1,9 +1,13 @@
 package samples.tabs
 
-import antd.button.*
-import antd.tabs.*
-import react.*
-import styled.*
+import antd.button.button
+import antd.tabs.tabPane
+import antd.tabs.tabs
+import react.RBuilder
+import react.buildElement
+import react.key
+import styled.css
+import styled.styledDiv
 
 private val operation = buildElement {
     button { +"Extra Action" }

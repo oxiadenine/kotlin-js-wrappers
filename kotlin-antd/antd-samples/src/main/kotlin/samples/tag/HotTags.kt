@@ -1,17 +1,19 @@
 package samples.tag
 
-import antd.tag.*
+import antd.tag.checkableTag
 import kotlinx.css.Display
 import kotlinx.css.display
 import kotlinx.css.marginRight
 import kotlinx.css.px
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.div
+import styled.css
+import styled.styledDiv
+import styled.styledH6
 
 private val tagsFromServer = arrayOf("Movies", "Books", "Music", "Sports")
 
-external interface HotTagsAppState : RState {
+external interface HotTagsAppState : State {
     var selectedTags: Array<String>
 }
 

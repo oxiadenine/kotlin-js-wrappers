@@ -1,14 +1,16 @@
 package samples.anchor
 
-import antd.anchor.*
-import kotlinx.browser.*
+import antd.anchor.anchor
+import antd.anchor.anchorLink
+import kotlinx.browser.window
 import react.*
-import styled.*
+import styled.css
+import styled.styledDiv
 
-private val anchorExample = functionalComponent<RProps> {
+private val anchorExample = fc<RProps> {
     val (targetOffset, setTargetOffset) = useState<Number?>(null)
 
-    useEffect(emptyList()) {
+    useEffect(emptyList<Any>()) {
         setTargetOffset(window.innerHeight / 2)
     }
 

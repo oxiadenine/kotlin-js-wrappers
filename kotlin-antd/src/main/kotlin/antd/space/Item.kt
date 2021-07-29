@@ -1,12 +1,9 @@
 package antd.space
 
 import antd.ReactNode
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 
-external object ItemComponent : Component<ItemProps, RState> {
+external object ItemComponent : Component<ItemProps, State> {
     override fun render(): ReactElement?
 }
 

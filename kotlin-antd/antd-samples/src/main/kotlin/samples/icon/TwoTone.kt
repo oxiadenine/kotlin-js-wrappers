@@ -1,10 +1,13 @@
 package samples.icon
 
-import antd.icon.*
-import kotlinx.html.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.icon.checkCircleTwoTone
+import antd.icon.heartTwoTone
+import antd.icon.smileTwoTone
+import kotlinx.html.classes
+import react.RBuilder
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.twoTone() {
     styledDiv {

@@ -1,15 +1,18 @@
 package samples.modal
 
-import antd.*
+import antd.MouseEvent
+import antd.MouseEventHandler
 import antd.button.button
-import antd.modal.*
-import kotlinx.browser.*
-import org.w3c.dom.*
+import antd.modal.modal
+import kotlinx.browser.window
+import org.w3c.dom.HTMLElement
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.div
+import react.dom.p
+import styled.css
+import styled.styledDiv
 
-external interface AsyncAppState : RState {
+external interface AsyncAppState : State {
     var modalText: String
     var visible: Boolean
     var confirmLoading: Boolean

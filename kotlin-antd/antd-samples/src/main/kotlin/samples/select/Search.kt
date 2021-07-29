@@ -1,11 +1,15 @@
 package samples.select
 
-import antd.*
-import antd.select.*
-import kotlinext.js.*
-import org.w3c.dom.*
-import react.*
-import styled.*
+import antd.FocusEventHandler
+import antd.select.FilterFunc
+import antd.select.SelectComponent
+import antd.select.option
+import antd.select.select
+import kotlinext.js.js
+import org.w3c.dom.HTMLElement
+import react.RBuilder
+import styled.css
+import styled.styledDiv
 
 private val handleChange = { value: String, _: Any ->
     console.log("selected $value")

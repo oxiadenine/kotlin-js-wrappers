@@ -1,16 +1,17 @@
 package samples.spin
 
-import antd.alert.*
-import antd.spin.*
-import antd.switch.*
+import antd.alert.alert
+import antd.spin.spin
+import antd.switch.switch
 import kotlinx.css.marginTop
 import kotlinx.css.px
-import org.w3c.dom.events.*
+import org.w3c.dom.events.MouseEvent
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
-external interface DelayAndDebounceCardState : RState {
+external interface DelayAndDebounceCardState : State {
     var loading: Boolean
 }
 

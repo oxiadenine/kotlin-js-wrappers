@@ -2,9 +2,11 @@ package samples.tree
 
 import antd.Key
 import antd.tree.*
-import kotlinext.js.*
+import kotlinext.js.Object
+import kotlinext.js.jsObject
 import react.*
-import styled.*
+import styled.css
+import styled.styledDiv
 
 private val treeData = arrayOf<TreeNodeNormal>(
     jsObject {
@@ -77,7 +79,7 @@ private val treeData = arrayOf<TreeNodeNormal>(
     }
 )
 
-external interface BasicControlledDemoState : RState {
+external interface BasicControlledDemoState : State {
     var expandedKeys: Array<Key>
     var autoExpandParent: Boolean
     var checkedKeys: Array<Key>

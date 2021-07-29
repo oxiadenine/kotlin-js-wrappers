@@ -4,14 +4,14 @@
 package antd.form
 
 import antd.FormHTMLAttributes
-import antd.ReactNode
 import antd.grid.*
+import antd.ReactNode
 import org.w3c.dom.HTMLFormElement
 import react.*
 import kotlin.js.*
 
 @JsName("default")
-external object FormComponent : Component<FormProps<Any>, RState> {
+external object FormComponent : Component<FormProps<Any>, State> {
     val Item: FormItemComponent
     val List: FormListComponent
     val ErrorList: FormErrorListComponent
@@ -38,15 +38,15 @@ external interface FormProps<Values> : FormBaseProps<Values>, RcFormProps<Values
 }
 
 external interface FormBaseProps<Values> {
-    var children: Any? /* RenderProps | ReactNode */
+    var children: Any?
     var ref: Any? /* (instance: FormInstance<Values>?) -> Unit | RefObject<FormInstance<Values>> */
 }
 
 external interface RcFormProps<Values> : FormHTMLAttributes<HTMLFormElement> {
     var initialValues: Store?
     var form: FormInstance<Values>?
-    override var children: Any? /* RenderProps | ReactNode */
-    var component: Any? /* Boolean | String | FunctionalComponent<RProps> | RClass<RProps> */
+    override var children: Any?
+    var component: Any? /* Boolean | String | FunctionalComponent<RProps> | ComponentClass<RProps> */
     var fields: Array<FieldData>?
     override var name: String?
     var validateMessages: ValidateMessages?

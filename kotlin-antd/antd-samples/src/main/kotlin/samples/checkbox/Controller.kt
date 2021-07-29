@@ -1,16 +1,20 @@
 package samples.checkbox
 
-import antd.*
+import antd.MouseEventHandler
 import antd.button.button
-import antd.checkbox.*
-import kotlinext.js.*
+import antd.checkbox.CheckboxChangeEvent
+import antd.checkbox.checkbox
+import kotlinext.js.js
 import kotlinx.css.marginBottom
 import kotlinx.css.px
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.div
+import react.dom.p
+import styled.css
+import styled.styledDiv
+import styled.styledP
 
-external interface ControllerAppState : RState {
+external interface ControllerAppState : State {
     var checked: Boolean
     var disabled: Boolean
 }

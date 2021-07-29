@@ -5,13 +5,13 @@ package antd.tooltip
 
 import antd.LiteralUnion
 import antd.PresetColorType
-import antd.ReactNode
 import antd.RefAttributes
+import antd.ReactNode
 import org.w3c.dom.*
 import react.*
 
 @JsName("default")
-external object TooltipComponent : Component<TooltipProps, RState> {
+external object TooltipComponent : Component<TooltipProps, State> {
     override fun render(): ReactElement?
 }
 

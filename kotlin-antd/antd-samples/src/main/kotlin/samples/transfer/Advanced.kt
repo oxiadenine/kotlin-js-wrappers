@@ -1,18 +1,24 @@
 package samples.transfer
 
-import antd.*
-import antd.button.*
-import antd.transfer.*
-import kotlinext.js.*
+import antd.MouseEvent
+import antd.MouseEventHandler
+import antd.button.button
+import antd.transfer.TransferComponent
+import antd.transfer.TransferItem
+import antd.transfer.TransferListProps
+import antd.transfer.transfer
+import kotlinext.js.js
+import kotlinext.js.jsObject
 import react.*
-import styled.*
-import kotlin.random.*
+import styled.css
+import styled.styledDiv
+import kotlin.random.Random
 
 external interface AdvancedTransferItem : TransferItem {
     var chosen: Boolean
 }
 
-external interface AdvancedAppState : RState {
+external interface AdvancedAppState : State {
     var mockData: Array<TransferItem>
     var targetKeys: Array<String>
 }

@@ -1,12 +1,13 @@
 package samples.timepicker
 
-import antd.*
-import antd.button.*
-import antd.timepicker.*
+import antd.MouseEventHandler
+import antd.button.button
+import antd.timepicker.timePicker
 import react.*
-import styled.*
+import styled.css
+import styled.styledDiv
 
-external interface AddonDemoState : RState {
+external interface AddonDemoState : State {
     var open: Boolean
 }
 

@@ -3,9 +3,7 @@ package antd.form
 import kotlinext.js.Record
 import react.*
 
-external object FormItemComponent : Component<FormItemProps<Any>, RState> {
-    override fun render(): ReactElement?
-}
+external interface FormItemComponent : ComponentType<FormItemProps<Any>>
 
 external interface FormItemProps<Values> : FormItemLabelProps, FormItemInputProps, RcFieldProps<Values> {
     override var prefixCls: String?

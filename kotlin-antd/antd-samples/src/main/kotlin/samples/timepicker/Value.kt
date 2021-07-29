@@ -1,11 +1,12 @@
 package samples.timepicker
 
-import antd.timepicker.*
-import moment.*
+import antd.timepicker.timePicker
+import moment.Moment
 import react.*
-import styled.*
+import styled.css
+import styled.styledDiv
 
-external interface ValueDemoState : RState {
+external interface ValueDemoState : State {
     var value: Moment?
 }
 

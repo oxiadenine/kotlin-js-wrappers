@@ -4,13 +4,14 @@
 package antd.modal
 
 import antd.*
+import antd.ReactNode
 import antd.button.*
 import antd.configprovider.DirectionType
 import org.w3c.dom.*
 import react.*
 
 @JsName("default")
-external class ModalComponent : Component<ModalProps, RState> {
+external class ModalComponent : Component<ModalProps, State> {
     companion object : ModalStaticFunctions {
         val useModal: () -> Array<Any /* ModalStaticFunctions | ReactElement */>
 

@@ -12,7 +12,7 @@ import org.w3c.dom.*
 import react.*
 
 @JsName("default")
-external object MenuComponent : Component<MenuProps, RState> {
+external object MenuComponent : Component<MenuProps, State> {
     val Divider: DividerComponent
     val Item: MenuItemComponent
     val SubMenu: SubMenuComponent

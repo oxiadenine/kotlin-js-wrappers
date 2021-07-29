@@ -1,8 +1,10 @@
 package samples.empty
 
-import antd.empty.*
-import react.*
-import styled.*
+import antd.empty.EmptyComponent
+import antd.empty.empty
+import react.RBuilder
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.simple() {
     styledDiv {

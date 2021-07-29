@@ -1,10 +1,15 @@
 package samples.upload
 
 import kotlinx.css.*
-import kotlinx.css.properties.*
-import react.*
-import react.dom.*
-import styled.*
+import kotlinx.css.properties.animation
+import react.RBuilder
+import react.RComponent
+import react.RProps
+import react.State
+import react.dom.h2
+import styled.StyleSheet
+import styled.css
+import styled.styledDiv
 
 object UploadStyles : StyleSheet("upload", isStatic = true) {
     val container by css {}
@@ -51,7 +56,7 @@ object UploadStyles : StyleSheet("upload", isStatic = true) {
     val previewFile by css {}
 }
 
-class UploadApp : RComponent<RProps, RState>() {
+class UploadApp : RComponent<RProps, State>() {
     override fun RBuilder.render() {
         h2 { +"Upload" }
         styledDiv {

@@ -3,12 +3,12 @@
 
 package antd.rate
 
-import antd.ReactNode
 import antd.RefAttributes
+import antd.ReactNode
 import react.*
 
 @JsName("default")
-external object RateComponent : Component<RateProps, RState> {
+external object RateComponent : Component<RateProps, State> {
     override fun render(): ReactElement?
 }
 

@@ -1,15 +1,17 @@
 package samples.popover
 
 import antd.button.button
-import antd.popover.*
-import kotlinext.js.*
-import kotlinx.html.js.*
-import org.w3c.dom.events.*
+import antd.popover.popover
+import kotlinext.js.js
+import kotlinx.html.js.onClickFunction
+import org.w3c.dom.events.Event
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.a
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
-external interface HoverWithClickAppState : RState {
+external interface HoverWithClickAppState : State {
     var clicked: Boolean
     var hovered: Boolean
 }

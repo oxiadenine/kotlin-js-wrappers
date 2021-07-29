@@ -4,6 +4,7 @@
 package antd.treeselect
 
 import antd.*
+import antd.ReactNode
 import antd.configprovider.*
 import antd.select.*
 import antd.tree.*
@@ -11,7 +12,7 @@ import react.*
 import kotlin.js.*
 
 @JsName("default")
-external class TreeSelectComponent<T : DefaultValueType> : Component<TreeSelectProps<T>, RState> {
+external class TreeSelectComponent<T : DefaultValueType> : Component<TreeSelectProps<T>, State> {
     companion object {
         val TreeNode: TreeNodeComponent
 
@@ -68,7 +69,7 @@ external interface RcTreeSelectProps<ValueType> : RcSelectProps<Array<DataNode>,
     var showTreeIcon:Boolean?
     var switcherIcon: IconType?
     var treeMotion: Any?
-    override var children: Any?
+    override var children: ReactNode?
     var filterTreeNode: Any? /* Boolean | FilterFunc<LegacyDataNode> */
     var dropdownPopupAlign: Any?
     override var onSearch: ((value: String) -> Unit)?

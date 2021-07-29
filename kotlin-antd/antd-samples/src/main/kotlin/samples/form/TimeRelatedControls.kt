@@ -1,13 +1,23 @@
 package samples.form
 
-import antd.button.*
-import antd.datepicker.*
+import antd.button.button
+import antd.datepicker.datePicker
+import antd.datepicker.monthPicker
 import antd.datepicker.rangePicker
-import antd.form.*
+import antd.form.AggregationRule
+import antd.form.FormItemProps
+import antd.form.form
+import antd.form.formItem
 import antd.timepicker.timePicker
-import kotlinext.js.*
-import react.*
-import styled.*
+import kotlinext.js.Object
+import kotlinext.js.js
+import kotlinext.js.jsObject
+import react.RBuilder
+import react.RProps
+import react.child
+import react.fc
+import styled.css
+import styled.styledDiv
 
 private val formItemLayout = jsObject<FormItemProps<Any>> {
     labelCol = jsObject {
@@ -36,7 +46,7 @@ private val rangeConfig = jsObject<FormItemProps<Any>> {
     })
 }
 
-private val timeRelatedForm = functionalComponent<RProps> {
+private val timeRelatedForm = fc<RProps> {
     val handleFinish = { fieldsValue: dynamic ->
         val rangeValue = fieldsValue["range-picker"]
         val rangeTimeValue = fieldsValue["range-time-picker"]

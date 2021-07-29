@@ -1,15 +1,17 @@
 package samples.tabs
 
 import antd.button.button
-import antd.tabs.*
-import kotlinext.js.*
+import antd.tabs.tabPane
+import antd.tabs.tabs
+import kotlinext.js.js
 import kotlinx.css.marginBottom
 import kotlinx.css.px
 import react.*
 import react.dom.div
-import styled.*
+import styled.css
+import styled.styledDiv
 
-external interface CustomAddTriggerDemoState : RState {
+external interface CustomAddTriggerDemoState : State {
     var activeKey: String
     var panes: Array<Any>
 }

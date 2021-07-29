@@ -3,7 +3,6 @@ package samples.form
 import antd.button.button
 import antd.form.*
 import antd.grid.*
-import antd.grid.col
 import antd.icon.*
 import antd.input.input
 import kotlinext.js.*
@@ -15,7 +14,7 @@ import react.*
 import react.dom.div
 import styled.*
 
-private val advancedSearchForm = functionalComponent<RProps> {
+private val advancedSearchForm = fc<RProps> {
     val (expand, setExpand) = useState(false)
     val formInstance = FormComponent.useForm()[0]
 
@@ -83,11 +82,9 @@ private val advancedSearchForm = functionalComponent<RProps> {
                     +"Clear"
                 }
                 styledA {
-                    attrs {
-                        css { fontSize = 12.px }
-                        onClickFunction = {
-                            setExpand(!expand)
-                        }
+                    css { fontSize = 12.px }
+                    attrs.onClickFunction = {
+                        setExpand(!expand)
                     }
                     if (expand) {
                         upOutlined {}

@@ -1,9 +1,11 @@
 package samples.pagination
 
-import antd.pagination.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.pagination.pagination
+import react.RBuilder
+import react.buildElement
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 private val showTotalPag = { total: Number, _: Array<Number> ->
     buildElement { +"Total $total items" }

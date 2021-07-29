@@ -1,12 +1,7 @@
 package antd.skeleton
 
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 
-external object SkeletonImageComponent : Component<SkeletonImageProps, RState> {
-    override fun render(): ReactElement?
-}
+external interface SkeletonImageComponent : ComponentType<SkeletonImageProps>
 
 external interface SkeletonImageProps : SkeletonElementProps, RProps

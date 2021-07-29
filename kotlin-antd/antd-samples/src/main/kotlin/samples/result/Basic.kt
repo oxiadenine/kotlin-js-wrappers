@@ -1,18 +1,23 @@
 package samples.result
 
 import antd.button.button
-import antd.icon.*
-import antd.radio.*
-import antd.result.*
-import antd.typography.*
-import kotlinext.js.*
-import kotlinx.html.*
+import antd.icon.closeCircleOutlined
+import antd.radio.RadioChangeEvent
+import antd.radio.radio
+import antd.radio.radioGroup
+import antd.result.result
+import antd.typography.typographyParagraph
+import antd.typography.typographyText
+import kotlinext.js.js
+import kotlinext.js.jsObject
+import kotlinx.html.classes
 import react.*
 import react.dom.a
 import react.dom.div
-import styled.*
+import styled.css
+import styled.styledDiv
 
-external interface BasicDemoState : RState {
+external interface BasicDemoState : State {
     var status: String
     var title: String
     var subTitle: String?

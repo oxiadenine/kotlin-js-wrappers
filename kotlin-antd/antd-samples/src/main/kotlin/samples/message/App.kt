@@ -1,8 +1,13 @@
 package samples.message
 
-import react.*
-import react.dom.*
-import styled.*
+import react.RBuilder
+import react.RComponent
+import react.RProps
+import react.State
+import react.dom.h2
+import styled.StyleSheet
+import styled.css
+import styled.styledDiv
 
 object MessageStyles : StyleSheet("message", isStatic = true) {
     val container by css {}
@@ -14,7 +19,7 @@ object MessageStyles : StyleSheet("message", isStatic = true) {
     val hooks by css {}
 }
 
-class MessageApp : RComponent<RProps, RState>() {
+class MessageApp : RComponent<RProps, State>() {
     override fun RBuilder.render() {
         h2 { +"Message" }
         styledDiv {

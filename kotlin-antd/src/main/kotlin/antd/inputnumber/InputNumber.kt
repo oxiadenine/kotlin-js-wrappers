@@ -9,7 +9,7 @@ import org.w3c.dom.*
 import react.*
 
 @JsName("default")
-external object InputNumberComponent : Component<InputNumberProps, RState> {
+external object InputNumberComponent : Component<InputNumberProps, State> {
     override fun render(): ReactElement?
 }
 

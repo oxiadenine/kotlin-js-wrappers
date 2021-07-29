@@ -1,13 +1,14 @@
 package samples.input
 
-import antd.input.*
+import antd.input.AutoSizeType
 import antd.input.textArea
-import kotlinext.js.*
+import kotlinext.js.jsObject
 import kotlinx.css.margin
 import kotlinx.css.px
-import react.*
-import react.dom.*
-import styled.*
+import react.RBuilder
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.autosizeTextarea() {
     styledDiv {

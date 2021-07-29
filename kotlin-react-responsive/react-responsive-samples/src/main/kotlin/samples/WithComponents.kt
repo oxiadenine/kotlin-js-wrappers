@@ -5,7 +5,7 @@ import react.*
 import react.dom.*
 import reactresponsive.*
 
-private val example = functionalComponent<RProps> {
+private val example = fc<RProps> {
     div {
         div { +"Device Test!" }
         mediaQuery {
@@ -22,9 +22,11 @@ private val example = functionalComponent<RProps> {
         mediaQuery {
             attrs.minResolution = "2dppx"
             childList += fun(matches: Boolean): ReactElement {
-                return if (matches) {
-                    p { +"You are retina" }
-                } else p { +"You are not retina" }
+                return buildElement {
+                    if (matches) {
+                        p { +"You are retina" }
+                    } else p { +"You are not retina" }
+                }
             }
         }
     }

@@ -13,7 +13,7 @@ external class IntlProviderComponent : Component<IntlProviderProps, IntlProvider
 
 external interface IntlProviderProps : OptionalIntlConfig, RProps
 
-external interface IntlProviderState : RState {
+external interface IntlProviderState : State {
     var cache: IntlCache
     var intl: IntlShape?
     var prevConfig: OptionalIntlConfig

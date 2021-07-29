@@ -3,7 +3,7 @@ package antd.modal
 import antd.button.*
 import react.*
 
-external object ActionButtonComponent : Component<ActionButtonProps, RState> {
+external object ActionButtonComponent : Component<ActionButtonProps, State> {
     override fun render(): ReactElement?
 }
 

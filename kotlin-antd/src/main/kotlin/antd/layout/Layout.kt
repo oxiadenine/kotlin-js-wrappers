@@ -8,7 +8,7 @@ import org.w3c.dom.*
 import react.*
 
 @JsName("default")
-external object LayoutComponent : Component<LayoutProps, RState> {
+external object LayoutComponent : Component<LayoutProps, State> {
     val Header: HeaderComponent
     val Footer: FooterComponent
     val Content: ContentComponent
@@ -17,19 +17,13 @@ external object LayoutComponent : Component<LayoutProps, RState> {
     override fun render(): ReactElement?
 }
 
-external object HeaderComponent : Component<LayoutProps, RState> {
-    override fun render(): ReactElement?
-}
+external interface HeaderComponent : ComponentType<LayoutProps>
 
-external object FooterComponent : Component<LayoutProps, RState> {
-    override fun render(): ReactElement?
-}
+external interface FooterComponent : ComponentType<LayoutProps>
 
-external object ContentComponent : Component<LayoutProps, RState> {
-    override fun render(): ReactElement?
-}
+external interface ContentComponent : ComponentType<LayoutProps>
 
-external val layoutContext: RContext<LayoutContextProps>
+external val layoutContext: Context<LayoutContextProps>
 
 external interface LayoutProps : HTMLAttributes<HTMLDivElement>, RProps {
     var prefixCls: String?

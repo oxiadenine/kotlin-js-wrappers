@@ -1,21 +1,28 @@
 package samples.comment
 
-import antd.avatar.*
-import antd.comment.*
-import antd.icon.*
-import antd.tooltip.*
+import antd.avatar.avatar
+import antd.comment.comment
+import antd.icon.dislikeFilled
+import antd.icon.dislikeOutlined
+import antd.icon.likeFilled
+import antd.icon.likeOutlined
+import antd.tooltip.tooltip
 import kotlinx.css.Cursor
 import kotlinx.css.cursor
 import kotlinx.css.paddingLeft
 import kotlinx.css.px
-import kotlinx.html.js.*
-import moment.*
-import org.w3c.dom.events.*
+import kotlinx.html.js.onClickFunction
+import moment.moment
+import org.w3c.dom.events.Event
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.a
+import react.dom.p
+import react.dom.span
+import styled.css
+import styled.styledDiv
+import styled.styledSpan
 
-external interface BasicAppState : RState {
+external interface BasicAppState : State {
     var likes: Number
     var dislikes: Number
     var action: String?

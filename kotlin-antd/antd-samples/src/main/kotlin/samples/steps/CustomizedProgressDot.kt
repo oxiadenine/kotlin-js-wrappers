@@ -1,10 +1,14 @@
 package samples.steps
 
-import antd.popover.*
-import antd.steps.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.popover.popover
+import antd.steps.step
+import antd.steps.steps
+import react.RBuilder
+import react.ReactElement
+import react.buildElement
+import react.dom.span
+import styled.css
+import styled.styledDiv
 
 external interface CustomDotStep {
     var index: String

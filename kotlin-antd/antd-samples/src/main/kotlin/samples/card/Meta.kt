@@ -1,12 +1,18 @@
 package samples.card
 
-import antd.avatar.*
-import antd.card.*
-import antd.icon.*
-import kotlinext.js.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.avatar.avatar
+import antd.card.card
+import antd.card.cardMeta
+import antd.icon.editOutlined
+import antd.icon.ellipsisOutlined
+import antd.icon.settingOutlined
+import kotlinext.js.js
+import react.RBuilder
+import react.buildElement
+import react.dom.attrs
+import react.dom.img
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.meta() {
     styledDiv {

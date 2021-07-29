@@ -1,12 +1,11 @@
 package antd.input
 
 import antd.*
+import antd.ReactNode
 import org.w3c.dom.*
 import react.*
 
-external object GroupComponent : Component<GroupProps, RState> {
-    override fun render(): ReactElement?
-}
+external interface GroupComponent : ComponentType<GroupProps>
 
 external interface GroupProps : RProps {
     var className: String?

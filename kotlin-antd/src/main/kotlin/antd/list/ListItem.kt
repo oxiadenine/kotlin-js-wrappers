@@ -1,22 +1,19 @@
 package antd.list
 
 import antd.*
+import antd.ReactNode
 import org.w3c.dom.*
 import react.*
 
-external object ItemComponent : Component<ListItemProps, RState> {
+external interface ItemComponent : ComponentType<ListItemProps> {
     val Meta: MetaComponent
-
-    override fun render(): ReactElement?
 }
 
-external object MetaComponent : Component<ListItemMetaProps, RState> {
-    override fun render(): ReactElement?
-}
+external interface MetaComponent : ComponentType<ListItemMetaProps>
 
 external interface ListItemProps : HTMLAttributes<HTMLDivElement>, RProps {
     override var className: String?
-    override var children: ReactNode?
+    override var children: Any?
     var prefixCls: String?
     override var style: dynamic
     var extra: ReactNode?

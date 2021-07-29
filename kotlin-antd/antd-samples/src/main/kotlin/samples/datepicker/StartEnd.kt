@@ -1,12 +1,14 @@
 package samples.datepicker
 
-import antd.datepicker.*
-import moment.*
+import antd.datepicker.datePicker
+import moment.Moment
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.br
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
-external interface DateRangeState : RState {
+external interface DateRangeState : State {
     var startValue: Moment?
     var endValue: Moment?
     var endOpen: Boolean

@@ -9,7 +9,7 @@ import moment.*
 import react.*
 
 @JsName("default")
-external object DatePickerComponent : Component<DatePickerProps, RState> {
+external object DatePickerComponent : Component<DatePickerProps, State> {
     val WeekPicker: WeekPickerComponent
     val MonthPicker: MonthPickerComponent
     val YearPicker: YearPickerComponent

@@ -1,14 +1,18 @@
 package samples.collapse
 
-import antd.collapse.*
-import antd.icon.*
-import antd.select.*
+import antd.collapse.collapse
+import antd.collapse.collapsePanel
+import antd.icon.settingOutlined
+import antd.select.SelectComponent
+import antd.select.SelectValue
 import antd.select.option
+import antd.select.select
 import react.*
 import react.dom.br
 import react.dom.div
 import react.dom.p
-import styled.*
+import styled.css
+import styled.styledDiv
 
 private fun callback(key: Any) {
     console.log(key)
@@ -33,7 +37,7 @@ private val genExtra: () -> ReactElement = {
     }
 }
 
-external interface ExtraDemoState : RState {
+external interface ExtraDemoState : State {
     var expandIconPosition: String
 }
 

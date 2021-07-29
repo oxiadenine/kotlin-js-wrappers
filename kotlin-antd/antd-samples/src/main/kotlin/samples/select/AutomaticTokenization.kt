@@ -1,9 +1,13 @@
 package samples.select
 
-import antd.select.*
-import kotlinext.js.*
-import react.*
-import styled.*
+import antd.select.SelectComponent
+import antd.select.option
+import antd.select.select
+import kotlinext.js.js
+import react.RBuilder
+import react.buildElement
+import styled.css
+import styled.styledDiv
 
 private val handleChange = { value: String, _: Any? ->
     console.log("selected $value")

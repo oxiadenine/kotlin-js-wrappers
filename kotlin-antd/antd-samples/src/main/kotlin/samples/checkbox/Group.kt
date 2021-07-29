@@ -1,10 +1,14 @@
 package samples.checkbox
 
-import antd.checkbox.*
-import kotlinext.js.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.checkbox.CheckboxOptionType
+import antd.checkbox.CheckboxValueType
+import antd.checkbox.checkboxGroup
+import kotlinext.js.jsObject
+import react.RBuilder
+import react.dom.br
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 private val plainOptions: Array<CheckboxValueType> = arrayOf("Apple", "Pear", "Orange")
 private val options = arrayOf<CheckboxOptionType>(

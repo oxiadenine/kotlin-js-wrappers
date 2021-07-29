@@ -1,9 +1,10 @@
 package samples.table
 
 import antd.table.*
-import kotlinext.js.*
-import react.*
-import styled.*
+import kotlinext.js.jsObject
+import react.RBuilder
+import styled.css
+import styled.styledDiv
 
 private external interface ExpandChildrenTableDataItem {
     var key: String

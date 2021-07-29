@@ -1,10 +1,15 @@
 package samples.skeleton
 
 import kotlinx.css.*
-import kotlinx.css.properties.*
-import react.*
-import react.dom.*
-import styled.*
+import kotlinx.css.properties.border
+import react.RBuilder
+import react.RComponent
+import react.RProps
+import react.State
+import react.dom.h2
+import styled.StyleSheet
+import styled.css
+import styled.styledDiv
 
 object SkeletonStyles : StyleSheet("skeleton", isStatic = true) {
     val container by css {}
@@ -31,7 +36,7 @@ object SkeletonStyles : StyleSheet("skeleton", isStatic = true) {
     val element by css {}
 }
 
-class SkeletonApp : RComponent<RProps, RState>() {
+class SkeletonApp : RComponent<RProps, State>() {
     override fun RBuilder.render() {
         h2 { +"Skeleton" }
         styledDiv {

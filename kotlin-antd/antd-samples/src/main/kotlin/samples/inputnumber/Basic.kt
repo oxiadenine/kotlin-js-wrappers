@@ -1,8 +1,9 @@
 package samples.inputnumber
 
-import antd.inputnumber.*
-import react.*
-import styled.*
+import antd.inputnumber.inputNumber
+import react.RBuilder
+import styled.css
+import styled.styledDiv
 
 private fun handleChange(value: Any?) {
     console.log("changed", value)

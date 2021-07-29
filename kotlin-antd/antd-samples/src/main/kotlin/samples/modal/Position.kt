@@ -1,13 +1,16 @@
 package samples.modal
 
 import antd.button.button
-import antd.modal.*
-import kotlinext.js.*
+import antd.modal.modal
+import kotlinext.js.js
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.br
+import react.dom.div
+import react.dom.p
+import styled.css
+import styled.styledDiv
 
-external interface PositionAppState : RState {
+external interface PositionAppState : State {
     var modal1Visible: Boolean
     var modal2Visible: Boolean
 }

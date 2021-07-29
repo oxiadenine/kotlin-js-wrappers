@@ -3,9 +3,7 @@ package antd.timeline
 import antd.ReactNode
 import react.*
 
-external object TimelineItemComponent : Component<TimelineItemProps, RState> {
-    override fun render(): ReactElement?
-}
+external interface TimelineItemComponent : ComponentType<TimelineItemProps>
 
 external interface TimelineItemProps : RProps {
     var prefixCls: String?

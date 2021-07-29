@@ -8,7 +8,7 @@ import org.w3c.dom.*
 import react.*
 
 @JsName("default")
-external object RowComponent : Component<RowProps, RState> {
+external object RowComponent : Component<RowProps, State> {
     override fun render(): ReactElement?
 }
 

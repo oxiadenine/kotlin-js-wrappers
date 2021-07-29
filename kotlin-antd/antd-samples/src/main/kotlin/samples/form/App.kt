@@ -1,10 +1,15 @@
 package samples.form
 
 import kotlinx.css.*
-import kotlinx.css.properties.*
-import react.*
-import react.dom.*
-import styled.*
+import kotlinx.css.properties.border
+import react.RBuilder
+import react.RComponent
+import react.RProps
+import react.State
+import react.dom.h2
+import styled.StyleSheet
+import styled.css
+import styled.styledDiv
 
 object FormStyles : StyleSheet("form", isStatic = true) {
     val container by css {}
@@ -72,7 +77,7 @@ object FormStyles : StyleSheet("form", isStatic = true) {
     val validateOther by css {}
 }
 
-class FormApp : RComponent<RProps, RState>() {
+class FormApp : RComponent<RProps, State>() {
     override fun RBuilder.render() {
         h2 { +"Form" }
         styledDiv {

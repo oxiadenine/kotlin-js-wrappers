@@ -7,7 +7,7 @@ import antd.ReactNode
 import react.*
 
 @JsName("default")
-external object DividerComponent : Component<DividerProps, RState> {
+external object DividerComponent : Component<DividerProps, State> {
     override fun render(): ReactElement?
 }
 

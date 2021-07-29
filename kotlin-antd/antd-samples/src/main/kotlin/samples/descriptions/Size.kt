@@ -1,12 +1,17 @@
 package samples.descriptions
 
-import antd.descriptions.*
-import antd.radio.*
+import antd.descriptions.descriptions
+import antd.descriptions.descriptionsItem
+import antd.radio.RadioChangeEvent
+import antd.radio.radio
+import antd.radio.radioGroup
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.br
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
-external interface SizeDemoState : RState {
+external interface SizeDemoState : State {
     var size: String
 }
 

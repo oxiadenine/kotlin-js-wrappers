@@ -7,7 +7,7 @@ import antd.ReactNode
 import react.*
 
 @JsName("default")
-external object EmptyComponent : Component<EmptyProps, RState> {
+external object EmptyComponent : Component<EmptyProps, State> {
     val PRESENTED_IMAGE_DEFAULT: ReactNode
     val PRESENTED_IMAGE_SIMPLE: ReactNode
 

@@ -1,8 +1,10 @@
 package samples.radio
 
-import antd.radio.*
-import react.*
-import styled.*
+import antd.radio.radio
+import antd.radio.radioGroup
+import react.RBuilder
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.radioGroupWithNameApp() {
     radioGroup {

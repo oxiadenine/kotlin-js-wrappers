@@ -1,12 +1,18 @@
 package samples.table
 
-import antd.divider.*
-import antd.table.*
-import antd.tag.*
-import kotlinext.js.*
+import antd.divider.divider
+import antd.table.TableComponent
+import antd.table.table
+import antd.table.tableColumn
+import antd.table.tableColumnGroup
+import antd.tag.tag
+import kotlinext.js.jsObject
 import react.RBuilder
-import react.dom.*
-import styled.*
+import react.buildElement
+import react.dom.a
+import react.dom.span
+import styled.css
+import styled.styledDiv
 
 private external interface JsxTableDataItem {
     var key: String
@@ -86,16 +92,18 @@ fun RBuilder.jsx() {
                     dataIndex = "tags"
                     key = "tags"
                     render = { tags, _, _ ->
-                        span {
-                            tags.unsafeCast<Array<String>>().map { tag ->
-                                tag {
-                                    attrs {
-                                        color = "blue"
-                                        key = tag
+                        buildElement {
+                            span {
+                                tags.unsafeCast<Array<String>>().map { tag ->
+                                    tag {
+                                        attrs {
+                                            color = "blue"
+                                            key = tag
+                                        }
+                                        +tag
                                     }
-                                    +tag
-                                }
-                            }.toTypedArray()
+                                }.toTypedArray()
+                            }
                         }
                     }
                 }
@@ -105,17 +113,19 @@ fun RBuilder.jsx() {
                     title = "Action"
                     key = "action"
                     render = { _, record, _ ->
-                        span {
-                            a {
-                                attrs.href = "javascript:;"
-                                +"Invite ${record.lastName}"
-                            }
-                            divider {
-                                attrs.type = "vertical"
-                            }
-                            a {
-                                attrs.href = "javascript:;"
-                                +"Delete"
+                        buildElement {
+                            span {
+                                a {
+                                    attrs.href = "javascript:;"
+                                    +"Invite ${record.lastName}"
+                                }
+                                divider {
+                                    attrs.type = "vertical"
+                                }
+                                a {
+                                    attrs.href = "javascript:;"
+                                    +"Delete"
+                                }
                             }
                         }
                     }

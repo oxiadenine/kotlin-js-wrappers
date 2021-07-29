@@ -1,9 +1,15 @@
 package samples.steps
 
-import antd.icon.*
-import antd.steps.*
-import react.*
-import styled.*
+import antd.icon.loadingOutlined
+import antd.icon.smileOutlined
+import antd.icon.solutionOutlined
+import antd.icon.userOutlined
+import antd.steps.step
+import antd.steps.steps
+import react.RBuilder
+import react.buildElement
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.icon() {
     styledDiv {

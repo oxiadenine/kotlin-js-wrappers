@@ -1,10 +1,12 @@
 package samples.result
 
-import antd.button.*
-import antd.icon.*
-import antd.result.*
-import react.*
-import styled.*
+import antd.button.button
+import antd.icon.smileTwoTone
+import antd.result.result
+import react.RBuilder
+import react.buildElement
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.customIcon() {
     styledDiv {

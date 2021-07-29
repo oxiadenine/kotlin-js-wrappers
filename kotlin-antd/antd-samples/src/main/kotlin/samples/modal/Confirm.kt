@@ -1,12 +1,13 @@
 package samples.modal
 
-import antd.*
+import antd.MouseEventHandler
 import antd.button.button
-import antd.modal.*
-import kotlinext.js.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.modal.ModalComponent
+import kotlinext.js.jsObject
+import react.RBuilder
+import react.dom.div
+import styled.css
+import styled.styledDiv
 import kotlin.js.Promise
 
 private val showConfirm: MouseEventHandler<Any> = {

@@ -1,17 +1,21 @@
 package samples.card
 
-import antd.avatar.*
-import antd.card.*
-import antd.icon.*
-import antd.skeleton.*
-import antd.switch.*
-import kotlinext.js.*
-import org.w3c.dom.events.*
+import antd.avatar.avatar
+import antd.card.card
+import antd.card.cardMeta
+import antd.icon.editOutlined
+import antd.icon.ellipsisOutlined
+import antd.icon.settingOutlined
+import antd.skeleton.skeleton
+import antd.switch.switch
+import kotlinext.js.js
+import org.w3c.dom.events.MouseEvent
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
-external interface LoadingAppState : RState {
+external interface LoadingAppState : State {
     var loading: Boolean
 }
 

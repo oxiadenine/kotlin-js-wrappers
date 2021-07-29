@@ -1,11 +1,13 @@
 package samples.select
 
-import antd.select.*
+import antd.select.SelectComponent
 import antd.select.option
-import kotlinext.js.*
+import antd.select.select
+import kotlinext.js.js
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 private val provinceData = arrayOf("Zhejiang", "Jiangsu")
 private val cityData = mapOf(
@@ -13,7 +15,7 @@ private val cityData = mapOf(
     Pair("Jiangsu", arrayOf("Nanjing", "Suzhou", "Zhenjiang"))
 )
 
-external interface CoordinateAppState : RState {
+external interface CoordinateAppState : State {
     var cities: Array<String>
     var secondCity: String
 }

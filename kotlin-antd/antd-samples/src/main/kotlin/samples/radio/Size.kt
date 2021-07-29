@@ -1,11 +1,13 @@
 package samples.radio
 
-import antd.radio.*
+import antd.radio.radioButton
+import antd.radio.radioGroup
 import kotlinx.css.marginTop
 import kotlinx.css.px
-import react.*
-import react.dom.*
-import styled.*
+import react.RBuilder
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.size() {
     styledDiv {

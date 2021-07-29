@@ -1,14 +1,15 @@
 package samples.popover
 
 import antd.button.button
-import antd.popover.*
-import kotlinx.html.js.*
-import org.w3c.dom.events.*
+import antd.popover.popover
+import kotlinx.html.js.onClickFunction
+import org.w3c.dom.events.Event
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.a
+import styled.css
+import styled.styledDiv
 
-external interface ControlAppState : RState {
+external interface ControlAppState : State {
     var visible: Boolean
 }
 

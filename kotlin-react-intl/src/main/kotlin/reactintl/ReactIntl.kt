@@ -12,16 +12,16 @@ external fun <K, T, U> defineMessages(msgs: U): U
 external fun <T> defineMessage(msg: T): T
 
 @JsName("RawIntlProvider")
-external val rawIntlProvider: RProvider<IntlShape>
+external val rawIntlProvider: Provider<IntlShape>
 
 @JsName("IntlContext")
-external val intlContext: RContext<IntlShape>
+external val intlContext: Context<IntlShape>
 
 @JsName("injectIntl")
 external fun <IntlPropName, P : WrappedComponentProps<IntlPropName>> injectIntl(
-    wrappedComponent: Any /* JsClass<Component<P, RState>> */,
+    wrappedComponent: Any /* JsClass<Component<P, State>> */,
     options: Opts<IntlPropName, Boolean>? = definedExternally
-): JsClass<Component<WithIntlProps<P>, RState>>
+): ComponentType<WithIntlProps<P>>
 
 @JsName("useIntl")
 external fun useIntl(): IntlShape
@@ -41,7 +41,7 @@ external interface Opts<IntlPropName, ForwardRef> {
 external interface WrappedComponentProps<IntlPropName> : RProps
 
 external interface WithIntlProps<P> : RProps {
-    var forwardedRef: RMutableRef<Any>?
+    var forwardedRef: MutableRefObject<Any>?
 }
 
 external interface IntlShape : IntlConfig, IntlFormatters {

@@ -1,11 +1,13 @@
 package samples.popconfirm
 
-import antd.icon.*
-import antd.popconfirm.*
-import kotlinext.js.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.icon.questionCircleOutlined
+import antd.popconfirm.popconfirm
+import kotlinext.js.js
+import react.RBuilder
+import react.buildElement
+import react.dom.a
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.icon() {
     styledDiv {

@@ -1,8 +1,13 @@
 package samples.menu
 
-import react.*
-import react.dom.*
-import styled.*
+import react.RBuilder
+import react.RComponent
+import react.RProps
+import react.State
+import react.dom.h2
+import styled.StyleSheet
+import styled.css
+import styled.styledDiv
 
 object MenuStyles : StyleSheet("menu", isStatic = true) {
     val container by css {}
@@ -15,7 +20,7 @@ object MenuStyles : StyleSheet("menu", isStatic = true) {
     val switchMode by css {}
 }
 
-class MenuApp : RComponent<RProps, RState>() {
+class MenuApp : RComponent<RProps, State>() {
     override fun RBuilder.render() {
         h2 { +"Menu" }
         styledDiv {

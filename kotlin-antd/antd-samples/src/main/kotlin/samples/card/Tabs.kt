@@ -1,10 +1,15 @@
 package samples.card
 
-import antd.card.*
-import kotlinext.js.*
+import antd.card.card
+import kotlinext.js.js
+import kotlinext.js.jsObject
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.a
+import react.dom.br
+import react.dom.div
+import react.dom.p
+import styled.css
+import styled.styledDiv
 
 private val cardTabList = arrayOf(
     js {
@@ -53,7 +58,7 @@ private val contentListNoTitle = js {
     }
 }
 
-external interface TabsCardState : RState {
+external interface TabsCardState : State {
     var key: String
     var noTitleKey: String
 }

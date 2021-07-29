@@ -4,11 +4,12 @@
 package antd.alert
 
 import antd.*
+import antd.ReactNode
 import org.w3c.dom.*
 import react.*
 
 @JsName("default")
-external object AlertComponent : Component<AlertProps, RState> {
+external object AlertComponent : Component<AlertProps, State> {
     val ErrorBoundary: ErrorBoundaryComponent
 
     override fun render(): ReactElement?

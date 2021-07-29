@@ -1,9 +1,9 @@
 package antd.menu
 
 import antd.configprovider.DirectionType
-import react.RContext
+import react.Context
 
-external val menuContext: RContext<MenuContextProps>
+external val menuContext: Context<MenuContextProps>
 
 external interface MenuContextProps {
     var inlineCollapsed: Boolean

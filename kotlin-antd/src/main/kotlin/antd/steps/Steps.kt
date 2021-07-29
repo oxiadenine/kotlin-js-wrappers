@@ -6,7 +6,7 @@ package antd.steps
 import react.*
 
 @JsName("default")
-external object StepsComponent : Component<StepsProps, RState> {
+external object StepsComponent : Component<StepsProps, State> {
     val Step: StepComponent
 
     override fun render(): ReactElement?

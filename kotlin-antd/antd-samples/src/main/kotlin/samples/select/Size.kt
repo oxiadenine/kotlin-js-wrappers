@@ -1,12 +1,18 @@
 package samples.select
 
-import antd.radio.*
-import antd.select.*
+import antd.radio.RadioChangeEvent
+import antd.radio.radioButton
+import antd.radio.radioGroup
+import antd.select.SelectComponent
+import antd.select.SelectValue
 import antd.select.option
-import kotlinext.js.*
+import antd.select.select
+import kotlinext.js.js
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.br
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 private val children = (10..36).map { i ->
     buildElement {
@@ -21,7 +27,7 @@ private val handleChange = { value: SelectValue, _: Any ->
     console.log("selected $value")
 }
 
-external interface SelectSizesDemoState : RState {
+external interface SelectSizesDemoState : State {
     var size: String
 }
 

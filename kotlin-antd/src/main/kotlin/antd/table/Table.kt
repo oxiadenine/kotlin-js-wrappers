@@ -13,7 +13,7 @@ import react.*
 import react.Component
 
 @JsName("default")
-external class TableComponent<RecordType> : Component<TableProps<RecordType>, RState> {
+external class TableComponent<RecordType> : Component<TableProps<RecordType>, State> {
     companion object {
         val Column: ColumnComponent<*>
         val ColumnGroup: ColumnGroupComponent<*>
@@ -195,7 +195,7 @@ external interface RcTablePropsScroll {
 }
 
 external interface RcTablePropsInternalRefs {
-    var body: RMutableRef<HTMLDivElement>
+    var body: MutableRefObject<HTMLDivElement>
 }
 
 external interface RenderedCell<RecordType> {

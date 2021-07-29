@@ -3,7 +3,7 @@ package antd.carousel
 import antd.MouseEventHandler
 import react.*
 
-external object SliderComponent : Component<SlideProps, RState> {
+external object SliderComponent : Component<SlideProps, State> {
     fun slickNext()
     fun slickPause()
     fun slickPlay()

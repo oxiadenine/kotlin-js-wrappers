@@ -1,10 +1,11 @@
 package samples.progress
 
 import antd.progress.progress
-import antd.tooltip.*
-import react.*
+import antd.tooltip.tooltip
+import react.RBuilder
 import react.dom.div
-import styled.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.segment() {
     styledDiv {

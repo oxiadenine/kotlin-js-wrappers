@@ -3,23 +3,21 @@
 
 package antd.timepicker
 
-import antd.ReactNode
 import antd.RefAttributes
+import antd.ReactNode
 import antd.datepicker.PickerTimeProps
 import antd.datepicker.RangePickerTimeProps
 import moment.*
 import react.*
 
 @JsName("default")
-external object TimePickerComponent : Component<TimePickerProps, RState> {
+external object TimePickerComponent : Component<TimePickerProps, State> {
     val RangePicker: RangePickerComponent
 
     override fun render(): ReactElement?
 }
 
-external object RangePickerComponent : Component<RangeTimePickerProps, RState> {
-    override fun render(): ReactElement?
-}
+external interface RangePickerComponent : ComponentType<RangeTimePickerProps>
 
 external interface TimePickerProps : PickerTimeProps<Moment>, RefAttributes<Any>, RProps {
     var addon: () -> ReactNode

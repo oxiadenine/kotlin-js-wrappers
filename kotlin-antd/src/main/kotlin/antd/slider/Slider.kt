@@ -9,7 +9,7 @@ import org.w3c.dom.*
 import react.*
 
 @JsName("default")
-external object SliderComponent : Component<SliderProps, RState> {
+external object SliderComponent : Component<SliderProps, State> {
     override fun render(): ReactElement?
 }
 

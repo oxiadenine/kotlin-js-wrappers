@@ -7,7 +7,7 @@ external fun useCacheErrors(
     errors: Array<ReactElement>,
     changeTrigger: (visible: Boolean) -> Unit, directly: Boolean): Any /* Array<Any /* Boolean & Array<ReactElement> */>> */
 external fun <ValueType> useFrameState(defaultValue: ValueType): Array<Any /* ValueType & (updater: Updater<ValueType>) -> void */>
-external fun useItemRef(): (name: InternalNamePath, children: Any) -> Any? /* (instance: Any) -> Unit) | RMutableRef<Any> */
+external fun useItemRef(): (name: InternalNamePath, children: Any) -> Any? /* (instance: Any) -> Unit) | MutableRefObject<Any> */
 
 external interface InternalHooks {
     var dispatch: (action: ReducerAction) -> Unit

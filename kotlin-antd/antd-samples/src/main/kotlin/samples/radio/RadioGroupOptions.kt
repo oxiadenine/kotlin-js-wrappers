@@ -1,11 +1,15 @@
 package samples.radio
 
-import antd.checkbox.*
-import antd.radio.*
-import kotlinext.js.*
+import antd.checkbox.CheckboxOptionType
+import antd.checkbox.CheckboxValueType
+import antd.radio.RadioChangeEvent
+import antd.radio.radioGroup
+import kotlinext.js.jsObject
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.br
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 private val plainOptions: Array<CheckboxValueType> = arrayOf("Apple", "Pear", "Orange")
 private val groupOptions = arrayOf<CheckboxOptionType>(
@@ -38,7 +42,7 @@ private val optionsWithDisabled = arrayOf<CheckboxOptionType>(
     }
 )
 
-external interface RadioGroupOptionsAppState : RState {
+external interface RadioGroupOptionsAppState : State {
     var value1: CheckboxValueType
     var value2: CheckboxValueType
     var value3: CheckboxValueType

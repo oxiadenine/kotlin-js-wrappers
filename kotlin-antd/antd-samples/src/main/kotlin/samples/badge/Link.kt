@@ -1,10 +1,12 @@
 package samples.badge
 
-import antd.badge.*
-import kotlinx.html.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.badge.badge
+import kotlinx.html.classes
+import react.RBuilder
+import react.dom.a
+import react.dom.span
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.link() {
     styledDiv {

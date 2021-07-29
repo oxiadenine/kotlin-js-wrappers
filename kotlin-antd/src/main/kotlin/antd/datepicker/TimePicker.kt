@@ -1,13 +1,8 @@
 package antd.datepicker
 
 import moment.Moment
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 
-external object TimePickerComponent : Component<TimePickerProps, RState> {
-    override fun render(): ReactElement?
-}
+external interface TimePickerComponent : ComponentType<TimePickerProps>
 
 external interface TimePickerProps : PickerTimeProps<Moment>, RProps

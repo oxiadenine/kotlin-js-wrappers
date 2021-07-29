@@ -1,11 +1,12 @@
 package samples.rate
 
-import antd.rate.*
+import antd.rate.rate
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.span
+import styled.css
+import styled.styledDiv
 
-external interface RaterState : RState {
+external interface RaterState : State {
     var value: Number?
 }
 

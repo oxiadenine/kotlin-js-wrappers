@@ -1,12 +1,13 @@
 package samples.alert
 
-import antd.*
-import antd.alert.*
-import antd.button.*
+import antd.MouseEventHandler
+import antd.alert.errorBoundary
+import antd.button.button
 import react.*
-import styled.*
+import styled.css
+import styled.styledDiv
 
-private val throwError = functionalComponent<RProps> {
+private val throwError = fc<RProps> {
     val (error, setError) = useState<Error?>(null)
 
     val handleClick: MouseEventHandler<Any> = {

@@ -3,12 +3,14 @@ package samples.pageheader
 import antd.button.button
 import antd.descriptions.descriptions
 import antd.descriptions.descriptionsItem
-import antd.pageheader.*
+import antd.pageheader.pageHeader
 import kotlinx.browser.window
-import react.*
+import react.RBuilder
+import react.buildElement
 import react.dom.a
 import react.dom.div
-import styled.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.ghost() {
     styledDiv {

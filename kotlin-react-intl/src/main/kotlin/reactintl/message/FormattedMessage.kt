@@ -7,7 +7,7 @@ import react.*
 import reactintl.*
 
 @JsName("FormattedMessage")
-open external class FormattedMessageComponent : Component<FormattedMessageProps<Any>, RState> {
+open external class FormattedMessageComponent : Component<FormattedMessageProps<Any>, State> {
     override fun render(): ReactElement?
 }
 
@@ -23,7 +23,7 @@ external interface MessageFormatOptions {
 }
 
 external class MessageFormat(
-    message: Any /* string | Array<MessageFormatElement? */,
+    message: Any /* string | Array<MessageFormatElement?> */,
     locales: Any? /* String | Array<String> */ = definedExternally,
     overrideFormats: Formats, opts: MessageFormatOptions? = definedExternally) {
     fun <T> format(values: Any? = definedExternally): Any? /* String | T | Array<String | T> */

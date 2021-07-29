@@ -3,13 +3,14 @@
 
 package antd.tabs
 
-import antd.*
+import antd.HTMLAttributes
+import antd.ReactNode
 import antd.configprovider.SizeType
 import org.w3c.dom.*
 import react.*
 
 @JsName("default")
-external object TabsComponent : Component<TabsProps, RState> {
+external object TabsComponent : Component<TabsProps, State> {
     val TabPane: TabPaneComponent
 
     override fun render(): ReactElement?
@@ -28,7 +29,7 @@ external interface RcTabProps : HTMLAttributes<HTMLDivElement> {
     var prefixCls: String?
     override var className: String?
     override var style: dynamic
-    override var children: ReactNode?
+    override var children: Any?
     override var id: String?
     var activeKey: String?
     var defaultActiveKey: String?

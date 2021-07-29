@@ -1,18 +1,22 @@
 package samples.treeselect
 
-import antd.icon.*
-import antd.treeselect.*
-import kotlinext.js.*
+import antd.icon.smileOutlined
+import antd.treeselect.TreeSelectComponent
+import antd.treeselect.treeNode
+import antd.treeselect.treeSelect
+import kotlinext.js.js
 import kotlinx.css.Color
 import kotlinx.css.color
 import react.*
-import styled.*
+import styled.css
+import styled.styledB
+import styled.styledDiv
 
 private val icon = buildElement {
     smileOutlined {}
 }
 
-external interface SuffixDemoState : RState {
+external interface SuffixDemoState : State {
     var value: String?
 }
 

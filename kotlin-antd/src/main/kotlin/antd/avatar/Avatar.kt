@@ -30,7 +30,7 @@ external interface AvatarProps : RefAttributes<dynamic>, RProps {
     var onError: (() -> Boolean)?
 }
 
-external interface AvatarState : RState {
+external interface AvatarState : State {
     var scale: Number
     var isImgExist: Boolean
 }

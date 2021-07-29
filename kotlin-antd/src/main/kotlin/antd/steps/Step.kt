@@ -1,12 +1,11 @@
 package antd.steps
 
 import antd.*
+import antd.ReactNode
 import org.w3c.dom.*
 import react.*
 
-external object StepComponent : Component<StepProps, RState> {
-    override fun render(): ReactElement?
-}
+external interface StepComponent : ComponentType<StepProps>
 
 external interface StepProps : RProps {
     var className: String?

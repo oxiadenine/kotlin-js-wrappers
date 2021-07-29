@@ -8,7 +8,7 @@ import antd.RefAttributes
 import react.*
 
 @JsName("default")
-external object CarouselComponent : Component<CarouselProps, RState> {
+external object CarouselComponent : Component<CarouselProps, State> {
     override fun render(): ReactElement?
 }
 

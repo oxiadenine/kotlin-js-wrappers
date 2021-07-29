@@ -2,8 +2,8 @@ package antd.icon
 
 import react.*
 
-external interface AntdIconClass : RClass<AntdIconProps> {
-    var default: Any
+external interface AntdIconClass : ComponentClass<AntdIconProps> {
+    var default: ComponentType<AntdIconProps>
 }
 
 external interface AntdIconProps : IconBaseProps, RProps {

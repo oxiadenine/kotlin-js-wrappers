@@ -1,9 +1,10 @@
 package samples.cascader
 
 import antd.cascader.*
-import kotlinext.js.*
-import react.*
-import styled.*
+import kotlinext.js.jsObject
+import react.RBuilder
+import styled.css
+import styled.styledDiv
 
 private val cascaderOptions = arrayOf<CascaderOptionType>(
     jsObject {

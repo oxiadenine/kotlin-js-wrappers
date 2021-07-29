@@ -1,11 +1,13 @@
 package samples.descriptions
 
 import antd.ScreenSizeMap
-import antd.descriptions.*
-import kotlinext.js.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.descriptions.descriptions
+import antd.descriptions.descriptionsItem
+import kotlinext.js.jsObject
+import react.RBuilder
+import react.dom.br
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.responsiveDemo() {
     descriptions {

@@ -1,15 +1,17 @@
 package samples.autocomplete
 
-import antd.autocomplete.*
-import kotlinext.js.*
+import antd.autocomplete.DataSourceItemType
+import antd.autocomplete.autoComplete
+import kotlinext.js.js
 import react.*
-import styled.*
+import styled.css
+import styled.styledDiv
 
 private val handleSelect = { value: Any, _: Any ->
     console.log("onSelect", value)
 }
 
-external interface BasicCompleteState : RState {
+external interface BasicCompleteState : State {
     var dataSource: Array<DataSourceItemType>
 }
 

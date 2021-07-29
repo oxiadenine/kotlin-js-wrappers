@@ -1,9 +1,13 @@
 package samples.pagination
 
-import antd.pagination.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.pagination.pagination
+import react.RBuilder
+import react.ReactElement
+import react.buildElement
+import react.dom.br
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.total() {
     styledDiv {

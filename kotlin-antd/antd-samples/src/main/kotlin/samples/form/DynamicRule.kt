@@ -22,11 +22,11 @@ private val formTailLayout = jsObject<FormItemProps<Any>> {
     }
 }
 
-private val dynamicRuleApp = functionalComponent<RProps> {
+private val dynamicRuleApp = fc<RProps> {
     val formInstance = FormComponent.useForm()[0]
     val (checkNick, setCheckNick) = useState(false)
 
-    useEffect(dependencies = listOf(checkNick)) {
+    useEffect(listOf(checkNick)) {
         formInstance.validateFields(arrayOf("nickname"))
     }
 

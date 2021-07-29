@@ -1,18 +1,23 @@
 package samples.layout
 
-import antd.breadcrumb.*
-import antd.layout.*
+import antd.breadcrumb.breadcrumb
+import antd.breadcrumb.breadcrumbItem
+import antd.layout.content
 import antd.layout.footer
 import antd.layout.header
-import antd.menu.*
-import kotlinext.js.*
+import antd.layout.layout
+import antd.menu.menu
+import antd.menu.menuItem
+import kotlinext.js.js
 import kotlinx.css.background
 import kotlinx.css.minHeight
 import kotlinx.css.padding
 import kotlinx.css.px
-import react.*
-import react.dom.*
-import styled.*
+import react.RBuilder
+import react.dom.div
+import react.key
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.fixed() {
     styledDiv {

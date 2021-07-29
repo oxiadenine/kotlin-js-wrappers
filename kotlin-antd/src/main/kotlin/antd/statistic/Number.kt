@@ -2,7 +2,7 @@ package antd.statistic
 
 import react.*
 
-external object NumberComponent : Component<NumberProps, RState> {
+external object NumberComponent : Component<NumberProps, State> {
     override fun render(): ReactElement?
 }
 

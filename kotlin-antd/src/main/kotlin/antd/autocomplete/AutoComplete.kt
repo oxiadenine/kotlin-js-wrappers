@@ -8,7 +8,7 @@ import antd.select.*
 import react.*
 
 @JsName("default")
-external object AutoCompleteComponent : Component<AutoCompleteProps, RState> {
+external object AutoCompleteComponent : Component<AutoCompleteProps, State> {
     val Option: OptionComponent
 
     override fun render(): ReactElement?

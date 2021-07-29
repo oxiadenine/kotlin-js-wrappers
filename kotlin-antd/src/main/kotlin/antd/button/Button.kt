@@ -4,6 +4,7 @@
 package antd.button
 
 import antd.*
+import antd.ReactNode
 import antd.configprovider.SizeType
 import org.w3c.dom.HTMLElement
 import react.*
@@ -17,7 +18,7 @@ external object ButtonComponent : Component<ButtonProps, ButtonState> {
 
 external interface ButtonProps : AnchorButtonProps, NativeButtonProps, RefAttributes<HTMLElement>, RProps
 
-external interface ButtonState : RState {
+external interface ButtonState : State {
     var loading: Any? /* Boolean | ButtonLoading */
     var hasTwoCNChar: Boolean
 }
@@ -45,7 +46,7 @@ external interface BaseButtonProps {
     var ghost: Boolean?
     var danger: Boolean?
     var block: Boolean?
-    var children: ReactNode?
+    var children: Any?
 }
 
 external interface ButtonLoadingProps {

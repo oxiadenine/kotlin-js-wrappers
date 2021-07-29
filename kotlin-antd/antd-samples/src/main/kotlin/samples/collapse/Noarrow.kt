@@ -1,9 +1,11 @@
 package samples.collapse
 
-import antd.collapse.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.collapse.collapse
+import antd.collapse.collapsePanel
+import react.RBuilder
+import react.dom.p
+import styled.css
+import styled.styledDiv
 
 private fun callback(key: Any) {
     console.log(key)

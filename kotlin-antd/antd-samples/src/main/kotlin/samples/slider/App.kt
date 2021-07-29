@@ -1,10 +1,15 @@
 package samples.slider
 
 import kotlinx.css.*
-import kotlinx.css.properties.*
-import react.*
-import react.dom.*
-import styled.*
+import kotlinx.css.properties.LineHeight
+import react.RBuilder
+import react.RComponent
+import react.RProps
+import react.State
+import react.dom.h2
+import styled.StyleSheet
+import styled.css
+import styled.styledDiv
 
 object SliderStyles : StyleSheet("slider", isStatic = true) {
     val container by css {}
@@ -49,7 +54,7 @@ object SliderStyles : StyleSheet("slider", isStatic = true) {
     val showTooltip by css {}
 }
 
-class SliderApp : RComponent<RProps, RState>() {
+class SliderApp : RComponent<RProps, State>() {
     override fun RBuilder.render() {
         h2 { +"Slider" }
         styledDiv {

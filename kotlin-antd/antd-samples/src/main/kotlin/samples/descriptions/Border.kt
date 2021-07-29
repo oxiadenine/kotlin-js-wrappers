@@ -1,10 +1,12 @@
 package samples.descriptions
 
-import antd.badge.*
-import antd.descriptions.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.badge.badge
+import antd.descriptions.descriptions
+import antd.descriptions.descriptionsItem
+import react.RBuilder
+import react.dom.br
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.border() {
     styledDiv {

@@ -1,12 +1,13 @@
 package samples.modal
 
-import antd.*
-import antd.button.*
-import antd.modal.*
-import kotlinext.js.*
-import kotlinx.browser.*
-import react.*
-import styled.*
+import antd.MouseEventHandler
+import antd.button.button
+import antd.modal.ModalComponent
+import kotlinext.js.jsObject
+import kotlinx.browser.window
+import react.RBuilder
+import styled.css
+import styled.styledDiv
 
 private val countDown: MouseEventHandler<Any> = {
     var secondsToGo = 5

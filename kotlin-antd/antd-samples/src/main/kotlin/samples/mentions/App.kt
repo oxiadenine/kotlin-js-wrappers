@@ -1,8 +1,13 @@
 package samples.mentions
 
-import react.*
-import react.dom.*
-import styled.*
+import react.RBuilder
+import react.RComponent
+import react.RProps
+import react.State
+import react.dom.h2
+import styled.StyleSheet
+import styled.css
+import styled.styledDiv
 
 object MentionsStyles : StyleSheet("mentions", isStatic = true) {
     val container by css {}
@@ -13,7 +18,7 @@ object MentionsStyles : StyleSheet("mentions", isStatic = true) {
     val placement by css {}
 }
 
-class MentionsApp : RComponent<RProps, RState>() {
+class MentionsApp : RComponent<RProps, State>() {
     override fun RBuilder.render() {
         h2 { +"Mentions" }
         styledDiv {

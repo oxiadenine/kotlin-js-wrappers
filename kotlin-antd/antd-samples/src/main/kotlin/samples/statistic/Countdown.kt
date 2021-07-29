@@ -1,10 +1,12 @@
 package samples.statistic
 
-import antd.grid.*
-import antd.statistic.*
-import kotlinext.js.*
-import react.*
-import styled.*
+import antd.grid.col
+import antd.grid.row
+import antd.statistic.countdown
+import kotlinext.js.js
+import react.RBuilder
+import styled.css
+import styled.styledDiv
 import kotlin.js.Date
 
 private val decline = Date.now() + 1000 * 60 * 60 * 24 * 2 + 1000 * 30 // Moment is also OK

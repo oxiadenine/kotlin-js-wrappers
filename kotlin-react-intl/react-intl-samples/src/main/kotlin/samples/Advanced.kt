@@ -25,7 +25,7 @@ external interface AdvancedProps : RProps {
     var messages: Any
 }
 
-private val app = functionalComponent<AdvancedProps> { props ->
+private val app = fc<AdvancedProps> { props ->
     intlProvider {
         attrs {
             locale = props.locale
@@ -130,7 +130,9 @@ private val app = functionalComponent<AdvancedProps> { props ->
                     values = js {
                         num = 99
                         bold = fun(chunks: String): ReactElement {
-                            return strong { +chunks }
+                            return buildElement {
+                                strong { +chunks }
+                            }
                         }
                     }
                 }

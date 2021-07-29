@@ -1,11 +1,8 @@
 package antd.result
 
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 
-external object UnauthorizedComponent : Component<UnauthorizedProps, RState> {
+external object UnauthorizedComponent : Component<UnauthorizedProps, State> {
     override fun render(): ReactElement?
 }
 

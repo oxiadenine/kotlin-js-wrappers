@@ -1,10 +1,13 @@
 package samples.statistic
 
-import antd.grid.*
-import antd.icon.*
-import antd.statistic.*
-import react.*
-import styled.*
+import antd.grid.col
+import antd.grid.row
+import antd.icon.likeOutlined
+import antd.statistic.statistic
+import react.RBuilder
+import react.buildElement
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.unit() {
     styledDiv {

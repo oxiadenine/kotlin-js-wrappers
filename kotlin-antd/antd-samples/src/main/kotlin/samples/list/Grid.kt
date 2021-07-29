@@ -1,10 +1,14 @@
 package samples.list
 
-import antd.card.*
-import antd.list.*
-import kotlinext.js.*
-import react.*
-import styled.*
+import antd.card.card
+import antd.list.ListComponent
+import antd.list.list
+import antd.list.listItem
+import kotlinext.js.jsObject
+import react.RBuilder
+import react.buildElement
+import styled.css
+import styled.styledDiv
 
 private external interface GridListDataItem {
     var title: String
@@ -36,10 +40,12 @@ fun RBuilder.grid() {
                 }
                 dataSource = data
                 renderItem = { item, _ ->
-                    listItem {
-                        card {
-                            attrs.title = item.title
-                            +"Card content"
+                    buildElement {
+                        listItem {
+                            card {
+                                attrs.title = item.title
+                                +"Card content"
+                            }
                         }
                     }
                 }

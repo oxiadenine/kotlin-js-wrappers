@@ -7,7 +7,7 @@ import antd.ReactNode
 import react.*
 
 @JsName("default")
-external class ListComponent<T> : Component<ListProps<T>, RState> {
+external class ListComponent<T> : Component<ListProps<T>, State> {
     companion object {
         val Item: ItemComponent
     }
@@ -15,8 +15,8 @@ external class ListComponent<T> : Component<ListProps<T>, RState> {
     override fun render(): ReactElement?
 }
 
-external val listContext: RContext<ListConsumerProps>
-external val listConsumer: RConsumer<ListConsumerProps>
+external val listContext: Context<ListConsumerProps>
+external val listConsumer: Consumer<ListConsumerProps>
 
 external interface ListProps<T> : RProps {
     var bordered: Boolean?

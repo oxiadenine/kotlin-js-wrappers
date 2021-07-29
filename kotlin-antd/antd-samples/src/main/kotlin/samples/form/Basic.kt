@@ -1,12 +1,18 @@
 package samples.form
 
-import antd.button.*
-import antd.checkbox.*
+import antd.button.button
+import antd.checkbox.checkbox
 import antd.form.*
-import antd.input.*
-import kotlinext.js.*
-import react.*
-import styled.*
+import antd.input.input
+import antd.input.password
+import kotlinext.js.js
+import kotlinext.js.jsObject
+import react.RBuilder
+import react.RProps
+import react.child
+import react.fc
+import styled.css
+import styled.styledDiv
 
 private val formLayout = jsObject<FormProps<Any>> {
     labelCol = jsObject { span = 8 }
@@ -20,7 +26,7 @@ private val tailLayout = jsObject<FormItemProps<Any>> {
     }
 }
 
-private val demo = functionalComponent<RProps> {
+private val demo = fc<RProps> {
     val handleFinish = { values: Any ->
         console.log("Success:", values)
     }

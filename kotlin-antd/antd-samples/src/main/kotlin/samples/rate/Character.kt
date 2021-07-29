@@ -1,11 +1,14 @@
 package samples.rate
 
-import antd.icon.*
-import antd.rate.*
-import kotlinext.js.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.icon.heartOutlined
+import antd.rate.rate
+import kotlinext.js.js
+import react.RBuilder
+import react.buildElement
+import react.dom.br
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.character() {
     styledDiv {

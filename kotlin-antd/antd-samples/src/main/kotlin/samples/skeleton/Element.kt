@@ -14,16 +14,12 @@ import antd.space.space
 import antd.switch.switch
 import kotlinext.js.js
 import org.w3c.dom.events.MouseEvent
-import react.RBuilder
-import react.RComponent
-import react.RProps
-import react.RState
+import react.*
 import react.dom.br
-import react.setState
 import styled.css
 import styled.styledDiv
 
-private external interface DemoState : RState {
+private external interface DemoState : State {
     var active: Boolean
     var size: String
     var buttonShape: String

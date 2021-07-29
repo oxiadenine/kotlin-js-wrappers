@@ -1,15 +1,18 @@
 package samples.slider
 
-import antd.slider.*
-import kotlinext.js.*
+import antd.slider.SliderMarks
+import antd.slider.slider
+import kotlinext.js.js
 import kotlinx.css.Float.left
 import kotlinx.css.float
-import kotlinx.css.marginLeft
 import kotlinx.css.height
+import kotlinx.css.marginLeft
 import kotlinx.css.px
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.strong
+import styled.StyleSheet
+import styled.css
+import styled.styledDiv
 
 private object VerticalStyles : StyleSheet("vertical", isStatic = true) {
     val divStyle by css {
@@ -19,7 +22,7 @@ private object VerticalStyles : StyleSheet("vertical", isStatic = true) {
     }
 }
 
-class VerticalDemo : RComponent<RProps, RState>() {
+class VerticalDemo : RComponent<RProps, State>() {
     private val sliderMarks = js {}
 
     init {

@@ -1,18 +1,20 @@
 package samples.pageheader
 
 import antd.button.button
-import antd.grid.*
 import antd.grid.col
-import antd.pageheader.*
-import antd.statistic.*
-import antd.tabs.*
-import antd.tag.*
-import kotlinx.browser.*
-import kotlinx.html.*
+import antd.grid.row
+import antd.pageheader.pageHeader
+import antd.statistic.statistic
+import antd.tabs.tabPane
+import antd.tabs.tabs
+import antd.tag.tag
+import kotlinx.browser.window
+import kotlinx.html.classes
 import react.*
 import react.dom.a
 import react.dom.div
-import styled.*
+import styled.css
+import styled.styledDiv
 
 external interface ActionsDescriptionProps : RProps {
     var term: String
@@ -20,8 +22,8 @@ external interface ActionsDescriptionProps : RProps {
     var span: Number
 }
 
-class ActionsDescription : RComponent<ActionsDescriptionProps, RState>() {
-    override fun RState.init(props: ActionsDescriptionProps) {
+class ActionsDescription : RComponent<ActionsDescriptionProps, State>() {
+    override fun State.init(props: ActionsDescriptionProps) {
         props.span = 12
     }
 

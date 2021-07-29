@@ -1,8 +1,8 @@
 package antd.grid
 
-import react.RContext
+import react.Context
 
-external val rowContext: RContext<RowContextState>
+external val rowContext: Context<RowContextState>
 
 external interface RowContextState {
     var gutter: Array<Number>?

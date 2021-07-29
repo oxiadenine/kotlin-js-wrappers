@@ -1,12 +1,15 @@
 package samples.typography
 
-import antd.typography.*
-import kotlinext.js.*
+import antd.typography.CopyConfig
+import antd.typography.EditConfig
+import antd.typography.typographyParagraph
+import kotlinext.js.jsObject
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
-external interface InteractiveDemoState : RState {
+external interface InteractiveDemoState : State {
     var str: String
 }
 

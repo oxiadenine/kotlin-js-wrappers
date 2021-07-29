@@ -1,8 +1,6 @@
 package antd.transfer
 
-import react.Component
-import react.RState
-import react.ReactElement
+import react.*
 
 external class ListBodyComponent<RecordType : KeyWiseTransferItem> : Component<TransferListBodyProps<RecordType>, TransferListBodyState> {
     override fun render(): ReactElement?
@@ -14,6 +12,6 @@ external interface TransferListBodyProps<RecordType> : PartialTransferListProps<
     var selectedKeys: Array<String>
 }
 
-external interface TransferListBodyState : RState {
+external interface TransferListBodyState : State {
     var current: Number
 }

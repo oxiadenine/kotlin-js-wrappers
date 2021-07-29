@@ -1,9 +1,15 @@
 package samples.inputnumber
 
-import kotlinx.css.*
-import react.*
-import react.dom.*
-import styled.*
+import kotlinx.css.marginRight
+import kotlinx.css.px
+import react.RBuilder
+import react.RComponent
+import react.RProps
+import react.State
+import react.dom.h2
+import styled.StyleSheet
+import styled.css
+import styled.styledDiv
 
 object InputNumberStyles : StyleSheet("input-number", isStatic = true) {
     val container by css {}
@@ -18,7 +24,7 @@ object InputNumberStyles : StyleSheet("input-number", isStatic = true) {
     val digit by css {}
 }
 
-class InputNumberApp : RComponent<RProps, RState>() {
+class InputNumberApp : RComponent<RProps, State>() {
     override fun RBuilder.render() {
         h2 { +"InputNumber" }
         styledDiv {

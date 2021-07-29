@@ -1,10 +1,11 @@
 package samples.tooltip
 
 import antd.button.button
-import antd.tooltip.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.tooltip.tooltip
+import react.RBuilder
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.arrowPointAtCenter() {
     styledDiv {

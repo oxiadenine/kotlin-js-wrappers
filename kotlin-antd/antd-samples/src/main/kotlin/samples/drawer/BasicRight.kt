@@ -1,14 +1,16 @@
 package samples.drawer
 
-import antd.*
+import antd.MouseEventHandler
 import antd.button.button
-import antd.drawer.*
+import antd.drawer.EventType
+import antd.drawer.drawer
 import react.*
 import react.dom.div
 import react.dom.p
-import styled.*
+import styled.css
+import styled.styledDiv
 
-external interface BasicRightAppState : RState {
+external interface BasicRightAppState : State {
     var visible: Boolean
 }
 

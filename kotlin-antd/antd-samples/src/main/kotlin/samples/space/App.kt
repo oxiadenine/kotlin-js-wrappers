@@ -1,25 +1,11 @@
 package samples.space
 
-import kotlinx.css.Align
-import kotlinx.css.BorderStyle
-import kotlinx.css.Color
-import kotlinx.css.Display
-import kotlinx.css.FlexBasis
-import kotlinx.css.FlexWrap
-import kotlinx.css.alignItems
-import kotlinx.css.background
-import kotlinx.css.display
-import kotlinx.css.flex
-import kotlinx.css.flexWrap
-import kotlinx.css.margin
-import kotlinx.css.padding
+import kotlinx.css.*
 import kotlinx.css.properties.border
-import kotlinx.css.px
-import kotlinx.css.rgba
 import react.RBuilder
 import react.RComponent
 import react.RProps
-import react.RState
+import react.State
 import react.dom.h2
 import styled.StyleSheet
 import styled.css
@@ -52,7 +38,7 @@ object SpaceStyles : StyleSheet("space", isStatic = true) {
     val vertical by css {}
 }
 
-class SpaceApp : RComponent<RProps, RState>() {
+class SpaceApp : RComponent<RProps, State>() {
     override fun RBuilder.render() {
         h2 { +"Space" }
         styledDiv {

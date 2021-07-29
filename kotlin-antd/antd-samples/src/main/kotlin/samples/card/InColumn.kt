@@ -1,12 +1,13 @@
 package samples.card
 
-import antd.card.*
-import antd.grid.*
+import antd.card.card
 import antd.grid.col
+import antd.grid.row
 import kotlinx.css.background
 import kotlinx.css.padding
-import react.*
-import styled.*
+import react.RBuilder
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.inColumn() {
     styledDiv {

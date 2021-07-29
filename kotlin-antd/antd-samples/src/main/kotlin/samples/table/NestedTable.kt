@@ -1,15 +1,21 @@
 package samples.table
 
-import antd.badge.*
-import antd.dropdown.*
-import antd.icon.*
-import antd.menu.*
-import antd.table.*
-import kotlinext.js.*
-import kotlinx.html.*
+import antd.badge.badge
+import antd.dropdown.dropdown
+import antd.icon.downOutlined
+import antd.menu.menu
+import antd.menu.menuItem
+import antd.table.ColumnType
+import antd.table.ColumnsType
+import antd.table.TableComponent
+import antd.table.table
+import kotlinext.js.jsObject
+import kotlinx.html.classes
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.a
+import react.dom.span
+import styled.css
+import styled.styledDiv
 
 private external interface NestedTableNestedTableDataItem {
     var key: String
@@ -35,7 +41,7 @@ private val menu = buildElement {
     }
 }
 
-class NestedTableApp : RComponent<RProps, RState>() {
+class NestedTableApp : RComponent<RProps, State>() {
     private val expandRowRender: (Any, Number, Number, Boolean) -> ReactElement = { _, _, _, _ ->
         val tableColumns = arrayOf<ColumnType<NestedTableNestedTableDataItem>>(
             jsObject {

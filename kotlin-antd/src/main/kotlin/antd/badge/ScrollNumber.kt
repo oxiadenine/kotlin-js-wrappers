@@ -2,7 +2,7 @@ package antd.badge
 
 import react.*
 
-external object ScrollNumberComponent : Component<ScrollNumberProps, RState> {
+external object ScrollNumberComponent : Component<ScrollNumberProps, State> {
     override fun render(): ReactElement?
 }
 

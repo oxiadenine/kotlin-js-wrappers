@@ -1,10 +1,16 @@
 package samples.pageheader
 
 import kotlinx.css.*
-import kotlinx.css.properties.*
-import react.*
-import react.dom.*
-import styled.*
+import kotlinx.css.properties.LineHeight
+import kotlinx.css.properties.border
+import react.RBuilder
+import react.RComponent
+import react.RProps
+import react.State
+import react.dom.h2
+import styled.StyleSheet
+import styled.css
+import styled.styledDiv
 
 object PageHeaderStyles : StyleSheet("page-header", isStatic = true) {
     val container by css {
@@ -80,7 +86,7 @@ object PageHeaderStyles : StyleSheet("page-header", isStatic = true) {
     }
 }
 
-class PageHeaderApp : RComponent<RProps, RState>() {
+class PageHeaderApp : RComponent<RProps, State>() {
     override fun RBuilder.render() {
         h2 { +"PageHeader" }
         styledDiv {

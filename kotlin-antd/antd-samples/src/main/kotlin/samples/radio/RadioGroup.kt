@@ -1,10 +1,13 @@
 package samples.radio
 
-import antd.radio.*
+import antd.radio.RadioChangeEvent
+import antd.radio.radio
+import antd.radio.radioGroup
 import react.*
-import styled.*
+import styled.css
+import styled.styledDiv
 
-external interface RadioGroupAppState : RState {
+external interface RadioGroupAppState : State {
     var value: Any
 }
 

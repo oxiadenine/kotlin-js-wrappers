@@ -1,14 +1,17 @@
 package samples.skeleton
 
-import antd.*
+import antd.MouseEventHandler
 import antd.button.button
-import antd.skeleton.*
-import kotlinx.browser.*
+import antd.skeleton.skeleton
+import kotlinx.browser.window
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.div
+import react.dom.h4
+import react.dom.p
+import styled.css
+import styled.styledDiv
 
-external interface ChildrenDemoState : RState {
+external interface ChildrenDemoState : State {
     var loading: Boolean
 }
 

@@ -1,11 +1,13 @@
 package samples.select
 
-import antd.select.*
+import antd.select.SelectComponent
 import antd.select.option
-import kotlinext.js.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.select.select
+import kotlinext.js.js
+import react.RBuilder
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.bordered() {
     styledDiv {

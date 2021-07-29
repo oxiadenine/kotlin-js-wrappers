@@ -3,14 +3,14 @@
 
 package antd.configprovider
 
-import antd.ReactNode
 import antd.form.*
 import antd.localeprovider.*
+import antd.ReactNode
 import org.w3c.dom.*
 import react.*
 
 @JsName("default")
-external object ConfigProviderComponent : Component<ConfigProviderProps, RState> {
+external object ConfigProviderComponent : Component<ConfigProviderProps, State> {
     override fun render(): ReactElement?
 }
 

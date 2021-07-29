@@ -1,13 +1,18 @@
 package samples.table
 
-import antd.divider.*
-import antd.table.*
-import antd.tag.*
-import kotlinext.js.*
+import antd.divider.divider
+import antd.table.ColumnType
+import antd.table.ColumnsType
+import antd.table.TableComponent
+import antd.table.table
+import antd.tag.tag
+import kotlinext.js.jsObject
 import react.RBuilder
 import react.buildElement
-import react.dom.*
-import styled.*
+import react.dom.a
+import react.dom.span
+import styled.css
+import styled.styledDiv
 
 private external interface BasicTableDataItem {
     var key: String

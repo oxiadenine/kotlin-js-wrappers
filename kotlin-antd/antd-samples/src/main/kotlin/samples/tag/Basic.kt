@@ -1,11 +1,13 @@
 package samples.tag
 
 import antd.MouseEvent
-import antd.tag.*
+import antd.tag.tag
 import org.w3c.dom.HTMLElement
-import react.*
-import react.dom.*
-import styled.*
+import react.RBuilder
+import react.dom.a
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 private fun log(e: MouseEvent<HTMLElement>) {
     console.log(e)

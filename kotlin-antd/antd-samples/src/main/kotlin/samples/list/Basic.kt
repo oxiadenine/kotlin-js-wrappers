@@ -1,11 +1,16 @@
 package samples.list
 
-import antd.avatar.*
-import antd.list.*
-import kotlinext.js.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.avatar.avatar
+import antd.list.ListComponent
+import antd.list.list
+import antd.list.listItem
+import antd.list.listItemMeta
+import kotlinext.js.jsObject
+import react.RBuilder
+import react.buildElement
+import react.dom.a
+import styled.css
+import styled.styledDiv
 
 private external interface BasicListDataItem {
     var title: String
@@ -34,21 +39,23 @@ fun RBuilder.basic() {
                 itemLayout = "horizontal"
                 dataSource = data
                 renderItem = { item, _ ->
-                    listItem {
-                        listItemMeta {
-                            attrs {
-                                avatar = buildElement {
-                                    avatar {
-                                        attrs.src = "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+                    buildElement {
+                        listItem {
+                            listItemMeta {
+                                attrs {
+                                    avatar = buildElement {
+                                        avatar {
+                                            attrs.src = "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+                                        }
                                     }
-                                }
-                                title = buildElement {
-                                    a {
-                                        attrs.href = "https://ant.design"
-                                        +item.title
+                                    title = buildElement {
+                                        a {
+                                            attrs.href = "https://ant.design"
+                                            +item.title
+                                        }
                                     }
+                                    description = "Ant Design, a design language for background applications, is refined by Ant UED Team"
                                 }
-                                description = "Ant Design, a design language for background applications, is refined by Ant UED Team"
                             }
                         }
                     }

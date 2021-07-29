@@ -1,14 +1,9 @@
 package antd.badge
 
 import antd.ReactNode
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 
-external object RibbonComponent : Component<RibbonProps, RState> {
-    override fun render(): ReactElement?
-}
+external interface RibbonComponent : ComponentType<RibbonProps>
 
 external interface RibbonProps : RProps {
     var className: String?

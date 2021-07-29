@@ -3,8 +3,9 @@ package samples.progress
 import antd.progress.progress
 import kotlinx.css.px
 import kotlinx.css.width
-import react.*
-import styled.*
+import react.RBuilder
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.lineMini() {
     styledDiv {

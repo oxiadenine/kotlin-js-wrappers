@@ -1,9 +1,10 @@
 package samples.slider
 
-import antd.slider.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.slider.slider
+import react.RBuilder
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 private fun handleChange(value: Array<Number>) {
     console.log("onChange: ", value)

@@ -1,10 +1,16 @@
 package samples.select
 
-import antd.select.*
-import antd.tag.*
-import kotlinext.js.*
-import react.*
-import styled.*
+import antd.select.CustomTagProps
+import antd.select.OptionData
+import antd.select.SelectComponent
+import antd.select.select
+import antd.tag.tag
+import kotlinext.js.js
+import kotlinext.js.jsObject
+import react.RBuilder
+import react.buildElement
+import styled.css
+import styled.styledDiv
 
 private val selectOptions = arrayOf<OptionData>(
     jsObject { value = "gold" },

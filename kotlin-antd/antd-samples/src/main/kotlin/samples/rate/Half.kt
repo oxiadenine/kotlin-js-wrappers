@@ -1,8 +1,9 @@
 package samples.rate
 
-import antd.rate.*
-import react.*
-import styled.*
+import antd.rate.rate
+import react.RBuilder
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.half() {
     styledDiv {

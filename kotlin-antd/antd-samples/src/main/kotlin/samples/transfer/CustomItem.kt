@@ -1,18 +1,23 @@
 package samples.transfer
 
-import antd.*
-import antd.transfer.*
-import kotlinext.js.*
+import antd.MouseEvent
+import antd.MouseEventHandler
+import antd.transfer.TransferComponent
+import antd.transfer.TransferItem
+import antd.transfer.transfer
+import kotlinext.js.js
+import kotlinext.js.jsObject
 import react.*
-import react.dom.*
-import styled.*
-import kotlin.random.*
+import react.dom.span
+import styled.css
+import styled.styledDiv
+import kotlin.random.Random
 
 external interface CustomItemTransferItem : TransferItem {
     var chosen: Boolean
 }
 
-external interface CustomItemAppState : RState {
+external interface CustomItemAppState : State {
     var mockData: Array<TransferItem>
     var targetKeys: Array<String>
 }

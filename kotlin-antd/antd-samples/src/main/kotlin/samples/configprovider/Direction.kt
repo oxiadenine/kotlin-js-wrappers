@@ -1,37 +1,49 @@
 package samples.configprovider
 
-import antd.*
-import antd.badge.*
-import antd.button.*
+import antd.MouseEvent
+import antd.MouseEventHandler
+import antd.badge.badge
 import antd.button.button
-import antd.cascader.*
-import antd.configprovider.*
-import antd.divider.*
+import antd.button.buttonGroup
+import antd.cascader.CascaderOptionType
+import antd.cascader.CascaderValueType
+import antd.cascader.cascader
+import antd.configprovider.configProvider
+import antd.divider.divider
 import antd.grid.col
-import antd.grid.*
+import antd.grid.row
 import antd.icon.*
-import antd.input.*
 import antd.input.input
-import antd.inputnumber.*
-import antd.modal.*
-import antd.pagination.*
-import antd.radio.*
-import antd.rate.*
-import antd.select.*
+import antd.input.inputGroup
+import antd.input.search
+import antd.inputnumber.inputNumber
+import antd.modal.modal
+import antd.pagination.pagination
+import antd.radio.RadioChangeEvent
+import antd.radio.radioButton
+import antd.radio.radioGroup
+import antd.rate.rate
+import antd.select.SelectComponent
 import antd.select.option
-import antd.steps.*
-import antd.switch.*
-import antd.tree.*
-import antd.treeselect.*
+import antd.select.select
+import antd.steps.step
+import antd.steps.steps
+import antd.switch.switch
+import antd.tree.tree
+import antd.treeselect.TreeSelectComponent
 import antd.treeselect.treeNode
-import kotlinext.js.*
+import antd.treeselect.treeSelect
+import kotlinext.js.js
+import kotlinext.js.jsObject
 import kotlinx.css.*
-import kotlinx.html.*
-import org.w3c.dom.*
+import kotlinx.html.classes
+import org.w3c.dom.HTMLElement
 import react.*
 import react.dom.*
-import react.dom.br
-import styled.*
+import styled.css
+import styled.styledB
+import styled.styledDiv
+import styled.styledSpan
 
 private val cascaderOptions = arrayOf<CascaderOptionType>(
     jsObject {
@@ -76,7 +88,7 @@ external interface DirectionPageProps : RProps {
     var popupPlacement: String
 }
 
-external interface DirectionPageState : RState {
+external interface DirectionPageState : State {
     var currentStep: Number
     var modalVisible: Boolean
     var badgeCount: Number
@@ -933,7 +945,7 @@ class DirectionPage : RComponent<DirectionPageProps, DirectionPageState>() {
 
 fun RBuilder.directionPage(handler: RHandler<DirectionPageProps>) = child(DirectionPage::class, handler)
 
-external interface DirectionAppState : RState {
+external interface DirectionAppState : State {
     var direction: String
     var popupPlacement: String
 }

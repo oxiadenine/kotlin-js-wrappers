@@ -1,11 +1,17 @@
 package samples.button
 
-import antd.button.*
 import antd.button.button
-import antd.icon.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.button.buttonGroup
+import antd.icon.cloudDownloadOutlined
+import antd.icon.cloudOutlined
+import antd.icon.leftOutlined
+import antd.icon.rightOutlined
+import react.RBuilder
+import react.buildElement
+import react.dom.div
+import react.dom.h4
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.buttonGroup() {
     styledDiv {

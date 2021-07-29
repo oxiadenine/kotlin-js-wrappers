@@ -1,16 +1,14 @@
 package antd.datepicker
 
 import antd.FocusEventHandler
-import antd.ReactNode
 import antd.configprovider.SizeType
+import antd.ReactNode
 import kotlinext.js.Record
 import moment.Moment
 import org.w3c.dom.*
 import react.*
 
-external object RangePickerComponent : Component<RangePickerProps, RState> {
-    override fun render(): ReactElement?
-}
+external interface RangePickerComponent : ComponentType<RangePickerProps>
 
 external interface RangePickerProps : RangePickerBaseProps<Moment>, RangePickerDateProps<Moment>, RangePickerTimeProps<Moment>, RProps
 

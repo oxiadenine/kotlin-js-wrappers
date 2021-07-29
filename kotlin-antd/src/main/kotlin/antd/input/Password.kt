@@ -1,12 +1,10 @@
 package antd.input
 
-import antd.ReactNode
 import antd.RefAttributes
+import antd.ReactNode
 import react.*
 
-external object PasswordComponent : Component<PasswordProps, RState> {
-    override fun render(): ReactElement?
-}
+external interface PasswordComponent : ComponentType<PasswordProps>
 
 external interface PasswordProps : InputProps, RefAttributes<dynamic> {
     val inputPrefixCls: String?

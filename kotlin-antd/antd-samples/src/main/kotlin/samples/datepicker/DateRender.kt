@@ -1,13 +1,16 @@
 package samples.datepicker
 
-import antd.datepicker.*
+import antd.datepicker.datePicker
+import antd.datepicker.rangePicker
 import kotlinx.css.*
 import kotlinx.css.properties.border
-import kotlinx.html.*
+import kotlinx.html.classes
 import moment.Moment
-import react.*
-import react.dom.*
-import styled.*
+import react.RBuilder
+import react.dom.br
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.dateRender() {
     styledDiv {

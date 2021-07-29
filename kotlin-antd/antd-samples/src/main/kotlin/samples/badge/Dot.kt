@@ -1,10 +1,12 @@
 package samples.badge
 
-import antd.badge.*
-import antd.icon.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.badge.badge
+import antd.icon.notificationOutlined
+import react.RBuilder
+import react.dom.a
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.dot() {
     styledDiv {

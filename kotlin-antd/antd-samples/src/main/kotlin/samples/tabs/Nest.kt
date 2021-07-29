@@ -1,18 +1,21 @@
 package samples.tabs
 
-import antd.select.*
+import antd.select.SelectComponent
 import antd.select.option
-import antd.tabs.*
-import kotlinext.js.*
+import antd.select.select
+import antd.tabs.tabPane
+import antd.tabs.tabs
+import kotlinext.js.js
 import react.*
 import react.dom.div
-import styled.*
+import styled.css
+import styled.styledDiv
 
 private val positionList = arrayOf("left", "right", "top", "bottom")
 
 private val list = (0..20).mapIndexed { index, _ -> index }.toTypedArray()
 
-external interface NestDemoState : RState {
+external interface NestDemoState : State {
     var parentPos: String?
     var childPos: String?
     var parenType: String?

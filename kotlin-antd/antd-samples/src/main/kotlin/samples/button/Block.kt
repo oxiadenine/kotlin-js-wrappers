@@ -1,9 +1,10 @@
 package samples.button
 
 import antd.button.button
-import react.*
-import react.dom.*
-import styled.*
+import react.RBuilder
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.block() {
     styledDiv {

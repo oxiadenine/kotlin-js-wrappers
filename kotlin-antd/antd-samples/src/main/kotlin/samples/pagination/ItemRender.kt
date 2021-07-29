@@ -1,9 +1,12 @@
 package samples.pagination
 
-import antd.pagination.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.pagination.pagination
+import react.RBuilder
+import react.ReactElement
+import react.buildElement
+import react.dom.a
+import styled.css
+import styled.styledDiv
 
 private val handleItemRender = { _: Number, type: String, element: ReactElement ->
     if (type == "prev") {

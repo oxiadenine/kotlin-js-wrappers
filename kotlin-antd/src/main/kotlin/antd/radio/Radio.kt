@@ -9,7 +9,7 @@ import org.w3c.dom.events.*
 import react.*
 
 @JsName("default")
-external object RadioComponent : Component<RadioProps, RState> {
+external object RadioComponent : Component<RadioProps, State> {
     val Group: RadioGroupComponent
     val Button: RadioButtonComponent
 

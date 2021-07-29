@@ -3,7 +3,7 @@ package antd.localeprovider
 import antd.ReactNode
 import react.*
 
-external object LocaleReceiverComponent : Component<LocaleReceiverProps, RState> {
+external object LocaleReceiverComponent : Component<LocaleReceiverProps, State> {
     override fun render(): ReactElement?
 }
 

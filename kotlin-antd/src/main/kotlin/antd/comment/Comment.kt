@@ -7,7 +7,7 @@ import antd.ReactNode
 import react.*
 
 @JsName("default")
-external object CommentComponent : Component<CommentProps, RState> {
+external object CommentComponent : Component<CommentProps, State> {
     override fun render(): ReactElement?
 }
 

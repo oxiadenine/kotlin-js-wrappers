@@ -3,9 +3,7 @@ package antd.anchor
 import antd.ReactNode
 import react.*
 
-external object AnchorLinkComponent : Component<AnchorLinkProps, RState> {
-    override fun render(): ReactElement?
-}
+external interface AnchorLinkComponent : ComponentType<AnchorLinkProps>
 
 external interface AnchorLinkProps : RProps {
     var prefixCls: String?

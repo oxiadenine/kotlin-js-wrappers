@@ -1,10 +1,10 @@
 package antd.progress
 
-import antd.ReactNode
 import antd.configprovider.DirectionType
+import antd.ReactNode
 import react.*
 
-external object LineComponent : Component<LineProps, RState> {
+external object LineComponent : Component<LineProps, State> {
     override fun render(): ReactElement?
 }
 

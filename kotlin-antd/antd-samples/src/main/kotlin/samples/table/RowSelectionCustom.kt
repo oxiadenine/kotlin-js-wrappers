@@ -2,9 +2,10 @@ package samples.table
 
 import antd.Key
 import antd.table.*
-import kotlinext.js.*
+import kotlinext.js.jsObject
 import react.*
-import styled.*
+import styled.css
+import styled.styledDiv
 
 private external interface RowSelectionCustomTableDataItem {
     var key: String
@@ -37,7 +38,7 @@ private val tableData = (0..46).map { i ->
     }
 }.toTypedArray()
 
-external interface RowSelectionCustomAppState : RState {
+external interface RowSelectionCustomAppState : State {
     var selectedRowKeys: Array<Key>
 }
 

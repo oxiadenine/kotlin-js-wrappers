@@ -1,16 +1,19 @@
 package samples.comment
 
-import antd.avatar.*
-import antd.comment.*
+import antd.avatar.avatar
+import antd.comment.comment
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.a
+import react.dom.p
+import react.dom.span
+import styled.css
+import styled.styledDiv
 
 external interface ExampleCommentProps : RProps {
     var children: ReactElement
 }
 
-class ExampleComment : RComponent<ExampleCommentProps, RState>() {
+class ExampleComment : RComponent<ExampleCommentProps, State>() {
     override fun RBuilder.render() {
         comment {
             attrs {

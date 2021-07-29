@@ -1,11 +1,8 @@
 package antd.empty
 
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 
-external object SimpleComponent : Component<SimpleProps, RState> {
+external object SimpleComponent : Component<SimpleProps, State> {
     override fun render(): ReactElement?
 }
 

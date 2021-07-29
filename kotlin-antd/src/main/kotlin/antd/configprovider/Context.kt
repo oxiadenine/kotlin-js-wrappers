@@ -5,10 +5,10 @@ import antd.localeprovider.*
 import org.w3c.dom.*
 import react.*
 
-external val configContext: RContext<ConfigConsumerProps>
-external val configConsumer: RConsumer<ConfigConsumerProps>
+external val configContext: Context<ConfigConsumerProps>
+external val configConsumer: Consumer<ConfigConsumerProps>
 
-external fun <ExportProps : BasicExportProps> withConfigConsumer(config: ConsumerConfig): (component: IReactComponent<RProps>) -> Component<ExportProps, RState>
+external fun <ExportProps : BasicExportProps> withConfigConsumer(config: ConsumerConfig): (component: IReactComponent<RProps>) -> Component<ExportProps, State>
 
 external interface ConfigConsumerProps {
     var getTargetContainer: (() -> HTMLElement)?

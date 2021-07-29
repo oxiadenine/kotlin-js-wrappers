@@ -33,7 +33,7 @@ private val formItemLayout = jsObject<FormItemProps<Any>> {
     wrapperCol = jsObject { span = 12 }
 }
 
-private val rawForm = functionalComponent<RProps> {
+private val rawForm = fc<RProps> {
     val (number, setNumber) = useState(jsObject<PrimeNumber> { value = 11 })
 
     val tips = "A prime is a natural number greater than 1 that has no positive divisors other than 1 and itself."
@@ -41,7 +41,7 @@ private val rawForm = functionalComponent<RProps> {
     val handleNumberChange: ChangeEventHandler<HTMLInputElement> = { inputValue ->
         val validation = validatePrimeNumber(inputValue.unsafeCast<Number>())
 
-        setNumber(jsObject {
+        setNumber(jsObject<PrimeNumber> {
             validateStatus = validation.validateStatus
             errorMsg = validation.errorMsg
             value = inputValue.unsafeCast<Number>()

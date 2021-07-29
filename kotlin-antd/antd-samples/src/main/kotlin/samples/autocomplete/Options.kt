@@ -1,12 +1,13 @@
 package samples.autocomplete
 
-import antd.autocomplete.*
-import antd.select.*
-import kotlinext.js.*
+import antd.autocomplete.autoComplete
+import antd.select.option
+import kotlinext.js.js
 import react.*
-import styled.*
+import styled.css
+import styled.styledDiv
 
-external interface OptionsCompleteState : RState {
+external interface OptionsCompleteState : State {
     var result: Array<String>
 }
 

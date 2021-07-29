@@ -1,12 +1,10 @@
 package antd.avatar
 
-import react.RClass
-import react.RContext
-import react.RProps
+import react.*
 
-external val sizeContextProvider: RClass<SizeContextProps>
+external val sizeContextProvider: ComponentClass<SizeContextProps>
 
-external val sizeContext: RContext<AvatarSize>
+external val sizeContext: Context<AvatarSize>
 
 external interface SizeContextProps : RProps {
     var size: AvatarSize?

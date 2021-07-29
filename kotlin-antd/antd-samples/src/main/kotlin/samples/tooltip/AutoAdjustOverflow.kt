@@ -1,12 +1,14 @@
 package samples.tooltip
 
 import antd.button.button
-import antd.tooltip.*
+import antd.tooltip.tooltip
 import kotlinx.css.*
 import kotlinx.css.properties.border
-import org.w3c.dom.*
-import react.*
-import styled.*
+import org.w3c.dom.HTMLElement
+import react.RBuilder
+import styled.StyleSheet
+import styled.css
+import styled.styledDiv
 
 private object AutoAdjustOverflowStyles : StyleSheet("auto-adjust-overflow", isStatic = true) {
     val wrapStyle by css {

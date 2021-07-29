@@ -2,9 +2,9 @@ package antd.configprovider
 
 import react.*
 
-external val sizeContext: RContext<SizeType>
+external val sizeContext: Context<SizeType>
 
-external object SizeContextProvider : Component<SizeContextProps, RState> {
+external object SizeContextProvider : Component<SizeContextProps, State> {
     override fun render(): ReactElement?
 }
 

@@ -1,13 +1,16 @@
 package samples.menu
 
-import antd.icon.*
+import antd.icon.appstoreOutlined
+import antd.icon.mailOutlined
+import antd.icon.settingOutlined
 import antd.menu.*
-import kotlinext.js.*
+import kotlinext.js.js
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.span
+import styled.css
+import styled.styledDiv
 
-class InlineSider : RComponent<RProps, RState>() {
+class InlineSider : RComponent<RProps, State>() {
     private val handleClick: MenuClickEventHandler = { info ->
         console.log("click ", info)
     }

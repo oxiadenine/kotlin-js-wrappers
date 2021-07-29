@@ -3,9 +3,7 @@ package antd.tabs
 import antd.ReactNode
 import react.*
 
-external object TabPaneComponent : Component<TabPaneProps, RState> {
-    override fun render(): ReactElement?
-}
+external interface TabPaneComponent : ComponentType<TabPaneProps>
 
 external interface TabPaneProps : RProps {
     var tab: ReactNode?

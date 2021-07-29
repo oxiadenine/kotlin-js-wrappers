@@ -4,9 +4,7 @@ import antd.MouseEvent
 import org.w3c.dom.HTMLSpanElement
 import react.*
 
-external object CheckableTagComponent : Component<CheckableTagProps, RState> {
-    override fun render(): ReactElement?
-}
+external interface CheckableTagComponent : ComponentType<CheckableTagProps>
 
 external interface CheckableTagProps : RProps {
     var prefixCls: String?

@@ -7,7 +7,7 @@ import antd.*
 import react.*
 
 @JsName("default")
-external class IconComponent : Component<IconProps, RState> {
+external class IconComponent : Component<IconProps, State> {
     val getTwoToneColor: () -> TwoToneColor
     val setTwoToneColor: (twoToneColor: TwoToneColor) -> Unit
 

@@ -1,14 +1,10 @@
 package samples.table
 
-import antd.table.ColumnType
-import antd.table.ColumnsType
-import antd.table.TableComponent
-import antd.table.table
-import antd.table.tableSummaryCell
-import antd.table.tableSummaryRow
+import antd.table.*
 import antd.typography.typographyText
 import kotlinext.js.jsObject
 import react.RBuilder
+import react.buildElement
 import react.dom.br
 import styled.css
 import styled.styledDiv
@@ -99,33 +95,35 @@ fun RBuilder.summary() {
                 pagination = false
                 bordered = true
                 summary = { pageData ->
-                    var totalBorrow = 0
-                    var totalRepayment = 0
+                    buildElement {
+                        var totalBorrow = 0
+                        var totalRepayment = 0
 
-                    pageData.forEach { dataItem ->
-                        totalBorrow += dataItem.borrow.toInt()
-                        totalRepayment += dataItem.repayment.toInt()
-                    }
+                        pageData.forEach { dataItem ->
+                            totalBorrow += dataItem.borrow.toInt()
+                            totalRepayment += dataItem.repayment.toInt()
+                        }
 
-                    tableSummaryRow {
-                        tableSummaryCell { +"Total" }
-                        tableSummaryCell {
-                            typographyText {
-                                attrs.type = "danger"
-                                +"$totalBorrow"
+                        tableSummaryRow {
+                            tableSummaryCell { +"Total" }
+                            tableSummaryCell {
+                                typographyText {
+                                    attrs.type = "danger"
+                                    +"$totalBorrow"
+                                }
+                            }
+                            tableSummaryCell {
+                                typographyText { +"$totalRepayment" }
                             }
                         }
-                        tableSummaryCell {
-                            typographyText { +"$totalRepayment" }
-                        }
-                    }
-                    tableSummaryRow {
-                        tableSummaryCell { +"Balance" }
-                        tableSummaryCell {
-                            attrs.colSpan = 2
-                            typographyText {
-                                attrs.type = "danger"
-                                +"${totalBorrow - totalRepayment}"
+                        tableSummaryRow {
+                            tableSummaryCell { +"Balance" }
+                            tableSummaryCell {
+                                attrs.colSpan = 2
+                                typographyText {
+                                    attrs.type = "danger"
+                                    +"${totalBorrow - totalRepayment}"
+                                }
                             }
                         }
                     }
@@ -141,14 +139,16 @@ fun RBuilder.summary() {
                 scroll = jsObject { x = 2000 }
                 bordered = true
                 summary = {
-                    tableSummaryRow {
-                        tableSummaryCell {
-                            attrs.index = 0
-                            +"Summary"
-                        }
-                        tableSummaryCell {
-                            attrs.index = 1
-                            +"This is a summary content"
+                    buildElement {
+                        tableSummaryRow {
+                            tableSummaryCell {
+                                attrs.index = 0
+                                +"Summary"
+                            }
+                            tableSummaryCell {
+                                attrs.index = 1
+                                +"This is a summary content"
+                            }
                         }
                     }
                 }

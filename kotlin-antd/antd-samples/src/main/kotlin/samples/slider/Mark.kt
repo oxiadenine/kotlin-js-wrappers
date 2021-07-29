@@ -1,12 +1,16 @@
 package samples.slider
 
-import antd.slider.*
-import kotlinext.js.*
+import antd.slider.SliderMarks
+import antd.slider.slider
+import kotlinext.js.js
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.div
+import react.dom.h4
+import react.dom.strong
+import styled.css
+import styled.styledDiv
 
-class MarkDemo : RComponent<RProps, RState>() {
+class MarkDemo : RComponent<RProps, State>() {
     private val sliderMarks = js {}
 
     init {

@@ -1,15 +1,17 @@
 package samples.radio
 
-import antd.*
+import antd.MouseEventHandler
 import antd.button.button
-import antd.radio.*
+import antd.radio.radio
 import kotlinx.css.marginTop
 import kotlinx.css.px
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.br
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
-external interface DisabledAppState : RState {
+external interface DisabledAppState : State {
     var disabled: Boolean
 }
 

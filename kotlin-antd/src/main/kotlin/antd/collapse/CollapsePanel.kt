@@ -3,9 +3,7 @@ package antd.collapse
 import antd.ReactNode
 import react.*
 
-external object CollapsePanelComponent : Component<CollapsePanelProps, RState> {
-    override fun render(): ReactElement?
-}
+external interface CollapsePanelComponent : ComponentType<CollapsePanelProps>
 
 external interface CollapsePanelProps : RProps {
     var key: Any /* String | Number */

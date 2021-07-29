@@ -1,11 +1,12 @@
 package samples.tag
 
-import antd.tag.*
+import antd.tag.checkableTag
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
-external interface MyTagState : RState {
+external interface MyTagState : State {
     var checked: Boolean
 }
 

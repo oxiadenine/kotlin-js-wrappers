@@ -1,10 +1,12 @@
 package samples.input
 
-import antd.input.*
-import kotlinext.js.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.input.search
+import kotlinext.js.js
+import react.RBuilder
+import react.dom.br
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.searchInput() {
     styledDiv {

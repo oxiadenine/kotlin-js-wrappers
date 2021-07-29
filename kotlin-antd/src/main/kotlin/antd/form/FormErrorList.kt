@@ -3,9 +3,7 @@ package antd.form
 import antd.ReactNode
 import react.*
 
-external object FormErrorListComponent : Component<FormErrorListProps, RState> {
-    override fun render(): ReactElement?
-}
+external interface FormErrorListComponent : ComponentType<FormErrorListProps>
 
 external interface FormErrorListProps : RProps {
     var errors: Array<ReactNode>?

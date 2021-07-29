@@ -1,11 +1,13 @@
 package samples.mentions
 
-import antd.mentions.*
-import kotlinext.js.*
+import antd.mentions.mentions
+import antd.mentions.option
+import kotlinext.js.js
 import react.*
-import styled.*
+import styled.css
+import styled.styledDiv
 
-external interface PrefixAppState : RState {
+external interface PrefixAppState : State {
     var prefix: String
 }
 

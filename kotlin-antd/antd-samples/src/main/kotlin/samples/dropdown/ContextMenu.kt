@@ -1,11 +1,16 @@
 package samples.dropdown
 
-import antd.dropdown.*
-import antd.menu.*
+import antd.dropdown.dropdown
+import antd.menu.menu
+import antd.menu.menuItem
 import kotlinx.css.UserSelect
 import kotlinx.css.userSelect
-import react.*
-import styled.*
+import react.RBuilder
+import react.buildElement
+import react.key
+import styled.css
+import styled.styledDiv
+import styled.styledSpan
 
 private val menu = buildElement {
     menu {

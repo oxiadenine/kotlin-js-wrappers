@@ -1,9 +1,11 @@
 package samples.carousel
 
-import antd.carousel.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.carousel.carousel
+import react.RBuilder
+import react.dom.div
+import react.dom.h3
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.autoplay() {
     styledDiv {

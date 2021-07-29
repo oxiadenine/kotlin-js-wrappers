@@ -1,11 +1,16 @@
 package samples.dropdown
 
 import antd.button.button
-import antd.dropdown.*
-import antd.menu.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.dropdown.dropdown
+import antd.menu.menu
+import antd.menu.menuItem
+import react.RBuilder
+import react.buildElement
+import react.dom.a
+import react.dom.attrs
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 private val menu = buildElement {
     menu {

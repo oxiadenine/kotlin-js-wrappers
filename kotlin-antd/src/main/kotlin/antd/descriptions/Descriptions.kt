@@ -7,7 +7,7 @@ import antd.ReactNode
 import react.*
 
 @JsName("default")
-external object DescriptionsComponent : Component<DescriptionsProps, RState> {
+external object DescriptionsComponent : Component<DescriptionsProps, State> {
     val Item: DescriptionsItemComponent
 
     override fun render(): ReactElement?

@@ -5,13 +5,10 @@ package antd.image
 
 import antd.ImgHTMLAttributes
 import org.w3c.dom.HTMLImageElement
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 
 @JsName("default")
-external object ImageComponent : Component<ImageProps, RState> {
+external object ImageComponent : Component<ImageProps, State> {
     override fun render(): ReactElement?
 }
 

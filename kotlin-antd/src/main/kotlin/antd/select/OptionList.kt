@@ -1,12 +1,11 @@
 package antd.select
 
 import antd.*
+import antd.ReactNode
 import org.w3c.dom.*
 import react.*
 
-external object OptionListComponent : Component<OptionListProps<SelectOptionsType>, RState> {
-    override fun render(): ReactElement?
-}
+external interface OptionListComponent : ComponentType<OptionListProps<SelectOptionsType>>
 
 external interface OptionListProps<OptionsType> : RefAttributes<RefOptionListProps>, RProps {
     var prefixCls: String

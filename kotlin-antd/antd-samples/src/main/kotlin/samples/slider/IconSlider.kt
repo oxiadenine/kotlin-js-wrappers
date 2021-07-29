@@ -1,19 +1,21 @@
 package samples.slider
 
-import antd.icon.*
-import antd.slider.*
-import kotlinext.js.*
-import kotlinx.html.*
+import antd.icon.frownOutlined
+import antd.icon.smileOutlined
+import antd.slider.slider
+import kotlinext.js.js
+import kotlinx.html.classes
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 external interface IconSliderDemoProps : RProps {
     var min: Number
     var max: Number
 }
 
-external interface IconSliderDemoState : RState {
+external interface IconSliderDemoState : State {
     var value: Number
 }
 

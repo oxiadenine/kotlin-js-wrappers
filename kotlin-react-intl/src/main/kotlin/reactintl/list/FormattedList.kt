@@ -6,7 +6,7 @@ package reactintl.list
 import react.*
 
 @JsName("FormattedList")
-external class FormattedListComponent : Component<FormattedListProps, RState> {
+external class FormattedListComponent : Component<FormattedListProps, State> {
     override fun render(): ReactElement?
 }
 

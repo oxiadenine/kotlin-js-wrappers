@@ -7,8 +7,8 @@ import antd.modal.ModalStaticFunctions
 import antd.space.space
 import kotlinext.js.jsObject
 import react.*
-import react.dom.div
-import styled.*
+import styled.css
+import styled.styledDiv
 
 private val reachableContext = createContext<String>()
 private val unreachableContext = createContext<String>()
@@ -25,7 +25,7 @@ private val config = jsObject<ModalFuncProps> {
     }
 }
 
-private val app = functionalComponent<RProps> {
+private val app = fc<RProps> {
     val useModal = ModalComponent.useModal()
 
     val modal = useModal[0].unsafeCast<ModalStaticFunctions>()

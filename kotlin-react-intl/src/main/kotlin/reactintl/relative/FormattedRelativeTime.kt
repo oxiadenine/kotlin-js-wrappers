@@ -18,7 +18,7 @@ external interface FormattedRelativeTimeProps : IntlRelativeTimeFormatOptions, C
     var children: ((value: String) -> ReactElement)?
 }
 
-external interface FormattedRelativeTimeState : RState {
+external interface FormattedRelativeTimeState : State {
     var prevUnit: RelativeTimeUnit?
     var prevValue: Number?
     var currentValueInSeconds: Number

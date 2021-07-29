@@ -22,7 +22,7 @@ external interface SpinProps : RProps {
     var indicator: SpinIndicator?
 }
 
-external interface SpinState : RState {
+external interface SpinState : State {
     var spinning: Boolean?
     var notCssAnimationSupported: Boolean?
 }

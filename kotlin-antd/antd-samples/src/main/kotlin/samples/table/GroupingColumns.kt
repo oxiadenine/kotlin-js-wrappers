@@ -1,9 +1,13 @@
 package samples.table
 
-import antd.table.*
-import kotlinext.js.*
-import react.*
-import styled.*
+import antd.table.ColumnGroupType
+import antd.table.ColumnsType
+import antd.table.TableComponent
+import antd.table.table
+import kotlinext.js.jsObject
+import react.RBuilder
+import styled.css
+import styled.styledDiv
 
 private external interface GroupingColumnsTableDataItem {
     var key: String

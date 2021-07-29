@@ -4,16 +4,12 @@ import antd.button.button
 import antd.radio.radio
 import antd.radio.radioGroup
 import antd.space.space
-import react.RBuilder
-import react.RProps
-import react.child
+import react.*
 import react.dom.br
-import react.functionalComponent
-import react.useState
 import styled.css
 import styled.styledDiv
 
-private val spaceSize = functionalComponent<RProps> {
+private val spaceSize = fc<RProps> {
     val (size, setSize) = useState("small")
 
     radioGroup {

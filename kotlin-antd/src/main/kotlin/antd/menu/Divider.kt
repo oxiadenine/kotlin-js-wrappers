@@ -1,13 +1,8 @@
 package antd.menu
 
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 
-external object DividerComponent : Component<DividerProps, RState> {
-    override fun render(): ReactElement?
-}
+external interface DividerComponent : ComponentType<DividerProps>
 
 external interface DividerProps : RProps {
     var className: String?

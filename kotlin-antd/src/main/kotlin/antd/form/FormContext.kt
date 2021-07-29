@@ -3,14 +3,14 @@ package antd.form
 import antd.grid.*
 import react.*
 
-external interface FormProvider: RClass<FormProviderProps>
+external interface FormProvider: ComponentClass<FormProviderProps>
 
 external interface FormProviderProps : RProps {
     var validateMessages: ValidateMessages?
 }
 
-external val formContext: RContext<FormContextProps>
-external val formItemContext: RContext<FormItemContextProps>
+external val formContext: Context<FormContextProps>
+external val formItemContext: Context<FormItemContextProps>
 
 external interface FormContextProps {
     var vertical: Boolean

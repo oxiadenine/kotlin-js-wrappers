@@ -1,8 +1,10 @@
 package samples.anchor
 
-import antd.anchor.*
-import react.*
-import styled.*
+import antd.anchor.anchor
+import antd.anchor.anchorLink
+import react.RBuilder
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.static() {
     styledDiv {

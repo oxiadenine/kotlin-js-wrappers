@@ -1,11 +1,14 @@
 package samples.datepicker
 
 import antd.datepicker.*
-import antd.icon.*
-import moment.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.icon.smileOutlined
+import moment.Moment
+import react.RBuilder
+import react.buildElement
+import react.dom.br
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 private val smileIcon = buildElement {
     smileOutlined {}

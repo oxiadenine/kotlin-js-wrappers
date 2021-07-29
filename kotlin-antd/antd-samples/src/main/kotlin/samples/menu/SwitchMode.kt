@@ -1,19 +1,26 @@
 package samples.menu
 
-import antd.icon.*
+import antd.icon.appstoreOutlined
+import antd.icon.calendarOutlined
+import antd.icon.mailOutlined
+import antd.icon.settingOutlined
 import antd.menu.*
-import antd.switch.*
-import kotlinext.js.*
+import antd.switch.switch
+import kotlinext.js.js
 import kotlinx.css.em
 import kotlinx.css.margin
 import kotlinx.css.px
-import kotlinx.html.*
-import org.w3c.dom.events.*
+import kotlinx.html.classes
+import org.w3c.dom.events.MouseEvent
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.br
+import react.dom.div
+import react.dom.span
+import styled.css
+import styled.styledDiv
+import styled.styledSpan
 
-external interface SwitchModeSiderState : RState {
+external interface SwitchModeSiderState : State {
     var mode: MenuMode
     var theme: MenuTheme
 }

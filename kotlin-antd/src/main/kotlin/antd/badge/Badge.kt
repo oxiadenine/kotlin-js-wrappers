@@ -7,7 +7,7 @@ import antd.ReactNode
 import react.*
 
 @JsName("default")
-external object BadgeComponent : Component<BadgeProps, RState> {
+external object BadgeComponent : Component<BadgeProps, State> {
     val Ribbon: RibbonComponent
 
     override fun render(): ReactElement?

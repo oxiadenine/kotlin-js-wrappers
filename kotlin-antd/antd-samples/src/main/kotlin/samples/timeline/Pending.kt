@@ -1,14 +1,16 @@
 package samples.timeline
 
-import antd.*
+import antd.MouseEventHandler
 import antd.button.button
-import antd.timeline.*
-import kotlinext.js.*
+import antd.timeline.timeline
+import antd.timeline.timelineItem
+import kotlinext.js.js
 import react.*
 import react.dom.div
-import styled.*
+import styled.css
+import styled.styledDiv
 
-external interface PendingTimeLineState : RState {
+external interface PendingTimeLineState : State {
     var reverse: Boolean
 }
 

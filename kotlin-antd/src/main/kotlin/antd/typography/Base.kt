@@ -11,7 +11,7 @@ external object BaseComponent : Component<BaseProps, BaseState> {
 
 external interface BaseProps : InternalBlockProps, RProps
 
-external interface BaseState : RState {
+external interface BaseState : State {
     var edit: Boolean
     var copied: Boolean
     var ellipsisText: String

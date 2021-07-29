@@ -1,16 +1,13 @@
 package antd.input
 
 import antd.MouseEvent
-import antd.ReactNode
 import antd.configprovider.DirectionType
 import antd.configprovider.SizeType
+import antd.ReactNode
 import org.w3c.dom.HTMLElement
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 
-external object ClearableLabeledInputComponent : Component<ClearableInputProps, RState> {
+external object ClearableLabeledInputComponent : Component<ClearableInputProps, State> {
     val Group: GroupComponent
     val Search: SearchComponent
     val TextArea: TextAreaComponent

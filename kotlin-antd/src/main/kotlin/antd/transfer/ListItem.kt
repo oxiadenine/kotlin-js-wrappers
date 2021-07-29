@@ -3,7 +3,7 @@ package antd.transfer
 import antd.ReactNode
 import react.*
 
-external class TransferListItemComponent<RecordType> : Component<ListItemProps<RecordType>, RState> {
+external class TransferListItemComponent<RecordType> : Component<ListItemProps<RecordType>, State> {
     override fun render(): ReactElement?
 }
 

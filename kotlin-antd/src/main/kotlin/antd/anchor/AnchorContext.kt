@@ -1,5 +1,5 @@
 package antd.anchor
 
-import react.*
+import react.Context
 
-external val anchorContext: RContext<AntAnchor>
+external val anchorContext: Context<AntAnchor>

@@ -1,13 +1,12 @@
 package antd.treeselect
 
 import antd.*
+import antd.ReactNode
 import antd.select.RefOptionListProps
 import org.w3c.dom.*
 import react.*
 
-external object OptionListComponent : Component<OptionListProps<Array<DataNode>>, RState> {
-    override fun render(): ReactElement?
-}
+external interface OptionListComponent : ComponentType<OptionListProps<Array<DataNode>>>
 
 external interface OptionListProps<OptionsType> : RefAttributes<RefOptionListProps>, RProps {
     var prefixCls: String

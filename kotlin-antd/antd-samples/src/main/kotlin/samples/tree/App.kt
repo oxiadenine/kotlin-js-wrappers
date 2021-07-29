@@ -1,8 +1,13 @@
 package samples.tree
 
-import react.*
-import react.dom.*
-import styled.*
+import react.RBuilder
+import react.RComponent
+import react.RProps
+import react.State
+import react.dom.h2
+import styled.StyleSheet
+import styled.css
+import styled.styledDiv
 
 object TreeStyles : StyleSheet("tree", isStatic = true) {
     val container by css {}
@@ -14,7 +19,7 @@ object TreeStyles : StyleSheet("tree", isStatic = true) {
     val directory by css {}
 }
 
-class TreeApp : RComponent<RProps, RState>() {
+class TreeApp : RComponent<RProps, State>() {
     override fun RBuilder.render() {
         h2 { +"Tree" }
         styledDiv {

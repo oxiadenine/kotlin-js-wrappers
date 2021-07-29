@@ -10,7 +10,7 @@ import org.w3c.dom.HTMLDivElement
 import react.*
 
 @JsName("default")
-external object StatisticComponent : Component<StatisticProps, RState> {
+external object StatisticComponent : Component<StatisticProps, State> {
     val Countdown: CountdownComponent
 
     override fun render(): ReactElement?

@@ -1,12 +1,15 @@
 package samples.upload
 
-import antd.button.*
-import antd.icon.*
-import antd.message.*
-import antd.upload.*
-import kotlinext.js.*
-import react.*
-import styled.*
+import antd.button.button
+import antd.icon.uploadOutlined
+import antd.message.message
+import antd.upload.HttpRequestHeader
+import antd.upload.UploadComponent
+import antd.upload.upload
+import kotlinext.js.js
+import react.RBuilder
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.basic() {
     styledDiv {

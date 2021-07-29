@@ -11,7 +11,7 @@ import react.*
 import react.dom.div
 import styled.*
 
-external interface ControlEditableTagGroupState : RState {
+external interface ControlEditableTagGroupState : State {
     var tags: Array<String>
     var inputVisible: Boolean
     var inputValue: String
@@ -92,11 +92,11 @@ class ControlEditableTagGroup : RComponent<RProps, ControlEditableTagGroupState>
                         }
                         childList.add(tagElem)
                     }
-                } else tagElem
+                }
             }.toTypedArray()
             if (state.inputVisible) {
                 input {
-                    ref { node -> input = node }
+                    ref = input
                     attrs {
                         type = "text"
                         size = "small"

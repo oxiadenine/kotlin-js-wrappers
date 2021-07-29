@@ -1,12 +1,13 @@
 package samples.popconfirm
 
-import antd.*
-import antd.message.*
-import antd.popconfirm.*
-import org.w3c.dom.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.MouseEvent
+import antd.message.message
+import antd.popconfirm.popconfirm
+import org.w3c.dom.HTMLElement
+import react.RBuilder
+import react.dom.a
+import styled.css
+import styled.styledDiv
 
 private val confirm: (e: MouseEvent<HTMLElement>?) -> Unit = { e ->
     console.log(e)

@@ -1,11 +1,14 @@
 package samples.radio
 
-import antd.radio.*
+import antd.radio.RadioChangeEvent
+import antd.radio.radioButton
+import antd.radio.radioGroup
 import kotlinx.css.marginTop
 import kotlinx.css.px
-import react.*
-import react.dom.*
-import styled.*
+import react.RBuilder
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 private fun handleChange(event: RadioChangeEvent) {
     console.log("radio checked: ${event.target.value}")

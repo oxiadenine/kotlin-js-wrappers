@@ -4,12 +4,13 @@
 package antd.pageheader
 
 import antd.*
+import antd.ReactNode
 import antd.breadcrumb.*
 import org.w3c.dom.*
 import react.*
 
 @JsName("default")
-external object PageHeaderComponent : Component<PageHeaderProps, RState> {
+external object PageHeaderComponent : Component<PageHeaderProps, State> {
     override fun render(): ReactElement?
 }
 

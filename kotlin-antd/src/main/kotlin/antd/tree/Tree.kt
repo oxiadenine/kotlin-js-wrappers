@@ -4,13 +4,14 @@
 package antd.tree
 
 import antd.*
+import antd.ReactNode
 import kotlinext.js.Record
 import org.w3c.dom.*
 import react.*
 import kotlin.js.Promise
 
 @JsName("default")
-external object TreeComponent : Component<TreeProps, RState> {
+external object TreeComponent : Component<TreeProps, State> {
     val TreeNode: TreeNodeComponent
     val DirectoryTree: DirectoryTreeComponent
 
@@ -107,7 +108,7 @@ external interface RcTreeProps : RProps {
     var virtual: Boolean?
 }
 
-external interface RcTreeState : RState {
+external interface RcTreeState : State {
     var keyEntities: Record<Key, DataEntity>
     var selectedKeys: Array<Key>
     var checkedKeys: Array<Key>

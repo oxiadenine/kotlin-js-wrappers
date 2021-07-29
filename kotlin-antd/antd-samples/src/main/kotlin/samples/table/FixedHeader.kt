@@ -1,10 +1,14 @@
 package samples.table
 
-import antd.pagination.*
-import antd.table.*
-import kotlinext.js.*
-import react.*
-import styled.*
+import antd.pagination.PaginationConfig
+import antd.table.ColumnType
+import antd.table.ColumnsType
+import antd.table.TableComponent
+import antd.table.table
+import kotlinext.js.jsObject
+import react.RBuilder
+import styled.css
+import styled.styledDiv
 
 private external interface FixedHeaderTableDataItem {
     var key: String

@@ -2,8 +2,6 @@ package antd.breadcrumb
 
 import react.*
 
-external object BreadcrumbSeparatorComponent : Component<BreadcrumbSeparatorProps, RState> {
-    override fun render(): ReactElement?
-}
+external interface BreadcrumbSeparatorComponent : ComponentType<BreadcrumbSeparatorProps>
 
 external interface BreadcrumbSeparatorProps : RProps

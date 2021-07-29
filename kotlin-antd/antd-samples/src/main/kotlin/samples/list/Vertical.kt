@@ -1,13 +1,19 @@
 package samples.list
 
-import antd.avatar.*
-import antd.icon.*
-import antd.list.*
-import antd.pagination.*
-import kotlinext.js.*
+import antd.avatar.avatar
+import antd.icon.likeOutlined
+import antd.icon.messageOutlined
+import antd.icon.starOutlined
+import antd.list.ListComponent
+import antd.list.list
+import antd.list.listItem
+import antd.list.listItemMeta
+import antd.pagination.PaginationConfig
+import kotlinext.js.jsObject
 import react.*
 import react.dom.*
-import styled.*
+import styled.css
+import styled.styledDiv
 
 private external interface VerticalListDataItem {
     var href: String
@@ -32,7 +38,7 @@ external interface IconTextProps : RProps {
     var text: String
 }
 
-private val iconText = functionalComponent<IconTextProps> { props ->
+private val iconText = fc<IconTextProps> { props ->
     span {
         childList += props.icon
         +" ${props.text}"
@@ -63,63 +69,71 @@ fun RBuilder.vertical() {
                     }
                 }
                 renderItem = { item, _ ->
-                    listItem {
-                        attrs {
-                            key = item.title
-                            actions = arrayOf(
-                                buildElement {
-                                    iconText {
-                                        attrs {
-                                            icon = starOutlined {}
-                                            text = "156"
-                                        }
-                                    }
-                                },
-                                buildElement {
-                                    iconText {
-                                        attrs {
-                                            icon = likeOutlined {}
-                                            text = "156"
-                                        }
-                                    }
-                                },
-                                buildElement {
-                                    iconText {
-                                        attrs {
-                                            icon = messageOutlined {}
-                                            text = "2"
-                                        }
-                                    }
-                                }
-
-                            )
-                            extra = buildElement {
-                                img {
-                                    attrs {
-                                        width = "272px"
-                                        alt = "logo"
-                                        src = "https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"
-                                    }
-                                }
-                            }
-                        }
-                        listItemMeta {
+                    buildElement {
+                        listItem {
                             attrs {
-                                avatar = buildElement {
-                                    avatar {
-                                        attrs.src = item.avatar
+                                key = item.title
+                                actions = arrayOf(
+                                    buildElement {
+                                        iconText {
+                                            attrs {
+                                                icon = buildElement {
+                                                    starOutlined {}
+                                                }
+                                                text = "156"
+                                            }
+                                        }
+                                    },
+                                    buildElement {
+                                        iconText {
+                                            attrs {
+                                                icon = buildElement {
+                                                    likeOutlined {}
+                                                }
+                                                text = "156"
+                                            }
+                                        }
+                                    },
+                                    buildElement {
+                                        iconText {
+                                            attrs {
+                                                icon = buildElement {
+                                                    messageOutlined {}
+                                                }
+                                                text = "2"
+                                            }
+                                        }
+                                    }
+
+                                )
+                                extra = buildElement {
+                                    img {
+                                        attrs {
+                                            width = "272px"
+                                            alt = "logo"
+                                            src = "https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"
+                                        }
                                     }
                                 }
-                                title = buildElement {
-                                    a {
-                                        attrs.href = item.href
-                                        +item.title
-                                    }
-                                }
-                                description = item.description
                             }
+                            listItemMeta {
+                                attrs {
+                                    avatar = buildElement {
+                                        avatar {
+                                            attrs.src = item.avatar
+                                        }
+                                    }
+                                    title = buildElement {
+                                        a {
+                                            attrs.href = item.href
+                                            +item.title
+                                        }
+                                    }
+                                    description = item.description
+                                }
+                            }
+                            +item.content
                         }
-                        +item.content
                     }
                 }
             }

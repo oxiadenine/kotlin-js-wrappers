@@ -5,7 +5,7 @@ import antd.tree.*
 import react.*
 import kotlin.js.*
 
-external val selectContext: RContext<ContextProps>
+external val selectContext: Context<ContextProps>
 
 external interface ContextProps {
     var checkable: Any /* Boolean | ReactNode */

@@ -3,9 +3,7 @@ package antd.menu
 import antd.ReactNode
 import react.*
 
-external object MenuItemGroupComponent : Component<MenuItemGroupProps, RState> {
-    override fun render(): ReactElement?
-}
+external interface MenuItemGroupComponent : ComponentType<MenuItemGroupProps>
 
 external interface MenuItemGroupProps : RProps {
     var renderMenuItem: ((item: ReactElement, index: Number, key: String) -> ReactElement)?

@@ -16,10 +16,8 @@ fun RBuilder.offset() {
                 offset = arrayOf(10, 10)
             }
             a {
-                attrs {
-                    href = "#"
-                    classes = setOf("head-example")
-                }
+                attrs.href = "#"
+                attrs.classes = setOf("head-example")
             }
         }
     }

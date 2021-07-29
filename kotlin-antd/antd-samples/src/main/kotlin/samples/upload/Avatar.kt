@@ -1,13 +1,18 @@
 package samples.upload
 
-import antd.icon.*
-import antd.message.*
+import antd.icon.loadingOutlined
+import antd.icon.plusOutlined
+import antd.message.message
 import antd.upload.*
-import kotlinx.html.*
-import org.w3c.files.*
+import kotlinx.html.classes
+import org.w3c.files.File
+import org.w3c.files.FileReader
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.attrs
+import react.dom.div
+import react.dom.img
+import styled.css
+import styled.styledDiv
 
 private fun getBase64(img: File, callback: (imgUrl: String) -> Unit) {
     val reader = FileReader()
@@ -33,7 +38,7 @@ private val beforeUpload = { file: RcFile, _: Array<RcFile> ->
 }
 
 
-external interface AvatarAppState : RState {
+external interface AvatarAppState : State {
     var imageUrl: String?
     var loading: Boolean
 }

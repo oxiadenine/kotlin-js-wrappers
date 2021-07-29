@@ -1,23 +1,35 @@
 package samples.empty
 
-import antd.cascader.*
-import antd.configprovider.*
-import antd.divider.*
-import antd.icon.*
-import antd.list.*
-import antd.select.*
-import antd.switch.*
-import antd.table.*
+import antd.cascader.cascader
+import antd.configprovider.RenderEmptyHandler
+import antd.configprovider.configProvider
+import antd.divider.divider
+import antd.icon.smileOutlined
+import antd.list.ListComponent
+import antd.list.list
+import antd.select.SelectComponent
+import antd.select.select
+import antd.switch.switch
 import antd.table.ColumnType
-import antd.transfer.*
-import antd.treeselect.*
-import kotlinext.js.*
+import antd.table.ColumnsType
+import antd.table.TableComponent
+import antd.table.table
+import antd.transfer.TransferComponent
+import antd.transfer.TransferItem
+import antd.transfer.transfer
+import antd.treeselect.TreeSelectComponent
+import antd.treeselect.treeSelect
+import kotlinext.js.js
+import kotlinext.js.jsObject
 import kotlinx.css.TextAlign
 import kotlinx.css.textAlign
-import kotlinx.html.*
+import kotlinx.html.classes
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.div
+import react.dom.h3
+import react.dom.p
+import styled.css
+import styled.styledDiv
 
 private val customizeRenderEmpty: RenderEmptyHandler = {
     buildElement {
@@ -33,7 +45,7 @@ private val customizeRenderEmpty: RenderEmptyHandler = {
 
 private val customStyle = js { width = 200 }
 
-external interface ConfigProviderDemoState : RState {
+external interface ConfigProviderDemoState : State {
     var customize: Boolean
 }
 

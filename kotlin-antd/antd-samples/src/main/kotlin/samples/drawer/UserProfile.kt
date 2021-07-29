@@ -1,21 +1,29 @@
 package samples.drawer
 
-import antd.*
-import antd.avatar.*
+import antd.MouseEvent
+import antd.MouseEventHandler
+import antd.avatar.avatar
 import antd.button.button
-import antd.divider.*
-import antd.drawer.*
-import antd.grid.*
+import antd.divider.divider
+import antd.drawer.EventType
+import antd.drawer.drawer
 import antd.grid.col
-import antd.list.*
-import kotlinext.js.*
+import antd.grid.row
+import antd.list.ListComponent
+import antd.list.list
+import antd.list.listItem
+import antd.list.listItemMeta
+import kotlinext.js.jsObject
 import kotlinx.css.*
 import kotlinx.css.properties.LineHeight
-import kotlinx.html.js.*
+import kotlinx.html.js.onClickFunction
 import react.*
 import react.dom.a
 import react.dom.div
-import styled.*
+import styled.StyleSheet
+import styled.css
+import styled.styledDiv
+import styled.styledP
 
 private object UserProfileStyles : StyleSheet("user-profile", isStatic = true) {
     val pStyle by css {
@@ -37,7 +45,7 @@ external interface DescriptionItemProps : RProps {
     var content: Any
 }
 
-class DescriptionItem : RComponent<DescriptionItemProps, RState>() {
+class DescriptionItem : RComponent<DescriptionItemProps, State>() {
     override fun RBuilder.render() {
         styledDiv {
             css {
@@ -61,7 +69,7 @@ class DescriptionItem : RComponent<DescriptionItemProps, RState>() {
 
 fun RBuilder.descriptionItem(handler: RHandler<DescriptionItemProps>) = child(DescriptionItem::class, handler)
 
-external interface UserProfileAppState : RState {
+external interface UserProfileAppState : State {
     var visible: Boolean
 }
 
@@ -99,32 +107,34 @@ class UserProfileApp : RComponent<RProps, UserProfileAppState>() {
                     )
                     bordered = true
                     renderItem = { item, _ ->
-                        listItem {
-                            attrs {
-                                key = item.id
-                                actions = arrayOf(buildElement {
-                                    a {
-                                        attrs.onClickFunction = { event ->
-                                            showDrawer(event.unsafeCast<MouseEvent<Any>>())
-                                        }
-                                        +"View Profile"
-                                    }
-                                })
-                            }
-                            listItemMeta {
+                        buildElement {
+                            listItem {
                                 attrs {
-                                    avatar = buildElement {
-                                        avatar {
-                                            attrs.src = "https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png"
-                                        }
-                                    }
-                                    title = buildElement {
+                                    key = item.id
+                                    actions = arrayOf(buildElement {
                                         a {
-                                            attrs.href = "https://ant.design/index-cn"
-                                            +item.name
+                                            attrs.onClickFunction = { event ->
+                                                showDrawer(event.unsafeCast<MouseEvent<Any>>())
+                                            }
+                                            +"View Profile"
                                         }
+                                    })
+                                }
+                                listItemMeta {
+                                    attrs {
+                                        avatar = buildElement {
+                                            avatar {
+                                                attrs.src = "https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png"
+                                            }
+                                        }
+                                        title = buildElement {
+                                            a {
+                                                attrs.href = "https://ant.design/index-cn"
+                                                +item.name
+                                            }
+                                        }
+                                        description = "Progresser AFX"
                                     }
-                                    description = "Progresser AFX"
                                 }
                             }
                         }

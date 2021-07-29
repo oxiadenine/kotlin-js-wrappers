@@ -7,22 +7,22 @@ import react.*
 import reactintl.*
 
 @JsName("FormattedDate")
-external class FormattedDateComponent : Component<FormattedDateProps, RState> {
+external class FormattedDateComponent : Component<FormattedDateProps, State> {
     override fun render(): ReactElement?
 }
 
 @JsName("FormattedDateParts")
-external class FormattedDatePartsComponent : Component<FormattedDatePartsProps, RState> {
+external class FormattedDatePartsComponent : Component<FormattedDatePartsProps, State> {
     override fun render(): ReactElement?
 }
 
 @JsName("FormattedTime")
-external class FormattedTimeComponent : Component<FormattedTimeProps, RState> {
+external class FormattedTimeComponent : Component<FormattedTimeProps, State> {
     override fun render(): ReactElement?
 }
 
 @JsName("FormattedTimeParts")
-external class FormattedTimePartsComponent : Component<FormattedTimePartsProps, RState> {
+external class FormattedTimePartsComponent : Component<FormattedTimePartsProps, State> {
     override fun render(): ReactElement?
 }
 

@@ -1,9 +1,10 @@
 package samples.progress
 
 import antd.progress.progress
-import react.*
+import react.RBuilder
 import react.dom.div
-import styled.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.circleMini() {
     styledDiv {

@@ -1,12 +1,11 @@
 package antd.breadcrumb
 
 import antd.*
+import antd.ReactNode
 import antd.dropdown.DropdownProps
 import react.*
 
-external object BreadcrumbItemComponent : Component<BreadcrumbItemProps, RState> {
-    override fun render(): ReactElement?
-}
+external interface BreadcrumbItemComponent : ComponentType<BreadcrumbItemProps>
 
 external interface BreadcrumbItemProps : RProps {
     var prefixCls: String?

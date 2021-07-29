@@ -3,7 +3,6 @@ package samples.table
 import antd.configprovider.SizeType
 import antd.divider.*
 import antd.form.*
-import antd.form.form
 import antd.icon.*
 import antd.pagination.*
 import antd.radio.*
@@ -74,10 +73,8 @@ private val tableColumns = arrayOf<ColumnType<DynamicSettingsTableDataItem>>(
                         attrs.type = "vertical"
                     }
                     a {
-                        attrs {
-                            href = "javascript:;"
-                            className = "ant-dropdown-link"
-                        }
+                        attrs.href = "javascript:;"
+                        className = "ant-dropdown-link"
                         +"More actions "
                         downOutlined {}
                     }
@@ -108,7 +105,7 @@ private val tableFooter: () -> String = { "Here is footer" }
 private val tableScroll = jsObject<TablePropsScroll> { y = 240 }
 private val tablePagination = jsObject<PaginationConfig> { position = "bottom" }
 
-external interface DynamicSettingsDemoState : RState {
+external interface DynamicSettingsDemoState : State {
     var bordered: Boolean
     var loading: Boolean
     var pagination: Any?
@@ -314,8 +311,7 @@ class DynamicSettingsDemo : RComponent<RProps, DynamicSettingsDemoState>() {
                         attrs.label = "Pagination"
                         radioGroup {
                             attrs {
-                                value = state.pagination?.unsafeCast<PaginationConfig>()!!.position
-                                    ?: "none"
+                                value = state.pagination?.unsafeCast<PaginationConfig>()!!.position ?: "none"
                                 onChange = handlePaginationChange
                             }
                             radioButton {

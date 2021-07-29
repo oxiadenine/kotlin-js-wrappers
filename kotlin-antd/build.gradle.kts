@@ -24,8 +24,8 @@ tasks.register("generateIconFiles") {
 
             import react.*
 
-            external interface AntdIconClass : RClass<AntdIconProps> {
-                var default: Any
+            external interface AntdIconClass : ComponentClass<AntdIconProps> {
+                var default: ComponentType<AntdIconProps>
             }
 
             external interface AntdIconProps : IconBaseProps, RProps {
@@ -58,7 +58,7 @@ tasks.register("generateIconFiles") {
                 iconsFile.appendText("\n\n")
 
                 iconsDslFile.appendText("""
-                    fun RBuilder.$iconName(handler: RHandler<AntdIconProps>) =
+                    fun RBuilder.$iconName(handler: RHandler<AntdIconProps>) = 
                         child(${iconName.plus("Icon")}.default, jsObject {}, handler)
                 """.trimIndent())
                 iconsDslFile.appendText("\n\n")

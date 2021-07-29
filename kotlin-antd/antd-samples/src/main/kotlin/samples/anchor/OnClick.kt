@@ -1,10 +1,13 @@
 package samples.anchor
 
-import antd.*
-import antd.anchor.*
-import org.w3c.dom.*
-import react.*
-import styled.*
+import antd.MouseEvent
+import antd.anchor.AnchorLink
+import antd.anchor.anchor
+import antd.anchor.anchorLink
+import org.w3c.dom.HTMLElement
+import react.RBuilder
+import styled.css
+import styled.styledDiv
 
 private val handleClick = fun(e: MouseEvent<HTMLElement>, link: AnchorLink) {
     e.preventDefault()

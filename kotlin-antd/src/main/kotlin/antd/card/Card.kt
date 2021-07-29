@@ -4,12 +4,13 @@
 package antd.card
 
 import antd.*
+import antd.ReactNode
 import antd.tabs.TabsProps
 import org.w3c.dom.*
 import react.*
 
 @JsName("default")
-external object CardComponent : Component<CardProps, RState> {
+external object CardComponent : Component<CardProps, State> {
     val Grid: CardGridComponent
     val Meta: CardMetaComponent
 
@@ -26,7 +27,7 @@ external interface CardProps : HTMLAttributes<HTMLDivElement>, RProps {
     override var style: dynamic
     var loading: Boolean?
     var hoverable: Boolean?
-    override var children: ReactNode?
+    override var children: Any?
     override var id: String?
     override var className: String?
     var size: CardSize?

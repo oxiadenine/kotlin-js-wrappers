@@ -8,7 +8,7 @@ import kotlinext.js.*
 import react.*
 
 @JsName("default")
-external object PaginationComponent : Component<PaginationProps, RState> {
+external object PaginationComponent : Component<PaginationProps, State> {
     override fun render(): ReactElement?
 }
 

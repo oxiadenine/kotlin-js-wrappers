@@ -1,14 +1,18 @@
 package samples.dropdown
 
-import antd.dropdown.*
-import antd.icon.*
-import antd.menu.*
-import kotlinx.html.*
+import antd.dropdown.dropdown
+import antd.icon.downOutlined
+import antd.menu.MenuClickEventHandler
+import antd.menu.menu
+import antd.menu.menuItem
+import kotlinx.html.classes
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.a
+import react.dom.attrs
+import styled.css
+import styled.styledDiv
 
-external interface OverlayVisibleAppState : RState {
+external interface OverlayVisibleAppState : State {
     var visible: Boolean
 }
 

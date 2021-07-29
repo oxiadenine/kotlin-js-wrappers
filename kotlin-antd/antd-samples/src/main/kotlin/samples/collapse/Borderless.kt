@@ -1,11 +1,14 @@
 package samples.collapse
 
-import antd.collapse.*
+import antd.collapse.collapse
+import antd.collapse.collapsePanel
 import kotlinx.css.paddingLeft
 import kotlinx.css.px
-import react.*
-import react.dom.*
-import styled.*
+import react.RBuilder
+import react.buildElement
+import styled.css
+import styled.styledDiv
+import styled.styledP
 
 private val text = buildElement {
     styledP {

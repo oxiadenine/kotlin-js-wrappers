@@ -1,9 +1,11 @@
 package samples.card
 
-import antd.card.*
-import kotlinext.js.*
-import react.*
-import styled.*
+import antd.card.card
+import antd.card.cardGrid
+import kotlinext.js.js
+import react.RBuilder
+import styled.css
+import styled.styledDiv
 
 private val gridStyle = js {
     eidth = "25%"

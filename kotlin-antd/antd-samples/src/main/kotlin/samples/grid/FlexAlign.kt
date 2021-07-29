@@ -1,17 +1,19 @@
 package samples.grid
 
-import antd.grid.*
 import antd.grid.col
-import kotlinx.html.*
+import antd.grid.row
+import kotlinx.html.classes
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.div
+import react.dom.p
+import styled.css
+import styled.styledDiv
 
 external interface DemoBoxProps : RProps {
     var value: Number
 }
 
-class DemoBoxComponent : RComponent<DemoBoxProps, RState>() {
+class DemoBoxComponent : RComponent<DemoBoxProps, State>() {
     override fun RBuilder.render() {
         p {
             attrs.classes = setOf("height-${props.value}")

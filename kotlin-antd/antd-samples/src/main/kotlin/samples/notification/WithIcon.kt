@@ -1,11 +1,13 @@
 package samples.notification
 
 import antd.button.button
-import antd.notification.*
-import kotlinext.js.*
-import react.*
+import antd.notification.ArgsProps
+import antd.notification.notification
+import kotlinext.js.jsObject
+import react.RBuilder
 import react.dom.div
-import styled.*
+import styled.css
+import styled.styledDiv
 
 private val openNotificationWithIcon: (String) -> Unit = { type ->
     notification.asDynamic()[type](jsObject<ArgsProps> {

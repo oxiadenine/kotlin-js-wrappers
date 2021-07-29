@@ -4,6 +4,7 @@
 package antd.transfer
 
 import antd.*
+import antd.ReactNode
 import org.w3c.dom.*
 import org.w3c.dom.events.*
 import react.*
@@ -48,7 +49,7 @@ external interface TransferProps<RecordType> : RProps {
     var pagination: PaginationType?
 }
 
-external interface TransferState : RState {
+external interface TransferState : State {
     var sourceSelectedKeys: Array<String>
     var targetSelectedKeys: Array<String>
 }

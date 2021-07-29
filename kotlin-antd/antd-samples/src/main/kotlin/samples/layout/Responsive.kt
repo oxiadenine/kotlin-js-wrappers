@@ -1,18 +1,22 @@
 package samples.layout
 
-import antd.icon.*
+import antd.icon.uploadOutlined
+import antd.icon.userOutlined
+import antd.icon.videoCameraOutlined
 import antd.layout.*
-import antd.layout.footer
-import antd.layout.header
-import antd.menu.*
-import kotlinext.js.*
+import antd.menu.menu
+import antd.menu.menuItem
+import kotlinext.js.js
 import kotlinx.css.background
 import kotlinx.css.minHeight
 import kotlinx.css.padding
 import kotlinx.css.px
-import react.*
-import react.dom.*
-import styled.*
+import react.RBuilder
+import react.dom.div
+import react.dom.span
+import react.key
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.responsive() {
     styledDiv {

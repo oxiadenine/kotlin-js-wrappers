@@ -1,12 +1,16 @@
 package samples.badge
 
-import antd.badge.*
+import antd.badge.badge
 import kotlinx.css.margin
 import kotlinx.css.marginBottom
 import kotlinx.css.px
-import react.*
-import react.dom.*
-import styled.*
+import react.RBuilder
+import react.dom.br
+import react.dom.div
+import react.dom.key
+import styled.css
+import styled.styledDiv
+import styled.styledH4
 
 private val colors = arrayOf("" +
     "pink",

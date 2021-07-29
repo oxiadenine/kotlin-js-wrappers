@@ -3,11 +3,10 @@
 
 package antd.typography
 
-import antd.ReactNode
 import react.*
 
 @JsName("default")
-external object TypographyComponent : Component<TypographyProps, RState> {
+external object TypographyComponent : Component<TypographyProps, State> {
     val Text: TextComponent
     val Link: LinkComponent
     val Title: TitleComponent
@@ -21,5 +20,5 @@ external interface TypographyProps : RProps {
     var prefixCls: String?
     var className: String?
     var style: dynamic
-    var children: ReactNode?
+    var children: Any?
 }

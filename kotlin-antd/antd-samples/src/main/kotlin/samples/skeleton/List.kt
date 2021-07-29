@@ -1,15 +1,23 @@
 package samples.skeleton
 
-import antd.avatar.*
-import antd.icon.*
-import antd.list.*
-import antd.skeleton.*
-import antd.switch.*
-import kotlinext.js.*
-import org.w3c.dom.events.*
+import antd.avatar.avatar
+import antd.icon.IconProps
+import antd.icon.likeOutlined
+import antd.icon.messageOutlined
+import antd.icon.starOutlined
+import antd.list.ListComponent
+import antd.list.list
+import antd.list.listItem
+import antd.list.listItemMeta
+import antd.skeleton.skeleton
+import antd.switch.switch
+import kotlinext.js.js
+import kotlinext.js.jsObject
+import org.w3c.dom.events.MouseEvent
 import react.*
 import react.dom.*
-import styled.*
+import styled.css
+import styled.styledDiv
 
 private external interface ListListDataItem {
     var href: String
@@ -34,7 +42,7 @@ external interface ListIconTextProps : RProps {
     var text: String
 }
 
-private val iconText = functionalComponent<ListIconTextProps> { props ->
+private val iconText = fc<ListIconTextProps> { props ->
     props.icon.props.unsafeCast<IconProps>().style = js { marginRight = 8 }
 
     span {
@@ -45,7 +53,7 @@ private val iconText = functionalComponent<ListIconTextProps> { props ->
 
 fun RBuilder.iconText(handler: RHandler<ListIconTextProps>) = child(iconText, jsObject {}, handler)
 
-external interface ListAppState : RState {
+external interface ListAppState : State {
     var loading: Boolean
 }
 
@@ -74,72 +82,80 @@ class ListApp : RComponent<RProps, ListAppState>() {
                     size = "large"
                     dataSource = listData
                     renderItem = { item, _ ->
-                        listItem {
-                            attrs {
-                                key = item.title
-                                actions = if (!state.loading) {
-                                    arrayOf(
-                                        buildElement {
-                                            iconText {
-                                                attrs {
-                                                    icon = starOutlined {}
-                                                    text = "156"
-                                                }
-                                            }
-                                        },
-                                        buildElement {
-                                            iconText {
-                                                attrs {
-                                                    icon = likeOutlined {}
-                                                    text = "156"
-                                                }
-                                            }
-                                        },
-                                        buildElement {
-                                            iconText {
-                                                attrs {
-                                                    icon = messageOutlined {}
-                                                    text = "2"
-                                                }
-                                            }
-                                        }
-                                    )
-                                } else null
-                                extra = if (!state.loading) {
-                                    buildElement {
-                                        img {
-                                            attrs {
-                                                width = "272px"
-                                                alt = "logo"
-                                                src = "https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"
-                                            }
-                                        }
-                                    }
-                                } else null
-                            }
-                            skeleton {
+                        buildElement {
+                            listItem {
                                 attrs {
-                                    loading = state.loading
-                                    active = true
-                                    avatar = true
+                                    key = item.title
+                                    actions = if (!state.loading) {
+                                        arrayOf(
+                                            buildElement {
+                                                iconText {
+                                                    attrs {
+                                                        icon = buildElement {
+                                                            starOutlined {}
+                                                        }
+                                                        text = "156"
+                                                    }
+                                                }
+                                            },
+                                            buildElement {
+                                                iconText {
+                                                    attrs {
+                                                        icon = buildElement {
+                                                            likeOutlined {}
+                                                        }
+                                                        text = "156"
+                                                    }
+                                                }
+                                            },
+                                            buildElement {
+                                                iconText {
+                                                    attrs {
+                                                        icon = buildElement {
+                                                            messageOutlined {}
+                                                        }
+                                                        text = "2"
+                                                    }
+                                                }
+                                            }
+                                        )
+                                    } else null
+                                    extra = if (!state.loading) {
+                                        buildElement {
+                                            img {
+                                                attrs {
+                                                    width = "272px"
+                                                    alt = "logo"
+                                                    src = "https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"
+                                                }
+                                            }
+                                        }
+                                    } else null
                                 }
-                                listItemMeta {
+                                skeleton {
                                     attrs {
-                                        avatar = buildElement {
-                                            avatar {
-                                                attrs.src = item.avatar
-                                            }
-                                        }
-                                        title = buildElement {
-                                            a {
-                                                attrs.href = item.href
-                                                +item.title
-                                            }
-                                        }
-                                        description = item.description
+                                        loading = state.loading
+                                        active = true
+                                        avatar = true
                                     }
+                                    listItemMeta {
+                                        attrs {
+                                            avatar = buildElement {
+                                                avatar {
+                                                    attrs.src = item.avatar
+                                                }
+                                            }
+                                            title = buildElement {
+                                                a {
+                                                    attrs.href = item.href
+                                                    +item.title
+                                                }
+                                            }
+                                            description = item.description
+                                        }
+                                    }
+                                    +item.content
                                 }
-                                +item.content
                             }
                         }
                     }

@@ -1,10 +1,11 @@
 package samples.pageheader
 
-import antd.breadcrumb.*
-import antd.pageheader.*
-import kotlinext.js.*
-import react.*
-import styled.*
+import antd.breadcrumb.Route
+import antd.pageheader.pageHeader
+import kotlinext.js.jsObject
+import react.RBuilder
+import styled.css
+import styled.styledDiv
 
 private val breadcrumbRoutes = arrayOf<Route>(
     jsObject {

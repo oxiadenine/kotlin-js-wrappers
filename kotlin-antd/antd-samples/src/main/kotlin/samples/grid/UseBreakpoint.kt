@@ -1,10 +1,14 @@
 package samples.grid
 
 import antd.tag.tag
-import react.*
-import styled.*
+import react.RBuilder
+import react.RProps
+import react.child
+import react.fc
+import styled.css
+import styled.styledDiv
 
-private val useBreakpointDemo = functionalComponent<RProps> {
+private val useBreakpointDemo = fc<RProps> {
     val screens = antd.grid.useBreakpoint()
 
     +"Current break point: "

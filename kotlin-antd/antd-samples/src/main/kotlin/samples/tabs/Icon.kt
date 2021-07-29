@@ -1,10 +1,15 @@
 package samples.tabs
 
-import antd.icon.*
-import antd.tabs.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.icon.androidOutlined
+import antd.icon.appleOutlined
+import antd.tabs.tabPane
+import antd.tabs.tabs
+import react.RBuilder
+import react.buildElement
+import react.dom.span
+import react.key
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.icon() {
     styledDiv {

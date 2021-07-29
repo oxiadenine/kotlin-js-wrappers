@@ -1,23 +1,28 @@
 package samples.configprovider
 
 import antd.button.button
-import antd.card.*
-import antd.configprovider.*
-import antd.datepicker.*
-import antd.divider.*
-import antd.input.*
+import antd.card.card
+import antd.configprovider.configProvider
+import antd.datepicker.datePicker
+import antd.datepicker.rangePicker
+import antd.divider.divider
 import antd.input.input
+import antd.input.search
 import antd.input.textArea
-import antd.radio.*
-import antd.select.*
+import antd.radio.radioButton
+import antd.radio.radioGroup
+import antd.select.SelectComponent
+import antd.select.SelectOptionsType
+import antd.select.select
 import antd.table.ColumnType
 import antd.table.ColumnsType
 import antd.table.TableComponent
 import antd.table.table
-import kotlinext.js.*
+import kotlinext.js.jsObject
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 external interface DataItem {
     var key: String
@@ -25,7 +30,7 @@ external interface DataItem {
     var age: Number
 }
 
-val formSizeDemo = functionalComponent<RProps> {
+val formSizeDemo = fc<RProps> {
     val (componentSize, setComponentSize) = useState("small")
 
     div {

@@ -1,15 +1,16 @@
 package samples.inputnumber
 
-import antd.*
+import antd.MouseEventHandler
 import antd.button.button
-import antd.inputnumber.*
+import antd.inputnumber.inputNumber
 import kotlinx.css.marginTop
 import kotlinx.css.px
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
-external interface DisabledAppState : RState {
+external interface DisabledAppState : State {
     var disabled: Boolean
 }
 

@@ -1,13 +1,15 @@
 package samples.button
 
-import antd.*
+import antd.MouseEventHandler
 import antd.button.button
-import antd.icon.*
+import antd.icon.poweroffOutlined
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.br
+import react.dom.span
+import styled.css
+import styled.styledDiv
 
-external interface LoadingAppState : RState {
+external interface LoadingAppState : State {
     var loading: Boolean
     var iconLoading: Boolean
 }

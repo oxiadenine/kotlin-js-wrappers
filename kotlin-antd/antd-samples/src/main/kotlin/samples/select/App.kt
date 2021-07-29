@@ -1,9 +1,15 @@
 package samples.select
 
-import kotlinx.css.*
-import react.*
-import react.dom.*
-import styled.*
+import kotlinx.css.margin
+import kotlinx.css.px
+import react.RBuilder
+import react.RComponent
+import react.RProps
+import react.State
+import react.dom.h2
+import styled.StyleSheet
+import styled.css
+import styled.styledDiv
 
 object SelectStyles : StyleSheet("select", isStatic = true) {
     val container by css {}
@@ -29,7 +35,7 @@ object SelectStyles : StyleSheet("select", isStatic = true) {
     val customTagRender by css {}
 }
 
-class SelectApp : RComponent<RProps, RState>() {
+class SelectApp : RComponent<RProps, State>() {
     override fun RBuilder.render() {
         h2 { +"Select" }
         styledDiv {

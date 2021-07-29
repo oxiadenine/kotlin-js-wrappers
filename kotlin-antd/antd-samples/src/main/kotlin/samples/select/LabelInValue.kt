@@ -3,10 +3,12 @@ package samples.select
 import antd.select.LabeledValue
 import antd.select.SelectComponent
 import antd.select.select
-import kotlinext.js.*
-import react.*
-import react.dom.*
-import styled.*
+import kotlinext.js.js
+import kotlinext.js.jsObject
+import react.RBuilder
+import react.dom.option
+import styled.css
+import styled.styledDiv
 
 private val handleChange = { value: LabeledValue, _: Any ->
     console.log(value)  // { key: "lucy", label: "Lucy (101)" }

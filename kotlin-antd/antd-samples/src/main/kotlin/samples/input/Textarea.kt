@@ -1,8 +1,9 @@
 package samples.input
 
-import antd.input.*
-import react.*
-import styled.*
+import antd.input.textArea
+import react.RBuilder
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.textarea() {
     styledDiv {

@@ -1,8 +1,9 @@
 package samples.alert
 
-import antd.alert.*
-import react.*
-import styled.*
+import antd.alert.alert
+import react.RBuilder
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.basic() {
     styledDiv {

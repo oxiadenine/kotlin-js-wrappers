@@ -1,16 +1,22 @@
 package samples.form
 
 import antd.button.button
-import antd.checkbox.*
-import antd.form.*
-import antd.icon.*
+import antd.checkbox.checkbox
+import antd.form.AggregationRule
+import antd.form.Store
+import antd.form.form
+import antd.form.formItem
+import antd.icon.lockOutlined
+import antd.icon.userOutlined
 import antd.input.input
-import kotlinext.js.*
+import kotlinext.js.js
+import kotlinext.js.jsObject
 import react.*
 import react.dom.a
-import styled.*
+import styled.css
+import styled.styledDiv
 
-private val normalLoginForm = functionalComponent<RProps> {
+private val normalLoginForm = fc<RProps> {
     val handleFinish = { values: Any ->
         console.log("Received values of form: ", values)
     }

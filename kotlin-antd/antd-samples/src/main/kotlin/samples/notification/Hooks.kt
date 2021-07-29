@@ -12,20 +12,13 @@ import antd.notification.notification
 import antd.space.space
 import kotlinext.js.js
 import kotlinext.js.jsObject
-import react.RBuilder
-import react.RProps
-import react.ReactElement
-import react.buildElement
-import react.child
-import react.createContext
-import react.dom.div
-import react.functionalComponent
+import react.*
 import styled.css
 import styled.styledDiv
 
 private val context = createContext(js { name = "Default" })
 
-private val demo = functionalComponent<RProps> {
+private val demo = fc<RProps> {
     val useNotification = notification.useNotification()
 
     val api = useNotification[0].unsafeCast<NotificationInstance>()

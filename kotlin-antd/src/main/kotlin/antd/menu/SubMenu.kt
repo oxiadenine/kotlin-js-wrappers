@@ -4,9 +4,7 @@ import antd.ReactNode
 import org.w3c.dom.events.*
 import react.*
 
-external object SubMenuComponent : Component<SubMenuProps, RState> {
-    override fun render(): ReactElement?
-}
+external interface SubMenuComponent : ComponentType<SubMenuProps>
 
 external interface SubMenuProps : RProps {
     var rootPrefixCls: String?

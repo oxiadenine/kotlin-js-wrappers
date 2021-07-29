@@ -1,10 +1,14 @@
 package samples.switch
 
-import antd.icon.*
-import antd.switch.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.icon.checkOutlined
+import antd.icon.closeOutlined
+import antd.switch.switch
+import react.RBuilder
+import react.buildElement
+import react.dom.br
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.text() {
     styledDiv {
@@ -27,8 +31,12 @@ fun RBuilder.text() {
             br {}
             switch {
                 attrs {
-                    checkedChildren = checkOutlined {}
-                    unCheckedChildren = closeOutlined {}
+                    checkedChildren = buildElement {
+                        checkOutlined {}
+                    }
+                    unCheckedChildren = buildElement {
+                        closeOutlined {}
+                    }
                     defaultChecked = true
                 }
             }

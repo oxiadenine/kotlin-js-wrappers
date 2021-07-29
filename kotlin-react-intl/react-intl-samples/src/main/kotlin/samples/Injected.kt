@@ -7,7 +7,7 @@ import reactintl.*
 import reactintl.provider.*
 import kotlin.js.Date
 
-private val comp = functionalComponent<RProps> {
+private val comp = fc<RProps> {
     val formatDate = useIntl()
 
     h1 { +formatDate.formatDate(Date.now()) }
@@ -17,7 +17,7 @@ external interface Comp2Props : WrappedComponentProps<Any> {
     var intl: IntlShape
 }
 
-private class Comp2 : RComponent<Comp2Props, RState>() {
+private class Comp2 : RComponent<Comp2Props, State>() {
     override fun RBuilder.render() {
         h1 { +props.intl.formatDate(Date.now(), jsObject { month = "long" }) }
         h2 { +props.intl.formatTime(undefined) }
@@ -27,7 +27,7 @@ private class Comp2 : RComponent<Comp2Props, RState>() {
 fun RBuilder.comp2WithIntl(handler: RHandler<Comp2Props>) =
     child(injectIntl<Any, Comp2Props>(Comp2::class.js), jsObject {}, handler)
 
-private val app = functionalComponent<RProps> {
+private val app = fc<RProps> {
     intlProvider {
         attrs {
             locale = "en"

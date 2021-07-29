@@ -7,7 +7,7 @@ import antd.ReactNode
 import react.*
 
 @JsName("default")
-external object DrawerComponent : Component<DrawerProps, RState> {
+external object DrawerComponent : Component<DrawerProps, State> {
     override fun render(): ReactElement?
 }
 

@@ -6,7 +6,7 @@ package reactresponsive
 import react.*
 
 @JsName("default")
-external class MediaQueryComponent : Component<MediaQueryProps, RState> {
+external class MediaQueryComponent : Component<MediaQueryProps, State> {
     override fun render(): ReactElement?
 }
 
@@ -26,7 +26,7 @@ external interface MediaQueryProps : MediaQueryAllQueryable, RProps {
 external fun toQuery(matchers: MediaQueryAllQueryable): String
 
 @JsName("context")
-external val context: RContext<MediaQueryAllQueryable>
+external val context: Context<MediaQueryAllQueryable>
 
 external interface MediaQueryTypes {
     var all: Boolean?

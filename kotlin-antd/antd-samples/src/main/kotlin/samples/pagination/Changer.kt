@@ -1,9 +1,10 @@
 package samples.pagination
 
-import antd.pagination.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.pagination.pagination
+import react.RBuilder
+import react.dom.br
+import styled.css
+import styled.styledDiv
 
 private fun handleShowSizeChange(current: Number, size: Number) {
     console.log(current, size)

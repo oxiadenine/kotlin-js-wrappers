@@ -1,9 +1,15 @@
 package samples.card
 
-import kotlinx.css.*
-import react.*
-import react.dom.*
-import styled.*
+import kotlinx.css.margin
+import kotlinx.css.marginBottom
+import kotlinx.css.px
+import react.RBuilder
+import react.RComponent
+import react.RProps
+import react.State
+import react.dom.div
+import react.dom.h2
+import styled.StyleSheet
 
 object CardStyles : StyleSheet("card", isStatic = true) {
     val basic by css {
@@ -25,7 +31,7 @@ object CardStyles : StyleSheet("card", isStatic = true) {
     val meta by css {}
 }
 
-class CardApp : RComponent<RProps, RState>() {
+class CardApp : RComponent<RProps, State>() {
     override fun RBuilder.render() {
         h2 { +"Card" }
         div {

@@ -1,18 +1,23 @@
 package samples.checkbox
 
-import antd.checkbox.*
+import antd.checkbox.CheckboxChangeEvent
+import antd.checkbox.CheckboxValueType
+import antd.checkbox.checkbox
+import antd.checkbox.checkboxGroup
 import kotlinx.css.BorderStyle
 import kotlinx.css.Color
 import kotlinx.css.properties.borderBottom
 import kotlinx.css.px
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.br
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 private val plainOptions: Array<CheckboxValueType> = arrayOf("Apple", "Pear", "Orange")
 private val defaultCheckedList: Array<CheckboxValueType> = arrayOf("Apple", "Orange")
 
-external interface CheckAllAppState : RState {
+external interface CheckAllAppState : State {
     var checkedList: Array<CheckboxValueType>
     var indeterminate: Boolean
     var checkAll: Boolean

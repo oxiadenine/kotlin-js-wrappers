@@ -1,8 +1,9 @@
 package samples.input
 
-import antd.input.*
-import react.*
-import styled.*
+import antd.input.input
+import react.RBuilder
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.basic() {
     styledDiv {

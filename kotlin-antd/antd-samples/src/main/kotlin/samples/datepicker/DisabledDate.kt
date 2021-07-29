@@ -1,11 +1,14 @@
 package samples.datepicker
 
 import antd.datepicker.*
-import kotlinext.js.*
-import moment.*
-import react.*
-import react.dom.*
-import styled.*
+import kotlinext.js.jsObject
+import moment.Moment
+import moment.moment
+import react.RBuilder
+import react.dom.br
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 private fun range(start: Number, end: Number): Array<Number> {
     return (start.toInt()..end.toInt()).toList().toTypedArray()

@@ -3,13 +3,13 @@
 
 package antd.calendar
 
-import antd.ReactNode
 import antd.localeprovider.Locale
+import antd.ReactNode
 import moment.*
 import react.*
 
 @JsName("default")
-external object CalendarComponent : Component<CalendarProps<Moment>, RState> {
+external object CalendarComponent : Component<CalendarProps<Moment>, State> {
     override fun render(): ReactElement?
 }
 

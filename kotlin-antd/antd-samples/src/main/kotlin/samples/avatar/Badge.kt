@@ -1,13 +1,17 @@
 package samples.avatar
 
-import antd.avatar.*
-import antd.badge.*
+import antd.avatar.avatar
+import antd.badge.badge
 import antd.icon.userOutlined
 import kotlinx.css.marginRight
 import kotlinx.css.px
-import react.*
-import react.dom.*
-import styled.*
+import react.RBuilder
+import react.buildElement
+import react.dom.div
+import react.dom.span
+import styled.css
+import styled.styledDiv
+import styled.styledSpan
 
 fun RBuilder.badge() {
     styledDiv {

@@ -1,12 +1,13 @@
 package samples.notification
 
-import antd.*
-import antd.button.*
-import antd.notification.*
-import kotlinext.js.*
-import kotlinx.browser.*
-import react.*
-import styled.*
+import antd.MouseEventHandler
+import antd.button.button
+import antd.notification.notification
+import kotlinext.js.jsObject
+import kotlinx.browser.window
+import react.RBuilder
+import styled.css
+import styled.styledDiv
 
 private val notKey = "updatable"
 

@@ -7,7 +7,7 @@ import antd.ReactNode
 import react.*
 
 @JsName("default")
-external object ProgressComponent : Component<ProgressProps, RState> {
+external object ProgressComponent : Component<ProgressProps, State> {
     override fun render(): ReactElement?
 }
 

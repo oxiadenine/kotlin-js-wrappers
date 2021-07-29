@@ -27,7 +27,7 @@ private val providerMessages = js {
     unicode = "Hello\u0020{placeholder}"
 }.unsafeCast<Any>()
 
-private val app = functionalComponent<RProps> {
+private val app = fc<RProps> {
     intlProvider {
         attrs {
             locale = "en"
@@ -126,7 +126,9 @@ private val app = functionalComponent<RProps> {
                     values = js {
                         num = 99
                         bold = fun(chunks: String): ReactElement {
-                            return strong { +chunks }
+                            return buildElement {
+                                strong { +chunks }
+                            }
                         }
                     }.unsafeCast<Any>()
                 }
@@ -138,7 +140,9 @@ private val app = functionalComponent<RProps> {
                     values = js {
                         num = 99
                         bold = fun(chunks: String): ReactElement {
-                            return strong { +chunks }
+                            return buildElement {
+                                strong { +chunks }
+                            }
                         }
                     }.unsafeCast<Any>()
                 }

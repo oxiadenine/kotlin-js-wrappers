@@ -1,12 +1,13 @@
 package antd.tree
 
 import antd.*
+import antd.ReactNode
 import kotlinext.js.Record
 import org.w3c.dom.*
 import react.*
 import kotlin.js.*
 
-external val treeContext: RContext<TreeContextProps?>
+external val treeContext: Context<TreeContextProps?>
 
 external interface TreeContextProps {
     var prefixCls: String

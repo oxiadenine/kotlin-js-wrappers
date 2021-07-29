@@ -1,14 +1,18 @@
 package samples.grid
 
-import antd.grid.*
 import antd.grid.col
-import antd.slider.*
+import antd.grid.row
+import antd.slider.SliderMarks
+import antd.slider.slider
 import kotlinx.css.*
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.div
+import react.dom.pre
+import styled.css
+import styled.styledDiv
+import styled.styledSpan
 
-external interface PlaygroundAppState : RState {
+external interface PlaygroundAppState : State {
     var gutterKey: Number
     var colCountKey: Number
 }

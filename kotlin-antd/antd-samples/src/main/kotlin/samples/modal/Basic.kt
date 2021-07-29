@@ -1,14 +1,17 @@
 package samples.modal
 
-import antd.*
+import antd.MouseEvent
+import antd.MouseEventHandler
 import antd.button.button
-import antd.modal.*
-import org.w3c.dom.*
+import antd.modal.modal
+import org.w3c.dom.HTMLElement
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.div
+import react.dom.p
+import styled.css
+import styled.styledDiv
 
-external interface BasicAppState : RState {
+external interface BasicAppState : State {
     var visible: Boolean
 }
 

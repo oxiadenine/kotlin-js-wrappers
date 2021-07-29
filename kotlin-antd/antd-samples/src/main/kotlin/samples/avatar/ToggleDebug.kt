@@ -1,18 +1,20 @@
 package samples.avatar
 
-import antd.*
-import antd.avatar.*
+import antd.MouseEventHandler
+import antd.avatar.avatar
 import antd.button.button
-import kotlinext.js.*
+import kotlinext.js.js
 import kotlinx.css.*
 import kotlinx.css.properties.Transforms
 import kotlinx.css.properties.scale
 import kotlinx.css.properties.transform
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.br
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
-external interface ToggleDebugAppState : RState {
+external interface ToggleDebugAppState : State {
     var hide: Boolean
     var size: String
     var scale: Number

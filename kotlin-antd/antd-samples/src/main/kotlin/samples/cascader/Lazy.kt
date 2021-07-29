@@ -1,10 +1,13 @@
 package samples.cascader
 
-import antd.cascader.*
-import kotlinext.js.*
-import kotlinx.browser.*
+import antd.cascader.CascaderOptionType
+import antd.cascader.CascaderValueType
+import antd.cascader.cascader
+import kotlinext.js.jsObject
+import kotlinx.browser.window
 import react.*
-import styled.*
+import styled.css
+import styled.styledDiv
 
 private val cascaderOptions = arrayOf<CascaderOptionType>(
     jsObject {
@@ -19,7 +22,7 @@ private val cascaderOptions = arrayOf<CascaderOptionType>(
     }
 )
 
-external interface LazyOptionsState : RState {
+external interface LazyOptionsState : State {
     var options: Array<CascaderOptionType>
 }
 

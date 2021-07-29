@@ -2,13 +2,19 @@ package samples.button
 
 import antd.button.button
 import antd.button.buttonGroup
-import antd.icon.*
-import antd.radio.*
+import antd.icon.downloadOutlined
+import antd.icon.leftOutlined
+import antd.icon.rightOutlined
+import antd.radio.RadioChangeEvent
+import antd.radio.radioButton
+import antd.radio.radioGroup
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.br
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
-external interface ButtonSizeState : RState {
+external interface ButtonSizeState : State {
     var size: String
 }
 

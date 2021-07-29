@@ -7,7 +7,7 @@ import antd.ReactNode
 import react.*
 
 @JsName("default")
-external object TimelineComponent : Component<TimelineProps, RState> {
+external object TimelineComponent : Component<TimelineProps, State> {
     val Item: TimelineItemComponent
 
     override fun render(): ReactElement?

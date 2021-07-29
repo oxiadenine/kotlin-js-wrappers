@@ -1,15 +1,20 @@
 package samples.menu
 
-import antd.icon.*
+import antd.icon.appstoreOutlined
+import antd.icon.mailOutlined
+import antd.icon.settingOutlined
 import antd.menu.*
-import antd.switch.*
-import kotlinext.js.*
-import org.w3c.dom.events.*
+import antd.switch.switch
+import kotlinext.js.js
+import org.w3c.dom.events.MouseEvent
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.br
+import react.dom.div
+import react.dom.span
+import styled.css
+import styled.styledDiv
 
-external interface ThemeSiderState : RState {
+external interface ThemeSiderState : State {
     var theme: MenuTheme
     var current: String
 }

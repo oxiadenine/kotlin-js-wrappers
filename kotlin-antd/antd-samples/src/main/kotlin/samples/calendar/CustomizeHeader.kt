@@ -1,17 +1,24 @@
 package samples.calendar
 
-import antd.calendar.*
-import antd.grid.*
+import antd.calendar.CalendarMode
+import antd.calendar.calendar
 import antd.grid.col
-import antd.radio.*
-import antd.select.*
+import antd.grid.row
+import antd.radio.radioButton
+import antd.radio.radioGroup
+import antd.select.SelectComponent
 import antd.select.option
+import antd.select.select
 import kotlinx.css.*
 import kotlinx.css.properties.border
-import moment.*
+import moment.Moment
 import react.RBuilder
 import react.ReactElement
-import styled.*
+import react.buildElement
+import react.dom.div
+import react.dom.span
+import styled.css
+import styled.styledDiv
 
 private fun handlePanelChange(value: Moment?, mode: CalendarMode?) {
     console.log(value, mode)
@@ -44,12 +51,14 @@ fun RBuilder.customizeHeader() {
                         }
 
                         for (index in start..end) {
-                            monthOptions.add(option {
-                                attrs {
-                                    className = "month-item"
-                                    key = "$index"
+                            monthOptions.add(buildElement {
+                                option {
+                                    attrs {
+                                        className = "month-item"
+                                        key = "$index"
+                                    }
+                                    +months[index]
                                 }
-                                +months[index]
                             })
                         }
 
@@ -59,73 +68,77 @@ fun RBuilder.customizeHeader() {
                         val options = mutableListOf<ReactElement>()
 
                         for (i in (year.toInt() - 10)..(year.toInt() + 10)) {
-                            options.add(option {
-                                attrs {
-                                    key = "$i"
-                                    value = i
-                                    className = "year-item"
+                            options.add(buildElement {
+                                option {
+                                    attrs {
+                                        key = "$i"
+                                        value = i
+                                        className = "year-item"
+                                    }
+                                    +"$i"
                                 }
-                                +"$i"
                             })
                         }
 
-                        styledDiv {
-                            css { padding(10.px) }
+                        buildElement {
                             styledDiv {
-                                css { marginBottom = 10.px }
-                                +"Custom header "
-                            }
-                            row {
-                                attrs.justify = "space-between"
-                                col {
-                                    radioGroup {
-                                        attrs {
-                                            size = "small"
-                                            onChange = { e ->
-                                                headerRender.onTypeChange(e.target.value.unsafeCast<String>())
+                                css { padding(10.px) }
+                                styledDiv {
+                                    css { marginBottom = 10.px }
+                                    +"Custom header "
+                                }
+                                row {
+                                    attrs.justify = "space-between"
+                                    col {
+                                        radioGroup {
+                                            attrs {
+                                                size = "small"
+                                                onChange = { e ->
+                                                    headerRender.onTypeChange(e.target.value.unsafeCast<String>())
+                                                }
+                                                value = headerRender.type
                                             }
-                                            value = headerRender.type
-                                        }
-                                        radioButton {
-                                            attrs.value = "month"
-                                            +"Month"
-                                        }
-                                        radioButton {
-                                            attrs.value = "year"
-                                            +"Year"
+                                            radioButton {
+                                                attrs.value = "month"
+                                                +"Month"
+                                            }
+                                            radioButton {
+                                                attrs.value = "year"
+                                                +"Year"
+                                            }
                                         }
                                     }
-                                }
-                                col {
-                                    select<Number, SelectComponent<Number>> {
-                                        attrs {
-                                            size = "small"
-                                            dropdownMatchSelectWidth = false
-                                            className = "my-year-select"
-                                            onChange = { newYear, _ ->
-                                                val now = headerRender.value.clone().year(newYear)
+                                    col {
+                                        select<Number, SelectComponent<Number>> {
+                                            attrs {
+                                                size = "small"
+                                                dropdownMatchSelectWidth = false
+                                                className = "my-year-select"
+                                                onChange = { newYear, _ ->
+                                                    val now = headerRender.value.clone().year(newYear)
 
-                                                headerRender.onChange.invoke(now)
+                                                    headerRender.onChange.invoke(now)
+                                                }
+                                                value = year
                                             }
-                                            value = year
+                                            childList.add(options.toTypedArray())
                                         }
-                                        childList.add(options.toTypedArray())
                                     }
-                                }
-                                col {
-                                    select<String, SelectComponent<String>> {
-                                        attrs {
-                                            size = "small"
-                                            dropdownMatchSelectWidth = false
-                                            value = month.toString()
-                                            onChange = { selectedMonth, _ ->
-                                                val newValue = headerRender.value.clone()
-                                                newValue.month(selectedMonth.toInt(10))
+                                    col {
+                                        select<String, SelectComponent<String>> {
+                                            attrs {
+                                                size = "small"
+                                                dropdownMatchSelectWidth = false
+                                                value = month.toString()
+                                                onChange = { selectedMonth, _ ->
+                                                    val newValue = headerRender.value.clone()
+                                                    newValue.month(selectedMonth.toInt(10))
 
-                                                headerRender.onChange.invoke(newValue)
+                                                    headerRender.onChange.invoke(newValue)
+                                                }
                                             }
+                                            childList.add(monthOptions.toTypedArray())
                                         }
-                                        childList.add(monthOptions.toTypedArray())
                                     }
                                 }
                             }

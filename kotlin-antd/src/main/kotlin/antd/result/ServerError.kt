@@ -1,11 +1,8 @@
 package antd.result
 
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 
-external object ServerErrorComponent : Component<ServerErrorProps, RState> {
+external object ServerErrorComponent : Component<ServerErrorProps, State> {
     override fun render(): ReactElement?
 }
 

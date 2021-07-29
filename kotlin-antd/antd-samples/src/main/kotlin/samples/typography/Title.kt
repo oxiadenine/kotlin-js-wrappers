@@ -1,9 +1,10 @@
 package samples.typography
 
 import antd.typography.typographyTitle
-import react.*
+import react.RBuilder
 import react.dom.div
-import styled.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.title() {
     styledDiv {

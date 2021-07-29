@@ -1,10 +1,12 @@
 package samples.alert
 
-import antd.alert.*
-import antd.icon.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.alert.alert
+import antd.icon.smileOutlined
+import react.RBuilder
+import react.buildElement
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 private val smileIcon = buildElement {
     smileOutlined {}

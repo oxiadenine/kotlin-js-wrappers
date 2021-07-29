@@ -1,17 +1,20 @@
 package samples.select
 
-import antd.divider.*
-import antd.icon.*
-import antd.select.*
+import antd.divider.divider
+import antd.icon.plusOutlined
+import antd.select.SelectComponent
 import antd.select.option
-import kotlinext.js.*
+import antd.select.select
+import kotlinext.js.js
 import kotlinx.css.Cursor
 import kotlinx.css.cursor
 import kotlinx.css.padding
 import kotlinx.css.px
-import react.*
-import react.dom.*
-import styled.*
+import react.RBuilder
+import react.buildElement
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.customDropdownMenu() {
     styledDiv {

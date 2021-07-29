@@ -1,12 +1,17 @@
 package samples.button
 
 import antd.button.button
-import antd.dropdown.*
-import antd.icon.*
-import antd.menu.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.dropdown.dropdown
+import antd.icon.downOutlined
+import antd.menu.MenuClickEventHandler
+import antd.menu.menu
+import antd.menu.menuItem
+import react.RBuilder
+import react.buildElement
+import react.dom.div
+import react.key
+import styled.css
+import styled.styledDiv
 
 private val handleMenuClick: MenuClickEventHandler = { info ->
     console.log("click", info)

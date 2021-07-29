@@ -1,17 +1,25 @@
 package samples.icon
 
-import antd.icon.*
-import kotlinext.js.*
-import kotlinx.html.*
+import antd.icon.CustomIconComponentProps
+import antd.icon.icon
+import kotlinext.js.js
+import kotlinx.html.HTMLTag
+import kotlinx.html.classes
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.RDOMBuilder
+import react.dom.div
+import react.dom.svg
+import react.dom.tag
+import styled.css
+import styled.styledDiv
 
-fun RBuilder.path(tagName: String, block: RDOMBuilder<HTMLTag>.() -> Unit): ReactElement = tag(block) {
-    HTMLTag(tagName, it, mapOf(), null, inlineTag = true, emptyTag = false)
+fun RBuilder.path(tagName: String, block: RDOMBuilder<HTMLTag>.() -> Unit): ReactElement = buildElement {
+    tag(block) {
+        HTMLTag(tagName, it, mapOf(), null, inlineTag = true, emptyTag = false)
+    }
 }
 
-object HeartSvg : RComponent<CustomIconComponentProps, RState>() {
+object HeartSvg : RComponent<CustomIconComponentProps, State>() {
     override fun RBuilder.render() {
         svg {
             attrs["width"] = "1em"
@@ -26,7 +34,7 @@ object HeartSvg : RComponent<CustomIconComponentProps, RState>() {
     }
 }
 
-object PandaSvg : RComponent<CustomIconComponentProps, RState>() {
+object PandaSvg : RComponent<CustomIconComponentProps, State>() {
     override fun RBuilder.render() {
         svg {
             attrs["viewBox"] = "0 0 1024 1024"
@@ -78,7 +86,7 @@ object PandaSvg : RComponent<CustomIconComponentProps, RState>() {
     }
 }
 
-class HeartIcon : RComponent<CustomIconComponentProps, RState>() {
+class HeartIcon : RComponent<CustomIconComponentProps, State>() {
     override fun RBuilder.render() {
         icon {
             attrs {
@@ -90,7 +98,7 @@ class HeartIcon : RComponent<CustomIconComponentProps, RState>() {
 
 fun RBuilder.heartIcon(handler: RHandler<CustomIconComponentProps>) = child(HeartIcon::class, handler)
 
-class PandaIcon : RComponent<CustomIconComponentProps, RState>() {
+class PandaIcon : RComponent<CustomIconComponentProps, State>() {
     override fun RBuilder.render() {
         icon {
             attrs {

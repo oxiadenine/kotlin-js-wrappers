@@ -1,15 +1,16 @@
 package samples.slider
 
-import antd.grid.*
 import antd.grid.col
-import antd.inputnumber.*
-import antd.slider.*
-import kotlinext.js.*
+import antd.grid.row
+import antd.inputnumber.inputNumber
+import antd.slider.slider
+import kotlinext.js.js
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
-external interface IntegerStepState : RState {
+external interface IntegerStepState : State {
     var inputValue: Number
 }
 
@@ -56,7 +57,7 @@ class IntegerStep : RComponent<RProps, IntegerStepState>() {
 
 fun RBuilder.integerStep() = child(IntegerStep::class) {}
 
-external interface DecimalStepState : RState {
+external interface DecimalStepState : State {
     var inputValue: Number
 }
 

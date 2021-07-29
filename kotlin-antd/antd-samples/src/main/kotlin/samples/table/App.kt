@@ -1,9 +1,14 @@
 package samples.table
 
 import kotlinx.css.*
-import react.*
-import react.dom.*
-import styled.*
+import react.RBuilder
+import react.RComponent
+import react.RProps
+import react.State
+import react.dom.h2
+import styled.StyleSheet
+import styled.css
+import styled.styledDiv
 
 object TableStyles : StyleSheet("table", isStatic = true) {
     val container by css {}
@@ -69,7 +74,7 @@ object TableStyles : StyleSheet("table", isStatic = true) {
     }
 }
 
-class TableApp : RComponent<RProps, RState>() {
+class TableApp : RComponent<RProps, State>() {
     override fun RBuilder.render() {
         h2 { +"Table" }
         styledDiv {

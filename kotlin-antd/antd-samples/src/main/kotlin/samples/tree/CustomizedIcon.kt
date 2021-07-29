@@ -1,9 +1,15 @@
 package samples.tree
 
 import antd.icon.*
-import antd.tree.*
-import react.*
-import styled.*
+import antd.tree.TreeNodeAttribute
+import antd.tree.tree
+import antd.tree.treeNode
+import react.RBuilder
+import react.ReactElement
+import react.buildElement
+import react.key
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.customizedIcon() {
     styledDiv {

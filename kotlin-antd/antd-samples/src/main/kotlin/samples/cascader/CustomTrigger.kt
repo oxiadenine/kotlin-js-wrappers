@@ -1,10 +1,14 @@
 package samples.cascader
 
-import antd.cascader.*
-import kotlinext.js.*
+import antd.cascader.CascaderOptionType
+import antd.cascader.CascaderValueType
+import antd.cascader.cascader
+import kotlinext.js.jsObject
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.a
+import react.dom.span
+import styled.css
+import styled.styledDiv
 
 private val cascaderOptions = arrayOf<CascaderOptionType>(
     jsObject {
@@ -29,7 +33,7 @@ private val cascaderOptions = arrayOf<CascaderOptionType>(
     }
 )
 
-external interface CustomTriggerCitySwitcherState : RState {
+external interface CustomTriggerCitySwitcherState : State {
     var text: String
 }
 

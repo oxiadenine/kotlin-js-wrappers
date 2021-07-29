@@ -1,12 +1,9 @@
 package antd.descriptions
 
 import antd.ReactNode
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 
-external object CellComponent : Component<CellProps, RState> {
+external object CellComponent : Component<CellProps, State> {
     override fun render(): ReactElement?
 }
 

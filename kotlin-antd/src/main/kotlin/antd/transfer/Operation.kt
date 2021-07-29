@@ -5,7 +5,7 @@ import antd.configprovider.DirectionType
 import org.w3c.dom.*
 import react.*
 
-external object TransferOperationComponent : Component<TransferOperationProps, RState> {
+external object TransferOperationComponent : Component<TransferOperationProps, State> {
     override fun render(): ReactElement?
 }
 

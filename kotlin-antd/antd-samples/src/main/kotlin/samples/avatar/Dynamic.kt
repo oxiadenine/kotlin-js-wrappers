@@ -1,16 +1,17 @@
 package samples.avatar
 
-import antd.*
-import antd.avatar.*
-import antd.button.*
-import kotlinext.js.*
+import antd.MouseEventHandler
+import antd.avatar.avatar
+import antd.button.button
+import kotlinext.js.js
 import react.*
-import styled.*
+import styled.css
+import styled.styledDiv
 
 private val userList = arrayOf("U", "Lucy", "Tom", "Edward")
 private val colorList = arrayOf("#f56a00", "#7265e6", "#ffbf00", "#00a2ae")
 
-external interface AutosetState : RState {
+external interface AutosetState : State {
     var user: String
     var color: String
 }

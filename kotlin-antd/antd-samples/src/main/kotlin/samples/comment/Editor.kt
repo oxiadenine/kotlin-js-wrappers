@@ -1,25 +1,30 @@
 package samples.comment
 
-import antd.*
-import antd.avatar.*
+import antd.ChangeEventHandler
+import antd.MouseEventHandler
+import antd.avatar.avatar
 import antd.button.button
-import antd.comment.*
-import antd.form.*
+import antd.comment.CommentProps
+import antd.comment.comment
+import antd.form.formItem
 import antd.input.textArea
-import antd.list.*
-import kotlinext.js.*
-import kotlinx.browser.*
-import moment.*
-import org.w3c.dom.*
+import antd.list.ListComponent
+import antd.list.list
+import kotlinext.js.jsObject
+import kotlinx.browser.window
+import moment.moment
+import org.w3c.dom.HTMLTextAreaElement
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.div
+import react.dom.p
+import styled.css
+import styled.styledDiv
 
 external interface CommentListProps : RProps {
     var comments: Array<CommentProps>
 }
 
-class CommentList : RComponent<CommentListProps, RState>() {
+class CommentList : RComponent<CommentListProps, State>() {
     override fun RBuilder.render() {
         list<CommentProps, ListComponent<CommentProps>> {
             attrs {
@@ -27,12 +32,14 @@ class CommentList : RComponent<CommentListProps, RState>() {
                 header = "${props.comments.size} ${if (props.comments.size > 1) "replies" else "reply"}"
                 itemLayout = "horizontal"
                 renderItem = { item, _ ->
-                    comment {
-                        attrs {
-                            author = item.author
-                            avatar = item.avatar
-                            content = item.content
-                            datetime = item.datetime
+                    buildElement {
+                        comment {
+                            attrs {
+                                author = item.author
+                                avatar = item.avatar
+                                content = item.content
+                                datetime = item.datetime
+                            }
                         }
                     }
                 }
@@ -50,7 +57,7 @@ external interface EditorProps : RProps {
     var value: String?
 }
 
-class Editor : RComponent<EditorProps, RState>() {
+class Editor : RComponent<EditorProps, State>() {
     override fun RBuilder.render() {
         div {
             formItem {
@@ -78,7 +85,7 @@ class Editor : RComponent<EditorProps, RState>() {
 
 fun RBuilder.editor(handler: RHandler<EditorProps>) = child(Editor::class, handler)
 
-external interface EditorAppState : RState {
+external interface EditorAppState : State {
     var comments: Array<CommentProps>
     var submitting: Boolean
     var value: String?

@@ -1,10 +1,14 @@
 package samples.table
 
 import antd.table.*
-import kotlinext.js.*
-import kotlinx.browser.*
+import kotlinext.js.Object
+import kotlinext.js.Record
+import kotlinext.js.js
+import kotlinext.js.jsObject
+import kotlinx.browser.window
 import react.*
-import styled.*
+import styled.css
+import styled.styledDiv
 import kotlin.js.json
 
 private val tableColumns = arrayOf<ColumnType<Any>>(
@@ -36,7 +40,7 @@ private val tableColumns = arrayOf<ColumnType<Any>>(
     }
 )
 
-external interface AjaxAppState : RState {
+external interface AjaxAppState : State {
     var data: Array<Any>
     var pagination: TablePaginationConfig
     var loading: Boolean

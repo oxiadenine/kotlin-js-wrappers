@@ -1,10 +1,11 @@
 package samples.message
 
-import antd.*
-import antd.button.*
-import antd.message.*
-import react.*
-import styled.*
+import antd.MouseEventHandler
+import antd.button.button
+import antd.message.message
+import react.RBuilder
+import styled.css
+import styled.styledDiv
 
 private val success: MouseEventHandler<Any> = {
     message.loading("Action in progress..", 2.5).promise

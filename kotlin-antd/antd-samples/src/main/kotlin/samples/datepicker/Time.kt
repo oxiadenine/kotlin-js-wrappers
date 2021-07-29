@@ -1,11 +1,16 @@
 package samples.datepicker
 
-import antd.datepicker.*
-import kotlinext.js.*
-import moment.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.datepicker.RangeShowTimeObject
+import antd.datepicker.RangeValue
+import antd.datepicker.datePicker
+import antd.datepicker.rangePicker
+import kotlinext.js.jsObject
+import moment.Moment
+import react.RBuilder
+import react.dom.br
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 private fun handleChange(date: Moment, dateString: String) {
     console.log("Selected Time: ", date)

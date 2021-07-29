@@ -1,11 +1,13 @@
 package samples.avatar
 
-import antd.avatar.*
+import antd.avatar.avatar
 import antd.icon.userOutlined
-import kotlinext.js.*
-import react.*
-import react.dom.*
-import styled.*
+import kotlinext.js.js
+import react.RBuilder
+import react.buildElement
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.type() {
     styledDiv {

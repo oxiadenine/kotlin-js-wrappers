@@ -1,11 +1,16 @@
 package samples.menu
 
-import antd.icon.*
+import antd.icon.appstoreOutlined
+import antd.icon.mailOutlined
+import antd.icon.settingOutlined
 import antd.menu.*
-import kotlinext.js.*
-import react.*
-import react.dom.*
-import styled.*
+import kotlinext.js.js
+import react.RBuilder
+import react.buildElement
+import react.dom.span
+import react.key
+import styled.css
+import styled.styledDiv
 
 private val handleClick: MenuClickEventHandler = { info ->
     console.log("click ", info)

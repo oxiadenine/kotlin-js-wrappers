@@ -3,13 +3,13 @@
 
 package antd.localeprovider
 
-import antd.ReactNode
 import antd.datepicker.PickerLocale
 import antd.form.ValidateMessages
 import antd.empty.TransferLocale as TransferLocaleForEmpty
 import antd.modal.*
 import antd.pagination.PaginationLocale
 import antd.popconfirm.PopconfirmLocale
+import antd.ReactNode
 import antd.table.TableLocale
 import antd.transfer.TransferLocale
 import antd.upload.UploadLocale
@@ -17,7 +17,7 @@ import kotlinext.js.*
 import react.*
 
 @JsName("default")
-external object LocaleProviderComponent : Component<LocaleProviderProps, RState> {
+external object LocaleProviderComponent : Component<LocaleProviderProps, State> {
     override fun render(): ReactElement?
 }
 

@@ -4,7 +4,7 @@ import antd.*
 import org.w3c.dom.*
 import react.*
 
-external object TransferSearchComponent : Component<TransferSearchProps, RState> {
+external object TransferSearchComponent : Component<TransferSearchProps, State> {
     override fun render(): ReactElement?
 }
 

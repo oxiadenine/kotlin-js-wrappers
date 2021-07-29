@@ -8,7 +8,7 @@ import reactintl.*
 
 @JsName("FormattedPlural")
 external class FormattedPluralComponent :
-    Component<WithIntlProps<FormattedPluralProps>, RState>,
+    Component<WithIntlProps<FormattedPluralProps>, State>,
     FormattedPluralWrappedComponent {
     override var WrappedComponent: RClass<FormattedPluralProps>
 

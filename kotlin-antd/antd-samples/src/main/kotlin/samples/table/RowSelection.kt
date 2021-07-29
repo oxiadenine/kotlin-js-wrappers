@@ -1,10 +1,12 @@
 package samples.table
 
 import antd.table.*
-import kotlinext.js.*
-import react.*
-import react.dom.*
-import styled.*
+import kotlinext.js.jsObject
+import react.RBuilder
+import react.buildElement
+import react.dom.a
+import styled.css
+import styled.styledDiv
 
 private external interface RowSelectionTableDataItem {
     var key: String

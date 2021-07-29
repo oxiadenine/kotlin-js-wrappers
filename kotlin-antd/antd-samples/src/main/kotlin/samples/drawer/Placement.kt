@@ -1,16 +1,20 @@
 package samples.drawer
 
-import antd.*
+import antd.MouseEventHandler
 import antd.button.button
-import antd.drawer.*
-import antd.radio.*
-import kotlinext.js.*
+import antd.drawer.EventType
+import antd.drawer.drawer
+import antd.radio.RadioChangeEvent
+import antd.radio.radio
+import antd.radio.radioGroup
+import kotlinext.js.js
 import react.*
 import react.dom.div
 import react.dom.p
-import styled.*
+import styled.css
+import styled.styledDiv
 
-external interface PlacementAppState : RState {
+external interface PlacementAppState : State {
     var visible: Boolean
     var placement: String
 }

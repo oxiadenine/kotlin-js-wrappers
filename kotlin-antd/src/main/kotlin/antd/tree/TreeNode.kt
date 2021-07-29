@@ -1,12 +1,12 @@
 package antd.tree
 
 import antd.*
+import antd.ReactNode
 import org.w3c.dom.*
 import react.*
+import react.Ref
 
-external object TreeNodeComponent : Component<InternalTreeNodeProps, TreeNodeState> {
-    override fun render(): ReactElement?
-}
+external interface TreeNodeComponent : ComponentType<InternalTreeNodeProps>
 
 external interface InternalTreeNodeProps : TreeNodeProps, RProps {
     var context: TreeContextProps?
@@ -44,7 +44,7 @@ external interface TreeNodeProps {
     var children: ReactNode?
 }
 
-external interface TreeNodeState : RState {
+external interface TreeNodeState : State {
     var dragNodeHighlight: Boolean
 }
 

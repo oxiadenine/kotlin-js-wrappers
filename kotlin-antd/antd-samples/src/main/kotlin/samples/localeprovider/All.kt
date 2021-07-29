@@ -1,30 +1,47 @@
 package samples.localeprovider
 
-import antd.*
+import antd.MouseEvent
+import antd.MouseEventHandler
 import antd.button.button
-import antd.calendar.*
-import antd.datepicker.*
+import antd.calendar.calendar
+import antd.datepicker.datePicker
 import antd.datepicker.rangePicker
-import antd.localeprovider.*
 import antd.localeprovider.Locale
-import antd.modal.*
-import antd.pagination.*
-import antd.popconfirm.*
-import antd.radio.*
+import antd.localeprovider.enUS
+import antd.localeprovider.localeProvider
+import antd.localeprovider.zhCN
+import antd.modal.ModalComponent
+import antd.modal.modal
+import antd.pagination.pagination
+import antd.popconfirm.popconfirm
+import antd.radio.RadioChangeEvent
+import antd.radio.radioButton
+import antd.radio.radioGroup
 import antd.select.SelectComponent
 import antd.select.select
-import antd.table.*
+import antd.table.ColumnType
+import antd.table.ColumnsType
+import antd.table.TableComponent
+import antd.table.table
 import antd.timepicker.timePicker
-import antd.transfer.*
-import kotlinext.js.*
+import antd.transfer.TransferComponent
+import antd.transfer.TransferItem
+import antd.transfer.transfer
+import kotlinext.js.js
+import kotlinext.js.jsObject
 import kotlinx.css.*
 import kotlinx.css.properties.border
-import kotlinx.html.*
-import moment.*
-import org.w3c.dom.*
+import kotlinx.html.classes
+import moment.moment
+import org.w3c.dom.HTMLElement
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.a
+import react.dom.div
+import react.dom.option
+import react.dom.p
+import styled.css
+import styled.styledDiv
+import styled.styledSpan
 
 private val tableColumns = arrayOf<ColumnType<Any>>(
     jsObject {
@@ -47,7 +64,7 @@ external interface PageProps : RProps {
     var key: String
 }
 
-external interface PageState : RState {
+external interface PageState : State {
     var visible: Boolean
 }
 
@@ -189,7 +206,7 @@ class Page : RComponent<PageProps, PageState>() {
 
 fun RBuilder.page(handler: RHandler<PageProps>) = child(Page::class, handler)
 
-external interface PageAppState : RState {
+external interface PageAppState : State {
     var locale: Locale?
 }
 

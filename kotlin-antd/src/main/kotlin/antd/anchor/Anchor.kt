@@ -4,6 +4,7 @@
 package antd.anchor
 
 import antd.*
+import antd.ReactNode
 import org.w3c.dom.*
 import react.*
 
@@ -30,7 +31,7 @@ external interface AnchorProps : RProps {
     var onChange: ((currentActiveLink: String) -> Unit)?
 }
 
-external interface AnchorState : RState {
+external interface AnchorState : State {
     var activeLink: String?
 }
 

@@ -1,9 +1,13 @@
 package samples.datepicker
 
-import antd.datepicker.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.datepicker.datePicker
+import antd.datepicker.monthPicker
+import antd.datepicker.rangePicker
+import react.RBuilder
+import react.dom.br
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.extraFooter() {
     styledDiv {

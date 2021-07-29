@@ -3,9 +3,7 @@ package antd.form
 import antd.ReactNode
 import react.*
 
-external object FormListComponent : Component<FormListProps, RState> {
-    override fun render(): ReactElement?
-}
+external interface FormListComponent : ComponentType<FormListProps>
 
 external interface FormListProps : RProps {
     var prefixCls: String?

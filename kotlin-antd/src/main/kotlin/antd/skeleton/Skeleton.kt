@@ -7,7 +7,7 @@ import antd.ReactNode
 import react.*
 
 @JsName("default")
-external object SkeletonComponent : Component<SkeletonProps, RState> {
+external object SkeletonComponent : Component<SkeletonProps, State> {
     val Button: SkeletonButtonComponent
     val Avatar: SkeletonAvatarComponent
     val Input: SkeletonInputComponent

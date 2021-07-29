@@ -2,9 +2,7 @@ package antd.skeleton
 
 import react.*
 
-external object SkeletonTitleComponent : Component<SkeletonTitleProps, RState> {
-    override fun render(): ReactElement?
-}
+external interface SkeletonTitleComponent : ComponentType<SkeletonTitleProps>
 
 external interface SkeletonTitleProps : RProps {
     var prefixCls: String?

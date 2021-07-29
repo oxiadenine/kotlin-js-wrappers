@@ -1,11 +1,13 @@
 package samples.tag
 
-import antd.tag.*
+import antd.tag.tag
 import kotlinx.css.marginBottom
 import kotlinx.css.px
-import react.*
-import react.dom.*
-import styled.*
+import react.RBuilder
+import react.dom.div
+import styled.css
+import styled.styledDiv
+import styled.styledH4
 
 fun RBuilder.colorful() {
     styledDiv {

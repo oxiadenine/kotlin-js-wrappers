@@ -1,19 +1,24 @@
 package samples.list
 
-import antd.*
-import antd.avatar.*
+import antd.MouseEventHandler
+import antd.avatar.avatar
 import antd.button.button
-import antd.list.*
-import antd.skeleton.*
-import kotlinext.js.*
-import kotlinx.browser.*
+import antd.list.ListComponent
+import antd.list.list
+import antd.list.listItem
+import antd.list.listItemMeta
+import antd.skeleton.skeleton
+import kotlinext.js.js
+import kotlinext.js.jsObject
+import kotlinx.browser.window
 import kotlinx.css.*
 import kotlinx.css.properties.LineHeight
-import org.w3c.dom.events.*
+import org.w3c.dom.events.Event
 import react.*
 import react.dom.a
 import react.dom.div
-import styled.*
+import styled.css
+import styled.styledDiv
 import kotlin.js.json
 
 private val count = 3
@@ -24,7 +29,7 @@ external interface LoadMoreListDataItem {
     var name: dynamic
 }
 
-external interface LoadMoreListState : RState {
+external interface LoadMoreListState : State {
     var initLoading: Boolean
     var loading: Boolean
     var data: Array<LoadMoreListDataItem>
@@ -111,35 +116,37 @@ class LoadMoreList : RComponent<RProps, LoadMoreListState>() {
                 loadMore = listLoadMore
                 dataSource = state.list
                 renderItem = { item, _ ->
-                    listItem {
-                        attrs.actions = arrayOf(
-                            buildElement { a { +"edit" } },
-                            buildElement { a { +"more" } }
-                        )
-                        skeleton {
-                            attrs {
-                                avatar = true
-                                title = false
-                                loading = item.loading
-                                active = true
-                            }
-                            listItemMeta {
+                    buildElement {
+                        listItem {
+                            attrs.actions = arrayOf(
+                                buildElement { a { +"edit" } },
+                                buildElement { a { +"more" } }
+                            )
+                            skeleton {
                                 attrs {
-                                    avatar = buildElement {
-                                        avatar {
-                                            attrs.src = "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-                                        }
-                                    }
-                                    title = buildElement {
-                                        a {
-                                            attrs.href = "https://ant.design"
-                                            +"${item.name["last"] ?: ""}"
-                                        }
-                                    }
-                                    description = "Ant Design, a design language for background applications, is refined by Ant UED Team"
+                                    avatar = true
+                                    title = false
+                                    loading = item.loading
+                                    active = true
                                 }
+                                listItemMeta {
+                                    attrs {
+                                        avatar = buildElement {
+                                            avatar {
+                                                attrs.src = "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+                                            }
+                                        }
+                                        title = buildElement {
+                                            a {
+                                                attrs.href = "https://ant.design"
+                                                +"${item.name["last"] ?: ""}"
+                                            }
+                                        }
+                                        description = "Ant Design, a design language for background applications, is refined by Ant UED Team"
+                                    }
+                                }
+                                div { +"content" }
                             }
-                            div { +"content" }
                         }
                     }
                 }

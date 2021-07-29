@@ -1,24 +1,29 @@
 package samples.form
 
-import antd.autocomplete.*
+import antd.autocomplete.DataSourceItemType
+import antd.autocomplete.autoComplete
 import antd.button.button
-import antd.cascader.*
-import antd.checkbox.*
+import antd.cascader.CascaderOptionType
+import antd.cascader.cascader
+import antd.checkbox.checkbox
 import antd.form.*
-import antd.form.form
-import antd.grid.*
 import antd.grid.col
-import antd.icon.*
-import antd.input.*
+import antd.grid.row
+import antd.icon.questionCircleOutlined
 import antd.input.input
-import antd.select.*
+import antd.input.password
+import antd.select.SelectComponent
 import antd.select.option
-import antd.tooltip.*
-import kotlinext.js.*
+import antd.select.select
+import antd.tooltip.tooltip
+import kotlinext.js.js
+import kotlinext.js.jsObject
 import react.*
-import react.dom.*
-import styled.*
-import kotlin.js.*
+import react.dom.a
+import react.dom.span
+import styled.css
+import styled.styledDiv
+import kotlin.js.Promise
 
 private val residences: Array<CascaderOptionType> = arrayOf(
     jsObject {
@@ -71,12 +76,12 @@ private val tailFormItemLayout = jsObject<FormProps<Any>> {
     }
 }
 
-external interface RegistrationFormState : RState {
+external interface RegistrationFormState : State {
     var confirmDirty: Boolean
     var autoCompleteResult: Array<DataSourceItemType>
 }
 
-private val registrationForm = functionalComponent<RProps> {
+private val registrationForm = fc<RProps> {
     val formInstance = FormComponent.useForm()[0]
 
     val handleFinish = { values: Any ->

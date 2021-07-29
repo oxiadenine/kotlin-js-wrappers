@@ -33,15 +33,10 @@ import kotlinx.css.marginRight
 import kotlinx.css.px
 import moment.moment
 import org.w3c.dom.HTMLElement
-import react.RBuilder
-import react.RComponent
-import react.RHandler
-import react.RProps
-import react.RState
+import react.*
 import react.dom.a
 import react.dom.div
 import react.dom.p
-import react.setState
 import styled.css
 import styled.styledDiv
 import styled.styledSpan
@@ -65,7 +60,7 @@ external interface LocalePageProps : RProps {
     var key: String
 }
 
-external interface LocalePageState : RState {
+external interface LocalePageState : State {
     var visible: Boolean
 }
 
@@ -191,7 +186,7 @@ class LocalePage : RComponent<LocalePageProps, LocalePageState>() {
 
 fun RBuilder.localePage(handler: RHandler<LocalePageProps>) = child(LocalePage::class, handler)
 
-external interface LocaleAppState : RState {
+external interface LocaleAppState : State {
     var locale: Locale?
 }
 

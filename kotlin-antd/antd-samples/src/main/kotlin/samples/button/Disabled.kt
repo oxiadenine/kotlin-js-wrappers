@@ -5,9 +5,11 @@ import kotlinx.css.background
 import kotlinx.css.padding
 import kotlinx.css.px
 import kotlinx.css.rgb
-import react.*
-import react.dom.*
-import styled.*
+import react.RBuilder
+import react.dom.br
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.disabled() {
     styledDiv {

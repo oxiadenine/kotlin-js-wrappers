@@ -1,12 +1,14 @@
 package samples.steps
 
 import antd.button.button
-import antd.message.*
-import antd.steps.*
-import kotlinext.js.*
+import antd.message.message
+import antd.steps.step
+import antd.steps.steps
+import kotlinext.js.js
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 private data class Step(val title: String, val content: String)
 
@@ -16,7 +18,7 @@ private val steps = arrayOf(
     Step("Last", "Last-content")
 )
 
-external interface StepNextAppState : RState {
+external interface StepNextAppState : State {
     var current: Number
 }
 

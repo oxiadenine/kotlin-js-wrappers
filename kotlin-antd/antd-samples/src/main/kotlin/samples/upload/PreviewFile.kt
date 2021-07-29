@@ -1,13 +1,16 @@
 package samples.upload
 
 import antd.button.button
-import antd.icon.*
-import antd.upload.*
-import kotlinext.js.*
-import kotlinx.browser.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.icon.uploadOutlined
+import antd.upload.UploadComponent
+import antd.upload.UploadProps
+import antd.upload.upload
+import kotlinext.js.jsObject
+import kotlinx.browser.window
+import react.RBuilder
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 private val props = jsObject<UploadProps<Any>> {
     action = "//jsonplaceholder.typicode.com/posts/"

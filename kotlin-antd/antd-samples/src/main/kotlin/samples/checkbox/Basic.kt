@@ -1,8 +1,10 @@
 package samples.checkbox
 
-import antd.checkbox.*
-import react.*
-import styled.*
+import antd.checkbox.CheckboxChangeEvent
+import antd.checkbox.checkbox
+import react.RBuilder
+import styled.css
+import styled.styledDiv
 
 private fun handleChange(event: CheckboxChangeEvent) {
     console.log("checked = ${event.target.checked}")

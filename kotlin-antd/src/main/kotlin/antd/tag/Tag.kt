@@ -4,11 +4,12 @@
 package antd.tag
 
 import antd.*
+import antd.ReactNode
 import org.w3c.dom.*
 import react.*
 
 @JsName("default")
-external object TagComponent : Component<TagProps, RState> {
+external object TagComponent : Component<TagProps, State> {
     val CheckableTag: CheckableTagComponent
 
     override fun render(): ReactElement?

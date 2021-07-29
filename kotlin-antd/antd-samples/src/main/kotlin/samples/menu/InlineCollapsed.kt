@@ -1,17 +1,20 @@
 package samples.menu
 
-import antd.*
+import antd.MouseEventHandler
 import antd.button.button
 import antd.icon.*
-import antd.menu.*
-import kotlinext.js.*
+import antd.menu.menu
+import antd.menu.menuItem
+import antd.menu.subMenu
+import kotlinext.js.js
 import kotlinx.css.px
 import kotlinx.css.width
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.span
+import styled.css
+import styled.styledDiv
 
-external interface InlineCollapsedAppState : RState {
+external interface InlineCollapsedAppState : State {
     var collapsed: Boolean
 }
 

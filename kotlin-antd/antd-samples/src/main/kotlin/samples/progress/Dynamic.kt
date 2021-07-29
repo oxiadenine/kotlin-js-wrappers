@@ -1,15 +1,17 @@
 package samples.progress
 
-import antd.*
-import antd.button.*
+import antd.MouseEventHandler
 import antd.button.button
-import antd.icon.*
+import antd.button.buttonGroup
+import antd.icon.minusOutlined
+import antd.icon.plusOutlined
 import antd.progress.progress
 import react.*
 import react.dom.div
-import styled.*
+import styled.css
+import styled.styledDiv
 
-external interface DynamicAppState : RState {
+external interface DynamicAppState : State {
     var percent: Number
 }
 

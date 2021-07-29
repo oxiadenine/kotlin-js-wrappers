@@ -1,15 +1,24 @@
 package samples.form
 
 import antd.button.button
-import antd.form.*
+import antd.form.FormItemProps
+import antd.form.FormProps
+import antd.form.form
+import antd.form.formItem
 import antd.input.input
-import antd.radio.*
-import kotlinext.js.*
-import react.*
+import antd.radio.RadioChangeEvent
+import antd.radio.radioButton
+import antd.radio.radioGroup
+import kotlinext.js.jsObject
+import react.RBuilder
+import react.RComponent
+import react.State
 import react.dom.div
-import styled.*
+import react.setState
+import styled.css
+import styled.styledDiv
 
-private external interface FormLayoutDemoState : RState {
+private external interface FormLayoutDemoState : State {
     var formLayout: String
 }
 

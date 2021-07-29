@@ -4,12 +4,13 @@
 package antd.select
 
 import antd.*
+import antd.ReactNode
 import antd.configprovider.*
 import org.w3c.dom.*
 import react.*
 
 @JsName("default")
-external class SelectComponent<VT : SelectValue> : Component<SelectProps<VT>, RState> {
+external class SelectComponent<VT : SelectValue> : Component<SelectProps<VT>, State> {
     companion object {
         val Option: OptionComponent
         val OptGroup: OptionGroupComponent

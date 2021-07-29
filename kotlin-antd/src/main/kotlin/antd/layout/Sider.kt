@@ -1,14 +1,13 @@
 package antd.layout
 
 import antd.*
+import antd.ReactNode
 import org.w3c.dom.*
 import react.*
 
-external object SiderComponent : Component<SiderProps, RState> {
-    override fun render(): ReactElement?
-}
+external interface SiderComponent : ComponentType<SiderProps>
 
-external val sderContext: RContext<SiderContextProps>
+external val sderContext: Context<SiderContextProps>
 
 external interface SiderProps : HTMLAttributes<HTMLDivElement>, RProps {
     var prefixCls: String?

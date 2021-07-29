@@ -1,8 +1,13 @@
 package samples.checkbox
 
-import react.*
-import react.dom.*
-import styled.*
+import react.RBuilder
+import react.RComponent
+import react.RProps
+import react.State
+import react.dom.h2
+import styled.StyleSheet
+import styled.css
+import styled.styledDiv
 
 object CheckboxStyles : StyleSheet("checkbox", isStatic = true) {
     val container by css {}
@@ -14,7 +19,7 @@ object CheckboxStyles : StyleSheet("checkbox", isStatic = true) {
     val layout by css {}
 }
 
-class CheckboxApp : RComponent<RProps, RState>() {
+class CheckboxApp : RComponent<RProps, State>() {
     override fun RBuilder.render() {
         h2 { +"Checkbox" }
         styledDiv {

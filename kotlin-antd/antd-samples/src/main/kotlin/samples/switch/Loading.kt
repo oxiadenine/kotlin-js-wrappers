@@ -1,9 +1,11 @@
 package samples.switch
 
-import antd.switch.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.switch.switch
+import react.RBuilder
+import react.dom.br
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.loading() {
     styledDiv {

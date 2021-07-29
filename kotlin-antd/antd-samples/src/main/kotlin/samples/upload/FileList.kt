@@ -1,13 +1,17 @@
 package samples.upload
 
-import antd.button.*
-import antd.icon.*
-import antd.upload.*
-import kotlinext.js.*
+import antd.button.button
+import antd.icon.uploadOutlined
+import antd.upload.UploadChangeParam
+import antd.upload.UploadComponent
+import antd.upload.UploadFile
+import antd.upload.upload
+import kotlinext.js.jsObject
 import react.*
-import styled.*
+import styled.css
+import styled.styledDiv
 
-external interface MyUploadState : RState {
+external interface MyUploadState : State {
     var fileList: Array<UploadFile<Any>>
 }
 

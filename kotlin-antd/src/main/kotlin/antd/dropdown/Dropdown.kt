@@ -7,7 +7,7 @@ import org.w3c.dom.*
 import react.*
 
 @JsName("default")
-external object DropdownComponent : Component<DropdownProps, RState> {
+external object DropdownComponent : Component<DropdownProps, State> {
     val Button: DropdownButtonComponent
 
     override fun render(): ReactElement?

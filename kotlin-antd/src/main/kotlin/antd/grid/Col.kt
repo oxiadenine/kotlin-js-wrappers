@@ -8,7 +8,7 @@ import org.w3c.dom.*
 import react.*
 
 @JsName("default")
-external object ColComponent : Component<ColProps, RState> {
+external object ColComponent : Component<ColProps, State> {
     override fun render(): ReactElement?
 }
 

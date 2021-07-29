@@ -1,11 +1,14 @@
 package samples.card
 
-import antd.card.*
-import kotlinext.js.*
+import antd.card.card
+import kotlinext.js.js
 import kotlinx.css.*
-import react.*
-import react.dom.*
-import styled.*
+import react.RBuilder
+import react.buildElement
+import react.dom.a
+import styled.css
+import styled.styledDiv
+import styled.styledP
 
 fun RBuilder.inner() {
     styledDiv {

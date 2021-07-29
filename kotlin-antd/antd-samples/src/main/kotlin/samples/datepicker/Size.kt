@@ -1,12 +1,19 @@
 package samples.datepicker
 
-import antd.datepicker.*
-import antd.radio.*
+import antd.datepicker.datePicker
+import antd.datepicker.monthPicker
+import antd.datepicker.rangePicker
+import antd.datepicker.weekPicker
+import antd.radio.RadioChangeEvent
+import antd.radio.radioButton
+import antd.radio.radioGroup
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.br
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
-external interface PickerSizesDemoState : RState {
+external interface PickerSizesDemoState : State {
     var size: String
 }
 

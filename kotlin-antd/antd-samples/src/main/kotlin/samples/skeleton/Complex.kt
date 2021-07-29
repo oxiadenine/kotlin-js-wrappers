@@ -1,9 +1,11 @@
 package samples.skeleton
 
-import antd.skeleton.*
-import kotlinext.js.*
-import react.*
-import styled.*
+import antd.skeleton.SkeletonParagraphProps
+import antd.skeleton.skeleton
+import kotlinext.js.jsObject
+import react.RBuilder
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.complex() {
     styledDiv {

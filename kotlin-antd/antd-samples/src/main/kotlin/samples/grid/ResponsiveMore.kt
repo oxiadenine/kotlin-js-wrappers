@@ -1,9 +1,12 @@
 package samples.grid
 
-import antd.grid.*
-import kotlinext.js.*
-import react.*
-import styled.*
+import antd.grid.ColSize
+import antd.grid.col
+import antd.grid.row
+import kotlinext.js.jsObject
+import react.RBuilder
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.responsiveMore() {
     styledDiv {

@@ -6,19 +6,13 @@ import antd.message.MessageInstance
 import antd.message.message
 import kotlinext.js.js
 import kotlinext.js.jsObject
-import react.RBuilder
-import react.RProps
-import react.ReactElement
-import react.buildElement
-import react.child
-import react.createContext
-import react.functionalComponent
+import react.*
 import styled.css
 import styled.styledDiv
 
 private val context = createContext(js { name = "Default" })
 
-private val demo = functionalComponent<RProps> {
+private val demo = fc<RProps> {
     val useMessage = message.useMessage()
 
     val messageApi = useMessage[0].unsafeCast<MessageInstance>()

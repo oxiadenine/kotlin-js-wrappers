@@ -4,6 +4,7 @@
 package antd.popconfirm
 
 import antd.*
+import antd.ReactNode
 import antd.button.*
 import antd.tooltip.*
 import org.w3c.dom.*
@@ -28,7 +29,7 @@ external interface PopconfirmProps : AbstractTooltipProps, RefAttributes<dynamic
     override var onVisibleChange: dynamic /* (visible: Boolean, e: Any? /* MouseEvent<HTMLElement> | KeyboardEvent<HTMLDivElement> */) -> Unit */
 }
 
-external interface PopconfirmState : RState {
+external interface PopconfirmState : State {
     var visible: Boolean?
 }
 

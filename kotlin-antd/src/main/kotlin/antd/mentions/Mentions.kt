@@ -4,12 +4,13 @@
 package antd.mentions
 
 import antd.*
+import antd.ReactNode
 import antd.input.TextAreaProps
 import org.w3c.dom.*
 import react.*
 
 @JsName("default")
-external object MentionsComponent : Component<MentionsProps, RState> {
+external object MentionsComponent : Component<MentionsProps, State> {
     val Option: OptionComponent
 
     fun getMentions(value: String = definedExternally, config: MentionsConfig? = definedExternally): Array<MentionsEntity>

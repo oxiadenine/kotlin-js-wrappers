@@ -1,11 +1,10 @@
 package samples.layout
 
 import antd.layout.*
-import antd.layout.footer
-import antd.layout.header
-import react.*
-import react.dom.*
-import styled.*
+import react.RBuilder
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.basic() {
     styledDiv {

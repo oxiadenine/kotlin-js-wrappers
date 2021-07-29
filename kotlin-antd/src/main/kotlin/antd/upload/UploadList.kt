@@ -1,15 +1,10 @@
 package antd.upload
 
-import antd.ReactNode
 import antd.RefAttributes
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import antd.ReactNode
+import react.*
 
-external object UploadListComponent : Component<UploadListProps<Any>, RState> {
-    override fun render(): ReactElement?
-}
+external interface UploadListComponent : ComponentType<UploadListProps<Any>>
 
 external interface UploadListProps<T> : RefAttributes<dynamic>, RProps {
     var listType: UploadListType?

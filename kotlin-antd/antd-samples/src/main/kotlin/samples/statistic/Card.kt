@@ -1,16 +1,19 @@
 package samples.statistic
 
-import antd.card.*
-import antd.grid.*
+import antd.card.card
 import antd.grid.col
-import antd.icon.*
-import antd.statistic.*
-import kotlinext.js.*
+import antd.grid.row
+import antd.icon.arrowDownOutlined
+import antd.icon.arrowUpOutlined
+import antd.statistic.statistic
+import kotlinext.js.js
 import kotlinx.css.background
 import kotlinx.css.padding
 import kotlinx.css.px
-import react.*
-import styled.*
+import react.RBuilder
+import react.buildElement
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.card() {
     styledDiv {

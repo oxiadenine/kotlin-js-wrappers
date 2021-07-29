@@ -1,11 +1,8 @@
 package antd.modal
 
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 
-external object ConfirmDialogComponent : Component<ConfirmDialogProps, RState> {
+external object ConfirmDialogComponent : Component<ConfirmDialogProps, State> {
     override fun render(): ReactElement?
 }
 

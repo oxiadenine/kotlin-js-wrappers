@@ -1,13 +1,16 @@
 package samples.select
 
-import antd.select.*
-import kotlinext.js.*
+import antd.select.SelectComponent
+import antd.select.option
+import antd.select.select
+import kotlinext.js.js
 import react.*
-import styled.*
+import styled.css
+import styled.styledDiv
 
 private val options = arrayOf("Apples", "Nails", "Bananas", "Helicopters")
 
-external interface SelectWithHiddenSelectedOptionsState : RState {
+external interface SelectWithHiddenSelectedOptionsState : State {
     var selectedItems: Array<String>
 }
 

@@ -1,12 +1,15 @@
 package samples.notification
 
-import antd.*
-import antd.button.*
-import antd.icon.*
-import antd.notification.*
-import kotlinext.js.*
-import react.*
-import styled.*
+import antd.MouseEventHandler
+import antd.button.button
+import antd.icon.smileOutlined
+import antd.notification.notification
+import kotlinext.js.js
+import kotlinext.js.jsObject
+import react.RBuilder
+import react.buildElement
+import styled.css
+import styled.styledDiv
 
 private val openNotification: MouseEventHandler<Any> = {
     notification.open(jsObject {

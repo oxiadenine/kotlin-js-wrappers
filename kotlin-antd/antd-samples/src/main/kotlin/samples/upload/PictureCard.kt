@@ -1,19 +1,25 @@
 package samples.upload
 
-import antd.*
-import antd.icon.*
-import antd.modal.*
-import antd.upload.*
-import kotlinext.js.*
+import antd.MouseEvent
+import antd.icon.plusOutlined
+import antd.modal.modal
+import antd.upload.UploadChangeParam
+import antd.upload.UploadComponent
+import antd.upload.UploadFile
+import antd.upload.upload
+import kotlinext.js.jsObject
 import kotlinx.css.LinearDimension
 import kotlinx.css.width
-import kotlinx.html.*
-import org.w3c.dom.*
+import kotlinx.html.classes
+import org.w3c.dom.HTMLElement
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.attrs
+import react.dom.div
+import styled.css
+import styled.styledDiv
+import styled.styledImg
 
-external interface PicturesWallState : RState {
+external interface PicturesWallState : State {
     var previewVisible: Boolean
     var previewImage: String
     var fileList: Array<UploadFile<Any>>

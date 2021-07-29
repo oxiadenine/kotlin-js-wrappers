@@ -1,10 +1,11 @@
 package samples.timepicker
 
-import antd.timepicker.*
-import moment.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.timepicker.timePicker
+import moment.Moment
+import react.RBuilder
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 private fun handleChange(time: Moment, timeString: String) {
     console.log(time, timeString)

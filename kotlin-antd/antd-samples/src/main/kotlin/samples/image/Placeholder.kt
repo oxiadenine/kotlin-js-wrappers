@@ -3,17 +3,12 @@ package samples.image
 import antd.button.button
 import antd.image.image
 import antd.space.space
-import react.RBuilder
-import react.RProps
-import react.buildElement
-import react.child
-import react.functionalComponent
-import react.useState
+import react.*
 import styled.css
 import styled.styledDiv
 import kotlin.js.Date
 
-private val imageDemo = functionalComponent<RProps> {
+private val imageDemo = fc<RProps> {
     val (random, setRandom) = useState(0.0)
 
     space {

@@ -3,7 +3,7 @@ package samples.image
 import react.RBuilder
 import react.RComponent
 import react.RProps
-import react.RState
+import react.State
 import react.dom.h2
 import styled.StyleSheet
 import styled.css
@@ -16,7 +16,7 @@ object ImageStyles : StyleSheet("image", isStatic = true) {
     val placeholder by css {}
 }
 
-class ImageApp : RComponent<RProps, RState>() {
+class ImageApp : RComponent<RProps, State>() {
     override fun RBuilder.render() {
         h2 { +"Image" }
         styledDiv {

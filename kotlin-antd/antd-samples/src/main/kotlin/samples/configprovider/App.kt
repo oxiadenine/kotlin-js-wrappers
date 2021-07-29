@@ -3,9 +3,14 @@ package samples.configprovider
 import kotlinx.css.*
 import kotlinx.css.properties.border
 import kotlinx.css.properties.borderTop
-import react.*
-import react.dom.*
-import styled.*
+import react.RBuilder
+import react.RComponent
+import react.RProps
+import react.State
+import react.dom.h2
+import styled.StyleSheet
+import styled.css
+import styled.styledDiv
 
 object ConfigProviderStyles : StyleSheet("config-provider", isStatic = true) {
     val container by css {}
@@ -87,7 +92,7 @@ object ConfigProviderStyles : StyleSheet("config-provider", isStatic = true) {
     val size by css {}
 }
 
-class ConfigProviderApp : RComponent<RProps, RState>() {
+class ConfigProviderApp : RComponent<RProps, State>() {
     override fun RBuilder.render() {
         h2 { +"ConfigProvider" }
         styledDiv {

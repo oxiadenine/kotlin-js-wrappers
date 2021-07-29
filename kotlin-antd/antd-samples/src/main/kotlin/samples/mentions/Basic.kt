@@ -1,9 +1,12 @@
 package samples.mentions
 
-import antd.mentions.*
-import kotlinext.js.*
-import react.*
-import styled.*
+import antd.mentions.OptionProps
+import antd.mentions.mentions
+import antd.mentions.option
+import kotlinext.js.js
+import react.RBuilder
+import styled.css
+import styled.styledDiv
 
 private fun handleChange(value: Any) {
     console.log("Change: ", value)

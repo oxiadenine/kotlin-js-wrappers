@@ -4,14 +4,10 @@
 package antd.space
 
 import antd.ReactNode
-import react.Component
-import react.RContext
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 
 @JsName("default")
-external object SpaceComponent : Component<SpaceProps, RState> {
+external object SpaceComponent : Component<SpaceProps, State> {
     override fun render(): ReactElement?
 }
 
@@ -25,4 +21,4 @@ external interface SpaceProps : RProps {
     var split: ReactNode?
 }
 
-external val lastIndexContext: RContext<Number>
+external val lastIndexContext: Context<Number>

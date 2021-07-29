@@ -7,7 +7,7 @@ import antd.ReactNode
 import react.*
 
 @JsName("default")
-external object BreadcrumbComponent : Component<BreadcrumbProps, RState> {
+external object BreadcrumbComponent : Component<BreadcrumbProps, State> {
     val Item: BreadcrumbItemComponent
     val Separator: BreadcrumbSeparatorComponent
 

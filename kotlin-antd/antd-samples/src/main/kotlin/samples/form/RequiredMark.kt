@@ -1,15 +1,18 @@
 package samples.form
 
-import antd.button.*
+import antd.button.button
 import antd.form.*
-import antd.icon.*
-import antd.input.*
-import antd.radio.*
-import kotlinext.js.*
+import antd.icon.infoCircleOutlined
+import antd.input.input
+import antd.radio.radioButton
+import antd.radio.radioGroup
+import kotlinext.js.js
+import kotlinext.js.jsObject
 import react.*
-import styled.*
+import styled.css
+import styled.styledDiv
 
-private val demo = functionalComponent<RProps> {
+private val demo = fc<RProps> {
     val formComponent = FormComponent.useForm()[0]
     val (reqMark, setReqMarkType) = useState<Any /* Boolean | "optional" */>("optional")
 

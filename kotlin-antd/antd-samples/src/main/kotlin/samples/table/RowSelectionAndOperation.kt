@@ -1,16 +1,19 @@
 package samples.table
 
-import antd.*
+import antd.Key
+import antd.MouseEventHandler
 import antd.button.button
 import antd.table.*
-import kotlinext.js.*
-import kotlinx.browser.*
+import kotlinext.js.jsObject
+import kotlinx.browser.window
 import kotlinx.css.marginBottom
 import kotlinx.css.marginLeft
 import kotlinx.css.px
 import react.*
 import react.dom.div
-import styled.*
+import styled.css
+import styled.styledDiv
+import styled.styledSpan
 
 private external interface RowSelectionAndOperationTableDataItem {
     var key: String
@@ -43,7 +46,7 @@ private val tableData = (0..46).map { i ->
     }
 }.toTypedArray()
 
-external interface RowSelectionAndOperationAppState : RState {
+external interface RowSelectionAndOperationAppState : State {
     var selectedRowKeys: Array<Key>
     var loading: Boolean
 }

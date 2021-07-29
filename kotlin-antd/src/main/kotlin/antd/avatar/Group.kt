@@ -1,14 +1,9 @@
 package antd.avatar
 
 import antd.ReactNode
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 
-external object GroupComponent : Component<GroupProps, RState> {
-    override fun render(): ReactElement
-}
+external interface GroupComponent : ComponentType<GroupProps>
 
 external interface GroupProps : RProps {
     var className: String?

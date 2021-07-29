@@ -1,12 +1,10 @@
 package antd.form
 
-import antd.ReactNode
 import antd.grid.*
+import antd.ReactNode
 import react.*
 
-external object FormItemInputComponent : Component<FormItemInputProps, RState> {
-    override fun render(): ReactElement?
-}
+external interface FormItemInputComponent : ComponentType<FormItemInputProps>
 
 external interface FormItemInputProps : FormItemInputBaseProps, FormItemInputMiscProps, RProps
 
@@ -19,7 +17,7 @@ external interface FormItemInputBaseProps {
 
 external interface FormItemInputMiscProps {
     var prefixCls: String?
-    var children: ReactNode
+    var children: Any /* ReactNode */
     var errors: Array<ReactNode>
     var hasFeedback: Boolean?
     var validateStatus: ValidateStatus?

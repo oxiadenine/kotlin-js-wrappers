@@ -1,10 +1,13 @@
 package samples.timeline
 
-import antd.icon.*
-import antd.timeline.*
-import kotlinext.js.*
-import react.*
-import styled.*
+import antd.icon.clockCircleOutlined
+import antd.timeline.timeline
+import antd.timeline.timelineItem
+import kotlinext.js.js
+import react.RBuilder
+import react.buildElement
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.alternate() {
     styledDiv {

@@ -1,16 +1,19 @@
 package samples.modal
 
-import antd.*
+import antd.MouseEvent
+import antd.MouseEventHandler
 import antd.button.button
-import antd.modal.*
-import kotlinext.js.*
-import kotlinx.browser.*
-import org.w3c.dom.*
+import antd.modal.modal
+import kotlinext.js.jsObject
+import kotlinx.browser.window
+import org.w3c.dom.HTMLElement
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.div
+import react.dom.p
+import styled.css
+import styled.styledDiv
 
-external interface FooterAppState : RState {
+external interface FooterAppState : State {
     var loading: Boolean
     var visible: Boolean
 }

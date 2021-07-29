@@ -1,13 +1,18 @@
 package samples.tree
 
 import antd.Key
-import antd.tree.*
+import antd.tree.CheckInfo
+import antd.tree.OnSelectInfo
+import antd.tree.tree
+import antd.tree.treeNode
 import kotlinx.css.Color
 import kotlinx.css.color
 import react.*
-import styled.*
+import styled.css
+import styled.styledDiv
+import styled.styledSpan
 
-class BasicDemo : RComponent<RProps, RState>() {
+class BasicDemo : RComponent<RProps, State>() {
     private val handleSelect = fun(selectedKeys: Array<Key>, info: OnSelectInfo) {
         console.log("selected", selectedKeys, info)
     }

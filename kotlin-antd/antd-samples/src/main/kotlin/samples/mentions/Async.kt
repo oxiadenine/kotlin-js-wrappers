@@ -1,18 +1,21 @@
 package samples.mentions
 
-import antd.mentions.*
+import antd.mentions.mentions
 import antd.mentions.option
-import kotlinext.js.*
-import kotlinx.browser.*
+import kotlinext.js.js
+import kotlinx.browser.window
 import kotlinx.css.height
 import kotlinx.css.marginRight
 import kotlinx.css.px
 import kotlinx.css.width
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.attrs
+import react.dom.span
+import styled.css
+import styled.styledDiv
+import styled.styledImg
 
-external interface AsyncMentionState : RState {
+external interface AsyncMentionState : State {
     var search: String
     var loading: Boolean
     var users: Array<dynamic>

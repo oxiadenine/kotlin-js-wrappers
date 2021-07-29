@@ -1,8 +1,10 @@
 package samples.grid
 
-import antd.grid.*
-import react.*
-import styled.*
+import antd.grid.col
+import antd.grid.row
+import react.RBuilder
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.responsive() {
     styledDiv {

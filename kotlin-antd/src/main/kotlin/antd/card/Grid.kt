@@ -2,9 +2,7 @@ package antd.card
 
 import react.*
 
-external object CardGridComponent : Component<CardGridProps, RState> {
-    override fun render(): ReactElement?
-}
+external interface CardGridComponent : ComponentType<CardGridProps>
 
 external interface CardGridProps : RProps {
     var prefixCls: String?

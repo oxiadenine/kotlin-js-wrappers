@@ -1,10 +1,15 @@
 package samples.table
 
-import antd.table.*
-import kotlinext.js.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.table.ColumnType
+import antd.table.ColumnsType
+import antd.table.TableComponent
+import antd.table.table
+import kotlinext.js.jsObject
+import react.RBuilder
+import react.buildElement
+import react.dom.a
+import styled.css
+import styled.styledDiv
 
 private external interface FixedColumnsHeaderTableDataItem {
     var key: String

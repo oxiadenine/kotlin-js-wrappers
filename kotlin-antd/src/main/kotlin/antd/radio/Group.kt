@@ -1,14 +1,13 @@
 package antd.radio
 
 import antd.*
+import antd.ReactNode
 import antd.checkbox.*
 import antd.configprovider.SizeType
 import org.w3c.dom.*
 import react.*
 
-external object RadioGroupComponent : Component<RadioGroupProps, RState> {
-    override fun render(): ReactElement?
-}
+external interface RadioGroupComponent : ComponentType<RadioGroupProps>
 
 external interface RadioGroupProps : AbstractCheckboxGroupProps, RefAttributes<HTMLDivElement>, RProps {
     var defaultValue: Any?

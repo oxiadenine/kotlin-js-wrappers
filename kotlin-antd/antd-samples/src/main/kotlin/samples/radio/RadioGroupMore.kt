@@ -1,12 +1,15 @@
 package samples.radio
 
-import antd.input.*
-import antd.radio.*
-import kotlinext.js.*
+import antd.input.input
+import antd.radio.RadioChangeEvent
+import antd.radio.radio
+import antd.radio.radioGroup
+import kotlinext.js.js
 import react.*
-import styled.*
+import styled.css
+import styled.styledDiv
 
-external interface RadioGroupMoreAppState : RState {
+external interface RadioGroupMoreAppState : State {
     var value: Any
 }
 

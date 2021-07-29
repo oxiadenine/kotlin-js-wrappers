@@ -7,12 +7,12 @@ import react.*
 import reactintl.*
 
 @JsName("FormattedNumber")
-external class FormattedNumberComponent : Component<FormattedNumberProps, RState> {
+external class FormattedNumberComponent : Component<FormattedNumberProps, State> {
     override fun render(): ReactElement?
 }
 
 @JsName("FormattedNumberParts")
-external class FormattedNumberPartsComponent : Component<FormattedNumberPartsProps, RState> {
+external class FormattedNumberPartsComponent : Component<FormattedNumberPartsProps, State> {
     override fun render(): ReactElement?
 }
 

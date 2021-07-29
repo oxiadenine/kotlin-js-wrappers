@@ -2,9 +2,7 @@ package antd.upload
 
 import react.*
 
-external object DraggerComponent : Component<DraggerProps, RState> {
-    override fun render(): ReactElement?
-}
+external interface DraggerComponent : ComponentType<DraggerProps>
 
 external interface DraggerProps : UploadProps<Any> {
     var height: Number?

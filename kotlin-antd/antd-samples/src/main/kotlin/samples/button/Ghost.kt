@@ -5,8 +5,9 @@ import kotlinx.css.background
 import kotlinx.css.padding
 import kotlinx.css.px
 import kotlinx.css.rgb
-import react.*
-import styled.*
+import react.RBuilder
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.ghost() {
     styledDiv {

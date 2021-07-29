@@ -1,10 +1,12 @@
 package samples.spin
 
-import antd.icon.*
-import antd.spin.*
-import kotlinext.js.*
-import react.*
-import styled.*
+import antd.icon.loadingOutlined
+import antd.spin.spin
+import kotlinext.js.js
+import react.RBuilder
+import react.buildElement
+import styled.css
+import styled.styledDiv
 
 private val antIcon = buildElement {
     loadingOutlined {

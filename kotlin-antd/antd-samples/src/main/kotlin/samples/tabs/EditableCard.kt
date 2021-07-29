@@ -1,11 +1,13 @@
 package samples.tabs
 
-import antd.tabs.*
-import kotlinext.js.*
+import antd.tabs.tabPane
+import antd.tabs.tabs
+import kotlinext.js.js
 import react.*
-import styled.*
+import styled.css
+import styled.styledDiv
 
-external interface EditableCardDemoState : RState {
+external interface EditableCardDemoState : State {
     var activeKey: String
     var panes: Array<Any>
 }

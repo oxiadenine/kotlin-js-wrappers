@@ -1,9 +1,11 @@
 package samples.rate
 
-import antd.rate.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.rate.rate
+import react.RBuilder
+import react.dom.br
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.clear() {
     styledDiv {

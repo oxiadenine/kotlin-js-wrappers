@@ -1,9 +1,11 @@
 package samples.mentions
 
-import antd.mentions.*
-import kotlinext.js.*
-import react.*
-import styled.*
+import antd.mentions.mentions
+import antd.mentions.option
+import kotlinext.js.js
+import react.RBuilder
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.placement() {
     styledDiv {

@@ -22,7 +22,7 @@ object AppStyles : StyleSheet("app", isStatic = true) {
     }
 }
 
-class App : RComponent<RProps, RState>() {
+class App : RComponent<RProps, State>() {
     override fun RBuilder.render() {
         styledDiv {
             css { +AppStyles.header }

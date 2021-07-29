@@ -1,6 +1,7 @@
 package antd.transfer
 
 import antd.*
+import antd.ReactNode
 import org.w3c.dom.*
 import react.*
 
@@ -36,7 +37,7 @@ external interface TransferListProps<RecordType> : TransferLocale, RProps {
     var pagination: Any? /* Boolean | PaginationType */
 }
 
-external interface TransferListState : RState {
+external interface TransferListState : State {
     var filterValue: String
 }
 

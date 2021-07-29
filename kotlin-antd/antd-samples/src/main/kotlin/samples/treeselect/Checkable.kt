@@ -1,9 +1,13 @@
 package samples.treeselect
 
-import antd.treeselect.*
-import kotlinext.js.*
+import antd.treeselect.DataNode
+import antd.treeselect.TreeSelectComponent
+import antd.treeselect.treeSelect
+import kotlinext.js.js
+import kotlinext.js.jsObject
 import react.*
-import styled.*
+import styled.css
+import styled.styledDiv
 
 private val data: Array<DataNode> = arrayOf(
     jsObject {
@@ -42,7 +46,7 @@ private val data: Array<DataNode> = arrayOf(
     }
 )
 
-external interface CheckableDemoState : RState {
+external interface CheckableDemoState : State {
     var value: Array<String>?
 }
 

@@ -1,16 +1,14 @@
 package antd.upload
 
-import antd.ReactNode
 import antd.RefAttributes
+import antd.ReactNode
 import antd.SyntheticEvent
 import org.w3c.dom.HTMLDivElement
 import org.w3c.dom.HTMLElement
 import org.w3c.dom.events.Event
 import react.*
 
-external object ListItemComponent : Component<ListItemProps, RState> {
-    override fun render(): ReactElement?
-}
+external interface ListItemComponent : ComponentType<ListItemProps>
 
 external interface ListItemProps : RefAttributes<HTMLDivElement>, RProps {
     var prefixCls: String?

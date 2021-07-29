@@ -1,17 +1,23 @@
 package samples.form
 
-import antd.cascader.*
-import antd.datepicker.*
-import antd.form.*
+import antd.cascader.cascader
+import antd.datepicker.datePicker
+import antd.form.FormItemProps
+import antd.form.form
+import antd.form.formItem
 import antd.input.input
-import antd.inputnumber.*
-import antd.select.*
+import antd.inputnumber.inputNumber
+import antd.select.SelectComponent
 import antd.select.option
+import antd.select.select
 import antd.timepicker.timePicker
-import kotlinext.js.*
+import kotlinext.js.js
+import kotlinext.js.jsObject
 import kotlinx.css.*
-import react.*
-import styled.*
+import react.RBuilder
+import styled.css
+import styled.styledDiv
+import styled.styledSpan
 
 private val formItemLayout = jsObject<FormItemProps<Any>> {
     labelCol = jsObject {

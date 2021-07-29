@@ -1,11 +1,13 @@
 package samples.backtop
 
-import antd.backtop.*
+import antd.backtop.backTop
 import kotlinx.css.Color
 import kotlinx.css.color
-import react.*
-import react.dom.*
-import styled.*
+import react.RBuilder
+import react.dom.div
+import styled.css
+import styled.styledDiv
+import styled.styledStrong
 
 fun RBuilder.custom() {
     styledDiv {

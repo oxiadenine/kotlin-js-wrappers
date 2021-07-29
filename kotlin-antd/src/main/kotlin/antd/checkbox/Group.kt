@@ -3,9 +3,7 @@ package antd.checkbox
 import antd.ReactNode
 import react.*
 
-external object CheckboxGroupComponent : Component<CheckboxGroupProps, RState> {
-    override fun render(): ReactElement?
-}
+external interface CheckboxGroupComponent : ComponentType<CheckboxGroupProps>
 
 external interface CheckboxGroupProps : AbstractCheckboxGroupProps, RProps {
     var name: String?
@@ -30,7 +28,7 @@ external interface CheckboxOptionType {
     var onChange: ((e: CheckboxChangeEvent) -> Unit)?
 }
 
-external val groupContext: RContext<CheckboxGroupContext?>
+external val groupContext: Context<CheckboxGroupContext?>
 
 external interface CheckboxGroupContext {
     var name: String?

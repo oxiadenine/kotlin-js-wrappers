@@ -1,14 +1,25 @@
 package samples.layout
 
-import antd.breadcrumb.*
-import antd.icon.*
-import antd.layout.*
+import antd.breadcrumb.breadcrumb
+import antd.breadcrumb.breadcrumbItem
+import antd.icon.laptopOutlined
+import antd.icon.notificationOutlined
+import antd.icon.userOutlined
+import antd.layout.content
 import antd.layout.header
-import antd.menu.*
-import kotlinext.js.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.layout.layout
+import antd.layout.sider
+import antd.menu.menu
+import antd.menu.menuItem
+import antd.menu.subMenu
+import kotlinext.js.js
+import react.RBuilder
+import react.buildElement
+import react.dom.div
+import react.dom.span
+import react.key
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.topSide2() {
     styledDiv {

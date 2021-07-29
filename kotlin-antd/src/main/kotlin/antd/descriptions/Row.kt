@@ -1,11 +1,8 @@
 package antd.descriptions
 
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 
-external object RowComponent : Component<RowProps, RState> {
+external object RowComponent : Component<RowProps, State> {
     override fun render(): ReactElement?
 }
 

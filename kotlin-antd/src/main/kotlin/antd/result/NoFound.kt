@@ -1,11 +1,8 @@
 package antd.result
 
-import react.Component
-import react.RProps
-import react.RState
-import react.ReactElement
+import react.*
 
-external object NoFoundComponent : Component<NoFoundProps, RState> {
+external object NoFoundComponent : Component<NoFoundProps, State> {
     override fun render(): ReactElement?
 }
 

@@ -3,8 +3,8 @@
 
 package antd.cascader
 
-import antd.ReactNode
 import antd.configprovider.SizeType
+import antd.ReactNode
 import org.w3c.dom.*
 import react.*
 
@@ -47,7 +47,7 @@ external interface CascaderProps : RProps {
     var dropdownRender: ((menus: ReactNode) -> ReactNode)?
 }
 
-external interface CascaderState : RState {
+external interface CascaderState : State {
     var inputFocused: Boolean
     var inputValue: String
     var value: CascaderValueType

@@ -1,20 +1,24 @@
 package samples.badge
 
-import antd.*
-import antd.badge.*
-import antd.button.*
+import antd.MouseEventHandler
+import antd.badge.badge
 import antd.button.button
-import antd.icon.*
-import antd.switch.*
+import antd.button.buttonGroup
+import antd.icon.minusOutlined
+import antd.icon.plusOutlined
+import antd.switch.switch
 import kotlinx.css.marginTop
 import kotlinx.css.px
-import kotlinx.html.*
+import kotlinx.html.classes
 import org.w3c.dom.events.MouseEvent
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.a
+import react.dom.attrs
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
-external interface ChangeDemoState : RState {
+external interface ChangeDemoState : State {
     var count: Any
     var show: Boolean
 }

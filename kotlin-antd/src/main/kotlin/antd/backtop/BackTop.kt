@@ -4,11 +4,12 @@
 package antd.backtop
 
 import antd.*
+import antd.ReactNode
 import org.w3c.dom.*
 import react.*
 
 @JsName("default")
-external object BackTopComponent : Component<BackTopProps, RState> {
+external object BackTopComponent : Component<BackTopProps, State> {
     override fun render(): ReactElement?
 }
 

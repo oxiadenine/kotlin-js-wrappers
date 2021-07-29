@@ -1,13 +1,16 @@
 package samples.table
 
-import antd.*
+import antd.MouseEventHandler
 import antd.button.button
 import antd.table.*
-import kotlinext.js.*
-import kotlinx.html.*
+import kotlinext.js.Record
+import kotlinext.js.js
+import kotlinext.js.jsObject
+import kotlinx.html.classes
 import react.*
 import react.dom.div
-import styled.*
+import styled.css
+import styled.styledDiv
 
 external interface ResetFilterTableDataItem {
     var key: String
@@ -45,7 +48,7 @@ private val tableData = arrayOf<ResetFilterTableDataItem>(
     }
 )
 
-external interface ResetFilterAppState : RState {
+external interface ResetFilterAppState : State {
     var filteredInfo: Any?
     var sortedInfo: SorterResult<ResetFilterTableDataItem>?
 }

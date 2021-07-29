@@ -1,12 +1,10 @@
 package antd.input
 
-import antd.ReactNode
 import antd.RefAttributes
+import antd.ReactNode
 import react.*
 
-external object SearchComponent : Component<SearchProps, RState> {
-    override fun render(): ReactElement?
-}
+external interface SearchComponent : ComponentType<SearchProps>
 
 external interface SearchProps : InputProps, RefAttributes<InputComponent> {
     var inputPrefixCls: String?

@@ -1,12 +1,17 @@
 package samples.datepicker
 
-import antd.datepicker.*
-import moment.*
+import antd.datepicker.PanelMode
+import antd.datepicker.RangeValue
+import antd.datepicker.datePicker
+import antd.datepicker.rangePicker
+import moment.Moment
 import react.*
-import react.dom.*
-import styled.*
+import react.dom.br
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
-external interface ControlledDatePickerState : RState {
+external interface ControlledDatePickerState : State {
     var mode: PanelMode
 }
 
@@ -43,7 +48,7 @@ class ControlledDatePicker : RComponent<RProps, ControlledDatePickerState>() {
 
 fun RBuilder.controlledDatePicker() = child(ControlledDatePicker::class) {}
 
-external interface ControlledRangePickerState : RState {
+external interface ControlledRangePickerState : State {
     var mode: Any
     var value: RangeValue<Moment>
 }

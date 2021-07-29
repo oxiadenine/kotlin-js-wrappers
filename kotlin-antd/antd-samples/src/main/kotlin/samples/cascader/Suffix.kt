@@ -1,11 +1,16 @@
 package samples.cascader
 
-import antd.cascader.*
-import antd.icon.*
-import kotlinext.js.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.cascader.CascaderOptionType
+import antd.cascader.CascaderValueType
+import antd.cascader.cascader
+import antd.icon.smileOutlined
+import kotlinext.js.js
+import kotlinext.js.jsObject
+import react.RBuilder
+import react.buildElement
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 private val cascaderOptions = arrayOf<CascaderOptionType>(
     jsObject {

@@ -3,9 +3,7 @@ package antd.typography
 import antd.configprovider.DirectionType
 import react.*
 
-external object EditableComponent : Component<EditableProps, RState> {
-    override fun render(): ReactElement?
-}
+external interface EditableComponent : ComponentType<EditableProps>
 
 external interface EditableProps : RProps {
     var prefixCls: String?

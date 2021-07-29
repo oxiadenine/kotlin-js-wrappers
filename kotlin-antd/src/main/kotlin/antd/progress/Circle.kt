@@ -3,7 +3,7 @@ package antd.progress
 import antd.ReactNode
 import react.*
 
-external object CircleComponent : Component<CircleProps, RState> {
+external object CircleComponent : Component<CircleProps, State> {
     override fun render(): ReactElement?
 }
 

@@ -1,10 +1,14 @@
 package samples.tabs
 
-import antd.tabs.*
-import kotlinx.html.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.tabs.tabPane
+import antd.tabs.tabs
+import kotlinx.html.classes
+import react.RBuilder
+import react.dom.div
+import react.dom.p
+import react.key
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.cardTop() {
     styledDiv {

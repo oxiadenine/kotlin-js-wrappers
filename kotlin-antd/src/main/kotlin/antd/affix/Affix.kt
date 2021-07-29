@@ -21,7 +21,7 @@ external interface AffixProps : RProps {
     var children: ReactElement
 }
 
-external interface AffixState : RState {
+external interface AffixState : State {
     var affixStyle: dynamic
     var placeholderStyle: dynamic
     var status: AffixStatus

@@ -2,14 +2,17 @@ package samples.layout
 
 import antd.icon.*
 import antd.layout.*
-import antd.layout.footer
-import antd.layout.header
-import antd.menu.*
-import kotlinext.js.*
+import antd.menu.menu
+import antd.menu.menuItem
+import kotlinext.js.js
 import kotlinx.css.*
-import react.*
-import react.dom.*
-import styled.*
+import react.RBuilder
+import react.dom.br
+import react.dom.div
+import react.dom.span
+import react.key
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.fixedSider() {
     styledDiv {

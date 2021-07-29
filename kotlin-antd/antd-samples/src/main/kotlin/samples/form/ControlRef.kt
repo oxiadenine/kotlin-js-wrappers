@@ -21,7 +21,7 @@ private val tailLayout = jsObject<FormItemProps<Any>> {
     }
 }
 
-private class Demo : RComponent<RProps, RState>() {
+private class Demo : RComponent<RProps, State>() {
     var formInstance: FormInstance<Any>? = null
 
     val handleGenderChange = { value: String, _: Any ->
@@ -56,7 +56,7 @@ private class Demo : RComponent<RProps, RState>() {
     override fun RBuilder.render() {
         form {
             attrs {
-                ref<FormInstance<Any>> { ref -> formInstance = ref }
+                ref = formInstance
                 wrapperCol = formLayout.wrapperCol
                 labelCol = formLayout.labelCol
                 name = "control-ref"

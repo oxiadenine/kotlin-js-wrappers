@@ -1,9 +1,11 @@
 package samples.breadcrumb
 
-import antd.breadcrumb.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.breadcrumb.breadcrumb
+import antd.breadcrumb.breadcrumbItem
+import react.RBuilder
+import react.dom.a
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.basic() {
     styledDiv {

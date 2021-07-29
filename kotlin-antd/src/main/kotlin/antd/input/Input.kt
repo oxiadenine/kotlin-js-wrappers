@@ -4,6 +4,7 @@
 package antd.input
 
 import antd.*
+import antd.ReactNode
 import antd.configprovider.SizeType
 import org.w3c.dom.*
 import react.*
@@ -31,7 +32,7 @@ external interface InputProps : InputHTMLAttributes<HTMLInputElement>, RProps {
     var bordered: Boolean?
 }
 
-external interface InputState : RState {
+external interface InputState : State {
     var value: Any
     var focused: Boolean
     var prevValue: Any

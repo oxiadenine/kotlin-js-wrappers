@@ -1,8 +1,11 @@
 package samples.tabs
 
-import antd.tabs.*
-import react.*
-import styled.*
+import antd.tabs.tabPane
+import antd.tabs.tabs
+import react.RBuilder
+import react.key
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.disabled() {
     styledDiv {

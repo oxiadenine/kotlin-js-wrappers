@@ -1,13 +1,17 @@
 package samples.treeselect
 
-import antd.treeselect.*
-import kotlinext.js.*
+import antd.treeselect.TreeSelectComponent
+import antd.treeselect.treeNode
+import antd.treeselect.treeSelect
+import kotlinext.js.js
 import kotlinx.css.Color
 import kotlinx.css.color
 import react.*
-import styled.*
+import styled.css
+import styled.styledB
+import styled.styledDiv
 
-external interface MultipleDemoState : RState {
+external interface MultipleDemoState : State {
     var value: String?
 }
 

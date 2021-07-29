@@ -1,12 +1,19 @@
 package samples.cascader
 
-import antd.cascader.*
-import kotlinext.js.*
-import kotlinx.html.js.*
-import org.w3c.dom.events.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.cascader.CascaderOptionType
+import antd.cascader.cascader
+import kotlinext.js.js
+import kotlinext.js.jsObject
+import kotlinx.html.js.onClickFunction
+import org.w3c.dom.events.Event
+import react.RBuilder
+import react.ReactElement
+import react.buildElements
+import react.dom.a
+import react.dom.key
+import react.dom.span
+import styled.css
+import styled.styledDiv
 
 external interface CustomRenderCascaderOptionType : CascaderOptionType {
     var code: Number?

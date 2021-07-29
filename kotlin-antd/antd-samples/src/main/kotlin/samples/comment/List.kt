@@ -1,13 +1,19 @@
 package samples.comment
 
-import antd.comment.*
-import antd.list.*
-import antd.tooltip.*
-import kotlinext.js.*
-import moment.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.comment.CommentProps
+import antd.comment.comment
+import antd.list.ListComponent
+import antd.list.list
+import antd.tooltip.tooltip
+import kotlinext.js.jsObject
+import moment.moment
+import react.RBuilder
+import react.buildElement
+import react.dom.li
+import react.dom.p
+import react.dom.span
+import styled.css
+import styled.styledDiv
 
 private val data = arrayOf<CommentProps>(
     jsObject {
@@ -74,14 +80,16 @@ fun RBuilder.list() {
                 itemLayout = "horizontal"
                 dataSource = data
                 renderItem = { item, _ ->
-                    li {
-                        comment {
-                            attrs {
-                                actions = item.actions
-                                author = item.author
-                                avatar = item.avatar
-                                content = item.content
-                                datetime = item.datetime
+                    buildElement {
+                        li {
+                            comment {
+                                attrs {
+                                    actions = item.actions
+                                    author = item.author
+                                    avatar = item.avatar
+                                    content = item.content
+                                    datetime = item.datetime
+                                }
                             }
                         }
                     }

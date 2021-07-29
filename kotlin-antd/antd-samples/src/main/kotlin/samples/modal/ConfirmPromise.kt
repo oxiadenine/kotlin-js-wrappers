@@ -1,13 +1,15 @@
 package samples.modal
 
-import antd.*
+import antd.MouseEventHandler
 import antd.button.button
-import antd.modal.*
-import kotlinext.js.*
-import kotlinx.browser.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.modal.ModalComponent
+import kotlinext.js.jsObject
+import kotlinx.browser.window
+import react.RBuilder
+import react.buildElement
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 private val destroyAll: MouseEventHandler<Any> = {
     ModalComponent.destroyAll()

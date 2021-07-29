@@ -1,10 +1,11 @@
 package samples.pagination
 
-import antd.pagination.*
+import antd.pagination.pagination
 import react.*
-import styled.*
+import styled.css
+import styled.styledDiv
 
-external interface ControlledAppState : RState {
+external interface ControlledAppState : State {
     var current: Number
 }
 

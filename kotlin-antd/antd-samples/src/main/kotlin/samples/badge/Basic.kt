@@ -1,12 +1,16 @@
 package samples.badge
 
-import antd.badge.*
-import antd.icon.*
-import kotlinext.js.*
-import kotlinx.html.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.badge.badge
+import antd.icon.clockCircleOutlined
+import kotlinext.js.js
+import kotlinx.html.classes
+import react.RBuilder
+import react.buildElement
+import react.dom.a
+import react.dom.attrs
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.basic() {
     styledDiv {

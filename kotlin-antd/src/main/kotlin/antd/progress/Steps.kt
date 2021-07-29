@@ -1,10 +1,8 @@
 package antd.progress
 
-import react.Component
-import react.RState
-import react.ReactElement
+import react.*
 
-external object StepsComponent : Component<StepsProps, RState> {
+external object StepsComponent : Component<StepsProps, State> {
     override fun render(): ReactElement?
 }
 

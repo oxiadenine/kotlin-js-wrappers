@@ -1,12 +1,15 @@
 package samples.tree
 
 import antd.Key
-import antd.tree.*
-import kotlinext.js.*
-import kotlinx.browser.*
+import antd.tree.DataNode
+import antd.tree.EventDataNode
+import antd.tree.tree
+import kotlinext.js.jsObject
+import kotlinx.browser.window
 import react.*
-import styled.*
-import kotlin.js.*
+import styled.css
+import styled.styledDiv
+import kotlin.js.Promise
 
 private val initTreeData = arrayOf<DataNode>(
     jsObject {
@@ -45,7 +48,7 @@ private fun updateTreeData(list: Array<DataNode>, nodeKey: Key, nodeChildren: Ar
     }.toTypedArray()
 }
 
-private val demo = functionalComponent<RProps> {
+private val demo = fc<RProps> {
     val (trData, setTreeData) = useState(initTreeData)
 
     fun onLoadData(node: EventDataNode): Promise<Unit> {

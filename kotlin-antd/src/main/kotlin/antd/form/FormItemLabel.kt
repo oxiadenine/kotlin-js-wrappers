@@ -1,13 +1,11 @@
 package antd.form
 
-import antd.ReactNode
 import antd.grid.*
+import antd.ReactNode
 import antd.tooltip.*
 import react.*
 
-external object FormItemLabelComponent : Component<FormItemLabelProps, RState> {
-    override fun render(): ReactElement?
-}
+external interface FormItemLabelComponent : ComponentType<FormItemLabelProps>
 
 external interface FormItemLabelProps : FormItemLabelBaseProps, FormItemLabelMiscProps, RProps
 

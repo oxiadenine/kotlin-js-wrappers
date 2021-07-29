@@ -1,12 +1,16 @@
 package samples.upload
 
 import antd.button.button
-import antd.icon.*
-import antd.upload.*
-import kotlinext.js.*
-import react.*
-import react.dom.*
-import styled.*
+import antd.icon.uploadOutlined
+import antd.upload.UploadComponent
+import antd.upload.UploadFile
+import antd.upload.upload
+import kotlinext.js.jsObject
+import react.RBuilder
+import react.dom.br
+import react.dom.div
+import styled.css
+import styled.styledDiv
 
 private val fileList = arrayOf<UploadFile<Any>>(
     jsObject {

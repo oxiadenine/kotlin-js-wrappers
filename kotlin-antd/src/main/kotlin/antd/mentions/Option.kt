@@ -3,9 +3,7 @@ package antd.mentions
 import antd.ReactNode
 import react.*
 
-external object OptionComponent : Component<OptionProps, RState> {
-    override fun render(): ReactElement?
-}
+external interface OptionComponent : ComponentType<OptionProps>
 
 external interface OptionProps : RcOptionProps, RProps {
     override var value: String?

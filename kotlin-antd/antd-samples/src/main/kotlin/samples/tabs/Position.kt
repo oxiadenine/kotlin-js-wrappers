@@ -1,15 +1,19 @@
 package samples.tabs
 
-import antd.select.*
+import antd.select.SelectComponent
+import antd.select.SelectValue
 import antd.select.option
-import antd.tabs.*
+import antd.select.select
+import antd.tabs.tabPane
+import antd.tabs.tabs
 import kotlinx.css.marginBottom
 import kotlinx.css.px
 import react.*
 import react.dom.div
-import styled.*
+import styled.css
+import styled.styledDiv
 
-external interface PositionDemoState : RState {
+external interface PositionDemoState : State {
     var tabPosition: String
 }
 

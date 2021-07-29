@@ -1,12 +1,14 @@
 package samples.empty
 
 import antd.button.button
-import antd.empty.*
-import kotlinext.js.*
-import react.*
+import antd.empty.empty
+import kotlinext.js.js
+import react.RBuilder
+import react.buildElement
 import react.dom.a
 import react.dom.span
-import styled.*
+import styled.css
+import styled.styledDiv
 
 fun RBuilder.customize() {
     styledDiv {

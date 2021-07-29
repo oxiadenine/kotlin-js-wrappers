@@ -7,7 +7,7 @@ import antd.ReactNode
 import react.*
 
 @JsName("default")
-external object CollapseComponent : Component<CollapseProps, RState> {
+external object CollapseComponent : Component<CollapseProps, State> {
     val Panel: CollapsePanelComponent
 
     override fun render(): ReactElement?

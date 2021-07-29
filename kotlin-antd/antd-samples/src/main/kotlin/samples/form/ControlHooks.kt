@@ -1,13 +1,20 @@
 package samples.form
 
-import antd.*
-import antd.button.*
+import antd.MouseEventHandler
+import antd.button.button
 import antd.form.*
-import antd.input.*
-import antd.select.*
-import kotlinext.js.*
-import react.*
-import styled.*
+import antd.input.input
+import antd.select.SelectComponent
+import antd.select.option
+import antd.select.select
+import kotlinext.js.js
+import kotlinext.js.jsObject
+import react.RBuilder
+import react.RProps
+import react.child
+import react.fc
+import styled.css
+import styled.styledDiv
 
 private val formLayout = jsObject<FormProps<Any>> {
     labelCol = jsObject { span = 8 }
@@ -21,7 +28,7 @@ private val tailLayout = jsObject<FormItemProps<Any>> {
     }
 }
 
-private val demo = functionalComponent<RProps> {
+private val demo = fc<RProps> {
     val formComponent = FormComponent.useForm()[0]
 
     val handleGenderChange = { value: String, _: Any ->

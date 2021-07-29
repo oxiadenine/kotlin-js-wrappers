@@ -2,7 +2,7 @@ package antd.calendar
 
 import react.*
 
-external class CalendarHeaderComponent<DateType> : Component<CalendarHeaderProps<DateType>, RState> {
+external class CalendarHeaderComponent<DateType> : Component<CalendarHeaderProps<DateType>, State> {
     override fun render(): ReactElement?
 }
 
