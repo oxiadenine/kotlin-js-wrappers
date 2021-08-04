@@ -24,12 +24,12 @@ configure<PublishingExtension> {
         pom {
             name.set(project.name)
             description.set(project.description)
-            url.set("https://github.com/samgarasx/kotlin-js-wrappers")
+            url.set("https://github.com/sunlandx/kotlin-js-wrappers")
 
             licenses {
                 license {
                     name.set("Apache License, Version 2.0")
-                    url.set("https://github.com/samgarasx/kotlin-js-wrappers/blob/master/LICENSE")
+                    url.set("https://github.com/sunlandx/kotlin-js-wrappers/blob/master/LICENSE")
                 }
             }
 
@@ -42,9 +42,9 @@ configure<PublishingExtension> {
             }
 
             scm {
-                connection.set("scm:git:git://github.com/samgarasx/kotlin-js-wrappers.git")
-                developerConnection.set("scm:git:git@github.com:samgarasx/kotlin-js-wrappers.git")
-                url.set("https://github.com/samgarasx/kotlin-js-wrappers")
+                connection.set("scm:git:git://github.com/sunlandx/kotlin-js-wrappers.git")
+                developerConnection.set("scm:git:git@github.com:sunlandx/kotlin-js-wrappers.git")
+                url.set("https://github.com/sunlandx/kotlin-js-wrappers")
             }
         }
     }

@@ -14,11 +14,11 @@ repositories {
 }
 
 dependencies {
-    implementation("io.github.samgarasx:kotlin-moment:VERSION")
+    implementation("io.sunland:kotlin-moment:VERSION")
 }
 ```
 
 ### Getting Started
 
-You can view the [samples](https://github.com/samgarasx/kotlin-js-wrappers/tree/master/kotlin-moment/moment-samples) to know 
+You can view the [samples](https://github.com/sunlandx/kotlin-js-wrappers/tree/master/kotlin-moment/moment-samples) to know 
 how to use this library.

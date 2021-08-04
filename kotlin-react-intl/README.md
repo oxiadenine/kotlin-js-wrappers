@@ -14,11 +14,11 @@ repositories {
 }
 
 dependencies {
-    implementation("io.github.samgarasx:kotlin-react-intl:VERSION")
+    implementation("io.sunland:kotlin-react-intl:VERSION")
 }
 ```
 
 ### Getting Started
 
-You can view the [samples](https://github.com/samgarasx/kotlin-js-wrappers/tree/master/kotlin-react-intl/react-intl-samples) to know 
+You can view the [samples](https://github.com/sunlandx/kotlin-js-wrappers/tree/master/kotlin-react-intl/react-intl-samples) to know 
 how to use this library.

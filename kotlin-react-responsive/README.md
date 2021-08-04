@@ -14,11 +14,11 @@ repositories {
 }
 
 dependencies {
-    implementation("io.github.samgarasx:kotlin-react-responsive:VERSION")
+    implementation("io.sunland:kotlin-react-responsive:VERSION")
 }
 ```
 
 ### Getting Started
 
-You can view the [samples](https://github.com/samgarasx/kotlin-js-wrappers/tree/master/kotlin-react-responsive/react-responsive-samples) to know 
+You can view the [samples](https://github.com/sunlandx/kotlin-js-wrappers/tree/master/kotlin-react-responsive/react-responsive-samples) to know 
 how to use this library.

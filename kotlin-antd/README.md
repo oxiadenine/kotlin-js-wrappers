@@ -14,12 +14,12 @@ repositories {
 }
 
 dependencies {
-    implementation("io.github.samgarasx:kotlin-antd:VERSION")
+    implementation("io.sunland:kotlin-antd:VERSION")
 }
 ```
 
 ### Getting Started
 
-You can view the [samples](https://github.com/samgarasx/kotlin-js-wrappers/tree/master/kotlin-antd/antd-samples) that follows 
+You can view the [samples](https://github.com/sunlandx/kotlin-js-wrappers/tree/master/kotlin-antd/antd-samples) that follows 
 Ant Design [demo](https://github.com/ant-design/ant-design/tree/master/components) of each component to know 
 how to use this library.
