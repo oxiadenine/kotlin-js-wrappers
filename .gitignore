@@ -1,6 +1,10 @@
 # IDE
 .idea/
 
+# Gradle
+gradle/
+gradlew*
+
 # Build
 build/
 out/
