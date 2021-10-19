@@ -4,6 +4,7 @@
 package antd.select
 
 import antd.*
+import antd.Key
 import antd.ReactNode
 import antd.configprovider.*
 import org.w3c.dom.*
@@ -19,7 +20,7 @@ external class SelectComponent<VT : SelectValue> : Component<SelectProps<VT>, St
     override fun render(): ReactElement?
 }
 
-external interface SelectProps<VT : SelectValue> : InternalSelectProps<VT>, RProps {
+external interface SelectProps<VT : SelectValue> : InternalSelectProps<VT>, Props {
     override var mode: String? /* "multiple" | "tags" */
     var ref: Any? /* (instance: RefSelectProps?) -> Unit | RefObject<RefSelectProps> */
 }

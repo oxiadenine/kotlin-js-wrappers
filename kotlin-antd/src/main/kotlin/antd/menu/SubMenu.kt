@@ -6,7 +6,7 @@ import react.*
 
 external interface SubMenuComponent : ComponentType<SubMenuProps>
 
-external interface SubMenuProps : RProps {
+external interface SubMenuProps : Props {
     var rootPrefixCls: String?
     var className: String?
     var disabled: Boolean?

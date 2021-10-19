@@ -15,7 +15,7 @@ external interface MyUploadState : State {
     var fileList: Array<UploadFile<Any>>
 }
 
-class MyUpload : RComponent<RProps, MyUploadState>() {
+class MyUpload : RComponent<Props, MyUploadState>() {
     private val handleChange = fun(info: UploadChangeParam<UploadFile<Any>>) {
         var newFileList = info.fileList
 

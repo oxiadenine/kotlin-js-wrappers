@@ -18,7 +18,7 @@ external class UploadComponent<T> : Component<UploadProps<T>, UploadState<T>> {
     override fun render(): ReactElement?
 }
 
-external interface UploadProps<T> : RefAttributes<Any>, RProps {
+external interface UploadProps<T> : RefAttributes<Any>, Props {
     var type: UploadType?
     var name: String?
     var defaultFileList: Array<UploadFile<T>>?

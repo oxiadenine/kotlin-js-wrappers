@@ -20,7 +20,7 @@ private fun loadLocaleData(locale: String): dynamic {
     }
 }
 
-external interface AdvancedProps : RProps {
+external interface AdvancedProps : Props {
     var locale: String
     var messages: Any
 }

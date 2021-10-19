@@ -6,4 +6,4 @@ external object UnauthorizedComponent : Component<UnauthorizedProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface UnauthorizedProps : RProps
+external interface UnauthorizedProps : Props

@@ -17,7 +17,7 @@ external interface DynamicTriggerAppState : State {
     var condition: Boolean
 }
 
-class DynamicTriggerApp : RComponent<RProps, DynamicTriggerAppState>() {
+class DynamicTriggerApp : RComponent<Props, DynamicTriggerAppState>() {
     private val changeCondition = fun(value: Boolean, _: org.w3c.dom.events.MouseEvent) {
         setState {
             condition = value

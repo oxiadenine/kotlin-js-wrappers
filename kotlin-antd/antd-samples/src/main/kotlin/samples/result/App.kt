@@ -2,7 +2,7 @@ package samples.result
 
 import react.RBuilder
 import react.RComponent
-import react.RProps
+import react.Props
 import react.State
 import react.dom.h2
 import styled.StyleSheet
@@ -15,7 +15,7 @@ object ResultStyles : StyleSheet("result", isStatic = true) {
     val customIcon by css {}
 }
 
-class ResultApp : RComponent<RProps, State>() {
+class ResultApp : RComponent<Props, State>() {
     override fun RBuilder.render() {
         h2 { +"Result" }
         styledDiv {

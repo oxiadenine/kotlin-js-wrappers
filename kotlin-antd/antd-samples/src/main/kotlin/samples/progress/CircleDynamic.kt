@@ -15,7 +15,7 @@ external interface CircleDynamicAppState : State {
     var percent: Number
 }
 
-class CircleDynamicApp : RComponent<RProps, CircleDynamicAppState>() {
+class CircleDynamicApp : RComponent<Props, CircleDynamicAppState>() {
     private val increase: MouseEventHandler<Any> = {
         var newPercent = state.percent.toInt() + 10
 

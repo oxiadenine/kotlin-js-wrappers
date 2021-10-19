@@ -5,7 +5,7 @@ import react.*
 
 external interface TreeNodeComponent : ComponentType<TreeNodeProps>
 
-external interface TreeNodeProps : DataNode, RProps {
+external interface TreeNodeProps : DataNode, Props {
     override var value: Key?
     override var children: Any?
 }

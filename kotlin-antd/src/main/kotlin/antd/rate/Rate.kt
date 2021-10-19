@@ -12,7 +12,7 @@ external object RateComponent : Component<RateProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface RateProps : RefAttributes<dynamic>, RProps {
+external interface RateProps : RefAttributes<dynamic>, Props {
     var prefixCls: String?
     var count: Number?
     var value: Number?

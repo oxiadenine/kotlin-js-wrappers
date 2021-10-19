@@ -11,7 +11,7 @@ external interface RadioGroupAppState : State {
     var value: Any
 }
 
-class RadioGroupApp : RComponent<RProps, RadioGroupAppState>() {
+class RadioGroupApp : RComponent<Props, RadioGroupAppState>() {
     private val handleChange = fun(event: RadioChangeEvent) {
         console.log("radio checked", event.target.value)
 

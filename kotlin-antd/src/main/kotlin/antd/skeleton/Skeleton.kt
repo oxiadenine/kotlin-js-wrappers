@@ -16,7 +16,7 @@ external object SkeletonComponent : Component<SkeletonProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface SkeletonProps : RProps {
+external interface SkeletonProps : Props {
     var active: Boolean?
     var loading: Boolean?
     var prefixCls: String?

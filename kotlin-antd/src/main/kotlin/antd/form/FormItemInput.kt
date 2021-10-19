@@ -6,7 +6,7 @@ import react.*
 
 external interface FormItemInputComponent : ComponentType<FormItemInputProps>
 
-external interface FormItemInputProps : FormItemInputBaseProps, FormItemInputMiscProps, RProps
+external interface FormItemInputProps : FormItemInputBaseProps, FormItemInputMiscProps, Props
 
 external interface FormItemInputBaseProps {
     var wrapperCol: ColProps?

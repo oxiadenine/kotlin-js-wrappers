@@ -9,7 +9,7 @@ external class TransferListComponent<RecordType : KeyWiseTransferItem> : PureCom
     override fun render(): ReactElement?
 }
 
-external interface TransferListProps<RecordType> : TransferLocale, RProps {
+external interface TransferListProps<RecordType> : TransferLocale, Props {
     var prefixCls: String
     var titleText: String
     var dataSource: Array<RecordType>

@@ -5,7 +5,7 @@ import react.*
 
 external interface CheckboxGroupComponent : ComponentType<CheckboxGroupProps>
 
-external interface CheckboxGroupProps : AbstractCheckboxGroupProps, RProps {
+external interface CheckboxGroupProps : AbstractCheckboxGroupProps, Props {
     var name: String?
     var defaultValue: Array<CheckboxValueType>?
     var value: Array<CheckboxValueType>?

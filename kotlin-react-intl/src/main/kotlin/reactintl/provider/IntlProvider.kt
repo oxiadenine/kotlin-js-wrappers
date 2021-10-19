@@ -11,7 +11,7 @@ external class IntlProviderComponent : Component<IntlProviderProps, IntlProvider
     override fun render(): ReactElement?
 }
 
-external interface IntlProviderProps : OptionalIntlConfig, RProps
+external interface IntlProviderProps : OptionalIntlConfig, Props
 
 external interface IntlProviderState : State {
     var cache: IntlCache

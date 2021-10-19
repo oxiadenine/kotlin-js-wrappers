@@ -11,7 +11,7 @@ external interface ItemComponent : ComponentType<ListItemProps> {
 
 external interface MetaComponent : ComponentType<ListItemMetaProps>
 
-external interface ListItemProps : HTMLAttributes<HTMLDivElement>, RProps {
+external interface ListItemProps : HTMLAttributes<HTMLDivElement>, Props {
     override var className: String?
     override var children: Any?
     var prefixCls: String?
@@ -22,7 +22,7 @@ external interface ListItemProps : HTMLAttributes<HTMLDivElement>, RProps {
     var colStyle: dynamic
 }
 
-external interface ListItemMetaProps : RProps {
+external interface ListItemMetaProps : Props {
     var avatar: ReactNode?
     var className: String?
     var children: ReactNode?

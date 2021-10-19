@@ -8,7 +8,7 @@ import react.*
 import styled.css
 import styled.styledDiv
 
-class LineDemo : RComponent<RProps, State>() {
+class LineDemo : RComponent<Props, State>() {
     private val handleSelect = fun(selectedKeys: Array<Key>, info: OnSelectInfo) {
         console.log("selected", selectedKeys, info)
     }

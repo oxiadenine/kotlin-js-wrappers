@@ -12,7 +12,7 @@ external object CarouselComponent : Component<CarouselProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface CarouselProps : Settings, RefAttributes<CarouselRef>, RProps {
+external interface CarouselProps : Settings, RefAttributes<CarouselRef>, Props {
     var effect: CarouselEffect?
     var style: dynamic
     var prefixCls: String?

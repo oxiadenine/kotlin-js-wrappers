@@ -13,7 +13,7 @@ external object CascaderComponent : Component<CascaderProps, CascaderState> {
     override fun render(): ReactElement?
 }
 
-external interface CascaderProps : RProps {
+external interface CascaderProps : Props {
     var options: Array<CascaderOptionType>
     var defaultValue: CascaderValueType?
     var value: CascaderValueType?

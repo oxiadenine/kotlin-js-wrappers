@@ -3,7 +3,7 @@ package samples.tooltip
 import kotlinx.css.*
 import react.RBuilder
 import react.RComponent
-import react.RProps
+import react.Props
 import react.State
 import react.dom.h2
 import styled.StyleSheet
@@ -34,7 +34,7 @@ object TooltipStyles : StyleSheet("tooltip", isStatic = true) {
     val autoAdjustOverflow by css {}
 }
 
-class TooltipApp : RComponent<RProps, State>() {
+class TooltipApp : RComponent<Props, State>() {
     override fun RBuilder.render() {
         h2 { +"Tooltip" }
         styledDiv {

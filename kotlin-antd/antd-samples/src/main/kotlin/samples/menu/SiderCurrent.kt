@@ -16,7 +16,7 @@ external interface SiderCurrentSiderState : State {
     var openKeys: Array<String>
 }
 
-class SiderCurrentSider : RComponent<RProps, SiderCurrentSiderState>() {
+class SiderCurrentSider : RComponent<Props, SiderCurrentSiderState>() {
     private val rootSubmenuKeys = arrayOf("sub1", "sub2", "sub4")
 
     private val handleOpenChange = fun(keys: Array<dynamic>) {

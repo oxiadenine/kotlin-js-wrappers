@@ -5,7 +5,7 @@ import kotlinx.css.marginRight
 import kotlinx.css.px
 import react.RBuilder
 import react.RComponent
-import react.RProps
+import react.Props
 import react.State
 import react.dom.h2
 import styled.StyleSheet
@@ -46,7 +46,7 @@ object ProgressStyles : StyleSheet("progress", isStatic = true) {
     val steps by css {}
 }
 
-class ProgressApp : RComponent<RProps, State>() {
+class ProgressApp : RComponent<Props, State>() {
     override fun RBuilder.render() {
         h2 { +"Progress" }
         styledDiv {

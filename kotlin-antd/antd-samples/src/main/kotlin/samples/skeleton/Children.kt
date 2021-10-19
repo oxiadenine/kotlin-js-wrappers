@@ -15,7 +15,7 @@ external interface ChildrenDemoState : State {
     var loading: Boolean
 }
 
-class ChildrenDemo : RComponent<RProps, ChildrenDemoState>() {
+class ChildrenDemo : RComponent<Props, ChildrenDemoState>() {
     private val showSkeleton: MouseEventHandler<Any> = {
         setState {
             loading = true

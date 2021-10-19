@@ -6,4 +6,4 @@ external object SimpleComponent : Component<SimpleProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface SimpleProps : RProps
+external interface SimpleProps : Props

@@ -26,7 +26,7 @@ external interface LazyOptionsState : State {
     var options: Array<CascaderOptionType>
 }
 
-class LazyOptions : RComponent<RProps, LazyOptionsState>() {
+class LazyOptions : RComponent<Props, LazyOptionsState>() {
     private val handleChange = fun(value: CascaderValueType, selectedOptions: Array<CascaderOptionType>?) {
         console.log(value, selectedOptions!!)
     }

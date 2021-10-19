@@ -37,7 +37,7 @@ private val listData = (0..2).map { i ->
     }
 }.toTypedArray()
 
-external interface ListIconTextProps : RProps {
+external interface ListIconTextProps : Props {
     var icon: ReactElement
     var text: String
 }
@@ -57,7 +57,7 @@ external interface ListAppState : State {
     var loading: Boolean
 }
 
-class ListApp : RComponent<RProps, ListAppState>() {
+class ListApp : RComponent<Props, ListAppState>() {
     private val handleChange = fun(checked: Boolean, _: MouseEvent) {
         setState {
             loading = !checked

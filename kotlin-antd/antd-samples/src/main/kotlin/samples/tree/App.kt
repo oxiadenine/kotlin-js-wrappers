@@ -2,7 +2,7 @@ package samples.tree
 
 import react.RBuilder
 import react.RComponent
-import react.RProps
+import react.Props
 import react.State
 import react.dom.h2
 import styled.StyleSheet
@@ -19,7 +19,7 @@ object TreeStyles : StyleSheet("tree", isStatic = true) {
     val directory by css {}
 }
 
-class TreeApp : RComponent<RProps, State>() {
+class TreeApp : RComponent<Props, State>() {
     override fun RBuilder.render() {
         h2 { +"Tree" }
         styledDiv {

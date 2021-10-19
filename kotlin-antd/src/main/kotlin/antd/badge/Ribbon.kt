@@ -5,7 +5,7 @@ import react.*
 
 external interface RibbonComponent : ComponentType<RibbonProps>
 
-external interface RibbonProps : RProps {
+external interface RibbonProps : Props {
     var className: String?
     var prefixCls: String?
     var style: dynamic

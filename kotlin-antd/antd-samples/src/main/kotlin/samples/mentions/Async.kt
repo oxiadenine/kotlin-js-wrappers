@@ -21,7 +21,7 @@ external interface AsyncMentionState : State {
     var users: Array<dynamic>
 }
 
-class AsyncMention : RComponent<RProps, AsyncMentionState>() {
+class AsyncMention : RComponent<Props, AsyncMentionState>() {
     private val handleSearch: (String, String) -> Unit = { text, _ ->
         setState {
             search = text

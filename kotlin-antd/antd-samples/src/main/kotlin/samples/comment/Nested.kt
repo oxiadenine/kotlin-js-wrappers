@@ -9,7 +9,7 @@ import react.dom.span
 import styled.css
 import styled.styledDiv
 
-external interface ExampleCommentProps : RProps {
+external interface ExampleCommentProps : Props {
     var children: ReactElement
 }
 

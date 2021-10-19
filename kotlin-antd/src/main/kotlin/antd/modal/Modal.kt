@@ -22,7 +22,7 @@ external class ModalComponent : Component<ModalProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface ModalProps : RProps {
+external interface ModalProps : Props {
     var visible: Boolean?
     var confirmLoading: Boolean?
     var title: ReactNode?

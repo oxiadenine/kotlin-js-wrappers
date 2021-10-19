@@ -5,7 +5,7 @@ import kotlinx.css.marginBottom
 import kotlinx.css.px
 import react.RBuilder
 import react.RComponent
-import react.RProps
+import react.Props
 import react.State
 import react.dom.div
 import react.dom.h2
@@ -31,7 +31,7 @@ object CardStyles : StyleSheet("card", isStatic = true) {
     val meta by css {}
 }
 
-class CardApp : RComponent<RProps, State>() {
+class CardApp : RComponent<Props, State>() {
     override fun RBuilder.render() {
         h2 { +"Card" }
         div {

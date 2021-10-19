@@ -14,7 +14,7 @@ external object EmptyComponent : Component<EmptyProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface EmptyProps : RProps {
+external interface EmptyProps : Props {
     var prefixCls: String?
     var className: String?
     var style: dynamic

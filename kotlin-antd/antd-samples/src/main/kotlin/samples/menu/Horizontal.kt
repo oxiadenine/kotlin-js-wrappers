@@ -15,7 +15,7 @@ external interface HorizontalAppState : State {
     var current: String
 }
 
-class HorizontalApp : RComponent<RProps, HorizontalAppState>() {
+class HorizontalApp : RComponent<Props, HorizontalAppState>() {
     private val handleClick: MenuClickEventHandler = { info ->
         console.log("click ", info)
 

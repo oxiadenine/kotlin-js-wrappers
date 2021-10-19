@@ -12,7 +12,7 @@ external object StepsComponent : Component<StepsProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface StepsProps : RProps {
+external interface StepsProps : Props {
     var type: String? /* "default" | "navigation" */
     var className: String?
     var current: Number?

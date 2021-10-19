@@ -9,7 +9,7 @@ external interface ControlledAppState : State {
     var current: Number
 }
 
-class ControlledApp : RComponent<RProps, ControlledAppState>() {
+class ControlledApp : RComponent<Props, ControlledAppState>() {
     private val handleChange = fun(page: Number, _: Number?) {
         console.log(page)
 

@@ -86,7 +86,7 @@ external interface BasicControlledDemoState : State {
     var selectedKeys: Array<Key>
 }
 
-class BasicControlledDemo : RComponent<RProps, BasicControlledDemoState>() {
+class BasicControlledDemo : RComponent<Props, BasicControlledDemoState>() {
     private val handleExpand = fun(expandKeys: Array<Key>, _: OnExpandInfo) {
         console.log("onExpand", expandKeys)
 
@@ -124,7 +124,7 @@ class BasicControlledDemo : RComponent<RProps, BasicControlledDemoState>() {
                             key = item.key as String
                         }
                         attrs.asDynamic()["dataRef"] = item
-                        childList.add(renderTreeNodes(item.children!!))
+                        childList.add(renderTreeNodes(item.children!!).unsafeCast<ReactNode>())
                     }
                 }
             }
@@ -155,7 +155,7 @@ class BasicControlledDemo : RComponent<RProps, BasicControlledDemoState>() {
                 onSelect = handleSelect
                 defaultSelectedKeys = state.selectedKeys
             }
-            childList.add(renderTreeNodes(treeData))
+            childList.add(renderTreeNodes(treeData).unsafeCast<ReactNode>())
         }
     }
 }

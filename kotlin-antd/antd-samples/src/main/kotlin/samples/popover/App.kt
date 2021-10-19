@@ -3,7 +3,7 @@ package samples.popover
 import kotlinx.css.*
 import react.RBuilder
 import react.RComponent
-import react.RProps
+import react.Props
 import react.State
 import react.dom.h2
 import styled.StyleSheet
@@ -35,7 +35,7 @@ object PopoverStyles : StyleSheet("popover", isStatic = true) {
     val hoverWithClick by css {}
 }
 
-class PopoverApp : RComponent<RProps, State>() {
+class PopoverApp : RComponent<Props, State>() {
     override fun RBuilder.render() {
         h2 { +"Popover" }
         styledDiv {

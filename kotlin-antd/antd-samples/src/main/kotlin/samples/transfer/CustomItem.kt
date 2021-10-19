@@ -22,7 +22,7 @@ external interface CustomItemAppState : State {
     var targetKeys: Array<String>
 }
 
-class CustomItemApp : RComponent<RProps, CustomItemAppState>() {
+class CustomItemApp : RComponent<Props, CustomItemAppState>() {
     private val getMock: MouseEventHandler<Any> = {
         val keys = mutableListOf<String>()
         val data = mutableListOf<TransferItem>()

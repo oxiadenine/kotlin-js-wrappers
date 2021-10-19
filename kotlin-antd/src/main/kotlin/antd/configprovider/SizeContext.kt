@@ -8,6 +8,6 @@ external object SizeContextProvider : Component<SizeContextProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface SizeContextProps : RProps {
+external interface SizeContextProps : Props {
     var size: SizeType?
 }

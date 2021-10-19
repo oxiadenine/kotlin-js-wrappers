@@ -83,7 +83,7 @@ private val cascaderOptions = arrayOf<CascaderOptionType>(
         })
     })
 
-external interface DirectionPageProps : RProps {
+external interface DirectionPageProps : Props {
     var className: String
     var popupPlacement: String
 }
@@ -950,7 +950,7 @@ external interface DirectionAppState : State {
     var popupPlacement: String
 }
 
-class DirectionApp : RComponent<RProps, DirectionAppState>() {
+class DirectionApp : RComponent<Props, DirectionAppState>() {
     val changeDirection = { e: RadioChangeEvent ->
         val directionValue = e.target.value as String
 

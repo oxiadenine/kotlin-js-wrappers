@@ -22,7 +22,7 @@ external object FormComponent : Component<FormProps<Any>, State> {
     override fun render(): ReactElement?
 }
 
-external interface FormProps<Values> : FormBaseProps<Values>, RcFormProps<Values>, RProps {
+external interface FormProps<Values> : FormBaseProps<Values>, RcFormProps<Values>, Props {
     var prefixCls: String?
     var colon: Boolean?
     override var name: String?
@@ -46,7 +46,7 @@ external interface RcFormProps<Values> : FormHTMLAttributes<HTMLFormElement> {
     var initialValues: Store?
     var form: FormInstance<Values>?
     override var children: Any?
-    var component: Any? /* Boolean | String | FunctionalComponent<RProps> | ComponentClass<RProps> */
+    var component: Any? /* Boolean | String | FunctionalComponent<Props> | ComponentClass<Props> */
     var fields: Array<FieldData>?
     override var name: String?
     var validateMessages: ValidateMessages?

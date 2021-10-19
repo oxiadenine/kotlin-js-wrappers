@@ -2,7 +2,7 @@ package samples.comment
 
 import react.RBuilder
 import react.RComponent
-import react.RProps
+import react.Props
 import react.State
 import react.dom.h2
 import styled.StyleSheet
@@ -17,7 +17,7 @@ object CommentStyles : StyleSheet("comment", isStatic = true) {
     val editor by css {}
 }
 
-class CommentApp : RComponent<RProps, State>() {
+class CommentApp : RComponent<Props, State>() {
     override fun RBuilder.render() {
         h2 { +"Comment" }
         styledDiv {

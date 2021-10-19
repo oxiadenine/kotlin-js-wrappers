@@ -7,6 +7,7 @@ import antd.input.*
 import antd.select.*
 import kotlinext.js.*
 import react.*
+import react.ReactNode
 import styled.*
 
 private val formLayout = jsObject<FormProps<Any>> {
@@ -21,7 +22,7 @@ private val tailLayout = jsObject<FormItemProps<Any>> {
     }
 }
 
-private class Demo : RComponent<RProps, State>() {
+private class Demo : RComponent<Props, State>() {
     var formInstance: FormInstance<Any>? = null
 
     val handleGenderChange = { value: String, _: Any ->
@@ -124,7 +125,7 @@ private class Demo : RComponent<RProps, State>() {
                         }
                     } else null
                 }
-                childList += getFieldValue
+                childList.add(getFieldValue.unsafeCast<ReactNode>())
                 +""
             }
             formItem {

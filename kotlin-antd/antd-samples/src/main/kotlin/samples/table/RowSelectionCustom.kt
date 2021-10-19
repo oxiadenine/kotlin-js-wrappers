@@ -42,7 +42,7 @@ external interface RowSelectionCustomAppState : State {
     var selectedRowKeys: Array<Key>
 }
 
-class RowSelectionCustomApp : RComponent<RProps, RowSelectionCustomAppState>() {
+class RowSelectionCustomApp : RComponent<Props, RowSelectionCustomAppState>() {
     private val handleSelectChange = fun(rowKeys: Any?, _: Array<RowSelectionCustomTableDataItem>) {
         console.log("selectedRowKeys changed: ", rowKeys)
 

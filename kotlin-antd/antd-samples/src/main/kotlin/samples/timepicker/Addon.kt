@@ -11,7 +11,7 @@ external interface AddonDemoState : State {
     var open: Boolean
 }
 
-class AddonDemo : RComponent<RProps, AddonDemoState>() {
+class AddonDemo : RComponent<Props, AddonDemoState>() {
     private val handleOpenChange = fun(openFlag: Boolean) {
         setState {
             open = openFlag

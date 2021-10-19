@@ -5,7 +5,7 @@ import react.*
 
 external interface FormProvider: ComponentClass<FormProviderProps>
 
-external interface FormProviderProps : RProps {
+external interface FormProviderProps : Props {
     var validateMessages: ValidateMessages?
 }
 

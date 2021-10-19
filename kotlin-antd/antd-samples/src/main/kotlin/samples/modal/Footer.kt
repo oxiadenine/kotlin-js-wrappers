@@ -18,7 +18,7 @@ external interface FooterAppState : State {
     var visible: Boolean
 }
 
-class FooterApp : RComponent<RProps, FooterAppState>() {
+class FooterApp : RComponent<Props, FooterAppState>() {
     private val showModal: MouseEventHandler<Any> = {
         setState {
             visible = true
@@ -64,7 +64,7 @@ class FooterApp : RComponent<RProps, FooterAppState>() {
                     title = "Title"
                     onOk = handleOk
                     onCancel = handleCancel
-                    footer = buildElements {
+                    footer = buildElement {
                         button {
                             attrs {
                                 key = "back"

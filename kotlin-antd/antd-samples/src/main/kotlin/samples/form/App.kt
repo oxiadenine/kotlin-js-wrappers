@@ -4,7 +4,7 @@ import kotlinx.css.*
 import kotlinx.css.properties.border
 import react.RBuilder
 import react.RComponent
-import react.RProps
+import react.Props
 import react.State
 import react.dom.h2
 import styled.StyleSheet
@@ -77,7 +77,7 @@ object FormStyles : StyleSheet("form", isStatic = true) {
     val validateOther by css {}
 }
 
-class FormApp : RComponent<RProps, State>() {
+class FormApp : RComponent<Props, State>() {
     override fun RBuilder.render() {
         h2 { +"Form" }
         styledDiv {

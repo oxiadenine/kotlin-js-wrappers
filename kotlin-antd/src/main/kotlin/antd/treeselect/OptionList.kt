@@ -8,7 +8,7 @@ import react.*
 
 external interface OptionListComponent : ComponentType<OptionListProps<Array<DataNode>>>
 
-external interface OptionListProps<OptionsType> : RefAttributes<RefOptionListProps>, RProps {
+external interface OptionListProps<OptionsType> : RefAttributes<RefOptionListProps>, Props {
     var prefixCls: String
     var id: String
     var options: OptionsType

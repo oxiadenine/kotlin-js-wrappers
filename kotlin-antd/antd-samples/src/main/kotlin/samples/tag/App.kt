@@ -4,7 +4,7 @@ import kotlinx.css.marginBottom
 import kotlinx.css.px
 import react.RBuilder
 import react.RComponent
-import react.RProps
+import react.Props
 import react.State
 import react.dom.h2
 import styled.StyleSheet
@@ -25,7 +25,7 @@ object TagStyles : StyleSheet("tag", isStatic = true) {
     val controlled by css {}
 }
 
-class TagApp : RComponent<RProps, State>() {
+class TagApp : RComponent<Props, State>() {
     override fun RBuilder.render() {
         h2 { +"Tag" }
         styledDiv {

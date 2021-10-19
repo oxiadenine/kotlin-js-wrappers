@@ -33,7 +33,7 @@ private val listData = (0..23).mapIndexed { i, _ ->
     }
 }.toTypedArray()
 
-external interface IconTextProps : RProps {
+external interface IconTextProps : Props {
     var icon: ReactElement
     var text: String
 }

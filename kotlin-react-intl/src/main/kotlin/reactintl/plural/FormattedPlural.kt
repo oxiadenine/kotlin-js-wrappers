@@ -10,16 +10,16 @@ import reactintl.*
 external class FormattedPluralComponent :
     Component<WithIntlProps<FormattedPluralProps>, State>,
     FormattedPluralWrappedComponent {
-    override var WrappedComponent: RClass<FormattedPluralProps>
+    override var WrappedComponent: ComponentClass<FormattedPluralProps>
 
     override fun render(): ReactElement?
 }
 
 external interface FormattedPluralWrappedComponent {
-    var WrappedComponent: RClass<FormattedPluralProps>
+    var WrappedComponent: ComponentClass<FormattedPluralProps>
 }
 
-external interface FormattedPluralProps : IntlPluralFormatOptions, CustomFormatConfig, RProps {
+external interface FormattedPluralProps : IntlPluralFormatOptions, CustomFormatConfig, Props {
     var value: Number
     var intl: IntlShape
     var other: Any /* String | ReactElement */

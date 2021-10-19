@@ -4,7 +4,7 @@ import react.*
 
 external interface SkeletonElementComponent : ComponentType<SkeletonElementProps>
 
-external interface SkeletonElementProps : RProps {
+external interface SkeletonElementProps : Props {
     var prefixCls: String?
     var className: String?
     var style: dynamic

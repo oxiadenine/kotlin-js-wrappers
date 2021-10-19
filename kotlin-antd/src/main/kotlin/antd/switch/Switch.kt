@@ -13,7 +13,7 @@ external object SwitchComponent : Component<SwitchProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface SwitchProps : RefAttributes<HTMLElement>, RProps {
+external interface SwitchProps : RefAttributes<HTMLElement>, Props {
     var prefixCls: String?
     var size: SwitchSize?
     var className: String?

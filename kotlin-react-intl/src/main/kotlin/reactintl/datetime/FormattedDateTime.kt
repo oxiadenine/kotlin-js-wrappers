@@ -26,20 +26,20 @@ external class FormattedTimePartsComponent : Component<FormattedTimePartsProps, 
     override fun render(): ReactElement?
 }
 
-external interface FormattedDateProps : DateTimeFormatOptions, CustomFormatConfig, RProps {
+external interface FormattedDateProps : DateTimeFormatOptions, CustomFormatConfig, Props {
     var value: Any? /* String | Number | Date */
 }
 
-external interface FormattedDatePartsProps : DateTimeFormatOptions, RProps {
+external interface FormattedDatePartsProps : DateTimeFormatOptions, Props {
     var value: Any /* String | Number | Date */
     fun children(value: Any /* String | Number | Date */): ReactElement?
 }
 
-external interface FormattedTimeProps : DateTimeFormatOptions, CustomFormatConfig, RProps {
+external interface FormattedTimeProps : DateTimeFormatOptions, CustomFormatConfig, Props {
     var value: Any? /* String | Number | Date */
 }
 
-external interface FormattedTimePartsProps : DateTimeFormatOptions, RProps {
+external interface FormattedTimePartsProps : DateTimeFormatOptions, Props {
     var value: Any /* String | Number | Date */
     fun children(value: Any /* String | Number | Date */): ReactElement?
 }

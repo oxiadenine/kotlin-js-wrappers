@@ -6,7 +6,7 @@ external class CalendarHeaderComponent<DateType> : Component<CalendarHeaderProps
     override fun render(): ReactElement?
 }
 
-external interface CalendarHeaderProps<DateType> : RProps {
+external interface CalendarHeaderProps<DateType> : Props {
     var prefixCls: String
     var value: DateType
     var validRange: Array<DateType>?

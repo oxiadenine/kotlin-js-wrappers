@@ -13,7 +13,7 @@ external object SliderComponent : Component<SlideProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface SlideProps : Settings, RProps
+external interface SlideProps : Settings, Props
 
 external interface Settings {
     var accessibility: Boolean?

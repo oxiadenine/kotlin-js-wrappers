@@ -9,4 +9,4 @@ external object SliderTooltipComponent : Component<SliderTooltipProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface SliderTooltipProps : TooltipPropsWithOverlay, TooltipPropsWithTitle, RefAttributes<dynamic>, RProps
+external interface SliderTooltipProps : TooltipPropsWithOverlay, TooltipPropsWithTitle, RefAttributes<dynamic>, Props

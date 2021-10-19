@@ -4,7 +4,7 @@ import react.*
 
 external interface SkeletonTitleComponent : ComponentType<SkeletonTitleProps>
 
-external interface SkeletonTitleProps : RProps {
+external interface SkeletonTitleProps : Props {
     var prefixCls: String?
     var className: String?
     var style: dynamic

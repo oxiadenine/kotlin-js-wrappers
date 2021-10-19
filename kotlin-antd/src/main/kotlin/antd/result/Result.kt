@@ -15,7 +15,7 @@ external object ResultComponent : Component<ResultProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface ResultProps : RProps {
+external interface ResultProps : Props {
     var icon: ReactNode
     var status: ResultStatusType?
     var title: ReactNode?

@@ -15,7 +15,7 @@ external interface PositionCarouselDemoState : State {
     var dotPosition: String
 }
 
-class PositionCarouselDemo : RComponent<RProps, PositionCarouselDemoState>() {
+class PositionCarouselDemo : RComponent<Props, PositionCarouselDemoState>() {
     private val handlePositionChange: (RadioChangeEvent) -> Unit = { e ->
         val value = e.target.value.unsafeCast<String>()
 

@@ -3,7 +3,7 @@ package samples.calendar
 import kotlinx.css.*
 import react.RBuilder
 import react.RComponent
-import react.RProps
+import react.Props
 import react.State
 import react.dom.h2
 import styled.StyleSheet
@@ -39,7 +39,7 @@ object CalendarStyles : StyleSheet("calendar", isStatic = true) {
     val customizeHeader by css {}
 }
 
-class CalendarApp : RComponent<RProps, State>() {
+class CalendarApp : RComponent<Props, State>() {
     override fun RBuilder.render() {
         h2 { +"Calendar" }
         styledDiv {

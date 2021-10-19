@@ -8,7 +8,7 @@ import react.dom.br
 import styled.css
 import styled.styledDiv
 
-private val spaceCustomizeSize = fc<RProps> {
+private val spaceCustomizeSize = fc<Props> {
     val (size, setSize) = useState(8 as Number)
 
     slider {

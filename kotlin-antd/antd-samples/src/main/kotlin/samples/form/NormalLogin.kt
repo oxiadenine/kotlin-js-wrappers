@@ -16,7 +16,7 @@ import react.dom.a
 import styled.css
 import styled.styledDiv
 
-private val normalLoginForm = fc<RProps> {
+private val normalLoginForm = fc<Props> {
     val handleFinish = { values: Any ->
         console.log("Received values of form: ", values)
     }

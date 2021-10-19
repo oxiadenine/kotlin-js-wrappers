@@ -33,7 +33,7 @@ private val formItemLayout = jsObject<FormItemProps<Any>> {
     wrapperCol = jsObject { span = 12 }
 }
 
-private val rawForm = fc<RProps> {
+private val rawForm = fc<Props> {
     val (number, setNumber) = useState(jsObject<PrimeNumber> { value = 11 })
 
     val tips = "A prime is a natural number greater than 1 that has no positive divisors other than 1 and itself."

@@ -14,7 +14,7 @@ external interface IntegerStepState : State {
     var inputValue: Number
 }
 
-class IntegerStep : RComponent<RProps, IntegerStepState>() {
+class IntegerStep : RComponent<Props, IntegerStepState>() {
     private val handleChange = fun(value: Number) {
         setState {
             inputValue = value
@@ -61,7 +61,7 @@ external interface DecimalStepState : State {
     var inputValue: Number
 }
 
-class DecimalStep : RComponent<RProps, DecimalStepState>() {
+class DecimalStep : RComponent<Props, DecimalStepState>() {
     private val handleChange = fun(value: Number) {
         if (value.unsafeCast<Double>().isNaN()) {
             return

@@ -16,7 +16,7 @@ external object ClearableLabeledInputComponent : Component<ClearableInputProps, 
     override fun render(): ReactElement?
 }
 
-external interface ClearableInputProps : BasicProps, RProps {
+external interface ClearableInputProps : BasicProps, Props {
     var size: SizeType?
     var suffix: ReactNode?
     var prefix: ReactNode?

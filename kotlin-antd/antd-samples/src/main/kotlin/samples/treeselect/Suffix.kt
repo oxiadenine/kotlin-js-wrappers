@@ -20,7 +20,7 @@ external interface SuffixDemoState : State {
     var value: String?
 }
 
-class SuffixDemo : RComponent<RProps, SuffixDemoState>() {
+class SuffixDemo : RComponent<Props, SuffixDemoState>() {
     private val handleChange = fun(newValue: String, _: Any, _: Any) {
         console.log(newValue)
 

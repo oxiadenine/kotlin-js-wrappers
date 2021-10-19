@@ -15,7 +15,7 @@ external interface ControlledDatePickerState : State {
     var mode: PanelMode
 }
 
-class ControlledDatePicker : RComponent<RProps, ControlledDatePickerState>() {
+class ControlledDatePicker : RComponent<Props, ControlledDatePickerState>() {
     private val handleOpenChange = fun(open: Boolean) {
         if (open) {
             setState {
@@ -53,7 +53,7 @@ external interface ControlledRangePickerState : State {
     var value: RangeValue<Moment>
 }
 
-class ControlledRangePicker : RComponent<RProps, ControlledRangePickerState>() {
+class ControlledRangePicker : RComponent<Props, ControlledRangePickerState>() {
     private val handlePanelChange = fun(newValue: RangeValue<Moment>?, newMode: Any?) {
         val currentMode = newMode.unsafeCast<Array<String>>()
 

@@ -16,7 +16,7 @@ external interface CustomAddTriggerDemoState : State {
     var panes: Array<Any>
 }
 
-class CustomAddTriggerDemo : RComponent<RProps, CustomAddTriggerDemoState>() {
+class CustomAddTriggerDemo : RComponent<Props, CustomAddTriggerDemoState>() {
     private var newTabIndex = 0
 
     private val handleChange: (String) -> Unit = { key ->

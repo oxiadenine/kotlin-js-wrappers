@@ -17,7 +17,7 @@ external interface PlaygroundAppState : State {
     var colCountKey: Number
 }
 
-class PlaygroundApp : RComponent<RProps, PlaygroundAppState>() {
+class PlaygroundApp : RComponent<Props, PlaygroundAppState>() {
     private val gutters: dynamic = object {}
     private val colCounts: dynamic = object {}
 
@@ -108,7 +108,7 @@ class PlaygroundApp : RComponent<RProps, PlaygroundAppState>() {
             }
             row {
                 attrs.gutter = gutters[state.gutterKey.toInt()].unsafeCast<Any>()
-                childList.add(cols.toTypedArray())
+                childList.add(cols.toTypedArray().unsafeCast<ReactNode>())
             }
             pre {
                 row {

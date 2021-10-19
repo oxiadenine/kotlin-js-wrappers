@@ -4,6 +4,7 @@
 package antd.tree
 
 import antd.*
+import antd.Key
 import antd.ReactNode
 import kotlinext.js.Record
 import org.w3c.dom.*
@@ -18,7 +19,7 @@ external object TreeComponent : Component<TreeProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface TreeProps : RcTreeProps, RefAttributes<RcTreeComponent>, RProps {
+external interface TreeProps : RcTreeProps, RefAttributes<RcTreeComponent>, Props {
     override var showLine: Any?
     override var className: String?
     override var multiple: Boolean?
@@ -51,7 +52,7 @@ external object RcTreeComponent : Component<RcTreeProps, RcTreeState> {
     override fun render(): ReactElement?
 }
 
-external interface RcTreeProps : RProps {
+external interface RcTreeProps : Props {
     var prefixCls: String?
     var className: String?
     var style: dynamic

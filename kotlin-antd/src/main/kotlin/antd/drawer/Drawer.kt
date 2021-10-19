@@ -11,7 +11,7 @@ external object DrawerComponent : Component<DrawerProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface DrawerProps : RProps {
+external interface DrawerProps : Props {
     var closable: Boolean?
     var closeIcon: ReactNode?
     var destroyOnClose: Boolean?

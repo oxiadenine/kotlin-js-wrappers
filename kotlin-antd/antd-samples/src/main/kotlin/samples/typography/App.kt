@@ -2,7 +2,7 @@ package samples.typography
 
 import react.RBuilder
 import react.RComponent
-import react.RProps
+import react.Props
 import react.State
 import react.dom.h2
 import styled.StyleSheet
@@ -18,7 +18,7 @@ object TypographyStyles : StyleSheet("typography", isStatic = true) {
     val ellipsis by css {}
 }
 
-class TypographyApp : RComponent<RProps, State>() {
+class TypographyApp : RComponent<Props, State>() {
     override fun RBuilder.render() {
         h2 { +"Typography" }
         styledDiv {

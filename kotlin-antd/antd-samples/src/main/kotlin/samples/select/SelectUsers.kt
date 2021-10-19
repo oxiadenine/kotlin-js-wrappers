@@ -16,7 +16,7 @@ external interface UserRemoteSelectState : State {
     var fetching: Boolean
 }
 
-class UserRemoteSelect : RComponent<RProps, UserRemoteSelectState>() {
+class UserRemoteSelect : RComponent<Props, UserRemoteSelectState>() {
     private var lastFetchId = 0
 
     private val fetchUser = fun(value: String) {
@@ -90,7 +90,7 @@ class UserRemoteSelect : RComponent<RProps, UserRemoteSelectState>() {
                         +d.asDynamic().name.unsafeCast<String>()
                     }
                 }
-            }.toTypedArray())
+            }.toTypedArray().unsafeCast<ReactNode>())
         }
     }
 }

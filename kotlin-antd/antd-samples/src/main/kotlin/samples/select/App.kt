@@ -4,7 +4,7 @@ import kotlinx.css.margin
 import kotlinx.css.px
 import react.RBuilder
 import react.RComponent
-import react.RProps
+import react.Props
 import react.State
 import react.dom.h2
 import styled.StyleSheet
@@ -35,7 +35,7 @@ object SelectStyles : StyleSheet("select", isStatic = true) {
     val customTagRender by css {}
 }
 
-class SelectApp : RComponent<RProps, State>() {
+class SelectApp : RComponent<Props, State>() {
     override fun RBuilder.render() {
         h2 { +"Select" }
         styledDiv {

@@ -2,7 +2,7 @@ package samples.breadcrumb
 
 import react.RBuilder
 import react.RComponent
-import react.RProps
+import react.Props
 import react.State
 import react.dom.h2
 import styled.StyleSheet
@@ -18,7 +18,7 @@ object BreadcrumbStyles : StyleSheet("breadcrumb", isStatic = true) {
     val separatorIndepent by css {}
 }
 
-class BreadcrumbApp : RComponent<RProps, State>() {
+class BreadcrumbApp : RComponent<Props, State>() {
     override fun RBuilder.render() {
         h2 { +"Breadcrumb" }
         styledDiv {

@@ -28,7 +28,7 @@ external interface BasicAppState : State {
     var action: String?
 }
 
-class BasicApp : RComponent<RProps, BasicAppState>() {
+class BasicApp : RComponent<Props, BasicAppState>() {
     private val like = { _: Event ->
         setState {
             likes = 1

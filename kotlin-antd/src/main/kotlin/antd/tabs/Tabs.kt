@@ -16,7 +16,7 @@ external object TabsComponent : Component<TabsProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface TabsProps : RcTabProps, RProps {
+external interface TabsProps : RcTabProps, Props {
     var type: TabsType?
     var size: SizeType?
     var hideAdd: Boolean?

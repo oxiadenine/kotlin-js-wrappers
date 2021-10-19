@@ -23,7 +23,7 @@ import react.*
 import styled.css
 import styled.styledDiv
 
-private val demo = fc<RProps> {
+private val demo = fc<Props> {
     val (componentSize, setComponentSize) = useState("default")
 
     val onFormLayoutChange = { size: Any, _: Any ->

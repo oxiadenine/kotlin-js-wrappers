@@ -5,7 +5,7 @@ import react.*
 
 external interface EditableComponent : ComponentType<EditableProps>
 
-external interface EditableProps : RProps {
+external interface EditableProps : Props {
     var prefixCls: String?
     var value: String?
     var onSave: (value: String) -> Unit

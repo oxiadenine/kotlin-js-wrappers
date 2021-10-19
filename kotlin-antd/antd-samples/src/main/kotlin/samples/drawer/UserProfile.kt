@@ -40,7 +40,7 @@ private external interface UserProfileListDataItem {
     var name: String
 }
 
-external interface DescriptionItemProps : RProps {
+external interface DescriptionItemProps : Props {
     var title: String
     var content: Any
 }
@@ -62,7 +62,7 @@ class DescriptionItem : RComponent<DescriptionItemProps, State>() {
                 }
                 +props.title
             }
-            childList.add(props.content)
+            childList.add(props.content.unsafeCast<ReactNode>())
         }
     }
 }
@@ -73,7 +73,7 @@ external interface UserProfileAppState : State {
     var visible: Boolean
 }
 
-class UserProfileApp : RComponent<RProps, UserProfileAppState>() {
+class UserProfileApp : RComponent<Props, UserProfileAppState>() {
     private val showDrawer: MouseEventHandler<Any> = {
         setState {
             visible = true

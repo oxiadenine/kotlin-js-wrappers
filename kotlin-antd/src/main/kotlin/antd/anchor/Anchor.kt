@@ -15,7 +15,7 @@ external object AnchorComponent : Component<AnchorProps, AnchorState> {
     override fun render(): ReactElement?
 }
 
-external interface AnchorProps : RProps {
+external interface AnchorProps : Props {
     var prefixCls: String?
     var className: String?
     var style: dynamic

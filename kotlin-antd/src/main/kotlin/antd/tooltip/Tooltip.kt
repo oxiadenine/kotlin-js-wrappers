@@ -15,7 +15,7 @@ external object TooltipComponent : Component<TooltipProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface TooltipProps : TooltipPropsWithTitle, TooltipPropsWithOverlay, RefAttributes<dynamic>, RProps
+external interface TooltipProps : TooltipPropsWithTitle, TooltipPropsWithOverlay, RefAttributes<dynamic>, Props
 
 external interface TooltipPropsWithOverlay : AbstractTooltipProps {
     var title: Any? /* ReactNode | RenderFunction */

@@ -50,7 +50,7 @@ external interface CheckableDemoState : State {
     var value: Array<String>?
 }
 
-class CheckableDemo : RComponent<RProps, CheckableDemoState>() {
+class CheckableDemo : RComponent<Props, CheckableDemoState>() {
     private val handleChange = fun(newValue: Array<String>, _: Any, _: Any) {
         console.log(newValue)
 

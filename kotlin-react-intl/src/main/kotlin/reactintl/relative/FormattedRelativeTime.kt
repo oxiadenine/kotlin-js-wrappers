@@ -11,7 +11,7 @@ external class FormattedRelativeTimeComponent : Component<FormattedRelativeTimeP
     override fun render(): ReactElement?
 }
 
-external interface FormattedRelativeTimeProps : IntlRelativeTimeFormatOptions, CustomFormatConfig, RProps {
+external interface FormattedRelativeTimeProps : IntlRelativeTimeFormatOptions, CustomFormatConfig, Props {
     var value: Number?
     var unit: RelativeTimeUnit?
     var updateIntervalInSeconds: Number?

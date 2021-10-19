@@ -18,7 +18,7 @@ external interface InlineCollapsedAppState : State {
     var collapsed: Boolean
 }
 
-class InlineCollapsedApp : RComponent<RProps, InlineCollapsedAppState>() {
+class InlineCollapsedApp : RComponent<Props, InlineCollapsedAppState>() {
     private val toggleCollapsed: MouseEventHandler<Any> = {
         setState {
             collapsed = !state.collapsed

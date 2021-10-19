@@ -5,6 +5,7 @@ import antd.select.option
 import antd.select.select
 import kotlinext.js.js
 import react.RBuilder
+import react.ReactNode
 import react.buildElement
 import styled.css
 import styled.styledDiv
@@ -32,7 +33,7 @@ fun RBuilder.tags() {
                 placeholder = "Tags Mode"
                 onChange = handleChange
             }
-            childList.add(children)
+            childList.add(children.unsafeCast<ReactNode>())
         }
     }
 }

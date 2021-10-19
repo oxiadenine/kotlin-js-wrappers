@@ -22,7 +22,7 @@ private object VerticalStyles : StyleSheet("vertical", isStatic = true) {
     }
 }
 
-class VerticalDemo : RComponent<RProps, State>() {
+class VerticalDemo : RComponent<Props, State>() {
     private val sliderMarks = js {}
 
     init {

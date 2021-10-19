@@ -41,7 +41,7 @@ private val menu = buildElement {
     }
 }
 
-class NestedTableApp : RComponent<RProps, State>() {
+class NestedTableApp : RComponent<Props, State>() {
     private val expandRowRender: (Any, Number, Number, Boolean) -> ReactElement = { _, _, _, _ ->
         val tableColumns = arrayOf<ColumnType<NestedTableNestedTableDataItem>>(
             jsObject {

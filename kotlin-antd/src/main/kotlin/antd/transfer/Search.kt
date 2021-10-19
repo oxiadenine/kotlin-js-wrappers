@@ -8,7 +8,7 @@ external object TransferSearchComponent : Component<TransferSearchProps, State> 
     override fun render(): ReactElement?
 }
 
-external interface TransferSearchProps : RProps {
+external interface TransferSearchProps : Props {
     var prefixCls: String?
     var placeholder: String?
     var onChange: ((e: FormEvent<HTMLElement>) -> Unit)?

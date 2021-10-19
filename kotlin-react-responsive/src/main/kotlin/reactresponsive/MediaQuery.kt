@@ -10,8 +10,8 @@ external class MediaQueryComponent : Component<MediaQueryProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface MediaQueryProps : MediaQueryAllQueryable, RProps {
-    var component: Any? /* String | RClass<RProps> */
+external interface MediaQueryProps : MediaQueryAllQueryable, Props {
+    var component: Any? /* String | ComponentClass<Props> */
     var query: String?
     var style: dynamic
     var className: String?

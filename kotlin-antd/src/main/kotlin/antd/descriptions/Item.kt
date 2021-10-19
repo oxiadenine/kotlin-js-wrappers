@@ -5,7 +5,7 @@ import react.*
 
 external interface DescriptionsItemComponent : ComponentType<DescriptionsItemProps>
 
-external interface DescriptionsItemProps : RProps {
+external interface DescriptionsItemProps : Props {
     var prefixCls: String?
     var className: String?
     var label: ReactNode?

@@ -27,7 +27,7 @@ private val providerMessages = js {
     unicode = "Hello\u0020{placeholder}"
 }.unsafeCast<Any>()
 
-private val app = fc<RProps> {
+private val app = fc<Props> {
     val intl = useIntl()
 
     p {

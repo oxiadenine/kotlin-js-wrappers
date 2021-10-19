@@ -7,7 +7,7 @@ external class TransferListItemComponent<RecordType> : Component<ListItemProps<R
     override fun render(): ReactElement?
 }
 
-external interface ListItemProps<RecordType> : RProps {
+external interface ListItemProps<RecordType> : Props {
     var renderedText: Any? /* String | Number */
     var renderedEl: ReactNode
     var disabled: Boolean?

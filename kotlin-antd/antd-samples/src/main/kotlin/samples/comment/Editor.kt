@@ -20,7 +20,7 @@ import react.dom.p
 import styled.css
 import styled.styledDiv
 
-external interface CommentListProps : RProps {
+external interface CommentListProps : Props {
     var comments: Array<CommentProps>
 }
 
@@ -50,7 +50,7 @@ class CommentList : RComponent<CommentListProps, State>() {
 
 fun RBuilder.commentList(handler: RHandler<CommentListProps>) = child(CommentList::class, handler)
 
-external interface EditorProps : RProps {
+external interface EditorProps : Props {
     var onChange: ChangeEventHandler<HTMLTextAreaElement>
     var onSubmit: MouseEventHandler<Any>
     var submitting: Boolean
@@ -91,7 +91,7 @@ external interface EditorAppState : State {
     var value: String?
 }
 
-class EditorApp : RComponent<RProps, EditorAppState>() {
+class EditorApp : RComponent<Props, EditorAppState>() {
     private val handleSubmit: MouseEventHandler<Any> = {
         if (!state.value.isNullOrEmpty()) {
             setState {

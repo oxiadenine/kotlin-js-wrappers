@@ -23,7 +23,7 @@ external interface CheckAllAppState : State {
     var checkAll: Boolean
 }
 
-class CheckAllApp : RComponent<RProps, CheckAllAppState>() {
+class CheckAllApp : RComponent<Props, CheckAllAppState>() {
     private val handleGroupChange = fun(checkedValues: Array<CheckboxValueType>) {
         setState {
             checkedList = checkedValues

@@ -35,7 +35,7 @@ external interface BasicAppState : State {
     var selectedKeys: Array<String>
 }
 
-class BasicApp : RComponent<RProps, BasicAppState>() {
+class BasicApp : RComponent<Props, BasicAppState>() {
     private val handleChange = fun(nextTargetKeys: Array<String>, direction: String, moveKeys: Any) {
         setState {
             targetKeys = nextTargetKeys

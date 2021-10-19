@@ -4,7 +4,7 @@ import react.*
 
 external interface DividerComponent : ComponentType<DividerProps>
 
-external interface DividerProps : RProps {
+external interface DividerProps : Props {
     var className: String?
     var rootPrefixCls: String?
     var style: dynamic

@@ -15,7 +15,7 @@ external interface DelayAndDebounceCardState : State {
     var loading: Boolean
 }
 
-class DelayAndDebounceCard : RComponent<RProps, DelayAndDebounceCardState>() {
+class DelayAndDebounceCard : RComponent<Props, DelayAndDebounceCardState>() {
     private val toggle = fun(value: Boolean, _: MouseEvent) {
         setState {
             loading = value

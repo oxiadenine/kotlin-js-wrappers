@@ -11,7 +11,7 @@ external interface PrefixAppState : State {
     var prefix: String
 }
 
-class PrefixApp : RComponent<RProps, PrefixAppState>() {
+class PrefixApp : RComponent<Props, PrefixAppState>() {
     private val mockData = js {}
 
     init {
@@ -48,7 +48,7 @@ class PrefixApp : RComponent<RProps, PrefixAppState>() {
                 }
             }.toTypedArray()
 
-            childList.add(options)
+            childList.add(options.unsafeCast<ReactNode>())
         }
     }
 }

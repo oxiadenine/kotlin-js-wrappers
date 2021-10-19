@@ -10,7 +10,7 @@ import react.dom.strong
 import styled.css
 import styled.styledDiv
 
-class MarkDemo : RComponent<RProps, State>() {
+class MarkDemo : RComponent<Props, State>() {
     private val sliderMarks = js {}
 
     init {

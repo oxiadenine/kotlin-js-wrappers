@@ -12,7 +12,7 @@ import styled.css
 import styled.styledDiv
 import styled.styledSpan
 
-class BasicDemo : RComponent<RProps, State>() {
+class BasicDemo : RComponent<Props, State>() {
     private val handleSelect = fun(selectedKeys: Array<Key>, info: OnSelectInfo) {
         console.log("selected", selectedKeys, info)
     }

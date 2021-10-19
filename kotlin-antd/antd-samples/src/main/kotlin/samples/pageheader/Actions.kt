@@ -16,7 +16,7 @@ import react.dom.div
 import styled.css
 import styled.styledDiv
 
-external interface ActionsDescriptionProps : RProps {
+external interface ActionsDescriptionProps : Props {
     var term: String
     var children: Any
     var span: Number
@@ -38,7 +38,7 @@ class ActionsDescription : RComponent<ActionsDescriptionProps, State>() {
                 }
                 div {
                     attrs.classes = setOf("detail")
-                    childList.add(props.children)
+                    childList.add(props.children.unsafeCast<ReactNode>())
                 }
             }
         }
@@ -158,11 +158,11 @@ fun RBuilder.actions() {
                 attrs.classes = setOf("wrap")
                 div {
                     attrs.classes = setOf("content", "padding")
-                    childList.add(content.unsafeCast<Any>())
+                    childList.add(content.unsafeCast<ReactNode>())
                 }
                 div {
                     attrs.classes = setOf("extraContent")
-                    childList.add(extraContent.unsafeCast<Any>())
+                    childList.add(extraContent.unsafeCast<ReactNode>())
                 }
             }
         }

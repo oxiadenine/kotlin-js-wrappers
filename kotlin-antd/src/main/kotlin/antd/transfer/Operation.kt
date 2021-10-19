@@ -9,7 +9,7 @@ external object TransferOperationComponent : Component<TransferOperationProps, S
     override fun render(): ReactElement?
 }
 
-external interface TransferOperationProps : RProps {
+external interface TransferOperationProps : Props {
     var className: String?
     var leftArrowText: String?
     var rightArrowText: String?

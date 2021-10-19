@@ -5,13 +5,13 @@ import antd.button.button
 import kotlinx.html.classes
 import react.RBuilder
 import react.RComponent
-import react.RProps
+import react.Props
 import react.State
 import react.dom.div
 import styled.css
 import styled.styledDiv
 
-class TargetDemo : RComponent<RProps, State>() {
+class TargetDemo : RComponent<Props, State>() {
     private var container: dynamic = null
 
     override fun RBuilder.render() {

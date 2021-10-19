@@ -19,7 +19,7 @@ external object InputComponent : Component<InputProps, InputState> {
     override fun render(): ReactElement?
 }
 
-external interface InputProps : InputHTMLAttributes<HTMLInputElement>, RProps {
+external interface InputProps : InputHTMLAttributes<HTMLInputElement>, Props {
     var prefixCls: String?
     override var size: SizeType?
     override var type: String? /* "button" | "checkbox" | "color" | "date" | "datetime-local" | "email" | "file" | "hidden" | "image" | "month" | "number" | "password" | "radio" | "range" | "reset" | "search" | "submit" | "tel" | "text" | "time" | "url" | "week" */

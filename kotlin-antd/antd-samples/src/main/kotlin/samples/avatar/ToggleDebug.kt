@@ -20,7 +20,7 @@ external interface ToggleDebugAppState : State {
     var scale: Number
 }
 
-class ToggleDebugApp : RComponent<RProps, ToggleDebugAppState>() {
+class ToggleDebugApp : RComponent<Props, ToggleDebugAppState>() {
     private val toggle: MouseEventHandler<Any> = {
         setState {
             hide = !state.hide

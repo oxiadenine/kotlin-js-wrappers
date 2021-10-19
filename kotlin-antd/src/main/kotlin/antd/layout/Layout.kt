@@ -25,7 +25,7 @@ external interface ContentComponent : ComponentType<LayoutProps>
 
 external val layoutContext: Context<LayoutContextProps>
 
-external interface LayoutProps : HTMLAttributes<HTMLDivElement>, RProps {
+external interface LayoutProps : HTMLAttributes<HTMLDivElement>, Props {
     var prefixCls: String?
     var hasSider: Boolean?
 }

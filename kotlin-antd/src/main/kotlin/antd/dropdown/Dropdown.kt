@@ -13,7 +13,7 @@ external object DropdownComponent : Component<DropdownProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface DropdownProps : RProps {
+external interface DropdownProps : Props {
     var arrow: Boolean?
     var trigger: Array<String /* "click" | "hover" | "contextMenu" */>?
     var overlay: Any /* ReactElement | OverlayFunc */

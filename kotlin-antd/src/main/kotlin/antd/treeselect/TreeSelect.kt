@@ -4,6 +4,7 @@
 package antd.treeselect
 
 import antd.*
+import antd.Key
 import antd.ReactNode
 import antd.configprovider.*
 import antd.select.*
@@ -24,7 +25,7 @@ external class TreeSelectComponent<T : DefaultValueType> : Component<TreeSelectP
     override fun render(): ReactElement?
 }
 
-external interface TreeSelectProps<T> : RcTreeSelectProps<T>, RefTreeSelectProps, RProps {
+external interface TreeSelectProps<T> : RcTreeSelectProps<T>, RefTreeSelectProps, Props {
     var suffixIcon: ReactNode?
     var size: SizeType?
     var bordered: Boolean?

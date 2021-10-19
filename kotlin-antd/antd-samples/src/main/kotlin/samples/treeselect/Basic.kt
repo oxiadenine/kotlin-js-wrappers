@@ -15,7 +15,7 @@ external interface BasicDemoState : State {
     var value: String?
 }
 
-class BasicDemo : RComponent<RProps, BasicDemoState>() {
+class BasicDemo : RComponent<Props, BasicDemoState>() {
     private val handleChange = fun(newValue: String, _: Any, _: Any) {
         console.log(newValue)
 

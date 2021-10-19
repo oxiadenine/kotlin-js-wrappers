@@ -51,7 +51,7 @@ external interface RowSelectionAndOperationAppState : State {
     var loading: Boolean
 }
 
-class RowSelectionAndOperationApp : RComponent<RProps, RowSelectionAndOperationAppState>() {
+class RowSelectionAndOperationApp : RComponent<Props, RowSelectionAndOperationAppState>() {
     private val start: MouseEventHandler<Any> = {
         setState {
             loading = true

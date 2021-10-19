@@ -2,7 +2,7 @@ package samples.autocomplete
 
 import react.RBuilder
 import react.RComponent
-import react.RProps
+import react.Props
 import react.State
 import react.dom.h2
 import styled.StyleSheet
@@ -17,7 +17,7 @@ object AutoCompleteStyles : StyleSheet("auto-complete", isStatic = true) {
     val nonCaseSensitive by css {}
 }
 
-class AutoCompleteApp : RComponent<RProps, State>() {
+class AutoCompleteApp : RComponent<Props, State>() {
     override fun RBuilder.render() {
         h2 { +"AutoComplete" }
         styledDiv {

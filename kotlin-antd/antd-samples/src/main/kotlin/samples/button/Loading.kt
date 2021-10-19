@@ -14,7 +14,7 @@ external interface LoadingAppState : State {
     var iconLoading: Boolean
 }
 
-class LoadingApp : RComponent<RProps, LoadingAppState>() {
+class LoadingApp : RComponent<Props, LoadingAppState>() {
     private val enterLoading: MouseEventHandler<Any> = {
         setState {
             loading = true

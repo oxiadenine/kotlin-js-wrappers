@@ -21,7 +21,7 @@ external object MenuComponent : Component<MenuProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface MenuProps : RcMenuProps, RProps {
+external interface MenuProps : RcMenuProps, Props {
     var theme: MenuTheme?
     var inlineIndent: Number?
     var focusable: Boolean?

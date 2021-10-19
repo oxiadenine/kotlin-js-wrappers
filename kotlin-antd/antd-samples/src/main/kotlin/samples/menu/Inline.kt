@@ -10,7 +10,7 @@ import react.dom.span
 import styled.css
 import styled.styledDiv
 
-class InlineSider : RComponent<RProps, State>() {
+class InlineSider : RComponent<Props, State>() {
     private val handleClick: MenuClickEventHandler = { info ->
         console.log("click ", info)
     }

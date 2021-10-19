@@ -4,7 +4,7 @@ import kotlinx.css.*
 import kotlinx.css.properties.LineHeight
 import react.RBuilder
 import react.RComponent
-import react.RProps
+import react.Props
 import react.State
 import react.dom.h2
 import styled.StyleSheet
@@ -54,7 +54,7 @@ object SliderStyles : StyleSheet("slider", isStatic = true) {
     val showTooltip by css {}
 }
 
-class SliderApp : RComponent<RProps, State>() {
+class SliderApp : RComponent<Props, State>() {
     override fun RBuilder.render() {
         h2 { +"Slider" }
         styledDiv {

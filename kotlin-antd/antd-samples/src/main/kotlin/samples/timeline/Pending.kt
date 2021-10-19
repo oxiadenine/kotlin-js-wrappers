@@ -14,7 +14,7 @@ external interface PendingTimeLineState : State {
     var reverse: Boolean
 }
 
-class PendingTimeLine : RComponent<RProps, PendingTimeLineState>() {
+class PendingTimeLine : RComponent<Props, PendingTimeLineState>() {
     private val handleClick: MouseEventHandler<Any> = {
         setState {
             reverse = !state.reverse

@@ -17,7 +17,7 @@ external interface PositionDemoState : State {
     var tabPosition: String
 }
 
-class PositionDemo : RComponent<RProps, PositionDemoState>() {
+class PositionDemo : RComponent<Props, PositionDemoState>() {
     private val changeTabPosition = fun(value: SelectValue, _: Any) {
         setState {
             tabPosition = value.unsafeCast<String>()

@@ -11,7 +11,7 @@ external object SpaceComponent : Component<SpaceProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface SpaceProps : RProps {
+external interface SpaceProps : Props {
     var prefixCls: String?
     var className: String?
     var style: dynamic

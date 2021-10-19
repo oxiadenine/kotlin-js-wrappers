@@ -8,6 +8,7 @@ import antd.tooltip.*
 import kotlinext.js.*
 import org.w3c.dom.*
 import react.*
+import react.ReactNode
 import react.dom.div
 import styled.*
 
@@ -17,7 +18,7 @@ external interface ControlEditableTagGroupState : State {
     var inputValue: String
 }
 
-class ControlEditableTagGroup : RComponent<RProps, ControlEditableTagGroupState>() {
+class ControlEditableTagGroup : RComponent<Props, ControlEditableTagGroupState>() {
     private var input: dynamic = null
 
     private val handleClose: (String) -> Unit = { removedTag ->
@@ -90,7 +91,7 @@ class ControlEditableTagGroup : RComponent<RProps, ControlEditableTagGroupState>
                             title = tag
                             key = tag
                         }
-                        childList.add(tagElem)
+                        childList.add(tagElem.unsafeCast<ReactNode>())
                     }
                 }
             }.toTypedArray()

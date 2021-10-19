@@ -19,7 +19,7 @@ external interface LoadingAppState : State {
     var loading: Boolean
 }
 
-class LoadingApp : RComponent<RProps, LoadingAppState>() {
+class LoadingApp : RComponent<Props, LoadingAppState>() {
     private val handleChange = fun(checked: Boolean, _: MouseEvent) {
         setState {
             loading = !checked

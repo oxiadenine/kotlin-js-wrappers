@@ -3,7 +3,7 @@ package samples.tabs
 import kotlinx.css.*
 import react.RBuilder
 import react.RComponent
-import react.RProps
+import react.Props
 import react.State
 import react.dom.h2
 import styled.StyleSheet
@@ -53,7 +53,7 @@ object TabsStyles : StyleSheet("tabs", isStatic = true) {
     val nest by css {}
 }
 
-class TabsApp : RComponent<RProps, State>() {
+class TabsApp : RComponent<Props, State>() {
     override fun RBuilder.render() {
         h2 { +"Tabs" }
         styledDiv {

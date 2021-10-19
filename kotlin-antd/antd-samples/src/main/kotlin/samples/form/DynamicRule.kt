@@ -22,7 +22,7 @@ private val formTailLayout = jsObject<FormItemProps<Any>> {
     }
 }
 
-private val dynamicRuleApp = fc<RProps> {
+private val dynamicRuleApp = fc<Props> {
     val formInstance = FormComponent.useForm()[0]
     val (checkNick, setCheckNick) = useState(false)
 

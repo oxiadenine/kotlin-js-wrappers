@@ -18,7 +18,7 @@ import styled.styledDiv
 
 private val context = createContext(js { name = "Default" })
 
-private val demo = fc<RProps> {
+private val demo = fc<Props> {
     val useNotification = notification.useNotification()
 
     val api = useNotification[0].unsafeCast<NotificationInstance>()

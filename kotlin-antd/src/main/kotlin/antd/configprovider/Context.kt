@@ -8,7 +8,7 @@ import react.*
 external val configContext: Context<ConfigConsumerProps>
 external val configConsumer: Consumer<ConfigConsumerProps>
 
-external fun <ExportProps : BasicExportProps> withConfigConsumer(config: ConsumerConfig): (component: IReactComponent<RProps>) -> Component<ExportProps, State>
+external fun <ExportProps : BasicExportProps> withConfigConsumer(config: ConsumerConfig): (component: IReactComponent<Props>) -> Component<ExportProps, State>
 
 external interface ConfigConsumerProps {
     var getTargetContainer: (() -> HTMLElement)?
@@ -32,7 +32,7 @@ external interface ConfigConsumerFormProps {
     var requiredMark: RequiredMark?
 }
 
-external interface BasicExportProps : RProps {
+external interface BasicExportProps : Props {
     var prefixCls: String?
 }
 

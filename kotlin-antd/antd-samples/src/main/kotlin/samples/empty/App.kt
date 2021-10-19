@@ -6,7 +6,7 @@ import kotlinx.css.margin
 import kotlinx.css.px
 import react.RBuilder
 import react.RComponent
-import react.RProps
+import react.Props
 import react.State
 import react.dom.h2
 import styled.StyleSheet
@@ -28,7 +28,7 @@ object EmptyStyles : StyleSheet("empty", isStatic = true) {
     }
 }
 
-class EmptyApp : RComponent<RProps, State>() {
+class EmptyApp : RComponent<Props, State>() {
     override fun RBuilder.render() {
         h2 { +"Empty" }
         styledDiv {

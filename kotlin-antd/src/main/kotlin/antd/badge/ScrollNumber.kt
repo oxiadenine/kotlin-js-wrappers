@@ -6,7 +6,7 @@ external object ScrollNumberComponent : Component<ScrollNumberProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface ScrollNumberProps : RProps {
+external interface ScrollNumberProps : Props {
     var prefixCls: String?
     var className: String?
     var count: Any? /* String | Number */

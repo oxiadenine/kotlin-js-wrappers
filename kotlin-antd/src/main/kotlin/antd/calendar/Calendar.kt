@@ -13,7 +13,7 @@ external object CalendarComponent : Component<CalendarProps<Moment>, State> {
     override fun render(): ReactElement?
 }
 
-external interface CalendarProps<DateType> : RProps {
+external interface CalendarProps<DateType> : Props {
     var prefixCls: String?
     var className: String?
     var style: dynamic

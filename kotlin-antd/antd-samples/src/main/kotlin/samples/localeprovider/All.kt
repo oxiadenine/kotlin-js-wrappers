@@ -60,7 +60,7 @@ private val tableColumns = arrayOf<ColumnType<Any>>(
     }
 )
 
-external interface PageProps : RProps {
+external interface PageProps : Props {
     var key: String
 }
 
@@ -210,7 +210,7 @@ external interface PageAppState : State {
     var locale: Locale?
 }
 
-class PageApp : RComponent<RProps, PageAppState>() {
+class PageApp : RComponent<Props, PageAppState>() {
     private val changeLocale = fun(event: RadioChangeEvent) {
         val localeValue = event.target.value.unsafeCast<Locale?>()
 

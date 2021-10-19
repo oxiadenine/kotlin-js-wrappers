@@ -19,7 +19,7 @@ external interface PlacementAppState : State {
     var placement: String
 }
 
-class PlacementApp : RComponent<RProps, PlacementAppState>() {
+class PlacementApp : RComponent<Props, PlacementAppState>() {
     private val showDrawer: MouseEventHandler<Any> = {
         setState {
             visible = true

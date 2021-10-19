@@ -6,4 +6,4 @@ external object NoFoundComponent : Component<NoFoundProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface NoFoundProps : RProps
+external interface NoFoundProps : Props

@@ -13,6 +13,6 @@ external interface CustomIconOptions {
     var extraCommonProps: dynamic
 }
 
-external interface IconFontProps : IconBaseProps, RProps {
+external interface IconFontProps : IconBaseProps, Props {
     var type: String
 }

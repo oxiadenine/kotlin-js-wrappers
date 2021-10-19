@@ -7,7 +7,7 @@ import react.*
 import styled.css
 import styled.styledDiv
 
-private val anchorExample = fc<RProps> {
+private val anchorExample = fc<Props> {
     val (targetOffset, setTargetOffset) = useState<Number?>(null)
 
     useEffect(emptyList<Any>()) {

@@ -7,7 +7,7 @@ external object ActionButtonComponent : Component<ActionButtonProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface ActionButtonProps : RProps {
+external interface ActionButtonProps : Props {
     var type: LegacyButtonType?
     var actionFn: ((args: Array<Any>) -> Any /* Any | Promise<Any> */)?
     var closeModal: Function<Unit>

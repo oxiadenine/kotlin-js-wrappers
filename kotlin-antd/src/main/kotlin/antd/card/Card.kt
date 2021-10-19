@@ -17,7 +17,7 @@ external object CardComponent : Component<CardProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface CardProps : HTMLAttributes<HTMLDivElement>, RProps {
+external interface CardProps : HTMLAttributes<HTMLDivElement>, Props {
     var prefixCls: String?
     override var title: dynamic /* ReactNode */
     var extra: ReactNode?

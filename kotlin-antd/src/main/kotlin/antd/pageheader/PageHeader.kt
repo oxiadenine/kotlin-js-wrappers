@@ -14,7 +14,7 @@ external object PageHeaderComponent : Component<PageHeaderProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface PageHeaderProps : RProps {
+external interface PageHeaderProps : Props {
     var backIcon: ReactNode?
     var prefixCls: String?
     var title: ReactNode

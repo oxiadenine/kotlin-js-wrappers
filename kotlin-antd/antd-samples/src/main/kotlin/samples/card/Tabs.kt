@@ -63,7 +63,7 @@ external interface TabsCardState : State {
     var noTitleKey: String
 }
 
-class TabsCard : RComponent<RProps, TabsCardState>() {
+class TabsCard : RComponent<Props, TabsCardState>() {
     private val handleTabChange = fun(key: String, type: String) {
         console.log(key, type)
 
@@ -97,7 +97,7 @@ class TabsCard : RComponent<RProps, TabsCardState>() {
                         handleTabChange(key, "key")
                     }
                 }
-                childList.add(contentList[state.key].unsafeCast<Any>())
+                childList.add(contentList[state.key].unsafeCast<ReactNode>())
             }
             br {}
             br {}
@@ -110,7 +110,7 @@ class TabsCard : RComponent<RProps, TabsCardState>() {
                         handleTabChange(key, "noTitleKey")
                     }
                 }
-                childList.add(contentListNoTitle[state.noTitleKey].unsafeCast<Any>())
+                childList.add(contentListNoTitle[state.noTitleKey].unsafeCast<ReactNode>())
             }
         }
     }

@@ -41,7 +41,7 @@ external interface ExtraDemoState : State {
     var expandIconPosition: String
 }
 
-class ExtraDemo : RComponent<RProps, ExtraDemoState>() {
+class ExtraDemo : RComponent<Props, ExtraDemoState>() {
     private val onPositionChange: (SelectValue, Any) -> Unit = { value, _ ->
         setState {
             expandIconPosition = value.unsafeCast<String>()

@@ -3,7 +3,7 @@ package samples.spin
 import kotlinx.css.*
 import react.RBuilder
 import react.RComponent
-import react.RProps
+import react.Props
 import react.State
 import react.dom.h2
 import styled.StyleSheet
@@ -33,7 +33,7 @@ object SpinStyles : StyleSheet("spin", isStatic = true) {
     val delayAndDebounce by css {}
 }
 
-class SpinApp : RComponent<RProps, State>() {
+class SpinApp : RComponent<Props, State>() {
     override fun RBuilder.render() {
         h2 { +"Spin" }
         styledDiv {

@@ -38,9 +38,9 @@ external interface Opts<IntlPropName, ForwardRef> {
     var enforceContext: Boolean?
 }
 
-external interface WrappedComponentProps<IntlPropName> : RProps
+external interface WrappedComponentProps<IntlPropName> : Props
 
-external interface WithIntlProps<P> : RProps {
+external interface WithIntlProps<P> : Props {
     var forwardedRef: MutableRefObject<Any>?
 }
 

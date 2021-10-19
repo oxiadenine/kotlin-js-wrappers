@@ -20,7 +20,7 @@ external interface CoordinateAppState : State {
     var secondCity: String
 }
 
-class CoordinateApp : RComponent<RProps, CoordinateAppState>() {
+class CoordinateApp : RComponent<Props, CoordinateAppState>() {
     private val handleProvinceChange = fun(value: String, _: Any) {
         setState {
             cities = cityData[value] ?: error("")

@@ -4,7 +4,7 @@ import kotlinx.css.marginBottom
 import kotlinx.css.px
 import react.RBuilder
 import react.RComponent
-import react.RProps
+import react.Props
 import react.State
 import react.dom.h2
 import styled.StyleSheet
@@ -29,7 +29,7 @@ object AlertStyles : StyleSheet("alert", isStatic = true) {
     val errorBoundary by css {}
 }
 
-class AlertApp : RComponent<RProps, State>() {
+class AlertApp : RComponent<Props, State>() {
     override fun RBuilder.render() {
         h2 { +"Alert" }
         styledDiv {

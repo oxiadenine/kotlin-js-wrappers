@@ -18,7 +18,7 @@ external interface AsyncAppState : State {
     var confirmLoading: Boolean
 }
 
-class AsyncApp : RComponent<RProps, AsyncAppState>() {
+class AsyncApp : RComponent<Props, AsyncAppState>() {
     private val showModal: MouseEventHandler<Any> = {
         setState {
             visible = true

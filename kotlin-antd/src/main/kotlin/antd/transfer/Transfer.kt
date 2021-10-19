@@ -20,7 +20,7 @@ external class TransferComponent<RecordType : TransferItem> : Component<Transfer
     override fun render(): ReactElement?
 }
 
-external interface TransferProps<RecordType> : RProps {
+external interface TransferProps<RecordType> : Props {
     var prefixCls: String?
     var className: String?
     var disabled: Boolean?

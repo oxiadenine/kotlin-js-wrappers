@@ -5,7 +5,7 @@ import react.*
 
 external interface AnchorLinkComponent : ComponentType<AnchorLinkProps>
 
-external interface AnchorLinkProps : RProps {
+external interface AnchorLinkProps : Props {
     var prefixCls: String?
     var href: String
     var title: ReactNode

@@ -10,7 +10,7 @@ external interface ValueDemoState : State {
     var value: Moment?
 }
 
-class ValueDemo : RComponent<RProps, ValueDemoState>() {
+class ValueDemo : RComponent<Props, ValueDemoState>() {
     private val handleChange = fun(time: Moment, _: String) {
         console.log(time)
 

@@ -2,7 +2,7 @@ package samples.timeline
 
 import react.RBuilder
 import react.RComponent
-import react.RProps
+import react.Props
 import react.State
 import react.dom.h2
 import styled.StyleSheet
@@ -19,7 +19,7 @@ object TimelineStyles : StyleSheet("timeline", isStatic = true) {
     val right by css {}
 }
 
-class TimelineApp : RComponent<RProps, State>() {
+class TimelineApp : RComponent<Props, State>() {
     override fun RBuilder.render() {
         h2 { +"Timeline" }
         styledDiv {

@@ -5,7 +5,7 @@ import kotlinx.css.properties.s
 import kotlinx.css.properties.transition
 import react.RBuilder
 import react.RComponent
-import react.RProps
+import react.Props
 import react.State
 import react.dom.h2
 import styled.StyleSheet
@@ -47,7 +47,7 @@ object InputStyles : StyleSheet("input", isStatic = true) {
     val textareaResize by css {}
 }
 
-class InputApp : RComponent<RProps, State>() {
+class InputApp : RComponent<Props, State>() {
     override fun RBuilder.render() {
         h2 { +"Input" }
         styledDiv {

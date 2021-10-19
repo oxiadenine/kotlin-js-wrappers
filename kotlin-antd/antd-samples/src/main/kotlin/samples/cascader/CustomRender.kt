@@ -8,7 +8,7 @@ import kotlinx.html.js.onClickFunction
 import org.w3c.dom.events.Event
 import react.RBuilder
 import react.ReactElement
-import react.buildElements
+import react.buildElement
 import react.dom.a
 import react.dom.key
 import react.dom.span
@@ -63,7 +63,7 @@ private fun handleAreaClick(event: Event, label: String, option: CascaderOptionT
 }
 
 private val handleDisplayRender = fun(labels: Array<String>, selectedOptions: Array<CascaderOptionType>?): ReactElement {
-    return buildElements {
+    return buildElement {
         labels.forEachIndexed { index, label ->
             val option = selectedOptions!![index]
 

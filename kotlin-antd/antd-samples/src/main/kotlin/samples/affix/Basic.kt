@@ -13,7 +13,7 @@ external interface BasicDemoState : State {
     var bottom: Number
 }
 
-class BasicDemo : RComponent<RProps, BasicDemoState>() {
+class BasicDemo : RComponent<Props, BasicDemoState>() {
     override fun BasicDemoState.init() {
         top = 10
         bottom = 10

@@ -10,7 +10,7 @@ external interface RaterState : State {
     var value: Number?
 }
 
-class Rater : RComponent<RProps, RaterState>() {
+class Rater : RComponent<Props, RaterState>() {
     private val handleChange = fun(newValue: Number) {
         setState {
             value = newValue

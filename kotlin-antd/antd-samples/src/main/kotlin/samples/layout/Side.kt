@@ -22,7 +22,7 @@ external interface SiderDemoState : State {
     var collapsed: Boolean
 }
 
-class SiderDemo : RComponent<RProps, SiderDemoState>() {
+class SiderDemo : RComponent<Props, SiderDemoState>() {
     private val handleCollapse = fun(collapsedFlag: Boolean, _: CollapseType) {
         console.log(collapsedFlag)
 

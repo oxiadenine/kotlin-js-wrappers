@@ -7,7 +7,7 @@ external object ItemComponent : Component<ItemProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface ItemProps : RProps {
+external interface ItemProps : Props {
     var className: String
     var children: ReactNode
     var index: Number

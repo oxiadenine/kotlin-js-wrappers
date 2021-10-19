@@ -21,7 +21,7 @@ external interface LargeDataAppState : State {
     var targetKeys: Array<String>
 }
 
-class LargeDataApp : RComponent<RProps, LargeDataAppState>() {
+class LargeDataApp : RComponent<Props, LargeDataAppState>() {
     private val getMock: MouseEventHandler<Any> = {
         val keys = mutableListOf<String>()
         val data = mutableListOf<TransferItem>()

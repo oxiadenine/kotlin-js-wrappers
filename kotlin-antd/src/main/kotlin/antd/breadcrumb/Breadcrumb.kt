@@ -14,7 +14,7 @@ external object BreadcrumbComponent : Component<BreadcrumbProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface BreadcrumbProps : RProps {
+external interface BreadcrumbProps : Props {
     var prefixCls: String?
     var routes: Array<Route>?
     var params: Any?

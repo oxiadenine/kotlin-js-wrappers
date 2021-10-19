@@ -10,7 +10,7 @@ import react.*
 
 external interface ListItemComponent : ComponentType<ListItemProps>
 
-external interface ListItemProps : RefAttributes<HTMLDivElement>, RProps {
+external interface ListItemProps : RefAttributes<HTMLDivElement>, Props {
     var prefixCls: String?
     var className: String
     var style: dynamic

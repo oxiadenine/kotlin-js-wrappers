@@ -26,7 +26,7 @@ var intl = createIntl(jsObject {
     messages = intlMessages.asDynamic()[initialLocale].unsafeCast<Any>()
 }, cache)
 
-private val app = fc<RProps> {
+private val app = fc<Props> {
     val (language, setLanguage) = useState(initialLocale)
 
     val changeLanguage = fun(newLocale: String) {

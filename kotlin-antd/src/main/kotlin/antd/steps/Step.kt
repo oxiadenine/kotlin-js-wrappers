@@ -7,7 +7,7 @@ import react.*
 
 external interface StepComponent : ComponentType<StepProps>
 
-external interface StepProps : RProps {
+external interface StepProps : Props {
     var className: String?
     var description: ReactNode?
     var icon: ReactNode?

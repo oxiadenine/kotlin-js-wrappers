@@ -56,7 +56,7 @@ private val tableColumns = arrayOf<ColumnType<Any>>(
     }
 )
 
-external interface LocalePageProps : RProps {
+external interface LocalePageProps : Props {
     var key: String
 }
 
@@ -190,7 +190,7 @@ external interface LocaleAppState : State {
     var locale: Locale?
 }
 
-class LocaleApp : RComponent<RProps, LocaleAppState>() {
+class LocaleApp : RComponent<Props, LocaleAppState>() {
     init {
         setState {
             locale = enUS

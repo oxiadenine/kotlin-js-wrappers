@@ -12,7 +12,7 @@ external interface EditableCardDemoState : State {
     var panes: Array<Any>
 }
 
-class EditableCardDemo : RComponent<RProps, EditableCardDemoState>() {
+class EditableCardDemo : RComponent<Props, EditableCardDemoState>() {
     private var newTabIndex = 0
 
     private val handleChange: (String) -> Unit = { key ->

@@ -30,7 +30,7 @@ external interface DataItem {
     var age: Number
 }
 
-val formSizeDemo = fc<RProps> {
+val formSizeDemo = fc<Props> {
     val (componentSize, setComponentSize) = useState("small")
 
     div {

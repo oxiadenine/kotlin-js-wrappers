@@ -17,7 +17,7 @@ external interface PickerSizesDemoState : State {
     var size: String
 }
 
-class PickerSizesDemo : RComponent<RProps, PickerSizesDemoState>() {
+class PickerSizesDemo : RComponent<Props, PickerSizesDemoState>() {
     private val handleSizeChange = fun(event: RadioChangeEvent) {
         setState {
             size = event.target.value as String

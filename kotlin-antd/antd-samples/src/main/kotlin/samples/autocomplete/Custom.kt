@@ -18,7 +18,7 @@ external interface CustomCompleteState : State {
     var dataSource: Array<DataSourceItemType>
 }
 
-class CustomComplete : RComponent<RProps, CustomCompleteState>() {
+class CustomComplete : RComponent<Props, CustomCompleteState>() {
     private val handleSearch = fun(value: String) {
         setState {
             dataSource = if (value.isEmpty()) {

@@ -15,7 +15,7 @@ external object TagComponent : Component<TagProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface TagProps : HTMLAttributes<HTMLDivElement>, RefAttributes<HTMLElement>, RProps {
+external interface TagProps : HTMLAttributes<HTMLDivElement>, RefAttributes<HTMLElement>, Props {
     var prefixCls: String?
     override var className: String?
     override var color: dynamic /* LiteralUnion<Any /* PresetColorType | PresetStatusColorType */, String> */

@@ -5,7 +5,7 @@ import react.*
 
 external interface OptionComponent : ComponentType<OptionProps>
 
-external interface OptionProps : RcOptionProps, RProps {
+external interface OptionProps : RcOptionProps, Props {
     override var value: String?
     override var children: ReactNode?
 }

@@ -14,7 +14,7 @@ import react.*
 import react.dom.div
 import styled.*
 
-private val advancedSearchForm = fc<RProps> {
+private val advancedSearchForm = fc<Props> {
     val (expand, setExpand) = useState(false)
     val formInstance = FormComponent.useForm()[0]
 
@@ -61,7 +61,7 @@ private val advancedSearchForm = fc<RProps> {
         }
         row {
             attrs.gutter = 24
-            childList.add(getFields())
+            childList.add(getFields().unsafeCast<ReactNode>())
             col {
                 attrs {
                     span = 24

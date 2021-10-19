@@ -8,6 +8,6 @@ import react.*
 
 external interface LinkComponent : ComponentType<LinkProps>
 
-external interface LinkProps : BlockProps, AnchorHTMLAttributes<HTMLAnchorElement>, RefAttributes<HTMLElement>, RProps {
+external interface LinkProps : BlockProps, AnchorHTMLAttributes<HTMLAnchorElement>, RefAttributes<HTMLElement>, Props {
     override var ellipsis: dynamic /* Boolean */
 }

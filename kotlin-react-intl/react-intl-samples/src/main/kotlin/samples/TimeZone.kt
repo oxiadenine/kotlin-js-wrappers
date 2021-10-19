@@ -6,7 +6,7 @@ import reactintl.datetime.*
 import reactintl.provider.*
 import kotlin.js.*
 
-external interface TimeZoneProps : RProps {
+external interface TimeZoneProps : Props {
     var currentTime: Any? /* Date | Number */
 }
 
@@ -42,7 +42,7 @@ private val app = fc<TimeZoneProps> { props ->
                             small { +parts[2].value }
                         }
                     }
-                }
+                }.unsafeCast<ReactNode>()
             }
         }
     }

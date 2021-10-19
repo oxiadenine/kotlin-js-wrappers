@@ -6,7 +6,7 @@ import react.*
 
 external interface UploadListComponent : ComponentType<UploadListProps<Any>>
 
-external interface UploadListProps<T> : RefAttributes<dynamic>, RProps {
+external interface UploadListProps<T> : RefAttributes<dynamic>, Props {
     var listType: UploadListType?
     var onPreview: ((file: UploadFile<T>) -> Unit)?
     var onDownload: ((file: UploadFile<T>) -> Unit)?

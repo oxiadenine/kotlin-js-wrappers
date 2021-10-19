@@ -11,7 +11,7 @@ external interface SmoothClosedState : State {
     var visible: Boolean
 }
 
-class SmoothClosedApp : RComponent<RProps, SmoothClosedState>() {
+class SmoothClosedApp : RComponent<Props, SmoothClosedState>() {
     private val handleClose: () -> Unit = {
         setState {
             visible = false

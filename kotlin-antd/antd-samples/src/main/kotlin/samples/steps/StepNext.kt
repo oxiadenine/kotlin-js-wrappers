@@ -22,7 +22,7 @@ external interface StepNextAppState : State {
     var current: Number
 }
 
-class StepNextApp : RComponent<RProps, StepNextAppState>() {
+class StepNextApp : RComponent<Props, StepNextAppState>() {
     private fun next() {
         setState {
             current = state.current.toInt() + 1

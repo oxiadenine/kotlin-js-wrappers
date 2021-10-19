@@ -12,7 +12,7 @@ import styled.styledDiv
 
 private val context = createContext(js { name = "Default" })
 
-private val demo = fc<RProps> {
+private val demo = fc<Props> {
     val useMessage = message.useMessage()
 
     val messageApi = useMessage[0].unsafeCast<MessageInstance>()

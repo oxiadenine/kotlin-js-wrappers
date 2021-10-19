@@ -2,7 +2,7 @@ package samples.rate
 
 import react.RBuilder
 import react.RComponent
-import react.RProps
+import react.Props
 import react.State
 import react.dom.h2
 import styled.StyleSheet
@@ -19,7 +19,7 @@ object RateStyles : StyleSheet("rate", isStatic = true) {
     val character by css {}
 }
 
-class RateApp : RComponent<RProps, State>() {
+class RateApp : RComponent<Props, State>() {
     override fun RBuilder.render() {
         h2 { +"Rate" }
         styledDiv {

@@ -1,6 +1,7 @@
 package antd.tree
 
 import antd.*
+import antd.Key
 import antd.ReactNode
 import kotlinext.js.Record
 import org.w3c.dom.*

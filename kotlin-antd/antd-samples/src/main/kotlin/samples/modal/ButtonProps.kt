@@ -16,7 +16,7 @@ external interface ButtonPropsAppState : State {
     var visible: Boolean
 }
 
-class ButtonPropsApp : RComponent<RProps, ButtonPropsAppState>() {
+class ButtonPropsApp : RComponent<Props, ButtonPropsAppState>() {
     private val showModal: MouseEventHandler<Any> = {
         setState {
             visible = true

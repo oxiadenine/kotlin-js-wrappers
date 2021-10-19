@@ -16,7 +16,7 @@ external interface HoverWithClickAppState : State {
     var hovered: Boolean
 }
 
-class HoverWithClickApp : RComponent<RProps, HoverWithClickAppState>() {
+class HoverWithClickApp : RComponent<Props, HoverWithClickAppState>() {
     private val hide = fun(_: Event) {
         setState {
             clicked = false
@@ -65,7 +65,7 @@ class HoverWithClickApp : RComponent<RProps, HoverWithClickAppState>() {
                 attrs {
                     content = buildElement {
                         div {
-                            childList.add(clickContent.unsafeCast<Any>())
+                            childList.add(clickContent.unsafeCast<ReactNode>())
                             a {
                                 attrs.onClickFunction = hide
                                 +"Close"

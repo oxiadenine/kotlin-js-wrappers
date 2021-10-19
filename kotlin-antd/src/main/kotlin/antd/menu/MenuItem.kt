@@ -6,7 +6,7 @@ import react.*
 
 external interface MenuItemComponent : ComponentType<MenuItemProps>
 
-external interface MenuItemProps : RcMenuItemProps, RProps {
+external interface MenuItemProps : RcMenuItemProps, Props {
     var icon: Any? /* ReactElement | String */
     var danger: Boolean?
     override var title: dynamic /* ReactNode */

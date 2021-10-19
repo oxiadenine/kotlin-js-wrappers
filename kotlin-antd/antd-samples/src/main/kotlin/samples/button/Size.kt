@@ -18,7 +18,7 @@ external interface ButtonSizeState : State {
     var size: String
 }
 
-class ButtonSize : RComponent<RProps, ButtonSizeState>() {
+class ButtonSize : RComponent<Props, ButtonSizeState>() {
     private val handleSizeChange = fun(event: RadioChangeEvent) {
         setState {
             size = event.target.value as String

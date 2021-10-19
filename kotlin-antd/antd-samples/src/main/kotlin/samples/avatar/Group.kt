@@ -11,7 +11,7 @@ import react.*
 import styled.css
 import styled.styledDiv
 
-class GroupDemo : RComponent<RProps, State>() {
+class GroupDemo : RComponent<Props, State>() {
     override fun RBuilder.render() {
         avatarGroup {
             avatar {

@@ -14,7 +14,7 @@ external interface SelectWithHiddenSelectedOptionsState : State {
     var selectedItems: Array<String>
 }
 
-class SelectWithHiddenSelectedOptions : RComponent<RProps, SelectWithHiddenSelectedOptionsState>() {
+class SelectWithHiddenSelectedOptions : RComponent<Props, SelectWithHiddenSelectedOptionsState>() {
     private val handlehange: (Array<String>, Any) -> Unit = { items, _ ->
         setState {
             selectedItems = items

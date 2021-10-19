@@ -15,7 +15,7 @@ external object PopconfirmComponent : Component<PopconfirmProps, PopconfirmState
     override fun render(): ReactElement?
 }
 
-external interface PopconfirmProps : AbstractTooltipProps, RefAttributes<dynamic>, RProps {
+external interface PopconfirmProps : AbstractTooltipProps, RefAttributes<dynamic>, Props {
     var title: Any /* ReactNode | RenderFunction */
     var disabled: Boolean?
     var onConfirm: ((e: MouseEvent<HTMLElement>?) -> Unit)?

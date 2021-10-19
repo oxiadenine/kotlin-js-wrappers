@@ -81,7 +81,7 @@ external interface RegistrationFormState : State {
     var autoCompleteResult: Array<DataSourceItemType>
 }
 
-private val registrationForm = fc<RProps> {
+private val registrationForm = fc<Props> {
     val formInstance = FormComponent.useForm()[0]
 
     val handleFinish = { values: Any ->

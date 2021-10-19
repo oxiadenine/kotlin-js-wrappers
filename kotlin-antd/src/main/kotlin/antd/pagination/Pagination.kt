@@ -12,7 +12,7 @@ external object PaginationComponent : Component<PaginationProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface PaginationProps : RProps {
+external interface PaginationProps : Props {
     var total: Number?
     var defaultCurrent: Number?
     var disabled: Boolean?

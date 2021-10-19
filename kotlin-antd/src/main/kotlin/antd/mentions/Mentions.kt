@@ -18,7 +18,7 @@ external object MentionsComponent : Component<MentionsProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface MentionsProps : RcMentionsProps, RefAttributes<dynamic>, RProps {
+external interface MentionsProps : RcMentionsProps, RefAttributes<dynamic>, Props {
     var loading: Boolean?
 }
 

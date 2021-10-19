@@ -16,7 +16,7 @@ external object StatisticComponent : Component<StatisticProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface StatisticProps : FormatConfig, ConfigConsumerProps, RProps {
+external interface StatisticProps : FormatConfig, ConfigConsumerProps, Props {
     override var prefixCls: String?
     var className: String?
     var style: dynamic

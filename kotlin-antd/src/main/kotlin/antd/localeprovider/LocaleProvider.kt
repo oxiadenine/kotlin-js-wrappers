@@ -21,7 +21,7 @@ external object LocaleProviderComponent : Component<LocaleProviderProps, State> 
     override fun render(): ReactElement?
 }
 
-external interface LocaleProviderProps : RProps {
+external interface LocaleProviderProps : Props {
     var locale: Locale
     var children: ReactNode?
 }

@@ -13,7 +13,7 @@ external object SliderComponent : Component<SliderProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface SliderProps : SliderSingleProps, SliderRangeProps, RefAttributes<dynamic>, RProps
+external interface SliderProps : SliderSingleProps, SliderRangeProps, RefAttributes<dynamic>, Props
 
 external interface SliderSingleProps : SliderBaseProps {
     var range: Boolean?

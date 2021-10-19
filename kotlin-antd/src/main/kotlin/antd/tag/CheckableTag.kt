@@ -6,7 +6,7 @@ import react.*
 
 external interface CheckableTagComponent : ComponentType<CheckableTagProps>
 
-external interface CheckableTagProps : RProps {
+external interface CheckableTagProps : Props {
     var prefixCls: String?
     var className: String?
     var style: String?

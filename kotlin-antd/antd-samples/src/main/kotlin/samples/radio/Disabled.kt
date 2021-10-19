@@ -15,7 +15,7 @@ external interface DisabledAppState : State {
     var disabled: Boolean
 }
 
-class DisabledApp : RComponent<RProps, DisabledAppState>() {
+class DisabledApp : RComponent<Props, DisabledAppState>() {
     private val toggleDisabled: MouseEventHandler<Any> = {
         setState {
             disabled = !state.disabled

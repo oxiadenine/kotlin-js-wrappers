@@ -49,7 +49,7 @@ external interface ConfigProviderDemoState : State {
     var customize: Boolean
 }
 
-class ConfigProviderDemo : RComponent<RProps, ConfigProviderDemoState>() {
+class ConfigProviderDemo : RComponent<Props, ConfigProviderDemoState>() {
     override fun ConfigProviderDemoState.init() {
         customize = false
     }

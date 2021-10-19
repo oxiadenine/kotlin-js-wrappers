@@ -46,7 +46,7 @@ external interface AjaxAppState : State {
     var loading: Boolean
 }
 
-class AjaxApp : RComponent<RProps, AjaxAppState>() {
+class AjaxApp : RComponent<Props, AjaxAppState>() {
     private val handleTableChange = fun(newPagination: TablePaginationConfig, filters: Record<String, Array<String?>>, sorter: Any, _: TableCurrentDataSource<Any>) {
         val pager = state.pagination
         pager.current = newPagination.current

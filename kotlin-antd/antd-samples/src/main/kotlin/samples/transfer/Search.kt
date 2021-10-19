@@ -21,7 +21,7 @@ external interface SearchAppState : State {
     var targetKeys: Array<String>
 }
 
-class SearchApp : RComponent<RProps, SearchAppState>() {
+class SearchApp : RComponent<Props, SearchAppState>() {
     override fun componentDidMount() {
         getMock(js {}.unsafeCast<MouseEvent<Any>>())
     }

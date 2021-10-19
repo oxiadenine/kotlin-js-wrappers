@@ -14,7 +14,7 @@ external object ConfigProviderComponent : Component<ConfigProviderProps, State> 
     override fun render(): ReactElement?
 }
 
-external interface ConfigProviderProps : RProps {
+external interface ConfigProviderProps : Props {
     var getTargetContainer: (() -> HTMLElement)?
     var getPopupContainer: ((triggerNode: HTMLElement) -> HTMLElement)?
     var prefixCls: String?

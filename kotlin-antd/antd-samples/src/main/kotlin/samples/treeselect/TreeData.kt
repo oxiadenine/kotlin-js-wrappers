@@ -38,7 +38,7 @@ external interface TreeDataDemoState : State {
     var value: String?
 }
 
-class TreeDataDemo : RComponent<RProps, TreeDataDemoState>() {
+class TreeDataDemo : RComponent<Props, TreeDataDemoState>() {
     private val handleChange = fun(newValue: String, _: Any, _: Any) {
         console.log(newValue)
 

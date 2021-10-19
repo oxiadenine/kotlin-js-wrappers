@@ -1,13 +1,14 @@
 package antd.select
 
 import antd.*
+import antd.Key
 import antd.ReactNode
 import org.w3c.dom.*
 import react.*
 
 external interface OptionListComponent : ComponentType<OptionListProps<SelectOptionsType>>
 
-external interface OptionListProps<OptionsType> : RefAttributes<RefOptionListProps>, RProps {
+external interface OptionListProps<OptionsType> : RefAttributes<RefOptionListProps>, Props {
     var prefixCls: String
     var id: String
     var options: OptionsType

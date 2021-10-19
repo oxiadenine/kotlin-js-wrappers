@@ -2,7 +2,7 @@ package samples.transfer
 
 import react.RBuilder
 import react.RComponent
-import react.RProps
+import react.Props
 import react.State
 import react.dom.h2
 import styled.StyleSheet
@@ -18,7 +18,7 @@ object TransferStyles : StyleSheet("transfer", isStatic = true) {
     val largeData by css {}
 }
 
-class TransferApp : RComponent<RProps, State>() {
+class TransferApp : RComponent<Props, State>() {
     override fun RBuilder.render() {
         h2 { +"Transfer" }
         styledDiv {

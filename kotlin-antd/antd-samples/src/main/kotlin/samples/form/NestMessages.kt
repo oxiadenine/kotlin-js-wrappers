@@ -7,7 +7,7 @@ import antd.input.textArea
 import antd.inputnumber.inputNumber
 import kotlinext.js.jsObject
 import react.RBuilder
-import react.RProps
+import react.Props
 import react.child
 import react.fc
 import styled.css
@@ -29,7 +29,7 @@ private val formValidateMessages = jsObject<ValidateMessages> {
     }
 }
 
-private val demo = fc<RProps> {
+private val demo = fc<Props> {
     val handleFinish = { values: Any ->
         console.log(values)
     }

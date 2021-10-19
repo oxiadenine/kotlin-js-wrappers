@@ -37,7 +37,7 @@ external interface CustomTriggerCitySwitcherState : State {
     var text: String
 }
 
-class CustomTriggerCitySwitcher : RComponent<RProps, CustomTriggerCitySwitcherState>() {
+class CustomTriggerCitySwitcher : RComponent<Props, CustomTriggerCitySwitcherState>() {
     private val handleChange = fun(_: CascaderValueType, selectedOptions: Array<CascaderOptionType>?) {
         setState {
             text = selectedOptions!!.joinToString(", ") { selectedOption ->

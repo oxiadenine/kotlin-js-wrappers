@@ -10,7 +10,7 @@ import react.*
 
 external interface RangePickerComponent : ComponentType<RangePickerProps>
 
-external interface RangePickerProps : RangePickerBaseProps<Moment>, RangePickerDateProps<Moment>, RangePickerTimeProps<Moment>, RProps
+external interface RangePickerProps : RangePickerBaseProps<Moment>, RangePickerDateProps<Moment>, RangePickerTimeProps<Moment>, Props
 
 external interface RangePickerBaseProps<DateType> : RcRangePickerBaseProps<DateType> {
     var locale: PickerLocale?

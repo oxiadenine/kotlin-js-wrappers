@@ -20,7 +20,7 @@ external interface IconProps : IconBaseProps {
     var ariaLabel: AriaAttributes
 }
 
-external interface IconBaseProps : RProps {
+external interface IconBaseProps : Props {
     var spin: Boolean?
     var rotate: Number?
     var twoToneColor: TwoToneColor?
@@ -29,7 +29,7 @@ external interface IconBaseProps : RProps {
     var onClick: MouseEventHandler<Any>?
 }
 
-external interface CustomIconComponentProps : RProps {
+external interface CustomIconComponentProps : Props {
     var width: Any /* String | Number */
     var height: Any /* String | Number */
     var fill: String

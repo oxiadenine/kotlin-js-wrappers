@@ -12,7 +12,7 @@ external interface ClickableDemoState : State {
     var current: Number
 }
 
-class ClickableDemo : RComponent<RProps, ClickableDemoState>() {
+class ClickableDemo : RComponent<Props, ClickableDemoState>() {
     private val handleChange: (current: Number) -> Unit = {
         console.log("onchange: $it")
 

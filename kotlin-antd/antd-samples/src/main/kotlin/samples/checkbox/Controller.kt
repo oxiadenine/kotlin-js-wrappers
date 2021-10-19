@@ -19,7 +19,7 @@ external interface ControllerAppState : State {
     var disabled: Boolean
 }
 
-class ControllerApp : RComponent<RProps, ControllerAppState>() {
+class ControllerApp : RComponent<Props, ControllerAppState>() {
     private val toggleChecked: MouseEventHandler<Any> = {
         setState {
             checked = !state.checked

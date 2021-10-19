@@ -53,7 +53,7 @@ external interface ResetFilterAppState : State {
     var sortedInfo: SorterResult<ResetFilterTableDataItem>?
 }
 
-class ResetFilterApp : RComponent<RProps, ResetFilterAppState>() {
+class ResetFilterApp : RComponent<Props, ResetFilterAppState>() {
     private val handleChange = fun(pagination: TablePaginationConfig, filters: Record<String, Array<String?>>, sorter: Any, _: TableCurrentDataSource<ResetFilterTableDataItem>) {
         console.log("Various parameters", pagination, filters, sorter)
 

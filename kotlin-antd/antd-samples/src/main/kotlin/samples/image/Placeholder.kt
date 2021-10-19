@@ -8,7 +8,7 @@ import styled.css
 import styled.styledDiv
 import kotlin.js.Date
 
-private val imageDemo = fc<RProps> {
+private val imageDemo = fc<Props> {
     val (random, setRandom) = useState(0.0)
 
     space {

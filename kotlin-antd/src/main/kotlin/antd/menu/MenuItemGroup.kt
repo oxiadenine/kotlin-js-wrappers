@@ -5,7 +5,7 @@ import react.*
 
 external interface MenuItemGroupComponent : ComponentType<MenuItemGroupProps>
 
-external interface MenuItemGroupProps : RProps {
+external interface MenuItemGroupProps : Props {
     var renderMenuItem: ((item: ReactElement, index: Number, key: String) -> ReactElement)?
     var index: Number?
     var className: String?

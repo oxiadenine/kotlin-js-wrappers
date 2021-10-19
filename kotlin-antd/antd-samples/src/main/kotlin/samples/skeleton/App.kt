@@ -4,7 +4,7 @@ import kotlinx.css.*
 import kotlinx.css.properties.border
 import react.RBuilder
 import react.RComponent
-import react.RProps
+import react.Props
 import react.State
 import react.dom.h2
 import styled.StyleSheet
@@ -36,7 +36,7 @@ object SkeletonStyles : StyleSheet("skeleton", isStatic = true) {
     val element by css {}
 }
 
-class SkeletonApp : RComponent<RProps, State>() {
+class SkeletonApp : RComponent<Props, State>() {
     override fun RBuilder.render() {
         h2 { +"Skeleton" }
         styledDiv {

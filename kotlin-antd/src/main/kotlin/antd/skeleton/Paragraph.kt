@@ -4,7 +4,7 @@ import react.*
 
 external interface SkeletonParagraphComponent : ComponentType<SkeletonParagraphProps>
 
-external interface SkeletonParagraphProps : RProps {
+external interface SkeletonParagraphProps : Props {
     var prefixCls: String?
     var className: String?
     var style: dynamic

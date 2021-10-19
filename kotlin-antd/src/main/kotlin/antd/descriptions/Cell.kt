@@ -7,7 +7,7 @@ external object CellComponent : Component<CellProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface CellProps : RProps {
+external interface CellProps : Props {
     var itemPrefixCls: String
     var span: Number
     var className: String?

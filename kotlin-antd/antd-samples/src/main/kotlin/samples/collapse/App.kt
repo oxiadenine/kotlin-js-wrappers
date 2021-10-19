@@ -4,7 +4,7 @@ import kotlinx.css.margin
 import kotlinx.css.px
 import react.RBuilder
 import react.RComponent
-import react.RProps
+import react.Props
 import react.State
 import react.dom.h2
 import styled.StyleSheet
@@ -26,7 +26,7 @@ object CollapseStyles : StyleSheet("collapse", isStatic = true) {
     val extra by css {}
 }
 
-class CollapseApp : RComponent<RProps, State>() {
+class CollapseApp : RComponent<Props, State>() {
     override fun RBuilder.render() {
         h2 { +"Collapse" }
         styledDiv {

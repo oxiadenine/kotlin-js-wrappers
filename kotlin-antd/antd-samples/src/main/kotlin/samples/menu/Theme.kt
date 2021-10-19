@@ -19,7 +19,7 @@ external interface ThemeSiderState : State {
     var current: String
 }
 
-class ThemeSider : RComponent<RProps, ThemeSiderState>() {
+class ThemeSider : RComponent<Props, ThemeSiderState>() {
     private val changeTheme = fun(checked: Boolean, _: MouseEvent) {
         setState {
             theme = if (checked) "dark" else "light"

@@ -7,7 +7,7 @@ import react.*
 
 external interface FormItemLabelComponent : ComponentType<FormItemLabelProps>
 
-external interface FormItemLabelProps : FormItemLabelBaseProps, FormItemLabelMiscProps, RProps
+external interface FormItemLabelProps : FormItemLabelBaseProps, FormItemLabelMiscProps, Props
 
 external interface FormItemLabelBaseProps {
     var wrapperCol: ColProps?

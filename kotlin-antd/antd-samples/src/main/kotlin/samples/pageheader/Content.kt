@@ -6,6 +6,7 @@ import antd.typography.typographyParagraph
 import kotlinext.js.jsObject
 import kotlinx.html.classes
 import react.RBuilder
+import react.ReactNode
 import react.buildElement
 import react.dom.*
 import styled.css
@@ -96,11 +97,11 @@ fun RBuilder.content() {
                 attrs.classes = setOf("wrap")
                 div {
                     attrs.classes = setOf("content")
-                    childList.add(content.unsafeCast<Any>())
+                    childList.add(content.unsafeCast<ReactNode>())
                 }
                 div {
                     attrs.classes = setOf("extraContent")
-                    childList.add(extraContent.unsafeCast<Any>())
+                    childList.add(extraContent.unsafeCast<ReactNode>())
                 }
             }
         }

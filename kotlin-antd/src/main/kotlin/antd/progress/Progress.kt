@@ -11,7 +11,7 @@ external object ProgressComponent : Component<ProgressProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface ProgressProps : RProps {
+external interface ProgressProps : Props {
     var prefixCls: String?
     var className: String?
     var type: ProgressType?

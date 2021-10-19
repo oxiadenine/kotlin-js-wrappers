@@ -5,7 +5,7 @@ import react.*
 
 external interface CollapsePanelComponent : ComponentType<CollapsePanelProps>
 
-external interface CollapsePanelProps : RProps {
+external interface CollapsePanelProps : Props {
     var key: Any /* String | Number */
     var header: ReactNode
     var disabled: Boolean?

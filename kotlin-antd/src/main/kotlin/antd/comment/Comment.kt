@@ -11,7 +11,7 @@ external object CommentComponent : Component<CommentProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface CommentProps : RProps {
+external interface CommentProps : Props {
     var actions: Array<ReactNode>?
     var author: ReactNode?
     var avatar: ReactNode?

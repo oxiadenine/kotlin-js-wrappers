@@ -12,7 +12,7 @@ import react.*
 import styled.css
 import styled.styledDiv
 
-private val demo = fc<RProps> {
+private val demo = fc<Props> {
     val formComponent = FormComponent.useForm()[0]
     val (reqMark, setReqMarkType) = useState<Any /* Boolean | "optional" */>("optional")
 

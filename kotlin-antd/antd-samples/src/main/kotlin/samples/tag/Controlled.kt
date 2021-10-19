@@ -12,7 +12,7 @@ external interface ControlledDemoState : State {
     var visible: Boolean
 }
 
-class ControlledDemo : RComponent<RProps, ControlledDemoState>() {
+class ControlledDemo : RComponent<Props, ControlledDemoState>() {
     override fun ControlledDemoState.init() {
         visible = true
     }

@@ -4,6 +4,6 @@ import react.*
 
 external interface SkeletonInputComponent : ComponentType<SkeletonInputProps>
 
-external interface SkeletonInputProps : SkeletonElementProps, RProps {
+external interface SkeletonInputProps : SkeletonElementProps, Props {
     override var size: dynamic /* "large" | "small" | "default" */
 }

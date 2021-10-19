@@ -5,7 +5,7 @@ import react.*
 
 external interface TimelineItemComponent : ComponentType<TimelineItemProps>
 
-external interface TimelineItemProps : RProps {
+external interface TimelineItemProps : Props {
     var prefixCls: String?
     var className: String?
     var color: String?

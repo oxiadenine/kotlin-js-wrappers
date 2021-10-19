@@ -4,7 +4,7 @@ import kotlinx.css.*
 import kotlinx.css.properties.LineHeight
 import react.RBuilder
 import react.RComponent
-import react.RProps
+import react.Props
 import react.State
 import react.dom.h2
 import styled.StyleSheet
@@ -105,7 +105,7 @@ object GridStyles : StyleSheet("grid", isStatic = true) {
     val useBreakpoint by css {}
 }
 
-class GridApp : RComponent<RProps, State>() {
+class GridApp : RComponent<Props, State>() {
     override fun RBuilder.render() {
         h2 { +"Grid" }
         styledDiv {

@@ -23,7 +23,7 @@ external interface AdvancedAppState : State {
     var targetKeys: Array<String>
 }
 
-class AdvancedApp : RComponent<RProps, AdvancedAppState>() {
+class AdvancedApp : RComponent<Props, AdvancedAppState>() {
     private val getMock: MouseEventHandler<Any> = {
         val keys = mutableListOf<String>()
         val data = mutableListOf<TransferItem>()

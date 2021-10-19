@@ -12,7 +12,7 @@ external object RowComponent : Component<RowProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface RowProps : HTMLAttributes<HTMLDivElement>, RefAttributes<HTMLDivElement>, RProps {
+external interface RowProps : HTMLAttributes<HTMLDivElement>, RefAttributes<HTMLDivElement>, Props {
     var gutter: Any? /* Gutter | Array<Gutter> */
     var align: RowAligns?
     var justify: RowJustify?

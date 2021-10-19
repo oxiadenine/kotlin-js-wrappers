@@ -5,7 +5,7 @@ import react.*
 import react.dom.*
 import reactresponsive.*
 
-private val example = fc<RProps> {
+private val example = fc<Props> {
     val isDesktopOrLaptop = useMediaQuery(jsObject {
         query = "(min-device-width: 1224px)"
     })

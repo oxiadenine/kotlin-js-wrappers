@@ -10,6 +10,6 @@ external class FormattedListComponent : Component<FormattedListProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface FormattedListProps : IntlListFormatOptions, RProps {
+external interface FormattedListProps : IntlListFormatOptions, Props {
     var value: Array<ReactElement>
 }

@@ -60,7 +60,7 @@ external interface GroupCompactDemoState : State {
     var dataSource: Any
 }
 
-class GroupCompactDemo : RComponent<RProps, GroupCompactDemoState>() {
+class GroupCompactDemo : RComponent<Props, GroupCompactDemoState>() {
     private val handleChange = { value: SelectValue, _: Any ->
         setState {
             dataSource = if (value.unsafeCast<String>().isEmpty() || value.unsafeCast<String>().contains("@")) {

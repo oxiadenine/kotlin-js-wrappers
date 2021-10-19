@@ -48,7 +48,7 @@ private fun updateTreeData(list: Array<DataNode>, nodeKey: Key, nodeChildren: Ar
     }.toTypedArray()
 }
 
-private val demo = fc<RProps> {
+private val demo = fc<Props> {
     val (trData, setTreeData) = useState(initTreeData)
 
     fun onLoadData(node: EventDataNode): Promise<Unit> {

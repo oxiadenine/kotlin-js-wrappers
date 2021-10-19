@@ -9,10 +9,7 @@ import antd.select.option
 import antd.select.select
 import kotlinext.js.js
 import kotlinext.js.jsObject
-import react.RBuilder
-import react.RProps
-import react.child
-import react.fc
+import react.*
 import styled.css
 import styled.styledDiv
 
@@ -28,7 +25,7 @@ private val tailLayout = jsObject<FormItemProps<Any>> {
     }
 }
 
-private val demo = fc<RProps> {
+private val demo = fc<Props> {
     val formComponent = FormComponent.useForm()[0]
 
     val handleGenderChange = { value: String, _: Any ->
@@ -130,7 +127,7 @@ private val demo = fc<RProps> {
                     }
                 } else null
             }
-            childList += getFieldValue
+            childList.add(getFieldValue.unsafeCast<ReactNode>())
         }
         formItem {
             attrs.wrapperCol = tailLayout.wrapperCol

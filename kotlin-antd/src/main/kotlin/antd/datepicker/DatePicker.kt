@@ -20,7 +20,7 @@ external object DatePickerComponent : Component<DatePickerProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface DatePickerProps : PickerProps<Moment>, RProps
+external interface DatePickerProps : PickerProps<Moment>, Props
 
 external interface PickerProps<DateType> : PickerBaseProps<DateType>, PickerDateProps<DateType>, PickerTimeProps<DateType>
 

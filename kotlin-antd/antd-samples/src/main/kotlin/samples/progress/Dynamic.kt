@@ -15,7 +15,7 @@ external interface DynamicAppState : State {
     var percent: Number
 }
 
-class DynamicApp : RComponent<RProps, DynamicAppState>() {
+class DynamicApp : RComponent<Props, DynamicAppState>() {
     private val increase: MouseEventHandler<Any> = {
         var newPercent = state.percent.toInt() + 10
 

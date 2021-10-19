@@ -5,7 +5,7 @@ import react.*
 
 external interface ButtonGroupComponent : ComponentType<ButtonGroupProps>
 
-external interface ButtonGroupProps : RProps {
+external interface ButtonGroupProps : Props {
     var size: SizeType?
     var style: dynamic
     var className: String?

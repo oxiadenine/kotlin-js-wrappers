@@ -10,7 +10,7 @@ external interface MyTagState : State {
     var checked: Boolean
 }
 
-class MyTag : RComponent<RProps, MyTagState>() {
+class MyTag : RComponent<PropsWithChildren, MyTagState>() {
     private val handleChange = fun(value: Boolean) {
         setState {
             checked = value
@@ -27,12 +27,12 @@ class MyTag : RComponent<RProps, MyTagState>() {
                 checked = state.checked
                 onChange = handleChange
             }
-            childList.add(props.children)
+            childList.add(props.children.unsafeCast<ReactNode>())
         }
     }
 }
 
-fun RBuilder.myTag(handler: RHandler<RProps>) = child(MyTag::class, handler)
+fun RBuilder.myTag(handler: RHandler<Props>) = child(MyTag::class, handler)
 
 fun RBuilder.checkable() {
     styledDiv {

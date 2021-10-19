@@ -24,7 +24,7 @@ external interface BasicDemoState : State {
     var extra: Any
 }
 
-class BasicDemo : RComponent<RProps, BasicDemoState>() {
+class BasicDemo : RComponent<Props, BasicDemoState>() {
     private val handleChange: (RadioChangeEvent) -> Unit = { e ->
         val resultState: BasicDemoState = when (val resultStatus = e.target.value.unsafeCast<String>()) {
             "403" -> jsObject {

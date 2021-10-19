@@ -4,6 +4,6 @@ import react.*
 
 external interface TextComponent : ComponentType<TextProps>
 
-external interface TextProps : BlockProps, RProps {
+external interface TextProps : BlockProps, Props {
     override var ellipsis: dynamic /* Boolean */
 }

@@ -2,7 +2,7 @@ package samples.descriptions
 
 import react.RBuilder
 import react.RComponent
-import react.RProps
+import react.Props
 import react.State
 import react.dom.h2
 import styled.StyleSheet
@@ -19,7 +19,7 @@ object DescriptionsStyles : StyleSheet("descriptions", isStatic = true) {
     val verticalBorder by css {}
 }
 
-class DescriptionsApp : RComponent<RProps, State>() {
+class DescriptionsApp : RComponent<Props, State>() {
     override fun RBuilder.render() {
         h2 { +"Descriptions" }
         styledDiv {

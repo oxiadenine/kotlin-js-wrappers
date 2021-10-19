@@ -5,4 +5,4 @@ import react.*
 
 external interface WeekPickerComponent : ComponentType<WeekPickerProps>
 
-external interface WeekPickerProps : PickerDateProps<Moment>, RProps
+external interface WeekPickerProps : PickerDateProps<Moment>, Props

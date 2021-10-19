@@ -5,7 +5,7 @@ import react.*
 import react.dom.*
 import reactresponsive.*
 
-private val example = fc<RProps> {
+private val example = fc<Props> {
     div {
         div { +"Device Test!" }
         mediaQuery {
@@ -27,7 +27,7 @@ private val example = fc<RProps> {
                         p { +"You are retina" }
                     } else p { +"You are not retina" }
                 }
-            }
+            }.unsafeCast<ReactNode>()
         }
     }
 }

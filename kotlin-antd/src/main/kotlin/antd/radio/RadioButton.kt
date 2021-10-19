@@ -6,4 +6,4 @@ import react.*
 
 external interface RadioButtonComponent : ComponentType<RadioButtonProps>
 
-external interface RadioButtonProps : AbstractCheckboxProps<RadioChangeEvent>, RefAttributes<Any>, RProps
+external interface RadioButtonProps : AbstractCheckboxProps<RadioChangeEvent>, RefAttributes<Any>, Props

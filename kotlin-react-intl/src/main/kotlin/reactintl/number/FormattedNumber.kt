@@ -16,11 +16,11 @@ external class FormattedNumberPartsComponent : Component<FormattedNumberPartsPro
     override fun render(): ReactElement?
 }
 
-external interface FormattedNumberProps : NumberFormatOptions, CustomFormatConfig, RProps {
+external interface FormattedNumberProps : NumberFormatOptions, CustomFormatConfig, Props {
     var value: Number
 }
 
-external interface FormattedNumberPartsProps : NumberFormatOptions, CustomFormatConfig, RProps {
+external interface FormattedNumberPartsProps : NumberFormatOptions, CustomFormatConfig, Props {
     var value: Number
     fun children(value: NumberFormatPartTypes): ReactElement?
 }

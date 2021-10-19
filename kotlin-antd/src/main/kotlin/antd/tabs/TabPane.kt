@@ -5,7 +5,7 @@ import react.*
 
 external interface TabPaneComponent : ComponentType<TabPaneProps>
 
-external interface TabPaneProps : RProps {
+external interface TabPaneProps : Props {
     var tab: ReactNode?
     var className: String?
     var style: dynamic

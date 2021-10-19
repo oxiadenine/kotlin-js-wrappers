@@ -2,7 +2,7 @@ package samples.treeselect
 
 import react.RBuilder
 import react.RComponent
-import react.RProps
+import react.Props
 import react.State
 import react.dom.h2
 import styled.StyleSheet
@@ -18,7 +18,7 @@ object TreeSelectStyles : StyleSheet("tree-select", isStatic = true) {
     val suffix by css {}
 }
 
-class TreeSelectApp : RComponent<RProps, State>() {
+class TreeSelectApp : RComponent<Props, State>() {
     override fun RBuilder.render() {
         h2 { +"TreeSelect" }
         styledDiv {

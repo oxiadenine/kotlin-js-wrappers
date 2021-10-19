@@ -23,7 +23,7 @@ external interface ChangeDemoState : State {
     var show: Boolean
 }
 
-class ChangeDemo : RComponent<RProps, ChangeDemoState>() {
+class ChangeDemo : RComponent<Props, ChangeDemoState>() {
     private val increase: MouseEventHandler<Any> = {
         val countIncreased = state.count.unsafeCast<Number>().toInt() + 1
 

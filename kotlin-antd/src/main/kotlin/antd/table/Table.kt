@@ -4,6 +4,7 @@
 package antd.table
 
 import antd.*
+import antd.Key
 import antd.checkbox.CheckboxProps
 import antd.configprovider.SizeType
 import antd.pagination.*
@@ -23,7 +24,7 @@ external class TableComponent<RecordType> : Component<TableProps<RecordType>, St
     override fun render(): ReactElement?
 }
 
-external interface TableProps<RecordType> : RcTableProps<RecordType>, RProps {
+external interface TableProps<RecordType> : RcTableProps<RecordType>, Props {
     var dropdownPrefixCls: String?
     var dataSource: Array<RecordType>?
     override var columns: ColumnsType<RecordType>?

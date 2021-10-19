@@ -4,7 +4,7 @@ import kotlinx.css.em
 import kotlinx.css.marginRight
 import react.RBuilder
 import react.RComponent
-import react.RProps
+import react.Props
 import react.State
 import react.dom.h2
 import styled.StyleSheet
@@ -28,7 +28,7 @@ object NotificationStyles : StyleSheet("notification", isStatic = true) {
     val hooks by css {}
 }
 
-class NotificationApp : RComponent<RProps, State>() {
+class NotificationApp : RComponent<Props, State>() {
     override fun RBuilder.render() {
         h2 { +"Notification" }
         styledDiv {

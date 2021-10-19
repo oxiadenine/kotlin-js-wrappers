@@ -11,7 +11,7 @@ open external class FormattedMessageComponent : Component<FormattedMessageProps<
     override fun render(): ReactElement?
 }
 
-external interface FormattedMessageProps<V> : MessageDescriptor, RProps {
+external interface FormattedMessageProps<V> : MessageDescriptor, Props {
     var values: V?
     var tagName: Any?
     var children: ((nodes: Array<Any>) -> ReactElement)?

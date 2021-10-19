@@ -14,7 +14,7 @@ external object AvatarComponent : Component<AvatarProps, AvatarState> {
     override fun render(): ReactElement
 }
 
-external interface AvatarProps : RefAttributes<dynamic>, RProps {
+external interface AvatarProps : RefAttributes<dynamic>, Props {
     var shape: String? /* "circle" | "square" */
     var size: Any? /* AvatarSize | Number */
     var gap: Number?

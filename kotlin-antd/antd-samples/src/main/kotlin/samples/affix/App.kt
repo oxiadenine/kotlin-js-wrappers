@@ -3,7 +3,7 @@ package samples.affix
 import kotlinx.css.*
 import react.RBuilder
 import react.RComponent
-import react.RProps
+import react.Props
 import react.State
 import react.dom.h2
 import styled.StyleSheet
@@ -27,7 +27,7 @@ object AffixStyles : StyleSheet("affix", isStatic = true) {
     }
 }
 
-class AffixApp : RComponent<RProps, State>() {
+class AffixApp : RComponent<Props, State>() {
     override fun RBuilder.render() {
         h2 { +"Affix" }
         styledDiv {

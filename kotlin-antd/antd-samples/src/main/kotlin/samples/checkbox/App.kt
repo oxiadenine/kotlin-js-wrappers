@@ -2,7 +2,7 @@ package samples.checkbox
 
 import react.RBuilder
 import react.RComponent
-import react.RProps
+import react.Props
 import react.State
 import react.dom.h2
 import styled.StyleSheet
@@ -19,7 +19,7 @@ object CheckboxStyles : StyleSheet("checkbox", isStatic = true) {
     val layout by css {}
 }
 
-class CheckboxApp : RComponent<RProps, State>() {
+class CheckboxApp : RComponent<Props, State>() {
     override fun RBuilder.render() {
         h2 { +"Checkbox" }
         styledDiv {

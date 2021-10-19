@@ -4,4 +4,4 @@ import react.*
 
 external interface BreadcrumbSeparatorComponent : ComponentType<BreadcrumbSeparatorProps>
 
-external interface BreadcrumbSeparatorProps : RProps
+external interface BreadcrumbSeparatorProps : Props

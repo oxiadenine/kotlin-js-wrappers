@@ -5,6 +5,7 @@ import antd.select.option
 import antd.select.select
 import kotlinext.js.js
 import react.RBuilder
+import react.ReactNode
 import react.buildElement
 import styled.css
 import styled.styledDiv
@@ -33,7 +34,7 @@ fun RBuilder.multiple() {
                 defaultValue = arrayOf("a10", "a12")
                 onChange = handleChange
             }
-            childList.add(children)
+            childList.add(children.unsafeCast<ReactNode>())
         }
     }
 }

@@ -25,7 +25,7 @@ external interface SwitchModeSiderState : State {
     var theme: MenuTheme
 }
 
-class SwitchModeSider : RComponent<RProps, SwitchModeSiderState>() {
+class SwitchModeSider : RComponent<Props, SwitchModeSiderState>() {
     private val changeMode = fun(checked: Boolean, _: MouseEvent) {
         setState {
             mode = if (checked) "vertical" else "inline"

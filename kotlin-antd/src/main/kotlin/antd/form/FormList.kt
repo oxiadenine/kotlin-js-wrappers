@@ -5,7 +5,7 @@ import react.*
 
 external interface FormListComponent : ComponentType<FormListProps>
 
-external interface FormListProps : RProps {
+external interface FormListProps : Props {
     var prefixCls: String?
     var name: Any /* String | Number | Array<Any /* String | Number */> */
     var rules: Array<ValidatorRule>?

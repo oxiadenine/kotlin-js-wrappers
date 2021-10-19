@@ -6,7 +6,8 @@ import antd.cascader.cascader
 import kotlinext.js.jsObject
 import react.RBuilder
 import react.ReactElement
-import react.buildElements
+import react.buildElement
+import react.buildElement
 import styled.css
 import styled.styledDiv
 
@@ -50,7 +51,7 @@ private val handleChange = { value: CascaderValueType, _: Array<CascaderOptionTy
 }
 
 private val handleDisplayRender = { label: Array<String>, _: Array<CascaderOptionType>? ->
-    buildElements { +label[label.size - 1] }.unsafeCast<ReactElement>()
+    buildElement { +label[label.size - 1] }.unsafeCast<ReactElement>()
 }
 
 fun RBuilder.hover() {

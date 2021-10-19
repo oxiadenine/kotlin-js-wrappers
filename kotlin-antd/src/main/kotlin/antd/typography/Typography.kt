@@ -15,7 +15,7 @@ external object TypographyComponent : Component<TypographyProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface TypographyProps : RProps {
+external interface TypographyProps : Props {
     var id: String?
     var prefixCls: String?
     var className: String?

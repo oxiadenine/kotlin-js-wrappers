@@ -15,7 +15,7 @@ external interface SizeDemoState : State {
     var size: String
 }
 
-class SizeDemo : RComponent<RProps, SizeDemoState>() {
+class SizeDemo : RComponent<Props, SizeDemoState>() {
     private val handleChange: (RadioChangeEvent) -> Unit = { e ->
         console.log("size checked", e.target.value)
 

@@ -6,7 +6,7 @@ import kotlinx.css.properties.s
 import kotlinx.css.properties.transition
 import react.RBuilder
 import react.RComponent
-import react.RProps
+import react.Props
 import react.State
 import react.dom.h2
 import styled.StyleSheet
@@ -37,7 +37,7 @@ object CascaderStyles : StyleSheet("cascader", isStatic = true) {
     val suffix by css {}
 }
 
-class CascaderApp : RComponent<RProps, State>() {
+class CascaderApp : RComponent<Props, State>() {
     override fun RBuilder.render() {
         h2 { +"Cascader" }
         styledDiv {

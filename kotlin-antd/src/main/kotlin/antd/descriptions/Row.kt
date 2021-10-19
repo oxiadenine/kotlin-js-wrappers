@@ -6,7 +6,7 @@ external object RowComponent : Component<RowProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface RowProps : RProps {
+external interface RowProps : Props {
     var prefixCls: String
     var vertical: Boolean
     var row: ReactElement

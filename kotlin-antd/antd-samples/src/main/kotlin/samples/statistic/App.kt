@@ -2,7 +2,7 @@ package samples.statistic
 
 import react.RBuilder
 import react.RComponent
-import react.RProps
+import react.Props
 import react.State
 import react.dom.h2
 import styled.StyleSheet
@@ -17,7 +17,7 @@ object StatisticStyles : StyleSheet("statistic", isStatic = true) {
     val countdown by css {}
 }
 
-class StatisticApp : RComponent<RProps, State>() {
+class StatisticApp : RComponent<Props, State>() {
     override fun RBuilder.render() {
         h2 { +"Statistic" }
         styledDiv {

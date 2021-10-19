@@ -15,7 +15,7 @@ external interface SlidingTabsDemoState : State {
     var mode: String
 }
 
-class SlidingTabsDemo : RComponent<RProps, SlidingTabsDemoState>() {
+class SlidingTabsDemo : RComponent<Props, SlidingTabsDemoState>() {
     private val handleModeChange: (RadioChangeEvent) -> Unit = { e ->
         setState {
             mode = e.target.value.unsafeCast<String>()

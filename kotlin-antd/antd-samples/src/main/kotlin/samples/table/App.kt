@@ -3,7 +3,7 @@ package samples.table
 import kotlinx.css.*
 import react.RBuilder
 import react.RComponent
-import react.RProps
+import react.Props
 import react.State
 import react.dom.h2
 import styled.StyleSheet
@@ -74,7 +74,7 @@ object TableStyles : StyleSheet("table", isStatic = true) {
     }
 }
 
-class TableApp : RComponent<RProps, State>() {
+class TableApp : RComponent<Props, State>() {
     override fun RBuilder.render() {
         h2 { +"Table" }
         styledDiv {

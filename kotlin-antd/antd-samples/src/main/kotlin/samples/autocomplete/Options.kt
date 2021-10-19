@@ -11,7 +11,7 @@ external interface OptionsCompleteState : State {
     var result: Array<String>
 }
 
-class OptionsComplete : RComponent<RProps, OptionsCompleteState>() {
+class OptionsComplete : RComponent<Props, OptionsCompleteState>() {
     private val handleSearch = fun(value: String) {
         val newResult = if (value.isEmpty() || value.contains("@")) {
             emptyArray()
@@ -45,7 +45,7 @@ class OptionsComplete : RComponent<RProps, OptionsCompleteState>() {
                 onSearch = handleSearch
                 placeholder = "input here"
             }
-            childList.add(children)
+            childList.add(children.unsafeCast<ReactNode>())
         }
     }
 }

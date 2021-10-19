@@ -17,7 +17,7 @@ external interface MultiLevelDrawerAppState : State {
     var childrenDrawer: Boolean
 }
 
-class MultiLevelDrawerApp : RComponent<RProps, MultiLevelDrawerAppState>() {
+class MultiLevelDrawerApp : RComponent<Props, MultiLevelDrawerAppState>() {
     private val showDrawer: MouseEventHandler<Any> = {
         setState {
             visible = true

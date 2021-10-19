@@ -13,7 +13,7 @@ external object TimelineComponent : Component<TimelineProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface TimelineProps : RProps {
+external interface TimelineProps : Props {
     var prefixCls: String?
     var className: String?
     var pending: ReactNode?

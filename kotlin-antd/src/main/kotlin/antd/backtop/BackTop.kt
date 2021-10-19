@@ -13,7 +13,7 @@ external object BackTopComponent : Component<BackTopProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface BackTopProps : RProps {
+external interface BackTopProps : Props {
     var visibilityHeight: Number?
     var onClick: MouseEventHandler<HTMLElement>?
     var target: (() -> Any /* HTMLElement | Window | Document */)?

@@ -31,7 +31,7 @@ external interface SelectSizesDemoState : State {
     var size: String
 }
 
-class SelectSizesDemo : RComponent<RProps, SelectSizesDemoState>() {
+class SelectSizesDemo : RComponent<Props, SelectSizesDemoState>() {
     private val handleSizeChange = fun(event: RadioChangeEvent) {
         setState {
             size = event.target.value as String
@@ -71,7 +71,7 @@ class SelectSizesDemo : RComponent<RProps, SelectSizesDemoState>() {
                     onChange = handleChange
                     style = js { width = 200 }
                 }
-                childList.add(children)
+                childList.add(children.unsafeCast<ReactNode>())
             }
             br {}
             select<Array<String>, SelectComponent<Array<String>>> {
@@ -83,7 +83,7 @@ class SelectSizesDemo : RComponent<RProps, SelectSizesDemoState>() {
                     onChange = handleChange
                     style = js { width = "100%" }
                 }
-                childList.add(children)
+                childList.add(children.unsafeCast<ReactNode>())
             }
             br {}
             select<Array<String>, SelectComponent<Array<String>>> {
@@ -95,7 +95,7 @@ class SelectSizesDemo : RComponent<RProps, SelectSizesDemoState>() {
                     onChange = handleChange
                     style = js { width = "100%" }
                 }
-                childList.add(children)
+                childList.add(children.unsafeCast<ReactNode>())
             }
         }
     }

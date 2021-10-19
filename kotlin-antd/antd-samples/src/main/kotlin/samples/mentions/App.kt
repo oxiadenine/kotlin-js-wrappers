@@ -2,7 +2,7 @@ package samples.mentions
 
 import react.RBuilder
 import react.RComponent
-import react.RProps
+import react.Props
 import react.State
 import react.dom.h2
 import styled.StyleSheet
@@ -18,7 +18,7 @@ object MentionsStyles : StyleSheet("mentions", isStatic = true) {
     val placement by css {}
 }
 
-class MentionsApp : RComponent<RProps, State>() {
+class MentionsApp : RComponent<Props, State>() {
     override fun RBuilder.render() {
         h2 { +"Mentions" }
         styledDiv {

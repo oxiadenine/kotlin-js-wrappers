@@ -7,7 +7,7 @@ import react.*
 
 external interface TextAreaComponent : ComponentType<TextAreaProps>
 
-external interface TextAreaProps : RcTextAreaProps, RefAttributes<TextAreaRef>, RProps {
+external interface TextAreaProps : RcTextAreaProps, RefAttributes<TextAreaRef>, Props {
     var allowClear: Boolean?
     var bordered: Boolean?
     var showCount: Boolean?

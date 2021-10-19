@@ -26,7 +26,7 @@ import kotlinext.js.js
 import kotlinext.js.jsObject
 import kotlinx.html.classes
 import react.RBuilder
-import react.RProps
+import react.Props
 import react.child
 import react.dom.p
 import react.dom.span
@@ -49,7 +49,7 @@ private val normFile = { e: EventArgs ->
     }
 }
 
-private val demo = fc<RProps> {
+private val demo = fc<Props> {
     val handleFinish = { values: Any ->
         console.log("Received values of form: ", values)
     }

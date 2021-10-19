@@ -9,7 +9,7 @@ import react.*
 
 external interface RadioGroupComponent : ComponentType<RadioGroupProps>
 
-external interface RadioGroupProps : AbstractCheckboxGroupProps, RefAttributes<HTMLDivElement>, RProps {
+external interface RadioGroupProps : AbstractCheckboxGroupProps, RefAttributes<HTMLDivElement>, Props {
     var defaultValue: Any?
     var value: Any?
     var onChange: ((e: RadioChangeEvent) -> Unit)?

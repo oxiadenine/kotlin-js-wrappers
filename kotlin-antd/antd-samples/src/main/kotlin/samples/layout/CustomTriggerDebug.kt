@@ -20,7 +20,7 @@ external interface CustomTriggerDebugDemoState : State {
     var collapsed: Boolean
 }
 
-class CustomTriggerDebugDemo : RComponent<RProps, CustomTriggerDebugDemoState>() {
+class CustomTriggerDebugDemo : RComponent<Props, CustomTriggerDebugDemoState>() {
     private val toggle: MouseEventHandler<Any> = {
         setState {
             collapsed = !state.collapsed

@@ -10,7 +10,7 @@ external object AffixComponent : Component<AffixProps, AffixState> {
     override fun render(): ReactElement?
 }
 
-external interface AffixProps : RProps {
+external interface AffixProps : Props {
     var offsetTop: Number?
     var offsetBottom: Number?
     var style: dynamic

@@ -4,4 +4,4 @@ import react.*
 
 external interface ParagraphComponent : ComponentType<ParagraphProps>
 
-external interface ParagraphProps : BlockProps, RProps
+external interface ParagraphProps : BlockProps, Props

@@ -16,7 +16,7 @@ external object ButtonComponent : Component<ButtonProps, ButtonState> {
     override fun render(): ReactElement?
 }
 
-external interface ButtonProps : AnchorButtonProps, NativeButtonProps, RefAttributes<HTMLElement>, RProps
+external interface ButtonProps : AnchorButtonProps, NativeButtonProps, RefAttributes<HTMLElement>, Props
 
 external interface ButtonState : State {
     var loading: Any? /* Boolean | ButtonLoading */

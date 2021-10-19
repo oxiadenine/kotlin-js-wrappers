@@ -36,7 +36,7 @@ external interface LoadMoreListState : State {
     var list: Array<LoadMoreListDataItem>
 }
 
-class LoadMoreList : RComponent<RProps, LoadMoreListState>() {
+class LoadMoreList : RComponent<Props, LoadMoreListState>() {
     private val getData = fun(callback: (Any) -> Unit) {
         window.fetch(fakeDataUrl, jsObject {
             method = "GET"

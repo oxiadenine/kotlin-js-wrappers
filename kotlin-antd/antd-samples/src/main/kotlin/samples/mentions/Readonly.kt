@@ -7,6 +7,7 @@ import kotlinx.css.marginBottom
 import kotlinx.css.px
 import react.RBuilder
 import react.ReactElement
+import react.ReactNode
 import react.buildElement
 import react.dom.div
 import styled.css
@@ -38,7 +39,7 @@ fun RBuilder.readonly() {
                         placeholder = "this is disabled Mentions"
                         disabled = true
                     }
-                    childList.add(getOptions())
+                    childList.add(getOptions().unsafeCast<ReactNode>())
                 }
             }
             mentions {
@@ -47,7 +48,7 @@ fun RBuilder.readonly() {
                     placeholder = "this is readOnly Mentions"
                     readOnly = true
                 }
-                childList.add(getOptions())
+                childList.add(getOptions().unsafeCast<ReactNode>())
             }
         }
     }

@@ -14,7 +14,7 @@ external object AutoCompleteComponent : Component<AutoCompleteProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface AutoCompleteProps : InternalSelectProps<String>, RefAttributes<RefSelectProps>, RProps {
+external interface AutoCompleteProps : InternalSelectProps<String>, RefAttributes<RefSelectProps>, Props {
     var dataSource: Array<DataSourceItemType>?
 }
 

@@ -16,7 +16,7 @@ external interface OverlayVisibleAppState : State {
     var visible: Boolean
 }
 
-class OverlayVisibleApp : RComponent<RProps, OverlayVisibleAppState>() {
+class OverlayVisibleApp : RComponent<Props, OverlayVisibleAppState>() {
     private val handleMenuClick: MenuClickEventHandler = { info ->
         if (info.key == "3") {
             setState {

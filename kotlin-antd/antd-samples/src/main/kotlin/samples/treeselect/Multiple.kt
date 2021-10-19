@@ -15,7 +15,7 @@ external interface MultipleDemoState : State {
     var value: String?
 }
 
-class MultipleDemo : RComponent<RProps, MultipleDemoState>() {
+class MultipleDemo : RComponent<Props, MultipleDemoState>() {
     private val handleChange = fun(newValue: String, _: Any, _: Any) {
         console.log(newValue)
 

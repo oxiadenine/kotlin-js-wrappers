@@ -13,7 +13,7 @@ external interface ControlAppState : State {
     var visible: Boolean
 }
 
-class ControlApp : RComponent<RProps, ControlAppState>() {
+class ControlApp : RComponent<Props, ControlAppState>() {
     private val hide = fun(_: Event) {
         setState {
             visible = false

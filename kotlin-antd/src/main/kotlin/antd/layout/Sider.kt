@@ -9,7 +9,7 @@ external interface SiderComponent : ComponentType<SiderProps>
 
 external val sderContext: Context<SiderContextProps>
 
-external interface SiderProps : HTMLAttributes<HTMLDivElement>, RProps {
+external interface SiderProps : HTMLAttributes<HTMLDivElement>, Props {
     var prefixCls: String?
     var collapsible: Boolean?
     var collapsed: Boolean?

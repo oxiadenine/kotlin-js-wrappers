@@ -12,7 +12,7 @@ external interface BasicDemoState : State {
     var disabled: Boolean
 }
 
-class BasicDemo : RComponent<RProps, BasicDemoState>() {
+class BasicDemo : RComponent<Props, BasicDemoState>() {
     private val handleDisabledChange = fun(checked: Boolean, _: MouseEvent) {
         setState {
             disabled = checked

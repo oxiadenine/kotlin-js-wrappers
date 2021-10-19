@@ -13,7 +13,7 @@ external interface InteractiveDemoState : State {
     var str: String
 }
 
-class InteractiveDemo : RComponent<RProps, InteractiveDemoState>() {
+class InteractiveDemo : RComponent<Props, InteractiveDemoState>() {
     private val handleChange: (String) -> Unit = { text ->
         console.log("Content change:", text)
 

@@ -7,7 +7,7 @@ import react.*
 import styled.css
 import styled.styledDiv
 
-private val throwError = fc<RProps> {
+private val throwError = fc<Props> {
     val (error, setError) = useState<Error?>(null)
 
     val handleClick: MouseEventHandler<Any> = {

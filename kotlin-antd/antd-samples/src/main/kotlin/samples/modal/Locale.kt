@@ -18,7 +18,7 @@ external interface LocalizedModalState : State {
     var visible: Boolean
 }
 
-class LocalizedModal : RComponent<RProps, LocalizedModalState>() {
+class LocalizedModal : RComponent<Props, LocalizedModalState>() {
     private val showModal: MouseEventHandler<Any> = {
         setState {
             visible = true

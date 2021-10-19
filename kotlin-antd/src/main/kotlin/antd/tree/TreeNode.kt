@@ -1,6 +1,7 @@
 package antd.tree
 
 import antd.*
+import antd.Key
 import antd.ReactNode
 import org.w3c.dom.*
 import react.*
@@ -8,7 +9,7 @@ import react.Ref
 
 external interface TreeNodeComponent : ComponentType<InternalTreeNodeProps>
 
-external interface InternalTreeNodeProps : TreeNodeProps, RProps {
+external interface InternalTreeNodeProps : TreeNodeProps, Props {
     var context: TreeContextProps?
 }
 

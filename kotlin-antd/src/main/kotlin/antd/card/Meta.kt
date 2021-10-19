@@ -5,7 +5,7 @@ import react.*
 
 external interface CardMetaComponent : ComponentType<CardMetaProps>
 
-external interface CardMetaProps : RProps {
+external interface CardMetaProps : Props {
     var prefixCls: String?
     var style: dynamic
     var className: String?

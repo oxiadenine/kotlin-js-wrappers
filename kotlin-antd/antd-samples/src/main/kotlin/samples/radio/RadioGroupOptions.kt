@@ -48,7 +48,7 @@ external interface RadioGroupOptionsAppState : State {
     var value3: CheckboxValueType
 }
 
-class RadioGroupOptionsApp : RComponent<RProps, RadioGroupOptionsAppState>() {
+class RadioGroupOptionsApp : RComponent<Props, RadioGroupOptionsAppState>() {
     private val handleChange1 = fun(event: RadioChangeEvent) {
         console.log("radio1 checked", event.target.value)
 

@@ -7,7 +7,7 @@ import react.*
 
 external interface BreadcrumbItemComponent : ComponentType<BreadcrumbItemProps>
 
-external interface BreadcrumbItemProps : RProps {
+external interface BreadcrumbItemProps : Props {
     var prefixCls: String?
     var separator: ReactNode?
     var href: String?

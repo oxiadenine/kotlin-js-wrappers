@@ -15,7 +15,7 @@ external interface SelectAppState : State {
     var selectedValue: Moment
 }
 
-class SelectApp : RComponent<RProps, SelectAppState>() {
+class SelectApp : RComponent<Props, SelectAppState>() {
     private val handleSelect = fun(date: Moment?) {
         setState {
             value = date!!

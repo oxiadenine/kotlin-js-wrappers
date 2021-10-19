@@ -16,7 +16,7 @@ external interface AutosetState : State {
     var color: String
 }
 
-class Autoset : RComponent<RProps, AutosetState>() {
+class Autoset : RComponent<Props, AutosetState>() {
     private val changeUser: MouseEventHandler<Any> = {
         val index = userList.indexOf(state.user)
 

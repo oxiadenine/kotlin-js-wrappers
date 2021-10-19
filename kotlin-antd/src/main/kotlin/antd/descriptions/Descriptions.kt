@@ -13,7 +13,7 @@ external object DescriptionsComponent : Component<DescriptionsProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface DescriptionsProps : RProps {
+external interface DescriptionsProps : Props {
     var prefixCls: String?
     var className: String?
     var style: dynamic

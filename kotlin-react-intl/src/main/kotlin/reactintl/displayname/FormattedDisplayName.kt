@@ -10,6 +10,6 @@ external class FormattedDisplayNameComponent : Component<FormattedDisplayNamePro
     override fun render(): ReactElement?
 }
 
-external interface FormattedDisplayNameProps : IntlDisplayNameFormatOptions, RProps {
+external interface FormattedDisplayNameProps : IntlDisplayNameFormatOptions, Props {
     var value: Any /* String | Number */
 }

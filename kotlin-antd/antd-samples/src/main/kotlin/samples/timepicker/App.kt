@@ -2,7 +2,7 @@ package samples.timepicker
 
 import react.RBuilder
 import react.RComponent
-import react.RProps
+import react.Props
 import react.State
 import react.dom.h2
 import styled.StyleSheet
@@ -22,7 +22,7 @@ object TimePickerStyles : StyleSheet("time-picker", isStatic = true) {
     val suffix by css {}
 }
 
-class TimePickerApp : RComponent<RProps, State>() {
+class TimePickerApp : RComponent<Props, State>() {
     override fun RBuilder.render() {
         h2 { +"TimePicker" }
         styledDiv {

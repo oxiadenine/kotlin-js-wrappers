@@ -3,7 +3,7 @@ package samples
 import kotlinx.css.*
 import react.RBuilder
 import react.RComponent
-import react.RProps
+import react.Props
 import react.State
 import react.dom.h1
 import samples.affix.affixApp
@@ -96,7 +96,7 @@ object AppStyles : StyleSheet("app", isStatic = true) {
     }
 }
 
-class App : RComponent<RProps, State>() {
+class App : RComponent<Props, State>() {
     override fun RBuilder.render() {
         styledDiv {
             css { +AppStyles.header }

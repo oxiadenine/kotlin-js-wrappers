@@ -13,7 +13,7 @@ external object BadgeComponent : Component<BadgeProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface BadgeProps : RProps {
+external interface BadgeProps : Props {
     var count: ReactNode?
     var showZero: Boolean?
     var overflowCount: Number?

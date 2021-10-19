@@ -119,7 +119,7 @@ external interface DynamicSettingsDemoState : State {
     var hasData: Boolean
 }
 
-class DynamicSettingsDemo : RComponent<RProps, DynamicSettingsDemoState>() {
+class DynamicSettingsDemo : RComponent<Props, DynamicSettingsDemoState>() {
     private val handleToggle = fun(prop: String, enable: Boolean) {
         val objState: dynamic = state
 

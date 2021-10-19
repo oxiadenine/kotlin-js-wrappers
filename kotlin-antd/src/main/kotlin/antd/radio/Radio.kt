@@ -16,7 +16,7 @@ external object RadioComponent : Component<RadioProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface RadioProps : AbstractCheckboxProps<RadioChangeEvent>, RefAttributes<dynamic>, RProps
+external interface RadioProps : AbstractCheckboxProps<RadioChangeEvent>, RefAttributes<dynamic>, Props
 
 external interface RadioChangeEventTarget : RadioProps {
     override var checked: Boolean?

@@ -7,7 +7,7 @@ import react.*
 
 external interface GroupComponent : ComponentType<GroupProps>
 
-external interface GroupProps : RProps {
+external interface GroupProps : Props {
     var className: String?
     var size: String? /* "large" | "small" | "default" */
     var children: ReactNode?

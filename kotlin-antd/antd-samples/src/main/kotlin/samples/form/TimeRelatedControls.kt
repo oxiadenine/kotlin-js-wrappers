@@ -12,10 +12,7 @@ import antd.timepicker.timePicker
 import kotlinext.js.Object
 import kotlinext.js.js
 import kotlinext.js.jsObject
-import react.RBuilder
-import react.RProps
-import react.child
-import react.fc
+import react.*
 import styled.css
 import styled.styledDiv
 
@@ -46,7 +43,7 @@ private val rangeConfig = jsObject<FormItemProps<Any>> {
     })
 }
 
-private val timeRelatedForm = fc<RProps> {
+private val timeRelatedForm = fc<Props> {
     val handleFinish = { fieldsValue: dynamic ->
         val rangeValue = fieldsValue["range-picker"]
         val rangeTimeValue = fieldsValue["range-time-picker"]

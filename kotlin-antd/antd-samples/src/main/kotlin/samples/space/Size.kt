@@ -9,7 +9,7 @@ import react.dom.br
 import styled.css
 import styled.styledDiv
 
-private val spaceSize = fc<RProps> {
+private val spaceSize = fc<Props> {
     val (size, setSize) = useState("small")
 
     radioGroup {

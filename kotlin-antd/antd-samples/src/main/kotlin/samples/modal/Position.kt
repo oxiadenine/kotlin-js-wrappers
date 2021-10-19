@@ -15,7 +15,7 @@ external interface PositionAppState : State {
     var modal2Visible: Boolean
 }
 
-class PositionApp : RComponent<RProps, PositionAppState>() {
+class PositionApp : RComponent<Props, PositionAppState>() {
     private fun setModal1Visible(visible: Boolean) {
         setState {
             modal1Visible = visible

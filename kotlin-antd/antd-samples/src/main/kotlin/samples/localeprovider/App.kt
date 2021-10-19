@@ -4,7 +4,7 @@ import kotlinx.css.*
 import kotlinx.css.properties.borderTop
 import react.RBuilder
 import react.RComponent
-import react.RProps
+import react.Props
 import react.State
 import react.dom.h2
 import styled.StyleSheet
@@ -31,7 +31,7 @@ object LocaleProviderStyles : StyleSheet("locale-provider", isStatic = true) {
     }
 }
 
-class LocaleProviderApp : RComponent<RProps, State>() {
+class LocaleProviderApp : RComponent<Props, State>() {
     override fun RBuilder.render() {
         h2 { +"LocaleProvider" }
         styledDiv {

@@ -4,7 +4,7 @@ import react.*
 
 external interface ErrorBoundaryComponent : ComponentType<ErrorBoundaryProps>
 
-external interface ErrorBoundaryProps : RProps {
+external interface ErrorBoundaryProps : Props {
     var message: ReactNode?
     var description: ReactNode?
 }

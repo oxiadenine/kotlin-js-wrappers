@@ -15,7 +15,7 @@ external interface NestedCardState : State {
     var loading: Boolean
 }
 
-class NestedCard : RComponent<RProps, NestedCardState>() {
+class NestedCard : RComponent<Props, NestedCardState>() {
     private val toggle = fun(value: Boolean, _: MouseEvent) {
         setState {
             loading = value

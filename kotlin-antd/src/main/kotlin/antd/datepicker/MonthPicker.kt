@@ -5,4 +5,4 @@ import react.*
 
 external interface MonthPickerComponent : ComponentType<MonthPickerProps>
 
-external interface MonthPickerProps : PickerDateProps<Moment>, RProps
+external interface MonthPickerProps : PickerDateProps<Moment>, Props

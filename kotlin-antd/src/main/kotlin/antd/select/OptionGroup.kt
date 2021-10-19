@@ -6,7 +6,7 @@ import react.*
 
 external interface OptionGroupComponent : ComponentType<OptionGroupProps>
 
-external interface OptionGroupProps : OptionGroupData, RProps {
+external interface OptionGroupProps : OptionGroupData, Props {
     var children: ReactNode?
 }
 

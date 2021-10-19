@@ -15,7 +15,7 @@ external interface BasicCompleteState : State {
     var dataSource: Array<DataSourceItemType>
 }
 
-class BasicComplete : RComponent<RProps, BasicCompleteState>() {
+class BasicComplete : RComponent<Props, BasicCompleteState>() {
     private val handleSearch = fun(value: String) {
         setState {
             dataSource = if (value.isEmpty()) {

@@ -6,7 +6,7 @@ external interface AntdIconClass : ComponentClass<AntdIconProps> {
     var default: ComponentType<AntdIconProps>
 }
 
-external interface AntdIconProps : IconBaseProps, RProps {
+external interface AntdIconProps : IconBaseProps, Props {
     override var twoToneColor: TwoToneColor?
 }
 

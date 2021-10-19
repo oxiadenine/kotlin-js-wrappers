@@ -5,7 +5,7 @@ import kotlinx.css.marginTop
 import kotlinx.css.px
 import react.RBuilder
 import react.RComponent
-import react.RProps
+import react.Props
 import react.State
 import react.dom.h2
 import styled.StyleSheet
@@ -34,7 +34,7 @@ object AvatarStyles : StyleSheet("avatar", isStatic = true) {
     val responsive by css {}
 }
 
-class AvatarApp : RComponent<RProps, State>() {
+class AvatarApp : RComponent<Props, State>() {
     override fun RBuilder.render() {
         h2 { +"Avatar" }
         styledDiv {

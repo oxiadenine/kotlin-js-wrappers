@@ -14,7 +14,7 @@ external interface TextareaResizeDemoState : State {
     var autoResize: Boolean
 }
 
-class TextareaResizeDemo : RComponent<RProps, TextareaResizeDemoState>() {
+class TextareaResizeDemo : RComponent<Props, TextareaResizeDemoState>() {
     override fun RBuilder.render() {
         div {
             button {

@@ -5,4 +5,4 @@ import react.*
 
 external interface YearPickerComponent : ComponentType<YearPickerProps>
 
-external interface YearPickerProps : PickerDateProps<Moment>, RProps
+external interface YearPickerProps : PickerDateProps<Moment>, Props

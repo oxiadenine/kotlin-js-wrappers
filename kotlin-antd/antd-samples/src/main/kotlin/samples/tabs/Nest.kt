@@ -22,7 +22,7 @@ external interface NestDemoState : State {
     var childType: String?
 }
 
-class NestDemo : RComponent<RProps, NestDemoState>() {
+class NestDemo : RComponent<Props, NestDemoState>() {
     override fun NestDemoState.init() {
         parentPos = undefined
         childPos = undefined

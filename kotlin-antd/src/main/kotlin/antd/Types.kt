@@ -8,7 +8,7 @@ typealias ReactNode = Any /* ReactChild | ReactFragment | ReactPortal | Boolean 
 typealias RefCallback<T> = (instance: T?) -> Unit
 typealias Ref<T> = Any /* RefCallback<T> | RefObject<T> */
 typealias LegacyRef<T> = Any /* String | Ref<T> */
-typealias ReactInstance = Any /* Component<RProps, State> | Element */
+typealias ReactInstance = Any /* Component<Props, State> | Element */
 
 external interface ReactNodeArray
 

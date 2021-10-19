@@ -16,7 +16,7 @@ external object CheckboxComponent : Component<CheckboxProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface CheckboxProps : AbstractCheckboxProps<CheckboxChangeEvent>, RefAttributes<HTMLInputElement>, RProps {
+external interface CheckboxProps : AbstractCheckboxProps<CheckboxChangeEvent>, RefAttributes<HTMLInputElement>, Props {
     var indeterminate: Boolean?
 }
 

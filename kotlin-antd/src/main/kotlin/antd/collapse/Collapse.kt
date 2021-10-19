@@ -13,7 +13,7 @@ external object CollapseComponent : Component<CollapseProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface CollapseProps : RProps {
+external interface CollapseProps : Props {
     var activeKey: Any? /* Array<String | Number> | String | Number */
     var defaultActiveKey: Any? /* Array<String | Number> | String | Number */
     var accordion: Boolean?

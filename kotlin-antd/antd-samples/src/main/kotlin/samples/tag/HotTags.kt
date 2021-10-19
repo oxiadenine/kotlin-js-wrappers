@@ -17,7 +17,7 @@ external interface HotTagsAppState : State {
     var selectedTags: Array<String>
 }
 
-class HotTagsApp : RComponent<RProps, HotTagsAppState>() {
+class HotTagsApp : RComponent<Props, HotTagsAppState>() {
     private val handleChange = fun(tag: String, checked: Boolean) {
         val nextSelectedTags = if (checked) {
             state.selectedTags.plus(tag)

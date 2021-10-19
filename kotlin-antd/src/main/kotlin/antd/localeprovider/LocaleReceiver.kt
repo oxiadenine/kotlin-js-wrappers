@@ -7,7 +7,7 @@ external object LocaleReceiverComponent : Component<LocaleReceiverProps, State> 
     override fun render(): ReactElement?
 }
 
-external interface LocaleReceiverProps : RProps {
+external interface LocaleReceiverProps : Props {
     var componentName: String?
     var defaultLocale: Any? /* Object | Function<Any> */
     var children: (locale: dynamic, localeCode: String?, fullLocale: dynamic) -> ReactNode

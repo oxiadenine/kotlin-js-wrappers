@@ -14,7 +14,7 @@ external interface BasicRightAppState : State {
     var visible: Boolean
 }
 
-class BasicRightApp : RComponent<RProps, BasicRightAppState>() {
+class BasicRightApp : RComponent<Props, BasicRightAppState>() {
     private val showDrawer: MouseEventHandler<Any> = {
         setState {
             visible = true

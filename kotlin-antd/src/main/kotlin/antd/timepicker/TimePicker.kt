@@ -19,12 +19,12 @@ external object TimePickerComponent : Component<TimePickerProps, State> {
 
 external interface RangePickerComponent : ComponentType<RangeTimePickerProps>
 
-external interface TimePickerProps : PickerTimeProps<Moment>, RefAttributes<Any>, RProps {
+external interface TimePickerProps : PickerTimeProps<Moment>, RefAttributes<Any>, Props {
     var addon: () -> ReactNode
     var popupClassName: String?
 }
 
-external interface RangeTimePickerProps : RangePickerTimeProps<Moment>, RefAttributes<Any>, RProps
+external interface RangeTimePickerProps : RangePickerTimeProps<Moment>, RefAttributes<Any>, Props
 
 external interface TimePickerLocale {
     var placeholder: String?

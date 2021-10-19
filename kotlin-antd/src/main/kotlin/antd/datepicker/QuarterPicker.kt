@@ -5,4 +5,4 @@ import react.*
 
 external interface QuarterPickerComponent : ComponentType<QuarterPickerProps>
 
-external interface QuarterPickerProps : PickerTimeProps<Moment>, RProps
+external interface QuarterPickerProps : PickerTimeProps<Moment>, Props

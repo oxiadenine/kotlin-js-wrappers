@@ -2,7 +2,7 @@ package samples.divider
 
 import react.RBuilder
 import react.RComponent
-import react.RProps
+import react.Props
 import react.State
 import react.dom.h2
 import styled.StyleSheet
@@ -18,7 +18,7 @@ object DividerStyles : StyleSheet("divider", isStatic = true) {
     val plain by css {}
 }
 
-class DividerApp : RComponent<RProps, State>() {
+class DividerApp : RComponent<Props, State>() {
     override fun RBuilder.render() {
         h2 { +"Divider" }
         styledDiv {

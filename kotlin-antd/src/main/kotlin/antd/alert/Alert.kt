@@ -15,7 +15,7 @@ external object AlertComponent : Component<AlertProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface AlertProps : RProps {
+external interface AlertProps : Props {
     var type: String? /* "success" | "info" | "warning" | "error" */
     var closable: Boolean?
     var closeText: ReactNode?

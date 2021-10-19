@@ -25,7 +25,7 @@ external interface PicturesWallState : State {
     var fileList: Array<UploadFile<Any>>
 }
 
-class PicturesWall : RComponent<RProps, PicturesWallState>() {
+class PicturesWall : RComponent<Props, PicturesWallState>() {
     private val handleCancel = fun(_: MouseEvent<HTMLElement>) {
         setState {
             previewVisible = false

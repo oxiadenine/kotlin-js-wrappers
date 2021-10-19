@@ -25,7 +25,7 @@ private val config = jsObject<ModalFuncProps> {
     }
 }
 
-private val app = fc<RProps> {
+private val app = fc<Props> {
     val useModal = ModalComponent.useModal()
 
     val modal = useModal[0].unsafeCast<ModalStaticFunctions>()

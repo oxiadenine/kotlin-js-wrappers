@@ -43,7 +43,7 @@ external interface AvatarAppState : State {
     var loading: Boolean
 }
 
-class AvatarApp : RComponent<RProps, AvatarAppState>() {
+class AvatarApp : RComponent<Props, AvatarAppState>() {
     private val handleChange = fun(info: UploadChangeParam<UploadFile<Any>>) {
         if (info.file.status == "uploading") {
             setState {

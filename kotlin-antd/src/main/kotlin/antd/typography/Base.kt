@@ -9,7 +9,7 @@ external object BaseComponent : Component<BaseProps, BaseState> {
     override fun render(): ReactElement?
 }
 
-external interface BaseProps : InternalBlockProps, RProps
+external interface BaseProps : InternalBlockProps, Props
 
 external interface BaseState : State {
     var edit: Boolean
@@ -21,7 +21,7 @@ external interface BaseState : State {
     var clientRendered: Boolean
 }
 
-external interface InternalBlockProps : BlockProps, RProps {
+external interface InternalBlockProps : BlockProps, Props {
     var component: String
 }
 

@@ -26,7 +26,7 @@ private external interface DemoState : State {
     var avatarShape: String
 }
 
-private class Demo : RComponent<RProps, DemoState>() {
+private class Demo : RComponent<Props, DemoState>() {
     val handleActiveChange = { checked: Boolean, _: MouseEvent ->
         setState { active = checked }
     }

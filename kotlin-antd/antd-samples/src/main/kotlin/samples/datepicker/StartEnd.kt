@@ -14,7 +14,7 @@ external interface DateRangeState : State {
     var endOpen: Boolean
 }
 
-class DateRange : RComponent<RProps, DateRangeState>() {
+class DateRange : RComponent<Props, DateRangeState>() {
     private val handleDisabledStartDate = fun(current: Moment?): Boolean {
         val endValue = state.endValue
 

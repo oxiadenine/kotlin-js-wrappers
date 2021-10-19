@@ -12,7 +12,7 @@ external object ImageComponent : Component<ImageProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface ImageProps : RcImageProps, RProps
+external interface ImageProps : RcImageProps, Props
 
 external interface RcImageProps : ImgHTMLAttributes<HTMLImageElement> {
     override var src: String?

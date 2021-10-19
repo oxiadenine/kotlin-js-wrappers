@@ -10,7 +10,7 @@ import react.dom.div
 import styled.css
 import styled.styledDiv
 
-external interface IconSliderDemoProps : RProps {
+external interface IconSliderDemoProps : Props {
     var min: Number
     var max: Number
 }

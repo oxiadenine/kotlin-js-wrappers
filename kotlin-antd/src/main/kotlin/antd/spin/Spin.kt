@@ -10,7 +10,7 @@ external object SpinComponent : Component<SpinProps, SpinState> {
     override fun render(): ReactElement?
 }
 
-external interface SpinProps : RProps {
+external interface SpinProps : Props {
     var prefixCls: String?
     var className: String?
     var spinning: Boolean?

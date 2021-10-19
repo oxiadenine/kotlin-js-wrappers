@@ -9,7 +9,7 @@ import react.dom.p
 import styled.css
 import styled.styledDiv
 
-external interface DemoBoxProps : RProps {
+external interface DemoBoxProps : PropsWithChildren {
     var value: Number
 }
 
@@ -17,7 +17,7 @@ class DemoBoxComponent : RComponent<DemoBoxProps, State>() {
     override fun RBuilder.render() {
         p {
             attrs.classes = setOf("height-${props.value}")
-            childList.add(props.children)
+            childList.add(props.children.unsafeCast<ReactNode>())
         }
     }
 }

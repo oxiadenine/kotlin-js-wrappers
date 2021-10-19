@@ -4,7 +4,7 @@ import kotlinx.css.*
 import kotlinx.css.properties.LineHeight
 import react.RBuilder
 import react.RComponent
-import react.RProps
+import react.Props
 import react.State
 import react.dom.h2
 import styled.StyleSheet
@@ -32,7 +32,7 @@ object CarouselStyles : StyleSheet("carousel", isStatic = true) {
     val fade by css {}
 }
 
-class CarouselApp : RComponent<RProps, State>() {
+class CarouselApp : RComponent<Props, State>() {
     override fun RBuilder.render() {
         h2 { +"Carousel" }
         styledDiv {

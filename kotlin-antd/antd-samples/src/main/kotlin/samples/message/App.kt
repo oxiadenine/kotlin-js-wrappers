@@ -2,7 +2,7 @@ package samples.message
 
 import react.RBuilder
 import react.RComponent
-import react.RProps
+import react.Props
 import react.State
 import react.dom.h2
 import styled.StyleSheet
@@ -19,7 +19,7 @@ object MessageStyles : StyleSheet("message", isStatic = true) {
     val hooks by css {}
 }
 
-class MessageApp : RComponent<RProps, State>() {
+class MessageApp : RComponent<Props, State>() {
     override fun RBuilder.render() {
         h2 { +"Message" }
         styledDiv {

@@ -8,7 +8,7 @@ import antd.input.password
 import kotlinext.js.js
 import kotlinext.js.jsObject
 import react.RBuilder
-import react.RProps
+import react.Props
 import react.child
 import react.fc
 import styled.css
@@ -26,7 +26,7 @@ private val tailLayout = jsObject<FormItemProps<Any>> {
     }
 }
 
-private val demo = fc<RProps> {
+private val demo = fc<Props> {
     val handleFinish = { values: Any ->
         console.log("Success:", values)
     }

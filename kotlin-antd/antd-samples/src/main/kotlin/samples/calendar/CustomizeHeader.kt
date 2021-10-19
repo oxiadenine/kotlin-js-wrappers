@@ -14,6 +14,7 @@ import kotlinx.css.properties.border
 import moment.Moment
 import react.RBuilder
 import react.ReactElement
+import react.ReactNode
 import react.buildElement
 import react.dom.div
 import react.dom.span
@@ -121,7 +122,7 @@ fun RBuilder.customizeHeader() {
                                                 }
                                                 value = year
                                             }
-                                            childList.add(options.toTypedArray())
+                                            childList.add(options.toTypedArray().unsafeCast<ReactNode>())
                                         }
                                     }
                                     col {
@@ -137,7 +138,7 @@ fun RBuilder.customizeHeader() {
                                                     headerRender.onChange.invoke(newValue)
                                                 }
                                             }
-                                            childList.add(monthOptions.toTypedArray())
+                                            childList.add(monthOptions.toTypedArray().unsafeCast<ReactNode>())
                                         }
                                     }
                                 }

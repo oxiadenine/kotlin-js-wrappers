@@ -2,7 +2,7 @@ package samples.datepicker
 
 import react.RBuilder
 import react.RComponent
-import react.RProps
+import react.Props
 import react.State
 import react.dom.h2
 import styled.StyleSheet
@@ -25,7 +25,7 @@ object DatePickerStyles : StyleSheet("date-picker", isStatic = true) {
     val suffix by css {}
 }
 
-class DatePickerApp : RComponent<RProps, State>() {
+class DatePickerApp : RComponent<Props, State>() {
     override fun RBuilder.render() {
         h2 { +"DatePicker" }
         styledDiv {

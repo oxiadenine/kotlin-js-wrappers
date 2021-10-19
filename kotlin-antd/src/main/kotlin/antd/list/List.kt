@@ -18,7 +18,7 @@ external class ListComponent<T> : Component<ListProps<T>, State> {
 external val listContext: Context<ListConsumerProps>
 external val listConsumer: Consumer<ListConsumerProps>
 
-external interface ListProps<T> : RProps {
+external interface ListProps<T> : Props {
     var bordered: Boolean?
     var className: String?
     var style: dynamic
