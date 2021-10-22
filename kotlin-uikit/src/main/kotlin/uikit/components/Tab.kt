@@ -3,7 +3,7 @@ package uikit.components
 import uikit.*
 
 external interface TabComponent : Component {
-    fun show(index: Any /* String | Int | Element */ = definedExternally)
+    fun show(index: Any? /* String | Int | Element */ = definedExternally)
 }
 
 external interface TabOptions {

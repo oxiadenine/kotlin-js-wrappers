@@ -3,12 +3,13 @@ package uikit.components
 import uikit.*
 
 external interface SwitcherComponent : Component {
-    fun show(index: Any /* String | Int | Element */ = definedExternally)
+    fun show(index: Any? /* String | Int | Element */ = definedExternally)
 }
 
 external interface SwitcherOptions {
     var connect: String?
     var toggle: String?
+    var itemNav: String?
     var active: Number?
     var animation: String?
     var duration: Number?

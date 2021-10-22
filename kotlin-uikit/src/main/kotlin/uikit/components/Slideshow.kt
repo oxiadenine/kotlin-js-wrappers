@@ -3,7 +3,7 @@ package uikit.components
 import uikit.*
 
 external interface SlideshowComponent : Component {
-    fun show(index: Number = definedExternally)
+    fun show(index: Number? = definedExternally)
     fun startAutoplay()
     fun stopAutoplay()
 }

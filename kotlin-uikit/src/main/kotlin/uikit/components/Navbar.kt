@@ -9,7 +9,7 @@ external interface NavbarOptions {
     var mode: String?
     var delayShow: Number?
     var delayHide: Number?
-    var boundary: String?
+    var boundary: Any? /* Boolean | String */
     var boundaryAlign: Boolean?
     var offset: Number?
     var dropbar: Boolean?

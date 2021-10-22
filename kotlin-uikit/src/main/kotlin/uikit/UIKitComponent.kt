@@ -9,58 +9,55 @@ external interface UIKitComponent {
     val modal: Modal
     val notification: Notification
 
-    fun accordion(element: dynamic, data: AccordionOptions? = definedExternally): AccordionComponent
-    fun alert(element: dynamic, data: AlertOptions? = definedExternally): AlertComponent
-    fun close(element: dynamic, data: CloseOptions? = definedExternally): CloseComponent
-    fun countdown(element: dynamic, data: CountdownOptions? = definedExternally): CountdownComponent
-    fun cover(element: dynamic, data: CoverOptions? = definedExternally): CoverComponent
-    fun drop(element: dynamic, data: DropOptions? = definedExternally): DropComponent
-    fun dropdown(element: dynamic, data: DropdownOptions? = definedExternally): DropdownComponent
-    fun filter(element: dynamic, data: FilterOptions? = definedExternally): FilterComponent
-    fun formCustom(element: dynamic, data: FormOptions? = definedExternally): FormComponent
-    fun gif(element: dynamic, data: GifOptions? = definedExternally): GifComponent
-    fun grid(element: dynamic, data: GridOptions? = definedExternally): GridComponent
-    fun heightMatch(element: dynamic, data: HeightOptions? = definedExternally): HeightComponent
-    fun heightViewport(element: dynamic, data: HeightOptions? = definedExternally): HeightOptions
-    fun icon(element: dynamic, data: IconOptions? = definedExternally): IconComponent
-    fun img(element: dynamic, data: ImageOptions? = definedExternally): ImageComponent
-    fun leader(element: dynamic, data: LeaderOptions? = definedExternally): LeaderComponent
-    fun lightbox(element: dynamic, data: LightboxOptions? = definedExternally): LightboxComponent
-    fun lightboxPanel(element: dynamic, data: LightboxOptions? = definedExternally): LightboxComponent
-    fun margin(element: dynamic, data: MarginOptions? = definedExternally): MarginComponent
-    fun marker(element: dynamic, data: MarkerOptions? = definedExternally): MarkerComponent
-    fun modal(element: dynamic, data: ModalOptions? = definedExternally): ModalComponent
-    fun nav(element: dynamic, data: NavOptions? = definedExternally): NavComponent
-    fun navbar(element: dynamic, data: NavbarOptions? = definedExternally): NavbarComponent
-    fun notification(element: dynamic = definedExternally, data: NotificationOptions? = definedExternally): NotificationComponent
-    fun notification(message: String, status: String? = definedExternally, options: NotificationOptions? = definedExternally): NotificationComponent
-    fun offcanvas(element: dynamic, data: OffcanvasOptions? = definedExternally): OffcanvasComponent
-    fun overflowAuto(element: dynamic, data: OverflowOptions? = definedExternally): OverflowComponent
-    fun overlayIcon(element: dynamic, data: OverlayOptions? = definedExternally): OverlayComponent
-    fun paginationNext(element: dynamic, data: PaginationOptions? = definedExternally): PaginationComponent
-    fun paginationPrevious(element: dynamic, data: PaginationOptions? = definedExternally): PaginationComponent
-    fun parallax(element: dynamic, data: ParallaxOptions? = definedExternally): ParallaxComponent
-    fun scroll(element: dynamic, data: ScrollOptions? = definedExternally): ScrollComponent
-    fun scrollspy(element: dynamic, data: ScrollspyOptions? = definedExternally): ScrollspyComponent
-    fun scrollspyNav(element: dynamic, data: ScrollspyNavOptions? = definedExternally): ScrollspyNavElement
-    fun searchIcon(element: dynamic, data: SearchOptions? = definedExternally): SearchComponent
-    fun slidenavNext(element: dynamic, data: SlidenavOptions? = definedExternally): SlidenavComponent
-    fun slidenavPrevious(element: dynamic, data: SlidenavOptions? = definedExternally): SlidenavComponent
-    fun slider(element: dynamic, data: SliderOptions? = definedExternally): SliderComponent
-    fun sliderParallax(element: dynamic, data: SliderOptions? = definedExternally): SliderComponent
-    fun slideshow(element: dynamic, data: SlideshowOptions? = definedExternally): SlideshowComponent
-    fun slideshowParallax(element: dynamic, data: SlideshowOptions? = definedExternally): SlideshowComponent
-    fun sortable(element: dynamic, data: SortableOptions? = definedExternally): SortableComponent
-    fun spinner(element: dynamic, data: SpinnerOptions? = definedExternally): SpinnerComponent
-    fun sticky(element: dynamic, data: StickyOptions? = definedExternally): StickyComponent
-    fun svg(element: dynamic, data: SvgOptions? = definedExternally): SvgComponent
-    fun switcher(element: dynamic, data: SwitcherOptions? = definedExternally): SwitcherComponent
-    fun tab(element: dynamic, data: TabOptions? = definedExternally): TabComponent
-    fun toggle(element: dynamic, data: ToggleOptions? = definedExternally): ToggleComponent
-    fun tooltip(element: dynamic, data: TooltipOptions? = definedExternally): TooltipComponent
-    fun totop(element: dynamic, data: TotopOptions? = definedExternally): TotopComponent
-    fun upload(element: dynamic, data: UploadOptions? = definedExternally): UploadComponent
-    fun video(element: dynamic, data: VideoOptions? = definedExternally): VideoComponent
+    fun accordion(element: UIkitElement, data: AccordionOptions? = definedExternally): AccordionComponent
+    fun alert(element: UIkitElement, data: AlertOptions? = definedExternally): AlertComponent
+    fun countdown(element: UIkitElement, data: CountdownOptions? = definedExternally): CountdownComponent
+    fun cover(element: UIkitElement, data: CoverOptions? = definedExternally): CoverComponent
+    fun drop(element: UIkitElement, data: DropOptions? = definedExternally): DropComponent
+    fun dropdown(element: UIkitElement, data: DropdownOptions? = definedExternally): DropdownComponent
+    fun filter(element: UIkitElement, data: FilterOptions? = definedExternally): FilterComponent
+    fun formCustom(element: UIkitElement, data: FormOptions? = definedExternally): FormComponent
+    fun grid(element: UIkitElement, data: GridOptions? = definedExternally): GridComponent
+    fun heightMatch(element: UIkitElement, data: HeightOptions? = definedExternally): HeightComponent
+    fun heightViewport(element: UIkitElement, data: HeightOptions? = definedExternally): HeightOptions
+    fun icon(element: UIkitElement, data: IconOptions? = definedExternally): IconComponent
+    fun img(element: UIkitElement, data: ImageOptions? = definedExternally): ImageComponent
+    fun leader(element: UIkitElement, data: LeaderOptions? = definedExternally): LeaderComponent
+    fun lightbox(element: UIkitElement, data: LightboxOptions? = definedExternally): LightboxComponent
+    fun lightboxPanel(element: UIkitElement, data: LightboxPanelOptions? = definedExternally): LightboxPanelComponent
+    fun margin(element: UIkitElement, data: MarginOptions? = definedExternally): MarginComponent
+    fun modal(element: UIkitElement, data: ModalOptions? = definedExternally): ModalComponent
+    fun nav(element: UIkitElement, data: NavOptions? = definedExternally): NavComponent
+    fun navbar(element: UIkitElement, data: NavbarOptions? = definedExternally): NavbarComponent
+    fun notification(
+        element: UIkitElement = definedExternally,
+        data: NotificationOptions? = definedExternally
+    ): NotificationComponent
+
+    fun notification(
+        message: String,
+        status: String? = definedExternally,
+        options: NotificationOptions? = definedExternally
+    ): NotificationComponent
+
+    fun offcanvas(element: UIkitElement, data: OffcanvasOptions? = definedExternally): OffcanvasComponent
+    fun parallax(element: UIkitElement, data: ParallaxOptions? = definedExternally): ParallaxComponent
+    fun scroll(element: UIkitElement, data: ScrollOptions? = definedExternally): ScrollComponent
+    fun scrollspy(element: UIkitElement, data: ScrollspyOptions? = definedExternally): ScrollspyComponent
+    fun scrollspyNav(element: UIkitElement, data: ScrollspyNavOptions? = definedExternally): ScrollspyNavElement
+    fun slider(element: UIkitElement, data: SliderOptions? = definedExternally): SliderComponent
+    fun sliderParallax(element: UIkitElement, data: SliderOptions? = definedExternally): SliderComponent
+    fun slideshow(element: UIkitElement, data: SlideshowOptions? = definedExternally): SlideshowComponent
+    fun slideshowParallax(element: UIkitElement, data: SlideshowOptions? = definedExternally): SlideshowComponent
+    fun sortable(element: UIkitElement, data: SortableOptions? = definedExternally): SortableComponent
+    fun sticky(element: UIkitElement, data: StickyOptions? = definedExternally): StickyComponent
+    fun svg(element: UIkitElement, data: SvgOptions? = definedExternally): SvgComponent
+    fun switcher(element: UIkitElement, data: SwitcherOptions? = definedExternally): SwitcherComponent
+    fun tab(element: UIkitElement, data: TabOptions? = definedExternally): TabComponent
+    fun toggle(element: UIkitElement, data: ToggleOptions? = definedExternally): ToggleComponent
+    fun tooltip(element: UIkitElement, data: TooltipOptions? = definedExternally): TooltipComponent
+    fun upload(element: UIkitElement, data: UploadOptions? = definedExternally): UploadComponent
+    fun video(element: UIkitElement, data: VideoOptions? = definedExternally): VideoComponent
 }
 
 external interface Component {

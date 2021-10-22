@@ -4,7 +4,7 @@ import uikit.*
 
 external interface DropdownComponent : Component {
     fun show()
-    fun hide(delay: Boolean = definedExternally)
+    fun hide(delay: Boolean? = definedExternally)
 }
 
 external interface DropdownOptions {

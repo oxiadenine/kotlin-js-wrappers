@@ -7,7 +7,7 @@ external interface Notification {
 }
 
 external interface NotificationComponent : Component {
-    fun close(immediate: Boolean = definedExternally)
+    fun close(immediate: Boolean? = definedExternally)
 }
 
 external interface NotificationOptions {

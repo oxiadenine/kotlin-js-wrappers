@@ -3,7 +3,7 @@ package uikit.components
 import uikit.*
 
 external interface AccordionComponent : Component {
-    fun toggle(index: Any = definedExternally /* String | Int | Element */, animate: Boolean = definedExternally)
+    fun toggle(index: Any? = definedExternally /* String | Int | Node */, animate: Boolean? = definedExternally)
 }
 
 external interface AccordionOptions {

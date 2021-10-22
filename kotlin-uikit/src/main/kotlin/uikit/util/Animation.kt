@@ -1,37 +1,50 @@
 package uikit.util
 
+import uikit.UIkitElement
 import kotlin.js.Promise
 
-external interface Transition {
-    var start: Transition
+external interface AnimationUtil {
+    val transition: Transition
+    val animation: Animation
 
-    fun stop(element: Any /* String | Array<String> | Element */): Promise<Unit>
-    fun cancel(element: Any /* String | Array<String> | Element */)
-    fun inProgress(element: Any /* String | Array<String> | Element */): Boolean
+    fun transition(
+        element: UIkitElement? = definedExternally,
+        props: dynamic = definedExternally,
+        duration: Number? = definedExternally,
+        timing: String? = definedExternally
+    ): Promise<Unit>
+
+    fun animate(
+        element: UIkitElement? = definedExternally,
+        animation: Animation? = definedExternally,
+        duration: Number? = definedExternally,
+        origin: dynamic = definedExternally,
+        out: dynamic = definedExternally
+    ): Promise<Unit>
+}
+
+
+external interface Transition {
+    var start: TransitionFun
+
+    fun stop(element: UIkitElement? = definedExternally): Promise<Unit>
+    fun cancel(element: UIkitElement? = definedExternally)
+    fun inProgress(element: UIkitElement? = definedExternally): Boolean
 }
 
 external interface Animation {
     var `in`: AnimateFun
 
     fun out(
-        element: Any /* String | Array<String> | Element */,
+        element: UIkitElement? = definedExternally,
         animation: Animation? = definedExternally,
         duration: Number? = definedExternally,
-        origin: dynamic = definedExternally): AnimateFun
+        origin: dynamic = definedExternally
+    ): AnimateFun
 
-    fun inProgress(element: Any /* String | Array<String> | Element */): Boolean
-    fun cancel(element: Any /* String | Array<String> | Element */)
+    fun inProgress(element: UIkitElement? = definedExternally): Boolean
+    fun cancel(element: UIkitElement? = definedExternally)
 }
 
-typealias TransitionFun = (
-    element: Any /* String | Array<String> | Element */,
-    props: dynamic,
-    duration: Number?,
-    timing: String?) -> Promise<Unit>
-
-typealias AnimateFun = (
-    element: Any /* String | Array<String> | Element */,
-    animation: Animation?,
-    duration: Number?,
-    origin: dynamic,
-    out: dynamic) -> Promise<Unit>
+typealias TransitionFun = (element: UIkitElement?, props: dynamic, duration: Number?, timing: String?) -> Promise<Unit>
+typealias AnimateFun = (element: UIkitElement?, animation: Animation?, duration: Number?, origin: dynamic, out: dynamic) -> Promise<Unit>

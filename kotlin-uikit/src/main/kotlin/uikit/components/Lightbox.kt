@@ -3,13 +3,28 @@ package uikit.components
 import uikit.*
 
 external interface LightboxComponent : Component {
-    fun show(index: Any /* String | Int */)
+    fun show(index: Any? /* String | Int */ = definedExternally)
+    fun hide()
+}
+
+external interface LightboxPanelComponent : Component {
+    fun show(index: Any? /* String | Int */ = definedExternally)
     fun hide()
     fun startAutoplay()
     fun stopAutoplay()
 }
 
 external interface LightboxOptions {
+    var animation: String?
+    var autoplay: Boolean?
+    var autoplayInterval: Number?
+    var pauseOnHover: Boolean?
+    var videoAutoplay: Boolean?
+    var index: Any? /* String | Integer */
+    var toggle: String?
+}
+
+external interface LightboxPanelOptions {
     var animation: String?
     var autoplay: Boolean?
     var autoplayInterval: Number?
@@ -24,7 +39,7 @@ external interface LightboxOptions {
     var container: String?
 }
 
-object LightboxEvents {
+object LightboxPanelEvents {
     const val beforeShow = "beforeshow"
     const val show = "show"
     const val shown = "shown"
