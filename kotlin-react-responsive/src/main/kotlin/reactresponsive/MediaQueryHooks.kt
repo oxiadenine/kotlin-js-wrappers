@@ -7,7 +7,8 @@ package reactresponsive
 external fun useMediaQuery(
     settings: MediaQuerySettings,
     device: MediaQueryMatchers? = definedExternally,
-    callback: ((matches: Boolean) -> Unit)? = definedExternally): Boolean
+    callback: ((matches: Boolean) -> Unit)? = definedExternally
+): Boolean
 
 external interface MediaQuerySettings : MediaQueryAllQueryable {
     var query: String?

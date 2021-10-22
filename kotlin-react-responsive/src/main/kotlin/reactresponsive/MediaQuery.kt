@@ -15,7 +15,7 @@ external interface MediaQueryProps : MediaQueryAllQueryable, Props {
     var query: String?
     var style: dynamic
     var className: String?
-    var children: Any? /* ReactElement | MediaQueryChildrenFn */
+    var children: Any? /* ReactNode | (matches: Boolean) -> ReactNode */
     var device: MediaQueryMatchers?
     var values: MediaQueryMatchers?
     var onBeforeChange: ((matches: Boolean) -> Unit)?
@@ -25,7 +25,7 @@ external interface MediaQueryProps : MediaQueryAllQueryable, Props {
 @JsName("toQuery")
 external fun toQuery(matchers: MediaQueryAllQueryable): String
 
-@JsName("context")
+@JsName("Context")
 external val context: Context<MediaQueryAllQueryable>
 
 external interface MediaQueryTypes {
@@ -61,31 +61,22 @@ external interface MediaQueryMatchers {
 external interface MediaQueryFeatures : MediaQueryMatchers {
     var minAspectRatio: String?
     var maxAspectRatio: String?
-
     var minDeviceAspectRatio: String?
     var maxDeviceAspectRatio: String?
-
     var minHeight: Any? /* Number | String */
     var maxHeight: Any? /* Number | String */
-
     var minDeviceHeight: Any? /* Number | String */
     var maxDeviceHeight: Any? /* Number | String */
-
     var minWidth: Any? /* Number | String */
     var maxWidth: Any? /* Number | String */
-
     var minDeviceWidth: Any? /* Number | String */
     var maxDeviceWidth: Any? /* Number | String */
-
     var minColor: Number?
     var maxColor: Number?
-
     var minColorIndex: Number?
     var maxColorIndex: Number?
-
     var minMonochrome: Number?
     var maxMonochrome: Number?
-
     var minResolution: Any? /* Number | String */
     var maxResolution: Any? /* Number | String */
 }

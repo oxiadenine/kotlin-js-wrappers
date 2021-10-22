@@ -3,8 +3,6 @@ package samples
 import kotlinx.css.*
 import react.*
 import react.dom.*
-import samples.sandbox.*
-import samples.static.*
 import styled.*
 
 object AppStyles : StyleSheet("app", isStatic = true) {
@@ -34,8 +32,6 @@ class App : RComponent<Props, State>() {
             css { +AppStyles.content }
             withHooks()
             withComponents()
-            static()
-            sandbox()
         }
     }
 }
