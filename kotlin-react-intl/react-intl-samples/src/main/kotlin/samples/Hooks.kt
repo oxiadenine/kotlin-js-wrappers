@@ -3,8 +3,8 @@ package samples
 import kotlinext.js.*
 import react.*
 import react.dom.*
-import reactintl.*
-import reactintl.provider.*
+import reactintl.components.provider.intlProvider
+import reactintl.components.useIntl
 import kotlin.js.Date
 import kotlin.random.*
 

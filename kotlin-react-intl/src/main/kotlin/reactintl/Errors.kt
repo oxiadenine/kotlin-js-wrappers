@@ -8,4 +8,4 @@ enum class IntlErrorCode {
     MISSING_TRANSLATION
 }
 
-open class IntlError(val code: IntlErrorCode, message: String?, cause: Throwable?) : Error(message, cause)
+open class IntlError(val code: IntlErrorCode, message: String, exception: Error?) : Error(message, exception)

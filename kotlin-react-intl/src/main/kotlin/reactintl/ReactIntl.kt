@@ -3,82 +3,59 @@
 
 package reactintl
 
+import kotlinext.js.Record
 import react.*
+import reactintl.components.datetime.DateTimeFormat
+import reactintl.components.displayname.DisplayNames
+import reactintl.components.list.ListFormat
+import reactintl.components.message.MessageFormat
+import reactintl.components.number.IntlNumber
+import reactintl.components.plural.IntlPlural
+import reactintl.components.relativetime.IntlRelativeTime
 
 @JsName("defineMessages")
-external fun <K, T, U> defineMessages(msgs: U): U
+external fun <K, T : MessageDescriptor, U> defineMessages(msgs: U): U
 
 @JsName("defineMessage")
-external fun <T> defineMessage(msg: T): T
+external fun <T : MessageDescriptor> defineMessage(msg: T): T
 
-@JsName("RawIntlProvider")
-external val rawIntlProvider: Provider<IntlShape>
-
-@JsName("IntlContext")
-external val intlContext: Context<IntlShape>
-
-@JsName("injectIntl")
-external fun <IntlPropName, P : WrappedComponentProps<IntlPropName>> injectIntl(
-    wrappedComponent: Any /* JsClass<Component<P, State>> */,
-    options: Opts<IntlPropName, Boolean>? = definedExternally
-): ComponentType<WithIntlProps<P>>
-
-@JsName("useIntl")
-external fun useIntl(): IntlShape
-
-@JsName("createIntlCache")
-external fun createIntlCache(): IntlCache
-
-@JsName("createIntl")
-external fun createIntl(config: OptionalIntlConfig, cache: IntlCache? = definedExternally): IntlShape
-
-external interface Opts<IntlPropName, ForwardRef> {
-    var intlPropName: IntlPropName?
-    var forwardRef: ForwardRef?
-    var enforceContext: Boolean?
-}
-
-external interface WrappedComponentProps<IntlPropName> : Props
-
-external interface WithIntlProps<P> : Props {
-    var forwardedRef: MutableRefObject<Any>?
-}
-
-external interface IntlShape : IntlConfig, IntlFormatters {
+external interface IntlShape : ResolvedIntlConfig, IntlFormatters<Any /* String, ReactNode */> {
     var formatters: Formatters
 }
 
 external interface IntlCache {
-    var dateTime: Any
-    var number: Any
-    var message: Any
-    var relativeTime: Any
-    var pluralRules: Any
+    var dateTime: Record<String, DateTimeFormat>
+    var number: Record<String, IntlNumber.NumberFormat>
+    var message: Record<String, MessageFormat>
+    var relativeTime: Record<String, IntlRelativeTime.RelativeTimeFormat>
+    var pluralRules: Record<String, IntlPlural.PluralRules>
+    var list: Record<String, ListFormat>
+    var displayNames: Record<String, DisplayNames>
 }
 
-external interface IntlConfig : CoreIntlConfig<ReactElement> {
-    var textComponent: Any?
+external interface ResolvedIntlConfig : CoreResolvedIntlConfig<Any /* String | ReactNode */> {
+    var textComponent: ComponentType<Props>
     var wrapRichTextChunksInFragment: Boolean?
 }
 
-external interface CoreIntlConfig<T> {
+external interface CoreResolvedIntlConfig<T> {
     var locale: String
     var timeZone: String?
     var formats: CustomFormats
-    var messages: Any
+    var messages: Any /* Record<String, String> | Record<String, Array<MessageFormatElement>> */
     var defaultLocale: String
     var defaultFormats: CustomFormats
-    var defaultRichTextElements: Any?
-    var onError: (error: IntlError) -> Unit
+    var defaultRichTextElements: Record<String, FormatXMLElementFn<T, T>>?
+    var onError: OnErrorFn
 }
 
-external interface CustomFormats {
-    var relative: Any
+external interface MessageDescriptor {
+    var id: Any? /* String | Number */
+    var description: Any? /* String | object */
+    var defaultMessage: Any? /* String | Array<MessageFormatElement> */
 }
 
-external interface CustomFormatConfig {
-    var format: String?
-}
+external interface IntlConfig : ResolvedIntlConfig
 
 external interface Location {
     var start: LocationDetails
@@ -92,8 +69,8 @@ external interface LocationDetails {
 }
 
 external interface LocaleData<T> {
-    var data: Any
-    var availableLocales: Array<String>
+    var data: T
+    var locale: Locale
 }
 
 external interface LocaleFieldsData {

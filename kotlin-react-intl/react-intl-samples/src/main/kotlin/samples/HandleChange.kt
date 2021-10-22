@@ -7,8 +7,10 @@ import kotlinx.html.js.*
 import react.*
 import react.dom.*
 import reactintl.*
+import reactintl.components.provider.createIntl
+import reactintl.components.rawIntlProvider
 
-private val intlMessages = run {
+private val appMessages = run {
     val messages = js {}
 
     messages["en-US"] = js { selectlanguage = "Select a language" }
@@ -23,7 +25,7 @@ private val cache = createIntlCache()
 
 var intl = createIntl(jsObject {
     locale = initialLocale
-    messages = intlMessages.asDynamic()[initialLocale].unsafeCast<Any>()
+    messages = appMessages.asDynamic()[initialLocale].unsafeCast<Any>()
 }, cache)
 
 private val app = fc<Props> {
@@ -32,7 +34,7 @@ private val app = fc<Props> {
     val changeLanguage = fun(newLocale: String) {
         intl = createIntl(jsObject {
             locale = newLocale
-            messages = intlMessages.asDynamic()[newLocale].unsafeCast<Any>()
+            messages = appMessages.asDynamic()[newLocale].unsafeCast<Any>()
         }, cache)
 
         document.documentElement.asDynamic()["lang"] = newLocale
@@ -52,7 +54,7 @@ private val app = fc<Props> {
                     changeLanguage(it.target.asDynamic().value as String)
                 }
             }
-            Object.keys(intlMessages).map { locale ->
+            Object.keys(appMessages).map { locale ->
                 option {
                     attrs {
                         key = locale

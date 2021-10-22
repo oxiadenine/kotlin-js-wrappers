@@ -3,12 +3,12 @@ package samples
 import kotlinext.js.*
 import react.*
 import react.dom.*
-import reactintl.message.*
-import reactintl.provider.*
+import reactintl.components.message.formattedMessage
+import reactintl.components.provider.intlProvider
 import kotlin.js.Date
 import kotlin.random.*
 
-private val providerMessages = js {
+private val appMessages = js {
     simple = "Hello world"
     placeholder = "Hello {name}"
     date = "Hello {ts, date}"
@@ -31,7 +31,7 @@ private val app = fc<Props> {
     intlProvider {
         attrs {
             locale = "en"
-            messages = providerMessages
+            messages = appMessages
         }
         p {
             formattedMessage { attrs.id = "simple" }
@@ -130,7 +130,7 @@ private val app = fc<Props> {
                                 strong { +chunks }
                             }
                         }
-                    }.unsafeCast<Any>()
+                    }
                 }
             }
             br {}
@@ -144,7 +144,7 @@ private val app = fc<Props> {
                                 strong { +chunks }
                             }
                         }
-                    }.unsafeCast<Any>()
+                    }
                 }
             }
             br {}

@@ -4,7 +4,10 @@ import kotlinext.js.*
 import react.*
 import react.dom.*
 import reactintl.*
-import reactintl.provider.*
+import reactintl.components.WrappedComponentProps
+import reactintl.components.injectIntl
+import reactintl.components.provider.intlProvider
+import reactintl.components.useIntl
 import kotlin.js.Date
 
 private val comp = fc<Props> {
@@ -17,15 +20,13 @@ external interface Comp2Props : WrappedComponentProps<Any> {
     var intl: IntlShape
 }
 
-private class Comp2 : RComponent<Comp2Props, State>() {
-    override fun RBuilder.render() {
-        h1 { +props.intl.formatDate(Date.now(), jsObject { month = "long" }) }
-        h2 { +props.intl.formatTime(undefined) }
-    }
+private val comp2 = fc<Comp2Props> { props ->
+    h1 { +props.intl.formatDate(Date.now(), jsObject { month = "long" }) }
+    h2 { +props.intl.formatTime(Date()) }
 }
 
 fun RBuilder.comp2WithIntl(handler: RHandler<Comp2Props>) =
-    child(injectIntl<Any, Comp2Props>(Comp2::class.js), jsObject {}, handler)
+    child(injectIntl<Any, Comp2Props>(comp2), jsObject {}, handler)
 
 private val app = fc<Props> {
     intlProvider {

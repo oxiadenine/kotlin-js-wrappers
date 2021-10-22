@@ -36,6 +36,7 @@ class App : RComponent<Props, State>() {
             hooks()
             handleChange()
             advanced()
+            bug272()
         }
     }
 }

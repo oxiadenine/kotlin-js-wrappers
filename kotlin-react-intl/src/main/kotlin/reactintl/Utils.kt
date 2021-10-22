@@ -3,9 +3,11 @@
 
 package reactintl
 
-import react.*
-
-external val DEFAULT_INTL_CONFIG: IntlConfig
-
-external fun invariantIntlContext(intl: Any? = definedExternally): Boolean
-external fun assignUniqueKeysToParts(formatXMLElementFn: FormatXMLElementFn<ReactElement, Any>): FormatXMLElementFn<ReactElement, Any>
+external fun createIntlCache(): IntlCache
+external fun createFormatters(cache: IntlCache?): Formatters
+external fun <T> getNamedFormat(
+    formats: CustomFormats,
+    type: T,
+    name: String,
+    onError: OnErrorFn
+): Any? /* IntlNumber.NumberFormatOptions | IntlDateTime.DateTimeFormatOptions | IntlRelativeTime.RelativeTimeFormatOptions */

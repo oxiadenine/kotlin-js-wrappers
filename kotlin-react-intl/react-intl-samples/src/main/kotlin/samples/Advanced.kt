@@ -5,8 +5,8 @@ import kotlinx.css.fontSize
 import kotlinx.css.px
 import react.*
 import react.dom.*
-import reactintl.message.*
-import reactintl.provider.*
+import reactintl.components.message.formattedMessage
+import reactintl.components.provider.intlProvider
 import styled.css
 import styled.styledSpan
 import kotlin.js.Date

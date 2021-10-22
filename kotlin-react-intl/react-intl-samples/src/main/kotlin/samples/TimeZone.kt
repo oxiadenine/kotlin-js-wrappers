@@ -2,8 +2,11 @@ package samples
 
 import react.*
 import react.dom.*
-import reactintl.datetime.*
-import reactintl.provider.*
+import reactintl.components.datetime.IntlDateTime
+import reactintl.components.datetime.formattedDate
+import reactintl.components.datetime.formattedDateParts
+import reactintl.components.datetime.formattedTime
+import reactintl.components.provider.intlProvider
 import kotlin.js.*
 
 external interface TimeZoneProps : Props {
@@ -34,7 +37,7 @@ private val app = fc<TimeZoneProps> { props ->
                     month = "long"
                     day = "2-digit"
                 }
-                childList += fun(parts: Array<IntlDateTimeFormatPart>): ReactElement {
+                childList += fun(parts: Array<IntlDateTime.DateTimeFormatPart>): ReactElement {
                     return buildElement {
                         span {
                             b { +parts[0].value }

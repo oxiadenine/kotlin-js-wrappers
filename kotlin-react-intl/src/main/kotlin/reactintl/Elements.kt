@@ -1,8 +1,8 @@
 package reactintl
 
-import reactintl.datetime.*
-import reactintl.number.*
-import reactintl.plural.*
+import reactintl.components.datetime.*
+import reactintl.components.number.*
+import reactintl.components.plural.*
 
 external enum class MessageType {
     LITERAL,
@@ -49,7 +49,7 @@ external interface SelectElement : BaseElement<MessageType> {
 external interface PluralElement : BaseElement<MessageType> {
     var options: Any
     var offset: Number
-    var pluralType: PluralRuleType
+    var pluralType: IntlPluralRuleType
 }
 
 external interface PoundElement : BaseElement<MessageType>
@@ -58,14 +58,14 @@ external interface DateTimeSkeleton {
     var type: MessageSkeletonType
     var pattern: String
     var location: Location?
-    var parsedOptions: IntlDateTimeFormatOptions
+    var parsedOptions: IntlDateTime.DateTimeFormatOptions
 }
 
 external interface NumberSkeleton {
     var type: MessageSkeletonType
     var tokens: Array<NumberSkeletonToken>
     var location: Location?
-    var parsedOptions: IntlNumberFormatOptions
+    var parsedOptions: IntlNumber.NumberFormatOptions
 }
 
 external interface NumberSkeletonToken {
