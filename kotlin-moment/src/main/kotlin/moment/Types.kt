@@ -19,11 +19,11 @@ typealias Base = Any /* "year" | "years" | "y" | "month" | "months" | "M" | "wee
 typealias _quarter = String /* "quarter" | "quarters" | "Q" */
 typealias _isoWeek = String /* "isoWeek" | "isoWeeks" | "W" */
 typealias _date = String  /* "date" | "dates" | "D" */
-typealias DurationConstructor = Any /* Base | _quarter | _isoWeek | Unit */
+typealias DurationConstructor = Any /* Base | _quarter | _isoWeek */
 
 typealias DurationAs = Base
 
-typealias StartOf = Any /* Base | _quarter | _isoWeek | _date */
+typealias StartOf = Any /* Base | _quarter | _isoWeek | _date | Unit */
 
 typealias Diff = Any /* Base | _quarter */
 
