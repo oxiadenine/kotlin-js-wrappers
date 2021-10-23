@@ -8,15 +8,14 @@ import react.*
 import reactintl.*
 
 @JsName("FormattedMessage")
-external class FormattedMessageComponent :
-    Component<FormattedMessageProps<Record<String, Any /* String | ReactNode */>>, State> {
+external class FormattedMessageComponent : Component<FormattedMessageProps<Record<String, ReactNode>>, State> {
     override fun render(): ReactElement?
 }
 
-external interface FormattedMessageProps<V : Record<String, Any /* String | ReactNode */>> : MessageDescriptor, Props {
+external interface FormattedMessageProps<V : Record<String, ReactNode>> : MessageDescriptor, Props {
     var values: V?
     var tagName: Any?
-    var children: ((nodes: Array<Any /* String | ReactNode */>) -> ReactElement)?
+    var children: ((nodes: Array<ReactNode>) -> ReactElement)?
     var ignoreTag: Boolean?
 }
 

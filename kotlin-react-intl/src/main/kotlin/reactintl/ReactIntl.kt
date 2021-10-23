@@ -19,7 +19,7 @@ external fun <K, T : MessageDescriptor, U> defineMessages(msgs: U): U
 @JsName("defineMessage")
 external fun <T : MessageDescriptor> defineMessage(msg: T): T
 
-external interface IntlShape : ResolvedIntlConfig, IntlFormatters<Any /* String, ReactNode */> {
+external interface IntlShape : ResolvedIntlConfig, IntlFormatters<ReactNode> {
     var formatters: Formatters
 }
 
@@ -33,7 +33,7 @@ external interface IntlCache {
     var displayNames: Record<String, DisplayNames>
 }
 
-external interface ResolvedIntlConfig : CoreResolvedIntlConfig<Any /* String | ReactNode */> {
+external interface ResolvedIntlConfig : CoreResolvedIntlConfig<ReactNode> {
     var textComponent: ComponentType<Props>
     var wrapRichTextChunksInFragment: Boolean?
 }

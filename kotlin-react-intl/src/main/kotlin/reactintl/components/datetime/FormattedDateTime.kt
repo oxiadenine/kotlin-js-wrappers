@@ -53,7 +53,7 @@ external interface FormattedTimePartsProps : FormatDateOptions, Props {
 external interface FormattedDateTimeRangeProps : FormatDateOptions, Props {
     var from: Any /* Number | Date */
     var to: Any /* Number | Date */
-    fun children(value: Any /* String | ReactNode */): ReactElement?
+    fun children(value: ReactNode): ReactElement?
 }
 
 external interface Formats : IntlDateTime.DateTimeFormatOptions {

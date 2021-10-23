@@ -30,6 +30,7 @@ class App : RComponent<Props, State>() {
         }
         styledDiv {
             css { +AppStyles.content }
+            plural()
             timeZone()
             messages()
             injected()

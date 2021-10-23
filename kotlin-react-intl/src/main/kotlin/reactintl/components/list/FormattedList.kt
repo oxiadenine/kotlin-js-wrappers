@@ -12,7 +12,7 @@ external class FormattedListComponent : Component<FormattedListProps, State> {
 }
 
 external interface FormattedListProps : ListFormatOptions, Props {
-    var value: Array<Any /* String | ReactNode */>
+    var value: Array<ReactNode>
 }
 
 external interface FormattedListPartsProps : FormatListOptions, Props {

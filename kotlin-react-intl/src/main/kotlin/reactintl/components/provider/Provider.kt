@@ -19,4 +19,4 @@ external interface ProviderState : State {
     var prevConfig: IntlConfig
 }
 
-external val createIntl: CreateIntlFn<Any /* String | ReactNode */, IntlConfig, IntlShape>
+external val createIntl: CreateIntlFn<ReactNode, IntlConfig, IntlShape>

@@ -14,13 +14,13 @@ external class FormattedPluralComponent : Component<FormattedPluralProps, State>
 external interface FormattedPluralProps : FormatPluralOptions, Props {
     var value: Number
     var intl: IntlShape
-    var other: Any /* String | ReactNode */
-    var zero: Any? /* String | ReactNode */
-    var one: Any? /* String | ReactNode */
-    var two: Any? /* String | ReactNode */
-    var few: Any? /* String | ReactNode */
-    var many: Any? /* String | ReactNode */
-    var children: ((value: Any? /* String | ReactNode */) -> ReactElement?)?
+    var other: ReactNode
+    var zero: ReactNode?
+    var one: ReactNode?
+    var two: ReactNode?
+    var few: ReactNode?
+    var many: ReactNode?
+    var children: ((value: ReactNode?) -> ReactElement?)?
 }
 
 external object IntlPlural {
