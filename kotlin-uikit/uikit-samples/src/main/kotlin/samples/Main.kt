@@ -10,7 +10,7 @@ fun main() {
 
     UIkit.use(Icons)
 
-    render(document.getElementById("root")) {
+    render(document.getElementById("root")!!) {
         app()
     }
 }

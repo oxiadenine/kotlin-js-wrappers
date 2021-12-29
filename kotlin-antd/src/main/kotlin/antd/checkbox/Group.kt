@@ -3,7 +3,7 @@ package antd.checkbox
 import antd.ReactNode
 import react.*
 
-external interface CheckboxGroupComponent : ComponentType<CheckboxGroupProps>
+external interface CheckboxGroupComponent : ComponentClass<CheckboxGroupProps>
 
 external interface CheckboxGroupProps : AbstractCheckboxGroupProps, Props {
     var name: String?

@@ -3,7 +3,7 @@ package antd.menu
 import antd.ReactNode
 import react.*
 
-external interface MenuItemGroupComponent : ComponentType<MenuItemGroupProps>
+external interface MenuItemGroupComponent : ComponentClass<MenuItemGroupProps>
 
 external interface MenuItemGroupProps : Props {
     var renderMenuItem: ((item: ReactElement, index: Number, key: String) -> ReactElement)?

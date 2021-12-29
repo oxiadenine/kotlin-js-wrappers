@@ -8,7 +8,7 @@ import moment.Moment
 import org.w3c.dom.*
 import react.*
 
-external interface RangePickerComponent : ComponentType<RangePickerProps>
+external interface RangePickerComponent : ComponentClass<RangePickerProps>
 
 external interface RangePickerProps : RangePickerBaseProps<Moment>, RangePickerDateProps<Moment>, RangePickerTimeProps<Moment>, Props
 

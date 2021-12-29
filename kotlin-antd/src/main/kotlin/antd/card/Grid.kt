@@ -2,7 +2,7 @@ package antd.card
 
 import react.*
 
-external interface CardGridComponent : ComponentType<CardGridProps>
+external interface CardGridComponent : ComponentClass<CardGridProps>
 
 external interface CardGridProps : Props {
     var prefixCls: String?

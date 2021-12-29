@@ -2,7 +2,7 @@ package antd.menu
 
 import react.*
 
-external interface DividerComponent : ComponentType<DividerProps>
+external interface DividerComponent : ComponentClass<DividerProps>
 
 external interface DividerProps : Props {
     var className: String?

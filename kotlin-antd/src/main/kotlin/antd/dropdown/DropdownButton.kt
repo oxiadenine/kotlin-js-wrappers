@@ -6,7 +6,7 @@ import antd.button.*
 import org.w3c.dom.*
 import react.*
 
-external interface DropdownButtonComponent : ComponentType<DropdownButtonProps>
+external interface DropdownButtonComponent : ComponentClass<DropdownButtonProps>
 
 external interface DropdownButtonProps : ButtonGroupProps, DropdownProps {
     var type: DropdownButtonType?

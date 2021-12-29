@@ -3,7 +3,7 @@ package antd.card
 import antd.ReactNode
 import react.*
 
-external interface CardMetaComponent : ComponentType<CardMetaProps>
+external interface CardMetaComponent : ComponentClass<CardMetaProps>
 
 external interface CardMetaProps : Props {
     var prefixCls: String?

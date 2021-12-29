@@ -3,7 +3,7 @@ package antd.timeline
 import antd.ReactNode
 import react.*
 
-external interface TimelineItemComponent : ComponentType<TimelineItemProps>
+external interface TimelineItemComponent : ComponentClass<TimelineItemProps>
 
 external interface TimelineItemProps : Props {
     var prefixCls: String?

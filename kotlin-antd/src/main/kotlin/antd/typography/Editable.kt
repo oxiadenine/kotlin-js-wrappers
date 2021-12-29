@@ -3,7 +3,7 @@ package antd.typography
 import antd.configprovider.DirectionType
 import react.*
 
-external interface EditableComponent : ComponentType<EditableProps>
+external interface EditableComponent : ComponentClass<EditableProps>
 
 external interface EditableProps : Props {
     var prefixCls: String?

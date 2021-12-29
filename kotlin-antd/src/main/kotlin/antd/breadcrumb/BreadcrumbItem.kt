@@ -5,7 +5,7 @@ import antd.ReactNode
 import antd.dropdown.DropdownProps
 import react.*
 
-external interface BreadcrumbItemComponent : ComponentType<BreadcrumbItemProps>
+external interface BreadcrumbItemComponent : ComponentClass<BreadcrumbItemProps>
 
 external interface BreadcrumbItemProps : Props {
     var prefixCls: String?

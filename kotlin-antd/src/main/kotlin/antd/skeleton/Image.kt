@@ -2,6 +2,6 @@ package antd.skeleton
 
 import react.*
 
-external interface SkeletonImageComponent : ComponentType<SkeletonImageProps>
+external interface SkeletonImageComponent : ComponentClass<SkeletonImageProps>
 
 external interface SkeletonImageProps : SkeletonElementProps, Props

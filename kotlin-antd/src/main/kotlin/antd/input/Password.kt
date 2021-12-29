@@ -4,7 +4,7 @@ import antd.RefAttributes
 import antd.ReactNode
 import react.*
 
-external interface PasswordComponent : ComponentType<PasswordProps>
+external interface PasswordComponent : ComponentClass<PasswordProps>
 
 external interface PasswordProps : InputProps, RefAttributes<dynamic> {
     val inputPrefixCls: String?

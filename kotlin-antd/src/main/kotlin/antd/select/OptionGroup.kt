@@ -4,7 +4,7 @@ import antd.Key
 import antd.ReactNode
 import react.*
 
-external interface OptionGroupComponent : ComponentType<OptionGroupProps>
+external interface OptionGroupComponent : ComponentClass<OptionGroupProps>
 
 external interface OptionGroupProps : OptionGroupData, Props {
     var children: ReactNode?

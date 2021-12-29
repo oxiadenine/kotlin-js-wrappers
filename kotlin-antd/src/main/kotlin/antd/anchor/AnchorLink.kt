@@ -3,7 +3,7 @@ package antd.anchor
 import antd.ReactNode
 import react.*
 
-external interface AnchorLinkComponent : ComponentType<AnchorLinkProps>
+external interface AnchorLinkComponent : ComponentClass<AnchorLinkProps>
 
 external interface AnchorLinkProps : Props {
     var prefixCls: String?

@@ -4,7 +4,7 @@ import antd.grid.*
 import antd.ReactNode
 import react.*
 
-external interface FormItemInputComponent : ComponentType<FormItemInputProps>
+external interface FormItemInputComponent : ComponentClass<FormItemInputProps>
 
 external interface FormItemInputProps : FormItemInputBaseProps, FormItemInputMiscProps, Props
 

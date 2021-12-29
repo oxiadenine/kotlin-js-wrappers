@@ -4,7 +4,7 @@ import antd.HTMLAttributes
 import org.w3c.dom.HTMLLIElement
 import react.*
 
-external interface MenuItemComponent : ComponentType<MenuItemProps>
+external interface MenuItemComponent : ComponentClass<MenuItemProps>
 
 external interface MenuItemProps : RcMenuItemProps, Props {
     var icon: Any? /* ReactElement | String */

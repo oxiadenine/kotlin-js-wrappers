@@ -5,7 +5,7 @@ import antd.ReactNode
 import org.w3c.dom.*
 import react.*
 
-external interface GroupComponent : ComponentType<GroupProps>
+external interface GroupComponent : ComponentClass<GroupProps>
 
 external interface GroupProps : Props {
     var className: String?

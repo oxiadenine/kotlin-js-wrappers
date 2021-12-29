@@ -3,7 +3,7 @@ package antd.tabs
 import antd.ReactNode
 import react.*
 
-external interface TabPaneComponent : ComponentType<TabPaneProps>
+external interface TabPaneComponent : ComponentClass<TabPaneProps>
 
 external interface TabPaneProps : Props {
     var tab: ReactNode?

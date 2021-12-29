@@ -8,7 +8,7 @@ import org.w3c.dom.HTMLElement
 import org.w3c.dom.events.Event
 import react.*
 
-external interface ListItemComponent : ComponentType<ListItemProps>
+external interface ListItemComponent : ComponentClass<ListItemProps>
 
 external interface ListItemProps : RefAttributes<HTMLDivElement>, Props {
     var prefixCls: String?

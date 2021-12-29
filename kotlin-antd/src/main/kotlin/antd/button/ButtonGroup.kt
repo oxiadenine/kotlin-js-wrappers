@@ -3,7 +3,7 @@ package antd.button
 import antd.configprovider.SizeType
 import react.*
 
-external interface ButtonGroupComponent : ComponentType<ButtonGroupProps>
+external interface ButtonGroupComponent : ComponentClass<ButtonGroupProps>
 
 external interface ButtonGroupProps : Props {
     var size: SizeType?

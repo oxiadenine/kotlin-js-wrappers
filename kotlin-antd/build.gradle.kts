@@ -6,8 +6,8 @@ plugins {
 dependencies {
     api(project(":kotlin-moment"))
 
-    api(kotlinWrapperDependency("react"))
-    api(kotlinWrapperDependency("react-dom"))
+    api(kotlinWrapperDependency("react-legacy"))
+    api(kotlinWrapperDependency("react-dom-legacy"))
 
     api(npmPackage("antd"))
 }
@@ -25,7 +25,7 @@ tasks.register("generateIconFiles") {
             import react.*
 
             external interface AntdIconClass : ComponentClass<AntdIconProps> {
-                var default: ComponentType<AntdIconProps>
+                var default: ComponentClass<AntdIconProps>
             }
 
             external interface AntdIconProps : IconBaseProps, Props {

@@ -5,7 +5,7 @@ import antd.ReactNode
 import org.w3c.dom.*
 import react.*
 
-external interface SiderComponent : ComponentType<SiderProps>
+external interface SiderComponent : ComponentClass<SiderProps>
 
 external val sderContext: Context<SiderContextProps>
 

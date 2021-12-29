@@ -5,7 +5,7 @@ import antd.configprovider.SizeType
 import org.w3c.dom.*
 import react.*
 
-external interface TextAreaComponent : ComponentType<TextAreaProps>
+external interface TextAreaComponent : ComponentClass<TextAreaProps>
 
 external interface TextAreaProps : RcTextAreaProps, RefAttributes<TextAreaRef>, Props {
     var allowClear: Boolean?

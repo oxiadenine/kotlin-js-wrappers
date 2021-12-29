@@ -3,7 +3,7 @@ package antd.badge
 import antd.ReactNode
 import react.*
 
-external interface RibbonComponent : ComponentType<RibbonProps>
+external interface RibbonComponent : ComponentClass<RibbonProps>
 
 external interface RibbonProps : Props {
     var className: String?

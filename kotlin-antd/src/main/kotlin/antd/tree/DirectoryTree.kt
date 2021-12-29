@@ -4,7 +4,7 @@ import antd.Key
 import antd.RefAttributes
 import react.*
 
-external interface DirectoryTreeComponent : ComponentType<DirectoryTreeProps>
+external interface DirectoryTreeComponent : ComponentClass<DirectoryTreeProps>
 
 external interface DirectoryTreeProps : TreeProps, RefAttributes<RcTreeComponent> {
     var expandAction: ExpandAction

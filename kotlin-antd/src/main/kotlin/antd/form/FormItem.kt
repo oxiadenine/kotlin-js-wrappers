@@ -3,7 +3,7 @@ package antd.form
 import kotlinext.js.Record
 import react.*
 
-external interface FormItemComponent : ComponentType<FormItemProps<Any>>
+external interface FormItemComponent : ComponentClass<FormItemProps<Any>>
 
 external interface FormItemProps<Values> : FormItemLabelProps, FormItemInputProps, RcFieldProps<Values> {
     override var prefixCls: String?
