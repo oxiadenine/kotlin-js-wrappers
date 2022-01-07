@@ -23,3 +23,8 @@ dependencies {
 You can view the [samples](https://github.com/sunlandx/kotlin-js-wrappers/tree/master/kotlin-antd/antd-samples) that follows 
 Ant Design [demo](https://github.com/ant-design/ant-design/tree/master/components) of each component to know 
 how to use this library.
+
+### (Discontinued)
+
+It takes so much time to be up-to-date with the latest version of Ant Design since it is being maintained 
+by hand instead of being auto-generated.

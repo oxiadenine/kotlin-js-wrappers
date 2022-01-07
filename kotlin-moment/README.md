@@ -22,3 +22,7 @@ dependencies {
 
 You can view the [samples](https://github.com/sunlandx/kotlin-js-wrappers/tree/master/kotlin-moment/moment-samples) to know 
 how to use this library.
+
+### (Discontinued)
+
+Moment.js is already legacy, and it should not be used.
