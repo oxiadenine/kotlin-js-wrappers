@@ -4,7 +4,7 @@ import antd.Key
 import antd.MouseEventHandler
 import antd.button.button
 import antd.table.*
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import kotlinx.browser.window
 import kotlinx.css.marginBottom
 import kotlinx.css.marginLeft
@@ -23,22 +23,22 @@ private external interface RowSelectionAndOperationTableDataItem {
 }
 
 private val tableColumns = arrayOf<ColumnType<RowSelectionAndOperationTableDataItem>>(
-    jsObject {
+    jso {
         title = "Name"
         dataIndex = "name"
     },
-    jsObject {
+    jso {
         title = "Age"
         dataIndex = "age"
     },
-    jsObject {
+    jso {
         title = "Address"
         dataIndex = "address"
     }
 )
 
 private val tableData = (0..46).map { i ->
-    jsObject<RowSelectionAndOperationTableDataItem> {
+    jso<RowSelectionAndOperationTableDataItem> {
         key = "$i"
         name = "Edward King $i"
         age = 32
@@ -79,7 +79,7 @@ class RowSelectionAndOperationApp : RComponent<Props, RowSelectionAndOperationAp
     }
 
     override fun RBuilder.render() {
-        val tableRowSelection = jsObject<TableRowSelection<RowSelectionAndOperationTableDataItem>> {
+        val tableRowSelection = jso<TableRowSelection<RowSelectionAndOperationTableDataItem>> {
             selectedRowKeys = state.selectedRowKeys
             onChange = handleSelectChange
         }

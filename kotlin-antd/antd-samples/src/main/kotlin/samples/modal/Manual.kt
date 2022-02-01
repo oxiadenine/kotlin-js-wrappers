@@ -3,7 +3,7 @@ package samples.modal
 import antd.MouseEventHandler
 import antd.button.button
 import antd.modal.ModalComponent
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import kotlinx.browser.window
 import react.RBuilder
 import styled.css
@@ -12,7 +12,7 @@ import styled.styledDiv
 private val countDown: MouseEventHandler<Any> = {
     var secondsToGo = 5
 
-    val modal = ModalComponent.success(jsObject {
+    val modal = ModalComponent.success(jso {
         title = "This is a notification message"
         content = "This modal will be destroyed after $secondsToGo second"
     })
@@ -20,7 +20,7 @@ private val countDown: MouseEventHandler<Any> = {
     window.setInterval({
         secondsToGo -= 1
 
-        modal.update(jsObject {
+        modal.update(jso {
             content = "This modal will be destroyed after $secondsToGo second"
         })
     }, 1000)

@@ -6,7 +6,7 @@ import antd.table.ColumnsType
 import antd.table.TableComponent
 import antd.table.table
 import antd.tag.tag
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.RBuilder
 import react.buildElement
 import react.dom.a
@@ -23,7 +23,7 @@ private external interface BasicTableDataItem {
 }
 
 private val tableColumns = arrayOf<ColumnType<BasicTableDataItem>>(
-    jsObject {
+    jso {
         title = "Name"
         dataIndex = "name"
         key = "name"
@@ -36,17 +36,17 @@ private val tableColumns = arrayOf<ColumnType<BasicTableDataItem>>(
             }
         }
     },
-    jsObject {
+    jso {
         title = "Age"
         dataIndex = "age"
         key = "age"
     },
-    jsObject {
+    jso {
         title = "Address"
         dataIndex = "address"
         key = "address"
     },
-    jsObject {
+    jso {
         title = "Tags"
         key = "tags"
         dataIndex = "tags"
@@ -72,7 +72,7 @@ private val tableColumns = arrayOf<ColumnType<BasicTableDataItem>>(
             }
         }
     },
-    jsObject {
+    jso {
         title = "Action"
         key = "action"
         render = { _, record, _ ->
@@ -96,21 +96,21 @@ private val tableColumns = arrayOf<ColumnType<BasicTableDataItem>>(
 )
 
 private val tableData = arrayOf<BasicTableDataItem>(
-    jsObject {
+    jso {
         key = "1"
         name = "John Brown"
         age = 32
         address = "New York No. 1 Lake Park"
         tags = arrayOf("nice", "developer")
     },
-    jsObject {
+    jso {
         key = "2"
         name = "Jim Green"
         age = 42
         address = "London No. 1 Lake Park"
         tags = arrayOf("loser")
     },
-    jsObject {
+    jso {
         key = "3"
         name = "Joe Black"
         age = 32

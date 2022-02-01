@@ -4,7 +4,7 @@ import antd.table.ColumnType
 import antd.table.ColumnsType
 import antd.table.TableComponent
 import antd.table.table
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.RBuilder
 import react.buildElement
 import react.dom.a
@@ -19,7 +19,7 @@ private external interface BorderedTableDataItem {
 }
 
 private val tableColumns = arrayOf<ColumnType<BorderedTableDataItem>>(
-    jsObject {
+    jso {
         title = "Name"
         dataIndex = "name"
         render = { text, _, _ ->
@@ -31,31 +31,31 @@ private val tableColumns = arrayOf<ColumnType<BorderedTableDataItem>>(
             }
         }
     },
-    jsObject {
+    jso {
         title = "Cash Assets"
         className = "column-money"
         dataIndex = "money"
     },
-    jsObject {
+    jso {
         title = "Address"
         dataIndex = "address"
     }
 )
 
 private val tableData = arrayOf<BorderedTableDataItem>(
-    jsObject {
+    jso {
         key = "1"
         name = "John Brown"
         money = "￥300,000.00"
         address = "New York No. 1 Lake Park"
     },
-    jsObject {
+    jso {
         key = "2"
         name = "Jim Green"
         money = "￥1,256,000.00"
         address = "London No. 1 Lake Park"
     },
-    jsObject {
+    jso {
         key = "3"
         name = "Joe Black"
         money = "￥120,000.00"

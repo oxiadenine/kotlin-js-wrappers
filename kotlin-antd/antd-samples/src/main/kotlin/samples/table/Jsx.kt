@@ -6,7 +6,7 @@ import antd.table.table
 import antd.table.tableColumn
 import antd.table.tableColumnGroup
 import antd.tag.tag
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.RBuilder
 import react.buildElement
 import react.dom.a
@@ -24,7 +24,7 @@ private external interface JsxTableDataItem {
 }
 
 private val data = arrayOf<JsxTableDataItem>(
-    jsObject {
+    jso {
         key = "1"
         firstName = "John"
         lastName = "Brown"
@@ -32,7 +32,7 @@ private val data = arrayOf<JsxTableDataItem>(
         address = "New York No. 1 Lake Park"
         tags = arrayOf("nice", "developer")
     },
-    jsObject {
+    jso {
         key = "2"
         firstName = "Jim"
         lastName = "Green"
@@ -40,7 +40,7 @@ private val data = arrayOf<JsxTableDataItem>(
         address = "London No. 1 Lake Park"
         tags = arrayOf("loser")
     },
-    jsObject {
+    jso {
         key = "3"
         firstName = "Joe"
         lastName = "Black"

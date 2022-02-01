@@ -4,7 +4,7 @@ import antd.table.ColumnGroupType
 import antd.table.ColumnsType
 import antd.table.TableComponent
 import antd.table.table
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.RBuilder
 import styled.css
 import styled.styledDiv
@@ -23,18 +23,18 @@ private external interface GroupingColumnsTableDataItem {
 }
 
 private val tableColumns = arrayOf<ColumnGroupType<GroupingColumnsTableDataItem>>(
-    jsObject {
+    jso {
         title = "Name"
         dataIndex = "name"
         key = "name"
         width = 100
         fixed = "left"
         filters = arrayOf(
-            jsObject {
+            jso {
                 text = "Joe"
                 value = "Joe"
             },
-            jsObject {
+            jso {
                 text = "John"
                 value = "John"
             }
@@ -43,10 +43,10 @@ private val tableColumns = arrayOf<ColumnGroupType<GroupingColumnsTableDataItem>
             record.name.indexOf(value.unsafeCast<String>()) == 0
         }
     },
-    jsObject {
+    jso {
         title = "Other"
         children = arrayOf(
-            jsObject {
+            jso {
                 title = "Age"
                 dataIndex = "age"
                 key = "age"
@@ -55,25 +55,25 @@ private val tableColumns = arrayOf<ColumnGroupType<GroupingColumnsTableDataItem>
                     return a.age.toInt() - b.age.toInt()
                 }
             },
-            jsObject {
+            jso {
                 title = "Address"
                 children = arrayOf(
-                    jsObject {
+                    jso {
                         title = "Street"
                         dataIndex = "street"
                         key = "street"
                         width = 200
                     },
-                    jsObject {
+                    jso {
                         title = "Block"
                         children = arrayOf(
-                            jsObject {
+                            jso {
                                 title = "Building"
                                 dataIndex = "building"
                                 key = "building"
                                 width = 100
                             },
-                            jsObject {
+                            jso {
                                 title = "Door No."
                                 dataIndex = "number"
                                 key = "number"
@@ -85,18 +85,18 @@ private val tableColumns = arrayOf<ColumnGroupType<GroupingColumnsTableDataItem>
             }
         )
     },
-    jsObject {
+    jso {
         title = "Company Address"
         dataIndex = "companyAddress"
         key = "companyAddress"
         width = 200
     },
-    jsObject {
+    jso {
         title = "Company Name"
         dataIndex = "companyName"
         key = "companyName"
     },
-    jsObject {
+    jso {
         title = "Gender"
         dataIndex = "gender"
         key = "gender"
@@ -107,7 +107,7 @@ private val tableColumns = arrayOf<ColumnGroupType<GroupingColumnsTableDataItem>
 )
 
 private val tableData = (0..100).map { i ->
-    jsObject<GroupingColumnsTableDataItem> {
+    jso<GroupingColumnsTableDataItem> {
         key = "$i"
         name = "John Brown"
         age = i + 1
@@ -129,7 +129,7 @@ fun RBuilder.groupingColumns() {
                 dataSource = tableData
                 bordered = true
                 size = "middle"
-                scroll = jsObject {
+                scroll = jso {
                     x = "130%"
                     y = 240
                 }

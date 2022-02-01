@@ -1,7 +1,7 @@
 package samples.table
 
 import antd.table.*
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.RBuilder
 import react.buildElement
 import react.dom.a
@@ -16,7 +16,7 @@ private external interface RowSelectionTableDataItem {
 }
 
 private val tableColumns = arrayOf<ColumnType<RowSelectionTableDataItem>>(
-    jsObject {
+    jso {
         title = "Name"
         dataIndex = "name"
         key = "name"
@@ -29,12 +29,12 @@ private val tableColumns = arrayOf<ColumnType<RowSelectionTableDataItem>>(
             }
         }
     },
-    jsObject {
+    jso {
         title = "Age"
         dataIndex = "age"
         key = "age"
     },
-    jsObject {
+    jso {
         title = "Address"
         dataIndex = "address"
         key = "address"
@@ -42,25 +42,25 @@ private val tableColumns = arrayOf<ColumnType<RowSelectionTableDataItem>>(
 )
 
 private val tableData = arrayOf<RowSelectionTableDataItem>(
-    jsObject {
+    jso {
         key = "1"
         name = "John Brown"
         age = 32
         address = "New York No. 1 Lake Park"
     },
-    jsObject {
+    jso {
         key = "2"
         name = "Jim Green"
         age = 42
         address = "London No. 1 Lake Park"
     },
-    jsObject {
+    jso {
         key = "3"
         name = "Joe Black"
         age = 32
         address = "Sidney No. 1 Lake Park"
     },
-    jsObject {
+    jso {
         key = "4"
         name = "Disabled User"
         age = 99
@@ -69,12 +69,12 @@ private val tableData = arrayOf<RowSelectionTableDataItem>(
 )
 
 // rowSelection object indicates the need for row selection
-private val tableRowSelection = jsObject<TableRowSelection<RowSelectionTableDataItem>> {
+private val tableRowSelection = jso<TableRowSelection<RowSelectionTableDataItem>> {
     onChange = { selectedRowKeys, selectedRows ->
         console.log("selectedRowKeys: $selectedRowKeys", "selectedRows: ", selectedRows)
     }
     getCheckboxProps = { record ->
-        jsObject {
+        jso {
             disabled = record.name == "Disabled User" // Column configuration not to be checked
             name = record.name
         }

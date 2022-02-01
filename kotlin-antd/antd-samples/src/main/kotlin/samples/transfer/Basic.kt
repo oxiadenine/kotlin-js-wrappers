@@ -6,7 +6,7 @@ import antd.transfer.TransferComponent
 import antd.transfer.TransferDirection
 import antd.transfer.TransferItem
 import antd.transfer.transfer
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import org.w3c.dom.HTMLUListElement
 import org.w3c.dom.events.Event
 import org.w3c.dom.events.MouseEvent
@@ -16,7 +16,7 @@ import styled.css
 import styled.styledDiv
 
 private val mockData = (0..19).map { i ->
-    jsObject<TransferItem> {
+    jso<TransferItem> {
         key = i.toString()
         title = "content${i + 1}"
         description = "description of content${i + 1}"

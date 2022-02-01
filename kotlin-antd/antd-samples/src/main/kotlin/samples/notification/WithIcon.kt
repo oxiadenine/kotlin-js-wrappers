@@ -3,14 +3,14 @@ package samples.notification
 import antd.button.button
 import antd.notification.ArgsProps
 import antd.notification.notification
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.RBuilder
 import react.dom.div
 import styled.css
 import styled.styledDiv
 
 private val openNotificationWithIcon: (String) -> Unit = { type ->
-    notification.asDynamic()[type](jsObject<ArgsProps> {
+    notification.asDynamic()[type](jso<ArgsProps> {
         message = "Notification Title"
         description = "This is the content of the notification. This is the content of the notification. This is the content of the notification."
     }).unsafeCast<Function<Unit>>()

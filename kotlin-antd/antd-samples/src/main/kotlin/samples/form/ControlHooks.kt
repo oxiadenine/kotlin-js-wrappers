@@ -8,18 +8,18 @@ import antd.select.SelectComponent
 import antd.select.option
 import antd.select.select
 import kotlinext.js.js
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.*
 import styled.css
 import styled.styledDiv
 
-private val formLayout = jsObject<FormProps<Any>> {
-    labelCol = jsObject { span = 8 }
-    wrapperCol = jsObject { span = 16 }
+private val formLayout = jso<FormProps<Any>> {
+    labelCol = jso { span = 8 }
+    wrapperCol = jso { span = 16 }
 }
 
-private val tailLayout = jsObject<FormItemProps<Any>> {
-    wrapperCol = jsObject {
+private val tailLayout = jso<FormItemProps<Any>> {
+    wrapperCol = jso {
         offset = 8
         span = 16
     }
@@ -70,7 +70,7 @@ private val demo = fc<Props> {
                 label = "Note"
                 name = "note"
                 rules = arrayOf(
-                    jsObject<AggregationRule> { required = true }
+                    jso<AggregationRule> { required = true }
                 )
             }
             input {}
@@ -80,7 +80,7 @@ private val demo = fc<Props> {
                 label = "Gender"
                 name = "gender"
                 rules = arrayOf(
-                    jsObject<AggregationRule> { required = true }
+                    jso<AggregationRule> { required = true }
                 )
             }
             select<String, SelectComponent<String>> {
@@ -118,7 +118,7 @@ private val demo = fc<Props> {
                             name = "customizeGender"
                             label = "Customize Gender"
                             rules = arrayOf(
-                                jsObject<AggregationRule> {
+                                jso<AggregationRule> {
                                     required = true
                                 }
                             )

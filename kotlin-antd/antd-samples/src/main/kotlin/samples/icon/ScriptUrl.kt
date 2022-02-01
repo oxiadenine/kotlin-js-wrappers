@@ -7,14 +7,14 @@ import react.*
 import react.dom.*
 import styled.*
 
-private val iconFontComponent = createFromIconfontCN(jsObject {
+private val iconFontComponent = createFromIconfontCN(jso {
     scriptUrl = arrayOf(
         "//at.alicdn.com/t/font_1788044_0dwu4guekcwr.js", // icon-javascript, icon-java, icon-shoppingcart (overrided)
         "//at.alicdn.com/t/font_1788592_a5xf2bdic3u.js", // icon-shoppingcart, icon-python
     )
 })
 
-private fun RBuilder.iconFont(handler: RHandler<IconFontProps>) = child(iconFontComponent, jsObject {}, handler)
+private fun RBuilder.iconFont(handler: RHandler<IconFontProps>) = child(iconFontComponent, jso {}, handler)
 
 fun RBuilder.scriptUrl() {
     styledDiv {

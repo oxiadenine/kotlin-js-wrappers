@@ -3,7 +3,7 @@ package samples.cascader
 import antd.cascader.CascaderOptionType
 import antd.cascader.cascader
 import kotlinext.js.js
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import kotlinx.html.js.onClickFunction
 import org.w3c.dom.events.Event
 import react.RBuilder
@@ -20,15 +20,15 @@ external interface CustomRenderCascaderOptionType : CascaderOptionType {
 }
 
 private val cascaderOptions = arrayOf<CascaderOptionType>(
-    jsObject {
+    jso {
         value = "zhejiang"
         label = "Zhejiang"
         children = arrayOf(
-            jsObject {
+            jso {
                 value = "hangzhou"
                 label = "Hangzhou"
                 children = arrayOf(
-                    jsObject<CustomRenderCascaderOptionType> {
+                    jso<CustomRenderCascaderOptionType> {
                         value = "xihu"
                         label = "West Lake"
                         code = 752100
@@ -37,15 +37,15 @@ private val cascaderOptions = arrayOf<CascaderOptionType>(
             }
         )
     },
-    jsObject {
+    jso {
         value = "jiangsu"
         label = "Jiangsu"
         children = arrayOf(
-            jsObject {
+            jso {
                 value = "nanjing"
                 label = "Nanjing"
                 children = arrayOf(
-                    jsObject<CustomRenderCascaderOptionType> {
+                    jso<CustomRenderCascaderOptionType> {
                         value = "zhonghuamen"
                         label = "Zhong Hua Men"
                         code = 453400

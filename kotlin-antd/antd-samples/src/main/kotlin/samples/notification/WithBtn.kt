@@ -3,7 +3,7 @@ package samples.notification
 import antd.MouseEventHandler
 import antd.button.button
 import antd.notification.notification
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.RBuilder
 import react.buildElement
 import styled.css
@@ -27,7 +27,7 @@ private val openNotification: MouseEventHandler<Any> = {
         }
     }
 
-    notification.open(jsObject {
+    notification.open(jso {
         message = "Notification Title"
         description = "A function will be be called after the notification is closed (automatically after the \"duration\" time of manually)."
         btn = notBtn

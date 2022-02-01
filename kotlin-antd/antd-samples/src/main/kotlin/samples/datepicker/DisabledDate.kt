@@ -1,7 +1,7 @@
 package samples.datepicker
 
 import antd.datepicker.*
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import moment.Moment
 import moment.moment
 import react.RBuilder
@@ -23,7 +23,7 @@ private fun handleDisabledDate(current: Moment?): Boolean {
 }
 
 private val handleDisabledDateTime = { _: Moment ->
-    jsObject<DisabledTimes> {
+    jso<DisabledTimes> {
         disabledHours = { range(0, 24).sliceArray(4..24) }
         disabledMinutes = { range(30, 60) }
         disabledSeconds = { _, _ -> arrayOf(55, 56) }
@@ -32,14 +32,14 @@ private val handleDisabledDateTime = { _: Moment ->
 
 private val handleDisabledRangeTime = { _: Moment?, type: String ->
     if (type == "start") {
-        jsObject<DisabledTimes> {
+        jso<DisabledTimes> {
             disabledHours = { range(0, 60).sliceArray(4..24) }
             disabledMinutes = { range(30, 60) }
             disabledSeconds = { _, _ -> arrayOf(55, 56) }
         }
     }
 
-    jsObject<DisabledTimes> {
+    jso<DisabledTimes> {
         disabledHours = { range(0, 60).sliceArray(20..24) }
         disabledMinutes = { range(0, 30) }
         disabledSeconds = { _, _ -> arrayOf(55, 56) }
@@ -55,7 +55,7 @@ fun RBuilder.disabledDate() {
                     format = "YYYY-MM-DD HH:mm:ss"
                     disabledDate = ::handleDisabledDate
                     disabledTime = handleDisabledDateTime
-                    showTime = jsObject<SharedTimeProps<Moment>> {
+                    showTime = jso<SharedTimeProps<Moment>> {
                         defaultValue = moment("00:00:00", "HH:mm:ss")
                     }
                 }
@@ -72,7 +72,7 @@ fun RBuilder.disabledDate() {
                 attrs {
                     disabledDate = ::handleDisabledDate
                     disabledTime = handleDisabledRangeTime
-                    showTime = jsObject<RangeShowTimeObject<Moment>> {
+                    showTime = jso<RangeShowTimeObject<Moment>> {
                         hideDisabledOptions = true
                         defaultValue = arrayOf(
                             moment("00:00:00", "HH:mm:ss"),

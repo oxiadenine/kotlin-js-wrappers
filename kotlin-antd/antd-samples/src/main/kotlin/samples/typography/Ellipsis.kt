@@ -2,7 +2,7 @@ package samples.typography
 
 import antd.typography.EllipsisConfig
 import antd.typography.typographyParagraph
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.RBuilder
 import react.dom.div
 import styled.css
@@ -24,7 +24,7 @@ fun RBuilder.ellipsis() {
                 """.trimIndent()
             }
             typographyParagraph {
-                attrs.ellipsis = jsObject<EllipsisConfig> {
+                attrs.ellipsis = jso<EllipsisConfig> {
                     rows = 3
                     expandable = true
                 }

@@ -5,7 +5,7 @@ import antd.MouseEventHandler
 import antd.button.button
 import antd.modal.ModalComponent
 import antd.modal.modal
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import org.w3c.dom.HTMLElement
 import react.*
 import react.dom.br
@@ -64,7 +64,7 @@ class LocalizedModal : RComponent<Props, LocalizedModalState>() {
 fun RBuilder.localizedModal() = child(LocalizedModal::class) {}
 
 private val confirmModal: MouseEventHandler<Any> = {
-    ModalComponent.confirm(jsObject {
+    ModalComponent.confirm(jso {
         title = "Confirm"
         content = "Bla bla ..."
         okText = "确认"

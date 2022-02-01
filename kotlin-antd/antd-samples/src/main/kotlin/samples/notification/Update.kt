@@ -3,7 +3,7 @@ package samples.notification
 import antd.MouseEventHandler
 import antd.button.button
 import antd.notification.notification
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import kotlinx.browser.window
 import react.RBuilder
 import styled.css
@@ -12,14 +12,14 @@ import styled.styledDiv
 private val notKey = "updatable"
 
 private val openNotification: MouseEventHandler<Any> = {
-    notification.open(jsObject {
+    notification.open(jso {
         key = notKey
         message = "Notification Title"
         description = "description."
     })
 
     window.setTimeout({
-        notification.open(jsObject {
+        notification.open(jso {
             key = notKey
             message = "New Title"
             description = "New description."

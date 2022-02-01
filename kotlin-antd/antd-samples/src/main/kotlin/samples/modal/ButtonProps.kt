@@ -4,7 +4,7 @@ import antd.MouseEvent
 import antd.MouseEventHandler
 import antd.button.button
 import antd.modal.modal
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import org.w3c.dom.HTMLElement
 import react.*
 import react.dom.div
@@ -58,8 +58,8 @@ class ButtonPropsApp : RComponent<Props, ButtonPropsAppState>() {
                     visible = state.visible
                     onOk = handleOk
                     onCancel = handleCancel
-                    okButtonProps = jsObject { disabled = true }
-                    cancelButtonProps = jsObject { disabled = true }
+                    okButtonProps = jso { disabled = true }
+                    cancelButtonProps = jso { disabled = true }
                 }
                 p { +"Some contents..." }
                 p { +"Some contents..." }

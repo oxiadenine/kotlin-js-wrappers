@@ -3,7 +3,7 @@ package samples.pageheader
 import antd.breadcrumb.Route
 import antd.pageheader.pageHeader
 import antd.typography.typographyParagraph
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import kotlinx.html.classes
 import react.RBuilder
 import react.ReactNode
@@ -13,15 +13,15 @@ import styled.css
 import styled.styledDiv
 
 private val breadcrumbRoutes = arrayOf<Route>(
-    jsObject {
+    jso {
         path = "index"
         breadcrumbName = "First-level Menu"
     },
-    jsObject {
+    jso {
         path = "first"
         breadcrumbName = "Second-level Menu"
     },
-    jsObject {
+    jso {
         path = "second"
         breadcrumbName = "Third-level Menu"
     }
@@ -91,7 +91,7 @@ fun RBuilder.content() {
         pageHeader {
             attrs {
                 title = "Title"
-                breadcrumb = jsObject { routes = breadcrumbRoutes }
+                breadcrumb = jso { routes = breadcrumbRoutes }
             }
             div {
                 attrs.classes = setOf("wrap")

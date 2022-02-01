@@ -6,17 +6,17 @@ import antd.select.SelectComponent
 import antd.select.select
 import antd.tag.tag
 import kotlinext.js.js
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.RBuilder
 import react.buildElement
 import styled.css
 import styled.styledDiv
 
 private val selectOptions = arrayOf<OptionData>(
-    jsObject { value = "gold" },
-    jsObject { value = "lime" },
-    jsObject { value = "green" },
-    jsObject { value = "cyan" }
+    jso { value = "gold" },
+    jso { value = "lime" },
+    jso { value = "green" },
+    jso { value = "cyan" }
 )
 
 private fun tagRender(props: CustomTagProps) = buildElement {

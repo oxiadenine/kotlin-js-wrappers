@@ -3,7 +3,7 @@ package samples.progress
 import antd.progress.FromToGradients
 import antd.progress.StringGradients
 import antd.progress.progress
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.RBuilder
 import react.dom.div
 import styled.css
@@ -14,7 +14,7 @@ fun RBuilder.gradientLine() {
         css { +ProgressStyles.gradientLine }
         div {
             progress {
-                val gradient: dynamic = jsObject<StringGradients> {}
+                val gradient: dynamic = jso<StringGradients> {}
 
                 gradient["0%"] = "#108ee9"
                 gradient["100%"] = "#87d068"
@@ -26,7 +26,7 @@ fun RBuilder.gradientLine() {
             }
             progress {
                 attrs {
-                    strokeColor = jsObject<FromToGradients> {
+                    strokeColor = jso<FromToGradients> {
                         from = "#108ee9"
                         to = "#87d068"
                     }

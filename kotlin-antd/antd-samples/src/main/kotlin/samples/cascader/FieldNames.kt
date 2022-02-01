@@ -3,7 +3,7 @@ package samples.cascader
 import antd.cascader.CascaderOptionType
 import antd.cascader.CascaderValueType
 import antd.cascader.cascader
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.RBuilder
 import styled.css
 import styled.styledDiv
@@ -15,15 +15,15 @@ external interface FieldNamesCascaderOptionType : CascaderOptionType {
 }
 
 private val cascaderOptions = arrayOf<FieldNamesCascaderOptionType>(
-    jsObject {
+    jso {
         code = "zhejiang"
         name = "Zhejiang"
         items = arrayOf(
-            jsObject {
+            jso {
                 code = "hangzhou"
                 name = "Hangzhou"
                 items = arrayOf(
-                    jsObject {
+                    jso {
                         code = "xihu"
                         name = "West Lake"
                     }
@@ -31,15 +31,15 @@ private val cascaderOptions = arrayOf<FieldNamesCascaderOptionType>(
             }
         )
     },
-    jsObject {
+    jso {
         code = "jiangsu"
         name = "Jiangsu"
         items = arrayOf(
-            jsObject {
+            jso {
                 code = "nanjing"
                 name = "Nanjing"
                 items = arrayOf(
-                    jsObject {
+                    jso {
                         code = "zhonghuamen"
                         name = "Zhong Hua Men"
                     }
@@ -58,7 +58,7 @@ fun RBuilder.fieldNames() {
         css { +CascaderStyles.fieldNames }
         cascader {
             attrs {
-                fieldNames = jsObject {
+                fieldNames = jso {
                     value = "code"
                     label = "name"
                     children = "items"

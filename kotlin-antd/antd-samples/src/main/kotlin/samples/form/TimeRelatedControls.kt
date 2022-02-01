@@ -11,32 +11,32 @@ import antd.form.formItem
 import antd.timepicker.timePicker
 import kotlinext.js.Object
 import kotlinext.js.js
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.*
 import styled.css
 import styled.styledDiv
 
-private val formItemLayout = jsObject<FormItemProps<Any>> {
-    labelCol = jsObject {
-        xs = jsObject { span = 24 }
-        sm = jsObject { span = 8 }
+private val formItemLayout = jso<FormItemProps<Any>> {
+    labelCol = jso {
+        xs = jso { span = 24 }
+        sm = jso { span = 8 }
     }
-    wrapperCol = jsObject {
-        xs = jsObject { span = 24 }
-        sm = jsObject { span = 16 }
+    wrapperCol = jso {
+        xs = jso { span = 24 }
+        sm = jso { span = 16 }
     }
 }
 
-private val config = jsObject<FormItemProps<Any>> {
-    rules = arrayOf(jsObject<AggregationRule> {
+private val config = jso<FormItemProps<Any>> {
+    rules = arrayOf(jso<AggregationRule> {
         type = "object"
         required = true
         message = "Please select time!"
     })
 }
 
-private val rangeConfig = jsObject<FormItemProps<Any>> {
-    rules = arrayOf(jsObject<AggregationRule> {
+private val rangeConfig = jso<FormItemProps<Any>> {
+    rules = arrayOf(jso<AggregationRule> {
         type = "array"
         required = true
         message = "Please select time!"
@@ -132,12 +132,12 @@ private val timeRelatedForm = fc<Props> {
         }
         formItem {
             attrs {
-                wrapperCol = jsObject {
-                    xs = jsObject {
+                wrapperCol = jso {
+                    xs = jso {
                         span = 24
                         offset = 0
                     }
-                    sm = jsObject {
+                    sm = jso {
                         span = 16
                         offset = 8
                     }

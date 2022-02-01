@@ -5,7 +5,7 @@ import antd.button.button
 import antd.message.MessageInstance
 import antd.message.message
 import kotlinext.js.js
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.*
 import styled.css
 import styled.styledDiv
@@ -19,7 +19,7 @@ private val demo = fc<Props> {
     val contextHolder = useMessage[1].unsafeCast<ReactElement>()
 
     val info: MouseEventHandler<Any> = {
-        messageApi.open(jsObject {
+        messageApi.open(jso {
             type = "info"
             content = buildElement {
                 context.Consumer { name ->

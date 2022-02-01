@@ -3,19 +3,19 @@ package samples.cascader
 import antd.cascader.CascaderOptionType
 import antd.cascader.CascaderValueType
 import antd.cascader.cascader
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import kotlinx.browser.window
 import react.*
 import styled.css
 import styled.styledDiv
 
 private val cascaderOptions = arrayOf<CascaderOptionType>(
-    jsObject {
+    jso {
         value = "zhejiang"
         label = "Zhejiang"
         isLeaf = false
     },
-    jsObject {
+    jso {
         value = "jiangsu"
         label = "Jiangsu"
         isLeaf = false
@@ -39,11 +39,11 @@ class LazyOptions : RComponent<Props, LazyOptionsState>() {
         window.setTimeout({
             targetOption.loading = false
             targetOption.children = arrayOf(
-                jsObject {
+                jso {
                     label = buildElement { +"${targetOption.label} Dynamic 1" }
                     value = "dynamic1"
                 },
-                jsObject {
+                jso {
                     label = buildElement { +"${targetOption.label} Dynamic 2" }
                     value = "dynamic2"
                 }

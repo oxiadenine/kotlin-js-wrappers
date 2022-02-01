@@ -4,7 +4,7 @@ import antd.datepicker.RangeShowTimeObject
 import antd.datepicker.RangeValue
 import antd.datepicker.datePicker
 import antd.datepicker.rangePicker
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import moment.Moment
 import react.RBuilder
 import react.dom.br
@@ -40,7 +40,7 @@ fun RBuilder.time() {
             br {}
             rangePicker {
                 attrs {
-                    showTime = jsObject<RangeShowTimeObject<Moment>> {
+                    showTime = jso<RangeShowTimeObject<Moment>> {
                         defaultValue = "HH:mm"
                     }
                     format = "YYYY-MM-DD HH:mm"

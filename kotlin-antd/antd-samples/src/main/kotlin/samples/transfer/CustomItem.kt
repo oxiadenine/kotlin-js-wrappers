@@ -6,7 +6,7 @@ import antd.transfer.TransferComponent
 import antd.transfer.TransferItem
 import antd.transfer.transfer
 import kotlinext.js.js
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.*
 import react.dom.span
 import styled.css
@@ -28,7 +28,7 @@ class CustomItemApp : RComponent<Props, CustomItemAppState>() {
         val data = mutableListOf<TransferItem>()
 
         for (i in 0..19) {
-            val item = jsObject<CustomItemTransferItem> {
+            val item = jso<CustomItemTransferItem> {
                 key = i.toString()
                 title = "content${i + 1}"
                 description = "description of content${i + 1}"

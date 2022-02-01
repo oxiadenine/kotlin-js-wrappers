@@ -11,7 +11,7 @@ import antd.notification.NotificationPlacement
 import antd.notification.notification
 import antd.space.space
 import kotlinext.js.js
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.*
 import styled.css
 import styled.styledDiv
@@ -25,7 +25,7 @@ private val demo = fc<Props> {
     val contextHolder = useNotification[1].unsafeCast<ReactElement>()
 
     val openNotification = { notPlacement: NotificationPlacement ->
-        api.info(jsObject {
+        api.info(jso {
             message = "Notification $notPlacement"
             description = buildElement {
                 context.Consumer { name ->

@@ -9,7 +9,7 @@ import antd.input.input
 import antd.radio.RadioChangeEvent
 import antd.radio.radioButton
 import antd.radio.radioGroup
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.RBuilder
 import react.RComponent
 import react.State
@@ -35,15 +35,15 @@ private class FormLayoutDemo : RComponent<FormProps<Any>, FormLayoutDemoState>()
 
     override fun RBuilder.render() {
         val formItemLayout = if (state.formLayout == "horizontal") {
-            jsObject<FormItemProps<Any>> {
-                labelCol = jsObject { span = 4 }
-                wrapperCol = jsObject { span = 14 }
+            jso<FormItemProps<Any>> {
+                labelCol = jso { span = 4 }
+                wrapperCol = jso { span = 14 }
             }
         } else null
 
         val buttonItemLayout = if (state.formLayout == "horizontal") {
-            jsObject<FormItemProps<Any>> {
-                wrapperCol = jsObject {
+            jso<FormItemProps<Any>> {
+                wrapperCol = jso {
                     span = 14
                     offset = 4
                 }

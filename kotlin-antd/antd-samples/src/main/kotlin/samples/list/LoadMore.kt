@@ -9,7 +9,7 @@ import antd.list.listItem
 import antd.list.listItemMeta
 import antd.skeleton.skeleton
 import kotlinext.js.js
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import kotlinx.browser.window
 import kotlinx.css.*
 import kotlinx.css.properties.LineHeight
@@ -38,7 +38,7 @@ external interface LoadMoreListState : State {
 
 class LoadMoreList : RComponent<Props, LoadMoreListState>() {
     private val getData = fun(callback: (Any) -> Unit) {
-        window.fetch(fakeDataUrl, jsObject {
+        window.fetch(fakeDataUrl, jso {
             method = "GET"
             headers = json().apply {
                 this["Content-Type"] = "application/json"
@@ -60,7 +60,7 @@ class LoadMoreList : RComponent<Props, LoadMoreListState>() {
         getData { res ->
             val newData = state.data.plus(res.asDynamic().results.unsafeCast<Array<LoadMoreListDataItem>>())
 
-            setState(jsObject<LoadMoreListState> {
+            setState(jso<LoadMoreListState> {
                 data = newData
                 list = newData
                 loading = false

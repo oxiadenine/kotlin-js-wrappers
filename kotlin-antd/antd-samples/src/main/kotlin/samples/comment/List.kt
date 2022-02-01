@@ -5,7 +5,7 @@ import antd.comment.comment
 import antd.list.ListComponent
 import antd.list.list
 import antd.tooltip.tooltip
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import moment.moment
 import react.RBuilder
 import react.buildElement
@@ -16,7 +16,7 @@ import styled.css
 import styled.styledDiv
 
 private val data = arrayOf<CommentProps>(
-    jsObject {
+    jso {
         actions = arrayOf(buildElement {
             span { +"Reply to" }
         })
@@ -42,7 +42,7 @@ private val data = arrayOf<CommentProps>(
             }
         }
     },
-    jsObject {
+    jso {
         actions = arrayOf(buildElement {
             span { +"Reply to" }
         })

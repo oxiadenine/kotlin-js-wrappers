@@ -3,7 +3,7 @@ package samples.modal
 import antd.MouseEventHandler
 import antd.button.button
 import antd.modal.ModalComponent
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import kotlinx.browser.window
 import react.RBuilder
 import styled.css
@@ -12,7 +12,7 @@ import kotlin.js.Promise
 import kotlin.random.Random
 
 private val showConfirm: MouseEventHandler<Any> = {
-    ModalComponent.confirm(jsObject {
+    ModalComponent.confirm(jso {
         title = "Do you want to delete these items?"
         content = "When clicked the OK button, this dialog will be closed after 1 second"
         onOk = {

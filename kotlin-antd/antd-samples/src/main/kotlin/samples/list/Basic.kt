@@ -5,7 +5,7 @@ import antd.list.ListComponent
 import antd.list.list
 import antd.list.listItem
 import antd.list.listItemMeta
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.RBuilder
 import react.buildElement
 import react.dom.a
@@ -17,16 +17,16 @@ private external interface BasicListDataItem {
 }
 
 private val data = arrayOf<BasicListDataItem>(
-    jsObject {
+    jso {
         title = "Ant Design Title 1"
     },
-    jsObject {
+    jso {
         title = "Ant Design Title 2"
     },
-    jsObject {
+    jso {
         title = "Ant Design Title 3"
     },
-    jsObject {
+    jso {
         title = "Ant Design Title 4"
     }
 )

@@ -16,32 +16,32 @@ private external interface PrimeNumber {
 
 private fun validatePrimeNumber(number: Number): PrimeNumber {
     if (number == 11) {
-        return jsObject {
+        return jso {
             validateStatus = "success"
             errorMsg = null
         }
     }
 
-    return jsObject {
+    return jso {
         validateStatus = "error"
         errorMsg = "The prime between 8 and 12 is 11!"
     }
 }
 
-private val formItemLayout = jsObject<FormItemProps<Any>> {
-    labelCol = jsObject { span = 7 }
-    wrapperCol = jsObject { span = 12 }
+private val formItemLayout = jso<FormItemProps<Any>> {
+    labelCol = jso { span = 7 }
+    wrapperCol = jso { span = 12 }
 }
 
 private val rawForm = fc<Props> {
-    val (number, setNumber) = useState(jsObject<PrimeNumber> { value = 11 })
+    val (number, setNumber) = useState(jso<PrimeNumber> { value = 11 })
 
     val tips = "A prime is a natural number greater than 1 that has no positive divisors other than 1 and itself."
 
     val handleNumberChange: ChangeEventHandler<HTMLInputElement> = { inputValue ->
         val validation = validatePrimeNumber(inputValue.unsafeCast<Number>())
 
-        setNumber(jsObject<PrimeNumber> {
+        setNumber(jso<PrimeNumber> {
             validateStatus = validation.validateStatus
             errorMsg = validation.errorMsg
             value = inputValue.unsafeCast<Number>()

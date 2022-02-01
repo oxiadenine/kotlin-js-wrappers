@@ -23,7 +23,7 @@ import antd.upload.UploadComponent
 import antd.upload.upload
 import antd.upload.uploadDragger
 import kotlinext.js.js
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import kotlinx.html.classes
 import react.RBuilder
 import react.Props
@@ -34,9 +34,9 @@ import react.fc
 import styled.css
 import styled.styledDiv
 
-private val formItemLayout = jsObject<FormProps<Any>> {
-    labelCol = jsObject { span = 6 }
-    wrapperCol = jsObject { span = 14 }
+private val formItemLayout = jso<FormProps<Any>> {
+    labelCol = jso { span = 6 }
+    wrapperCol = jso { span = 14 }
 }
 
 private val normFile = { e: EventArgs ->
@@ -86,7 +86,7 @@ private val demo = fc<Props> {
                 name = "select"
                 label = "Select"
                 hasFeedback = true
-                rules = arrayOf(jsObject<AggregationRule> {
+                rules = arrayOf(jso<AggregationRule> {
                     required = true
                     message = "Please select your country!"
                 })
@@ -107,7 +107,7 @@ private val demo = fc<Props> {
             attrs {
                 name = "select-multiple"
                 label = "Select[multiple]"
-                rules = arrayOf(jsObject<AggregationRule> {
+                rules = arrayOf(jso<AggregationRule> {
                     required = true
                     message = "Please select your favourite colors!"
                     type = "array"
@@ -192,7 +192,7 @@ private val demo = fc<Props> {
             attrs {
                 name = "radio-button"
                 label = "Radio.Button"
-                rules = arrayOf(jsObject<AggregationRule> {
+                rules = arrayOf(jso<AggregationRule> {
                     required = true
                     message = "Please pick an item!"
                 })
@@ -330,7 +330,7 @@ private val demo = fc<Props> {
         }
         formItem {
             attrs {
-                wrapperCol = jsObject {
+                wrapperCol = jso {
                     span = 12
                     offset = 6
                 }

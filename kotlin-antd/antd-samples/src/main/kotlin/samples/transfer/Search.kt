@@ -6,7 +6,7 @@ import antd.transfer.TransferComponent
 import antd.transfer.TransferItem
 import antd.transfer.transfer
 import kotlinext.js.js
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.*
 import styled.css
 import styled.styledDiv
@@ -36,7 +36,7 @@ class SearchApp : RComponent<Props, SearchAppState>() {
         val data = mutableListOf<TransferItem>()
 
         for (i in 0..19) {
-            val item = jsObject<SearchTransferItem> {
+            val item = jso<SearchTransferItem> {
                 key = i.toString()
                 title = "content${i + 1}"
                 description = "description of content${i + 1}"

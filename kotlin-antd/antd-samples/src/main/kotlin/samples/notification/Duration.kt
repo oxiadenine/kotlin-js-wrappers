@@ -4,13 +4,13 @@ import antd.MouseEventHandler
 import antd.button.button
 import antd.notification.ArgsProps
 import antd.notification.notification
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.RBuilder
 import styled.css
 import styled.styledDiv
 
 private val openNotification: MouseEventHandler<Any> = {
-    val args = jsObject<ArgsProps> {
+    val args = jso<ArgsProps> {
         message = "Notification Title"
         description = "I will never close automatically. I will be close automatically. I will never close automatically."
         duration = 0

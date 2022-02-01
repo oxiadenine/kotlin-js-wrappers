@@ -8,6 +8,7 @@ dependencies {
 
     api(kotlinWrapperDependency("react-legacy"))
     api(kotlinWrapperDependency("react-dom-legacy"))
+    api(kotlinWrapperDependency("extensions"))
 
     api(npmPackage("antd"))
 }
@@ -59,7 +60,7 @@ tasks.register("generateIconFiles") {
 
                 iconsDslFile.appendText("""
                     fun RBuilder.$iconName(handler: RHandler<AntdIconProps>) = 
-                        child(${iconName.plus("Icon")}.default, jsObject {}, handler)
+                        child(${iconName.plus("Icon")}.default, jso {}, handler)
                 """.trimIndent())
                 iconsDslFile.appendText("\n\n")
             }

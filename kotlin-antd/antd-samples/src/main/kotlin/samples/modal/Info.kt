@@ -3,7 +3,7 @@ package samples.modal
 import antd.MouseEventHandler
 import antd.button.button
 import antd.modal.ModalComponent
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.RBuilder
 import react.buildElement
 import react.dom.div
@@ -13,7 +13,7 @@ import styled.styledDiv
 import kotlin.js.Promise
 
 private val info: MouseEventHandler<Any> = {
-    ModalComponent.info(jsObject {
+    ModalComponent.info(jso {
         title = "This is a notification message"
         content = buildElement {
             div {
@@ -26,21 +26,21 @@ private val info: MouseEventHandler<Any> = {
 }
 
 private val success: MouseEventHandler<Any> = {
-    ModalComponent.success(jsObject {
+    ModalComponent.success(jso {
         title = "This is a success message"
         content = "some messages...some messages..."
     })
 }
 
 private val error: MouseEventHandler<Any> = {
-    ModalComponent.error(jsObject {
+    ModalComponent.error(jso {
         title = "This is an error message"
         content = "some messages...some messages..."
     })
 }
 
 private val warning: MouseEventHandler<Any> = {
-    ModalComponent.warning(jsObject {
+    ModalComponent.warning(jso {
         title = "This is a warning message"
         content = "some messages...some messages..."
     })

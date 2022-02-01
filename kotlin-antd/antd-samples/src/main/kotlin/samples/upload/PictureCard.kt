@@ -7,7 +7,7 @@ import antd.upload.UploadChangeParam
 import antd.upload.UploadComponent
 import antd.upload.UploadFile
 import antd.upload.upload
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import kotlinx.css.LinearDimension
 import kotlinx.css.width
 import kotlinx.html.classes
@@ -50,7 +50,7 @@ class PicturesWall : RComponent<Props, PicturesWallState>() {
     override fun PicturesWallState.init() {
         previewVisible = false
         previewImage = ""
-        fileList = arrayOf(jsObject<UploadFile<Any>> {
+        fileList = arrayOf(jso<UploadFile<Any>> {
             uid = "-1"
             name = "xxx.png"
             status = "done"

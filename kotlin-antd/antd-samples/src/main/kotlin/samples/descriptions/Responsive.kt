@@ -3,7 +3,7 @@ package samples.descriptions
 import antd.ScreenSizeMap
 import antd.descriptions.descriptions
 import antd.descriptions.descriptionsItem
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.RBuilder
 import react.dom.br
 import styled.css
@@ -13,7 +13,7 @@ fun RBuilder.responsiveDemo() {
     descriptions {
         attrs {
             title = "Responsive Descriptions"
-            column = jsObject<ScreenSizeMap> {
+            column = jso<ScreenSizeMap> {
                 xxl = 4
                 xl = 2
                 lg = 3

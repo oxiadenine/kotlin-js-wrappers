@@ -4,7 +4,7 @@ import antd.table.ColumnType
 import antd.table.ColumnsType
 import antd.table.TableComponent
 import antd.table.table
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import kotlinx.css.margin
 import kotlinx.css.px
 import react.RBuilder
@@ -23,22 +23,22 @@ private external interface ExpandTableDataItem {
 }
 
 private val tableColumns = arrayOf<ColumnType<ExpandTableDataItem>>(
-    jsObject {
+    jso {
         title = "Name"
         dataIndex = "name"
         key = "name"
     },
-    jsObject {
+    jso {
         title = "Age"
         dataIndex = "age"
         key = "age"
     },
-    jsObject {
+    jso {
         title = "Address"
         dataIndex = "address"
         key = "address"
     },
-    jsObject {
+    jso {
         title = "Action"
         dataIndex = ""
         key = "x"
@@ -54,21 +54,21 @@ private val tableColumns = arrayOf<ColumnType<ExpandTableDataItem>>(
 )
 
 private val tableData = arrayOf<ExpandTableDataItem>(
-    jsObject {
+    jso {
         key = "1"
         name = "John Brown"
         age = 32
         address = "New York No. 1 Lake Park"
         description = "My name is John Brown, I am 32 years old, living in New York No. 1 Lake Park."
     },
-    jsObject {
+    jso {
         key = "2"
         name = "Jim Green"
         age = 42
         address = "London No. 1 Lake Park"
         description = "My name is Jim Green, I am 42 years old, living in London No. 1 Lake Park."
     },
-    jsObject {
+    jso {
         key = "3"
         name = "Joe Black"
         age = 32

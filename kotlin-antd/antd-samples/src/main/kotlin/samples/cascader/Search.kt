@@ -1,25 +1,25 @@
 package samples.cascader
 
 import antd.cascader.*
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.RBuilder
 import styled.css
 import styled.styledDiv
 
 private val cascaderOptions = arrayOf<CascaderOptionType>(
-    jsObject {
+    jso {
         value = "zhejiang"
         label = "Zhejiang"
         children = arrayOf(
-            jsObject {
+            jso {
                 value = "hangzhou"
                 label = "Hangzhou"
                 children = arrayOf(
-                    jsObject {
+                    jso {
                         value = "xihu"
                         label = "West Lake"
                     },
-                    jsObject {
+                    jso {
                         value = "xiasha"
                         label = "Xia Sha"
                         disabled = true
@@ -28,15 +28,15 @@ private val cascaderOptions = arrayOf<CascaderOptionType>(
             }
         )
     },
-    jsObject {
+    jso {
         value = "jiangsu"
         label = "Jiangsu"
         children = arrayOf(
-            jsObject {
+            jso {
                 value = "nanjing"
                 label = "Nanjing"
                 children = arrayOf(
-                    jsObject {
+                    jso {
                         value = "zhonghuamen"
                         label = "Zhong Hua Men"
                     }
@@ -64,7 +64,7 @@ fun RBuilder.search() {
                 options = cascaderOptions
                 onChange = ::handleChange
                 placeholder = "Please select"
-                showSearch = jsObject<ShowSearchType> {
+                showSearch = jso<ShowSearchType> {
                     filter = searchFilter
                 }
             }

@@ -4,7 +4,7 @@ import antd.table.*
 import kotlinext.js.Object
 import kotlinext.js.Record
 import kotlinext.js.js
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import kotlinx.browser.window
 import react.*
 import styled.css
@@ -12,29 +12,29 @@ import styled.styledDiv
 import kotlin.js.json
 
 private val tableColumns = arrayOf<ColumnType<Any>>(
-    jsObject {
+    jso {
         title = "Name"
         dataIndex = "name"
         sorter = true
         render = { name, _, _ -> "${name.asDynamic().first} ${name.asDynamic().last}" }
         width = "20%"
     },
-    jsObject {
+    jso {
         title = "Gender"
         dataIndex = "gender"
         filters = arrayOf(
-            jsObject {
+            jso {
                 text = "Male"
                 value = "male"
             },
-            jsObject {
+            jso {
                 text = "Female"
                 value = "female"
             }
         )
         width = "20%"
     },
-    jsObject {
+    jso {
         title = "Email"
         dataIndex = "email"
     }
@@ -88,7 +88,7 @@ class AjaxApp : RComponent<Props, AjaxAppState>() {
             } else ""
         }.toTypedArray().joinToString("")
 
-        window.fetch("https://randomuser.me/api?$queryString", jsObject {
+        window.fetch("https://randomuser.me/api?$queryString", jso {
             method = "GET"
             headers = json().apply {
                 this["Content-Type"] = "application/json"
@@ -109,12 +109,12 @@ class AjaxApp : RComponent<Props, AjaxAppState>() {
 
     override fun AjaxAppState.init() {
         data = emptyArray()
-        pagination = jsObject {}
+        pagination = jso {}
         loading = false
     }
 
     override fun componentDidMount() {
-        fetch(jsObject {})
+        fetch(jso {})
     }
 
     override fun RBuilder.render() {

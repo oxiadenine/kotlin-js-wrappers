@@ -4,7 +4,7 @@ import antd.select.LabeledValue
 import antd.select.SelectComponent
 import antd.select.select
 import kotlinext.js.js
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.RBuilder
 import react.dom.option
 import styled.css
@@ -20,7 +20,7 @@ fun RBuilder.labelInValue() {
         select<LabeledValue, SelectComponent<LabeledValue>> {
             attrs {
                 labelInValue = true
-                defaultValue = jsObject { key = "lucy" }
+                defaultValue = jso { key = "lucy" }
                 style = js { width = 120 }
                 onChange = handleChange
             }

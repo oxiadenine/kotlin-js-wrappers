@@ -3,7 +3,7 @@ package samples.modal
 import antd.MouseEventHandler
 import antd.button.button
 import antd.modal.ModalComponent
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import kotlinx.browser.window
 import react.RBuilder
 import react.buildElement
@@ -18,7 +18,7 @@ private val destroyAll: MouseEventHandler<Any> = {
 private val showConfirm: MouseEventHandler<Any> = {
     for (i in 0 until 3) {
         window.setTimeout({
-            ModalComponent.confirm(jsObject {
+            ModalComponent.confirm(jso {
                 content = buildElement {
                     button {
                         attrs.onClick = destroyAll

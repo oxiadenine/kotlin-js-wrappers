@@ -34,7 +34,7 @@ import antd.treeselect.TreeSelectComponent
 import antd.treeselect.treeNode
 import antd.treeselect.treeSelect
 import kotlinext.js.js
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import kotlinx.css.*
 import kotlinx.html.classes
 import org.w3c.dom.HTMLElement
@@ -46,37 +46,37 @@ import styled.styledDiv
 import styled.styledSpan
 
 private val cascaderOptions = arrayOf<CascaderOptionType>(
-    jsObject {
+    jso {
         value = "tehran"
         label = "تهران"
-        children = arrayOf(jsObject {
+        children = arrayOf(jso {
             value = "tehran-c"
             label = "تهران"
-            children = arrayOf(jsObject {
+            children = arrayOf(jso {
                 value = "saadat-abad"
                 label = "سعادت آیاد"
             })
         })
     },
-    jsObject {
+    jso {
         value = "ardabil"
         label = "اردبیل"
-        children = arrayOf(jsObject {
+        children = arrayOf(jso {
             value = "ardabil-c"
             label = "اردبیل"
-            children = arrayOf(jsObject {
+            children = arrayOf(jso {
                 value = "primadar"
                 label = "پیرمادر"
             })
         })
     },
-    jsObject {
+    jso {
         value = "gilan"
         label = "گیلان"
-        children = arrayOf(jsObject {
+        children = arrayOf(jso {
             value = "rasht"
             label = "رشت"
-            children = arrayOf(jsObject {
+            children = arrayOf(jso {
                 value = "district-3"
                 label = "منطقه ۳"
             })

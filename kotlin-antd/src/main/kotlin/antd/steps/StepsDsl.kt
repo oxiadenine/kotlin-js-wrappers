@@ -4,4 +4,4 @@ import kotlinext.js.*
 import react.*
 
 fun RBuilder.steps(handler: RHandler<StepsProps>) = child(StepsComponent::class, handler)
-fun RBuilder.step(handler: RHandler<StepProps>) = child(StepsComponent.Step, jsObject {}, handler)
+fun RBuilder.step(handler: RHandler<StepProps>) = child(StepsComponent.Step, jso {}, handler)
