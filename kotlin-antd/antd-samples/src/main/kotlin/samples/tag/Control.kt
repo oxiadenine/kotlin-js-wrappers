@@ -32,7 +32,7 @@ class ControlEditableTagGroup : RComponent<Props, ControlEditableTagGroupState>(
     }
 
     private val showInput: MouseEventHandler<HTMLDivElement> = {
-        setState(jsObject<ControlEditableTagGroupState> {
+        setState(jso<ControlEditableTagGroupState> {
             inputVisible = true
         }) {
             input?.focus().unsafeCast<Function<Unit>>()

@@ -3,77 +3,77 @@ package samples.tree
 import antd.Key
 import antd.tree.*
 import kotlinext.js.Object
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.*
 import styled.css
 import styled.styledDiv
 
 private val treeData = arrayOf<TreeNodeNormal>(
-    jsObject {
+    jso {
         title = "0-0"
         key = "0-0"
         children = arrayOf(
-            jsObject {
+            jso {
                 title = "0-0-0"
                 key = "0-0-0"
                 children = arrayOf(
-                    jsObject {
+                    jso {
                         title = "0-0-0-0"
                         key = "0-0-0-0"
                     },
-                    jsObject {
+                    jso {
                         title = "0-0-0-1"
                         key = "0-0-0-1"
                     },
-                    jsObject {
+                    jso {
                         title = "0-0-0-2"
                         key = "0-0-0-2"
                     }
                 )
             },
-            jsObject {
+            jso {
                 title = "0-0-1"
                 key = "0-0-1"
                 children = arrayOf(
-                    jsObject {
+                    jso {
                         title = "0-0-1-0"
                         key = "0-0-1-0"
                     },
-                    jsObject {
+                    jso {
                         title = "0-0-1-1"
                         key = "0-0-1-1"
                     },
-                    jsObject {
+                    jso {
                         title = "0-0-1-"
                         key = "0-0-1-2"
                     }
                 )
             },
-            jsObject {
+            jso {
                 title = "0-0-2"
                 key = "0-0-2"
             }
         )
     },
-    jsObject {
+    jso {
         title = "0-1"
         key = "0-1"
         children = arrayOf(
-            jsObject {
+            jso {
                 title = "0-1-0-0"
                 key = "0-1-0-0"
             },
-            jsObject {
+            jso {
                 title = "0-1-0-1"
                 key = "0-1-0-1"
             },
-            jsObject {
+            jso {
                 title = "0-1-0-2"
                 key = "0-1-0-2"
             }
         )
     },
-    jsObject {
+    jso {
         title = "0-2"
         key = "0-2"
     }

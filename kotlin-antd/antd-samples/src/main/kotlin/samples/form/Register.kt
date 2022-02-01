@@ -17,7 +17,7 @@ import antd.select.option
 import antd.select.select
 import antd.tooltip.tooltip
 import kotlinext.js.js
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.*
 import react.dom.a
 import react.dom.span
@@ -26,25 +26,25 @@ import styled.styledDiv
 import kotlin.js.Promise
 
 private val residences: Array<CascaderOptionType> = arrayOf(
-    jsObject {
+    jso {
         value = "zhejiang"
         label = "Zhejiang"
-        children = arrayOf(jsObject {
+        children = arrayOf(jso {
             value = "hangzhou"
             label = "Hangzhou"
-            children = arrayOf(jsObject {
+            children = arrayOf(jso {
                 value = "xihu"
                 label = "West Lake"
             })
         })
     },
-    jsObject {
+    jso {
         value = "jiangsu"
         label = "Jiangsu"
-        children = arrayOf(jsObject {
+        children = arrayOf(jso {
             value = "nanjing"
             label = "Nanjing"
-            children = arrayOf(jsObject {
+            children = arrayOf(jso {
                 value = "zhonghuamen"
                 label = "Zhong Hua Men"
             })
@@ -52,24 +52,24 @@ private val residences: Array<CascaderOptionType> = arrayOf(
     }
 )
 
-private val formItemLayout = jsObject<FormItemProps<Any>> {
-    labelCol = jsObject {
-        xs = jsObject { span = 24 }
-        sm = jsObject { span = 8 }
+private val formItemLayout = jso<FormItemProps<Any>> {
+    labelCol = jso {
+        xs = jso { span = 24 }
+        sm = jso { span = 8 }
     }
-    wrapperCol = jsObject {
-        xs = jsObject { span = 24 }
-        sm = jsObject { span = 16 }
+    wrapperCol = jso {
+        xs = jso { span = 24 }
+        sm = jso { span = 16 }
     }
 }
 
-private val tailFormItemLayout = jsObject<FormProps<Any>> {
-    wrapperCol = jsObject {
-        xs = jsObject {
+private val tailFormItemLayout = jso<FormProps<Any>> {
+    wrapperCol = jso {
+        xs = jso {
             span = 24
             offset = 0
         }
-        sm = jsObject {
+        sm = jso {
             span = 16
             offset = 8
         }
@@ -145,11 +145,11 @@ private val registrationForm = fc<Props> {
                 name = "email"
                 label = "Email"
                 rules = arrayOf(
-                    jsObject<AggregationRule> {
+                    jso<AggregationRule> {
                         type = "email"
                         message = "The input is not valid E-mail!"
                     },
-                    jsObject<AggregationRule> {
+                    jso<AggregationRule> {
                         required = true
                         message = "Please input your E-mail!"
                     }
@@ -162,7 +162,7 @@ private val registrationForm = fc<Props> {
                 name = "password"
                 label = "Password"
                 rules = arrayOf(
-                    jsObject<AggregationRule> {
+                    jso<AggregationRule> {
                         required = true
                         message = "Please input your password!"
                     }
@@ -178,11 +178,11 @@ private val registrationForm = fc<Props> {
                 dependencies = arrayOf("password")
                 hasFeedback = true
                 rules = arrayOf(
-                    jsObject<AggregationRule> {
+                    jso<AggregationRule> {
                         required = true
                         message = "Please confirm your password!"
                     },
-                    jsObject<ValidatorRule> {
+                    jso<ValidatorRule> {
                         validator = { _, value, _ ->
                             if (value !== null || formInstance.getFieldValue("password") === value) {
                                 Promise.resolve(Unit)
@@ -207,7 +207,7 @@ private val registrationForm = fc<Props> {
                     }
                 }
                 rules = arrayOf(
-                    jsObject<AggregationRule> {
+                    jso<AggregationRule> {
                         required = true
                         message = "Please input your nickname!"
                         whitespace = true
@@ -221,7 +221,7 @@ private val registrationForm = fc<Props> {
                 name = "residence"
                 label = "Habitual Residence"
                 rules = arrayOf(
-                    jsObject<AggregationRule> {
+                    jso<AggregationRule> {
                         type = "array"
                         required = true
                         message = "Please select your habitual residence!"
@@ -237,7 +237,7 @@ private val registrationForm = fc<Props> {
                 name = "phone"
                 label = "Phone Number"
                 rules = arrayOf(
-                    jsObject<AggregationRule> {
+                    jso<AggregationRule> {
                         required = true
                         message = "Please input your phone number!"
                     }
@@ -255,7 +255,7 @@ private val registrationForm = fc<Props> {
                 name = "website"
                 label = "Website"
                 rules = arrayOf(
-                    jsObject<AggregationRule> {
+                    jso<AggregationRule> {
                         required = true
                         message = "Please input website!"
                     }
@@ -284,7 +284,7 @@ private val registrationForm = fc<Props> {
                             name = "captcha"
                             noStyle = true
                             rules = arrayOf(
-                                jsObject<AggregationRule> {
+                                jso<AggregationRule> {
                                     required = true
                                     message = "Please input the captcha you got!"
                                 }
@@ -304,7 +304,7 @@ private val registrationForm = fc<Props> {
                 name = "agreement"
                 valuePropName = "checked"
                 rules = arrayOf(
-                    jsObject<ValidatorRule> {
+                    jso<ValidatorRule> {
                         validator = { _, value, _ ->
                             if (value !== null) {
                                 Promise.resolve(Unit)

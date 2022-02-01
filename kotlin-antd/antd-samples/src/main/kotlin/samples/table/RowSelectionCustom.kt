@@ -2,7 +2,7 @@ package samples.table
 
 import antd.Key
 import antd.table.*
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.*
 import styled.css
 import styled.styledDiv
@@ -15,22 +15,22 @@ private external interface RowSelectionCustomTableDataItem {
 }
 
 private val tableColumns = arrayOf<ColumnType<RowSelectionCustomTableDataItem>>(
-    jsObject {
+    jso {
         title = "Name"
         dataIndex = "name"
     },
-    jsObject {
+    jso {
         title = "Age"
         dataIndex = "age"
     },
-    jsObject {
+    jso {
         title = "Address"
         dataIndex = "address"
     }
 )
 
 private val tableData = (0..46).map { i ->
-    jsObject<RowSelectionCustomTableDataItem> {
+    jso<RowSelectionCustomTableDataItem> {
         key = "$i"
         name = "Edward King $i"
         age = 32
@@ -56,11 +56,11 @@ class RowSelectionCustomApp : RComponent<Props, RowSelectionCustomAppState>() {
     }
 
     override fun RBuilder.render() {
-        val tableRowSelection = jsObject<TableRowSelection<RowSelectionCustomTableDataItem>> {
+        val tableRowSelection = jso<TableRowSelection<RowSelectionCustomTableDataItem>> {
             selectedRowKeys = state.selectedRowKeys
             onChange = handleSelectChange
             selections = arrayOf<SelectionItem>(
-                jsObject {
+                jso {
                     key = "all-data"
                     text = "Select All Data"
                     onSelect = { changableRowKeys ->
@@ -69,7 +69,7 @@ class RowSelectionCustomApp : RComponent<Props, RowSelectionCustomAppState>() {
                         }
                     }
                 },
-                jsObject {
+                jso {
                     key = "odd"
                     text = "Select Odd Row"
                     onSelect = { changableRowKeys ->
@@ -86,7 +86,7 @@ class RowSelectionCustomApp : RComponent<Props, RowSelectionCustomAppState>() {
                         }
                     }
                 },
-                jsObject {
+                jso {
                     key = "even"
                     text = "Select Even Row"
                     onSelect = { changableRowKeys ->

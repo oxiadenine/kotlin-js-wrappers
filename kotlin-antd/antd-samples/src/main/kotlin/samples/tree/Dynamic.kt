@@ -4,7 +4,7 @@ import antd.Key
 import antd.tree.DataNode
 import antd.tree.EventDataNode
 import antd.tree.tree
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import kotlinx.browser.window
 import react.*
 import styled.css
@@ -12,15 +12,15 @@ import styled.styledDiv
 import kotlin.js.Promise
 
 private val initTreeData = arrayOf<DataNode>(
-    jsObject {
+    jso {
         title = "Expand to load"
         key = "0"
     },
-    jsObject {
+    jso {
         title = "Expand to load"
         key = "1"
     },
-    jsObject {
+    jso {
         title = "Tree Node"
         key = "2"
         isLeaf = true
@@ -30,14 +30,14 @@ private val initTreeData = arrayOf<DataNode>(
 private fun updateTreeData(list: Array<DataNode>, nodeKey: Key, nodeChildren: Array<DataNode>): Array<DataNode> {
     return list.map { node ->
         if (node.key == nodeKey) {
-            return@map jsObject {
+            return@map jso {
                 title = node.title
                 key = node.key
                 isLeaf = node.isLeaf
                 children = nodeChildren
             }
         } else if (node.children != null) {
-            return@map jsObject {
+            return@map jso {
                 title = node.title
                 key = node.key
                 isLeaf = node.isLeaf
@@ -60,11 +60,11 @@ private val demo = fc<Props> {
             window.setTimeout({
                 setTreeData(
                     updateTreeData(node.children!!, node.key, arrayOf(
-                        jsObject {
+                        jso {
                             title = "Child Node"
                             key = "${node.key}-0"
                         },
-                        jsObject {
+                        jso {
                             title = "Child Node"
                             key = "${node.key}-1"
                         })

@@ -3,7 +3,7 @@ package samples.checkbox
 import antd.checkbox.CheckboxOptionType
 import antd.checkbox.CheckboxValueType
 import antd.checkbox.checkboxGroup
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.RBuilder
 import react.dom.br
 import react.dom.div
@@ -12,29 +12,29 @@ import styled.styledDiv
 
 private val plainOptions: Array<CheckboxValueType> = arrayOf("Apple", "Pear", "Orange")
 private val options = arrayOf<CheckboxOptionType>(
-    jsObject {
+    jso {
         label = "Apple"
         value = "Apple"
     },
-    jsObject {
+    jso {
         label = "Pear"
         value = "Pear"
     },
-    jsObject {
+    jso {
         label = "Orange"
         value = "Orange"
     }
 )
 private val optionsWithDisabled = arrayOf<CheckboxOptionType>(
-    jsObject {
+    jso {
         label = "Apple"
         value = "Apple"
     },
-    jsObject {
+    jso {
         label = "Pear"
         value = "Pear"
     },
-    jsObject {
+    jso {
         label = "Orange"
         value = "Orange"
         disabled = true

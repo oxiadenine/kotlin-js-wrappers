@@ -5,7 +5,7 @@ import antd.table.ColumnsType
 import antd.table.TableComponent
 import antd.table.table
 import kotlinext.js.js
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.RBuilder
 import react.buildElement
 import react.dom.a
@@ -35,7 +35,7 @@ private val renderContent: (Any, Any, Number) -> Any = { value, _, index ->
 }
 
 private val tableColumns = arrayOf<ColumnType<ColspanRowspanTableDataItem>>(
-    jsObject {
+    jso {
         title = "Name"
         dataIndex = "name"
         render = { text, _, index ->
@@ -63,12 +63,12 @@ private val tableColumns = arrayOf<ColumnType<ColspanRowspanTableDataItem>>(
             }
         }
     },
-    jsObject {
+    jso {
         title = "Age"
         dataIndex = "age"
         render = renderContent
     },
-    jsObject {
+    jso {
         title = "Home phone"
         colSpan = 2
         dataIndex = "tel"
@@ -94,13 +94,13 @@ private val tableColumns = arrayOf<ColumnType<ColspanRowspanTableDataItem>>(
             obj.unsafeCast<Any>()
         }
     },
-    jsObject {
+    jso {
         title = "Phone"
         colSpan = 0
         dataIndex = "phone"
         render = renderContent
     },
-    jsObject {
+    jso {
         title = "Address"
         dataIndex = "address"
         render = renderContent
@@ -108,7 +108,7 @@ private val tableColumns = arrayOf<ColumnType<ColspanRowspanTableDataItem>>(
 )
 
 private val tableData = arrayOf<ColspanRowspanTableDataItem>(
-    jsObject {
+    jso {
         key = "1"
         name = "John Brown"
         age = 32
@@ -116,7 +116,7 @@ private val tableData = arrayOf<ColspanRowspanTableDataItem>(
         phone = "18889898989"
         address = "New York No. 1 Lake Park"
     },
-    jsObject {
+    jso {
         key = "2"
         name = "Jim Green"
         tel = "0571-22098333"
@@ -124,7 +124,7 @@ private val tableData = arrayOf<ColspanRowspanTableDataItem>(
         age = 42
         address = "London No. 1 Lake Park"
     },
-    jsObject {
+    jso {
         key = "3"
         name = "Joe Black"
         age = 32
@@ -132,7 +132,7 @@ private val tableData = arrayOf<ColspanRowspanTableDataItem>(
         phone = "18900010002"
         address = "Sidney No. 1 Lake Park"
     },
-    jsObject {
+    jso {
         key = "4"
         name = "Jim Red"
         age = 18
@@ -140,7 +140,7 @@ private val tableData = arrayOf<ColspanRowspanTableDataItem>(
         phone = "18900010002"
         address = "London No. 2 Lake Park"
     },
-    jsObject {
+    jso {
         key = "5"
         name = "Jake White"
         age = 18

@@ -12,21 +12,21 @@ import antd.select.option
 import antd.select.select
 import antd.timepicker.timePicker
 import kotlinext.js.js
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import kotlinx.css.*
 import react.RBuilder
 import styled.css
 import styled.styledDiv
 import styled.styledSpan
 
-private val formItemLayout = jsObject<FormItemProps<Any>> {
-    labelCol = jsObject {
-        xs = jsObject { span = 24 }
-        sm = jsObject { span = 5 }
+private val formItemLayout = jso<FormItemProps<Any>> {
+    labelCol = jso {
+        xs = jso { span = 24 }
+        sm = jso { span = 5 }
     }
-    wrapperCol = jsObject {
-        xs = jsObject { span = 24 }
-        sm = jsObject { span = 12 }
+    wrapperCol = jso {
+        xs = jso { span = 24 }
+        sm = jso { span = 12 }
     }
 }
 

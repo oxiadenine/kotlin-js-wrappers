@@ -12,7 +12,7 @@ import antd.list.listItemMeta
 import antd.skeleton.skeleton
 import antd.switch.switch
 import kotlinext.js.js
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import org.w3c.dom.events.MouseEvent
 import react.*
 import react.dom.*
@@ -28,7 +28,7 @@ private external interface ListListDataItem {
 }
 
 private val listData = (0..2).map { i ->
-    jsObject<ListListDataItem> {
+    jso<ListListDataItem> {
         href = "http://ant.design"
         title = "ant design part $i"
         avatar = "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
@@ -51,7 +51,7 @@ private val iconText = fc<ListIconTextProps> { props ->
     }
 }
 
-fun RBuilder.iconText(handler: RHandler<ListIconTextProps>) = child(iconText, jsObject {}, handler)
+fun RBuilder.iconText(handler: RHandler<ListIconTextProps>) = child(iconText, jso {}, handler)
 
 external interface ListAppState : State {
     var loading: Boolean

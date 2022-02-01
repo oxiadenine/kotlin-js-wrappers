@@ -2,7 +2,7 @@ package samples.table
 
 import antd.table.*
 import antd.typography.typographyText
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.RBuilder
 import react.buildElement
 import react.dom.br
@@ -23,40 +23,40 @@ private external interface SummaryFixedDataItem {
 }
 
 private val tableColumns = arrayOf<ColumnType<SummaryDataItem>>(
-    jsObject {
+    jso {
         title = "Name"
         dataIndex = "name"
     },
-    jsObject {
+    jso {
         title = "Borrow"
         dataIndex = "borrow"
     },
-    jsObject {
+    jso {
         title = "Repayment"
         dataIndex = "repayment"
     }
 )
 
 private val tableData = arrayOf<SummaryDataItem>(
-    jsObject {
+    jso {
         key = "1"
         name = "John Brown"
         borrow = 10
         repayment = 33
     },
-    jsObject {
+    jso {
         key = "2"
         name = "Jim Green"
         borrow = 100
         repayment = 0
     },
-    jsObject {
+    jso {
         key = "3"
         name = "Joe Black"
         borrow = 10
         repayment = 10
     },
-    jsObject {
+    jso {
         key = "4"
         name = "Jim Red"
         borrow = 75
@@ -65,20 +65,20 @@ private val tableData = arrayOf<SummaryDataItem>(
 )
 
 private val fixedTableColumns = arrayOf<ColumnType<SummaryFixedDataItem>>(
-    jsObject {
+    jso {
         title = "Name"
         dataIndex = "name"
         fixed = true
         width = 100
     },
-    jsObject {
+    jso {
         title = "Description"
         dataIndex = "description"
     }
 )
 
 private val fixedTableData = (1..6).map { i ->
-    jsObject<SummaryFixedDataItem> {
+    jso<SummaryFixedDataItem> {
         key = i
         name = if (i % 2 == 0) "Light" else "Bamboo"
         description = "Everything that has a beginning, has an end."
@@ -136,7 +136,7 @@ fun RBuilder.summary() {
                 columns = fixedTableColumns.unsafeCast<ColumnsType<SummaryFixedDataItem>>()
                 dataSource = fixedTableData
                 pagination = false
-                scroll = jsObject { x = 2000 }
+                scroll = jso { x = 2000 }
                 bordered = true
                 summary = {
                     buildElement {

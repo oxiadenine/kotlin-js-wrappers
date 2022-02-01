@@ -9,14 +9,14 @@ import kotlinext.js.*
 import react.*
 import styled.*
 
-private val formItemLayout = jsObject<FormItemProps<Any>> {
-    labelCol = jsObject { span = 4 }
-    wrapperCol = jsObject { span = 8 }
+private val formItemLayout = jso<FormItemProps<Any>> {
+    labelCol = jso { span = 4 }
+    wrapperCol = jso { span = 8 }
 }
 
-private val formTailLayout = jsObject<FormItemProps<Any>> {
-    labelCol = jsObject { span = 4 }
-    wrapperCol = jsObject {
+private val formTailLayout = jso<FormItemProps<Any>> {
+    labelCol = jso { span = 4 }
+    wrapperCol = jso {
         span = 8
         offset = 4
     }
@@ -54,7 +54,7 @@ private val dynamicRuleApp = fc<Props> {
                 wrapperCol = formItemLayout.wrapperCol
                 name = "name"
                 label = "Name"
-                rules = arrayOf(jsObject<AggregationRule> {
+                rules = arrayOf(jso<AggregationRule> {
                     required = true
                     message = "Please input your name"
                 })
@@ -69,7 +69,7 @@ private val dynamicRuleApp = fc<Props> {
                 wrapperCol = formItemLayout.wrapperCol
                 name = "nickname"
                 label = "Nickname"
-                rules = arrayOf(jsObject<AggregationRule> {
+                rules = arrayOf(jso<AggregationRule> {
                     required = checkNick
                     message = "Please input your nickname"
                 })

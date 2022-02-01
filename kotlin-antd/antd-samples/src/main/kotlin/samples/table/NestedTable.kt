@@ -9,7 +9,7 @@ import antd.table.ColumnType
 import antd.table.ColumnsType
 import antd.table.TableComponent
 import antd.table.table
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import kotlinx.html.classes
 import react.*
 import react.dom.a
@@ -44,17 +44,17 @@ private val menu = buildElement {
 class NestedTableApp : RComponent<Props, State>() {
     private val expandRowRender: (Any, Number, Number, Boolean) -> ReactElement = { _, _, _, _ ->
         val tableColumns = arrayOf<ColumnType<NestedTableNestedTableDataItem>>(
-            jsObject {
+            jso {
                 title = "Date"
                 dataIndex = "date"
                 key = "date"
             },
-            jsObject {
+            jso {
                 title = "Name"
                 dataIndex = "name"
                 key = "name"
             },
-            jsObject {
+            jso {
                 title = "Status"
                 key = "state"
                 render = { _, _, _ ->
@@ -68,12 +68,12 @@ class NestedTableApp : RComponent<Props, State>() {
                     }
                 }
             },
-            jsObject {
+            jso {
                 title = "Upgrade Status"
                 dataIndex = "upgradeNum"
                 key = "upgradeNum"
             },
-            jsObject {
+            jso {
                 title = "Action"
                 dataIndex = "operation"
                 key = "operation"
@@ -104,7 +104,7 @@ class NestedTableApp : RComponent<Props, State>() {
         )
 
         val data = (0..3).map { i ->
-            jsObject<NestedTableNestedTableDataItem> {
+            jso<NestedTableNestedTableDataItem> {
                 key = "$i"
                 date = "2014-12-24 23:12:00"
                 name = "This is production name"
@@ -125,37 +125,37 @@ class NestedTableApp : RComponent<Props, State>() {
 
     override fun RBuilder.render() {
         val tableColumns = arrayOf<ColumnType<NestedTableTableDataItem>>(
-            jsObject {
+            jso {
                 title = "Name"
                 dataIndex = "name"
                 key = "name"
             },
-            jsObject {
+            jso {
                 title = "Platform"
                 dataIndex = "platform"
                 key = "platform"
             },
-            jsObject {
+            jso {
                 title = "Version"
                 dataIndex = "version"
                 key = "version"
             },
-            jsObject {
+            jso {
                 title = "Upgraded"
                 dataIndex = "upgraded"
                 key = "upgraded"
             },
-            jsObject {
+            jso {
                 title = "Creator"
                 dataIndex = "creator"
                 key = "creator"
             },
-            jsObject {
+            jso {
                 title = "Date"
                 dataIndex = "createdAt"
                 key = "createdAt"
             },
-            jsObject {
+            jso {
                 title = "Action"
                 key = "creator"
                 render = { _, _, _ ->
@@ -170,7 +170,7 @@ class NestedTableApp : RComponent<Props, State>() {
         )
 
         val data = (0..3).map { i ->
-            jsObject<NestedTableTableDataItem> {
+            jso<NestedTableTableDataItem> {
                 key = "$i"
                 name = "Screen"
                 platform = "iOS"

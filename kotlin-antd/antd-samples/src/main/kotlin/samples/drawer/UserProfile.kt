@@ -13,7 +13,7 @@ import antd.list.ListComponent
 import antd.list.list
 import antd.list.listItem
 import antd.list.listItemMeta
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import kotlinx.css.*
 import kotlinx.css.properties.LineHeight
 import kotlinx.html.js.onClickFunction
@@ -98,10 +98,10 @@ class UserProfileApp : RComponent<Props, UserProfileAppState>() {
             list<UserProfileListDataItem, ListComponent<UserProfileListDataItem>> {
                 attrs {
                     dataSource = arrayOf(
-                        jsObject {
+                        jso {
                             name = "Lily"
                         },
-                        jsObject {
+                        jso {
                             name = "Lily"
                         }
                     )

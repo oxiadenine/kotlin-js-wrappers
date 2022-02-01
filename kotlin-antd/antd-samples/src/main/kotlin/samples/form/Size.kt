@@ -18,7 +18,7 @@ import antd.treeselect.DataNode
 import antd.treeselect.TreeSelectComponent
 import antd.treeselect.treeSelect
 import kotlinext.js.js
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.*
 import styled.css
 import styled.styledDiv
@@ -32,8 +32,8 @@ private val demo = fc<Props> {
 
     form {
         attrs {
-            labelCol = jsObject { span = 4 }
-            wrapperCol = jsObject { span = 14 }
+            labelCol = jso { span = 4 }
+            wrapperCol = jso { span = 14 }
             layout = "horizontal"
             initialValues = js { size = componentSize }.unsafeCast<Store>()
             onValuesChange = onFormLayoutChange
@@ -76,11 +76,11 @@ private val demo = fc<Props> {
             attrs.label = "TreeSelect"
             treeSelect<String, TreeSelectComponent<String>> {
                 attrs.treeData = arrayOf(
-                    jsObject {
+                    jso {
                         title = "Light"
                         value = "light"
                         children = arrayOf<DataNode>(
-                            jsObject {
+                            jso {
                                 title = "Bamboo"
                                 value = "bamboo"
                             }
@@ -93,11 +93,11 @@ private val demo = fc<Props> {
             attrs.label = "Cascader"
             cascader {
                 attrs.options = arrayOf(
-                    jsObject {
+                    jso {
                         value = "zhejiang"
                         label = "Zhejiang"
                         children = arrayOf(
-                            jsObject {
+                            jso {
                             value = "hangzhou"
                             label = "Hangzhou"
                         })

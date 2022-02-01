@@ -4,7 +4,7 @@ import antd.MouseEvent
 import antd.MouseEventHandler
 import antd.button.button
 import antd.modal.modal
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import kotlinx.browser.window
 import org.w3c.dom.HTMLElement
 import react.*
@@ -68,7 +68,7 @@ class FooterApp : RComponent<Props, FooterAppState>() {
                         button {
                             attrs {
                                 key = "back"
-                                onClick = { handleCancel(jsObject {}) }
+                                onClick = { handleCancel(jso {}) }
                             }
                             +"Return"
                         }
@@ -77,7 +77,7 @@ class FooterApp : RComponent<Props, FooterAppState>() {
                                 key = "submit"
                                 type = "primary"
                                 loading = state.loading
-                                onClick = { handleOk(jsObject {}) }
+                                onClick = { handleOk(jso {}) }
                             }
                             +"Submit"
                         }

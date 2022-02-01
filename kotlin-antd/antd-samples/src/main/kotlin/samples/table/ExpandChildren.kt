@@ -1,7 +1,7 @@
 package samples.table
 
 import antd.table.*
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.RBuilder
 import styled.css
 import styled.styledDiv
@@ -15,18 +15,18 @@ private external interface ExpandChildrenTableDataItem {
 }
 
 private val tableColumns = arrayOf<ColumnType<ExpandChildrenTableDataItem>>(
-    jsObject {
+    jso {
         title = "Name"
         dataIndex = "name"
         key = "name"
     },
-    jsObject {
+    jso {
         title = "Age"
         dataIndex = "age"
         key = "age"
         width = "12%"
     },
-    jsObject {
+    jso {
         title = "Address"
         dataIndex = "address"
         width = "30%"
@@ -35,25 +35,25 @@ private val tableColumns = arrayOf<ColumnType<ExpandChildrenTableDataItem>>(
 )
 
 private val tableData = arrayOf<ExpandChildrenTableDataItem>(
-    jsObject {
+    jso {
         key = "1"
         name = "John Brown sr."
         age = 60
         address = "New York No. 1 Lake Park"
         children = arrayOf(
-            jsObject {
+            jso {
                 key = "11"
                 name = "John Brown"
                 age = 42
                 address = "New York No. 2 Lake Park"
             },
-            jsObject {
+            jso {
                 key = "12"
                 name = "John Brown jr."
                 age = 30
                 address = "New York No. 3 Lake Park"
                 children = arrayOf(
-                    jsObject {
+                    jso {
                         key = "121"
                         name = "Jimmy Brown"
                         age = 16
@@ -61,25 +61,25 @@ private val tableData = arrayOf<ExpandChildrenTableDataItem>(
                     }
                 )
             },
-            jsObject {
+            jso {
                 key = "13"
                 name = "Jim Green sr."
                 age = 72
                 address = "London No. 1 Lake Park"
                 children = arrayOf(
-                    jsObject {
+                    jso {
                         key = "131"
                         name = "Jim Green"
                         age = 42
                         address = "London No. 2 Lake Park"
                         children = arrayOf(
-                            jsObject {
+                            jso {
                                 key = "1311"
                                 name = "Jim Green jr."
                                 age = 25
                                 address = "London No. 3 Lake Park"
                             },
-                            jsObject {
+                            jso {
                                 key = "1312"
                                 name = "Jimmy Green sr."
                                 age = 18
@@ -91,7 +91,7 @@ private val tableData = arrayOf<ExpandChildrenTableDataItem>(
             }
         )
     },
-    jsObject {
+    jso {
         key = "2"
         name = "John Black"
         age = 32
@@ -99,7 +99,7 @@ private val tableData = arrayOf<ExpandChildrenTableDataItem>(
     }
 )
 
-private val tableRowSelection = jsObject<TableRowSelection<ExpandChildrenTableDataItem>> {
+private val tableRowSelection = jso<TableRowSelection<ExpandChildrenTableDataItem>> {
     onChange = { selectedRowKeys, selectedRows ->
         console.log("selectedRowKeys: $selectedRowKeys", "selectedRows: ", selectedRows)
     }

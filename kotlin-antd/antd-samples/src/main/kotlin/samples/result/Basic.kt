@@ -9,7 +9,7 @@ import antd.result.result
 import antd.typography.typographyParagraph
 import antd.typography.typographyText
 import kotlinext.js.js
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import kotlinx.html.classes
 import react.*
 import react.dom.a
@@ -27,7 +27,7 @@ external interface BasicDemoState : State {
 class BasicDemo : RComponent<Props, BasicDemoState>() {
     private val handleChange: (RadioChangeEvent) -> Unit = { e ->
         val resultState: BasicDemoState = when (val resultStatus = e.target.value.unsafeCast<String>()) {
-            "403" -> jsObject {
+            "403" -> jso {
                 status = resultStatus
                 title = "403"
                 subTitle = "Sorry, you are not authorized to access this page."
@@ -38,7 +38,7 @@ class BasicDemo : RComponent<Props, BasicDemoState>() {
                     }
                 }
             }
-            "404" -> jsObject {
+            "404" -> jso {
                 status = resultStatus
                 title = "404"
                 subTitle = "Sorry, the page you visited does not exist."
@@ -49,7 +49,7 @@ class BasicDemo : RComponent<Props, BasicDemoState>() {
                     }
                 }
             }
-            "500" -> jsObject {
+            "500" -> jso {
                 status = resultStatus
                 title = "500"
                 subTitle = "Sorry, the server is wrong."
@@ -60,7 +60,7 @@ class BasicDemo : RComponent<Props, BasicDemoState>() {
                     }
                 }
             }
-            "success" -> jsObject {
+            "success" -> jso {
                 status = resultStatus
                 title = "Successfully Purchased Cloud Server ECS!"
                 subTitle = "Order number: 2017182818828182881 Cloud server configuration takes 1-5 minutes, please wait."
@@ -82,7 +82,7 @@ class BasicDemo : RComponent<Props, BasicDemoState>() {
                     }
                 )
             }
-            "info" -> jsObject {
+            "info" -> jso {
                 status = resultStatus
                 title = "Your operation has been executed"
                 subTitle = null
@@ -96,7 +96,7 @@ class BasicDemo : RComponent<Props, BasicDemoState>() {
                     }
                 }
             }
-            "error" -> jsObject {
+            "error" -> jso {
                 status = resultStatus
                 title = "Submission Failed"
                 subTitle = "Please check and modify the following information before resubmitting."
@@ -118,7 +118,7 @@ class BasicDemo : RComponent<Props, BasicDemoState>() {
                     }
                 )
             }
-            "warning" -> jsObject {
+            "warning" -> jso {
                 status = resultStatus
                 title = "warning"
                 subTitle = "There are some problems with your operation."
@@ -132,7 +132,7 @@ class BasicDemo : RComponent<Props, BasicDemoState>() {
                     }
                 }
             }
-            else -> jsObject {}
+            else -> jso {}
         }
 
         setState(resultState)

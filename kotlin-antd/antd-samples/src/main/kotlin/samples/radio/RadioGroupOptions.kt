@@ -4,7 +4,7 @@ import antd.checkbox.CheckboxOptionType
 import antd.checkbox.CheckboxValueType
 import antd.radio.RadioChangeEvent
 import antd.radio.radioGroup
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.*
 import react.dom.br
 import react.dom.div
@@ -13,29 +13,29 @@ import styled.styledDiv
 
 private val plainOptions: Array<CheckboxValueType> = arrayOf("Apple", "Pear", "Orange")
 private val groupOptions = arrayOf<CheckboxOptionType>(
-    jsObject {
+    jso {
         label = "Apple"
         value = "Apple"
     },
-    jsObject {
+    jso {
         label = "Pear"
         value = "Pear"
     },
-    jsObject {
+    jso {
         label = "Orange"
         value = "Orange"
     }
 )
 private val optionsWithDisabled = arrayOf<CheckboxOptionType>(
-    jsObject {
+    jso {
         label = "Apple"
         value = "Apple"
     },
-    jsObject {
+    jso {
         label = "Pear"
         value = "Pear"
     },
-    jsObject {
+    jso {
         label = "Orange"
         value = "Orange"
         disabled = false

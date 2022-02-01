@@ -9,7 +9,7 @@ import antd.list.list
 import antd.list.listItem
 import antd.list.listItemMeta
 import antd.pagination.PaginationConfig
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.*
 import react.dom.*
 import styled.css
@@ -24,7 +24,7 @@ private external interface VerticalListDataItem {
 }
 
 private val listData = (0..23).mapIndexed { i, _ ->
-    jsObject<VerticalListDataItem> {
+    jso<VerticalListDataItem> {
         href = "http://ant.design"
         title = "ant design part $i"
         avatar = "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
@@ -45,7 +45,7 @@ private val iconText = fc<IconTextProps> { props ->
     }
 }
 
-fun RBuilder.iconText(handler: RHandler<IconTextProps>) = child(iconText, jsObject {}, handler)
+fun RBuilder.iconText(handler: RHandler<IconTextProps>) = child(iconText, jso {}, handler)
 
 fun RBuilder.vertical() {
     styledDiv {
@@ -54,7 +54,7 @@ fun RBuilder.vertical() {
             attrs {
                 itemLayout = "vertical"
                 size = "large"
-                pagination = jsObject<PaginationConfig> {
+                pagination = jso<PaginationConfig> {
                     onChange = { page, _ ->
                         console.log(page)
                     }

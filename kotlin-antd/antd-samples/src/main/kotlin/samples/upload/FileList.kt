@@ -6,7 +6,7 @@ import antd.upload.UploadChangeParam
 import antd.upload.UploadComponent
 import antd.upload.UploadFile
 import antd.upload.upload
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.*
 import styled.css
 import styled.styledDiv
@@ -48,7 +48,7 @@ class MyUpload : RComponent<Props, MyUploadState>() {
     }
 
     override fun MyUploadState.init() {
-        fileList = arrayOf(jsObject {
+        fileList = arrayOf(jso {
             uid = "-1"
             name = "xxx.png"
             status = "done"

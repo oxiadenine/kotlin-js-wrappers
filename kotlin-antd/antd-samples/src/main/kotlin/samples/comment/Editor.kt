@@ -10,7 +10,7 @@ import antd.form.formItem
 import antd.input.textArea
 import antd.list.ListComponent
 import antd.list.list
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import kotlinx.browser.window
 import moment.moment
 import org.w3c.dom.HTMLTextAreaElement
@@ -103,7 +103,7 @@ class EditorApp : RComponent<Props, EditorAppState>() {
                     submitting = false
                     value = ""
                     comments = arrayOf<CommentProps>(
-                        jsObject {
+                        jso {
                             author = "Han Solo"
                             avatar = "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
                             content = buildElement {

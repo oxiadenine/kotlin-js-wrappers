@@ -4,7 +4,7 @@ import antd.button.button
 import antd.icon.uploadOutlined
 import antd.upload.UploadComponent
 import antd.upload.upload
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.RBuilder
 import styled.css
 import styled.styledDiv
@@ -24,20 +24,20 @@ fun RBuilder.defaultFileList() {
                     }
                 }
                 defaultFileList = arrayOf(
-                    jsObject {
+                    jso {
                         uid = "1"
                         name = "xxx.png"
                         status = "done"
                         response = "Server Error 500" // custom error message to show
                         url = "http://www.baidu.com/xxx.png"
                     },
-                    jsObject {
+                    jso {
                         uid = "2"
                         name = "yyy.png"
                         status = "done"
                         url = "http://www.baidu.com/yyy.png"
                     },
-                    jsObject {
+                    jso {
                         uid = "3"
                         name = "zzz.png"
                         status = "error"

@@ -18,7 +18,7 @@ import antd.table.ColumnType
 import antd.table.ColumnsType
 import antd.table.TableComponent
 import antd.table.table
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.*
 import react.dom.div
 import styled.css
@@ -72,7 +72,7 @@ val formSizeDemo = fc<Props> {
                 select<String, SelectComponent<String>> {
                     attrs {
                         defaultValue = "demo"
-                        options = arrayOf<SelectOptionsType>(jsObject { value = "demo" })
+                        options = arrayOf<SelectOptionsType>(jso { value = "demo" })
                     }
                 }
             }
@@ -92,27 +92,27 @@ val formSizeDemo = fc<Props> {
                 table<DataItem, TableComponent<DataItem>> {
                     attrs {
                         columns = arrayOf<ColumnType<DataItem>>(
-                            jsObject {
+                            jso {
                                 title = "Name"
                                 dataIndex = "name"
                             },
-                            jsObject {
+                            jso {
                                 title = "Age"
                                 dataIndex = "name"
                             }
                         ).unsafeCast<ColumnsType<Any>>()
                         dataSource = arrayOf(
-                            jsObject {
+                            jso {
                                 key = "1"
                                 name = "John Brown"
                                 age = 32
                             },
-                            jsObject {
+                            jso {
                                 key = "2"
                                 name = "Jim Green"
                                 age = 42
                             },
-                            jsObject {
+                            jso {
                                 key = "3"
                                 name = "Joe Blac"
                                 age = 32

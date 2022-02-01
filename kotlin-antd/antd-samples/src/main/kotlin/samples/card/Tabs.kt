@@ -2,7 +2,7 @@ package samples.card
 
 import antd.card.card
 import kotlinext.js.js
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.*
 import react.dom.a
 import react.dom.br
@@ -67,7 +67,7 @@ class TabsCard : RComponent<Props, TabsCardState>() {
     private val handleTabChange = fun(key: String, type: String) {
         console.log(key, type)
 
-        val newState: dynamic = jsObject<TabsCardState> {}
+        val newState: dynamic = jso<TabsCardState> {}
 
         newState[type] = key
 

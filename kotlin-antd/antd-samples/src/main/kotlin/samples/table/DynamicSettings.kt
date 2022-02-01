@@ -26,7 +26,7 @@ external interface DynamicSettingsTableDataItem {
 }
 
 private val tableColumns = arrayOf<ColumnType<DynamicSettingsTableDataItem>>(
-    jsObject {
+    jso {
         title = "Name"
         dataIndex = "name"
         key = "name"
@@ -40,18 +40,18 @@ private val tableColumns = arrayOf<ColumnType<DynamicSettingsTableDataItem>>(
             }
         }
     },
-    jsObject {
+    jso {
         title = "Age"
         dataIndex = "age"
         key = "age"
         width = 70
     },
-    jsObject {
+    jso {
         title = "Address"
         dataIndex = "address"
         key = "address"
     },
-    jsObject {
+    jso {
         title = "Action"
         key = "action"
         width = 360
@@ -85,7 +85,7 @@ private val tableColumns = arrayOf<ColumnType<DynamicSettingsTableDataItem>>(
 )
 
 private val tableData = (0..100).map { i ->
-    jsObject<DynamicSettingsTableDataItem> {
+    jso<DynamicSettingsTableDataItem> {
         key = "$i"
         name = "John Brown"
         age = "${i}2".toInt()
@@ -102,8 +102,8 @@ private val tableExpandedRowRender: (DynamicSettingsTableDataItem) -> ReactEleme
 private val tableTitle: () -> String = { "Here is title" }
 private const val tableShowHeader = true
 private val tableFooter: () -> String = { "Here is footer" }
-private val tableScroll = jsObject<TablePropsScroll> { y = 240 }
-private val tablePagination = jsObject<PaginationConfig> { position = "bottom" }
+private val tableScroll = jso<TablePropsScroll> { y = 240 }
+private val tablePagination = jso<PaginationConfig> { position = "bottom" }
 
 external interface DynamicSettingsDemoState : State {
     var bordered: Boolean
@@ -160,7 +160,7 @@ class DynamicSettingsDemo : RComponent<Props, DynamicSettingsDemoState>() {
 
     private val handleRowSelectionChange = fun(enable: Boolean) {
         setState {
-            rowSelection = if (enable) jsObject {} else undefined
+            rowSelection = if (enable) jso {} else undefined
         }
     }
 
@@ -180,7 +180,7 @@ class DynamicSettingsDemo : RComponent<Props, DynamicSettingsDemoState>() {
         val value = e.target.value.unsafeCast<String>()
 
         setState {
-            pagination = if (value == "none") false else jsObject<PaginationConfig> { position = value }
+            pagination = if (value == "none") false else jso<PaginationConfig> { position = value }
         }
     }
 
@@ -193,7 +193,7 @@ class DynamicSettingsDemo : RComponent<Props, DynamicSettingsDemoState>() {
         title = undefined
         showHeader = tableShowHeader
         footer = tableFooter
-        rowSelection = jsObject {}
+        rowSelection = jso {}
         scroll = undefined
         hasData = true
     }

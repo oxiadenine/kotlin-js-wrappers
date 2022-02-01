@@ -20,7 +20,7 @@ import antd.transfer.transfer
 import antd.treeselect.TreeSelectComponent
 import antd.treeselect.treeSelect
 import kotlinext.js.js
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import kotlinx.css.TextAlign
 import kotlinx.css.textAlign
 import kotlinx.html.classes
@@ -99,12 +99,12 @@ class ConfigProviderDemo : RComponent<Props, ConfigProviderDemoState>() {
                         attrs {
                             style = js { marginTop = 8 }
                             columns = arrayOf<ColumnType<Any>>(
-                                jsObject {
+                                jso {
                                     title = "Name"
                                     dataIndex = "name"
                                     key = "name"
                                 },
-                                jsObject {
+                                jso {
                                     title = "Age"
                                     dataIndex = "age"
                                     key = "age"

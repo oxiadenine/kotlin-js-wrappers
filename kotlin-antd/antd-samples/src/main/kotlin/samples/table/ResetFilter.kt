@@ -5,7 +5,7 @@ import antd.button.button
 import antd.table.*
 import kotlinext.js.Record
 import kotlinext.js.js
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import kotlinx.html.classes
 import react.*
 import react.dom.div
@@ -21,26 +21,26 @@ external interface ResetFilterTableDataItem {
 }
 
 private val tableData = arrayOf<ResetFilterTableDataItem>(
-    jsObject {
+    jso {
         key = "1"
         name = "John Brown"
         age = 32
         address = "New York No. 1 Lake Park"
         tags = arrayOf("nice", "developer")
     },
-    jsObject {
+    jso {
         key = "2"
         name = "Jim Green"
         age = 42
         address = "London No. 1 Lake Park"
     },
-    jsObject {
+    jso {
         key = "3"
         name = "Joe Black"
         age = 32
         address = "Sidney No. 1 Lake Park"
     },
-    jsObject {
+    jso {
         key = "4"
         name = "Jim Red"
         age = 32
@@ -78,7 +78,7 @@ class ResetFilterApp : RComponent<Props, ResetFilterAppState>() {
 
     private val setAgeSort: MouseEventHandler<Any> = {
         setState {
-            sortedInfo = jsObject {
+            sortedInfo = jso {
                 order = "descend"
                 columnKey = "age"
             }
@@ -91,20 +91,20 @@ class ResetFilterApp : RComponent<Props, ResetFilterAppState>() {
     }
 
     override fun RBuilder.render() {
-        val sortedInfo = state.sortedInfo ?: jsObject {}
+        val sortedInfo = state.sortedInfo ?: jso {}
         val filteredInfo = state.filteredInfo ?: js {}
 
         val tableColumns = arrayOf<ColumnProps<ResetFilterTableDataItem>>(
-            jsObject {
+            jso {
                 title = "Name"
                 dataIndex = "name"
                 key = "name"
                 filters = arrayOf(
-                    jsObject {
+                    jso {
                         text = "Joe"
                         value = "Joe"
                     },
-                    jsObject {
+                    jso {
                         text = "Jim"
                         value = "Jim"
                     }
@@ -119,7 +119,7 @@ class ResetFilterApp : RComponent<Props, ResetFilterAppState>() {
                 sortOrder = if (sortedInfo.columnKey == "name") sortedInfo.order else null
 
             },
-            jsObject {
+            jso {
                 title = "Age"
                 dataIndex = "age"
                 key = "age"
@@ -128,16 +128,16 @@ class ResetFilterApp : RComponent<Props, ResetFilterAppState>() {
                 }
                 sortOrder = if (sortedInfo.columnKey == "age") sortedInfo.order else null
             },
-            jsObject {
+            jso {
                 title = "Address"
                 dataIndex = "address"
                 key = "address"
                 filters = arrayOf(
-                    jsObject {
+                    jso {
                         text = "London"
                         value = "London"
                     },
-                    jsObject {
+                    jso {
                         text = "New York"
                         value = "New York"
                     }

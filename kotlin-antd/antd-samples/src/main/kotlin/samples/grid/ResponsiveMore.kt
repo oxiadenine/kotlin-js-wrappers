@@ -3,7 +3,7 @@ package samples.grid
 import antd.grid.ColSize
 import antd.grid.col
 import antd.grid.row
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.RBuilder
 import styled.css
 import styled.styledDiv
@@ -14,11 +14,11 @@ fun RBuilder.responsiveMore() {
         row {
             col {
                 attrs {
-                    xs = jsObject<ColSize> {
+                    xs = jso<ColSize> {
                         span = 5
                         offset = 1
                     }
-                    lg = jsObject<ColSize> {
+                    lg = jso<ColSize> {
                         span = 6
                         offset = 2
                     }
@@ -27,11 +27,11 @@ fun RBuilder.responsiveMore() {
             }
             col {
                 attrs {
-                    xs = jsObject<ColSize> {
+                    xs = jso<ColSize> {
                         span = 11
                         offset = 1
                     }
-                    lg = jsObject<ColSize> {
+                    lg = jso<ColSize> {
                         span = 6
                         offset = 2
                     }
@@ -40,11 +40,11 @@ fun RBuilder.responsiveMore() {
             }
             col {
                 attrs {
-                    xs = jsObject<ColSize> {
+                    xs = jso<ColSize> {
                         span = 5
                         offset = 1
                     }
-                    lg = jsObject<ColSize> {
+                    lg = jso<ColSize> {
                         span = 6
                         offset = 2
                     }

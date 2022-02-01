@@ -5,7 +5,7 @@ import antd.form.*
 import antd.input.input
 import antd.input.textArea
 import antd.inputnumber.inputNumber
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.RBuilder
 import react.Props
 import react.child
@@ -13,18 +13,18 @@ import react.fc
 import styled.css
 import styled.styledDiv
 
-private val formLayout = jsObject<FormProps<Any>> {
-    labelCol = jsObject { span = 8 }
-    wrapperCol = jsObject { span = 16 }
+private val formLayout = jso<FormProps<Any>> {
+    labelCol = jso { span = 8 }
+    wrapperCol = jso { span = 16 }
 }
 
-private val formValidateMessages = jsObject<ValidateMessages> {
+private val formValidateMessages = jso<ValidateMessages> {
     required = "\${label} is required!"
-    types = jsObject {
+    types = jso {
             email = "\${label} is not a valid email!"
             number = "\${label} is not a valid number!"
     }
-    number = jsObject {
+    number = jso {
             range = "\${label} must be between \${min} and \${max}"
     }
 }
@@ -47,7 +47,7 @@ private val demo = fc<Props> {
                 name = arrayOf("user", "name")
                 label = "Name"
                 rules = arrayOf(
-                    jsObject<AggregationRule> {
+                    jso<AggregationRule> {
                         required = true
                     }
                 )
@@ -59,7 +59,7 @@ private val demo = fc<Props> {
                 name = arrayOf("user", "email")
                 label = "Email"
                 rules = arrayOf(
-                    jsObject<AggregationRule> {
+                    jso<AggregationRule> {
                         type = "email"
                     }
                 )
@@ -71,7 +71,7 @@ private val demo = fc<Props> {
                 name = arrayOf("user", "age")
                 label = "Age"
                 rules = arrayOf(
-                    jsObject<AggregationRule> {
+                    jso<AggregationRule> {
                         type = "number"
                         min = 0
                         max = 99

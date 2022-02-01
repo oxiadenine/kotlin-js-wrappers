@@ -3,7 +3,7 @@ package samples.typography
 import antd.typography.CopyConfig
 import antd.typography.EditConfig
 import antd.typography.typographyParagraph
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.*
 import react.dom.div
 import styled.css
@@ -29,7 +29,7 @@ class InteractiveDemo : RComponent<Props, InteractiveDemoState>() {
     override fun RBuilder.render() {
         div {
             typographyParagraph {
-                attrs.editable = jsObject<EditConfig> { onChange = handleChange }
+                attrs.editable = jso<EditConfig> { onChange = handleChange }
                 +state.str
             }
             typographyParagraph {
@@ -37,7 +37,7 @@ class InteractiveDemo : RComponent<Props, InteractiveDemoState>() {
                 +"This is a copyable text."
             }
             typographyParagraph {
-                attrs.copyable = jsObject<CopyConfig> { text = "Hello, Ant Design!" }
+                attrs.copyable = jso<CopyConfig> { text = "Hello, Ant Design!" }
                 +"Replace copy text."
             }
         }

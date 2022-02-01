@@ -4,7 +4,7 @@ import antd.card.card
 import antd.list.ListComponent
 import antd.list.list
 import antd.list.listItem
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.RBuilder
 import react.buildElement
 import styled.css
@@ -15,16 +15,16 @@ private external interface GridListDataItem {
 }
 
 private val data = arrayOf<GridListDataItem>(
-    jsObject {
+    jso {
         title = "Title 1"
     },
-    jsObject {
+    jso {
         title = "Title 2"
     },
-    jsObject {
+    jso {
         title = "Title 3"
     },
-    jsObject {
+    jso {
         title = "Title 4"
     }
 )
@@ -34,7 +34,7 @@ fun RBuilder.grid() {
         css { +ListStyles.grid }
         list<GridListDataItem, ListComponent<GridListDataItem>> {
             attrs {
-                grid = jsObject {
+                grid = jso {
                     gutter = 16
                     column = 4
                 }

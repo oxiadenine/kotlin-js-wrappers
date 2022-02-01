@@ -2,7 +2,7 @@ package samples.input
 
 import antd.input.AutoSizeType
 import antd.input.textArea
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import kotlinx.css.margin
 import kotlinx.css.px
 import react.RBuilder
@@ -26,7 +26,7 @@ fun RBuilder.autosizeTextarea() {
             textArea {
                 attrs {
                     placeholder = "Autosize height with minimum and maximum number of lines"
-                    autoSize = jsObject<AutoSizeType> {
+                    autoSize = jso<AutoSizeType> {
                         minRows = 2
                         maxRows = 6
                     }

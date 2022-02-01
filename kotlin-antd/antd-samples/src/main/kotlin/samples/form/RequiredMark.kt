@@ -7,7 +7,7 @@ import antd.input.input
 import antd.radio.radioButton
 import antd.radio.radioGroup
 import kotlinext.js.js
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.*
 import styled.css
 import styled.styledDiv
@@ -61,7 +61,7 @@ private val demo = fc<Props> {
         formItem {
             attrs {
                 label = "Field B"
-                tooltip = jsObject<WrapperTooltipProps> {
+                tooltip = jso<WrapperTooltipProps> {
                     title = "Tooltip with customize icon"
                     icon = buildElement {
                         infoCircleOutlined {}

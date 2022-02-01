@@ -2,7 +2,7 @@ package samples.datepicker
 
 import antd.datepicker.RangeValue
 import antd.datepicker.rangePicker
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import moment.Moment
 import moment.moment
 import react.RBuilder
@@ -22,7 +22,7 @@ fun RBuilder.presettedRanges() {
         div {
             rangePicker {
                 attrs {
-                    ranges = jsObject {
+                    ranges = jso {
                         arrayOf(moment(), moment())
                         arrayOf(moment(), moment(), moment().endOf("month"))
                     }
@@ -32,7 +32,7 @@ fun RBuilder.presettedRanges() {
             br {}
             rangePicker {
                 attrs {
-                    ranges = jsObject {
+                    ranges = jso {
                         arrayOf(moment(), moment())
                         arrayOf(moment(), moment(), moment().endOf("month"))
                     }

@@ -4,40 +4,40 @@ import antd.treeselect.DataNode
 import antd.treeselect.TreeSelectComponent
 import antd.treeselect.treeSelect
 import kotlinext.js.js
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.*
 import styled.css
 import styled.styledDiv
 
 private val data: Array<DataNode> = arrayOf(
-    jsObject {
+    jso {
         title = "Node1"
         value = "0-0"
         key = "0-0"
         children = arrayOf<DataNode>(
-            jsObject {
+            jso {
                 title = "Child Node1"
                 value = "0-0-0"
                 key = "0-0-0"
             }
         )
     },
-    jsObject {
+    jso {
         title = "Node2"
         value = "0-1"
         key = "0-1"
         children = arrayOf<DataNode>(
-            jsObject {
+            jso {
                 title = "Child Node3"
                 value = "0-1-0"
                 key = "0-1-0"
             },
-            jsObject {
+            jso {
                 title = "Child Node4"
                 value = "0-1-1"
                 key = "0-1-1"
             },
-            jsObject {
+            jso {
                 title = "Child Node5"
                 value = "0-1-2"
                 key = "0-1-2"

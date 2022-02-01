@@ -3,7 +3,7 @@ package samples.cascader
 import antd.cascader.CascaderOptionType
 import antd.cascader.CascaderValueType
 import antd.cascader.cascader
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.RBuilder
 import react.dom.br
 import react.dom.div
@@ -11,15 +11,15 @@ import styled.css
 import styled.styledDiv
 
 private val cascaderOptions = arrayOf<CascaderOptionType>(
-    jsObject {
+    jso {
         value = "zhejiang"
         label = "Zhejiang"
         children = arrayOf(
-            jsObject {
+            jso {
                 value = "hangzhou"
                 label = "Hangzhou"
                 children = arrayOf(
-                    jsObject {
+                    jso {
                         value = "xihu"
                         label = "West Lake"
                     }
@@ -27,15 +27,15 @@ private val cascaderOptions = arrayOf<CascaderOptionType>(
             }
         )
     },
-    jsObject {
+    jso {
         value = "jiangsu"
         label = "Jiangsu"
         children = arrayOf(
-            jsObject {
+            jso {
                 value = "nanjing"
                 label = "Nanjing"
                 children = arrayOf(
-                    jsObject {
+                    jso {
                         value = "zhonghuamen"
                         label = "Zhong Hua Men"
                     }

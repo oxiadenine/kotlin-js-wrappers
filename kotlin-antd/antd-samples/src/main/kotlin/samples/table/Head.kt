@@ -2,7 +2,7 @@ package samples.table
 
 import antd.table.*
 import kotlinext.js.Record
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.RBuilder
 import styled.css
 import styled.styledDiv
@@ -15,27 +15,27 @@ private external interface HeadTableDataItem {
 }
 
 private val tableColumns = arrayOf<ColumnType<HeadTableDataItem>>(
-    jsObject {
+    jso {
         title = "Name"
         dataIndex = "name"
         filters = arrayOf(
-            jsObject {
+            jso {
                 text = "Joe"
                 value = "Joe"
             },
-            jsObject {
+            jso {
                 text = "Jim"
                 value = "Jim"
             },
-            jsObject {
+            jso {
                 text = "Submenu"
                 value = "Submenu"
                 children = arrayOf(
-                    jsObject {
+                    jso {
                         text = "Green"
                         value = "Green"
                     },
-                    jsObject {
+                    jso {
                         text = "Black"
                         value = "Black"
                     }
@@ -53,7 +53,7 @@ private val tableColumns = arrayOf<ColumnType<HeadTableDataItem>>(
         sortDirections = arrayOf("descend")
 
     },
-    jsObject {
+    jso {
         title = "Age"
         dataIndex = "age"
         defaultSortOrder = "descend"
@@ -61,15 +61,15 @@ private val tableColumns = arrayOf<ColumnType<HeadTableDataItem>>(
             return a.age.toInt() - b.age.toInt()
         }
     },
-    jsObject {
+    jso {
         title = "Address"
         dataIndex = "address"
         filters = arrayOf(
-            jsObject {
+            jso {
                 text = "London"
                 value = "London"
             },
-            jsObject {
+            jso {
                 text = "New York"
                 value = "New York"
             }
@@ -86,25 +86,25 @@ private val tableColumns = arrayOf<ColumnType<HeadTableDataItem>>(
 )
 
 private val tableData = arrayOf<HeadTableDataItem>(
-    jsObject {
+    jso {
         key = "1"
         name = "John Brown"
         age = 32
         address = "New York No. 1 Lake Park"
     },
-    jsObject {
+    jso {
         key = "2"
         name = "Jim Green"
         age = 42
         address = "London No. 1 Lake Park"
     },
-    jsObject {
+    jso {
         key = "3"
         name = "Joe Black"
         age = 32
         address = "Sidney No. 1 Lake Park"
     },
-    jsObject {
+    jso {
         key = "4"
         name = "Jim Red"
         age = 32

@@ -28,7 +28,7 @@ import antd.transfer.TransferComponent
 import antd.transfer.TransferItem
 import antd.transfer.transfer
 import kotlinext.js.js
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import kotlinx.css.*
 import kotlinx.css.properties.border
 import kotlinx.html.classes
@@ -44,17 +44,17 @@ import styled.styledDiv
 import styled.styledSpan
 
 private val tableColumns = arrayOf<ColumnType<Any>>(
-    jsObject {
+    jso {
         title = "Name"
         dataIndex = "name"
         filters = arrayOf(
-            jsObject {
+            jso {
                 text = "filter1"
                 value = "filter1"
             }
         )
     },
-    jsObject {
+    jso {
         title = "Age"
         dataIndex = "age"
     }
@@ -87,14 +87,14 @@ class Page : RComponent<PageProps, PageState>() {
 
     override fun RBuilder.render() {
         val info: MouseEventHandler<Any> = {
-            ModalComponent.info(jsObject {
+            ModalComponent.info(jso {
                 title = "some info"
                 content = "some info"
             })
         }
 
         val confirm: MouseEventHandler<Any> = {
-            ModalComponent.confirm(jsObject {
+            ModalComponent.confirm(jso {
                 title = "some info"
                 content = "some info"
             })

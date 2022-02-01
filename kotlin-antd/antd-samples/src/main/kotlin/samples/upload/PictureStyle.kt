@@ -5,7 +5,7 @@ import antd.icon.uploadOutlined
 import antd.upload.UploadComponent
 import antd.upload.UploadFile
 import antd.upload.upload
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.RBuilder
 import react.dom.br
 import react.dom.div
@@ -13,14 +13,14 @@ import styled.css
 import styled.styledDiv
 
 private val fileList = arrayOf<UploadFile<Any>>(
-    jsObject {
+    jso {
         uid = "-1"
         name = "xxx.png"
         status = "done"
         url = "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
         thumbUrl = "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
     },
-    jsObject {
+    jso {
         uid = "-2"
         name = "yyy.png"
         status = "done"

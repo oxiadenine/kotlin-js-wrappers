@@ -14,7 +14,7 @@ import antd.select.SelectValue
 import antd.select.option
 import antd.select.select
 import kotlinext.js.js
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.*
 import react.dom.br
 import react.dom.div
@@ -22,15 +22,15 @@ import styled.css
 import styled.styledDiv
 
 private val cascaderOptions = arrayOf<CascaderOptionType>(
-    jsObject {
+    jso {
         value = "zhejiang"
         label = "Zhejiang"
         children = arrayOf(
-            jsObject {
+            jso {
                 value = "hangzhou"
                 label = "Hangzhou"
                 children = arrayOf(
-                    jsObject {
+                    jso {
                         value = "xihu"
                         label = "West Lake"
                     }
@@ -38,15 +38,15 @@ private val cascaderOptions = arrayOf<CascaderOptionType>(
             }
         )
     },
-    jsObject {
+    jso {
         value = "jiangsu"
         label = "Jiangsu"
         children = arrayOf(
-            jsObject {
+            jso {
                 value = "nanjing"
                 label = "Nanjing"
                 children = arrayOf(
-                    jsObject {
+                    jso {
                         value = "zhonghuamen"
                         label = "Zhong Hua Men"
                     }

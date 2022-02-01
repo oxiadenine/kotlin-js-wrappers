@@ -7,7 +7,7 @@ import antd.select.SelectComponent
 import antd.select.option
 import antd.select.select
 import kotlinext.js.js
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.RBuilder
 import react.dom.div
 import styled.css
@@ -16,7 +16,7 @@ import styled.styledDiv
 private val options = arrayOf("topLeft", "topRight", "bottomLeft", "bottomRight")
 
 private val openNotification: MouseEventHandler<Any> = {
-    notification.open(jsObject {
+    notification.open(jso {
         message = "Notification Title"
         description = "This is the content of the notification. This is the content of the notification. This is the content of the notification."
     })
@@ -34,7 +34,7 @@ fun RBuilder.placement() {
                         marginRight = 10
                     }
                     onChange = { value, _ ->
-                        notification.config(jsObject {
+                        notification.config(jso {
                             placement = value
                         })
                     }

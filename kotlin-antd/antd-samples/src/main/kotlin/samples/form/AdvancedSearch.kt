@@ -33,7 +33,7 @@ private val advancedSearchForm = fc<Props> {
                             name = "field-$i"
                             label = "Field $i"
                             rules = arrayOf(
-                                jsObject<AggregationRule> {
+                                jso<AggregationRule> {
                                     required = true
                                     message = "Input something!"
                                 }

@@ -6,7 +6,7 @@ import antd.form.*
 import antd.input.input
 import antd.input.password
 import kotlinext.js.js
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.RBuilder
 import react.Props
 import react.child
@@ -14,13 +14,13 @@ import react.fc
 import styled.css
 import styled.styledDiv
 
-private val formLayout = jsObject<FormProps<Any>> {
-    labelCol = jsObject { span = 8 }
-    wrapperCol = jsObject { span = 16 }
+private val formLayout = jso<FormProps<Any>> {
+    labelCol = jso { span = 8 }
+    wrapperCol = jso { span = 16 }
 }
 
-private val tailLayout = jsObject<FormItemProps<Any>> {
-    wrapperCol = jsObject {
+private val tailLayout = jso<FormItemProps<Any>> {
+    wrapperCol = jso {
         offset = 8
         span = 16
     }
@@ -49,7 +49,7 @@ private val demo = fc<Props> {
                 label = "Username"
                 name = "username"
                 rules = arrayOf(
-                    jsObject<AggregationRule> {
+                    jso<AggregationRule> {
                         required = true
                         message = "Please input your username!"
                     }
@@ -62,7 +62,7 @@ private val demo = fc<Props> {
                 label = "Password"
                 name = "password"
                 rules = arrayOf(
-                    jsObject<AggregationRule> {
+                    jso<AggregationRule> {
                         required = true
                         message = "Please input your password!"
                     }

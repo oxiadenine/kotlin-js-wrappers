@@ -2,7 +2,7 @@ package samples.skeleton
 
 import antd.skeleton.SkeletonParagraphProps
 import antd.skeleton.skeleton
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.RBuilder
 import styled.css
 import styled.styledDiv
@@ -13,7 +13,7 @@ fun RBuilder.complex() {
         skeleton {
             attrs {
                 avatar = true
-                paragraph = jsObject<SkeletonParagraphProps> { rows = 4 }
+                paragraph = jso<SkeletonParagraphProps> { rows = 4 }
             }
         }
     }

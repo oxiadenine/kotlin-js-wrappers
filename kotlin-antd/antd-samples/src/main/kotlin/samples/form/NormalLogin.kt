@@ -10,7 +10,7 @@ import antd.icon.lockOutlined
 import antd.icon.userOutlined
 import antd.input.input
 import kotlinext.js.js
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.*
 import react.dom.a
 import styled.css
@@ -31,7 +31,7 @@ private val normalLoginForm = fc<Props> {
         formItem {
             attrs {
                 name = "username"
-                rules = arrayOf(jsObject<AggregationRule> {
+                rules = arrayOf(jso<AggregationRule> {
                     required = true
                     message = "Please input your username!"
                 })
@@ -50,7 +50,7 @@ private val normalLoginForm = fc<Props> {
         formItem {
             attrs {
                 name = "password"
-                rules = arrayOf(jsObject<AggregationRule> {
+                rules = arrayOf(jso<AggregationRule> {
                     required = true
                     message = "Please input your password!"
                 })

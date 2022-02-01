@@ -4,7 +4,7 @@ import antd.table.ColumnType
 import antd.table.ColumnsType
 import antd.table.TableComponent
 import antd.table.table
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.RBuilder
 import react.dom.div
 import react.dom.h4
@@ -19,34 +19,34 @@ private external interface SizeTableDataItem {
 }
 
 private val tableColumns = arrayOf<ColumnType<SizeTableDataItem>>(
-    jsObject {
+    jso {
         title = "Name"
         dataIndex = "name"
     },
-    jsObject {
+    jso {
         title = "Age"
         dataIndex = "age"
     },
-    jsObject {
+    jso {
         title = "Address"
         dataIndex = "address"
     }
 )
 
 private val tableData = arrayOf<SizeTableDataItem>(
-    jsObject {
+    jso {
         key = "1"
         name = "John Brown"
         age = 32
         address = "New York No. 1 Lake Park"
     },
-    jsObject {
+    jso {
         key = "2"
         name = "Jim Green"
         age = 42
         address = "London No. 1 Lake Park"
     },
-    jsObject {
+    jso {
         key = "3"
         name = "Joe Black"
         age = 32

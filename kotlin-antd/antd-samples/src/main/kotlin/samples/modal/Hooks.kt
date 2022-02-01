@@ -5,7 +5,7 @@ import antd.modal.ModalComponent
 import antd.modal.ModalFuncProps
 import antd.modal.ModalStaticFunctions
 import antd.space.space
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.*
 import styled.css
 import styled.styledDiv
@@ -13,7 +13,7 @@ import styled.styledDiv
 private val reachableContext = createContext<String>()
 private val unreachableContext = createContext<String>()
 
-private val config = jsObject<ModalFuncProps> {
+private val config = jso<ModalFuncProps> {
     title = "Use Hook!"
     content = buildElement {
         reachableContext.Consumer { name ->

@@ -3,13 +3,13 @@ package samples.notification
 import antd.MouseEventHandler
 import antd.button.button
 import antd.notification.notification
-import kotlinext.js.jsObject
+import kotlinext.js.jso
 import react.RBuilder
 import styled.css
 import styled.styledDiv
 
 private val openNotification: MouseEventHandler<Any> = {
-    notification.open(jsObject {
+    notification.open(jso {
         message = "Notification Title"
         description = "This is the content of the notification. This is the content of the notification. This is the content of the notification."
         onClick = {
