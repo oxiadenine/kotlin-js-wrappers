@@ -17,7 +17,7 @@ external object TimePickerComponent : Component<TimePickerProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface RangePickerComponent : ComponentType<RangeTimePickerProps>
+external interface RangePickerComponent : ComponentClass<RangeTimePickerProps>
 
 external interface TimePickerProps : PickerTimeProps<Moment>, RefAttributes<Any>, Props {
     var addon: () -> ReactNode

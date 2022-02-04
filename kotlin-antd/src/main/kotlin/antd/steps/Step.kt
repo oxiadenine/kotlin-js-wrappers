@@ -5,7 +5,7 @@ import antd.ReactNode
 import org.w3c.dom.*
 import react.*
 
-external interface StepComponent : ComponentType<StepProps>
+external interface StepComponent : ComponentClass<StepProps>
 
 external interface StepProps : Props {
     var className: String?

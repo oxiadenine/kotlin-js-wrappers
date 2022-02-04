@@ -6,7 +6,7 @@ import antd.select.RefOptionListProps
 import org.w3c.dom.*
 import react.*
 
-external interface OptionListComponent : ComponentType<OptionListProps<Array<DataNode>>>
+external interface OptionListComponent : ComponentClass<OptionListProps<Array<DataNode>>>
 
 external interface OptionListProps<OptionsType> : RefAttributes<RefOptionListProps>, Props {
     var prefixCls: String

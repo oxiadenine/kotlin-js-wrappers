@@ -4,7 +4,7 @@ import antd.MouseEvent
 import org.w3c.dom.HTMLSpanElement
 import react.*
 
-external interface CheckableTagComponent : ComponentType<CheckableTagProps>
+external interface CheckableTagComponent : ComponentClass<CheckableTagProps>
 
 external interface CheckableTagProps : Props {
     var prefixCls: String?

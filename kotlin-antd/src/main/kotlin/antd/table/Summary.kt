@@ -7,9 +7,9 @@ external interface Summary {
     val Row: SummaryRowComponent
 }
 
-external interface SummaryCellComponent : ComponentType<SummaryCellProps>
+external interface SummaryCellComponent : ComponentClass<SummaryCellProps>
 
-external interface SummaryRowComponent : ComponentType<SummaryRowProps>
+external interface SummaryRowComponent : ComponentClass<SummaryRowProps>
 
 external interface SummaryCellProps : Props {
     var className: String?

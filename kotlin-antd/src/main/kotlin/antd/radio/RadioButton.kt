@@ -4,6 +4,6 @@ import antd.RefAttributes
 import antd.checkbox.*
 import react.*
 
-external interface RadioButtonComponent : ComponentType<RadioButtonProps>
+external interface RadioButtonComponent : ComponentClass<RadioButtonProps>
 
 external interface RadioButtonProps : AbstractCheckboxProps<RadioChangeEvent>, RefAttributes<Any>, Props

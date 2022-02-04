@@ -5,7 +5,7 @@ import antd.ReactNode
 import antd.tooltip.*
 import react.*
 
-external interface FormItemLabelComponent : ComponentType<FormItemLabelProps>
+external interface FormItemLabelComponent : ComponentClass<FormItemLabelProps>
 
 external interface FormItemLabelProps : FormItemLabelBaseProps, FormItemLabelMiscProps, Props
 

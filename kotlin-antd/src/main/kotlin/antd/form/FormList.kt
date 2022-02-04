@@ -3,7 +3,7 @@ package antd.form
 import antd.ReactNode
 import react.*
 
-external interface FormListComponent : ComponentType<FormListProps>
+external interface FormListComponent : ComponentClass<FormListProps>
 
 external interface FormListProps : Props {
     var prefixCls: String?

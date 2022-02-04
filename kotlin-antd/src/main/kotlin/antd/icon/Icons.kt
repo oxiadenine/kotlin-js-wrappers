@@ -3,7 +3,7 @@ package antd.icon
 import react.*
 
 external interface AntdIconClass : ComponentClass<AntdIconProps> {
-    var default: ComponentType<AntdIconProps>
+    var default: ComponentClass<AntdIconProps>
 }
 
 external interface AntdIconProps : IconBaseProps, Props {

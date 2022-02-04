@@ -2,7 +2,7 @@ package antd.alert
 
 import react.*
 
-external interface ErrorBoundaryComponent : ComponentType<ErrorBoundaryProps>
+external interface ErrorBoundaryComponent : ComponentClass<ErrorBoundaryProps>
 
 external interface ErrorBoundaryProps : Props {
     var message: ReactNode?

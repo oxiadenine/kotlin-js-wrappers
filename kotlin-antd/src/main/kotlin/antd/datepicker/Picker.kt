@@ -11,9 +11,9 @@ import org.w3c.dom.HTMLElement
 import org.w3c.dom.HTMLInputElement
 import react.*
 
-external interface PickerButtonComponent : ComponentType<ButtonProps>
+external interface PickerButtonComponent : ComponentClass<ButtonProps>
 
-external interface PickerTagComponent : ComponentType<TagProps>
+external interface PickerTagComponent : ComponentClass<TagProps>
 
 external interface RcPickerBaseProps<DateType> : RcPickerSharedProps<DateType>, RcPickerPanelBaseProps<DateType>
 

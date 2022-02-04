@@ -4,7 +4,7 @@ import antd.RefAttributes
 import antd.ReactNode
 import react.*
 
-external interface SearchComponent : ComponentType<SearchProps>
+external interface SearchComponent : ComponentClass<SearchProps>
 
 external interface SearchProps : InputProps, RefAttributes<InputComponent> {
     var inputPrefixCls: String?

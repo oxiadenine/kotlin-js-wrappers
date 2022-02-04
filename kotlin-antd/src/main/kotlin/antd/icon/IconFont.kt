@@ -6,7 +6,7 @@ package antd.icon
 import react.*
 
 @JsName("createFromIconfontCN")
-external fun createFromIconfontCN(options: CustomIconOptions? = definedExternally): ComponentType<IconFontProps>
+external fun createFromIconfontCN(options: CustomIconOptions? = definedExternally): ComponentClass<IconFontProps>
 
 external interface CustomIconOptions {
     var scriptUrl: Any /* String | Array<String> */

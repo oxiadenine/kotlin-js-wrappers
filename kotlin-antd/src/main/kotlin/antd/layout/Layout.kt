@@ -17,11 +17,11 @@ external object LayoutComponent : Component<LayoutProps, State> {
     override fun render(): ReactElement?
 }
 
-external interface HeaderComponent : ComponentType<LayoutProps>
+external interface HeaderComponent : ComponentClass<LayoutProps>
 
-external interface FooterComponent : ComponentType<LayoutProps>
+external interface FooterComponent : ComponentClass<LayoutProps>
 
-external interface ContentComponent : ComponentType<LayoutProps>
+external interface ContentComponent : ComponentClass<LayoutProps>
 
 external val layoutContext: Context<LayoutContextProps>
 

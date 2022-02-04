@@ -7,7 +7,7 @@ import react.dom.render
 fun main() {
     require("antd/dist/antd.css")
 
-    render(document.getElementById("root")) {
+    render(document.getElementById("root")!!) {
         app()
     }
 }

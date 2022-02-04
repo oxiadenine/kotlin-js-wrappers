@@ -7,7 +7,7 @@ import antd.configprovider.SizeType
 import org.w3c.dom.*
 import react.*
 
-external interface RadioGroupComponent : ComponentType<RadioGroupProps>
+external interface RadioGroupComponent : ComponentClass<RadioGroupProps>
 
 external interface RadioGroupProps : AbstractCheckboxGroupProps, RefAttributes<HTMLDivElement>, Props {
     var defaultValue: Any?

@@ -4,7 +4,7 @@ import antd.ReactNode
 import org.w3c.dom.events.*
 import react.*
 
-external interface SubMenuComponent : ComponentType<SubMenuProps>
+external interface SubMenuComponent : ComponentClass<SubMenuProps>
 
 external interface SubMenuProps : Props {
     var rootPrefixCls: String?

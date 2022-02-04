@@ -3,7 +3,7 @@ package antd.collapse
 import antd.ReactNode
 import react.*
 
-external interface CollapsePanelComponent : ComponentType<CollapsePanelProps>
+external interface CollapsePanelComponent : ComponentClass<CollapsePanelProps>
 
 external interface CollapsePanelProps : Props {
     var key: Any /* String | Number */

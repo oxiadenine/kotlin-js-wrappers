@@ -4,7 +4,7 @@ plugins {
 }
 
 dependencies {
-    api(kotlinWrapperDependency("react"))
+    api(kotlinWrapperDependency("react-legacy"))
 
     api(npmPackage("react-responsive"))
 }

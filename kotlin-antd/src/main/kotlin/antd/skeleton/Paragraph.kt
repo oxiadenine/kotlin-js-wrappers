@@ -2,7 +2,7 @@ package antd.skeleton
 
 import react.*
 
-external interface SkeletonParagraphComponent : ComponentType<SkeletonParagraphProps>
+external interface SkeletonParagraphComponent : ComponentClass<SkeletonParagraphProps>
 
 external interface SkeletonParagraphProps : Props {
     var prefixCls: String?

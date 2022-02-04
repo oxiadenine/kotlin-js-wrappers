@@ -3,7 +3,7 @@ package antd.mentions
 import antd.ReactNode
 import react.*
 
-external interface OptionComponent : ComponentType<OptionProps>
+external interface OptionComponent : ComponentClass<OptionProps>
 
 external interface OptionProps : RcOptionProps, Props {
     override var value: String?

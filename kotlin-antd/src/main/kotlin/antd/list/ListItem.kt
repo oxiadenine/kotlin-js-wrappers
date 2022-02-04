@@ -5,11 +5,11 @@ import antd.ReactNode
 import org.w3c.dom.*
 import react.*
 
-external interface ItemComponent : ComponentType<ListItemProps> {
+external interface ItemComponent : ComponentClass<ListItemProps> {
     val Meta: MetaComponent
 }
 
-external interface MetaComponent : ComponentType<ListItemMetaProps>
+external interface MetaComponent : ComponentClass<ListItemMetaProps>
 
 external interface ListItemProps : HTMLAttributes<HTMLDivElement>, Props {
     override var className: String?

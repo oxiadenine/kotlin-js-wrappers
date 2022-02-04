@@ -9,3 +9,4 @@ gradlew*
 build/
 out/
 .gradle/
+kotlin-js-store/

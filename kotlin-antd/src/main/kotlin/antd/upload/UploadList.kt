@@ -4,7 +4,7 @@ import antd.RefAttributes
 import antd.ReactNode
 import react.*
 
-external interface UploadListComponent : ComponentType<UploadListProps<Any>>
+external interface UploadListComponent : ComponentClass<UploadListProps<Any>>
 
 external interface UploadListProps<T> : RefAttributes<dynamic>, Props {
     var listType: UploadListType?

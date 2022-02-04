@@ -4,7 +4,7 @@ import antd.Key
 import antd.ReactNode
 import react.*
 
-external interface OptionComponent : ComponentType<OptionProps>
+external interface OptionComponent : ComponentClass<OptionProps>
 
 external interface OptionProps : OptionCoreData, Props {
     override var children: ReactNode?

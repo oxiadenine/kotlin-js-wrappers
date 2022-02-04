@@ -7,7 +7,7 @@ import org.w3c.dom.*
 import react.*
 import react.Ref
 
-external interface TreeNodeComponent : ComponentType<InternalTreeNodeProps>
+external interface TreeNodeComponent : ComponentClass<InternalTreeNodeProps>
 
 external interface InternalTreeNodeProps : TreeNodeProps, Props {
     var context: TreeContextProps?
