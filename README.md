@@ -3,8 +3,8 @@
 This repository hosts a number of Kotlin JS wrappers for popular JavaScript libraries.
 
 To learn more please refer to the README's of individual modules:
-* [kotlin-antd](kotlin-antd/README.md)
-* [kotlin-moment](kotlin-moment/README.md)
+* [kotlin-antd](kotlin-antd/README.md) (Discontinued)
+* [kotlin-moment](kotlin-moment/README.md) (Discontinued)
 * [kotlin-react-intl](kotlin-react-intl/README.md)
 * [kotlin-react-responsive](kotlin-react-responsive/README.md)
 * [kotlin-uikit](kotlin-uikit/README.md)
@@ -15,6 +15,9 @@ Artifacts using Maven and Gradle are published to Maven Central.
 
 **Important:** versions starting from the Kotlin  `v1.5.21` are being published with the new group ID `io.sunland`, since 
 the repository has been transferred from [samgarasx](https://github.com/samgarasx) GitHub.
+
+Also see official [JetBrains Kotlin Wrappers](https://github.com/JetBrains/kotlin-wrappers), they are including
+more and more wrappers in their list.
 
 ### Contributing
 
