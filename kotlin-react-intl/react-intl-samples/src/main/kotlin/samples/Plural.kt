@@ -1,31 +1,24 @@
 package samples
 
-import kotlinx.html.js.onClickFunction
 import react.*
-import react.dom.button
-import reactintl.components.plural.formattedPlural
-import reactintl.components.provider.intlProvider
+import react.dom.html.ReactHTML.button
+import reactintl.components.plural.FormattedPlural
+import reactintl.components.provider.IntlProvider
 
-private val app = fc<Props> {
+val Plural = FC<Props> {
     val (dogs, setDogs) = useState(1)
 
-    intlProvider {
-        attrs {
-            locale = "en"
-            defaultLocale = "en"
-        }
-        formattedPlural {
-            attrs {
-                value = dogs
-                one = ReactNode("I have a unique dog")
-                other = ReactNode("I have $dogs dogs")
-            }
+    IntlProvider {
+        locale = "en"
+        defaultLocale = "en"
+        FormattedPlural {
+            value = dogs
+            one = ReactNode("I have a unique dog")
+            other = ReactNode("I have $dogs dogs")
         }
         button {
-            attrs.onClickFunction = { setDogs(dogs + 1) }
+            onClick = { setDogs(dogs + 1) }
             +"Add dogs"
         }
     }
 }
-
-fun RBuilder.plural() = child(app)

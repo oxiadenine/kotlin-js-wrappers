@@ -1,15 +1,14 @@
 package samples
 
 import kotlinx.browser.window
-import kotlinx.html.js.onClickFunction
-import kotlinx.html.title
-import react.Props
-import react.RBuilder
-import react.dom.*
-import react.fc
-import react.useState
-import reactintl.components.provider.intlProvider
-import reactintl.components.relativetime.formattedRelativeTime
+import react.*
+import react.dom.html.ReactHTML.button
+import react.dom.html.ReactHTML.div
+import react.dom.html.ReactHTML.h1
+import react.dom.html.ReactHTML.p
+import react.dom.html.ReactHTML.span
+import reactintl.components.provider.IntlProvider
+import reactintl.components.relativetime.FormattedRelativeTime
 import reactintl.components.useIntl
 import kotlin.js.Date
 
@@ -21,34 +20,32 @@ external interface PostDateProps : Props {
     var date: Date
 }
 
-private val postDate = fc<PostDateProps> { props ->
+private val PostDate = FC<PostDateProps> { props ->
     val intl = useIntl()
 
     span {
-        attrs.title = intl.formatDate(props.date)
-        formattedRelativeTime {
-            attrs {
-                value = getRelativeTime(props.date)
-                updateIntervalInSeconds = 1
-            }
+        title = intl.formatDate(props.date)
+        FormattedRelativeTime {
+            value = getRelativeTime(props.date)
+            updateIntervalInSeconds = 1
         }
     }
 }
 
-private val app = fc<Props> {
+val Bug272 = FC<Props> {
     val (hide, setHide) = useState(false)
 
-    intlProvider {
-        attrs.locale = window.navigator.language
+    IntlProvider {
+        locale = window.navigator.language
         div {
             h1 { +"Hello world" }
             if (!hide) {
                 p {
-                    postDate { attrs.date = Date() }
+                    PostDate { date = Date() }
                 }
             }
             button {
-                attrs.onClickFunction = {
+                onClick = {
                     setHide { current -> !current }
                 }
                 +"Toggle FormattedRelativeTime"
@@ -56,5 +53,3 @@ private val app = fc<Props> {
         }
     }
 }
-
-fun RBuilder.bug272() = child(app)

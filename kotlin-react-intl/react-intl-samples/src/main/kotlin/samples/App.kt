@@ -1,45 +1,37 @@
 package samples
 
-import kotlinx.css.*
+import csstype.*
 import react.*
-import react.dom.*
-import styled.*
+import react.css.css
+import react.dom.html.ReactHTML.div
+import react.dom.html.ReactHTML.h1
 
-object AppStyles : StyleSheet("app", isStatic = true) {
-    val header by css {
-        padding(all = 10.px)
-        textAlign = TextAlign.center
+val App = FC<Props> {
+    div {
+        css {
+            padding = 10.px
+            textAlign = TextAlign.center
+        }
+        h1 { +"Examples" }
     }
-    val content by css {
-        display = Display.flex
-        flexDirection = FlexDirection.column
-        justifyContent = JustifyContent.center
-        alignItems = Align.center
-        padding(all = 10.px)
-        children("*") {
-            margin(all = 20.px)
+    div {
+        css {
+            display = Display.flex
+            flexDirection = FlexDirection.column
+            justifyContent = JustifyContent.center
+            alignItems = AlignItems.center
+            padding = 10.px
+            children.apply {
+                margin = 20.px
+            }
         }
-    }
-}
-
-class App : RComponent<Props, State>() {
-    override fun RBuilder.render() {
-        styledDiv {
-            css { +AppStyles.header }
-            h1 { +"Examples" }
-        }
-        styledDiv {
-            css { +AppStyles.content }
-            plural()
-            timeZone()
-            messages()
-            injected()
-            hooks()
-            handleChange()
-            advanced()
-            bug272()
-        }
+        Plural()
+        TimeZone()
+        Messages()
+        Injected()
+        Hooks()
+        HandleChange()
+        Advanced()
+        Bug272()
     }
 }
-
-fun RBuilder.app() = child(App::class) {}

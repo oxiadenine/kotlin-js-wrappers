@@ -2,20 +2,21 @@ package samples
 
 import kotlinext.js.*
 import react.*
-import react.dom.*
+import react.dom.html.ReactHTML.div
+import react.dom.html.ReactHTML.p
 import reactresponsive.*
 
-private val example = fc<Props> {
-    val isDesktopOrLaptop = useMediaQuery(jsObject {
+val WithHooks = FC<Props> {
+    val isDesktopOrLaptop = useMediaQuery(jso {
         query = "(min-device-width: 1224px)"
     })
-    val isBigScreen = useMediaQuery(jsObject { query = "(min-device-width: 1824px)" })
-    val isTabletOrMobile = useMediaQuery(jsObject { query = "(max-width: 1224px)" })
-    val isTabletOrMobileDevice = useMediaQuery(jsObject {
+    val isBigScreen = useMediaQuery(jso { query = "(min-device-width: 1824px)" })
+    val isTabletOrMobile = useMediaQuery(jso { query = "(max-width: 1224px)" })
+    val isTabletOrMobileDevice = useMediaQuery(jso {
         query = "(max-device-width: 1224px)"
     })
-    val isPortrait = useMediaQuery(jsObject { query = "(orientation: portrait)" })
-    val isRetina = useMediaQuery(jsObject { query = "(min-resolution: 2dppx)" })
+    val isPortrait = useMediaQuery(jso { query = "(orientation: portrait)" })
+    val isRetina = useMediaQuery(jso { query = "(min-resolution: 2dppx)" })
 
     div {
         div { +"Device Test!" }
@@ -37,5 +38,3 @@ private val example = fc<Props> {
         }
     }
 }
-
-fun RBuilder.withHooks() = child(example)

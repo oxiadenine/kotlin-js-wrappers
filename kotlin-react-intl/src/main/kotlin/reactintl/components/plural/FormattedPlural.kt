@@ -7,9 +7,7 @@ import react.*
 import reactintl.*
 
 @JsName("FormattedPlural")
-external class FormattedPluralComponent : Component<FormattedPluralProps, State> {
-    override fun render(): ReactElement?
-}
+external val FormattedPlural: FC<FormattedPluralProps>
 
 external interface FormattedPluralProps : FormatPluralOptions, Props {
     var value: Number
@@ -20,7 +18,7 @@ external interface FormattedPluralProps : FormatPluralOptions, Props {
     var two: ReactNode?
     var few: ReactNode?
     var many: ReactNode?
-    var children: ((value: ReactNode?) -> ReactElement?)?
+    var children: ((value: ReactNode?) -> ReactElement)?
 }
 
 external object IntlPlural {

@@ -2,8 +2,9 @@ package samples
 
 import kotlinext.js.*
 import react.*
-import react.dom.*
-import reactintl.components.provider.intlProvider
+import react.dom.html.ReactHTML.br
+import react.dom.html.ReactHTML.p
+import reactintl.components.provider.IntlProvider
 import reactintl.components.useIntl
 import kotlin.js.Date
 import kotlin.random.*
@@ -27,51 +28,53 @@ private val providerMessages = js {
     unicode = "Hello\u0020{placeholder}"
 }.unsafeCast<Any>()
 
-private val app = fc<Props> {
+private external interface DemoProps : Props {
+    var currentTime: Date
+}
+
+private val Demo = FC<DemoProps> {
     val intl = useIntl()
 
     p {
-        +intl.formatMessage(jsObject { id = "simple" })
+        +intl.formatMessage(jso { id = "simple" })
         br {}
-        +intl.formatMessage(jsObject { id = "placeholder" }, js { name = "John" })
+        +intl.formatMessage(jso { id = "placeholder" }, js { name = "John" })
         br {}
-        +intl.formatMessage(jsObject { id = "date" }, js { ts = Date.now() })
+        +intl.formatMessage(jso { id = "date" }, js { ts = Date.now() })
         br {}
-        +intl.formatMessage(jsObject { id = "time" }, js { ts = Date.now() })
+        +intl.formatMessage(jso { id = "time" }, js { ts = Date.now() })
         br {}
-        +intl.formatMessage(jsObject { id = "number" }, js { num = Random.nextInt() * 1000 })
+        +intl.formatMessage(jso { id = "number" }, js { num = Random.nextInt() * 1000 })
         br {}
-        +intl.formatMessage(jsObject { id = "plural" }, js { num = 1 })
+        +intl.formatMessage(jso { id = "plural" }, js { num = 1 })
         br {}
-        +intl.formatMessage(jsObject { id = "plural" }, js { num = 99 })
+        +intl.formatMessage(jso { id = "plural" }, js { num = 99 })
         br {}
-        +intl.formatMessage(jsObject { id = "select" }, js { gender = "male" })
+        +intl.formatMessage(jso { id = "select" }, js { gender = "male" })
         br {}
-        +intl.formatMessage(jsObject { id = "select" }, js { gender = "female" })
+        +intl.formatMessage(jso { id = "select" }, js { gender = "female" })
         br {}
-        +intl.formatMessage(jsObject { id = "selectordinal" }, js { order = 1 })
+        +intl.formatMessage(jso { id = "selectordinal" }, js { order = 1 })
         br {}
-        +intl.formatMessage(jsObject { id = "selectordinal" }, js { order = 2 })
+        +intl.formatMessage(jso { id = "selectordinal" }, js { order = 2 })
         br {}
-        +intl.formatMessage(jsObject { id = "selectordinal" }, js { order = 3 })
+        +intl.formatMessage(jso { id = "selectordinal" }, js { order = 3 })
         br {}
-        +intl.formatMessage(jsObject { id = "selectordinal" }, js { order = 4 })
+        +intl.formatMessage(jso { id = "selectordinal" }, js { order = 4 })
         br {}
-        +intl.formatMessage(jsObject { id = "unicode" }, js { placeholder = "world" })
+        +intl.formatMessage(jso { id = "unicode" }, js { this.placeholder = "world" })
         br {}
-        +intl.formatMessage(jsObject {
+        +intl.formatMessage(jso {
             id = "whatever"
             defaultMessage = "Hello\u0020{placeholder}"
-        }, js { placeholder = "world" })
+        }, js { this.placeholder = "world" })
     }
 }
 
-fun RBuilder.hooks() {
-    intlProvider {
-        attrs {
-            locale = "en"
-            messages = providerMessages
-        }
-        child(app)
+val Hooks = FC<Props> {
+    IntlProvider {
+        locale = "en"
+        messages = providerMessages
+        Demo { currentTime = Date() }
     }
 }

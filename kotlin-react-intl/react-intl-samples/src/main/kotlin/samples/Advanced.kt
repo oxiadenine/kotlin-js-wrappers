@@ -1,14 +1,15 @@
 package samples
 
+import csstype.px
 import kotlinext.js.*
-import kotlinx.css.fontSize
-import kotlinx.css.px
 import react.*
-import react.dom.*
-import reactintl.components.message.formattedMessage
-import reactintl.components.provider.intlProvider
-import styled.css
-import styled.styledSpan
+import react.css.css
+import react.dom.html.ReactHTML.br
+import react.dom.html.ReactHTML.p
+import react.dom.html.ReactHTML.span
+import react.dom.html.ReactHTML.strong
+import reactintl.components.message.FormattedMessage
+import reactintl.components.provider.IntlProvider
 import kotlin.js.Date
 import kotlin.random.*
 
@@ -20,130 +21,88 @@ private fun loadLocaleData(locale: String): dynamic {
     }
 }
 
-external interface AdvancedProps : Props {
-    var locale: String
-    var messages: Any
-}
-
-private val app = fc<AdvancedProps> { props ->
-    intlProvider {
-        attrs {
-            locale = props.locale
-            defaultLocale = "en"
-            messages = props.messages
-        }
+val Advanced = FC<Props> {
+    IntlProvider {
+        locale = "en"
+        defaultLocale = "en"
+        messages = loadLocaleData("en").unsafeCast<Any>()
         p {
-            styledSpan {
+            span {
                 css { fontSize = 30.px }
                 +"AST"
             }
             br {}
-            formattedMessage { attrs.id = "simple" }
+            FormattedMessage { id = "simple" }
             br {}
-            formattedMessage {
-                attrs {
-                    id = "placeholder"
-                    values = js { name = "John" }
-                }
+            FormattedMessage {
+                id = "placeholder"
+                values = js { name = "John" }
             }
             br {}
-            formattedMessage {
-                attrs {
-                    id = "date"
-                    values = js { ts = Date.now() }
-                }
+            FormattedMessage {
+                id = "date"
+                values = js { ts = Date.now() }
             }
             br {}
-            formattedMessage {
-                attrs {
-                    id = "time"
-                    values = js { ts = Date.now() }
-                }
+            FormattedMessage {
+                id = "time"
+                values = js { ts = Date.now() }
             }
             br {}
-            formattedMessage {
-                attrs {
-                    id = "number"
-                    values = js { num = Random.nextInt() * 1000 }
-                }
+            FormattedMessage {
+                id = "number"
+                values = js { num = Random.nextInt() * 1000 }
             }
             br {}
-            formattedMessage {
-                attrs {
-                    id = "plural"
-                    values = js { num = 1 }
-                }
+            FormattedMessage {
+                id = "plural"
+                values = js { num = 1 }
             }
             br {}
-            formattedMessage {
-                attrs {
-                    id = "plural"
-                    values = js { num = 99 }
-                }
+            FormattedMessage {
+                id = "plural"
+                values = js { num = 99 }
             }
             br {}
-            formattedMessage {
-                attrs {
-                    id = "select"
-                    values = js { gender = "male" }
-                }
+            FormattedMessage {
+                id = "select"
+                values = js { gender = "male" }
             }
             br {}
-            formattedMessage {
-                attrs {
-                    id = "select"
-                    values = js { gender = "female" }
-                }
+            FormattedMessage {
+                id = "select"
+                values = js { gender = "female" }
             }
             br {}
-            formattedMessage {
-                attrs {
-                    id = "selectordinal"
-                    values = js { order = 1 }
-                }
+            FormattedMessage {
+                id = "selectordinal"
+                values = js { order = 1 }
             }
             br {}
-            formattedMessage {
-                attrs {
-                    id = "selectordinal"
-                    values = js { order = 2 }
-                }
+            FormattedMessage {
+                id = "selectordinal"
+                values = js { order = 2 }
             }
             br {}
-            formattedMessage {
-                attrs {
-                    id = "selectordinal"
-                    values = js { order = 3 }
-                }
+            FormattedMessage {
+                id = "selectordinal"
+                values = js { order = 3 }
             }
             br {}
-            formattedMessage {
-                attrs {
-                    id = "selectordinal"
-                    values = js { order = 4 }
-                }
+            FormattedMessage {
+                id = "selectordinal"
+                values = js { order = 4 }
             }
             br {}
-            formattedMessage {
-                attrs {
-                    id = "richtext"
-                    values = js {
-                        num = 99
-                        bold = fun(chunks: String): ReactElement {
-                            return buildElement {
-                                strong { +chunks }
-                            }
-                        }
+            FormattedMessage {
+                id = "richtext"
+                values = js {
+                    num = 99
+                    bold = fun(chunks: String): ReactElement {
+                        return strong.create { +chunks }
                     }
                 }
             }
         }
-    }
-}
-
-fun RBuilder.advanced() = child(app) {
-    attrs {
-        locale = "en"
-        messages = loadLocaleData("en").unsafeCast<Any>()
     }
 }

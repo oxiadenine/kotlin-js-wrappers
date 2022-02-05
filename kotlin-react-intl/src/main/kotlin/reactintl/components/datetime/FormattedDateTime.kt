@@ -8,29 +8,19 @@ import react.*
 import reactintl.*
 
 @JsName("FormattedDate")
-external class FormattedDateComponent : Component<FormattedDateProps, State> {
-    override fun render(): ReactElement?
-}
+external val FormattedDate: FC<FormattedDateProps>
 
 @JsName("FormattedDateParts")
-external class FormattedDatePartsComponent : Component<FormattedDatePartsProps, State> {
-    override fun render(): ReactElement?
-}
+external val FormattedDateParts: FC<FormattedDatePartsProps>
 
 @JsName("FormattedTime")
-external class FormattedTimeComponent : Component<FormattedTimeProps, State> {
-    override fun render(): ReactElement?
-}
+external val FormattedTime: FC<FormattedTimeProps>
 
 @JsName("FormattedTimeParts")
-external class FormattedTimePartsComponent : Component<FormattedTimePartsProps, State> {
-    override fun render(): ReactElement?
-}
+external val FormattedTimeParts: FC<FormattedTimePartsProps>
 
 @JsName("FormattedMessage")
-open external class FormattedDateTimeRangeComponent : Component<FormattedDateTimeRangeProps, State> {
-    override fun render(): ReactElement?
-}
+external val FormattedDateTimeRange: FC<FormattedDateTimeRangeProps>
 
 external interface FormattedDateProps : IntlDateTime.DateTimeFormatOptions, CustomFormatConfig, Props {
     var value: Any? /* String | Number | Date */
@@ -42,18 +32,18 @@ external interface FormattedTimeProps : IntlDateTime.DateTimeFormatOptions, Cust
 
 external interface FormattedDatePartsProps : FormatDateOptions, Props {
     var value: Any? /* Date | Number | String */
-    fun children(`val`: Array<IntlDateTime.DateTimeFormatPart>): ReactElement?
+    var children: (Array<IntlDateTime.DateTimeFormatPart>) -> ReactElement?
 }
 
 external interface FormattedTimePartsProps : FormatDateOptions, Props {
     var value: Any /* Date | Number | String */
-    fun children(`val`: Array<IntlDateTime.DateTimeFormatPart>): ReactElement?
+    var children: (Array<IntlDateTime.DateTimeFormatPart>) -> ReactElement?
 }
 
 external interface FormattedDateTimeRangeProps : FormatDateOptions, Props {
     var from: Any /* Number | Date */
     var to: Any /* Number | Date */
-    fun children(value: ReactNode): ReactElement?
+    var children: (ReactNode) ->ReactElement?
 }
 
 external interface Formats : IntlDateTime.DateTimeFormatOptions {

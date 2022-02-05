@@ -8,9 +8,7 @@ import react.*
 import reactintl.*
 
 @JsName("FormattedMessage")
-external class FormattedMessageComponent : Component<FormattedMessageProps<Record<String, ReactNode>>, State> {
-    override fun render(): ReactElement?
-}
+external val FormattedMessage: FC<FormattedMessageProps<Record<String, ReactNode>>>
 
 external interface FormattedMessageProps<V : Record<String, ReactNode>> : MessageDescriptor, Props {
     var values: V?

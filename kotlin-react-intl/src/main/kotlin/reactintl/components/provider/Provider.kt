@@ -7,9 +7,7 @@ import react.*
 import reactintl.*
 
 @JsName("IntlProvider")
-external class ProviderComponent : Component<ProviderProps, ProviderState> {
-    override fun render(): ReactElement?
-}
+external val IntlProvider: FC<ProviderProps>
 
 external interface ProviderProps : IntlConfig, PropsWithChildren
 

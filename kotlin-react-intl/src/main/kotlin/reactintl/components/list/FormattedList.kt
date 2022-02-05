@@ -7,9 +7,7 @@ import react.*
 import reactintl.FormatListOptions
 
 @JsName("FormattedList")
-external class FormattedListComponent : Component<FormattedListProps, State> {
-    override fun render(): ReactElement?
-}
+external val FormattedList: FC<FormattedListProps>
 
 external interface FormattedListProps : ListFormatOptions, Props {
     var value: Array<ReactNode>
@@ -17,7 +15,7 @@ external interface FormattedListProps : ListFormatOptions, Props {
 
 external interface FormattedListPartsProps : FormatListOptions, Props {
     var value: Array<String>
-    fun children(`val`: Array<Part<Any>>): ReactElement?
+    var children: (Array<Part<Any>>) -> ReactElement?
 }
 
 external interface ListFormatOptions {

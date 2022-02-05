@@ -7,16 +7,20 @@ import react.*
 import reactintl.IntlShape
 
 @JsName("injectIntl")
-external fun <IntlPropName, P : WrappedComponentProps<IntlPropName>> injectIntl(
-    wrappedComponent: Any /* JsClass<Component<P, State>> */,
+external fun <IntlPropName, P : WrappedComponentProps<Any>> injectIntl(
+    wrappedComponent: ComponentType<P>,
     options: Opts<IntlPropName, Boolean>? = definedExternally
-): ComponentType<WithIntlProps<P>>
+): InjectIntlComponent<P>
+
+external interface InjectIntlComponent<P : WrappedComponentProps<Any>> : FC<WithIntlProps<P>> {
+    val WrappedComponent: ComponentType<P>
+}
 
 @JsName("RawIntlProvider")
-external val rawIntlProvider: Provider<IntlShape>
+external val RawIntlProvider: Provider<IntlShape>
 
 @JsName("IntlContext")
-external val intlContext: Context<IntlShape>
+external val IntlContext: Context<IntlShape>
 
 external interface Opts<IntlPropName, ForwardRef> {
     var intlPropName: IntlPropName?
@@ -27,5 +31,5 @@ external interface Opts<IntlPropName, ForwardRef> {
 external interface WrappedComponentProps<IntlPropName> : Props
 
 external interface WithIntlProps<P> : Props {
-    var forwardedRef: MutableRefObject<Any>?
+    var forwardedRef: Ref<Any>?
 }

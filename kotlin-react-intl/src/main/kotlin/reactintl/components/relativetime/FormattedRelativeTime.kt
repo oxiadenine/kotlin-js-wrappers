@@ -9,9 +9,7 @@ import reactintl.components.number.IntlNumber
 import reactintl.components.plural.IntlPlural
 
 @JsName("FormattedRelativeTime")
-external class FormattedRelativeTimeComponent : Component<FormattedRelativeTimeProps, State> {
-    override fun render(): ReactElement?
-}
+external val FormattedRelativeTime: FC<FormattedRelativeTimeProps>
 
 external interface FormattedRelativeTimeProps : FormatRelativeTimeOptions, Props {
     var value: Number?
@@ -28,7 +26,7 @@ external interface RelativeTimeFormatInternal {
     var style: IntlRelativeTimeFormatStyle
     var numeric: IntlRelativeTimeFormatNumeric
     var numberingSystem: String
-    var initializedRelativeTimeFormat: Boolean
+    var initializedRelativeTimeFormat: Boolean?
 }
 
 external object IntlRelativeTime {

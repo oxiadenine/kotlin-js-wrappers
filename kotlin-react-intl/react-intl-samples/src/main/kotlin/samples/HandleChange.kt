@@ -2,13 +2,13 @@ package samples
 
 import kotlinext.js.*
 import kotlinx.browser.*
-import kotlinx.html.*
-import kotlinx.html.js.*
 import react.*
-import react.dom.*
+import react.dom.html.ReactHTML.h1
+import react.dom.html.ReactHTML.option
+import react.dom.html.ReactHTML.select
 import reactintl.*
 import reactintl.components.provider.createIntl
-import reactintl.components.rawIntlProvider
+import reactintl.components.RawIntlProvider
 
 private val appMessages = run {
     val messages = js {}
@@ -23,16 +23,16 @@ private val appMessages = run {
 private const val initialLocale = "en-US"
 private val cache = createIntlCache()
 
-var intl = createIntl(jsObject {
+var intl = createIntl(jso {
     locale = initialLocale
     messages = appMessages.asDynamic()[initialLocale].unsafeCast<Any>()
 }, cache)
 
-private val app = fc<Props> {
+val HandleChange = FC<Props> {
     val (language, setLanguage) = useState(initialLocale)
 
     val changeLanguage = fun(newLocale: String) {
-        intl = createIntl(jsObject {
+        intl = createIntl(jso {
             locale = newLocale
             messages = appMessages.asDynamic()[newLocale].unsafeCast<Any>()
         }, cache)
@@ -42,29 +42,23 @@ private val app = fc<Props> {
         setLanguage(newLocale)
     }
 
-    rawIntlProvider {
-        attrs.value = intl
-        h1 { +intl.formatMessage(jsObject { id = "selectlanguage" }) }
+    RawIntlProvider {
+        value = intl
+        h1 { +intl.formatMessage(jso { id = "selectlanguage" }) }
         select {
-            attrs {
-                id = "locale"
-                name = "locale"
-                value = language
-                onChangeFunction = {
-                    changeLanguage(it.target.asDynamic().value as String)
-                }
+            id = "locale"
+            name = "locale"
+            defaultValue = language
+            onChange = { event ->
+                changeLanguage(event.target.asDynamic().value as String)
             }
             Object.keys(appMessages).map { locale ->
                 option {
-                    attrs {
-                        key = locale
-                        value = locale
-                    }
+                    key = locale
+                    value = locale
                     +locale
                 }
             }.toTypedArray()
         }
     }
 }
-
-fun RBuilder.handleChange() = child(app)

@@ -5,5 +5,7 @@ plugins {
 dependencies {
     implementation(project(":kotlin-uikit"))
 
-    implementation(kotlinWrapperDependency("styled"))
+    implementation(kotlinWrapperDependency("react"))
+    implementation(kotlinWrapperDependency("react-dom"))
+    implementation(kotlinWrapperDependency("react-css"))
 }

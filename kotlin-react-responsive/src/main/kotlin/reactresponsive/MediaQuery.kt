@@ -6,16 +6,14 @@ package reactresponsive
 import react.*
 
 @JsName("default")
-external class MediaQueryComponent : Component<MediaQueryProps, State> {
-    override fun render(): ReactElement?
-}
+external val MediaQuery: FC<MediaQueryProps>
 
 external interface MediaQueryProps : MediaQueryAllQueryable, Props {
     var component: Any? /* String | ComponentClass<Props> */
     var query: String?
     var style: dynamic
     var className: String?
-    var children: Any? /* ReactNode | (matches: Boolean) -> ReactNode */
+    var children: dynamic /* ReactNode | (matches: Boolean) -> ReactElement */
     var device: MediaQueryMatchers?
     var values: MediaQueryMatchers?
     var onBeforeChange: ((matches: Boolean) -> Unit)?

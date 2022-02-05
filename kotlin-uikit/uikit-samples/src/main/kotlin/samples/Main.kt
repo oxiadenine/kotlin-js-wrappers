@@ -2,6 +2,7 @@ package samples
 
 import kotlinext.js.*
 import kotlinx.browser.*
+import react.create
 import react.dom.*
 import uikit.*
 
@@ -10,7 +11,5 @@ fun main() {
 
     UIkit.use(Icons)
 
-    render(document.getElementById("root")!!) {
-        app()
-    }
+    render(element = App.create(), container = document.getElementById("root")!!)
 }

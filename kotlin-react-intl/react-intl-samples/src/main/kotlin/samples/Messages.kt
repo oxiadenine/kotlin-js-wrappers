@@ -2,9 +2,11 @@ package samples
 
 import kotlinext.js.*
 import react.*
-import react.dom.*
-import reactintl.components.message.formattedMessage
-import reactintl.components.provider.intlProvider
+import react.dom.html.ReactHTML.br
+import react.dom.html.ReactHTML.p
+import react.dom.html.ReactHTML.strong
+import reactintl.components.message.FormattedMessage
+import reactintl.components.provider.IntlProvider
 import kotlin.js.Date
 import kotlin.random.*
 
@@ -27,143 +29,103 @@ private val appMessages = js {
     unicode = "Hello\u0020{placeholder}"
 }.unsafeCast<Any>()
 
-private val app = fc<Props> {
-    intlProvider {
-        attrs {
-            locale = "en"
-            messages = appMessages
-        }
+val Messages = FC<Props> {
+    IntlProvider {
+        locale = "en"
+        messages = appMessages
         p {
-            formattedMessage { attrs.id = "simple" }
+            FormattedMessage { id = "simple" }
             br {}
-            formattedMessage {
-                attrs {
-                    id = "placeholder"
-                    values = js { name = "John" }
-                }
+            FormattedMessage {
+                id = "placeholder"
+                values = js { name = "John" }
             }
             br {}
-            formattedMessage {
-                attrs {
-                    id = "date"
-                    values = js { ts = Date.now() }
-                }
+            FormattedMessage {
+                id = "date"
+                values = js { ts = Date.now() }
             }
             br {}
-            formattedMessage {
-                attrs {
-                    id = "time"
-                    values = js { ts = Date.now() }
-                }
+            FormattedMessage {
+                id = "time"
+                values = js { ts = Date.now() }
             }
             br {}
-            formattedMessage {
-                attrs {
-                    id = "number"
-                    values = js { num = Random.nextInt() * 1000 }
-                }
+            FormattedMessage {
+                id = "number"
+                values = js { num = Random.nextInt() * 1000 }
             }
             br {}
-            formattedMessage {
-                attrs {
-                    id = "plural"
-                    values = js { num = 1 }
-                }
+            FormattedMessage {
+                id = "plural"
+                values = js { num = 1 }
             }
             br {}
-            formattedMessage {
-                attrs {
-                    id = "plural"
-                    values = js { num = 99 }
-                }
+            FormattedMessage {
+                id = "plural"
+                values = js { num = 99 }
             }
             br {}
-            formattedMessage {
-                attrs {
-                    id = "select"
-                    values = js { gender = "male" }
-                }
+            FormattedMessage {
+                id = "select"
+                values = js { gender = "male" }
             }
             br {}
-            formattedMessage {
-                attrs {
-                    id = "select"
-                    values = js { gender = "female" }
-                }
+            FormattedMessage {
+                id = "select"
+                values = js { gender = "female" }
             }
             br {}
-            formattedMessage {
-                attrs {
-                    id = "selectordinal"
-                    values = js { order = 1 }
-                }
+            FormattedMessage {
+                id = "selectordinal"
+                values = js { order = 1 }
             }
             br {}
-            formattedMessage {
-                attrs {
-                    id = "selectordinal"
-                    values = js { order = 2 }
-                }
+            FormattedMessage {
+                id = "selectordinal"
+                values = js { order = 2 }
             }
             br {}
-            formattedMessage {
-                attrs {
-                    id = "selectordinal"
-                    values = js { order = 3 }
-                }
+            FormattedMessage {
+                id = "selectordinal"
+                values = js { order = 3 }
             }
             br {}
-            formattedMessage {
-                attrs {
-                    id = "selectordinal"
-                    values = js { order = 4 }
-                }
+            FormattedMessage {
+                id = "selectordinal"
+                values = js { order = 4 }
             }
             br {}
-            formattedMessage {
-                attrs {
-                    id = "richtext"
-                    values = js {
-                        num = 99
-                        bold = fun(chunks: String): ReactElement {
-                            return buildElement {
-                                strong { +chunks }
-                            }
-                        }
+            FormattedMessage {
+                id = "richtext"
+                values = js {
+                    num = 99
+                    bold = fun(chunks: String): ReactElement {
+                        return strong.create { +chunks }
                     }
                 }
             }
             br {}
-            formattedMessage {
-                attrs {
-                    id = "richertext"
-                    values = js {
-                        num = 99
-                        bold = fun(chunks: String): ReactElement {
-                            return buildElement {
-                                strong { +chunks }
-                            }
-                        }
+            FormattedMessage {
+                id = "richertext"
+                values = js {
+                    num = 99
+                    bold = fun(chunks: String): ReactElement {
+                        return strong.create { +chunks }
                     }
                 }
             }
             br {}
-            formattedMessage {
-                attrs {
-                    id = "unicode"
-                    values = js { placeholder = "world" }
-                }
+            FormattedMessage {
+                id = "unicode"
+                values = js { this.placeholder = "world" }
             }
             br {}
-            formattedMessage {
-                attrs {
-                    id = "whatever"
-                    defaultMessage = "Hello\u0020{placeholder}"
-                    values = js { placeholder = "world" }
-                }
+            FormattedMessage {
+                id = "whatever"
+                defaultMessage = "Hello\u0020{placeholder}"
+                values = js { this.placeholder = "world" }
             }
         }
     }
 }
-
-fun RBuilder.messages() = child(app)

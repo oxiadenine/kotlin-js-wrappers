@@ -5,5 +5,6 @@ plugins {
 dependencies {
     implementation(project(":kotlin-react-intl"))
 
-    implementation(kotlinWrapperDependency("styled"))
+    implementation(kotlinWrapperDependency("react-dom"))
+    implementation(kotlinWrapperDependency("react-css"))
 }

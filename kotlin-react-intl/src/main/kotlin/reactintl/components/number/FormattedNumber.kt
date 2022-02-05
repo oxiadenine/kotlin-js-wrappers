@@ -9,14 +9,10 @@ import reactintl.*
 import reactintl.components.plural.IntlPlural
 
 @JsName("FormattedNumber")
-external class FormattedNumberComponent : Component<FormattedNumberProps, State> {
-    override fun render(): ReactElement?
-}
+external val FormattedNumber: FC<FormattedNumberProps>
 
 @JsName("FormattedNumberParts")
-external class FormattedNumberPartsComponent : Component<FormattedNumberPartsProps, State> {
-    override fun render(): ReactElement?
-}
+external val FormattedNumberParts: FC<FormattedNumberPartsProps>
 
 external interface FormattedNumberProps : FormatNumberOptions, Props {
     var value: Number
@@ -24,7 +20,7 @@ external interface FormattedNumberProps : FormatNumberOptions, Props {
 
 external interface FormattedNumberPartsProps : FormatNumberOptions, Props {
     var value: Number
-    fun children(value: Array<IntlNumber.NumberFormatPart>): ReactElement?
+    var children: (Array<IntlNumber.NumberFormatPart>) -> ReactElement?
 }
 
 external interface NumberFormatDigitOptions {

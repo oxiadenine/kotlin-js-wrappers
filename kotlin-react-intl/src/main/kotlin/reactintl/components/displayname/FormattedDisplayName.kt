@@ -6,9 +6,7 @@ package reactintl.components.displayname
 import react.*
 
 @JsName("FormattedDisplayName")
-external class FormattedDisplayNameComponent : Component<FormattedDisplayNameProps, State> {
-    override fun render(): ReactElement?
-}
+external val FormattedDisplayName: FC<FormattedDisplayNameProps>
 
 external interface FormattedDisplayNameProps : DisplayNamesOptions, Props {
     var value: Any /* String | Number | Msp<String, Unknown> */
