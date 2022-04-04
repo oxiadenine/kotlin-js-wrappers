@@ -1,10 +1,10 @@
 package uikit.util
 
-import uikit.UIkitElement
+import uikit.UIKitElement
 
 external interface PositionUtil {
     fun positionAt(
-        element: UIkitElement? = definedExternally,
+        element: UIKitElement? = definedExternally,
         target: dynamic = definedExternally,
         elAttach: dynamic = definedExternally,
         targetAttach: dynamic = definedExternally,

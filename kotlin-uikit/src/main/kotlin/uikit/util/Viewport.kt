@@ -1,29 +1,29 @@
 package uikit.util
 
-import uikit.UIkitElement
+import uikit.UIKitElement
 import kotlin.js.Promise
 
 external interface ViewportUtil {
     fun isInView(
-        element: UIkitElement? = definedExternally,
+        element: UIKitElement? = definedExternally,
         offsetTop: Number? = definedExternally,
         offsetLeft: Number? = definedExternally
     ): dynamic
 
-    fun scrollTop(element: UIkitElement? = definedExternally, top: dynamic = definedExternally)
+    fun scrollTop(element: UIKitElement? = definedExternally, top: dynamic = definedExternally)
     fun scrollIntoView(
-        element: UIkitElement? = definedExternally,
+        element: UIKitElement? = definedExternally,
         offsets: dynamic = definedExternally
     ): Promise<dynamic>
 
-    fun scrolledOver(element: UIkitElement? = definedExternally, heightOffset: Number? = definedExternally): Number
+    fun scrolledOver(element: UIKitElement? = definedExternally, heightOffset: Number? = definedExternally): Number
     fun scrollParents(
-        element: UIkitElement? = definedExternally,
+        element: UIKitElement? = definedExternally,
         overflowRe: String? = definedExternally,
         scrollable: Boolean? = definedExternally
     ): dynamic
 
-    fun getViewport(scrollElement: UIkitElement? = definedExternally): dynamic
-    fun getViewportClientHeight(scrollElement: UIkitElement? = definedExternally): Number
-    fun getScrollingElement(element: UIkitElement? = definedExternally): UIkitElement
+    fun getViewport(scrollElement: UIKitElement? = definedExternally): dynamic
+    fun getViewportClientHeight(scrollElement: UIKitElement? = definedExternally): Number
+    fun getScrollingElement(element: UIKitElement? = definedExternally): UIKitElement
 }

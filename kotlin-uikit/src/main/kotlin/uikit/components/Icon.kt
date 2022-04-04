@@ -1,8 +1,8 @@
 package uikit.components
 
-import org.w3c.dom.*
-import uikit.*
-import kotlin.js.*
+import org.w3c.dom.Element
+import uikit.Component
+import kotlin.js.Promise
 
 external interface Icon {
     fun add(name: String, svg: Element)

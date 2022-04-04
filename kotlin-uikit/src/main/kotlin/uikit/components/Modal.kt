@@ -1,13 +1,13 @@
 package uikit.components
 
-import uikit.*
+import uikit.Component
 import kotlin.js.Promise
 
 external interface Modal {
-    fun alert(message: String, options: dynamic = definedExternally): ModalPromise
-    fun confirm(message: String, options: dynamic = definedExternally): ModalPromise
-    fun prompt(message: String, options: dynamic = definedExternally): ModalPromise
-    fun dialog(message: String, options: dynamic = definedExternally): ModalPromise
+    fun alert(message: String, options: ModalOptions? = definedExternally): ModalPromise
+    fun confirm(message: String, options: ModalOptions? = definedExternally): ModalPromise
+    fun prompt(message: String, options: ModalOptions? = definedExternally): ModalPromise
+    fun dialog(message: String, options: ModalOptions? = definedExternally): ModalPromise
 }
 
 external class ModalPromise : Promise<Unit> {

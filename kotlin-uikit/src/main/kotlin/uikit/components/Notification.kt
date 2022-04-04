@@ -1,6 +1,6 @@
 package uikit.components
 
-import uikit.*
+import uikit.Component
 
 external interface Notification {
     fun closeAll(group: Any? = definedExternally, immediate: Boolean? = definedExternally)
@@ -13,7 +13,7 @@ external interface NotificationComponent : Component {
 external interface NotificationOptions {
     var message: String?
     var status: String?
-    var timeout: Int?
+    var timeout: Number?
     var group: String?
     var pos: String?
 }

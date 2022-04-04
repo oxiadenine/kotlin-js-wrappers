@@ -1,6 +1,6 @@
 package uikit.components
 
-import uikit.*
+import uikit.Component
 
 external interface ToggleComponent : Component {
     fun toggle()
@@ -10,7 +10,7 @@ external interface ToggleOptions {
     var target: String?
     var mode: String?
     var cls: String?
-    var media: Any? /* Int | String */
+    var media: Any? /* Number | String */
     var animation: String?
     var duration: Number?
     var queued: Boolean?

@@ -1,14 +1,14 @@
 package uikit.util
 
-import uikit.UIkitElement
+import uikit.UIKitElement
 
 external interface PlayerUtil {
-    fun play(el: UIkitElement? = definedExternally)
-    fun pause(el: UIkitElement? = definedExternally)
-    fun mute(el: UIkitElement? = definedExternally)
-    fun isVideo(el: UIkitElement? = definedExternally): Boolean
-    fun isHTML5(el: UIkitElement? = definedExternally): Boolean
-    fun isIFrame(el: UIkitElement? = definedExternally): Boolean
-    fun isYoutube(el: UIkitElement? = definedExternally): Boolean
-    fun isVimeo(el: UIkitElement? = definedExternally): Boolean
+    fun play(el: UIKitElement? = definedExternally)
+    fun pause(el: UIKitElement? = definedExternally)
+    fun mute(el: UIKitElement? = definedExternally)
+    fun isVideo(el: UIKitElement? = definedExternally): Boolean
+    fun isHTML5(el: UIKitElement? = definedExternally): Boolean
+    fun isIFrame(el: UIKitElement? = definedExternally): Boolean
+    fun isYoutube(el: UIKitElement? = definedExternally): Boolean
+    fun isVimeo(el: UIKitElement? = definedExternally): Boolean
 }

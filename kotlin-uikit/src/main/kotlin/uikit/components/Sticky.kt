@@ -1,6 +1,6 @@
 package uikit.components
 
-import uikit.*
+import uikit.Component
 
 external interface StickyComponent : Component
 
@@ -11,9 +11,8 @@ external interface StickyOptions {
     var animation: String?
     var clsActive: String?
     var clsInactive: String?
-    var widthElement: String?
     var showOnUp: Boolean?
-    var media: Any? /* Int | String */
+    var media: Any? /* Number | String */
     var targetOffset: Any? /* Boolean | Number */
 }
 

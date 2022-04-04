@@ -1,12 +1,13 @@
 package uikit.components
 
-import uikit.*
+import uikit.Component
 
 external interface SortableComponent : Component
 
 external interface SortableOptions {
     var group: String?
-    var animation: Number?
+    var animation: Any? /* String | Boolean */
+    var duration: Number?
     var treshold: Number?
     var clsItem: String?
     var clsPlaceholder: String?

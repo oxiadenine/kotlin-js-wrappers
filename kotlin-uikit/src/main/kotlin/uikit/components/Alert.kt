@@ -1,6 +1,6 @@
 package uikit.components
 
-import uikit.*
+import uikit.Component
 
 external interface AlertComponent : Component {
     fun close()

@@ -1,10 +1,10 @@
 package uikit.util
 
-import uikit.UIkitElement
+import uikit.UIKitElement
 
 external interface StyleUtil {
     fun css(
-        element: UIkitElement? = definedExternally,
+        element: UIKitElement? = definedExternally,
         property: dynamic = definedExternally,
         value: dynamic = definedExternally,
         priority: String? = definedExternally

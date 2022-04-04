@@ -1,9 +1,9 @@
 package uikit.components
 
-import uikit.*
+import uikit.Component
 
 external interface AccordionComponent : Component {
-    fun toggle(index: Any? = definedExternally /* String | Int | Node */, animate: Boolean? = definedExternally)
+    fun toggle(index: Any? = definedExternally /* String | Number | Node */, animate: Boolean? = definedExternally)
 }
 
 external interface AccordionOptions {

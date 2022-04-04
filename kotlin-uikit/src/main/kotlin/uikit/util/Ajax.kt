@@ -1,7 +1,7 @@
 package uikit.util
 
 import org.w3c.dom.Image
-import org.w3c.xhr.*
+import org.w3c.xhr.XMLHttpRequest
 import kotlin.js.Promise
 
 external interface AjaxUtil {

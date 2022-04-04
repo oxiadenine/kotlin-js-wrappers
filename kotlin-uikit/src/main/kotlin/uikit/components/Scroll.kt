@@ -1,9 +1,9 @@
 package uikit.components
 
-import uikit.*
+import uikit.Component
 
 external interface ScrollComponent : Component {
-    fun scrollTo(el: Any? /* Element | String */ = definedExternally)
+    fun scrollTo(el: Any? /* UIKitElement | String */ = definedExternally)
 }
 
 external interface ScrollOptions {

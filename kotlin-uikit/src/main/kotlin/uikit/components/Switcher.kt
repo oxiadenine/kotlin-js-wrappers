@@ -1,9 +1,9 @@
 package uikit.components
 
-import uikit.*
+import uikit.Component
 
 external interface SwitcherComponent : Component {
-    fun show(index: Any? /* String | Int | Element */ = definedExternally)
+    fun show(index: Any? /* String | Number | Node */ = definedExternally)
 }
 
 external interface SwitcherOptions {

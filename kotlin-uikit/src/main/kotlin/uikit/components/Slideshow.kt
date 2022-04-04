@@ -1,6 +1,6 @@
 package uikit.components
 
-import uikit.*
+import uikit.Component
 
 external interface SlideshowComponent : Component {
     fun show(index: Number? = definedExternally)

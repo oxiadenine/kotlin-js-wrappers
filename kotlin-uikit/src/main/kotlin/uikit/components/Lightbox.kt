@@ -1,6 +1,6 @@
 package uikit.components
 
-import uikit.*
+import uikit.Component
 
 external interface LightboxComponent : Component {
     fun show(index: Any? /* String | Int */ = definedExternally)
@@ -8,7 +8,7 @@ external interface LightboxComponent : Component {
 }
 
 external interface LightboxPanelComponent : Component {
-    fun show(index: Any? /* String | Int */ = definedExternally)
+    fun show(index: Any? /* String | Number */ = definedExternally)
     fun hide()
     fun startAutoplay()
     fun stopAutoplay()
@@ -16,11 +16,11 @@ external interface LightboxPanelComponent : Component {
 
 external interface LightboxOptions {
     var animation: String?
-    var autoplay: Boolean?
+    var autoplay: Number?
     var autoplayInterval: Number?
     var pauseOnHover: Boolean?
     var videoAutoplay: Boolean?
-    var index: Any? /* String | Integer */
+    var index: Any? /* String | Number */
     var toggle: String?
 }
 

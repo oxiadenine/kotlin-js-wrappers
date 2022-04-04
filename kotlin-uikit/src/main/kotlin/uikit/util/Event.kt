@@ -1,7 +1,7 @@
 package uikit.util
 
-import org.w3c.dom.events.*
-import uikit.UIkitElement
+import org.w3c.dom.events.Event
+import uikit.UIKitElement
 
 external interface EventUtil {
     fun on(
@@ -21,7 +21,7 @@ external interface EventUtil {
     )
 
     fun once(
-        element: UIkitElement? = definedExternally,
+        element: UIKitElement? = definedExternally,
         type: String,
         selector: String? = definedExternally,
         listener: ((e: Event) -> Unit)? = definedExternally,
@@ -49,4 +49,4 @@ external interface EventUtil {
 
 typealias OnFun = (targets: dynamic, type: String, selector: String?, listener: ((e: Event) -> Unit)?, useCapture: Boolean?) -> () -> OffFun
 typealias OffFun = (targets: dynamic, type: String, selector: String?, listener: ((e: Event) -> Unit)?, useCapture: Boolean?) -> Unit
-typealias OnceFun = (element: UIkitElement?, type: String, selector: String?, listener: ((e: Event) -> Unit)?, useCapture: Boolean?, condition: ((e: Event) -> Boolean)?) -> OffFun
+typealias OnceFun = (element: UIKitElement?, type: String, selector: String?, listener: ((e: Event) -> Unit)?, useCapture: Boolean?, condition: ((e: Event) -> Boolean)?) -> OffFun

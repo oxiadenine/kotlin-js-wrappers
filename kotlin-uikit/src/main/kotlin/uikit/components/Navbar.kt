@@ -1,6 +1,6 @@
 package uikit.components
 
-import uikit.*
+import uikit.Component
 
 external interface NavbarComponent : Component
 
@@ -13,7 +13,6 @@ external interface NavbarOptions {
     var boundaryAlign: Boolean?
     var offset: Number?
     var dropbar: Boolean?
-    var dropbarMode: String?
     var duration: Number?
 }
 

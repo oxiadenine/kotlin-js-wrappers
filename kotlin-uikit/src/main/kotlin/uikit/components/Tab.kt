@@ -1,9 +1,9 @@
 package uikit.components
 
-import uikit.*
+import uikit.Component
 
 external interface TabComponent : Component {
-    fun show(index: Any? /* String | Int | Element */ = definedExternally)
+    fun show(index: Any? /* String | Number | Node */ = definedExternally)
 }
 
 external interface TabOptions {
@@ -13,7 +13,7 @@ external interface TabOptions {
     var animation: String?
     var duration: Number?
     var swiping: Boolean?
-    var media: Any? /* Int | String */
+    var media: Any? /* Number | String */
 }
 
 object TabEvents {

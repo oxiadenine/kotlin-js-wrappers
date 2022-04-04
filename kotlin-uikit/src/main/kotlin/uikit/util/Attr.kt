@@ -1,16 +1,16 @@
 package uikit.util
 
 import org.w3c.dom.Attr
-import uikit.UIkitElement
+import uikit.UIKitElement
 
 external interface AttrUtil {
     fun attr(
-        element: UIkitElement? = definedExternally,
+        element: UIKitElement? = definedExternally,
         name: String? = definedExternally,
         value: dynamic = definedExternally
-    ): UIkitElement?
+    ): UIKitElement?
 
-    fun hasAttr(element: UIkitElement? = definedExternally, name: String? = definedExternally): Boolean
-    fun removeAttr(element: UIkitElement? = definedExternally, name: String)
-    fun data(element: UIkitElement? = definedExternally, attribute: Attr): UIkitElement?
+    fun hasAttr(element: UIKitElement? = definedExternally, name: String? = definedExternally): Boolean
+    fun removeAttr(element: UIKitElement? = definedExternally, name: String)
+    fun data(element: UIKitElement? = definedExternally, attribute: Attr): UIKitElement?
 }

@@ -1,7 +1,7 @@
 package uikit.util
 
-import uikit.UIkitElement
-import uikit.UIkitNode
+import uikit.UIKitElement
+import uikit.UIKitNode
 
 external interface LangUtil {
     val hyphenate: (str: String) -> String
@@ -37,9 +37,9 @@ external interface LangUtil {
     fun toBoolean(value: Any? = definedExternally): Boolean
     fun toNumber(value: Any? = definedExternally): Any /* Number | Boolean */
     fun toFloat(value: Any? = definedExternally): Number
-    fun toNode(element: UIkitElement? = definedExternally): UIkitNode
-    fun toNodes(element: UIkitElement? = definedExternally): Array<UIkitNode>
-    fun toWindow(element: UIkitElement? = definedExternally): dynamic
+    fun toNode(element: UIKitElement? = definedExternally): UIKitNode
+    fun toNodes(element: UIKitElement? = definedExternally): Array<UIKitNode>
+    fun toWindow(element: UIKitElement? = definedExternally): dynamic
     fun toMs(time: Any? /* String | Number */ = definedExternally): Number
 
     fun isEqual(value: dynamic = definedExternally, other: dynamic = definedExternally): Boolean
@@ -64,7 +64,7 @@ external interface LangUtil {
     fun pointInRect(point: dynamic, rect: dynamic): Boolean
     fun getIndex(
         i: Number? = definedExternally,
-        elements: Array<UIkitElement>? = definedExternally,
+        elements: Array<UIKitElement>? = definedExternally,
         current: Number? = definedExternally,
         finite: Boolean? = definedExternally
     ): Number

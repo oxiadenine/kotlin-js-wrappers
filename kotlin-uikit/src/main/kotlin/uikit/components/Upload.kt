@@ -1,8 +1,8 @@
 package uikit.components
 
-import org.w3c.dom.events.*
-import uikit.*
-import uikit.util.*
+import org.w3c.dom.events.Event
+import uikit.Component
+import uikit.util.Environment
 
 external interface UploadComponent : Component
 

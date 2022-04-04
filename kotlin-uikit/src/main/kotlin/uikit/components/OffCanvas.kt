@@ -1,13 +1,13 @@
 package uikit.components
 
-import uikit.*
+import uikit.Component
 
-external interface OffcanvasComponent : Component {
+external interface OffCanvasComponent : Component {
     fun show()
     fun hide()
 }
 
-external interface OffcanvasOptions {
+external interface OffCanvasOptions {
     var mode: String?
     var flip: Boolean?
     var overlay: Boolean?
@@ -16,7 +16,7 @@ external interface OffcanvasOptions {
     var container: String?
 }
 
-object OffcanvasEvents {
+object OffCanvasEvents {
     const val beforeShow = "beforeshow"
     const val show = "show"
     const val shown = "shown"
