@@ -1,6 +1,6 @@
 package reactintl.components.number
 
-import kotlinext.js.Record
+import kotlinx.js.Record
 import reactintl.LocaleData
 import reactintl.components.plural.IntlLDMLPluralRule
 

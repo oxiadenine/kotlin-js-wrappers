@@ -5,7 +5,6 @@ package reactintl.components.plural
 
 import react.FC
 import react.Props
-import react.ReactElement
 import react.ReactNode
 import reactintl.FormatPluralOptions
 import reactintl.IntlShape
@@ -22,7 +21,7 @@ external interface FormattedPluralProps : FormatPluralOptions, Props {
     var two: ReactNode?
     var few: ReactNode?
     var many: ReactNode?
-    var children: ((value: ReactNode?) -> ReactElement)?
+    var children: ((value: ReactNode?) -> ReactNode)?
 }
 
 external object IntlPlural {

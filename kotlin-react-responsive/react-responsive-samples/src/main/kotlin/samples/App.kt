@@ -1,8 +1,8 @@
 package samples
 
 import csstype.*
+import emotion.react.css
 import react.*
-import react.css.css
 import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.h1
 
@@ -21,7 +21,7 @@ val App = FC<Props> {
             justifyContent = JustifyContent.center
             alignItems = AlignItems.center
             padding = 10.px
-            children.apply {
+            "> *" {
                 margin = 20.px
             }
         }

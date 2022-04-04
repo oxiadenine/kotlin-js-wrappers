@@ -2,6 +2,8 @@ package samples
 
 import kotlinext.js.*
 import kotlinx.browser.*
+import kotlinx.js.Object
+import kotlinx.js.jso
 import react.*
 import react.dom.html.ReactHTML.h1
 import react.dom.html.ReactHTML.option

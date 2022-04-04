@@ -1,6 +1,6 @@
 package reactintl.components.datetime
 
-import kotlinext.js.Record
+import kotlinx.js.Record
 
 typealias TABLE_6 = String /* "weekday" | "era" | "year" | "month" | "day" | "hour" | "minute" | "second" | "fractionalSecondDigits" | "timeZoneName" */
 typealias TABLE_2 = String /* "era" | "year" | "month" | "day" | "dayPeriod" | "ampm" | "hour" | "minute" | "second" | "fractionalSecondDigits" */

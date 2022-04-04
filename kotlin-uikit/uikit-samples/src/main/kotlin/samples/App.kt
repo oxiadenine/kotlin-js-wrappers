@@ -1,8 +1,8 @@
 package samples
 
 import csstype.*
+import emotion.react.css
 import react.*
-import react.css.css
 import react.dom.html.ReactHTML.button
 import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.h1
@@ -16,7 +16,7 @@ val App = FC<Props> {
         css {
             padding = 10.px
             textAlign = TextAlign.center
-            children.apply {
+            "> *" {
                 margin = 20.px
             }
         }
@@ -31,15 +31,15 @@ val App = FC<Props> {
             padding = 10.px
         }
         div {
-            className = "uk-container"
+            className = ClassName("uk-container")
             div {
-                className = "uk-card uk-card-body uk-card-primary"
+                className = ClassName("uk-card uk-card-body uk-card-primary")
                 h3 {
-                    className = "uk-card-title"
+                    className = ClassName("uk-card-title")
                     +"Hello World"
                 }
                 button {
-                    className = "uk-button uk-button-default uk-button-small"
+                    className = ClassName("uk-button uk-button-default uk-button-small")
                     onClick = {
                         val notification = UIkit.notification("Hello World!")
 
@@ -48,12 +48,12 @@ val App = FC<Props> {
                         })
                     }
                     div {
-                        className = "uk-flex-inline uk-flex-center uk-flex-middle"
+                        className = ClassName("uk-flex-inline uk-flex-center uk-flex-middle")
                         css { width = 120.px }
                         span { +"Powered by" }
                         span {
-                            className = "uk-margin-auto-left"
-                            //attrs["uk-icon"] = "uikit"
+                            className = ClassName("uk-margin-auto-left")
+                            attr("uk-icon").apply { +"uikit" }
                         }
                     }
                 }

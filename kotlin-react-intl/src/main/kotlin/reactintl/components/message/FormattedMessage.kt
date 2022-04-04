@@ -3,10 +3,9 @@
 
 package reactintl.components.message
 
-import kotlinext.js.Record
+import kotlinx.js.Record
 import react.FC
 import react.Props
-import react.ReactElement
 import react.ReactNode
 import reactintl.Formats
 import reactintl.Formatters
@@ -19,7 +18,7 @@ external val FormattedMessage: FC<FormattedMessageProps<Record<String, ReactNode
 external interface FormattedMessageProps<V : Record<String, ReactNode>> : MessageDescriptor, Props {
     var values: V?
     var tagName: Any?
-    var children: ((nodes: Array<ReactNode>) -> ReactElement)?
+    var children: ((nodes: Array<ReactNode>) -> ReactNode)?
     var ignoreTag: Boolean?
 }
 

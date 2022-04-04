@@ -3,10 +3,10 @@
 
 package reactintl.components.number
 
-import kotlinext.js.Record
+import kotlinx.js.Record
 import react.FC
 import react.Props
-import react.ReactElement
+import react.ReactNode
 import reactintl.FormatNumberOptions
 import reactintl.components.plural.IntlPlural
 
@@ -22,7 +22,7 @@ external interface FormattedNumberProps : FormatNumberOptions, Props {
 
 external interface FormattedNumberPartsProps : FormatNumberOptions, Props {
     var value: Number
-    var children: (Array<IntlNumber.NumberFormatPart>) -> ReactElement?
+    var children: (Array<IntlNumber.NumberFormatPart>) -> ReactNode?
 }
 
 external interface NumberFormatDigitOptions {

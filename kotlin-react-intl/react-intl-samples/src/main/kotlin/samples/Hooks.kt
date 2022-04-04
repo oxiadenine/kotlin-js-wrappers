@@ -1,6 +1,7 @@
 package samples
 
 import kotlinext.js.*
+import kotlinx.js.jso
 import react.*
 import react.dom.html.ReactHTML.br
 import react.dom.html.ReactHTML.p

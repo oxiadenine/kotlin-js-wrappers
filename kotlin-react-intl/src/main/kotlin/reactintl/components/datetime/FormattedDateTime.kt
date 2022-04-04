@@ -3,10 +3,9 @@
 
 package reactintl.components.datetime
 
-import kotlinext.js.Record
+import kotlinx.js.Record
 import react.FC
 import react.Props
-import react.ReactElement
 import react.ReactNode
 import reactintl.CustomFormatConfig
 import reactintl.FormatDateOptions
@@ -36,18 +35,18 @@ external interface FormattedTimeProps : IntlDateTime.DateTimeFormatOptions, Cust
 
 external interface FormattedDatePartsProps : FormatDateOptions, Props {
     var value: Any? /* Date | Number | String */
-    var children: (Array<IntlDateTime.DateTimeFormatPart>) -> ReactElement?
+    var children: (Array<IntlDateTime.DateTimeFormatPart>) -> ReactNode?
 }
 
 external interface FormattedTimePartsProps : FormatDateOptions, Props {
     var value: Any /* Date | Number | String */
-    var children: (Array<IntlDateTime.DateTimeFormatPart>) -> ReactElement?
+    var children: (Array<IntlDateTime.DateTimeFormatPart>) -> ReactNode?
 }
 
 external interface FormattedDateTimeRangeProps : FormatDateOptions, Props {
     var from: Any /* Number | Date */
     var to: Any /* Number | Date */
-    var children: (ReactNode) -> ReactElement?
+    var children: (ReactNode) -> ReactNode?
 }
 
 external interface Formats : IntlDateTime.DateTimeFormatOptions {

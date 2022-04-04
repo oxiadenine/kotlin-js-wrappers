@@ -1,6 +1,6 @@
 package samples
 
-import kotlinext.js.*
+import kotlinx.js.jso
 import react.*
 import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.p
@@ -20,7 +20,7 @@ val WithComponents = FC<Props> {
         }
         MediaQuery {
             minResolution = "2dppx"
-            children = fun(matches: Boolean): ReactElement {
+            children = fun(matches: Boolean): ReactNode {
                 return if (matches) {
                     p.create { +"You are retina" }
                 } else p.create { +"You are not retina" }

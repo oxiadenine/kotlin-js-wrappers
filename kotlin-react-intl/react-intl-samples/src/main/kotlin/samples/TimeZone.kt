@@ -38,7 +38,7 @@ val TimeZone = FC<TimeZoneProps> { props ->
                 year = "numeric"
                 month = "long"
                 day = "2-digit"
-                children = fun(parts: Array<IntlDateTime.DateTimeFormatPart>): ReactElement {
+                children = fun(parts: Array<IntlDateTime.DateTimeFormatPart>): ReactNode {
                     return span.create {
                         b { +parts[0].value }
                         +parts[1].value

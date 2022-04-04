@@ -5,7 +5,7 @@ package reactintl.components.relativetime
 
 import react.FC
 import react.Props
-import react.ReactElement
+import react.ReactNode
 import reactintl.FormatRelativeTimeOptions
 import reactintl.LocaleFieldsData
 import reactintl.components.number.IntlNumber
@@ -18,7 +18,7 @@ external interface FormattedRelativeTimeProps : FormatRelativeTimeOptions, Props
     var value: Number?
     var unit: RelativeTimeFormatSingularUnit?
     var updateIntervalInSeconds: Number?
-    var children: ((value: String) -> ReactElement)?
+    var children: ((value: String) -> ReactNode)?
 }
 
 external interface RelativeTimeFormatInternal {

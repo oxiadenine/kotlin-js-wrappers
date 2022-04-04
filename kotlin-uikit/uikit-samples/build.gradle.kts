@@ -7,5 +7,5 @@ dependencies {
 
     implementation(kotlinWrapperDependency("react"))
     implementation(kotlinWrapperDependency("react-dom"))
-    implementation(kotlinWrapperDependency("react-css"))
+    implementation(kotlinWrapperDependency("emotion"))
 }

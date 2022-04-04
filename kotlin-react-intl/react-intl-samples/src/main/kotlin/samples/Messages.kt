@@ -100,7 +100,7 @@ val Messages = FC<Props> {
                 id = "richtext"
                 values = js {
                     num = 99
-                    bold = fun(chunks: String): ReactElement {
+                    bold = fun(chunks: String): ReactNode {
                         return strong.create { +chunks }
                     }
                 }
@@ -110,7 +110,7 @@ val Messages = FC<Props> {
                 id = "richertext"
                 values = js {
                     num = 99
-                    bold = fun(chunks: String): ReactElement {
+                    bold = fun(chunks: String): ReactNode {
                         return strong.create { +chunks }
                     }
                 }

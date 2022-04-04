@@ -3,7 +3,7 @@
 
 package reactintl
 
-import kotlinext.js.Record
+import kotlinx.js.Record
 import react.ComponentType
 import react.Props
 import react.ReactNode

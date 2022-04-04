@@ -1,9 +1,9 @@
 package samples
 
 import csstype.px
+import emotion.react.css
 import kotlinext.js.*
 import react.*
-import react.css.css
 import react.dom.html.ReactHTML.br
 import react.dom.html.ReactHTML.p
 import react.dom.html.ReactHTML.span
@@ -98,7 +98,7 @@ val Advanced = FC<Props> {
                 id = "richtext"
                 values = js {
                     num = 99
-                    bold = fun(chunks: String): ReactElement {
+                    bold = fun(chunks: String): ReactNode {
                         return strong.create { +chunks }
                     }
                 }

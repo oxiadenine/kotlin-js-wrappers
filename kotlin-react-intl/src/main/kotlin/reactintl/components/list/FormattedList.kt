@@ -5,7 +5,6 @@ package reactintl.components.list
 
 import react.FC
 import react.Props
-import react.ReactElement
 import react.ReactNode
 import reactintl.FormatListOptions
 
@@ -18,7 +17,7 @@ external interface FormattedListProps : ListFormatOptions, Props {
 
 external interface FormattedListPartsProps : FormatListOptions, Props {
     var value: Array<String>
-    var children: (Array<Part<Any>>) -> ReactElement?
+    var children: (Array<Part<Any>>) -> ReactNode?
 }
 
 external interface ListFormatOptions {

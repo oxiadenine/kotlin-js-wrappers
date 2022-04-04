@@ -3,8 +3,8 @@
 
 package reactintl
 
-import kotlinext.js.ReadonlyArray
-import kotlinext.js.Record
+import kotlinx.js.ReadonlyArray
+import kotlinx.js.Record
 import reactintl.components.datetime.IntlDateTime
 import reactintl.components.displayname.DisplayNames
 import reactintl.components.displayname.DisplayNamesOptions
