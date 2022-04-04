@@ -4,8 +4,12 @@
 package reactintl.components.datetime
 
 import kotlinext.js.Record
-import react.*
-import reactintl.*
+import react.FC
+import react.Props
+import react.ReactElement
+import react.ReactNode
+import reactintl.CustomFormatConfig
+import reactintl.FormatDateOptions
 
 @JsName("FormattedDate")
 external val FormattedDate: FC<FormattedDateProps>
@@ -43,7 +47,7 @@ external interface FormattedTimePartsProps : FormatDateOptions, Props {
 external interface FormattedDateTimeRangeProps : FormatDateOptions, Props {
     var from: Any /* Number | Date */
     var to: Any /* Number | Date */
-    var children: (ReactNode) ->ReactElement?
+    var children: (ReactNode) -> ReactElement?
 }
 
 external interface Formats : IntlDateTime.DateTimeFormatOptions {

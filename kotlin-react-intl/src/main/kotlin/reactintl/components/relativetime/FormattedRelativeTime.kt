@@ -3,8 +3,11 @@
 
 package reactintl.components.relativetime
 
-import react.*
-import reactintl.*
+import react.FC
+import react.Props
+import react.ReactElement
+import reactintl.FormatRelativeTimeOptions
+import reactintl.LocaleFieldsData
 import reactintl.components.number.IntlNumber
 import reactintl.components.plural.IntlPlural
 

@@ -5,13 +5,19 @@ package reactintl
 
 import kotlinext.js.ReadonlyArray
 import kotlinext.js.Record
-import reactintl.components.datetime.*
-import reactintl.components.displayname.*
-import reactintl.components.list.*
-import reactintl.components.message.*
-import reactintl.components.number.*
-import reactintl.components.plural.*
-import reactintl.components.relativetime.*
+import reactintl.components.datetime.IntlDateTime
+import reactintl.components.displayname.DisplayNames
+import reactintl.components.displayname.DisplayNamesOptions
+import reactintl.components.list.ListFormat
+import reactintl.components.list.ListFormatOptions
+import reactintl.components.list.Part
+import reactintl.components.message.MessageFormat
+import reactintl.components.message.MessageFormatOptions
+import reactintl.components.number.IntlNumber
+import reactintl.components.number.NumberFormatOptions
+import reactintl.components.plural.IntlPlural
+import reactintl.components.relativetime.IntlRelativeTime
+import reactintl.components.relativetime.IntlRelativeTimeFormatUnit
 
 external interface CustomFormats : Formats {
     var relative: Record<String, IntlRelativeTime.RelativeTimeFormatOptions>?

@@ -4,8 +4,10 @@
 package reactintl.components.number
 
 import kotlinext.js.Record
-import react.*
-import reactintl.*
+import react.FC
+import react.Props
+import react.ReactElement
+import reactintl.FormatNumberOptions
 import reactintl.components.plural.IntlPlural
 
 @JsName("FormattedNumber")

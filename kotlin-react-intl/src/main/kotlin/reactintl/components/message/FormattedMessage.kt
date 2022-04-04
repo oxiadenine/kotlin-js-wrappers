@@ -4,8 +4,14 @@
 package reactintl.components.message
 
 import kotlinext.js.Record
-import react.*
-import reactintl.*
+import react.FC
+import react.Props
+import react.ReactElement
+import react.ReactNode
+import reactintl.Formats
+import reactintl.Formatters
+import reactintl.MessageDescriptor
+import reactintl.MessageFormatElement
 
 @JsName("FormattedMessage")
 external val FormattedMessage: FC<FormattedMessageProps<Record<String, ReactNode>>>

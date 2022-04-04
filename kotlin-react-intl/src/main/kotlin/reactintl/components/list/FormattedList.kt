@@ -3,7 +3,10 @@
 
 package reactintl.components.list
 
-import react.*
+import react.FC
+import react.Props
+import react.ReactElement
+import react.ReactNode
 import reactintl.FormatListOptions
 
 @JsName("FormattedList")

@@ -4,7 +4,9 @@
 package reactintl
 
 import kotlinext.js.Record
-import react.*
+import react.ComponentType
+import react.Props
+import react.ReactNode
 import reactintl.components.datetime.DateTimeFormat
 import reactintl.components.displayname.DisplayNames
 import reactintl.components.list.ListFormat

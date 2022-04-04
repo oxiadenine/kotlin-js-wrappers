@@ -3,8 +3,12 @@
 
 package reactintl.components.plural
 
-import react.*
-import reactintl.*
+import react.FC
+import react.Props
+import react.ReactElement
+import react.ReactNode
+import reactintl.FormatPluralOptions
+import reactintl.IntlShape
 
 @JsName("FormattedPlural")
 external val FormattedPlural: FC<FormattedPluralProps>

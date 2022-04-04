@@ -3,13 +3,14 @@
 
 package reactintl.components.displayname
 
-import react.*
+import react.FC
+import react.Props
 
 @JsName("FormattedDisplayName")
 external val FormattedDisplayName: FC<FormattedDisplayNameProps>
 
 external interface FormattedDisplayNameProps : DisplayNamesOptions, Props {
-    var value: Any /* String | Number | Msp<String, Unknown> */
+    var value: Any /* String | Number | Record<String, Unknown> */
 }
 
 external interface DisplayNamesOptions {

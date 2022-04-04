@@ -3,8 +3,13 @@
 
 package reactintl.components.provider
 
-import react.*
-import reactintl.*
+import react.FC
+import react.PropsWithChildren
+import react.ReactNode
+import react.State
+import reactintl.IntlCache
+import reactintl.IntlConfig
+import reactintl.IntlShape
 
 @JsName("IntlProvider")
 external val IntlProvider: FC<ProviderProps>

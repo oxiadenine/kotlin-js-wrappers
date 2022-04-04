@@ -1,8 +1,8 @@
 package reactintl
 
-import reactintl.components.datetime.*
-import reactintl.components.number.*
-import reactintl.components.plural.*
+import reactintl.components.datetime.IntlDateTime
+import reactintl.components.number.IntlNumber
+import reactintl.components.plural.IntlPluralRuleType
 
 external enum class MessageType {
     LITERAL,
