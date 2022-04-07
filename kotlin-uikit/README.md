@@ -1,4 +1,4 @@
-[![Maven Central](https://img.shields.io/maven-central/v/io.sunland/kotlin-uikit)](https://mvnrepository.com/artifact/io.sunland/kotlin-uikit/3.13.7-pre.17-kotlin-1.6.10)
+[![Maven Central](https://img.shields.io/maven-central/v/io.sunland/kotlin-uikit)](https://mvnrepository.com/artifact/io.sunland/kotlin-uikit)
 
 ## Introduction
 

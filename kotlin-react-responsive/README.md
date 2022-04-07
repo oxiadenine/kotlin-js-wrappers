@@ -1,4 +1,4 @@
-[![Maven Central](https://img.shields.io/maven-central/v/io.sunland/kotlin-react-responsive)](https://mvnrepository.com/artifact/io.sunland/kotlin-react-responsive/8.2.0-pre.17-kotlin-1.6.10)
+[![Maven Central](https://img.shields.io/maven-central/v/io.sunland/kotlin-react-responsive)](https://mvnrepository.com/artifact/io.sunland/kotlin-react-responsive)
 
 ## Introduction
 

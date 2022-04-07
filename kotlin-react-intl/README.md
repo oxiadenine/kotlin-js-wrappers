@@ -1,4 +1,4 @@
-[![Maven Central](https://img.shields.io/maven-central/v/io.sunland/kotlin-react-intl)](https://mvnrepository.com/artifact/io.sunland/kotlin-react-intl/5.24.8-pre.19-kotlin-1.6.10)
+[![Maven Central](https://img.shields.io/maven-central/v/io.sunland/kotlin-react-intl)](https://mvnrepository.com/artifact/io.sunland/kotlin-react-intl)
 
 ## Introduction
 
