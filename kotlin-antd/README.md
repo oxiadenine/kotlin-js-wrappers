@@ -6,7 +6,7 @@ built with [Kotlin/JS](https://kotlinlang.org/docs/reference/js-overview.html).
 ### Installation
 
 To start using `kotlin-antd` make sure you have the Maven Central repository, and the following dependencies added to 
-the Gradle build file:
+the Gradle build file.
 
 ```kotlin
 repositories {
@@ -14,7 +14,7 @@ repositories {
 }
 
 dependencies {
-    implementation("io.sunland:kotlin-antd:VERSION")
+    implementation("io.sunland:kotlin-antd:4.8.6-pre.16-kotlin-1.6.10")
 }
 ```
 

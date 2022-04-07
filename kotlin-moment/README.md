@@ -6,7 +6,7 @@ built with [Kotlin/JS](https://kotlinlang.org/docs/reference/js-overview.html).
 ### Installation
 
 To start using `kotlin-moment` make sure you have the Maven Central repository, and the following dependencies added to 
-the Gradle build file:
+the Gradle build file.
 
 ```kotlin
 repositories {
@@ -14,7 +14,7 @@ repositories {
 }
 
 dependencies {
-    implementation("io.sunland:kotlin-moment:VERSION")
+    implementation("io.sunland:kotlin-moment:2.29.1-pre.15-kotlin-1.6.10")
 }
 ```
 
