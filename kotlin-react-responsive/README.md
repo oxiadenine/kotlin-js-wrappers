@@ -1,3 +1,5 @@
+[![Maven Central](https://img.shields.io/maven-central/v/io.sunland/kotlin-react-responsive)](https://mvnrepository.com/artifact/io.sunland/kotlin-react-responsive/8.2.0-pre.17-kotlin-1.6.10)
+
 ## Introduction
 
 This project is a library wrapping [React Responsive](https://github.com/contra/react-responsive) to be used in an 
@@ -6,7 +8,7 @@ application built with [Kotlin/JS](https://kotlinlang.org/docs/reference/js-over
 ### Installation
 
 To start using `kotlin-react-responsive` make sure you have the Maven Central repository, and the following dependencies added to 
-the Gradle build file:
+the Gradle build file.
 
 ```kotlin
 repositories {
@@ -14,7 +16,7 @@ repositories {
 }
 
 dependencies {
-    implementation("io.sunland:kotlin-react-responsive:VERSION")
+    implementation("io.sunland:kotlin-react-responsive:$version")
 }
 ```
 
