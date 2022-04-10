@@ -48,12 +48,12 @@ val App = FC<Props> {
                         })
                     }
                     div {
-                        className = ClassName("uk-flex-inline uk-flex-center uk-flex-middle")
-                        css { width = 120.px }
+                        css(ClassName("uk-flex-inline uk-flex-center uk-flex-middle")) { width = 120.px }
                         span { +"Powered by" }
                         span {
                             className = ClassName("uk-margin-auto-left")
-                            attr("uk-icon").apply { +"uikit" }
+
+                            asDynamic()["uk-icon"] = "uikit"
                         }
                     }
                 }
