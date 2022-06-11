@@ -21,4 +21,3 @@ typealias NumberFormatPartTypes = String /* IntlNumberFormatPartTypes | "exponen
 typealias RawNumberLocaleData = LocaleData<NumberFormatLocaleInternalData>
 
 typealias IntlNumberFormatPartTypes = String /* "exponentInteger" | "exponentMinusSign" | "exponentSeparator" | "fraction" | "group" | "infinity" | "integer" | "literal" | "minusSign" | "nan" | "plusSign" | "percentSign" | "unit" | "unknown" */
-
