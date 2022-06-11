@@ -13,7 +13,7 @@ fun Project.configurePublication() {
         publications.create<MavenPublication>("kotlinJsWrapper") {
             groupId = project.group.toString()
             artifactId = project.name
-            version = "${version(project.name)}-kotlin-${kotlinVersion()}"
+            version = version(project.name)
 
             artifact(tasks.getByName<Zip>("jsLegacySourcesJar"))
 

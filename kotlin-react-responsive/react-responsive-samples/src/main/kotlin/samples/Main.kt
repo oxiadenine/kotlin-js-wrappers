@@ -2,8 +2,8 @@ package samples
 
 import kotlinx.browser.*
 import react.create
-import react.dom.*
+import react.dom.client.createRoot
 
 fun main() {
-    render(element = App.create(), container = document.getElementById("root")!!)
+    createRoot(document.getElementById("root")!!).render(App.create())
 }

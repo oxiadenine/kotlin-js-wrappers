@@ -4,10 +4,8 @@ import org.jetbrains.kotlin.gradle.targets.js.npm.NpmDependency
 import org.jetbrains.kotlin.gradle.targets.js.npm.NpmDependencyExtension
 
 fun Project.kotlinWrapperDependency(name: String) =
-    "org.jetbrains.kotlin-wrappers:kotlin-$name:${wrapperVersion(name)}-kotlin-${kotlinVersion()}"
+    "org.jetbrains.kotlin-wrappers:kotlin-$name:${wrapperVersion(name)}"
 
 fun Project.npmPackage(name: String): NpmDependency {
-    val npm = dependencies.the<NpmDependencyExtension>()
-
-    return npm(name, npmVersion(name))
+    return dependencies.the<NpmDependencyExtension>()(name, npmVersion(name))
 }

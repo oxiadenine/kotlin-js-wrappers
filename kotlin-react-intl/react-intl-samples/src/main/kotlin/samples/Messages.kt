@@ -1,6 +1,7 @@
 package samples
 
 import kotlinext.js.*
+import kotlinx.js.Record
 import react.*
 import react.dom.html.ReactHTML.br
 import react.dom.html.ReactHTML.p
@@ -38,62 +39,62 @@ val Messages = FC<Props> {
             br {}
             FormattedMessage {
                 id = "placeholder"
-                values = js { name = "John" }
+                values = js { name = "John" }.unsafeCast<Record<String, ReactNode>>()
             }
             br {}
             FormattedMessage {
                 id = "date"
-                values = js { ts = Date.now() }
+                values = js { ts = Date.now() }.unsafeCast<Record<String, ReactNode>>()
             }
             br {}
             FormattedMessage {
                 id = "time"
-                values = js { ts = Date.now() }
+                values = js { ts = Date.now() }.unsafeCast<Record<String, ReactNode>>()
             }
             br {}
             FormattedMessage {
                 id = "number"
-                values = js { num = Random.nextInt() * 1000 }
+                values = js { num = Random.nextInt() * 1000 }.unsafeCast<Record<String, ReactNode>>()
             }
             br {}
             FormattedMessage {
                 id = "plural"
-                values = js { num = 1 }
+                values = js { num = 1 }.unsafeCast<Record<String, ReactNode>>()
             }
             br {}
             FormattedMessage {
                 id = "plural"
-                values = js { num = 99 }
+                values = js { num = 99 }.unsafeCast<Record<String, ReactNode>>()
             }
             br {}
             FormattedMessage {
                 id = "select"
-                values = js { gender = "male" }
+                values = js { gender = "male" }.unsafeCast<Record<String, ReactNode>>()
             }
             br {}
             FormattedMessage {
                 id = "select"
-                values = js { gender = "female" }
+                values = js { gender = "female" }.unsafeCast<Record<String, ReactNode>>()
             }
             br {}
             FormattedMessage {
                 id = "selectordinal"
-                values = js { order = 1 }
+                values = js { order = 1 }.unsafeCast<Record<String, ReactNode>>()
             }
             br {}
             FormattedMessage {
                 id = "selectordinal"
-                values = js { order = 2 }
+                values = js { order = 2 }.unsafeCast<Record<String, ReactNode>>()
             }
             br {}
             FormattedMessage {
                 id = "selectordinal"
-                values = js { order = 3 }
+                values = js { order = 3 }.unsafeCast<Record<String, ReactNode>>()
             }
             br {}
             FormattedMessage {
                 id = "selectordinal"
-                values = js { order = 4 }
+                values = js { order = 4 }.unsafeCast<Record<String, ReactNode>>()
             }
             br {}
             FormattedMessage {
@@ -103,7 +104,7 @@ val Messages = FC<Props> {
                     bold = fun(chunks: String): ReactNode {
                         return strong.create { +chunks }
                     }
-                }
+                }.unsafeCast<Record<String, ReactNode>>()
             }
             br {}
             FormattedMessage {
@@ -113,18 +114,18 @@ val Messages = FC<Props> {
                     bold = fun(chunks: String): ReactNode {
                         return strong.create { +chunks }
                     }
-                }
+                }.unsafeCast<Record<String, ReactNode>>()
             }
             br {}
             FormattedMessage {
                 id = "unicode"
-                values = js { this.placeholder = "world" }
+                values = js { this.placeholder = "world" }.unsafeCast<Record<String, ReactNode>>()
             }
             br {}
             FormattedMessage {
                 id = "whatever"
                 defaultMessage = "Hello\u0020{placeholder}"
-                values = js { this.placeholder = "world" }
+                values = js { this.placeholder = "world" }.unsafeCast<Record<String, ReactNode>>()
             }
         }
     }

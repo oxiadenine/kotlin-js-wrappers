@@ -3,6 +3,7 @@ package samples
 import csstype.px
 import emotion.react.css
 import kotlinext.js.*
+import kotlinx.js.Record
 import react.*
 import react.dom.html.ReactHTML.br
 import react.dom.html.ReactHTML.p
@@ -36,62 +37,62 @@ val Advanced = FC<Props> {
             br {}
             FormattedMessage {
                 id = "placeholder"
-                values = js { name = "John" }
+                values = js { name = "John" }.unsafeCast<Record<String, ReactNode>>()
             }
             br {}
             FormattedMessage {
                 id = "date"
-                values = js { ts = Date.now() }
+                values = js { ts = Date.now() }.unsafeCast<Record<String, ReactNode>>()
             }
             br {}
             FormattedMessage {
                 id = "time"
-                values = js { ts = Date.now() }
+                values = js { ts = Date.now() }.unsafeCast<Record<String, ReactNode>>()
             }
             br {}
             FormattedMessage {
                 id = "number"
-                values = js { num = Random.nextInt() * 1000 }
+                values = js { num = Random.nextInt() * 1000 }.unsafeCast<Record<String, ReactNode>>()
             }
             br {}
             FormattedMessage {
                 id = "plural"
-                values = js { num = 1 }
+                values = js { num = 1 }.unsafeCast<Record<String, ReactNode>>()
             }
             br {}
             FormattedMessage {
                 id = "plural"
-                values = js { num = 99 }
+                values = js { num = 99 }.unsafeCast<Record<String, ReactNode>>()
             }
             br {}
             FormattedMessage {
                 id = "select"
-                values = js { gender = "male" }
+                values = js { gender = "male" }.unsafeCast<Record<String, ReactNode>>()
             }
             br {}
             FormattedMessage {
                 id = "select"
-                values = js { gender = "female" }
+                values = js { gender = "female" }.unsafeCast<Record<String, ReactNode>>()
             }
             br {}
             FormattedMessage {
                 id = "selectordinal"
-                values = js { order = 1 }
+                values = js { order = 1 }.unsafeCast<Record<String, ReactNode>>()
             }
             br {}
             FormattedMessage {
                 id = "selectordinal"
-                values = js { order = 2 }
+                values = js { order = 2 }.unsafeCast<Record<String, ReactNode>>()
             }
             br {}
             FormattedMessage {
                 id = "selectordinal"
-                values = js { order = 3 }
+                values = js { order = 3 }.unsafeCast<Record<String, ReactNode>>()
             }
             br {}
             FormattedMessage {
                 id = "selectordinal"
-                values = js { order = 4 }
+                values = js { order = 4 }.unsafeCast<Record<String, ReactNode>>()
             }
             br {}
             FormattedMessage {
@@ -101,7 +102,7 @@ val Advanced = FC<Props> {
                     bold = fun(chunks: String): ReactNode {
                         return strong.create { +chunks }
                     }
-                }
+                }.unsafeCast<Record<String, ReactNode>>()
             }
         }
     }

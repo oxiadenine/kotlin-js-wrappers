@@ -1,6 +1,7 @@
 package samples
 
 import kotlinext.js.*
+import kotlinx.js.Record
 import kotlinx.js.jso
 import react.*
 import react.dom.html.ReactHTML.br
@@ -39,36 +40,36 @@ private val Demo = FC<DemoProps> {
     p {
         +intl.formatMessage(jso { id = "simple" })
         br {}
-        +intl.formatMessage(jso { id = "placeholder" }, js { name = "John" })
+        +intl.formatMessage(jso { id = "placeholder" }, js { name = "John" }.unsafeCast<Record<String, Any>>())
         br {}
-        +intl.formatMessage(jso { id = "date" }, js { ts = Date.now() })
+        +intl.formatMessage(jso { id = "date" }, js { ts = Date.now() }.unsafeCast<Record<String, Any>>())
         br {}
-        +intl.formatMessage(jso { id = "time" }, js { ts = Date.now() })
+        +intl.formatMessage(jso { id = "time" }, js { ts = Date.now() }.unsafeCast<Record<String, Any>>())
         br {}
-        +intl.formatMessage(jso { id = "number" }, js { num = Random.nextInt() * 1000 })
+        +intl.formatMessage(jso { id = "number" }, js { num = Random.nextInt() * 1000 }.unsafeCast<Record<String, Any>>())
         br {}
-        +intl.formatMessage(jso { id = "plural" }, js { num = 1 })
+        +intl.formatMessage(jso { id = "plural" }, js { num = 1 }.unsafeCast<Record<String, Any>>())
         br {}
-        +intl.formatMessage(jso { id = "plural" }, js { num = 99 })
+        +intl.formatMessage(jso { id = "plural" }, js { num = 99 }.unsafeCast<Record<String, Any>>())
         br {}
-        +intl.formatMessage(jso { id = "select" }, js { gender = "male" })
+        +intl.formatMessage(jso { id = "select" }, js { gender = "male" }.unsafeCast<Record<String, Any>>())
         br {}
-        +intl.formatMessage(jso { id = "select" }, js { gender = "female" })
+        +intl.formatMessage(jso { id = "select" }, js { gender = "female" }.unsafeCast<Record<String, Any>>())
         br {}
-        +intl.formatMessage(jso { id = "selectordinal" }, js { order = 1 })
+        +intl.formatMessage(jso { id = "selectordinal" }, js { order = 1 }.unsafeCast<Record<String, Any>>())
         br {}
-        +intl.formatMessage(jso { id = "selectordinal" }, js { order = 2 })
+        +intl.formatMessage(jso { id = "selectordinal" }, js { order = 2 }.unsafeCast<Record<String, Any>>())
         br {}
-        +intl.formatMessage(jso { id = "selectordinal" }, js { order = 3 })
+        +intl.formatMessage(jso { id = "selectordinal" }, js { order = 3 }.unsafeCast<Record<String, Any>>())
         br {}
-        +intl.formatMessage(jso { id = "selectordinal" }, js { order = 4 })
+        +intl.formatMessage(jso { id = "selectordinal" }, js { order = 4 }.unsafeCast<Record<String, Any>>())
         br {}
-        +intl.formatMessage(jso { id = "unicode" }, js { this.placeholder = "world" })
+        +intl.formatMessage(jso { id = "unicode" }, js { this.placeholder = "world" }.unsafeCast<Record<String, Any>>())
         br {}
         +intl.formatMessage(jso {
             id = "whatever"
             defaultMessage = "Hello\u0020{placeholder}"
-        }, js { this.placeholder = "world" })
+        }, js { this.placeholder = "world" }.unsafeCast<Record<String, Any>>())
     }
 }
 

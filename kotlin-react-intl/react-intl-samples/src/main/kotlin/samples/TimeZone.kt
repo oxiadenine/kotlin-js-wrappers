@@ -18,7 +18,6 @@ external interface TimeZoneProps : Props {
 }
 
 val TimeZone = FC<TimeZoneProps> { props ->
-    props.currentTime = Date()
     IntlProvider {
         locale = "en"
         timeZone = "Asia/Tokyo"

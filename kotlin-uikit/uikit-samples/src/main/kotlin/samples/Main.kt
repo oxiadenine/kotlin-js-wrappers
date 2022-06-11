@@ -3,7 +3,7 @@ package samples
 import kotlinext.js.*
 import kotlinx.browser.*
 import react.create
-import react.dom.*
+import react.dom.client.createRoot
 import uikit.*
 
 fun main() {
@@ -11,5 +11,5 @@ fun main() {
 
     UIkit.use(Icons)
 
-    render(element = App.create(), container = document.getElementById("root")!!)
+    createRoot(document.getElementById("root")!!).render(App.create())
 }
