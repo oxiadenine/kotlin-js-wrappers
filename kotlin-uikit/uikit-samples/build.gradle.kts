@@ -9,3 +9,5 @@ dependencies {
     implementation(kotlinWrapperDependency("react-dom"))
     implementation(kotlinWrapperDependency("emotion"))
 }
+
+configureKotlinJs()

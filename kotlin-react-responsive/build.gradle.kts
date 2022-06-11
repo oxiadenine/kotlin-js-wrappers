@@ -1,6 +1,5 @@
 plugins {
     kotlin("js")
-    `wrapper-publish`
 }
 
 dependencies {
@@ -8,3 +7,6 @@ dependencies {
 
     api(npmPackage("react-responsive"))
 }
+
+configureKotlinJs()
+configurePublication()
