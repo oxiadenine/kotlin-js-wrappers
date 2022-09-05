@@ -1,6 +1,5 @@
 package samples
 
-import kotlinext.js.*
 import kotlinx.browser.*
 import kotlinx.js.Object
 import kotlinx.js.jso
@@ -11,12 +10,13 @@ import react.dom.html.ReactHTML.select
 import reactintl.*
 import reactintl.components.provider.createIntl
 import reactintl.components.RawIntlProvider
+import kotlin.js.json
 
 private val appMessages = run {
-    val messages = js {}
+    val messages = json()
 
-    messages["en-US"] = js { selectlanguage = "Select a language" }
-    messages["pt-BR"] = js { selectlanguage = "Selecione uma linguagem" }
+    messages["en-US"] = json("selectlanguage" to "Select a language")
+    messages["pt-BR"] = json("selectlanguage" to "Selecione uma linguagem")
 
     messages
 }.unsafeCast<Any>()
