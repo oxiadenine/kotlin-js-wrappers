@@ -1,3 +1,7 @@
+*This repository is no longer mantained*
+
+<br>
+
 [![Kotlin](https://img.shields.io/badge/kotlin-1.7.21-blue.svg?logo=kotlin)](http://kotlinlang.org)
 
 ## Introduction
@@ -21,8 +25,3 @@ the repository has been transferred from [samgarasx](https://github.com/samgaras
 
 Also see official [JetBrains Kotlin Wrappers](https://github.com/JetBrains/kotlin-wrappers), they are including
 more and more wrappers in their list.
-
-### Contributing
-
-If you are interested to help in this project, please see the open [issues](https://github.com/sunlandx/kotlin-js-wrappers/issues) 
-or contact to [samgarasx@gmail.com](mailto:samgarasx@gmail.com).
